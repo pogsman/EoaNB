@@ -9,6 +9,7 @@ add_namespace = nativemilitary
 add_namespace = nativepolitical
 add_namespace = nativeintelligence
 add_namespace = NA_N_on_start
+add_namespace = escalationconflict
 
 country_event = {
 	id = NA_N_on_start.1 
@@ -751,6 +752,7 @@ country_event = {
 		hidden_effect = {
 			SEM = { set_country_flag = USA_this_nation_has_native_reservation_status_flag }
 			set_global_flag = SEM_puppeted_or_annexed_by_war_flag
+			USA = { country_event = { id = usa_western_expansion.5 days = 35 } }
 		}
 	}
 
@@ -852,6 +854,7 @@ country_event = {
 		hidden_effect = {
 			SEM = { set_country_flag = USA_this_nation_has_native_reservation_status_flag }
 			set_global_flag = SEM_puppeted_or_annexed_by_war_flag
+			USA = { country_event = { id = usa_western_expansion.5 days = 35 } }
 		}
 	}
 
