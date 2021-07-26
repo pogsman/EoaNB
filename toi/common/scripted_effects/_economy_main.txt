@@ -282,7 +282,6 @@
 
 			set_variable = { total_money = 0 }
 
-			set_variable = { pops_savings_k = 0 }
 			set_variable = { national_bank_interest_gain = 0 }
 
 			calibrate_tech_bonuses = yes
@@ -553,6 +552,9 @@
 								has_state_flag = infrastructure_construction_government_subsidized
 							}
 							set_temp_variable = { infra_construction_funds_temp = global.infrastructure_construction_base_speed }
+							set_temp_variable = { modifier_temp = infrastructure_build_speed_effect }
+							add_to_temp_variable = { modifier_temp = 1 }
+							multiply_temp_variable = { infra_construction_funds_temp = modifier_temp }
 							multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { infra_construction_funds_temp = 100 }
@@ -573,6 +575,9 @@
 								has_state_flag = factory_everyday_goods_construction_government_subsidized
 							}
 							set_temp_variable = { construction_funds_temp = global.factory_everyday_goods_construction_base_speed }
+							set_temp_variable = { modifier_temp = factory_build_speed_effect }
+							add_to_temp_variable = { modifier_temp = 1 }
+							multiply_temp_variable = { construction_funds_temp = modifier_temp }
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
@@ -593,6 +598,9 @@
 								has_state_flag = factory_luxury_goods_construction_government_subsidized
 							}
 							set_temp_variable = { construction_funds_temp = global.factory_luxury_goods_construction_base_speed }
+							set_temp_variable = { modifier_temp = factory_build_speed_effect }
+							add_to_temp_variable = { modifier_temp = 1 }
+							multiply_temp_variable = { construction_funds_temp = modifier_temp }
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
@@ -613,6 +621,9 @@
 								has_state_flag = factory_industrial_goods_construction_government_subsidized
 							}
 							set_temp_variable = { construction_funds_temp = global.factory_industrial_goods_construction_base_speed }
+							set_temp_variable = { modifier_temp = factory_build_speed_effect }
+							add_to_temp_variable = { modifier_temp = 1 }
+							multiply_temp_variable = { construction_funds_temp = modifier_temp }
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
@@ -4614,102 +4625,104 @@
 				#
 
 				#Pop Demographics
-					set_variable = { pops_natural_birth_amount = pops_amount }
-					divide_variable = { pops_natural_birth_amount = 100 }
-					multiply_variable = { pops_natural_birth_amount = global.pops_natural_birth_base_rate }
-					divide_variable = { pops_natural_birth_amount = 12 }
+					#Growth/Death
+						set_variable = { pops_natural_birth_amount = pops_amount }
+						divide_variable = { pops_natural_birth_amount = 100 }
+						multiply_variable = { pops_natural_birth_amount = global.pops_natural_birth_base_rate }
+						divide_variable = { pops_natural_birth_amount = 12 }
 
-					set_variable = { pops_natural_death_amount = pops_amount }
-					divide_variable = { pops_natural_death_amount = 100 }
-					multiply_variable = { pops_natural_death_amount = global.pops_natural_death_base_rate }
-					divide_variable = { pops_natural_death_amount = 12 }
+						set_variable = { pops_natural_death_amount = pops_amount }
+						divide_variable = { pops_natural_death_amount = 100 }
+						multiply_variable = { pops_natural_death_amount = global.pops_natural_death_base_rate }
+						divide_variable = { pops_natural_death_amount = 12 }
 
-					set_temp_variable = { disease_temp = pops_disease_death_amount }
-					divide_temp_variable = { disease_temp = 1000 }
-					add_to_variable = { pops_natural_death_amount = disease_temp }
-					set_variable = { pops_disease_death_amount = 0 }
+						set_temp_variable = { disease_temp = pops_disease_death_amount }
+						divide_temp_variable = { disease_temp = 1000 }
+						add_to_variable = { pops_natural_death_amount = disease_temp }
+						set_variable = { pops_disease_death_amount = 0 }
 
-					set_variable = { pops_accidents_death_amount = pops_amount }
-					divide_variable = { pops_accidents_death_amount = 100 }
-					multiply_variable = { pops_accidents_death_amount = global.pops_accidents_death_base_rate }
-					divide_variable = { pops_accidents_death_amount = 12 }
+						set_variable = { pops_accidents_death_amount = pops_amount }
+						divide_variable = { pops_accidents_death_amount = 100 }
+						multiply_variable = { pops_accidents_death_amount = global.pops_accidents_death_base_rate }
+						divide_variable = { pops_accidents_death_amount = 12 }
 
-					set_variable = { pops_crime_death_amount = pops_amount }
-					divide_variable = { pops_crime_death_amount = 100 }
-					multiply_variable = { pops_crime_death_amount = global.pops_crime_death_base_rate }
-					divide_variable = { pops_crime_death_amount = 12 }
+						set_variable = { pops_crime_death_amount = pops_amount }
+						divide_variable = { pops_crime_death_amount = 100 }
+						multiply_variable = { pops_crime_death_amount = global.pops_crime_death_base_rate }
+						divide_variable = { pops_crime_death_amount = 12 }
 
-					set_variable = { pops_other_death_amount = pops_amount }
-					divide_variable = { pops_other_death_amount = 100 }
-					multiply_variable = { pops_other_death_amount = global.pops_other_death_base_rate }
-					divide_variable = { pops_other_death_amount = 12 }
+						set_variable = { pops_other_death_amount = pops_amount }
+						divide_variable = { pops_other_death_amount = 100 }
+						multiply_variable = { pops_other_death_amount = global.pops_other_death_base_rate }
+						divide_variable = { pops_other_death_amount = 12 }
 
-					set_variable = { pops_starvation_percentage = 0 } #Percentage needed for starvation
-					if = {
-						limit = {
-							check_variable = { pops_amount < 100 }
-						}
-						set_temp_variable = { pops_amount_temp = pops_amount }
-						divide_temp_variable = { pops_amount_temp = 2000 }
-						add_to_variable = { pops_starvation_percentage = pops_amount_temp }
-					}
-					else = {
-						add_to_variable = { pops_starvation_percentage = 0.05 }
-
+						set_variable = { pops_starvation_percentage = 0 } #Percentage needed for starvation
 						if = {
 							limit = {
-								check_variable = { pops_amount < 1000 }
+								check_variable = { pops_amount < 100 }
 							}
 							set_temp_variable = { pops_amount_temp = pops_amount }
-							divide_temp_variable = { pops_amount_temp = 10000 }
+							divide_temp_variable = { pops_amount_temp = 2000 }
 							add_to_variable = { pops_starvation_percentage = pops_amount_temp }
 						}
 						else = {
-							add_to_variable = { pops_starvation_percentage = 0.1 }
+							add_to_variable = { pops_starvation_percentage = 0.05 }
+
 							if = {
 								limit = {
-									check_variable = { pops_amount < 30000 }
+									check_variable = { pops_amount < 1000 }
 								}
 								set_temp_variable = { pops_amount_temp = pops_amount }
-								divide_temp_variable = { pops_amount_temp = 200000 }
+								divide_temp_variable = { pops_amount_temp = 10000 }
 								add_to_variable = { pops_starvation_percentage = pops_amount_temp }
 							}
 							else = {
-								add_to_variable = { pops_starvation_percentage = 0.15 }
-								set_temp_variable = { pops_amount_temp = pops_amount }
-								divide_temp_variable = { pops_amount_temp = 2000000 }
-								add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+								add_to_variable = { pops_starvation_percentage = 0.1 }
+								if = {
+									limit = {
+										check_variable = { pops_amount < 30000 }
+									}
+									set_temp_variable = { pops_amount_temp = pops_amount }
+									divide_temp_variable = { pops_amount_temp = 200000 }
+									add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+								}
+								else = {
+									add_to_variable = { pops_starvation_percentage = 0.15 }
+									set_temp_variable = { pops_amount_temp = pops_amount }
+									divide_temp_variable = { pops_amount_temp = 2000000 }
+									add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+								}
 							}
-						}
-					}
-					if = {
-						limit = {
-							check_variable = { pops_annual_life_goods_fulfilled_percentage < pops_starvation_percentage } #Starvation
 						}
 						if = {
 							limit = {
-								check_variable = { pops_amount > 20 } #Low pop amounts may lead to them not getting goods by default
+								check_variable = { pops_annual_life_goods_fulfilled_percentage < pops_starvation_percentage } #Starvation
 							}
-							set_temp_variable = { pops_starvation_death_amount_temp = pops_amount }
-							divide_temp_variable = { pops_starvation_death_amount_temp = 100 }
-							multiply_temp_variable = { pops_starvation_death_amount_temp = global.pops_maximum_starvation_death_rate }
-							divide_temp_variable = { pops_starvation_death_amount_temp = 12 }
+							if = {
+								limit = {
+									check_variable = { pops_amount > 20 } #Low pop amounts may lead to them not getting goods by default
+								}
+								set_temp_variable = { pops_starvation_death_amount_temp = pops_amount }
+								divide_temp_variable = { pops_starvation_death_amount_temp = 100 }
+								multiply_temp_variable = { pops_starvation_death_amount_temp = global.pops_maximum_starvation_death_rate }
+								divide_temp_variable = { pops_starvation_death_amount_temp = 12 }
 
-							set_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
-							subtract_from_temp_variable = { percentage_applied_temp = pops_annual_life_goods_fulfilled_percentage }
-							divide_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
-							multiply_temp_variable = { pops_starvation_death_amount_temp = percentage_applied_temp }
-							add_to_variable = { pops_other_death_amount = pops_starvation_death_amount_temp }
+								set_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
+								subtract_from_temp_variable = { percentage_applied_temp = pops_annual_life_goods_fulfilled_percentage }
+								divide_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
+								multiply_temp_variable = { pops_starvation_death_amount_temp = percentage_applied_temp }
+								add_to_variable = { pops_other_death_amount = pops_starvation_death_amount_temp }
+							}
 						}
-					}
 
-					set_variable = { pops_net_change_amount = pops_natural_birth_amount }
-					subtract_from_variable = { pops_net_change_amount = pops_natural_death_amount }
-					subtract_from_variable = { pops_net_change_amount = pops_accidents_death_amount }
-					subtract_from_variable = { pops_net_change_amount = pops_crime_death_amount }
-					subtract_from_variable = { pops_net_change_amount = pops_other_death_amount }
+						set_variable = { pops_net_change_amount = pops_natural_birth_amount }
+						subtract_from_variable = { pops_net_change_amount = pops_natural_death_amount }
+						subtract_from_variable = { pops_net_change_amount = pops_accidents_death_amount }
+						subtract_from_variable = { pops_net_change_amount = pops_crime_death_amount }
+						subtract_from_variable = { pops_net_change_amount = pops_other_death_amount }
 
-					add_to_variable = { pops_amount = pops_net_change_amount }
+						add_to_variable = { pops_amount = pops_net_change_amount }
+					#
 
 					#Pop Promotions/Demotions
 						set_variable = { rgo_promotion_demotion_change = 0 }
@@ -4816,12 +4829,102 @@
 								}
 							}
 						}
+
+						set_variable = { rgos_earnings_per_capita = rgos_earnings }
+						divide_variable = { rgos_earnings_per_capita = rgos_workforce_amount }
+
+						set_variable = { craftsmen_earnings_per_capita = craftsmen_earnings }
+						divide_variable = { craftsmen_earnings_per_capita = craftsmen_workforce_amount }
+
+						set_temp_variable = { craftsmen_earnings_per_capita_temp = craftsmen_earnings_per_capita }
+						multiply_temp_variable = { craftsmen_earnings_per_capita_temp = 1.5 }
+						if = {
+							limit = {
+								check_variable = { craftsmen_earnings_per_capita_temp > rgos_earnings_per_capita }
+								check_variable = { craftsmen_percentage < 100 }
+								check_variable = { rgos_percentage > 0 }
+							}
+							#RGOs Promote into Craftsmen
+							add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+							add_to_variable = { rgos_percentage = -0.01 }
+							add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+							add_to_variable = { craftsmen_percentage = 0.01 }
+
+							multiply_temp_variable = { craftsmen_earnings_per_capita_temp = 1.25 }
+							if = {
+								limit = {
+									check_variable = { craftsmen_earnings_per_capita_temp > rgos_earnings_per_capita }
+									check_variable = { craftsmen_percentage < 100 }
+									check_variable = { rgos_percentage > 0 }
+								}
+								#RGOs Promote into Craftsmen
+								add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+								add_to_variable = { rgos_percentage = -0.01 }
+								add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+								add_to_variable = { craftsmen_percentage = 0.01 }
+
+								multiply_temp_variable = { craftsmen_earnings_per_capita_temp = 1.25 }
+								if = {
+									limit = {
+										check_variable = { craftsmen_earnings_per_capita_temp > rgos_earnings_per_capita }
+										check_variable = { craftsmen_percentage < 100 }
+										check_variable = { rgos_percentage > 0 }
+									}
+									#RGOs Promote into Craftsmen
+									add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+									add_to_variable = { rgos_percentage = -0.01 }
+									add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+									add_to_variable = { craftsmen_percentage = 0.01 }
+
+									multiply_temp_variable = { craftsmen_earnings_per_capita_temp = 1.25 }
+									if = {
+										limit = {
+											check_variable = { craftsmen_earnings_per_capita_temp > rgos_earnings_per_capita }
+											check_variable = { craftsmen_percentage < 100 }
+											check_variable = { rgos_percentage > 0 }
+										}
+										#RGOs Promote into Craftsmen
+										add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+										add_to_variable = { rgos_percentage = -0.01 }
+										add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+										add_to_variable = { craftsmen_percentage = 0.01 }
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = { rgos_earnings_per_capita > craftsmen_earnings_per_capita }
+								check_variable = { rgos_percentage < 100 }
+								check_variable = { craftsmen_percentage > 0 }
+							}
+							#Craftsmen Demote into RGOs
+							add_to_variable = { rgo_promotion_demotion_change = 0.01 }
+							add_to_variable = { rgos_percentage = 0.01 }
+							add_to_variable = { craftsmen_promotion_demotion_change = -0.01 }
+							add_to_variable = { craftsmen_percentage = -0.01 }
+
+							set_temp_variable = { rgos_earnings_per_capita_temp = rgos_earnings_per_capita }
+							multiply_temp_variable = { rgos_earnings_per_capita_temp = 1.25 }
+							if = {
+								limit = {
+									check_variable = { rgos_earnings_per_capita_temp > craftsmen_earnings_per_capita }
+									check_variable = { rgos_percentage < 100 }
+									check_variable = { craftsmen_percentage > 0 }
+								}
+								#Craftsmen Demote into RGOs
+								add_to_variable = { rgo_promotion_demotion_change = 0.01 }
+								add_to_variable = { rgos_percentage = 0.01 }
+								add_to_variable = { craftsmen_promotion_demotion_change = -0.01 }
+								add_to_variable = { craftsmen_percentage = -0.01 }
+							}
+						}
 					#
 				#
 			}
 
 			#National Bank
-				set_variable = { national_bank_amount_k = 0 }
+				national_bank_update = yes
 			#
 
 			set_variable = { private_factory_amount = 0 }
@@ -4871,31 +4974,39 @@
 				#
 
 				#Infra Modifiers
+					set_temp_variable = { infra_maintenance_fulfilled_temp = infrastructure_industrial_goods_fulfilled_percentage }
+					add_to_temp_variable = { infra_maintenance_fulfilled_temp = 1 }
+					divide_temp_variable = { infra_maintenance_fulfilled_temp = 2 }
+
 					set_variable = { infrastructure_rgo_output_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_rgo_output_modifier = global.infrastructure_rgo_output_modifier }
-					multiply_variable = { infrastructure_rgo_output_modifier = infrastructure_industrial_goods_fulfilled_percentage }
+					multiply_variable = { infrastructure_rgo_output_modifier = infra_maintenance_fulfilled_temp }
 
 					set_variable = { infrastructure_factory_throughput_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_factory_throughput_modifier = global.infrastructure_factory_throughput_modifier }
-					multiply_variable = { infrastructure_factory_throughput_modifier = infrastructure_industrial_goods_fulfilled_percentage }
+					multiply_variable = { infrastructure_factory_throughput_modifier = infra_maintenance_fulfilled_temp }
 
 					set_variable = { infrastructure_build_cost_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_build_cost_modifier = global.infrastructure_build_cost_modifier }
-					multiply_variable = { infrastructure_build_cost_modifier = infrastructure_industrial_goods_fulfilled_percentage }
+					multiply_variable = { infrastructure_build_cost_modifier = infra_maintenance_fulfilled_temp }
 
-					set_variable = { infrastructure_transport_cost_modifier = infrastructure_level }
-					multiply_variable = { infrastructure_transport_cost_modifier = global.infrastructure_transport_cost_modifier }
+					set_variable = { infrastructure_transport_cost_modifier = 1 }
+					subtract_from_variable = { infrastructure_transport_cost_modifier = PREV.tech_transport_cost }
+					set_temp_variable = { divisor_temp = 1 }
+					subtract_from_temp_variable = { divisor_temp = global.infrastructure_transport_cost_multiplier }
 					set_temp_variable = { reduction_effect_temp = infrastructure_transport_cost_reduction_effect }
 					add_to_temp_variable = { reduction_effect_temp = 1 }
-					multiply_variable = { infrastructure_transport_cost_modifier = reduction_effect_temp }
-					multiply_variable = { infrastructure_transport_cost_modifier = infrastructure_industrial_goods_fulfilled_percentage }
+					multiply_temp_variable = { divisor_temp = reduction_effect_temp }
+					set_variable = { infrastructure_transport_cost_multiplier_per_level = 1 }
+					subtract_from_variable = { infrastructure_transport_cost_multiplier_per_level = divisor_temp }
+					for_loop_effect = {
+						start = 0
+						end = infrastructure_level
+						multiply_variable = { infrastructure_transport_cost_modifier = infrastructure_transport_cost_multiplier_per_level }
+					}
+					subtract_from_variable = { infrastructure_transport_cost_modifier = 1 }
+					multiply_variable = { infrastructure_transport_cost_modifier = infra_maintenance_fulfilled_temp }
 
-					set_variable = { infrastructure_shipping_cost_modifier = infrastructure_level }
-					multiply_variable = { infrastructure_shipping_cost_modifier = global.infrastructure_shipping_cost_modifier }
-					set_temp_variable = { reduction_effect_temp = infrastructure_shipping_cost_reduction_effect }
-					add_to_temp_variable = { reduction_effect_temp = 1 }
-					multiply_variable = { infrastructure_shipping_cost_modifier = reduction_effect_temp }
-					multiply_variable = { infrastructure_shipping_cost_modifier = infrastructure_industrial_goods_fulfilled_percentage }
 				#
 
 				#Valuable Goods Decay
@@ -4903,46 +5014,38 @@
 						limit = {
 							has_state_flag = pops_rgos_valuable_goods_flag
 						}
-						add_to_variable = { pops_rgos_valuable_goods_decay = 1 }
+						subtract_from_variable = { pops_rgos_valuable_goods_decay = 1 }
 						if = {
 							limit = {
-								has_state_flag = pops_rgos_valuable_goods_untapped_flag
-								NOT = { check_variable = { pops_rgos_valuable_goods_decay < global.pops_rgos_valuable_goods_untapped_decay_max }}
+								check_variable = { pops_rgos_valuable_goods_decay < 0 }
 							}
-							subtract_from_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_untapped_decay_max }
-							clr_state_flag = pops_rgos_valuable_goods_untapped_flag
-							set_state_flag = pops_rgos_valuable_goods_plentiful_flag
-						}
-						if = {
-							limit = {
-								has_state_flag = pops_rgos_valuable_goods_plentiful_flag
-								NOT = { check_variable = { pops_rgos_valuable_goods_decay < global.pops_rgos_valuable_goods_plentiful_decay_max }}
-							}
-							subtract_from_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_plentiful_decay_max }
-							clr_state_flag = pops_rgos_valuable_goods_plentiful_flag
-						}
-						if = {
-							limit = {
-								NOT = {
-									OR = {
-										has_state_flag = pops_rgos_valuable_goods_untapped_flag
-										has_state_flag = pops_rgos_valuable_goods_plentiful_flag
-										has_state_flag = pops_rgos_valuable_goods_depleted_flag
-									}
+							if = {
+								limit = {
+									has_state_flag = pops_rgos_valuable_goods_untapped_flag
 								}
-								NOT = { check_variable = { pops_rgos_valuable_goods_decay < global.pops_rgos_valuable_goods_exploited_decay_max }}
+								set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_plentiful_decay_max }
+								clr_state_flag = pops_rgos_valuable_goods_untapped_flag
+								set_state_flag = pops_rgos_valuable_goods_plentiful_flag
 							}
-							subtract_from_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_exploited_decay_max }
-							set_state_flag = pops_rgos_valuable_goods_depleted_flag
-						}
-						if = {
-							limit = {
-								has_state_flag = pops_rgos_valuable_goods_depleted_flag
-								NOT = { check_variable = { pops_rgos_valuable_goods_decay < global.pops_rgos_valuable_goods_depleted_decay_max }}
+							else_if = {
+								limit = {
+									has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+								}
+								set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_exploited_decay_max }
+								clr_state_flag = pops_rgos_valuable_goods_plentiful_flag
 							}
-							clear_variable = pops_rgos_valuable_goods_decay
-							clr_state_flag = pops_rgos_valuable_goods_depleted_flag
-							clr_state_flag = pops_rgos_valuable_goods_flag
+							else_if = {
+								limit = {
+									has_state_flag = pops_rgos_valuable_goods_depleted_flag
+								}
+								clear_variable = pops_rgos_valuable_goods_decay
+								clr_state_flag = pops_rgos_valuable_goods_depleted_flag
+								clr_state_flag = pops_rgos_valuable_goods_flag
+							}
+							else = {
+								set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_depleted_decay_max }
+								set_state_flag = pops_rgos_valuable_goods_depleted_flag
+							}
 						}
 					}
 				#
@@ -5197,18 +5300,8 @@
 
 					#Pop Spending
 					add_to_variable = { pops_spending = pops_goods_spending }
-
-					#National Bank
-					set_temp_variable = { pops_savings_temp = pops_savings }
-					divide_temp_variable = { pops_savings_temp = 1000 }
-					add_to_variable = { PREV.pops_savings_k = pops_savings_temp }
 				#
 			}
-
-			#National Bank
-				set_variable = { national_bank_amount_k = pops_savings_k } #This is in thousands
-				multiply_variable = { national_bank_amount_k = 10 }
-			#
 
 			#Government Debt
 				#How much money can you borrow?
@@ -5221,14 +5314,7 @@
 				set_variable = { national_debt_interest_rate = global.credit_rating_AAA_base_interest_rate } #TODO
 
 				#Expensiveness of debt due to scarcity
-				set_temp_variable = { expensiveness_temp = national_debt }
-				divide_temp_variable = { expensiveness_temp = 1000}
-				set_temp_variable = { total_debt_temp = national_debt }
-				divide_temp_variable = { total_debt_temp = 1000}
-				add_to_temp_variable = { total_debt_temp = borrow_limit_temp }
-				divide_temp_variable = { expensiveness_temp = total_debt_temp }
-				multiply_temp_variable = { expensiveness_temp = global.loan_scarcity_rate }
-				add_to_variable = { national_debt_interest_rate = expensiveness_temp }
+				add_to_variable = { national_debt_interest_rate = national_bank_interest_from_scarcity }
 
 				multiply_variable = { national_debt_interest = national_debt_interest_rate }
 				divide_variable = { national_debt_interest = 12 } #12x for monthly rate instead of yearly.
@@ -5241,28 +5327,11 @@
 						check_variable = { treasury < 0 }
 					}
 
-					set_temp_variable = { borrow_temp = treasury }
-					multiply_temp_variable = { borrow_temp = -1 }
-					
-					#TODO - Credit Rating
-					#Borrow from Locals
-					set_temp_variable = { borrow_temp_k = borrow_temp }
-					divide_temp_variable = { borrow_temp_k = 1000 }
-					add_to_temp_variable = { borrow_temp_k = 0.001 }
-					if = {
-						limit = {
-							check_variable = { borrow_temp_k > national_bank_amount_left_k }
-						}
-						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
-					}
-					subtract_from_variable = { national_bank_amount_left_k = borrow_temp_k }
+					set_temp_variable = { borrow_money_temp = treasury }
+					multiply_temp_variable = { borrow_money_temp = -1 }
+					add_to_temp_variable = { borrow_money_temp = 1 }
 
-					set_temp_variable = { borrow_temp = borrow_temp_k }
-					multiply_temp_variable = { borrow_temp = 1000 }
-					add_to_variable = { debt_to_national_bank = borrow_temp }
-					add_to_variable = { treasury = borrow_temp }
-
-					#Borrow from Foreign Banks
+					borrow_money = yes
 
 					if = {
 						limit = {
@@ -5271,35 +5340,8 @@
 						#Bankruptcy
 					}
 				}
-				#PAYING BACK
-				if = {
-					limit = {
-						check_variable = { treasury > 2 }
-					}
-
-					#Paying back to locals
-					set_temp_variable = { repay_temp = treasury }
-					if = {
-						limit = {
-							check_variable = { repay_temp > debt_to_national_bank }
-						}
-						set_temp_variable = { repay_temp = debt_to_national_bank }
-					}
-					set_temp_variable = { repay_temp_k = repay_temp }
-					divide_temp_variable = { repay_temp_k = 1000 }
-					subtract_from_temp_variable = { repay_temp_k = 0.001 }
-					add_to_variable = { national_bank_amount_left_k = repay_temp_k }
-
-					set_temp_variable = { repay_temp = repay_temp_k }
-					multiply_temp_variable = { repay_temp = 1000 }
-					subtract_from_variable = { debt_to_national_bank = repay_temp }
-					subtract_from_variable = { treasury = repay_temp }
-				}
-
-
-				set_variable = { national_debt = debt_to_national_bank }
-
 			#
+			national_debt_update = yes
 
 			#National Bank Total Interest
 				set_variable = { national_bank_interest_gain = national_debt_interest }
@@ -5425,15 +5467,6 @@
 				#Total Money
 				add_to_variable = { total_money = treasury }
 				add_to_variable = { total_money = national_bank_money }
-
-				#National Bank
-					set_temp_variable = { debt_to_national_bank_temp = debt_to_national_bank }
-					divide_temp_variable = { debt_to_national_bank_temp = 1000 }
-					set_variable = { national_bank_amount_lent_k = debt_to_national_bank_temp }
-
-					set_variable = { national_bank_amount_left_k = national_bank_amount_k }
-					subtract_from_variable = { national_bank_amount_left_k = national_bank_amount_lent_k }
-				#
 			#
 
 			every_controlled_state = {
@@ -5550,7 +5583,7 @@
 
 					#Specialists
 						set_variable =  { global.specialists_percentage = 0.0 }
-						set_variable = { global.pops_specialists_production_bonus = 0.5 }
+						set_variable = { global.pops_specialists_production_bonus = 1 }
 
 					#Professionals
 						set_variable =  { global.professionals_percentage = 0.0 }
@@ -5567,7 +5600,7 @@
 					#RGOs
 						set_variable =  { global.rgos_percentage = 74 }
 						set_variable = { global.pops_rgos_life_goods_base_production = 10 } #Every 100k RGOs
-						set_variable = { global.pops_rgos_raw_goods_base_production = 5 }
+						set_variable = { global.pops_rgos_raw_goods_base_production = 5.5 }
 						set_variable = { global.pops_rgos_valuable_goods_base_production = 10 }
 
 						set_variable = { global.pops_rgos_cash_crops_output_multiplier = 1.2 } #Applies to Life/Raw Goods
@@ -5580,8 +5613,8 @@
 						set_variable = { global.pops_rgos_valuable_goods_exploited_output_multiplier = 3 }
 						set_variable = { global.pops_rgos_valuable_goods_depleted_output_multiplier = 1 }
 
-						set_variable = { global.pops_rgos_valuable_goods_untapped_decay_max = 60 } #How many months until the valuable goods decays?
-						set_variable = { global.pops_rgos_valuable_goods_plentiful_decay_max = 240 }
+						set_variable = { global.pops_rgos_valuable_goods_untapped_decay_max = 120 } #How many months until the valuable goods decays?
+						set_variable = { global.pops_rgos_valuable_goods_plentiful_decay_max = 480 }
 						set_variable = { global.pops_rgos_valuable_goods_exploited_decay_max = 600 }
 						set_variable = { global.pops_rgos_valuable_goods_depleted_decay_max = 300 }
 
@@ -5615,22 +5648,22 @@
 					set_variable = { global.factory_everyday_goods_base_production = 20 } #These are for every 100k employees
 					set_variable = { global.factory_everyday_goods_raw_goods_base_need = 0.5 } #Per Good Produced
 					#Construction
-						set_variable = { global.factory_everyday_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
-						set_variable = { global.factory_everyday_goods_construction_base_speed = 2 } #How fast construction is
+						set_variable = { global.factory_everyday_goods_construction_industrial_goods_base_need = 60 } #Per 100K Employees per Factory
+						set_variable = { global.factory_everyday_goods_construction_base_speed = 4 } #How fast construction is
 
 				#Luxury Goods Factory
 					set_variable = { global.factory_luxury_goods_base_production = 10 }
 					set_variable = { global.factory_luxury_goods_raw_goods_base_need = 0.5 }
 					#Construction
-						set_variable = { global.factory_luxury_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
-						set_variable = { global.factory_luxury_goods_construction_base_speed = 2 } #How fast construction is
+						set_variable = { global.factory_luxury_goods_construction_industrial_goods_base_need = 60 } #Per 100K Employees per Factory
+						set_variable = { global.factory_luxury_goods_construction_base_speed = 4 } #How fast construction is
 
 				#Industrial Goods Factory
 					set_variable = { global.factory_industrial_goods_base_production = 10 }
 					set_variable = { global.factory_industrial_goods_raw_goods_base_need = 1 }
 					#Construction
-						set_variable = { global.factory_industrial_goods_construction_industrial_goods_base_need = 45 } #Per 100K Employees per Factory
-						set_variable = { global.factory_industrial_goods_construction_base_speed = 2 } #How fast construction is
+						set_variable = { global.factory_industrial_goods_construction_industrial_goods_base_need = 90 } #Per 100K Employees per Factory
+						set_variable = { global.factory_industrial_goods_construction_base_speed = 4 } #How fast construction is
 
 			#
 			#Resources
@@ -5665,19 +5698,19 @@
 					set_variable = { global.industrial_goods_base_price = 2 }
 			#
 			#Infrastructure
-				set_variable = { global.infrastructure_industrial_goods_base_need = 0.005 } #Per level
+				set_variable = { global.infrastructure_industrial_goods_base_need = 0.0 } #Per level
 				set_variable = { global.infrastructure_industrial_goods_base_need_increase_per_level = 0.005 }
 				set_variable = { global.infrastructure_industrial_goods_base_need_squared = 0.005 } #level^2 * this
+				set_variable = { global.infrastructure_industrial_goods_base_need_cubed = 0.001 } #level^3 * this
 
-				set_variable = { global.infrastructure_construction_industrial_goods_base_need = 20 } #Per level
-				set_variable = { global.infrastructure_construction_industrial_goods_base_need_increase_per_level = 2 } #Per level
-				set_variable = { global.infrastructure_construction_base_speed = 2 } #How fast construction is
+				set_variable = { global.infrastructure_construction_industrial_goods_base_need = 40 } #Per level
+				set_variable = { global.infrastructure_construction_industrial_goods_base_need_increase_per_level = 4 } #Per level
+				set_variable = { global.infrastructure_construction_base_speed = 5 } #How fast construction is
 
 				set_variable = { global.infrastructure_rgo_output_modifier = 0.025 } #per level
 				set_variable = { global.infrastructure_factory_throughput_modifier = 0.025 } #per level
 				set_variable = { global.infrastructure_build_cost_modifier = -0.01 } #per level
-				set_variable = { global.infrastructure_transport_cost_modifier = -0.02 } #per level
-				set_variable = { global.infrastructure_shipping_cost_modifier = -0.01 } #per level
+				set_variable = { global.infrastructure_transport_cost_multiplier = 0.95 } #per level
 
 				set_variable = { global.infrastructure_crumbling_threshold = 0.25 } #Below this % fulfillment of industrial goods, infrastructure_crumbling_ticks increases by 1. If above, it is reduced by 1
 				set_variable = { global.infrastructure_crumbling_ticks_bar = 36 } #How many ticks is needed until you lose an infra
@@ -5837,6 +5870,7 @@
 
 			add_to_array = { global.valuable_goods_states = 482 }
 			add_to_array = { global.valuable_goods_states = 485 }
+			485 = { set_state_flag = pops_rgos_valuable_goods_depleted_flag }
 
 			#Central America/Carribean
 			add_to_array = { global.raw_goods_states = 1155 }
@@ -5944,6 +5978,37 @@
 		for_each_scope_loop = {
 			array = global.valuable_goods_states
 			set_state_flag = pops_rgos_valuable_goods_flag
+			
+			if = {
+				limit = {
+					has_state_flag = pops_rgos_valuable_goods_untapped_flag
+				}
+				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_untapped_decay_max }
+			}
+			if = {
+				limit = {
+					has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+				}
+				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_plentiful_decay_max }
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_state_flag = pops_rgos_valuable_goods_untapped_flag
+							has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+							has_state_flag = pops_rgos_valuable_goods_depleted_flag
+						}
+					}
+				}
+				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_exploited_decay_max }
+			}
+			if = {
+				limit = {
+					has_state_flag = pops_rgos_valuable_goods_depleted_flag
+				}
+				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_depleted_decay_max }
+			}
 		}
 		for_each_scope_loop = {
 			array = global.cash_crops_states
@@ -6012,6 +6077,14 @@
 			set_variable = { national_bank_amount_lent_k = 0 }
 			set_variable = { national_bank_interest_rate = global.default_interest_rate }
 			set_variable = { national_bank_interest_income = 0 }
+
+			set_variable = { income_tax_upper_strata_percentage = 1 }
+			set_variable = { income_tax_middle_strata_percentage = 1 }
+			set_variable = { income_tax_lower_strata_percentage = 1 }
+
+			set_variable = { military_spending_percentage = 100 }
+			set_variable = { intelligence_spending_percentage = 100 }
+			set_variable = { construction_spending_percentage = 100 }
 			
 
 			reset_supply = yes
@@ -6037,8 +6110,6 @@
 					
 					set_variable = { industrial_goods_trade_amount = 0 }
 					set_variable = { industrial_goods_trade_value = 0 }
-
-					clear_variable = pops_rgos_valuable_goods_decay
 
 					set_variable = { pops_earnings = 0 }
 					set_variable = { pops_spending = 0 }
@@ -8428,6 +8499,12 @@
 			multiply_temp_variable = { infra_need_temp = global.infrastructure_industrial_goods_base_need_squared }
 			add_to_variable = { infrastructure_industrial_goods_need = infra_need_temp }
 
+			set_temp_variable = { infra_need_temp = infrastructure_level }
+			multiply_temp_variable = { infra_need_temp = infrastructure_level }
+			multiply_temp_variable = { infra_need_temp = global.infrastructure_industrial_goods_base_need_cubed }
+			multiply_temp_variable = { infra_need_temp = infrastructure_level }
+			add_to_variable = { infrastructure_industrial_goods_need = infra_need_temp }
+
 			set_temp_variable = { modifier_temp = infrastructure_maintenance_cost_effect }
 			add_to_temp_variable = { modifier_temp = 1 }
 			multiply_variable = { infrastructure_industrial_goods_need = modifier_temp }
@@ -8625,6 +8702,49 @@
 		add_to_variable = { update_state_econ_window = 1 }
 	}
 
+	
+	national_bank_update = {
+		#Amount of money that can be loaned
+			set_variable = { pops_savings_k = 0 }
+			every_controlled_state = {
+				set_temp_variable = { pops_savings_temp = pops_savings }
+				divide_temp_variable = { pops_savings_temp = 1000 }
+				add_to_variable = { PREV.pops_savings_k = pops_savings_temp }
+			}
+			set_variable = { national_bank_amount_k = pops_savings_k }
+			multiply_variable = { national_bank_amount_k = 10 }
+		#
+
+		#Money scarcity
+			set_variable = { national_bank_amount_lent_k = 0 }
+
+			#Go through borrowers to get loan amounts - TODO
+				#Home Country
+				set_temp_variable = { debt_to_national_bank_temp = debt_to_national_bank }
+				divide_temp_variable = { debt_to_national_bank_temp = 1000 }
+				set_variable = { national_bank_amount_lent_k = debt_to_national_bank_temp }
+
+			#
+
+			set_variable = { national_bank_amount_left_k = national_bank_amount_k }
+			subtract_from_variable = { national_bank_amount_left_k = national_bank_amount_lent_k }
+
+			set_variable = { national_bank_interest_from_scarcity = national_bank_amount_lent_k }
+			divide_variable = { national_bank_interest_from_scarcity = national_bank_amount_k }
+			multiply_variable = { national_bank_interest_from_scarcity = global.loan_scarcity_rate }
+		#
+	}
+	national_debt_update = {
+		set_variable = { national_debt = debt_to_national_bank }
+
+		set_variable = { national_debt_max_repayment_amount = treasury }
+		if = {
+			limit = { 
+				check_variable = { national_debt_max_repayment_amount > national_debt }
+			}
+			set_variable = { national_debt_max_repayment_amount = national_debt }
+		}
+	}
 
 	taxes_update = {
 		#Country Scope
@@ -9055,6 +9175,23 @@
 		set_variable = { predicted_net_budget = revenue }
 		subtract_from_variable = { predicted_net_budget = discretionary_spending }
 		subtract_from_variable = { predicted_net_budget = mandatory_spending }
+	}
+
+	close_repay_debt_window = {
+		#Country Scope
+		#Closes the repay debt window and resets the repayment values
+
+		clr_country_flag = country_repay_debt_view_open
+		set_variable = { debt_repayment_amount = 0 }
+		set_variable = { debt_repayment_country = 0 }
+	}
+	close_borrow_money_window = {
+		#Country Scope
+		#Closes the borrow money window and resets the values
+
+		clr_country_flag = country_borrow_money_view_open
+		set_variable = { borrow_money_amount = 0 }
+		set_variable = { borrow_money_country = 0 }
 	}
 #
 
@@ -9840,6 +9977,89 @@
 			}
 		}
 		spending_update = yes
+	}
+
+	borrow_money = { #TODO - country_temp
+		#Scope: Country
+		#Borrows money. Automatically caps at the maximum amount you can borrow.
+		#INPUT:
+			#borrow_money_temp - Amount of money to borrow. Non-integer amounts are accepted but integers are preferable
+			#country_temp - Which country to specifically borrow from, set to 0 to borrow money from any country
+		
+		if = {
+			limit = {
+				check_variable = { borrow_money_temp > 0 }
+			}
+
+			set_temp_variable = { borrow_temp = borrow_money_temp }
+			subtract_from_temp_variable = { borrow_temp = 0.5 }
+			round_temp_variable = borrow_temp
+			
+			#TODO - Credit Rating
+			#Borrow from Locals
+			set_temp_variable = { borrow_temp_k = borrow_temp }
+			divide_temp_variable = { borrow_temp_k = 1000 }
+			if = {
+				limit = {
+					check_variable = { borrow_temp_k > national_bank_amount_left_k }
+				}
+				set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+			}
+			subtract_from_variable = { national_bank_amount_left_k = borrow_temp_k }
+
+			set_temp_variable = { borrow_temp = borrow_temp_k }
+			multiply_temp_variable = { borrow_temp = 1000 }
+			add_to_variable = { debt_to_national_bank = borrow_temp }
+			add_to_variable = { treasury = borrow_temp }
+
+			#Borrow from Foreign Banks - TODO
+
+			national_debt_update = yes
+			national_bank_update = yes
+		}
+	}
+	repay_debt = { #TODO - country_temp
+		#Scope: Country
+		#Repays oustanding debt. Automatically caps at treasury amount.
+		#INPUT:
+			#debt_repayment_temp - Amount of debt to repay. Non-integer amounts are accepted but integers are preferable
+			#country_temp - Which country to specifically repay to, set to 0 to repay debts owed to any country
+			#			  - If the repay amount is higher than the owed amount, only the owed amount is payed. The excess is not payed out further
+		
+		if = {
+			limit = {
+				check_variable = { treasury > 1 }
+				check_variable = { debt_repayment_temp > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { debt_repayment_temp > treasury }
+				}
+				set_temp_variable = { debt_repayment_temp = treasury }
+			}
+			subtract_from_temp_variable = { debt_repayment_temp = 0.5 }
+			round_temp_variable = debt_repayment_temp
+
+			#Paying back to locals
+			set_temp_variable = { repay_temp = debt_repayment_temp }
+			if = {
+				limit = {
+					check_variable = { repay_temp > debt_to_national_bank }
+				}
+				set_temp_variable = { repay_temp = debt_to_national_bank }
+			}
+			set_temp_variable = { repay_temp_k = repay_temp }
+			divide_temp_variable = { repay_temp_k = 1000 }
+			add_to_variable = { national_bank_amount_left_k = repay_temp_k }
+
+			set_temp_variable = { repay_temp = repay_temp_k }
+			multiply_temp_variable = { repay_temp = 1000 }
+			subtract_from_variable = { debt_to_national_bank = repay_temp }
+			subtract_from_variable = { treasury = repay_temp }
+
+			national_debt_update = yes
+			national_bank_update = yes
+		}
 	}
 #
 
@@ -11382,6 +11602,7 @@
 		#Set to 0
 			#General Modifiers
 				set_variable = { build_cost_effect = 0 }
+				set_variable = { build_speed_effect = 0 }
 
 				set_variable = { transport_cost_effect = 0 }
 				set_variable = { shipping_cost_effect = 0 }
@@ -11395,6 +11616,7 @@
 			#Factory Modifiers
 				set_variable = { factory_size_effect = 0 }
 				set_variable = { factory_build_cost_effect = 0 }
+				set_variable = { factory_build_speed_effect = 0 }
 
 				set_variable = { factory_goods_output_effect = 0 }
 				set_variable = { factory_everyday_goods_output_effect = 0 }
@@ -11418,6 +11640,7 @@
 			#
 			#Infrastructure Modifiers
 				set_variable = { infrastructure_build_cost_effect = 0 }
+				set_variable = { infrastructure_build_speed_effect = 0 }
 				set_variable = { infrastructure_maintenance_cost_effect = 0 }
 				set_variable = { infrastructure_transport_cost_reduction_effect = 0 }
 				set_variable = { infrastructure_shipping_cost_reduction_effect = 0 }
@@ -11428,7 +11651,6 @@
 				#Infrastructure
 				add_to_variable = { build_cost_effect = infrastructure_build_cost_modifier }
 				add_to_variable = { transport_cost_effect = infrastructure_transport_cost_modifier }
-				add_to_variable = { shipping_cost_effect = infrastructure_shipping_cost_modifier }
 			#
 			#RGO Modifiers
 				#Pops
@@ -11460,6 +11682,7 @@
 			controller = {
 				#General Modifiers
 				add_to_variable = { PREV.build_cost_effect = tech_build_cost }
+				add_to_variable = { PREV.build_speed_effect = tech_build_speed }
 
 				add_to_variable = { PREV.transport_cost_effect = tech_transport_cost }
 
@@ -11472,6 +11695,7 @@
 				#Factory Modifiers
 				add_to_variable = { PREV.factory_size_effect = tech_factory_size }
 				add_to_variable = { PREV.factory_build_cost_effect = tech_factory_build_cost }
+				add_to_variable = { PREV.factory_build_speed_effect = tech_factory_build_speed }
 
 				add_to_variable = { PREV.factory_goods_output_effect = tech_factory_goods_output }
 				add_to_variable = { PREV.factory_everyday_goods_effect = tech_factory_everyday_goods_output }
@@ -11492,6 +11716,7 @@
 
 				#Infrastructure Modifiers
 				add_to_variable = { PREV.infrastructure_build_cost_effect = tech_infrastructure_build_cost }
+				add_to_variable = { PREV.infrastructure_build_speed_effect = tech_infrastructure_build_speed }
 				add_to_variable = { PREV.infrastructure_maintenance_cost_effect = tech_infrastructure_maintenance_cost }
 				add_to_variable = { PREV.infrastructure_transport_cost_reduction_effect = tech_infrastructure_transport_cost_reduction }
 				add_to_variable = { PREV.infrastructure_shipping_cost_reduction_effect = tech_infrastructure_shipping_cost_reduction }
@@ -11501,6 +11726,10 @@
 			add_to_variable = { factory_build_cost_effect = build_cost_effect }
 			add_to_variable = { infrastructure_build_cost_effect = build_cost_effect }
 			clear_variable = build_cost_effect
+
+			add_to_variable = { factory_build_speed_effect = build_speed_effect }
+			add_to_variable = { infrastructure_build_speed_effect = build_speed_effect }
+			clear_variable = build_speed_effect
 
 			add_to_variable = { raw_goods_output_effect = rgo_output_effect }
 			add_to_variable = { life_goods_output_effect = rgo_output_effect }
@@ -11604,7 +11833,7 @@
 					}
 				}
 			#
-			#Locomotives
+			#Steam Locomotives
 				if = {
 					limit = {
 						has_tech = steam_locomotive
@@ -11653,6 +11882,48 @@
 								#+10% Infrastructure Transport Cost Reduction
 								add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.10 }
 								
+							}
+						}
+					}
+				}
+			#
+			#Diesel Locomotives
+				if = {
+					limit = {
+						has_tech = diesel_locomotive_1
+					}
+					#+10% Infrastructure Transport Cost Reduction
+					add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.15 }
+					 
+					if = {
+						limit = {
+							has_tech = diesel_locomotive_2
+						}
+						#+10% Infrastructure Transport Cost Reduction
+						add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.15 }
+						
+						if = {
+							limit = {
+								has_tech = diesel_locomotive_3
+							}
+							#+10% Infrastructure Transport Cost Reduction
+							add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.15 }
+							
+							if = {
+								limit = {
+									has_tech = diesel_locomotive_4
+								}
+								#+10% Infrastructure Transport Cost Reduction
+								add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.15 }
+								
+								if = {
+									limit = {
+										has_tech = diesel_locomotive_5
+									}
+									#+10% Infrastructure Transport Cost Reduction
+									add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.15 }
+									
+								}
 							}
 						}
 					}

@@ -79,6 +79,14 @@ spriteTypes = {
 		name = "GFX_gdp_icon"
 		texturefile = "gfx/interface/gdp_icon.dds"
 	}
+	spriteType = {
+		name = "GFX_powerplant_icon"
+		texturefile = "gfx/interface/powerplant_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_electricity_icon"
+		texturefile = "gfx/interface/electricity_icon.dds"
+	}
 
 	spriteType = {
 		name = "GFX_worker_organization_icon"
