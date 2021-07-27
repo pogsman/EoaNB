@@ -937,6 +937,48 @@ defined_text = {
     }
 #
 
+#National Bank
+    #Borrowing Money
+        defined_text = {
+            name = GetBorrowMoneyIntroduction
+            text = {
+                trigger = {
+                    check_variable = { ROOT.borrow_money_country = THIS }
+                }
+                localization_key = borrow_money_country_will_borrow
+            }
+            text = {
+                localization_key = borrow_money_country_borrow
+            }
+        }
+        defined_text = {
+            name = GetBorrowMoneyAnyIntroduction
+            text = {
+                trigger = {
+                    check_variable = { ROOT.borrow_money_country = 0 }
+                }
+                localization_key = borrow_money_country_will_borrow
+            }
+            text = {
+                localization_key = borrow_money_country_borrow
+            }
+        }
+
+        defined_text = {
+            name = GetBorrowMoneyBank
+            text = {
+                trigger = {
+                    tag = ROOT
+                }
+                localization_key = borrow_money_country_foreign_bank
+            }
+            text = {
+                localization_key = borrow_money_country_domestic_bank
+            }
+        }
+    #
+#
+
 #RGOs
     defined_text = {
         name = GetRGOsOutputTitle

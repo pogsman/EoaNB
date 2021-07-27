@@ -1872,6 +1872,11 @@ spriteTypes = {
 	
 
 	#### FRENCH EVENTS ####
+	
+	spriteType = {
+		name = "GFX_report_event_iii_france_republic_proclaimed"
+		texturefile = "gfx/event_pictures/france/report_event_iii_france_republic_proclaimed.dds"
+	}
 
 	spriteType = {
 		name = "GFX_report_event_nap_france_amnesty"
@@ -3908,12 +3913,28 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/japan/report_event_shrine.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_plague"
+		name = "GFX_report_event_plague_victorian"
 		texturefile = "gfx/event_pictures/generic/report_event_plague.dds"
 	}
 	spriteType = {
-		name = "GFX_news_event_plague"
-		texturefile = "gfx/event_pictures/generic/news_event_plague.dds"
+		name = "GFX_news_event_plague_victorian"
+		texturefile = "gfx/event_pictures/generic/news_event_plague_victorian.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_kokera_festival"
+		texturefile = "gfx/event_pictures/japan/report_event_kokera_festival.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_kokera_crematoriums"
+		texturefile = "gfx/event_pictures/japan/report_event_kokera_crematoriums.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_spirit_kokera"
+		texturefile = "gfx/event_pictures/japan/report_event_spirit_kokera.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_plague_japanese_report"
+		texturefile = "gfx/event_pictures/japan/report_event_japanese_report.dds"
 	}
 	
 	## Bolivian Events ##
@@ -3932,5 +3953,61 @@ spriteTypes = {
 		name = "GFX_MOR_Muhammad"
 		texturefile = "gfx/event_pictures/morocco/GFX_Muhammad.dds"
 	}
-	
+	## Native Events ##
+	spriteType = {
+		name = "GFX_native_industrial_1"
+		texturefile = "gfx/event_pictures/na_n/event_industrial_1.dds"
+	}
+	spriteType = {
+		name = "GFX_native_industrial_2"
+		texturefile = "gfx/event_pictures/na_n/event_industrial_2.dds"
+	}
+	spriteType = {
+		name = "GFX_native_political_1"
+		texturefile = "gfx/event_pictures/na_n/event_political_1.dds"
+	}
+	spriteType = {
+		name = "GFX_native_political_2"
+		texturefile = "gfx/event_pictures/na_n/event_political_2.dds"
+	}
+	spriteType = {
+		name = "GFX_native_political_3"
+		texturefile = "gfx/event_pictures/na_n/event_political_3.dds"
+	}
+	spriteType = {
+		name = "GFX_native_political_4"
+		texturefile = "gfx/event_pictures/na_n/event_political_4.dds"
+	}
+	spriteType = {
+		name = "GFX_native_scientific_1"
+		texturefile = "gfx/event_pictures/na_n/event_scientific_1.dds"
+	}
+	spriteType = {
+		name = "GFX_native_scientific_2"
+		texturefile = "gfx/event_pictures/na_n/event_scientific_2.dds"
+	}
+	spriteType = {
+		name = "GFX_native_scientific_3"
+		texturefile = "gfx/event_pictures/na_n/event_scientific_3.dds"
+	}
+	spriteType = {
+		name = "GFX_native_scientific_4"
+		texturefile = "gfx/event_pictures/na_n/event_scientific_4.dds"
+	}
+	spriteType = {
+		name = "GFX_event_escalation_usa"
+		texturefile = "gfx/event_pictures/na_n/event_escalation_usa.dds"
+	}
+	spriteType = {
+		name = "GFX_event_escalation_uta"
+		texturefile = "gfx/event_pictures/na_n/event_escalation_uta.dds"
+	}
+	spriteType = {
+		name = "GFX_event_escalation_can"
+		texturefile = "gfx/event_pictures/na_n/event_escalation_can.dds"
+	}
+	spriteType = {
+		name = "GFX_event_escalation_csa"
+		texturefile = "gfx/event_pictures/na_n/event_escalation_csa.dds"
+	}
 }

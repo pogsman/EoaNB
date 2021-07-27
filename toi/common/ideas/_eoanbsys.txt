@@ -20,18 +20,8 @@ ideas = {
 				}
 			}
 
-						EOANBSYS_spirit_pandemics = {
-				picture = scourge_of_malaria
-
-				allowed = { always = yes }
-
-				modifier = {
-					monthly_population = -1
-				}
-			}
-
 			EOANBSYS_spirit_pandemics_quarantine_soft = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 
@@ -46,7 +36,7 @@ ideas = {
 				}
 			}
 			EOANBSYS_spirit_pandemics_quarantine_medium = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 
@@ -61,7 +51,7 @@ ideas = {
 				}
 			}
 			EOANBSYS_spirit_pandemics_quarantine_strong = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 
@@ -73,6 +63,20 @@ ideas = {
 					production_factory_max_efficiency_factor = -0.6
 
 					custom_modifier_tooltip = EOANBSYS_pandemic_disease_transmission_minus_fourty_percent_tt
+				}
+			}
+	}
+
+	hidden_ideas = {
+		# War
+			EOANBSYS_spirit_war_total_war = {
+				allowed = { always = yes }
+
+				available = { has_war = yes }
+
+				modifier = {
+					surrender_limit = 1
+					war_support_factor = 0.25
 				}
 			}
 	}

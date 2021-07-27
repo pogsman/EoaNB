@@ -15,7 +15,7 @@
 
   treasury_amount_loc:0 "[?treasury][GetCurrencyTextIcon]"
   income_amount_loc:0 "[?net_budget|+=][GetCurrencyTextIcon]"
-  income_amount_tt:0 "§YBalance Sheet:§!\nNet Income: [?net_budget|+=][GetCurrencyTextIcon] \n\nRevenue: §G+[?actual_revenue]§![GetCurrencyTextIcon] \n   - Income Taxes: §G+[?actual_income_tax_revenue]§![GetCurrencyTextIcon] \n   - Tariffs: §G+[?actual_tariff_revenue]§![GetCurrencyTextIcon] \n\nSpending: §R-[?actual_spending]§![GetCurrencyTextIcon] \n   - Construction: §R-[?actual_construction_spending]§![GetCurrencyTextIcon] \n   - Subsidies: §R-[?actual_subsidy_expense]§![GetCurrencyTextIcon] \n      - Trade Subsidies: §R-[?actual_trade_subsidy_spending]§![GetCurrencyTextIcon] \n      - Industrial Subsidies: §R-[?actual_industrial_spending]§![GetCurrencyTextIcon] \n      - Infrastructure Subsidies: §R-[?actual_infrastructure_spending]§![GetCurrencyTextIcon] \n"
+  income_amount_tt:0 "§YBalance Sheet:§!\nNet Income: [?net_budget|+=][GetCurrencyTextIcon] \n\nRevenue: §G+[?actual_revenue]§![GetCurrencyTextIcon] \n   - Income Taxes: §G+[?actual_income_tax_revenue]§![GetCurrencyTextIcon] \n   - Tariffs: §G+[?actual_tariff_revenue]§![GetCurrencyTextIcon] \n\nSpending: §R-[?actual_spending]§![GetCurrencyTextIcon] \n   - Construction: §R-[?actual_construction_spending]§![GetCurrencyTextIcon] \n   - Subsidies: §R-[?actual_subsidy_expense]§![GetCurrencyTextIcon] \n      - Trade Subsidies: §R-[?actual_trade_subsidy_spending]§![GetCurrencyTextIcon] \n      - Industrial Subsidies: §R-[?actual_industrial_spending]§![GetCurrencyTextIcon] \n      - Infrastructure Subsidies: §R-[?actual_infrastructure_spending]§![GetCurrencyTextIcon] \n   - Administration: §R-[?actual_administration_spending]§![GetCurrencyTextIcon] \n   - Interest: §R-[?national_debt_interest]§![GetCurrencyTextIcon]"
 
   #State Economy Screen
     state_economy_button_tt:0 "State Economy Screen"
@@ -37,7 +37,7 @@
 
       pops_savings_loc:0 "§Y[?pops_savings|3]§![GetCurrencyTextIconState]"
       pops_debt_loc:0 "§R[?pops_debt|3]§![GetCurrencyTextIconState]"
-      pops_bank_tt:0 "§YLocal Bank:§!\nCurrent Savings: §Y[?pops_savings|3]§![GetCurrencyTextIconState] \n   - Deposits: §G+[?pops_savings_deposits|3]§![GetCurrencyTextIconState] \n   - Withdrawals: §R-[?pops_savings_withdrawals|3]§![GetCurrencyTextIconState] \n\nDebt: §R[?pops_debt|3]§![GetCurrencyTextIconState]"
+      pops_bank_tt:0 "§YLocal Bank:§!\nCurrent Savings: §Y[?pops_savings|3]§![GetCurrencyTextIconState] \n   - Deposits: §G+[?pops_savings_deposits|3]§![GetCurrencyTextIconState] \n   - Interest: §G+[?pops_savings_interest|3]§![GetCurrencyTextIconState] \n   - Withdrawals: §R-[?pops_savings_withdrawals|3]§![GetCurrencyTextIconState] \n\nDebt: §R[?pops_debt|3]§![GetCurrencyTextIconState]"
 
       #Pop Table
       pop_types_name_title:0 "Name"
@@ -157,6 +157,11 @@
 
 
 
+      #Powerplant Area
+        powerplant_title:0 "0/0"
+        powerplant_electricity_loc:0 "N/A"
+        powerplant_workforce_loc:0 "§C[?powerplant_employment_amount|3]K§!"
+      #
       #RGO Area
         rgos_title:0 "RGOs"
         rgos_employment_loc:0 "§C[?rgos_workforce_amount]K§!"
@@ -204,7 +209,7 @@
       trade_title:0 "Trade"
       
       trade_infra_title:0 "[GetInfrastructureCrumblingColor][?infrastructure_level]/[?infrastructure_max_level]§!"
-      trade_infra_tt:0 "§YInfrastructure§!\n§YEffects:§!\nRGO Output: §G[?infrastructure_rgo_output_modifier|1%]§!\nFactory Throughput: §G[?infrastructure_factory_throughput_modifier|1%]§!\nBuild Cost: §G[?infrastructure_build_cost_modifier|1%]§!\nTransport Cost: §G[?infrastructure_transport_cost_modifier|1%]§!\nShipping Cost: §G[?infrastructure_shipping_cost_modifier|1%]§!\n\n§YMaintenance Requirement:§!\n   - Industrial Goods: §Y[?infrastructure_industrial_goods_need] ([?infrastructure_industrial_goods_fulfilled_percentage|%1])§![GetInfrastructureCrumbling]"
+      trade_infra_tt:0 "§YInfrastructure§!\n§YEffects:§!\nRGO Output: §G[?infrastructure_rgo_output_modifier|1%]§!\nFactory Throughput: §G[?infrastructure_factory_throughput_modifier|1%]§!\nBuild Cost: §G[?infrastructure_build_cost_modifier|1%]§!\nTransport Cost: §G[?infrastructure_transport_cost_modifier|1%]§!\n\n§YPer Level:§!\nTransport Cost Multiplier: §G[?infrastructure_transport_cost_multiplier_per_level]§!\n\n§YMaintenance Requirement:§!\n   - Industrial Goods: §Y[?infrastructure_industrial_goods_need] ([?infrastructure_industrial_goods_fulfilled_percentage|%1])§![GetInfrastructureCrumbling]"
       infrastructure_under_construction_tt:0 "§YInfrastructure§! under construction:\n   Industrial Goods Needed: §Y[?infrastructure_construction_industrial_goods_need]§!\n   Current Investment: §Y[?infrastructure_construction_investment_money]§![GetCurrencyTextIconState]"
       infrastructure_crumbling_warning_tt:0 "\n\n§YWarning:§!\nThe §YInfrastructure§! in this state is §Rcrumbling!§!\n    Crumbling Ticks: §R[?infrastructure_crumbling_ticks]§!\n    Crumbling Threshold: §Y[?global.infrastructure_crumbling_ticks_bar]§!\n\nThe §YInfrastructure§! in this state will continue to §Rcrumble§! unless it fulfills at least §Y[?global.infrastructure_crumbling_threshold|1%]§! of its §Ymaintenance requirements!§!"
       infrastructure_restoring_warning_tt:0 "\n\n§YRestoration:§!\nThe §YInfrastructure§! in this state is being §Grestored.§!\n    Crumbling Ticks: §R[?infrastructure_crumbling_ticks]§!\n    Crumbling Threshold: §Y[?global.infrastructure_crumbling_ticks_bar]§!\n\nThe §YInfrastructure§! in this state will continue to be §Grestored§! as long as it fulfills at least §Y[?global.infrastructure_crumbling_threshold|1%]§! of its §Ymaintenance requirements.§!"
@@ -400,20 +405,71 @@
       #National Bank Area
         govt_national_bank_title:0 "National Bank"
 
-        govt_national_bank_amount_loc:0 "Total Savings: §Y[?national_bank_amount]§![GetCurrencyTextIcon]"
-        govt_national_bank_amount_tt:0 "§YNational Bank:§!\nAmount Stored: §Y[?national_bank_amount]§![GetCurrencyTextIcon] \n   - Pops Savings: §Y[?pops_savings]§![GetCurrencyTextIcon] \n\n Amount Lent: §Y[?national_bank_amount_lent]§![GetCurrencyTextIcon] \n   - Pops: §Y[?pops_debt]§![GetCurrencyTextIcon] \n   - Domestic Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - §G(You)§!: §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n   - Foreign Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - Foreign Countries: §Y0.000§![GetCurrencyTextIcon] \n\nAmount Left: §Y[?national_bank_amount_left]§![GetCurrencyTextIcon]\n\nInterest Rate: §Y[?national_bank_interest_rate|1]%§!\n\nInterest: §G+0.000§![GetCurrencyTextIcon] \n\n Top Borrowers:\n    1. §Y500.000§![GetCurrencyTextIcon]       §C[USA.GetFlag]§! §G(You)§!\n    2. §Y60.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CUS Steel§!\n    3. §Y50.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CPops§!\n    4. §Y30.000§![GetCurrencyTextIcon]         §C[JAP.GetNameWithFlag]§!\n    5. §Y10.000§![GetCurrencyTextIcon]         §C[ENG.GetNameWithFlag]§!"
+        govt_national_bank_amount_loc:0 "Total Savings: §Y[?national_bank_amount_k]K§![GetCurrencyTextIcon]"
+        govt_national_bank_amount_tt:0 "§YNational Bank:§!\nAmount Stored: §Y[?national_bank_amount_k]K§![GetCurrencyTextIcon] \n   - Pops Savings: §Y[?pops_savings_k]K§![GetCurrencyTextIcon] \n\n Amount Lent: §Y[?national_bank_amount_lent_k]K§![GetCurrencyTextIcon] \n   - Pops: §Y[?pops_debt]§![GetCurrencyTextIcon] \n   - Domestic Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - §G(You)§!: §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n   - Foreign Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - Foreign Countries: §Y0.000§![GetCurrencyTextIcon] \n\nAmount Left: §Y[?national_bank_amount_left_k]K§![GetCurrencyTextIcon]\n\nInterest Rate: §Y[?national_bank_interest_rate|1]%§!\n\nInterest: §G+[?national_bank_interest_gain|3]§![GetCurrencyTextIcon] \n\n Top Borrowers:\n    1. §Y500.000§![GetCurrencyTextIcon]       §C[USA.GetFlag]§! §G(You)§!\n    2. §Y60.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CUS Steel§!\n    3. §Y50.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CPops§!\n    4. §Y30.000§![GetCurrencyTextIcon]         §C[JAP.GetNameWithFlag]§!\n    5. §Y10.000§![GetCurrencyTextIcon]         §C[ENG.GetNameWithFlag]§!"
 
         govt_national_bank_amount_borrowed_loc:0 "Amount Borrowed: §Y[?national_debt]§![GetCurrencyTextIcon]"
-        govt_national_bank_amount_borrowed_tt:0 "§YSovereign Debt:§!\nTotal Debt: §Y[?national_debt]§![GetCurrencyTextIcon] \n   - Owed to National Bank §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n\nDebt to GDP: §Y[?debt_to_gdp_ratio|1%]§! \n\nMonthly Interest on Debt: §Y[?national_debt_interest|3]§![GetCurrencyTextIcon] \nInterest Rate: §Y[?national_debt_interest_rate|2]%§!"
+        govt_national_bank_amount_borrowed_tt:0 "§YSovereign Debt:§!\nTotal Debt: §Y[?national_debt]§![GetCurrencyTextIcon] \n   - Owed to National Bank §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n   - Owed to Foreign Banks §Y[?debt_to_foreign_countries]§![GetCurrencyTextIcon]\n\nDebt to GDP: §Y[?debt_to_gdp_ratio|1%]§! \n\nMonthly Interest on Debt: §Y[?national_debt_interest|3]§![GetCurrencyTextIcon] \nInterest Rate: §Y[?national_debt_interest_rate|2]%§!"
+
+        govt_repay_debt_button_loc: "Repay Debt"
+        govt_repay_debt_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to open the §YDebt Repayment§! window.\n§YShift + Left Click§! to repay §Y[?national_debt_max_repayment_amount|0]§![GetCurrencyTextIcon] of debt."
+        
+        govt_borrow_money_button_loc: "Borrow Money"
+        govt_borrow_money_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to open the §YBorrow Money§! window.\n§YShift + Left Click§! to borrow §Y10§![GetCurrencyTextIcon] \n§YControl + Left Click§! to borrow §Y100§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to borrow §Y1000§![GetCurrencyTextIcon]"
+
+        govt_gdp_loc:0 "GDP: §Y[?annual_gdp_amount]§![GetCurrencyTextIcon]"
       #
       #Mandatory Spending Area
         govt_mandatory_spending_title:0 "Mandatory Spending"
+
+        govt_administration_spending_title:0 "Administration"
+        govt_administration_spending_amount_loc:0 "§R-[?administration_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_interest_spending_title:0 "Interest"
+        govt_interest_spending_amount_loc:0 "§R-[?national_debt_interest]§![GetCurrencyTextIcon]"
+
+        govt_mandatory_spending_amount_loc:0 "§R-[?mandatory_spending]§![GetCurrencyTextIcon]"
       #
       #Net Budget Area
         govt_net_budget_title:0 "Net Income:"
         govt_net_budget_amount_loc:0 "[?predicted_net_budget|+=][GetCurrencyTextIcon]"
       #
     #
+  #
+  #Country Borrow Money Screen
+    country_borrow_money_title:0 "Borrow Money"
+    country_borrow_money_amount_loc:0 "§Y[?borrow_money_amount]§![GetCurrencyTextIcon]"
+
+    country_decrease_borrow_money_amount_button_tt:0 "§YLeft Click§! to decrease by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to decrease by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to decrease by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to decrease by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
+    country_increase_borrow_money_amount_button_tt:0 "§YLeft Click§! to increase by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to increase by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to increase by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to increase by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
+
+    country_borrow_from_any_country_title:0 "Any Country"
+    country_borrow_from_any_country_title_tt:0 "§GRECOMMENDED§!\n\n[GetBorrowMoneyAnyIntroduction] money from any bank which will offer us a loan, preferring §Ylow interest rates.§!"
+
+    borrow_money_country_button_tt:0 "[GetBorrowMoneyIntroduction] money from [THIS.GetBorrowMoneyBank] at §Y[?ROOT.global_bank_interest_rate^i|2]%§! interest."
+    borrow_money_country_title:0 "[?THIS.GetNameWithFlag]"
+    borrow_money_country_national_bank_amount:0 "§Y[?national_bank_amount_left_k]K§![GetCurrencyTextIcon]"
+    borrow_money_country_interest_rate:0 "§Y[?ROOT.global_bank_interest_rate^i|2]%§!"
+    #Scripted Loc
+      borrow_money_country_will_borrow:0 "You will borrow"
+      borrow_money_country_borrow:0 "Borrow"
+
+      borrow_money_country_domestic_bank:0 "the §Y[?THIS.GetFlag][?THIS.GetAdjective] National Bank§!"
+      borrow_money_country_foreign_bank:0 "§Gyour National Bank§!"
+    #
+
+    country_borrow_money_button_loc:0 "Borrow Money"
+    country_borrow_money_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to borrow §Y[?borrow_money_amount|0]§![GetCurrencyTextIcon] of money.\n§YShift + Left Click§! also closes the §YBorrow Money§! window."
+  #
+  #Country Repay Debt Screen
+    country_repay_debt_title:0 "Debt Repayment"
+    country_repay_debt_amount_loc:0 "§Y[?debt_repayment_amount]§![GetCurrencyTextIcon]"
+
+    country_decrease_debt_repayment_amount_button_tt:0 "§YLeft Click§! to decrease by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to decrease by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to decrease by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to decrease by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
+    country_increase_debt_repayment_amount_button_tt:0 "§YLeft Click§! to increase by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to increase by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to increase by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to increase by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
+
+    country_repay_debt_button_loc:0 "Repay Debt"
+    country_repay_debt_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to repay §Y[?debt_repayment_amount|0]§![GetCurrencyTextIcon] of debt.\n§YShift + Left Click§! also closes the §YDebt Repayment§! window."
   #
 
   #Currency
@@ -432,12 +488,24 @@
   #
 
   #Modifier Tooltips
+    decrease_build_cost_2_5:0 "Build Cost: §G-2.50%§!\n"
     decrease_build_cost_5:0 "Build Cost: §G-5.00%§!\n"
 
+    increase_build_speed_5:0 "Build Speed: §G+5.00%§!\n"
+    increase_build_speed_10:0 "Build Speed: §G+10.00%§!\n"
+    increase_build_speed_20:0 "Build Speed: §G+20.00%§!\n"
+
+    decrease_transport_cost_2_5:0 "Transport Cost: §G-2.50%§!\n"
     decrease_transport_cost_5:0 "Transport Cost: §G-5.00%§!\n"
 
+    increase_life_goods_output_5:0 "Life Goods Output: §G+5.00%§!\n"
+
+    increase_raw_goods_output_2_5:0 "Raw Goods Output: §G+2.50%§!\n"
+    increase_raw_goods_output_5:0 "Raw Goods Output: §G+5.00%§!\n"
     increase_raw_goods_output_10:0 "Raw Goods Output: §G+10.00%§!\n"
     increase_raw_goods_output_15:0 "Raw Goods Output: §G+15.00%§!\n"
+
+    increase_valuable_goods_output_10:0 "Valuable Goods Output: §G+10.00%§!\n"
 
 
     increase_factory_size_5:0 "Factory Size: §G+5.00%§!\n"
@@ -454,15 +522,19 @@
     increase_factory_throughput_10:0 "Factory Throughput: §G+10.00%§!\n"
     increase_factory_throughput_20:0 "Factory Throughput: §G+20.00%§!\n"
     
-    increase_factory_everyday_goods_throughput_2:0 "Factory Everyday Goods Throughput: §G+2.00%§!\n"
-    increase_factory_everyday_goods_throughput_4:0 "Factory Everyday Goods Throughput: §G+4.00%§!\n"
+    increase_factory_everyday_goods_throughput_2:0 "Everyday Goods Factory Throughput: §G+2.00%§!\n"
+    increase_factory_everyday_goods_throughput_4:0 "Everyday Goods Factory Throughput: §G+4.00%§!\n"
     
-    increase_factory_industrial_goods_throughput_4:0 "Factory Industrial Goods Throughput: §G+4.00%§!\n"
-    increase_factory_industrial_goods_throughput_8:0 "Factory Industrial Goods Throughput: §G+8.00%§!\n"
+    increase_factory_industrial_goods_throughput_4:0 "Industrial Goods Factory Throughput: §G+4.00%§!\n"
+    increase_factory_industrial_goods_throughput_8:0 "Industrial Goods Factory Throughput: §G+8.00%§!\n"
+    increase_factory_industrial_goods_throughput_16:0 "Industrial Goods Factory Throughput: §G+16.00%§!\n"
 
     increase_factory_goods_output_2:0 "Factory Goods Output: §G+2.00%§!\n"
     increase_factory_goods_output_4:0 "Factory Goods Output: §G+4.00%§!\n"
+
+    increase_factory_industrial_goods_output_4:0 "Industrial Goods Factory Output: §G+4.00%§!\n"
     
+    decrease_factory_industrial_goods_maintenance_8:0 "Factory Industrial Goods Maintenance: §G-8.00%§!\n"
     decrease_factory_industrial_goods_maintenance_10:0 "Factory Industrial Goods Maintenance: §G-10.00%§!\n"
     increase_factory_industrial_goods_maintenance_2:0 "Factory Industrial Goods Maintenance: §R+2.00%§!\n"
     increase_factory_industrial_goods_maintenance_4:0 "Factory Industrial Goods Maintenance: §R+4.00%§!\n"
@@ -472,6 +544,7 @@
     increase_factory_industrial_goods_maintenance_50:0 "Factory Industrial Goods Maintenance: §R+50.00%§!\n"
 
 
+    decrease_infrastructure_build_cost_5:0 "Infrastructure Build Cost: §G-5.00%§!\n"
     increase_infrastructure_build_cost_10:0 "Infrastructure Build Cost: §R+10.00%§!\n"
     increase_infrastructure_build_cost_20:0 "Infrastructure Build Cost: §R+20.00%§!\n"
     decrease_infrastructure_maintenance_cost_5:0 "Infrastructure Maintenance Cost: §G-5.00%§!\n"
