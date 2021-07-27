@@ -5328,10 +5328,10 @@ guiTypes = {
 			}
 		}
 	}
-	containerWindowType = {
+	containerWindowType = { #Borrow Money Window
 		name = "country_borrow_money_window_container"
 		position = {x=1350 y=525}
-		size = { width=208 height=320 }	
+		size = { width=228 height=330 }	
 		
 		fade_time = 300
 		fade_type = linear
@@ -5343,7 +5343,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "country_borrow_money_title"
-			position = { x = 4 y = 9 }
+			position = { x = 14 y = 4 }
 			font = "hoi_24header"
 			format = center
 			maxWidth = 200
@@ -5354,7 +5354,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "country_borrow_money_amount_loc"
-			position = { x = 54 y = 49 }
+			position = { x = 64 y = 43 }
 			font = "hoi_18mbs"
 			format = center
 			maxWidth = 100
@@ -5365,21 +5365,61 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "country_decrease_borrow_money_amount_button"
-			position = { x = 35 y = 44 }
+			position = { x = 35 y = 40 }
 			quadTextureSprite ="GFX_zoom_out"
 			clicksound = click_close
 			pdx_tooltip = country_decrease_borrow_money_amount_button_tt
 		}
 		buttonType = {
 			name = "country_increase_borrow_money_amount_button"
-			position = { x = 146 y = 44 }
+			position = { x = 166 y = 40 }
 			quadTextureSprite ="GFX_zoom_in"
 			clicksound = click_close
 			pdx_tooltip = country_increase_borrow_money_amount_button_tt
 		}
+		containerWindowType = {
+			name = "country_countries_array_container"
+			position = {x = 2 y = 80 }
+			size = { width = 232 height = 200 }
+			Orientation = upper_left
+
+			background = {
+				name = "Background"
+				spriteType = "GFX_tiled_decisions_bg_small"
+				#alwaystransparent = yes
+			}
+
+			verticalScrollbar = "right_vertical_slider"
+
+			buttonType = {
+				name = "country_borrow_from_any_country_button"
+				position = { x = -2 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+			}
+			instantTextBoxType = { 
+				name = "country_borrow_from_any_country_title"
+				position = { x = 8 y = 10 }
+				font = "hoi_16mbs"
+				format = center
+				maxWidth = 200
+				text = "country_borrow_from_any_country_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+				pdx_tooltip = country_borrow_from_any_country_title_tt
+			}
+			gridboxtype = {
+				name = "country_countries_banks_entries"
+				position = { x = 0 y = 35 }
+				size = { width = 200 height = 80 }
+				slotsize = { width = 200 height = 30 }
+				add_horizontal = no
+			}
+		}
 		containerWindowType = { #Borrow money Button
 			name = "country_borrow_money_button_container"
-			position = {x = 43 y = 276 }
+			position = {x = 53 y = 286 }
 			size = { width = 130 height = 40 }
 			Orientation = upper_left
 			
@@ -5401,6 +5441,55 @@ guiTypes = {
 				#alwaystransparent = yes
 				pdx_tooltip = country_borrow_money_button_tt
 			}
+		}
+	}
+	containerWindowType = { #Borrow Money Country Entry
+		name = "borrow_money_country_entry"
+		position = { x = -4 y = -5} 
+		size = { width = 215 height = 34 }
+		
+		buttonType = {
+			name = "borrow_money_country_button"
+			position = { x = 2 y = 0 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "Main_14_black"
+			pdx_tooltip = borrow_money_country_button_tt
+		}
+		instantTextBoxType = { 
+			name = "borrow_money_country_title"
+			position = { x = 12 y = 3 }
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 200
+			text = "borrow_money_country_title"
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = borrow_money_country_button_tt
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = { 
+			name = "borrow_money_country_national_bank_amount"
+			position = { x = 12 y = 15 }
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 200
+			text = "borrow_money_country_national_bank_amount"
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = borrow_money_country_button_tt
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = { 
+			name = "borrow_money_country_interest_rate"
+			position = { x = 12 y = 15 }
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 200
+			text = "borrow_money_country_interest_rate"
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = borrow_money_country_button_tt
+			#alwaystransparent = yes
 		}
 	}
 	containerWindowType = {

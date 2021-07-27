@@ -409,7 +409,7 @@
         govt_national_bank_amount_tt:0 "§YNational Bank:§!\nAmount Stored: §Y[?national_bank_amount_k]K§![GetCurrencyTextIcon] \n   - Pops Savings: §Y[?pops_savings_k]K§![GetCurrencyTextIcon] \n\n Amount Lent: §Y[?national_bank_amount_lent_k]K§![GetCurrencyTextIcon] \n   - Pops: §Y[?pops_debt]§![GetCurrencyTextIcon] \n   - Domestic Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - §G(You)§!: §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n   - Foreign Corporations: §Y0.000§![GetCurrencyTextIcon] \n   - Foreign Countries: §Y0.000§![GetCurrencyTextIcon] \n\nAmount Left: §Y[?national_bank_amount_left_k]K§![GetCurrencyTextIcon]\n\nInterest Rate: §Y[?national_bank_interest_rate|1]%§!\n\nInterest: §G+[?national_bank_interest_gain|3]§![GetCurrencyTextIcon] \n\n Top Borrowers:\n    1. §Y500.000§![GetCurrencyTextIcon]       §C[USA.GetFlag]§! §G(You)§!\n    2. §Y60.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CUS Steel§!\n    3. §Y50.000§![GetCurrencyTextIcon]         [USA.GetFlag] §CPops§!\n    4. §Y30.000§![GetCurrencyTextIcon]         §C[JAP.GetNameWithFlag]§!\n    5. §Y10.000§![GetCurrencyTextIcon]         §C[ENG.GetNameWithFlag]§!"
 
         govt_national_bank_amount_borrowed_loc:0 "Amount Borrowed: §Y[?national_debt]§![GetCurrencyTextIcon]"
-        govt_national_bank_amount_borrowed_tt:0 "§YSovereign Debt:§!\nTotal Debt: §Y[?national_debt]§![GetCurrencyTextIcon] \n   - Owed to National Bank §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n\nDebt to GDP: §Y[?debt_to_gdp_ratio|1%]§! \n\nMonthly Interest on Debt: §Y[?national_debt_interest|3]§![GetCurrencyTextIcon] \nInterest Rate: §Y[?national_debt_interest_rate|2]%§!"
+        govt_national_bank_amount_borrowed_tt:0 "§YSovereign Debt:§!\nTotal Debt: §Y[?national_debt]§![GetCurrencyTextIcon] \n   - Owed to National Bank §Y[?debt_to_national_bank]§![GetCurrencyTextIcon] \n   - Owed to Foreign Banks §Y[?debt_to_foreign_countries]§![GetCurrencyTextIcon]\n\nDebt to GDP: §Y[?debt_to_gdp_ratio|1%]§! \n\nMonthly Interest on Debt: §Y[?national_debt_interest|3]§![GetCurrencyTextIcon] \nInterest Rate: §Y[?national_debt_interest_rate|2]%§!"
 
         govt_repay_debt_button_loc: "Repay Debt"
         govt_repay_debt_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to open the §YDebt Repayment§! window.\n§YShift + Left Click§! to repay §Y[?national_debt_max_repayment_amount|0]§![GetCurrencyTextIcon] of debt."
@@ -442,6 +442,21 @@
 
     country_decrease_borrow_money_amount_button_tt:0 "§YLeft Click§! to decrease by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to decrease by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to decrease by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to decrease by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
     country_increase_borrow_money_amount_button_tt:0 "§YLeft Click§! to increase by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to increase by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to increase by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to increase by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
+
+    country_borrow_from_any_country_title:0 "Any Country"
+    country_borrow_from_any_country_title_tt:0 "§GRECOMMENDED§!\n\n[GetBorrowMoneyAnyIntroduction] money from any bank which will offer us a loan, preferring §Ylow interest rates.§!"
+
+    borrow_money_country_button_tt:0 "[GetBorrowMoneyIntroduction] money from [THIS.GetBorrowMoneyBank] at §Y[?ROOT.global_bank_interest_rate^i|2]%§! interest."
+    borrow_money_country_title:0 "[?THIS.GetNameWithFlag]"
+    borrow_money_country_national_bank_amount:0 "§Y[?national_bank_amount_left_k]K§![GetCurrencyTextIcon]"
+    borrow_money_country_interest_rate:0 "§Y[?ROOT.global_bank_interest_rate^i|2]%§!"
+    #Scripted Loc
+      borrow_money_country_will_borrow:0 "You will borrow"
+      borrow_money_country_borrow:0 "Borrow"
+
+      borrow_money_country_domestic_bank:0 "the §Y[?THIS.GetFlag][?THIS.GetAdjective] National Bank§!"
+      borrow_money_country_foreign_bank:0 "§Gyour National Bank§!"
+    #
 
     country_borrow_money_button_loc:0 "Borrow Money"
     country_borrow_money_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to borrow §Y[?borrow_money_amount|0]§![GetCurrencyTextIcon] of money.\n§YShift + Left Click§! also closes the §YBorrow Money§! window."

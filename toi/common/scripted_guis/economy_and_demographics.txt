@@ -1396,6 +1396,28 @@ scripted_gui = {
 				add_to_variable = { update_state_econ_window = 1 }
 				close_borrow_money_window = yes
 			}
+
+			country_borrow_from_any_country_button_click = {
+				set_variable = { borrow_money_country = 0 }
+			}
+			borrow_money_country_button_click = {
+				set_variable = { ROOT.borrow_money_country = THIS }
+			}
+		}
+		triggers = {
+			country_borrow_from_any_country_button_click_enabled = {
+				NOT = { check_variable = { borrow_money_country = 0 } }
+			}
+			borrow_money_country_button_click_enabled = {
+				NOT = { check_variable = { ROOT.borrow_money_country = THIS } }
+			}
+		}
+		dynamic_lists = {
+			country_countries_banks_entries = {
+				array = global_bank_countries
+				entry_container = borrow_money_country_entry
+				change_scope = yes
+			}
 		}
 	}
 }

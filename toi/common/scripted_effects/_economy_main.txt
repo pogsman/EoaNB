@@ -5302,7 +5302,12 @@
 					add_to_variable = { pops_spending = pops_goods_spending }
 				#
 			}
+			global_bank_update = yes
+		}
 
+
+		for_each_scope_loop = {
+			array = global.econ_order_array
 			#Government Debt
 				#How much money can you borrow?
 				set_temp_variable = { borrow_limit_temp = national_bank_amount_left_k }
@@ -5311,7 +5316,9 @@
 				set_variable = { national_debt_interest = debt_to_national_bank }
 				divide_variable = { national_debt_interest = 100 } #100x as upcoming rate is a % which goes from 0.0 to 100.0
 				#Ability to pay AKA Credit Rating
-				set_variable = { national_debt_interest_rate = global.credit_rating_AAA_base_interest_rate } #TODO
+				set_variable = { credit_rating_interest = global.credit_rating_AAA_base_interest_rate } #TODO
+
+				set_variable = { national_debt_interest_rate = credit_rating_interest }
 
 				#Expensiveness of debt due to scarcity
 				add_to_variable = { national_debt_interest_rate = national_bank_interest_from_scarcity }
@@ -5725,6 +5732,7 @@
 
 				set_variable = { global.default_interest_rate = 3.0 } #Percent per year - Default national bank interest rate for loans to pops/corporations
 				set_variable = { global.loan_scarcity_rate = 5.0 } #Percent per year - How much interest should be added when you use up all loans you can get
+				set_variable = { global.base_international_interest_rate = 1.0 } #The additional rate that entities pay on getting loans from a foreign national bank
 
 				#Credit Ratings & Interest Rates for Each
 					#NOTE - Credit Rating is determined by the system.
@@ -5753,279 +5761,278 @@
 
 		clear_array = global.econ_order_array
 
-		#States
-			clear_array = global.raw_goods_states
-			clear_array = global.valuable_goods_states
-			clear_array = global.coal_states
-			clear_array = global.cash_crops_states
-			clear_array = global.metals_states
-			clear_array = global.petroleum_states
-			#USA
-			add_to_array = { global.raw_goods_states = 961 }
-			add_to_array = { global.raw_goods_states = 960 }
-			add_to_array = { global.raw_goods_states = 959 }
-			add_to_array = { global.raw_goods_states = 358 }
-			add_to_array = { global.metals_states = 358 }
-			add_to_array = { global.raw_goods_states = 360 }
-			add_to_array = { global.coal_states = 360 }
-			add_to_array = { global.raw_goods_states = 746 }
-			add_to_array = { global.coal_states = 746 }
-			add_to_array = { global.raw_goods_states = 369 }
-			add_to_array = { global.coal_states = 369 }
-			add_to_array = { global.cash_crops_states = 361 }
-			add_to_array = { global.raw_goods_states = 362 }
-			add_to_array = { global.cash_crops_states = 362 }
-			add_to_array = { global.raw_goods_states = 363 }
-			add_to_array = { global.cash_crops_states = 363 }
-			add_to_array = { global.raw_goods_states = 364 }
-			add_to_array = { global.cash_crops_states = 364 }
-			add_to_array = { global.raw_goods_states = 365 }
-			add_to_array = { global.cash_crops_states = 365 }
-			add_to_array = { global.cash_crops_states = 366 }
-			add_to_array = { global.raw_goods_states = 367 }
-			add_to_array = { global.cash_crops_states = 367 }
-			add_to_array = { global.raw_goods_states = 368 }
-			add_to_array = { global.coal_states = 368 }
-			add_to_array = { global.raw_goods_states = 370 }
-			add_to_array = { global.cash_crops_states = 370 }
-			add_to_array = { global.cash_crops_states = 371 }
-			add_to_array = { global.raw_goods_states = 393 }
-			add_to_array = { global.raw_goods_states = 1358 }
-			add_to_array = { global.metals_states = 1358 }
-			add_to_array = { global.raw_goods_states = 394 }
-			add_to_array = { global.metals_states = 394 }
-			add_to_array = { global.raw_goods_states = 391 }
-			add_to_array = { global.metals_states = 391 }
-			add_to_array = { global.raw_goods_states = 386 }
-			add_to_array = { global.raw_goods_states = 1073 }
-			add_to_array = { global.raw_goods_states = 1076 }
-			add_to_array = { global.raw_goods_states = 385 }
-			add_to_array = { global.raw_goods_states = 378 }
-			add_to_array = { global.raw_goods_states = 1297 }
-			add_to_array = { global.raw_goods_states = 1285 }
-			add_to_array = { global.raw_goods_states = 1303 }
+		#Resources
+			#States
+				clear_array = global.raw_goods_states
+				clear_array = global.valuable_goods_states
+				clear_array = global.coal_states
+				clear_array = global.cash_crops_states
+				clear_array = global.metals_states
+				clear_array = global.petroleum_states
+				#USA
+				add_to_array = { global.raw_goods_states = 961 }
+				add_to_array = { global.raw_goods_states = 960 }
+				add_to_array = { global.raw_goods_states = 959 }
+				add_to_array = { global.raw_goods_states = 358 }
+				add_to_array = { global.metals_states = 358 }
+				add_to_array = { global.raw_goods_states = 360 }
+				add_to_array = { global.coal_states = 360 }
+				add_to_array = { global.raw_goods_states = 746 }
+				add_to_array = { global.coal_states = 746 }
+				add_to_array = { global.raw_goods_states = 369 }
+				add_to_array = { global.coal_states = 369 }
+				add_to_array = { global.cash_crops_states = 361 }
+				add_to_array = { global.raw_goods_states = 362 }
+				add_to_array = { global.cash_crops_states = 362 }
+				add_to_array = { global.raw_goods_states = 363 }
+				add_to_array = { global.cash_crops_states = 363 }
+				add_to_array = { global.raw_goods_states = 364 }
+				add_to_array = { global.cash_crops_states = 364 }
+				add_to_array = { global.raw_goods_states = 365 }
+				add_to_array = { global.cash_crops_states = 365 }
+				add_to_array = { global.cash_crops_states = 366 }
+				add_to_array = { global.raw_goods_states = 367 }
+				add_to_array = { global.cash_crops_states = 367 }
+				add_to_array = { global.raw_goods_states = 368 }
+				add_to_array = { global.coal_states = 368 }
+				add_to_array = { global.raw_goods_states = 370 }
+				add_to_array = { global.cash_crops_states = 370 }
+				add_to_array = { global.cash_crops_states = 371 }
+				add_to_array = { global.raw_goods_states = 393 }
+				add_to_array = { global.raw_goods_states = 1358 }
+				add_to_array = { global.metals_states = 1358 }
+				add_to_array = { global.raw_goods_states = 394 }
+				add_to_array = { global.metals_states = 394 }
+				add_to_array = { global.raw_goods_states = 391 }
+				add_to_array = { global.metals_states = 391 }
+				add_to_array = { global.raw_goods_states = 386 }
+				add_to_array = { global.raw_goods_states = 1073 }
+				add_to_array = { global.raw_goods_states = 1076 }
+				add_to_array = { global.raw_goods_states = 385 }
+				add_to_array = { global.raw_goods_states = 378 }
+				add_to_array = { global.raw_goods_states = 1297 }
+				add_to_array = { global.raw_goods_states = 1285 }
+				add_to_array = { global.raw_goods_states = 1303 }
 
-			add_to_array = { global.valuable_goods_states = 1342 }
-			add_to_array = { global.raw_goods_states = 1342 }
-			1342 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+				add_to_array = { global.valuable_goods_states = 1342 }
+				add_to_array = { global.raw_goods_states = 1342 }
+				1342 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
 
-			#States in the Continental US but not owned by USA
-			add_to_array = { global.raw_goods_states = 1047 }
-			add_to_array = { global.coal_states = 1047 }
-			add_to_array = { global.raw_goods_states = 381 }
-			add_to_array = { global.coal_states = 381 }
-			add_to_array = { global.raw_goods_states = 1291 }
-			add_to_array = { global.coal_states = 1291 }
-			add_to_array = { global.raw_goods_states = 1292 }
-			add_to_array = { global.metals_states = 1292 }
-			add_to_array = { global.raw_goods_states = 1074 }
-			add_to_array = { global.raw_goods_states = 1289 }
-			add_to_array = { global.raw_goods_states = 1092 }
-			add_to_array = { global.metals_states = 1092 }
-			add_to_array = { global.raw_goods_states = 382 }
-			add_to_array = { global.raw_goods_states = 380 }
-			add_to_array = { global.coal_states = 380 }
-			add_to_array = { global.raw_goods_states = 1286 }
-			add_to_array = { global.raw_goods_states = 1287 }
-			add_to_array = { global.coal_states = 1287 }
-			add_to_array = { global.raw_goods_states = 1288 }
-			add_to_array = { global.metals_states = 1288 }
-			add_to_array = { global.raw_goods_states = 1302 }
-			add_to_array = { global.raw_goods_states = 1301 }
-			add_to_array = { global.metals_states = 1301 }
-			add_to_array = { global.raw_goods_states = 1295 }
-			add_to_array = { global.raw_goods_states = 376 }
-			
-			add_to_array = { global.valuable_goods_states = 379 }
-			add_to_array = { global.raw_goods_states = 379 }
-			379 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+				#States in the Continental US but not owned by USA
+				add_to_array = { global.raw_goods_states = 1047 }
+				add_to_array = { global.coal_states = 1047 }
+				add_to_array = { global.raw_goods_states = 381 }
+				add_to_array = { global.coal_states = 381 }
+				add_to_array = { global.raw_goods_states = 1291 }
+				add_to_array = { global.coal_states = 1291 }
+				add_to_array = { global.raw_goods_states = 1292 }
+				add_to_array = { global.metals_states = 1292 }
+				add_to_array = { global.raw_goods_states = 1074 }
+				add_to_array = { global.raw_goods_states = 1289 }
+				add_to_array = { global.raw_goods_states = 1092 }
+				add_to_array = { global.metals_states = 1092 }
+				add_to_array = { global.raw_goods_states = 382 }
+				add_to_array = { global.raw_goods_states = 380 }
+				add_to_array = { global.coal_states = 380 }
+				add_to_array = { global.raw_goods_states = 1286 }
+				add_to_array = { global.raw_goods_states = 1287 }
+				add_to_array = { global.coal_states = 1287 }
+				add_to_array = { global.raw_goods_states = 1288 }
+				add_to_array = { global.metals_states = 1288 }
+				add_to_array = { global.raw_goods_states = 1302 }
+				add_to_array = { global.raw_goods_states = 1301 }
+				add_to_array = { global.metals_states = 1301 }
+				add_to_array = { global.raw_goods_states = 1295 }
+				add_to_array = { global.raw_goods_states = 376 }
+				
+				add_to_array = { global.valuable_goods_states = 379 }
+				add_to_array = { global.raw_goods_states = 379 }
+				379 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
 
-			#Canada & Alaska
-			add_to_array = { global.raw_goods_states = 331 }
-			add_to_array = { global.raw_goods_states = 332 }
-			add_to_array = { global.raw_goods_states = 466 }
-			add_to_array = { global.raw_goods_states = 682 }
-			add_to_array = { global.metals_states = 682 }
-			add_to_array = { global.raw_goods_states = 683 }
-			add_to_array = { global.raw_goods_states = 472 }
-			add_to_array = { global.metals_states = 472 }
-			add_to_array = { global.raw_goods_states = 1137 }
-			add_to_array = { global.raw_goods_states = 471 }
-			add_to_array = { global.raw_goods_states = 473 }
-			add_to_array = { global.coal_states = 473 }
-			add_to_array = { global.raw_goods_states = 463}
+				#Canada & Alaska
+				add_to_array = { global.raw_goods_states = 331 }
+				add_to_array = { global.raw_goods_states = 332 }
+				add_to_array = { global.raw_goods_states = 466 }
+				add_to_array = { global.raw_goods_states = 682 }
+				add_to_array = { global.metals_states = 682 }
+				add_to_array = { global.raw_goods_states = 683 }
+				add_to_array = { global.raw_goods_states = 472 }
+				add_to_array = { global.metals_states = 472 }
+				add_to_array = { global.raw_goods_states = 1137 }
+				add_to_array = { global.raw_goods_states = 471 }
+				add_to_array = { global.raw_goods_states = 473 }
+				add_to_array = { global.coal_states = 473 }
+				add_to_array = { global.raw_goods_states = 463}
 
-			#Mexico
-			add_to_array = { global.raw_goods_states = 480 }
-			add_to_array = { global.coal_states = 480 }
-			add_to_array = { global.raw_goods_states = 1112 }
-			add_to_array = { global.raw_goods_states = 478 }
-			add_to_array = { global.metals_states = 478 }
-			add_to_array = { global.raw_goods_states = 1114 }
-			add_to_array = { global.raw_goods_states = 474 }
-			add_to_array = { global.raw_goods_states = 475 }
-			add_to_array = { global.cash_crops_states = 475 }
-			add_to_array = { global.raw_goods_states = 481 }
-			add_to_array = { global.raw_goods_states = 1125 }
+				#Mexico
+				add_to_array = { global.raw_goods_states = 480 }
+				add_to_array = { global.coal_states = 480 }
+				add_to_array = { global.raw_goods_states = 1112 }
+				add_to_array = { global.raw_goods_states = 478 }
+				add_to_array = { global.metals_states = 478 }
+				add_to_array = { global.raw_goods_states = 1114 }
+				add_to_array = { global.raw_goods_states = 474 }
+				add_to_array = { global.raw_goods_states = 475 }
+				add_to_array = { global.cash_crops_states = 475 }
+				add_to_array = { global.raw_goods_states = 481 }
+				add_to_array = { global.raw_goods_states = 1125 }
 
-			add_to_array = { global.valuable_goods_states = 482 }
-			add_to_array = { global.valuable_goods_states = 485 }
-			485 = { set_state_flag = pops_rgos_valuable_goods_depleted_flag }
+				add_to_array = { global.valuable_goods_states = 482 }
+				add_to_array = { global.valuable_goods_states = 485 }
+				485 = { set_state_flag = pops_rgos_valuable_goods_depleted_flag }
 
-			#Central America/Carribean
-			add_to_array = { global.raw_goods_states = 1155 }
-			add_to_array = { global.cash_crops_states = 1155 }
-			add_to_array = { global.cash_crops_states = 317 }
-			add_to_array = { global.cash_crops_states = 1249 }
-			add_to_array = { global.raw_goods_states = 1350 }
-			add_to_array = { global.cash_crops_states = 1350 }
-			add_to_array = { global.raw_goods_states = 315 }
-			add_to_array = { global.cash_crops_states = 315 }
-			add_to_array = { global.raw_goods_states = 690 }
-			add_to_array = { global.cash_crops_states = 690 }
-			add_to_array = { global.raw_goods_states = 693 }
-			add_to_array = { global.cash_crops_states = 693 }
-			add_to_array = { global.raw_goods_states = 689 }
-			add_to_array = { global.cash_crops_states = 689 }
-			add_to_array = { global.raw_goods_states = 318 }
-			add_to_array = { global.cash_crops_states = 318 }
-			add_to_array = { global.raw_goods_states = 790 }
-			add_to_array = { global.cash_crops_states = 790 }
-			add_to_array = { global.raw_goods_states = 319 }
-			add_to_array = { global.cash_crops_states = 319 }
-			add_to_array = { global.raw_goods_states = 1318 }
-			add_to_array = { global.cash_crops_states = 1318 }
-			add_to_array = { global.raw_goods_states = 686 }
-			add_to_array = { global.cash_crops_states = 686 }
-			add_to_array = { global.raw_goods_states = 1357 }
-			add_to_array = { global.cash_crops_states = 1357 }
-			add_to_array = { global.raw_goods_states = 694 }
-			add_to_array = { global.cash_crops_states = 694 }
-			add_to_array = { global.raw_goods_states = 308 }
-			add_to_array = { global.cash_crops_states = 308 }
-			add_to_array = { global.raw_goods_states = 692 }
-			add_to_array = { global.cash_crops_states = 692 }
-			add_to_array = { global.raw_goods_states = 691 }
-			add_to_array = { global.cash_crops_states = 691 }
-			add_to_array = { global.raw_goods_states = 695 }
-			add_to_array = { global.cash_crops_states = 695 }
+				#Central America/Carribean
+				add_to_array = { global.raw_goods_states = 1155 }
+				add_to_array = { global.cash_crops_states = 1155 }
+				add_to_array = { global.cash_crops_states = 317 }
+				add_to_array = { global.cash_crops_states = 1249 }
+				add_to_array = { global.raw_goods_states = 1350 }
+				add_to_array = { global.cash_crops_states = 1350 }
+				add_to_array = { global.raw_goods_states = 315 }
+				add_to_array = { global.cash_crops_states = 315 }
+				add_to_array = { global.raw_goods_states = 690 }
+				add_to_array = { global.cash_crops_states = 690 }
+				add_to_array = { global.raw_goods_states = 693 }
+				add_to_array = { global.cash_crops_states = 693 }
+				add_to_array = { global.raw_goods_states = 689 }
+				add_to_array = { global.cash_crops_states = 689 }
+				add_to_array = { global.raw_goods_states = 318 }
+				add_to_array = { global.cash_crops_states = 318 }
+				add_to_array = { global.raw_goods_states = 790 }
+				add_to_array = { global.cash_crops_states = 790 }
+				add_to_array = { global.raw_goods_states = 319 }
+				add_to_array = { global.cash_crops_states = 319 }
+				add_to_array = { global.raw_goods_states = 1318 }
+				add_to_array = { global.cash_crops_states = 1318 }
+				add_to_array = { global.raw_goods_states = 686 }
+				add_to_array = { global.cash_crops_states = 686 }
+				add_to_array = { global.raw_goods_states = 1357 }
+				add_to_array = { global.cash_crops_states = 1357 }
+				add_to_array = { global.raw_goods_states = 694 }
+				add_to_array = { global.cash_crops_states = 694 }
+				add_to_array = { global.raw_goods_states = 308 }
+				add_to_array = { global.cash_crops_states = 308 }
+				add_to_array = { global.raw_goods_states = 692 }
+				add_to_array = { global.cash_crops_states = 692 }
+				add_to_array = { global.raw_goods_states = 691 }
+				add_to_array = { global.cash_crops_states = 691 }
+				add_to_array = { global.raw_goods_states = 695 }
+				add_to_array = { global.cash_crops_states = 695 }
 
-			#Grand Colombia/Guyanas
-			add_to_array = { global.raw_goods_states = 310 }
-			add_to_array = { global.raw_goods_states = 927 }
-			add_to_array = { global.cash_crops_states = 489 }
-			add_to_array = { global.cash_crops_states = 307 }
-			add_to_array = { global.raw_goods_states = 488 }
-			add_to_array = { global.cash_crops_states = 493 }
-			add_to_array = { global.raw_goods_states = 486 }
-			add_to_array = { global.raw_goods_states = 1419 }
-			add_to_array = { global.raw_goods_states = 1420 }
-			add_to_array = { global.raw_goods_states = 490 }
-			add_to_array = { global.raw_goods_states = 1421 }
+				#Grand Colombia/Guyanas
+				add_to_array = { global.raw_goods_states = 310 }
+				add_to_array = { global.raw_goods_states = 927 }
+				add_to_array = { global.cash_crops_states = 489 }
+				add_to_array = { global.cash_crops_states = 307 }
+				add_to_array = { global.raw_goods_states = 488 }
+				add_to_array = { global.cash_crops_states = 493 }
+				add_to_array = { global.raw_goods_states = 486 }
+				add_to_array = { global.raw_goods_states = 1419 }
+				add_to_array = { global.raw_goods_states = 1420 }
+				add_to_array = { global.raw_goods_states = 490 }
+				add_to_array = { global.raw_goods_states = 1421 }
 
-			#Brazil
-			add_to_array = { global.raw_goods_states = 495 }
-			add_to_array = { global.cash_crops_states = 495 }
-			add_to_array = { global.raw_goods_states = 1323 }
-			add_to_array = { global.raw_goods_states = 497 }
-			add_to_array = { global.cash_crops_states = 497 }
-			add_to_array = { global.raw_goods_states = 1041 }
-			add_to_array = { global.cash_crops_states = 1041 }
-			add_to_array = { global.raw_goods_states = 498 }
-			add_to_array = { global.cash_crops_states = 498 }
-			add_to_array = { global.cash_crops_states = 1044 }
-			add_to_array = { global.raw_goods_states = 1040 }
-			add_to_array = { global.cash_crops_states = 1040 }
-			add_to_array = { global.cash_crops_states = 499 }
-			add_to_array = { global.cash_crops_states = 1038 }
-			add_to_array = { global.cash_crops_states = 1039 }
-			add_to_array = { global.cash_crops_states = 500 }
-			add_to_array = { global.cash_crops_states = 501 }
-			add_to_array = { global.raw_goods_states = 280 }
-			add_to_array = { global.raw_goods_states = 1064 }
-			add_to_array = { global.raw_goods_states = 502 }
+				#Brazil
+				add_to_array = { global.raw_goods_states = 495 }
+				add_to_array = { global.cash_crops_states = 495 }
+				add_to_array = { global.raw_goods_states = 1323 }
+				add_to_array = { global.raw_goods_states = 497 }
+				add_to_array = { global.cash_crops_states = 497 }
+				add_to_array = { global.raw_goods_states = 1041 }
+				add_to_array = { global.cash_crops_states = 1041 }
+				add_to_array = { global.raw_goods_states = 498 }
+				add_to_array = { global.cash_crops_states = 498 }
+				add_to_array = { global.cash_crops_states = 1044 }
+				add_to_array = { global.raw_goods_states = 1040 }
+				add_to_array = { global.cash_crops_states = 1040 }
+				add_to_array = { global.cash_crops_states = 499 }
+				add_to_array = { global.cash_crops_states = 1038 }
+				add_to_array = { global.cash_crops_states = 1039 }
+				add_to_array = { global.cash_crops_states = 500 }
+				add_to_array = { global.cash_crops_states = 501 }
+				add_to_array = { global.raw_goods_states = 280 }
+				add_to_array = { global.raw_goods_states = 1064 }
+				add_to_array = { global.raw_goods_states = 502 }
 
-			#Peru
-			add_to_array = { global.raw_goods_states = 491 }
-			add_to_array = { global.raw_goods_states = 303 }
-			add_to_array = { global.coal_states = 303 }
-			add_to_array = { global.raw_goods_states = 494 }
-			add_to_array = { global.raw_goods_states = 492 }
-			add_to_array = { global.raw_goods_states = 1131 }
-			add_to_array = { global.raw_goods_states = 1085 }
+				#Peru
+				add_to_array = { global.raw_goods_states = 491 }
+				add_to_array = { global.raw_goods_states = 303 }
+				add_to_array = { global.coal_states = 303 }
+				add_to_array = { global.raw_goods_states = 494 }
+				add_to_array = { global.raw_goods_states = 492 }
+				add_to_array = { global.raw_goods_states = 1131 }
+				add_to_array = { global.raw_goods_states = 1085 }
 
-			add_to_array = { global.valuable_goods_states = 1133 }
-			add_to_array = { global.raw_goods_states = 1133 }
+				add_to_array = { global.valuable_goods_states = 1133 }
+				add_to_array = { global.raw_goods_states = 1133 }
 
-			#Bolivia
-			
-			#Paraguay
+				#Bolivia
+				
+				#Paraguay
 
-			#Chile
+				#Chile
 
-			#Uruguay
+				#Uruguay
 
-			#Argentina
-		#
+				#Argentina
+			#
 
-
-
-
-		for_each_scope_loop = {
-			array = global.raw_goods_states
-			set_state_flag = pops_rgos_raw_goods_flag
-		}
-		for_each_scope_loop = {
-			array = global.valuable_goods_states
-			set_state_flag = pops_rgos_valuable_goods_flag
-			
-			if = {
-				limit = {
-					has_state_flag = pops_rgos_valuable_goods_untapped_flag
-				}
-				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_untapped_decay_max }
+			for_each_scope_loop = {
+				array = global.raw_goods_states
+				set_state_flag = pops_rgos_raw_goods_flag
 			}
-			if = {
-				limit = {
-					has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+			for_each_scope_loop = {
+				array = global.valuable_goods_states
+				set_state_flag = pops_rgos_valuable_goods_flag
+				
+				if = {
+					limit = {
+						has_state_flag = pops_rgos_valuable_goods_untapped_flag
+					}
+					set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_untapped_decay_max }
 				}
-				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_plentiful_decay_max }
-			}
-			if = {
-				limit = {
-					NOT = {
-						OR = {
-							has_state_flag = pops_rgos_valuable_goods_untapped_flag
-							has_state_flag = pops_rgos_valuable_goods_plentiful_flag
-							has_state_flag = pops_rgos_valuable_goods_depleted_flag
+				if = {
+					limit = {
+						has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+					}
+					set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_plentiful_decay_max }
+				}
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								has_state_flag = pops_rgos_valuable_goods_untapped_flag
+								has_state_flag = pops_rgos_valuable_goods_plentiful_flag
+								has_state_flag = pops_rgos_valuable_goods_depleted_flag
+							}
 						}
 					}
+					set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_exploited_decay_max }
 				}
-				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_exploited_decay_max }
-			}
-			if = {
-				limit = {
-					has_state_flag = pops_rgos_valuable_goods_depleted_flag
+				if = {
+					limit = {
+						has_state_flag = pops_rgos_valuable_goods_depleted_flag
+					}
+					set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_depleted_decay_max }
 				}
-				set_variable = { pops_rgos_valuable_goods_decay = global.pops_rgos_valuable_goods_depleted_decay_max }
 			}
-		}
-		for_each_scope_loop = {
-			array = global.cash_crops_states
-			set_state_flag = pops_rgos_cash_crops_flag
-		}
-		for_each_scope_loop = {
-			array = global.coal_states
-			set_state_flag = pops_rgos_coal_flag
-		}
-		for_each_scope_loop = {
-			array = global.metals_states
-			set_state_flag = pops_rgos_metals_flag
-		}
-		for_each_scope_loop = {
-			array = global.petroleum_states
-			set_state_flag = pops_rgos_petroleum_flag
-		}
+			for_each_scope_loop = {
+				array = global.cash_crops_states
+				set_state_flag = pops_rgos_cash_crops_flag
+			}
+			for_each_scope_loop = {
+				array = global.coal_states
+				set_state_flag = pops_rgos_coal_flag
+			}
+			for_each_scope_loop = {
+				array = global.metals_states
+				set_state_flag = pops_rgos_metals_flag
+			}
+			for_each_scope_loop = {
+				array = global.petroleum_states
+				set_state_flag = pops_rgos_petroleum_flag
+			}
+		#
 
 		#Country Setup
 		every_country = {
@@ -6070,6 +6077,10 @@
 
 			set_variable = { treasury = 0 }
 			set_variable = { debt_to_national_bank = 0 }
+			clear_array = debt_to_bank_country
+			clear_array = debt_to_bank_amount
+			clear_array = money_lent_country
+			clear_array = money_lent_amount
 
 			set_variable = { national_bank_money = 0 }
 			set_variable = { national_bank_amount_k = 0 }
@@ -8704,6 +8715,8 @@
 
 	
 	national_bank_update = {
+		#Country Scope
+
 		#Amount of money that can be loaned
 			set_variable = { pops_savings_k = 0 }
 			every_controlled_state = {
@@ -8716,14 +8729,23 @@
 		#
 
 		#Money scarcity
-			set_variable = { national_bank_amount_lent_k = 0 }
-
 			#Go through borrowers to get loan amounts - TODO
 				#Home Country
 				set_temp_variable = { debt_to_national_bank_temp = debt_to_national_bank }
 				divide_temp_variable = { debt_to_national_bank_temp = 1000 }
 				set_variable = { national_bank_amount_lent_k = debt_to_national_bank_temp }
+				
+				#Pops
 
+				#Foreign Countries/Corporations
+				set_temp_variable = { money_lent_temp = 0 }
+				for_each_loop = {
+					array = money_lent_amount
+					value = m
+					add_to_temp_variable = { money_lent_temp = m }
+				}
+				divide_temp_variable = { money_lent_temp = 1000 }
+				add_to_variable = { national_bank_amount_lent_k = money_lent_temp }
 			#
 
 			set_variable = { national_bank_amount_left_k = national_bank_amount_k }
@@ -8732,10 +8754,24 @@
 			set_variable = { national_bank_interest_from_scarcity = national_bank_amount_lent_k }
 			divide_variable = { national_bank_interest_from_scarcity = national_bank_amount_k }
 			multiply_variable = { national_bank_interest_from_scarcity = global.loan_scarcity_rate }
+
+			set_variable = { national_bank_international_interest_rate = national_bank_interest_from_scarcity }
+			add_to_variable = { national_bank_international_interest_rate = global.base_international_interest_rate } #National Banks prefer to lend to their own country
 		#
 	}
 	national_debt_update = {
+		#Country Scope
+
 		set_variable = { national_debt = debt_to_national_bank }
+		
+		#Money owed to foreign countries
+		set_variable = { debt_to_foreign_countries = 0 }
+		for_each_loop = {
+			array = debt_to_bank_amount
+			value = m
+			add_to_variable = { debt_to_foreign_countries = m }
+		}
+		add_to_variable = { national_debt = debt_to_foreign_countries }
 
 		set_variable = { national_debt_max_repayment_amount = treasury }
 		if = {
@@ -8743,6 +8779,60 @@
 				check_variable = { national_debt_max_repayment_amount > national_debt }
 			}
 			set_variable = { national_debt_max_repayment_amount = national_debt }
+		}
+	}
+
+	global_bank_update = {
+		#Country Scope
+		#Note: This loops through every country. Use it sparingly
+		
+		clear_array = global_bank_countries #Sorted by international interest rate
+		clear_array = global_bank_interest_rate #Sorted by international interest rate
+		for_each_scope_loop = {
+			array = global.econ_order_array
+			#Loops through the global econ array and adds countries to the global bank array, sorting by international interest rate
+
+			if = {
+				limit = {
+					tag = PREV
+				}
+				set_temp_variable = { interest_temp = national_bank_interest_from_scarcity }
+				add_to_temp_variable = { interest_temp = PREV.credit_rating_interest }
+			}
+			else = {
+				set_temp_variable = { interest_temp = national_bank_international_interest_rate }
+				add_to_temp_variable = { interest_temp = PREV.credit_rating_interest }
+			}
+			for_each_loop = {
+				array = PREV.global_bank_countries
+				index = ii
+				value = country_temp
+				break = bb
+
+				if = {
+					limit = {
+						check_variable = { PREV.global_bank_interest_rate^ii > interest_temp }
+					}
+					add_to_array = { 
+						array = PREV.global_bank_countries 
+						value = THIS
+						index = ii
+					}
+					add_to_array = { 
+						array = PREV.global_bank_interest_rate 
+						value = interest_temp
+						index = ii
+					}
+					set_temp_variable = { bb = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { bb = 0 }
+				}
+				add_to_array = { PREV.global_bank_countries = THIS }
+				add_to_array = { PREV.global_bank_interest_rate = interest_temp }
+			}
 		}
 	}
 
@@ -9995,24 +10085,102 @@
 			subtract_from_temp_variable = { borrow_temp = 0.5 }
 			round_temp_variable = borrow_temp
 			
-			#TODO - Credit Rating
-			#Borrow from Locals
-			set_temp_variable = { borrow_temp_k = borrow_temp }
-			divide_temp_variable = { borrow_temp_k = 1000 }
 			if = {
 				limit = {
-					check_variable = { borrow_temp_k > national_bank_amount_left_k }
+					OR = { 
+						check_variable = { country_temp = 0  }
+						tag = country_temp
+					}
 				}
-				set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+				#Borrow from Locals
+				set_temp_variable = { borrow_temp_k = borrow_temp }
+				divide_temp_variable = { borrow_temp_k = 1000 }
+				if = {
+					limit = {
+						check_variable = { borrow_temp_k > national_bank_amount_left_k }
+					}
+					set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+				}
+
+				set_temp_variable = { borrow_temp = borrow_temp_k }
+				multiply_temp_variable = { borrow_temp = 1000 }
+				add_to_variable = { debt_to_national_bank = borrow_temp }
+				add_to_variable = { treasury = borrow_temp }
+
+				if = {
+					limit = {
+						check_variable = { country_temp = 0  }
+					}
+					#Borrow from Foreign Banks - TODO
+					for_each_loop = {
+						array = PREV.global_bank_countries
+						index = ii
+						value = country_bank_temp
+						break = bb
+
+					}
+				}
 			}
-			subtract_from_variable = { national_bank_amount_left_k = borrow_temp_k }
+			else_if = {
+				limit = {
+					check_variable = { country_temp > 1000000 }
+				}
+				var:country_temp = {
+					set_temp_variable = { borrow_temp_k = borrow_temp }
+					divide_temp_variable = { borrow_temp_k = 1000 }
+					if = {
+						limit = {
+							check_variable = { borrow_temp_k > national_bank_amount_left_k }
+						}
+						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+					}
 
-			set_temp_variable = { borrow_temp = borrow_temp_k }
-			multiply_temp_variable = { borrow_temp = 1000 }
-			add_to_variable = { debt_to_national_bank = borrow_temp }
-			add_to_variable = { treasury = borrow_temp }
+					set_temp_variable = { borrow_temp = borrow_temp_k }
+					multiply_temp_variable = { borrow_temp = 1000 }
+					if = {
+						limit = {
+							is_in_array = { array = PREV.debt_to_bank_country value = THIS }
+						}
+						for_each_loop = {
+							array = PREV.debt_to_bank_country
+							value = cc
+							index = iii
+							break = bank_break
 
-			#Borrow from Foreign Banks - TODO
+							if = {
+								limit = {
+									tag = cc
+								}
+								add_to_variable = { PREV.debt_to_bank_amount^iii = borrow_temp }
+								set_temp_variable = { bank_break = 1 }
+							}
+						}
+						for_each_loop = {
+							array = money_lent_country
+							value = cc
+							index = iii
+							break = lent_break
+
+							if = {
+								limit = {
+									check_variable = { cc = PREV }
+								}
+								add_to_variable = { money_lent_amount^iii = borrow_temp }
+								set_temp_variable = { lent_break = 1 }
+							}
+						}
+					}
+					else = {
+						add_to_array = { PREV.debt_to_bank_country = THIS }
+						add_to_array = { PREV.debt_to_bank_amount = borrow_temp }
+						add_to_array = { money_lent_country = PREV }
+						add_to_array = { money_lent_amount = borrow_temp }
+					}
+					add_to_variable = { PREV.treasury = borrow_temp }
+
+					national_bank_update = yes
+				}
+			}
 
 			national_debt_update = yes
 			national_bank_update = yes
