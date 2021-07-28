@@ -977,6 +977,45 @@ defined_text = {
             }
         }
     #
+    #Repay Debt
+        defined_text = {
+            name = GetRepayDebtIntroduction
+            text = {
+                trigger = {
+                    check_variable = { ROOT.repay_debt_country = THIS }
+                }
+                localization_key = repay_debt_country_will_repay
+            }
+            text = {
+                localization_key = repay_debt_country_repay
+            }
+        }
+        defined_text = {
+            name = GetRepayDebtAnyIntroduction
+            text = {
+                trigger = {
+                    check_variable = { ROOT.repay_debt_country = 0 }
+                }
+                localization_key = repay_debt_country_will_repay
+            }
+            text = {
+                localization_key = repay_debt_country_repay
+            }
+        }
+
+        defined_text = {
+            name = GetRepayDebtBank
+            text = {
+                trigger = {
+                    tag = ROOT
+                }
+                localization_key = repay_debt_country_foreign_bank
+            }
+            text = {
+                localization_key = repay_debt_country_domestic_bank
+            }
+        }
+    #
 #
 
 #RGOs
