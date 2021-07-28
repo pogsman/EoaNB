@@ -480,7 +480,7 @@
 						}
 						set_temp_variable = { withdraw_temp = pops_savings }
 						subtract_from_temp_variable = { withdraw_temp = pops_savings_goal }
-						divide_temp_variable = { withdraw_temp = 10 }
+						divide_temp_variable = { withdraw_temp = 2 }
 						subtract_from_variable = { pops_savings = withdraw_temp }
 						add_to_variable = { pops_money = withdraw_temp }
 						add_to_variable = { pops_savings_withdrawals = withdraw_temp }
@@ -5301,7 +5301,6 @@
 					add_to_variable = { pops_spending = pops_goods_spending }
 				#
 			}
-			global_bank_update = yes
 			set_variable = { national_bank_interest_gain = 0 }
 		}
 
@@ -5547,6 +5546,7 @@
 
 				add_to_variable = { global.total_money = total_money }
 			#
+			global_bank_update = yes
 		}
 		random_country = {
 			add_to_variable = { global.month = 1 }
@@ -5763,7 +5763,7 @@
 				set_variable = { global.default_interest_rate = 3.0 } #Percent per year - Default national bank interest rate for loans to pops/corporations
 				set_variable = { global.loan_scarcity_rate = 5.0 } #Percent per year - How much interest should be added when you use up all loans you can get
 				set_variable = { global.base_international_interest_rate = 1.0 } #The additional rate that entities pay on getting loans from a foreign national bank
-				set_variable = { global.loan_scarcity_increase_willingness = 0.1 } #When doing the autoborrow, how much scarcity increase is willing to be tolerated?
+				set_variable = { global.loan_scarcity_increase_willingness = 0.25 } #When doing the autoborrow, how much scarcity increase is willing to be tolerated?
 
 				#Credit Ratings & Interest Rates for Each
 					#NOTE - Credit Rating is determined by the system.
@@ -8779,8 +8779,16 @@
 			set_variable = { national_bank_amount_left_k = national_bank_amount_k }
 			subtract_from_variable = { national_bank_amount_left_k = national_bank_amount_lent_k }
 
-			set_variable = { national_bank_interest_from_scarcity = national_bank_amount_lent_k }
-			divide_variable = { national_bank_interest_from_scarcity = national_bank_amount_k }
+			if = {
+				limit = {
+					check_variable = { national_bank_amount_left_k < 0 }
+				}
+				set_variable = { national_bank_interest_from_scarcity = 1 }
+			}
+			else = {
+				set_variable = { national_bank_interest_from_scarcity = national_bank_amount_lent_k }
+				divide_variable = { national_bank_interest_from_scarcity = national_bank_amount_k }
+			}
 			multiply_variable = { national_bank_interest_from_scarcity = global.loan_scarcity_rate }
 
 			set_variable = { national_bank_international_interest_rate = national_bank_interest_from_scarcity }
@@ -8794,6 +8802,7 @@
 		#Money owed to foreign countries & interest
 			clear_array = debt_to_bank_interest_rate
 			set_variable = { debt_to_foreign_countries = 0 }
+			set_variable = { debt_to_national_bank = 0 }
 			for_each_loop = {
 				array = debt_to_bank_amount
 				value = m
@@ -8924,35 +8933,43 @@
 				set_temp_variable = { interest_temp = national_bank_international_interest_rate }
 				add_to_temp_variable = { interest_temp = PREV.credit_rating_interest }
 			}
-			for_each_loop = {
-				array = PREV.global_bank_countries
-				index = ii
-				value = country_temp
-				break = bb
-
-				if = {
-					limit = {
-						check_variable = { PREV.global_bank_interest_rate^ii > interest_temp }
-					}
-					add_to_array = { 
-						array = PREV.global_bank_countries 
-						value = THIS
-						index = ii
-					}
-					add_to_array = { 
-						array = PREV.global_bank_interest_rate 
-						value = interest_temp
-						index = ii
-					}
-					set_temp_variable = { bb = 1 }
-				}
-			}
 			if = {
 				limit = {
-					check_variable = { bb = 0 }
+					OR = {
+						tag = PREV
+						check_variable = { national_bank_amount_left_k > 1 }
+					}
 				}
-				add_to_array = { PREV.global_bank_countries = THIS }
-				add_to_array = { PREV.global_bank_interest_rate = interest_temp }
+				for_each_loop = {
+					array = PREV.global_bank_countries
+					index = ii
+					value = country_temp
+					break = bb
+
+					if = {
+						limit = {
+							check_variable = { PREV.global_bank_interest_rate^ii > interest_temp }
+						}
+						add_to_array = { 
+							array = PREV.global_bank_countries 
+							value = THIS
+							index = ii
+						}
+						add_to_array = { 
+							array = PREV.global_bank_interest_rate 
+							value = interest_temp
+							index = ii
+						}
+						set_temp_variable = { bb = 1 }
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { bb = 0 }
+					}
+					add_to_array = { PREV.global_bank_countries = THIS }
+					add_to_array = { PREV.global_bank_interest_rate = interest_temp }
+				}
 			}
 		}
 	}
@@ -10288,18 +10305,34 @@
 					divide_temp_variable = { borrow_temp_k = 1000 }
 					if = {
 						limit = {
-							check_variable = { borrow_temp_k > national_bank_amount_left_k }
+							tag = country_bank_temp
 						}
-						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+						if = {
+							limit = {
+								check_variable = { borrow_temp_k > national_bank_amount_left_k }
+							}
+							set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+						}
+					}
+					else = {
+						set_temp_variable = { national_bank_amount_left_k_temp }
+						subtract_from_temp_variable = { national_bank_amount_left_k_temp = 1 }
+						if = {
+							limit = {
+								check_variable = { borrow_temp_k > national_bank_amount_left_k_temp }
+							}
+							set_temp_variable = { borrow_temp_k = national_bank_amount_left_k_temp }
+						}
 					}
 
 					#Next Cheapest
 					set_temp_variable = { ii_temp = ii }
 					add_to_temp_variable = { ii_temp = 1 }
 					set_temp_variable = { interest_rate_temp = global_bank_interest_rate^ii_temp }
+					subtract_from_temp_variable = { interest_rate_temp = global_bank_interest_rate^ii }
 					add_to_temp_variable = { interest_rate_temp = global.loan_scarcity_increase_willingness }
 
-					set_temp_variable = { borrow_limit_temp_k = national_bank_amount_k }
+					set_temp_variable = { borrow_limit_temp_k = country_bank_temp:national_bank_amount_k }
 					divide_temp_variable = { borrow_limit_temp_k = global.loan_scarcity_rate }
 					multiply_temp_variable = { borrow_limit_temp_k = interest_rate_temp }
 					if = {
@@ -10377,11 +10410,13 @@
 				var:country_temp = {
 					set_temp_variable = { borrow_temp_k = borrow_temp }
 					divide_temp_variable = { borrow_temp_k = 1000 }
+					set_temp_variable = { national_bank_amount_left_k_temp }
+					subtract_from_temp_variable = { national_bank_amount_left_k_temp = 1 }
 					if = {
 						limit = {
-							check_variable = { borrow_temp_k > national_bank_amount_left_k }
+							check_variable = { borrow_temp_k > national_bank_amount_left_k_temp }
 						}
-						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
+						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k_temp }
 					}
 					if = {
 						limit = {
@@ -10443,7 +10478,7 @@
 			national_bank_update = yes
 		}
 	}
-	repay_debt = { #TODO - country_temp
+	repay_debt = {
 		#Scope: Country
 		#Repays oustanding debt. Automatically caps at treasury amount.
 		#INPUT:
@@ -10465,25 +10500,229 @@
 			subtract_from_temp_variable = { debt_repayment_temp = 0.5 }
 			round_temp_variable = debt_repayment_temp
 
-			#Paying back to locals
-			set_temp_variable = { repay_temp = debt_repayment_temp }
 			if = {
 				limit = {
-					check_variable = { repay_temp > debt_to_national_bank }
+					tag = country_temp
 				}
-				set_temp_variable = { repay_temp = debt_to_national_bank }
+				
+				#Paying back to locals
+				if = {
+					limit = {
+						check_variable = { debt_repayment_temp > debt_to_national_bank }
+					}
+					set_temp_variable = { debt_repayment_temp = debt_to_national_bank }
+				}
+				set_temp_variable = { debt_repayment_temp_k = debt_repayment_temp }
+				divide_temp_variable = { debt_repayment_temp_k = 1000 }
+				add_to_variable = { national_bank_amount_left_k = debt_repayment_temp_k }
+				if = {
+					limit = {
+						check_variable = { debt_repayment_temp_k < 0 }
+					}
+					set_temp_variable = { debt_repayment_temp_k = 0 }
+				}
+				else = {
+					if = {
+						limit = {
+							is_in_array = { array = debt_to_bank_country value = THIS }
+						}
+						set_temp_variable = { debt_repayment_temp = debt_repayment_temp_k }
+						multiply_temp_variable = { debt_repayment_temp = 1000 }
+						subtract_from_variable = { treasury = debt_repayment_temp }
+
+						for_each_loop = {
+							array = debt_to_bank_country
+							value = cc
+							index = iii
+							break = bank_break
+
+							if = {
+								limit = {
+									tag = cc
+								}
+								subtract_from_variable = { debt_to_bank_amount^iii = debt_repayment_temp }
+								if = {
+									limit = {
+										check_variable = { debt_to_bank_amount^iii < 0.001 }
+									}
+									remove_from_array = { array = debt_to_bank_amount index = iii }
+									remove_from_array = { array = debt_to_bank_country index = iii }
+								}
+								set_temp_variable = { bank_break = 1 }
+							}
+						}
+						for_each_loop = {
+							array = money_lent_country
+							value = cc
+							index = iii
+							break = lent_break
+
+							if = {
+								limit = {
+									tag = cc
+								}
+								subtract_from_variable = { money_lent_amount^iii = debt_repayment_temp }
+								if = {
+									limit = {
+										check_variable = { money_lent_amount^iii < 0.001 }
+									}
+									remove_from_array = { array = money_lent_amount index = iii }
+									remove_from_array = { array = money_lent_country index = iii }
+								}
+								set_temp_variable = { lent_break = 1 }
+							}
+						}
+						national_debt_update = yes
+						national_bank_update = yes
+					}
+				}
 			}
-			set_temp_variable = { repay_temp_k = repay_temp }
-			divide_temp_variable = { repay_temp_k = 1000 }
-			add_to_variable = { national_bank_amount_left_k = repay_temp_k }
+			else_if = {
+				limit = {
+					check_variable = { country_temp = 0  }
+				}
+				set_variable = { debt_repayment_amount_left = debt_repayment_temp }
+				set_temp_variable = { length_temp = debt_to_bank_country^ii }
+				set_temp_variable = { ii = 0 }
+				#Repay to Banks with highest interest rates
+				while_loop_effect = {
+					limit = {
+						check_variable = { ii < length_temp }
+					}
+					break = bb
+					set_temp_variable = { length_temp = debt_to_bank_country^num }
+					set_temp_variable = { country_bank_temp = debt_to_bank_country^ii }
+					
+					set_temp_variable = { debt_repayment_temp = debt_repayment_amount_left }
+					if = {
+						limit = {
+							check_variable = { debt_repayment_temp > debt_to_bank_amount^ii }
+						}
+						set_temp_variable = { debt_repayment_temp = debt_to_bank_amount^ii }
+					}
+					set_temp_variable = { debt_repayment_temp_k = debt_repayment_temp }
+					divide_temp_variable = { debt_repayment_temp_k = 1000 }
 
-			set_temp_variable = { repay_temp = repay_temp_k }
-			multiply_temp_variable = { repay_temp = 1000 }
-			subtract_from_variable = { debt_to_national_bank = repay_temp }
-			subtract_from_variable = { treasury = repay_temp }
+					if = {
+						limit = {
+							check_variable = { debt_repayment_temp_k < 0 }
+						}
+						set_temp_variable = { debt_repayment_temp_k = 0 }
+					}
+					else = {
+						set_temp_variable = { debt_repayment_temp = debt_repayment_temp_k }
+						multiply_temp_variable = { debt_repayment_temp = 1000 }
+						
+						subtract_from_variable = { debt_to_bank_amount^ii = debt_repayment_temp }
+						for_each_loop = {
+							array = country_bank_temp:money_lent_country
+							value = cc
+							index = iii
+							break = lent_break
 
-			national_debt_update = yes
-			national_bank_update = yes
+							if = {
+								limit = {
+									check_variable = { cc = THIS }
+								}
+								subtract_from_variable = { country_bank_temp:money_lent_amount^iii = debt_repayment_temp }
+								if = {
+									limit = {
+										check_variable = { country_bank_temp:money_lent_amount^iii < 0.001 }
+									}
+									remove_from_array = { array = country_bank_temp:money_lent_amount index = iii }
+									remove_from_array = { array = country_bank_temp:money_lent_country index = iii }
+								}
+								set_temp_variable = { lent_break = 1 }
+							}
+						}
+						subtract_from_variable = { treasury = debt_repayment_temp }
+						subtract_from_variable = { debt_repayment_amount_left = debt_repayment_temp }
+						var:country_bank_temp = {
+							national_bank_update = yes
+						}
+						if = {
+							limit = {
+								check_variable = { debt_to_bank_amount^ii < 0.001 }
+							}
+							remove_from_array = { array = debt_to_bank_amount index = ii }
+							remove_from_array = { array = debt_to_bank_country index = ii }
+						}
+						subtract_from_temp_variable = { ii = 1 }
+
+						national_debt_update = yes
+						national_bank_update = yes
+						if = {
+							limit = {
+								check_variable = { debt_repayment_amount_left < 0.001 }
+							}
+							set_temp_variable = { bb = 1 }
+						}
+					}
+					add_to_temp_variable = { ii = 1 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { country_temp > 1000000 }
+				}
+				#Repay to a foreign country's bank				
+				if = {
+					limit = {
+						check_variable = { debt_repayment_temp > debt_to_bank_amount^ii }
+					}
+					set_temp_variable = { debt_repayment_temp = debt_to_bank_amount^ii }
+				}
+				set_temp_variable = { debt_repayment_temp_k = debt_repayment_temp }
+				divide_temp_variable = { debt_repayment_temp_k = 1000 }
+
+				if = {
+					limit = {
+						check_variable = { debt_repayment_temp_k < 0 }
+					}
+					set_temp_variable = { debt_repayment_temp_k = 0 }
+				}
+				else = {
+					set_temp_variable = { debt_repayment_temp = debt_repayment_temp_k }
+					multiply_temp_variable = { debt_repayment_temp = 1000 }
+					
+					subtract_from_variable = { debt_to_bank_amount^ii = debt_repayment_temp }
+					for_each_loop = {
+						array = country_temp:money_lent_country
+						value = cc
+						index = iii
+						break = lent_break
+
+						if = {
+							limit = {
+								check_variable = { cc = THIS }
+							}
+							subtract_from_variable = { country_temp:money_lent_amount^iii = debt_repayment_temp }
+							if = {
+								limit = {
+									check_variable = { country_temp:money_lent_amount^iii < 0.001 }
+								}
+								remove_from_array = { array = country_temp:money_lent_amount index = iii }
+								remove_from_array = { array = country_temp:money_lent_country index = iii }
+							}
+							set_temp_variable = { lent_break = 1 }
+						}
+					}
+					subtract_from_variable = { treasury = debt_repayment_temp }
+					var:country_temp = {
+						national_bank_update = yes
+					}
+					if = {
+						limit = {
+							check_variable = { debt_to_bank_amount^ii < 0.001 }
+						}
+						remove_from_array = { array = debt_to_bank_amount index = ii }
+						remove_from_array = { array = debt_to_bank_country index = ii }
+					}
+
+					national_debt_update = yes
+					national_bank_update = yes
+				}
+			}
 		}
 	}
 #
