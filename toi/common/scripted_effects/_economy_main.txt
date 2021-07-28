@@ -10315,7 +10315,7 @@
 						}
 					}
 					else = {
-						set_temp_variable = { national_bank_amount_left_k_temp }
+						set_temp_variable = { national_bank_amount_left_k_temp = national_bank_amount_left_k }
 						subtract_from_temp_variable = { national_bank_amount_left_k_temp = 1 }
 						if = {
 							limit = {
@@ -10410,7 +10410,7 @@
 				var:country_temp = {
 					set_temp_variable = { borrow_temp_k = borrow_temp }
 					divide_temp_variable = { borrow_temp_k = 1000 }
-					set_temp_variable = { national_bank_amount_left_k_temp }
+					set_temp_variable = { national_bank_amount_left_k_temp = national_bank_amount_left_k }
 					subtract_from_temp_variable = { national_bank_amount_left_k_temp = 1 }
 					if = {
 						limit = {
@@ -10614,6 +10614,7 @@
 						multiply_temp_variable = { debt_repayment_temp = 1000 }
 						
 						subtract_from_variable = { debt_to_bank_amount^ii = debt_repayment_temp }
+						set_variable = { var1 = debt_to_bank_amount^ii }
 						for_each_loop = {
 							array = country_bank_temp:money_lent_country
 							value = cc
@@ -10649,8 +10650,6 @@
 						}
 						subtract_from_temp_variable = { ii = 1 }
 
-						national_debt_update = yes
-						national_bank_update = yes
 						if = {
 							limit = {
 								check_variable = { debt_repayment_amount_left < 0.001 }
@@ -10660,6 +10659,8 @@
 					}
 					add_to_temp_variable = { ii = 1 }
 				}
+				national_debt_update = yes
+				national_bank_update = yes
 			}
 			else_if = {
 				limit = {
