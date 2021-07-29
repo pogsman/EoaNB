@@ -641,9 +641,9 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_factor = -0.05
 			}
 		}
 		
@@ -652,9 +652,9 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_factor = -0.08
 			}
 		}
 		
@@ -663,9 +663,9 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.07
+				consumer_goods_factor = -0.11
 			}
 		}
 		
@@ -674,9 +674,9 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.14
 			}
 		}
 		
@@ -685,9 +685,9 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.14
+				consumer_goods_factor = -0.17
 			}
 		}
 		
@@ -696,9 +696,42 @@ ideas = {
 				original_tag = BRA
 			}
 			removal_cost = -1
-			picture = coffee
+			picture = FRA_profits_gold_rush
 			modifier = {
-				consumer_goods_factor = -0.15
+				consumer_goods_factor = -0.20
+			}
+		}
+		
+		BRA_coffee_economy7 = {
+			allowed = {
+				original_tag = BRA
+			}
+			removal_cost = -1
+			picture = FRA_profits_gold_rush
+			modifier = {
+				consumer_goods_factor = -0.23
+			}
+		}
+		
+		BRA_coffee_economy8 = {
+			allowed = {
+				original_tag = BRA
+			}
+			removal_cost = -1
+			picture = FRA_profits_gold_rush
+			modifier = {
+				consumer_goods_factor = -0.26
+			}
+		}
+		
+		BRA_coffee_economy9 = {
+			allowed = {
+				original_tag = BRA
+			}
+			removal_cost = -1
+			picture = FRA_profits_gold_rush
+			modifier = {
+				consumer_goods_factor = -0.29
 			}
 		}
 		
@@ -4070,6 +4103,26 @@ ideas = {
 					date > 1870.11.20
 					date < 1871.3.7
 				}
+			}
+		}
+
+		BRA_barao_de_maua_adv={
+			allowed={
+				original_tag=BRA
+			}
+			visible={
+				date < 1889.10.21
+			}
+			available={
+				date < 1889.10.21
+			}
+			picture=europe_generic_6
+			cost=100
+			removal_cost=0
+			traits={
+				clever_buisnessman
+				railroad_tycoon
+				industrial_promoter
 			}
 		}
 	}

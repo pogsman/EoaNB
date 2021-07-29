@@ -1057,3 +1057,9 @@ USA_reconstruction_radicalization = {
 		has_global_flag = ACW_American_Civil_War_Happened
 	}
 }
+
+BRA_decision_category_coffee_economy = {
+	icon = generic_economy
+	
+	allowed = { original_tag = BRA }
+}

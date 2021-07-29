@@ -32,7 +32,7 @@
         absolutism
 
         no_constitution
-        no_election
+        no_elections
 
       #Culture
         privileged_education

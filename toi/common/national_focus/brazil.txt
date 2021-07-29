@@ -484,7 +484,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 25
-			#unlock_decision_tooltip = BRA_decision_category_coffee_economy
+			unlock_decision_tooltip = BRA_decision_coffee_economy_capital
+			unlock_decision_tooltip = BRA_mission_coffee_economy_rio_de_janeiro
+			unlock_decision_tooltip = BRA_mission_coffee_economy_sao_paulo
+			unlock_decision_tooltip = BRA_mission_coffee_economy_minas_gerais
+			unlock_decision_tooltip = BRA_mission_coffee_economy_parana
+			unlock_decision_tooltip = BRA_decision_coffee_economy_bahia
+			unlock_decision_tooltip = BRA_decision_coffee_economy_espirito_santo
+			add_ideas = BRA_coffee_economy
 		}
 	}
 	
