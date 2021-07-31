@@ -21,7 +21,15 @@ ideas = {
         targeted_modifier = { tag = OTT trade_opinion_factor = +0.5 }
         }
     }
-
+    hidden_ideas = {
+        TUN_royal_palace = {
+            modifier = {
+				political_power_cost = 0.05
+				drift_defence_factor = 0.25
+				army_core_attack_factor = 0.07
+			}
+        }
+    }
 country = {
 	TUN_unorganized_ministries = {
 

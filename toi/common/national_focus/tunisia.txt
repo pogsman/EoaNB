@@ -63,7 +63,7 @@ focus = {
 	prerequisite = { focus = TUN_batto_sfez_affair }
 	completion_reward = {
 	add_manpower = 10000
-	dd_political_power = 100
+	add_political_power = 100
 	increase_ps_by_one = yes
 	}
 }
@@ -113,8 +113,7 @@ focus = {
 		focus = TUN_in_name_of_Allah
 	}
 	completion_reward = {
-		political_power_factor = 0.3
-		stability_weekly = 0.01
+		add_ideas = { TUN_royal_palace }
 	}
 }
 focus = {
@@ -157,7 +156,8 @@ focus = {
 	}
 	completion_reward = {
 		increase_ps_by_one = yes
-		dd_political_power = 100
+		add_stability = 0.2
+		add_war_support = 0.2
 	}
 }
 #---part 1 no reforms

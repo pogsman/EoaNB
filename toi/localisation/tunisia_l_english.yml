@@ -15,13 +15,16 @@
   TUN_political_reform_desc:0 " It's time to improve the old system "
 
   TUN_municipality_of_tunis:0 " Municipality of Tunis "
-  TUN_municipality_of_tunis_desc:0 " We have to decentralize the country to obtain more autonomy "
+  TUN_municipality_of_tunis_desc:0 " We have to decentralize the power to achieve more stability and autonomy "
 
   TUN_expand_the_royal_palace:0 "Expand the Dar al-Taj palace"
   TUN_political_reform_desc:0 "he power of a king is seen in his palace"
 
   TUN_stabilize_the_nation:0 " Stabilize the Nation "
   TUN_stabilize_the_nation_desc:0 " There is only one law in a state "
+
+  TUN_deal_with_national_debts:0 " Deal with national debts"
+  TUN_deal_with_national_debts_desc:0 " Our nation has seen an increase in his deficit also due to the loss of gold and silver coin, we have to stop this "
 
 #---NO REFORMS
   TUN_the_old_order:0 " The old Order"
@@ -52,7 +55,7 @@
   TUN_first_tunisian_newspaper:0 " The Tunisian Newspaper "
   TUN_first_tunisian_newspaper_desc:0 "  Ar-Ra'id at-Tunisi will be our first State newspaper "
 
-  TUN_organize_the_ministries:0 " Succession Reforms "
+  TUN_succession_reforms:0 " Succession Reforms "
   TUN_succession_reforms_desc:0 " From now on the older prince will be the heir to the throne "
 
   TUN_organize_the_ministries:0 " Organize the Ministries "

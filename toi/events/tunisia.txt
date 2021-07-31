@@ -154,9 +154,8 @@ country_event = {
 	option = {
 		name = tunisia.8.a
         hidden_effect = {
-            add_political_stability = 10
-            war_support_factor = 0.3
-            drift_defence_factor = 0.3
+            add_stability = 0.5
+            add_war_support = 0.02
         }
     }
 
