@@ -5897,6 +5897,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/tunisia/focus_tun_in_the_name_of_allah.dds"
 	}
 	SpriteType = {
+		name = "GFX_focus_tun_slavery_ban"
+		texturefile = "gfx/interface/goals/tunisia/focus_tun_slavery_ban.dds"
+	}
+	#---------------------------------
+	SpriteType = {
 		name = "GFX_goal_focus_qing_maintain_mandate"
 		texturefile = "gfx/interface/goals/qing/focus_qing_maintain_mandate.dds"
 	}

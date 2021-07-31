@@ -126,9 +126,9 @@ set_popularities = {
 
   # POLITICAL LEADERS
   create_country_leader = {
-	  name = "Muhammad III ibn al-Husayn"
+	  name = "Muhammad III al-Sadiq"
 	  desc = "POLITICS_MUHAMMAD_III_IBN_AL_HUSAYN"
-    picture = "Portrait_TUN_Muhammad_III_ibn_al_Husayn.dds"
+    picture = "Portrait_TUN_Muhammad_III_al_sadiq.dds"
 	  expire = "1882.10.27"
 	  ideology = constit_monarch
 	  traits = {
@@ -145,4 +145,64 @@ set_popularities = {
 
 	  }
   }
+  create_field_marshal = {
+	  name = "Muhammad II ibn al-Husayn"
+	  desc = "POLITICS_MUHAMMAD_II_IDN_AL_HUSAYN"
+	  picture = "Portrait_TUN_Muhammad_II_ibn_al_Husayn.dds"
+    id = 2520
+    traits = { organizer defensive_doctrine }
+    skill = 2
+    attack_skill = 2
+  	defense_skill = 2
+  	planning_skill = 1
+  }
+  create_field_marshal = {
+	  name = "Mustapha Khaznadar"
+	  desc = "POLITICS_Mustapha_Kaznadar"
+    picture = "Portrait_TUN_Mustapha_Khaznadar.dds"
+    id = 2521
+    traits = { organizer defensive_doctrine desert_fox}
+    skill = 3
+    attack_skill = 2 
+  	defense_skill = 2
+  	planning_skill = 1
+  	logistics_skill = 1
+  }
+  create_corps_commander = {
+    name = "Al fariq Hussein"
+    picture = "Portrait_TUN_General_Hussein.dds"
+    id = 2522
+    traits = { }
+    skill = 3
+    attack_skill = 1
+    defense_skill = 1
+    planning_skill = 2
+    logistics_skill = 2
+  }
+  
+  create_corps_commander = {
+    name = "Mohamed Baccouche"
+    picture = "Portrait_TUN_Muhammad_Baccouche.dds"
+    id = 2523
+    traits = { }
+    skill = 2
+    attack_skill = 1
+    defense_skill = 1
+    planning_skill = 1
+    logistics_skill = 1
+  }
+  
+  
+  create_corps_commander = {
+    name = "Al fariq Osman"
+    picture = "Portrait_TUN_Al_fariq Osman.dds"
+    id = 2524
+    traits = { }
+    skill = 2
+    attack_skill = 1
+    defense_skill = 1
+    planning_skill = 1
+    logistics_skill = 1
+  }
+
 }
