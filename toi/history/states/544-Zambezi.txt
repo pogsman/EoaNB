@@ -1,20 +1,15 @@
-
-state={
-	id=544
-	name="STATE_544" #Mozambique
-	manpower = 956400
-	resources={
-		coal=10
-		iron=3
-	}
+state = {
+	id =544
+	name = "STATE_544" #Mozambique
+	manpower = 442400
 
 	state_category = rural
 
 
-	provinces={
+	provinces = {
 		2159 2180 2217 5155 10972 12950 
 	}
-	history={
+	history = {
 			victory_points = {
 			10972 1
 		}

@@ -1,17 +1,18 @@
-state={
-	id=1288
-	name="STATE_1288"
-	resources={
-		wood=2.000
+state = {
+	id = 1288
+	name = "STATE_1288"
+	resources = {
+		wood =2.000
 	}
 
-	history={
+	history = {
 		owner = NAV
 		buildings = {
 			infrastructure = 1
 
 		}
 		add_core_of = NAV
+		add_claim_by = USA
 		victory_points = {
 			10645 1
 		}
@@ -35,10 +36,10 @@ state={
 		set_state_flag = NA_B_Disregardable_State
 	}
 
-	provinces={
+	provinces = {
 		10645 12552
 	}
-	manpower=14034
+	manpower = 14034
 	
-	state_category=pastoral
+	state_category =pastoral
 }

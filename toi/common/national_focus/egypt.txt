@@ -150,7 +150,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.15 uses = 2 category = infantry_tech }
+			add_tech_bonus = { bonus = 0.15 uses = 2 category = infantry_weapons }
 		}
 	}
 	focus = {
@@ -517,6 +517,7 @@ focus_tree = {
 		prerequisite = {
 			focus = EGY_vic_prepare_invasion_forces
 		}
+		will_lead_to_war_with = ETH
 		x = 1
 		y = 11
 		available_if_capitulated = no
@@ -540,6 +541,7 @@ focus_tree = {
 					}
 				}
 			}
+			activate_mission = EGY_ETH_war_for_gedaref
 			hidden_effect = {
 				set_country_flag = EGY_ETH_war
 			}

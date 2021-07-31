@@ -270,6 +270,26 @@ spriteTypes = {
 			name = "GFX_culture_spanish_basque"
 			textureFile = "gfx//interface//ideas//culture//culture_spanish_basque.dds"
 		}
+		spriteType = {
+			name = "GFX_culture_spanish_austurian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_austurian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_cantabrian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_cantabrian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_canarian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_canarian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_balearic"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_balearic.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_valencian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_valencian.dds"
+		}
 		
 			### PORTUGUESE CULTURE GROUP ###
 		spriteType = {
@@ -2409,6 +2429,10 @@ spriteTypes = {
 			textureFile = "gfx//interface//ideas//culture//culture_indic_lahndi.dds"
 		}
 		spriteType = {
+			name = "GFX_culture_indic_khari"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_khari.dds"
+		}
+		spriteType = {
 			name = "GFX_culture_bodic_ladakhi"
 			textureFile = "gfx//interface//ideas//culture//culture_bodic_ladakhi.dds"
 		}
@@ -2435,6 +2459,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_culture_hindi_bundeli"
 			textureFile = "gfx//interface//ideas//culture//culture_hindi_bundeli.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_hariyanavi"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_hariyanavi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_pahari"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_pahari.dds"
 		}
 		
 		

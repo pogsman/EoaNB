@@ -1,11 +1,11 @@
-state={
-	id=909
-	name="STATE_909"
+state = {
+	id =909
+	name = "STATE_909"
 
 	state_category = rural
 	
 
-	provinces={
+	provinces = {
 		13434
 	}
 	manpower=269288

@@ -1,10 +1,10 @@
-state={
-	id=841
-	name="STATE_841"
+state = {
+	id =841
+	name = "STATE_841"
 
 	state_category = wasteland
-	resources={
-		rubber=2
+	resources = {
+		rubber =2
 	}
 	
 
@@ -13,24 +13,23 @@ state={
 	}
 	manpower=34624
 	
-	history={
+	history = {
 		buildings = {
 		}
 		owner = BAT
 		add_core_of = BAT
  
-                add_to_array = { state_culture_array = 307 } 
-         	add_to_array = { state_culture_array_num = 0.704 }
+		add_to_array = { state_culture_array = 307 } 
+		add_to_array = { state_culture_array_num = 0.704 }
 
-			     add_to_array = { state_culture_array = 318 } 
-         	add_to_array = { state_culture_array_num = 0.282 }
+		add_to_array = { state_culture_array = 318 } 
+		add_to_array = { state_culture_array_num = 0.282 }
 
-                add_to_array = { state_culture_array = 345 } 
-         	add_to_array = { state_culture_array_num = 0.014 }
+		add_to_array = { state_culture_array = 345 } 
+		add_to_array = { state_culture_array_num = 0.014 }
 
-
-                add_to_array = { state_religion_array = 20 } 
-	        add_to_array = { state_religion_array_num = 1.00}
+		add_to_array = { state_religion_array = 20 } 
+		add_to_array = { state_religion_array_num = 1.00}
 
 
 

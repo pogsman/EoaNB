@@ -2852,9 +2852,9 @@ USA_clayton_bulwar_treaty_decision = {
 	
 USA_FN_border_encroachment = {#allows US to steal states from FNs #source = first_nations_tribal_raid_colonial_neighbor 
 
-	#For the purposes of understanding this decision
-	# US = ROOT
-	# dynamic FN = FROM
+# 	For the purposes of understanding this decision
+# 	US = ROOT
+# 	dynamic FN = FROM
 
 		available = {
 			has_war = no
@@ -2874,6 +2874,11 @@ USA_FN_border_encroachment = {#allows US to steal states from FNs #source = firs
 				USA = { has_country_flag = USA_recently_encroached_flag }
 			}
 			USA = { has_completed_focus = USA_FN_aggressive2 }
+			USA = {
+				has_country_leader = {
+					name = "James Buchanan"
+				}
+			}
 		}
 		highlight_states = {
 			state = var:FROM.defender_state_vs_@ROOT
