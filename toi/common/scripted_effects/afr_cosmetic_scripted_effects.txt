@@ -104,7 +104,6 @@ afr_tribal_cosmetic_tag_switch_1_scripted_effect = {
 	if = { limit = { TAG = GGL } set_cosmetic_tag = GGL_tribal_cosmetic_1 }
 	if = { limit = { TAG = KBD } set_cosmetic_tag = KBD_tribal_cosmetic_1 }
 	if = { limit = { TAG = KND } set_cosmetic_tag = KND_tribal_cosmetic_1 }
-	if = { limit = { TAG = LOZ } set_cosmetic_tag = LOZ_tribal_cosmetic_1 }
 	if = { limit = { TAG = OVD } set_cosmetic_tag = OVD_tribal_cosmetic_1 }
 	if = { limit = { TAG = WYO } set_cosmetic_tag = WYO_tribal_cosmetic_1 }
 	if = { limit = { TAG = HJZ } set_cosmetic_tag = HJZ_tribal_cosmetic_1 }
@@ -218,7 +217,6 @@ afr_tribal_cosmetic_tag_switch_2_scripted_effect = {
 	if = { limit = { TAG = GGL } set_cosmetic_tag = GGL_tribal_cosmetic_2 }
 	if = { limit = { TAG = KBD } set_cosmetic_tag = KBD_tribal_cosmetic_2 }
 	if = { limit = { TAG = KND } set_cosmetic_tag = KND_tribal_cosmetic_2 }
-	if = { limit = { TAG = LOZ } set_cosmetic_tag = LOZ_tribal_cosmetic_2 }
 	if = { limit = { TAG = OVD } set_cosmetic_tag = OVD_tribal_cosmetic_2 }
 	if = { limit = { TAG = WYO } set_cosmetic_tag = WYO_tribal_cosmetic_2 }
 	if = { limit = { TAG = HJZ } set_cosmetic_tag = HJZ_tribal_cosmetic_2 }
@@ -329,7 +327,6 @@ afr_nomad_cosmetic_tag_switch_2_scripted_effect = {
 	if = { limit = { TAG = GGL } set_cosmetic_tag = GGL_nomad_cosmetic_2 }
 	if = { limit = { TAG = KBD } set_cosmetic_tag = KBD_nomad_cosmetic_2 }
 	if = { limit = { TAG = KND } set_cosmetic_tag = KND_nomad_cosmetic_2 }
-	if = { limit = { TAG = LOZ } set_cosmetic_tag = LOZ_nomad_cosmetic_2 }
 	if = { limit = { TAG = OVD } set_cosmetic_tag = OVD_nomad_cosmetic_2 }
 	if = { limit = { TAG = WYO } set_cosmetic_tag = WYO_nomad_cosmetic_2 }
 	if = { limit = { TAG = HJZ } set_cosmetic_tag = HJZ_nomad_cosmetic_2 }
@@ -448,7 +445,6 @@ afr_tribal_cosmetic_tag_drop_2_scripted_effect = {
 				has_cosmetic_tag = GGL_tribal_cosmetic_2
 				has_cosmetic_tag = KBD_tribal_cosmetic_2
 				has_cosmetic_tag = KND_tribal_cosmetic_2
-				has_cosmetic_tag = LOZ_tribal_cosmetic_2
 				has_cosmetic_tag = OVD_tribal_cosmetic_2
 				has_cosmetic_tag = WYO_tribal_cosmetic_2
 				has_cosmetic_tag = HJZ_tribal_cosmetic_2

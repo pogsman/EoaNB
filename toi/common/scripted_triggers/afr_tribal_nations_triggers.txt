@@ -228,7 +228,6 @@ afr_is_tribal_allowed = {
 		TAG = LUN
 		TAG = KUB
 		TAG = CKW
-		TAG = LOZ
 		TAG = WYO
 		TAG = KND
 		TAG = MRN
@@ -915,10 +914,6 @@ afr_state_has_multiple_cores = {
 				is_core_of = CKW
 			}
 			AND = {
-				OWNER = { NOT = { TAG = LOZ } }
-				is_core_of = LOZ
-			}
-			AND = {
 				OWNER = { NOT = { TAG = WYO } }
 				is_core_of = WYO
 			}
@@ -1317,10 +1312,6 @@ skt_has_revolt_in_state_trigger = {
 		}
 		AND = { 
 			is_core_of = CKW
-			has_state_flag = skt_has_revolt_in_state
-		}
-		AND = { 
-			is_core_of = LOZ
 			has_state_flag = skt_has_revolt_in_state
 		}
 		AND = { 

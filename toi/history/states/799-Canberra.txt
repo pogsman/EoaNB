@@ -4,10 +4,13 @@ state = {
 	manpower = 25620
 	
 	state_category = pastoral
+
+	resources = {
 		cotton = 15
 		wood = 5
 		iron = 6
-	}	
+	}
+	history = {
 		owner = NSW
 		add_core_of = NSW
 		buildings = {

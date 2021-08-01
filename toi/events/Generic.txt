@@ -1177,15 +1177,6 @@ country_event = {
 					target = CKW
 					transfer_troops = no
 				}
-				LOZ = {
-					every_owned_state = {
-						remove_core_of = PREV
-					}
-				}
-				annex_country = {
-					target = LOZ
-					transfer_troops = no
-				}
 				WYO = {
 					every_owned_state = {
 						remove_core_of = PREV

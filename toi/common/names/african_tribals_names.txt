@@ -829,6 +829,7 @@ BAT = {
 		Tarisai Kefenste Kgosiemang Lebogang Sekai Tafara Kagiso Kudzai Kenosi Ditiro Rukudzo Amogelang Tanyaradzwa Fadzai Tongai Rutendo Takunda Mutsa Baboloki Nakai Masimba Danai Tanatswa Kumbirai Nyasha Boitumelo Takunda
 		Gofaone Gaone Kudakwashe Katlego Kumbirai Farai Fenyang Tanatswa Tumai Tinashe Tariro Mufaro Vongai Tendai Tadiwa Ruvarashe Paidamoyo Tatenda Chido Taurai Mazvita Rufaro Munyaradzi Kundai Tavonga Tanaka Anesu Baboloki 
 	}
+	}
 	female = {
 		names = { Bontwe Bothselo Didereki Goitsemedi Gorata Gouta Itumeleng Keabetswe }
 	}
@@ -838,7 +839,6 @@ BAT = {
 	Boikanyo Oabile Pheko Ramontsho Pelaelo Nkwe Onalenna Tsholofelo Modibedi Dintwe Montshiwa Botshelo Maswabi
 	 }
 	callsigns = { }
-}
 }
 #Zambia
 BTS = {

@@ -500,7 +500,7 @@
 	UJJ = "countries/Ujiji.txt"
 	AHR = "countries/Angolan Herero.txt"
 	WYO = "countries/Wayao.txt"
-	KZB = "countries/Kazembe.txt"
+	# KZB = "countries/Kazembe.txt"
 	BTS = "countries/Barotseland.txt"
 	OVD = "countries/Ovimbundu.txt"
 	CKW = "countries/Chokwe.txt"
@@ -523,7 +523,6 @@
 	RCG = "countries/Republic of Congo.txt"
 	TGY = "countries/Tanganyika.txt"
 	CHA = "countries/Chad.txt"
-	MLW = "countries/Malawi.txt"
 	BMB = "countries/Bemba.txt"
  
 # Southern Africa

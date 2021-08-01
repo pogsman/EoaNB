@@ -26,8 +26,5 @@ USA_Slavery_Debate_Tension_Modifier = {
 TUN_Mejba_Revolt_Modifier = {
 	icon = decision_tun_revolt.dds
 	enable = { always = yes }
-	add_national_unity = -0.1
 	stability_factor = -0.2
-	decrease_ps_by_three = yes
-
 }

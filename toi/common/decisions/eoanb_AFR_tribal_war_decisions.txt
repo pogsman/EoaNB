@@ -2441,7 +2441,7 @@ political_actions = {
 		}
 	}
 }
-foreign_politics={
+eoanb_category_politics_foreign={
 
 	eoanb_decision_OFS_western_diplo = {
 
