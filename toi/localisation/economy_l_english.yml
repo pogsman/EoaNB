@@ -180,6 +180,7 @@
         pops_rgos_life_goods_production_tt:0 "Goods Sold: §Y[?pops_rgos_life_goods_sold]/[?pops_rgos_life_goods_production]§!"
 
         rgos_aristocrats_percentage_loc:0 "[?aristocrats_percentage|1]%"
+        rgos_mechanization_percentage_loc:0 "[?rgos_mechanization_percentage|1]%"
 
         rgo_corporation_title:0 "[?rgo_corporations_state_array^i.GetCorpName]"
         rgo_corporation_percentage_loc:0 "[?rgo_corporations_percentage_array^i|0]%"
@@ -519,8 +520,10 @@
     increase_raw_goods_output_5:0 "Raw Goods Output: §G+5.00%§!\n"
     increase_raw_goods_output_10:0 "Raw Goods Output: §G+10.00%§!\n"
     increase_raw_goods_output_15:0 "Raw Goods Output: §G+15.00%§!\n"
+    increase_raw_goods_output_20:0 "Raw Goods Output: §G+15.00%§!\n"
 
     increase_valuable_goods_output_10:0 "Valuable Goods Output: §G+10.00%§!\n"
+    increase_valuable_goods_output_20:0 "Valuable Goods Output: §G+20.00%§!\n"
 
 
     increase_factory_size_5:0 "Factory Size: §G+5.00%§!\n"

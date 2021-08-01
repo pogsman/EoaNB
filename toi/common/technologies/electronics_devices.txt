@@ -57,6 +57,10 @@ technologies = {
 		category_front_line = {
 			soft_attack = 0.1
 		}
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_20
+			custom_effect_tooltip = increase_valuable_goods_output_20
+		}
 		
 		research_cost = 1.5
 		start_year = 1850
@@ -102,6 +106,10 @@ technologies = {
 		local_resources_factor = 0.05
 		category_front_line = {
 			soft_attack = 0.05
+		}
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_20
+			custom_effect_tooltip = increase_valuable_goods_output_20
 		}
 		
 		research_cost = 1.5

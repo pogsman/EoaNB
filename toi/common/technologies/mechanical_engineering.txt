@@ -4222,7 +4222,7 @@ technologies = {
 	
 		local_resources_factor = 0.10
 		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_10
+			custom_effect_tooltip = increase_raw_goods_output_20
 			custom_effect_tooltip = increase_factory_throughput_10
 			custom_effect_tooltip = increase_factory_build_cost_10
 			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_50
