@@ -971,6 +971,29 @@ add_namespace = russiasiberia
 		}
 	}
 	
+	country_event = {  #Russian Technical Society
+		id = russia.21
+		title = russia.21.t
+		desc = russia.21.d	
+		picture = GFX_report_event_krenholm_manufacture
+		
+		fire_only_once = yes	
+		
+	    is_triggered_only = yes	
+				
+		option = {
+			name = russia.21.a
+				add_ideas = RUS_idea_russian_technical_society
+				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship } 
+				set_temp_variable = { eoanb_prestige_change = 5 }
+		}
+		
+		option = {
+			name = russia.21.b
+        
+		}
+	}
+	
 	### russiapolitical
     
     country_event = {  #Geneva

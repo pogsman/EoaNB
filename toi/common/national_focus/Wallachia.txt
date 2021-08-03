@@ -203,6 +203,7 @@ focus_tree = {
 	
 	focus = {
 		id = ROM_begin_industralization
+		icon = GFX_Focus_Industry_Construction_Support
 		ai_will_do = { factor = 100 }
 		x = 3
 		y = 5
@@ -222,6 +223,7 @@ focus_tree = {
 	
 	focus = {
 		id = ROM_focus_agriculture
+		icon = GFX_Focus_Agriculture_2
 		ai_will_do = { factor = 100 }
 		x = 9
 		y = 1
@@ -287,6 +289,7 @@ focus_tree = {
 	
 	focus = {
 		id = ROM_secularize_land
+		icon = GFX_Focus_Crush_Orthodox
 		ai_will_do = { factor = 100 }
 		x = 10
 		y = 2
@@ -335,6 +338,7 @@ focus_tree = {
 	
 	focus = {
 		id = ROM_revived_agriculture
+		icon = GFX_Focus_Agriculture
 		ai_will_do = { factor = 100 }
 		x = 9
 		y = 5

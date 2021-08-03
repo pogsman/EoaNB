@@ -364,8 +364,9 @@
 	eoanb_decision_RUS_siberian_river_transport_Ob:0 "Steamboat river transport for Ob River"
 	eoanb_decision_RUS_siberian_river_transport_Yenisey:0 "Steamboat river transport for Yenisey River"
 	eoanb_decision_RUS_siberian_river_transport_Lena_Amur:0 "Steamboat river transport for Lena and Amur Rivers"
-  eoanb_decision_RUS_lena_goldfield:0 "Lena Goldfields"
-  eoanb_decision_RUS_kuznetsk_coal_basin:0 "Kuznetsk Coal Basin"
+    eoanb_decision_RUS_lena_goldfield:0 "Lena Goldfields"
+    eoanb_decision_RUS_kuznetsk_coal_basin:0 "Kuznetsk Coal Basin"
+    RUS_decision_lithuanian_press_ban:0 "Ban of Lithuanian Press"
 
 	### TOOLTIPS ###
 
@@ -491,3 +492,11 @@
 
 	RUS_mission_vic_cau_war:0 "Attack the Caucasian Imamate"
 	RUS_mission_vic_cir_war:0 "Attack Circassia"
+    
+    ###Russian Technical Society###
+    RUS_decision_category_russian_technical_society:0 "Imperial Russian Technical Society"
+    RUS_decision_found_russian_technical_society:0 "Foundation of Russian Technical Society"
+    RUS_decision_chemical_technology_metallurgy_section:0 "Chemical technology and metallurgy Section"
+    RUS_decision_mechanics_mechanical_technology_section:0 "Mechanics and mechanical technology Section"
+    RUS_decision_civil_engineering_and_mining_section:0 "Civil engineering and mining Section"
+    RUS_decision_military_and_naval_technology_section:0 "Military and naval technology Section"

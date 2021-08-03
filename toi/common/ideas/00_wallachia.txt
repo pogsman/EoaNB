@@ -263,5 +263,75 @@ ideas = {
 				centrist
 			}
 		}
+		ROM_christian_tell = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Ion_Ghica = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Constantin_Rosetti = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Nicolae_Kretzulescu = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Ion_Heliade_Radulescu = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Ion_Ionescu_Brad = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
+		ROM_Constantin_Robescu = {
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+			}
+
+			traits = { 
+			}
+		}
 	}
 }

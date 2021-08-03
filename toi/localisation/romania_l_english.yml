@@ -120,3 +120,12 @@
  
  ####Decisions
  ROM_economy_descision_wallachia:0 "Wallachian Economy"
+ 
+ ####Advisors
+ ROM_christian_tell:0 "Christian Tell"
+ ROM_Ion_Ghica:0 "Ion Ghica"
+ ROM_Constantin_Rosetti:0 "Constantin A. Rosetti"
+ ROM_Nicolae_Kretzulescu:0 "Nicolae Kretzulescu"
+ ROM_Ion_Heliade_Radulescu:0 "Ion Heliade-Radulescu"
+ ROM_Ion_Ionescu_Brad:0 "Ion Ionescu de la Brad"
+ ROM_Constantin_Robescu:0 "Constantin F. Robescu"

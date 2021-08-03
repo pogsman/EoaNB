@@ -156,7 +156,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			tag = RUS
 		}
 
 		available = {
@@ -293,6 +293,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_1 = { #Kiev
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -336,6 +340,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_2 = { #Łódź
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -379,6 +387,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_3 = { #Vilnius
+		
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -422,6 +434,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_4 = { #Riga
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -463,6 +479,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_5 = { #Sevastopol
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -504,6 +524,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_6 = { #Smolensk
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -544,6 +568,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_7 = { #Tsaritsyn
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -585,6 +613,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_Urbanisation_Committee_8 = { #Nizhny Novgorod
+	
+		allowed = {
+			tag = RUS
+		}
 
 		visible = {
 			has_completed_focus = RUS_vic_Urbanisation_Committee
@@ -626,6 +658,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_coal_1 = { # Donbas
+	
+		allowed = {
+			tag = RUS
+		}
 
 		icon = generic_operation
 
@@ -634,7 +670,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 228
 			owns_state = 227
@@ -643,7 +679,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			 has_completed_focus = RUS_vic_Create_the_MoNR 
 		}
 
 		fire_only_once = yes
@@ -677,6 +713,10 @@ RUS_Industrialisation_decisions = {
 	}
 
 	RUS_mission_vic_coal_2 = { # Kemerovo
+	
+		allowed = {
+			tag = RUS
+		}
 
 		icon = generic_operation
 
@@ -685,14 +725,14 @@ RUS_Industrialisation_decisions = {
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 569
 			controls_state = 569
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 		}
 
 		fire_only_once = yes
@@ -726,9 +766,13 @@ RUS_Industrialisation_decisions = {
 		highlight_states = {
 			state = 264
 		}
+		
+		allowed = {
+			tag = RUS
+		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 			num_of_civilian_factories_available_for_projects > 2
 			owns_state = 264
 			owns_state = 351
@@ -737,7 +781,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 		}
 
 		fire_only_once = yes
@@ -777,16 +821,20 @@ RUS_Industrialisation_decisions = {
 		highlight_states = {
 			state = 578
 		}
+		
+		allowed = {
+			tag = RUS
+		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 			num_of_civilian_factories_available_for_projects > 1
 			owns_state = 578
 			controls_state = 578
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 		}
 
 		fire_only_once = yes
@@ -820,16 +868,20 @@ RUS_Industrialisation_decisions = {
 		highlight_states = {
 			state = 573
 		}
+		
+		allowed = {
+			tag = RUS
+		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 			num_of_civilian_factories_available_for_projects > 1
 			owns_state = 573
 			controls_state = 573
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Create_the_MoNR }
+			has_completed_focus = RUS_vic_Create_the_MoNR 
 		}
 
 		fire_only_once = yes
@@ -861,6 +913,7 @@ RUS_Industrialisation_decisions = {
 		icon = infiltrate_state
 
 		allowed = {
+			tag = RUS
 		}
 
 		available = {
@@ -916,6 +969,7 @@ RUS_Industrialisation_decisions = {
 		icon = infiltrate_state
 
 		allowed = {
+			tag = RUS
 		}
 
 		available = {
@@ -971,7 +1025,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			tag = RUS
 		}
 
 		available = {
@@ -2405,19 +2459,21 @@ RUS_Industrialisation_decisions = {
 	RUS_mission_vic_Logging_Industry_3 = { # Pskov
 
 		icon = generic_operation
+		
+		allowed = { tag = RUS }
 
 		highlight_states = {
 			state = 209
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Invest_In_The_Logging_Industry }
+			has_completed_focus = RUS_vic_Invest_In_The_Logging_Industry 
 			num_of_civilian_factories_available_for_projects > 1
 			controls_state = 209
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Invest_In_The_Logging_Industry }
+			has_completed_focus = RUS_vic_Invest_In_The_Logging_Industry 
 		}
 
 		fire_only_once = yes
@@ -2447,19 +2503,21 @@ RUS_Industrialisation_decisions = {
 	RUS_mission_vic_Coal_Mining_Industry_1 = { # Siberia
 
 		icon = generic_operation
+		
+		allowed = { tag = RUS }
 
 		highlight_states = {
 			state = 575
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry }
+			has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry 
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 575
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry }
+			has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry 
 		}
 
 		fire_only_once = yes
@@ -2489,20 +2547,22 @@ RUS_Industrialisation_decisions = {
 	RUS_mission_vic_Coal_Mining_Industry_2 = { # Ukraine
 
 		icon = generic_operation
+		
+		allowed = { tag = RUS } 
 
 		highlight_states = {
 			state = 221
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry }
+			has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry 
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 221
 			controls_state = 226
 		}
 
 		visible = {
-			RUS = { has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry }
+			has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry 
 		}
 
 		fire_only_once = yes
@@ -2540,7 +2600,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			tag = RUS
 		}
 
 		available = {
@@ -2679,7 +2739,93 @@ RUS_Industrialisation_decisions = {
 			}
 		}
 	}
+	
+	RUS_decision_kreenholm_manufacturing_company = {
 
+		icon = generic_factory
+
+		allowed = { tag = RUS }
+		
+		available = {
+			has_stability > 0.3
+		}
+
+		visible = {
+			has_full_control_of_state = 191
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			add_resource = {
+				type = fabric
+				amount = 6
+				state = 191
+			}
+			hidden_effect = {
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_polevskoy_copper_smelting_plant = {
+
+		icon = generic_factory
+
+		allowed = { tag = RUS }
+		
+		available = {
+			date > 1870.9.1
+			has_stability > 0.3
+		}
+
+		visible = {
+			has_full_control_of_state = 653
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			add_resource = {
+				type = iron
+				amount = 4
+				state = 653
+			}
+			hidden_effect = {
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
 }
 
 eoanb_category_military = {
@@ -4592,16 +4738,16 @@ RUS_decision_category_siberian_colonization = {
 				date < 1900.1.1
 			}
 		}
+		
 	}
-}
-RUS_decision_category_siberian_development = {
+	
 	#Siberian River Transport
 	eoanb_decision_RUS_siberian_river_transport_Ob = {
 
 		icon = generic_decision
 
 		available = {
-			tag = RUS
+			has_country_flag = eoanb_flag_RUS_colonizing_siberia
 		}
 
 		visible = {
@@ -4638,7 +4784,7 @@ RUS_decision_category_siberian_development = {
 		}
 
 		ai_will_do = {
-			base = 1
+			base = 1000
 		}
 	}
 	
@@ -4648,7 +4794,7 @@ RUS_decision_category_siberian_development = {
 
 		available = {
 			date > 1863.05.01
-			tag = RUS
+			has_country_flag = eoanb_flag_RUS_colonizing_siberia
 		}
 
 		visible = {
@@ -4693,7 +4839,7 @@ RUS_decision_category_siberian_development = {
 
 		available = {
 			date > 1874.05.01
-			tag = RUS
+			has_country_flag = eoanb_flag_RUS_colonizing_siberia
 		}
 
 		visible = {
@@ -4746,6 +4892,7 @@ RUS_decision_category_siberian_development = {
 		available = {
 			tag = RUS
 			num_of_civilian_factories_available_for_projects > 1
+			has_country_flag = eoanb_flag_RUS_colonizing_siberia
 		}
 
 		visible = {
@@ -4774,9 +4921,13 @@ RUS_decision_category_siberian_development = {
 				}
 			} 
         }
+		
+		highlight_states = {
+			state = 569
+		}
 
 		ai_will_do = {
-			base = 1
+			base = 1000
 		}
 	}
 	
@@ -4786,7 +4937,7 @@ RUS_decision_category_siberian_development = {
 
 		available = {
 		    date > 1861.05.01
-			tag = RUS
+			has_country_flag = eoanb_flag_RUS_colonizing_siberia
 			num_of_civilian_factories_available_for_projects > 1
 		}
 
@@ -4811,7 +4962,394 @@ RUS_decision_category_siberian_development = {
         }
 
 		ai_will_do = {
-			base = 1
+			base = 1000
 		}
 	}
+}
+
+RUS_decision_category_russian_technical_society = {
+	RUS_decision_found_russian_technical_society = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+			date > 1866.1.1
+			has_stability > 0.3
+			has_war = no
+		}
+
+		visible = {
+			has_idea = sfund_private_ventures_only
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.15
+			research_speed_factor = -0.005
+		}
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+			country_event = { id = russia.21 }
+		}
+		
+		cancel_trigger = {
+			has_war = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_chemical_technology_metallurgy_section = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+			has_stability > 0.3
+			has_war = no
+		}
+
+		visible = {
+			has_idea = sfund_limited_state_sponsorship
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.05
+			research_speed_factor = -0.005
+		}
+		
+		complete_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = chemistry_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = explosives_tech }
+			
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_mechanics_mechanical_technology_section = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+			has_stability > 0.3
+			has_war = no
+		}
+
+		visible = {
+			has_idea = sfund_limited_state_sponsorship
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.05
+			research_speed_factor = -0.005
+		}
+		
+		complete_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = mechanical_engineering_tech }
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_civil_engineering_and_mining_section = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+			has_stability > 0.3
+			has_war = no
+		}
+
+		visible = {
+			has_idea = sfund_limited_state_sponsorship
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.05
+			research_speed_factor = -0.005
+		}
+		
+		complete_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = excavation_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = resource_extraction_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = process_engineering_tech }
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_military_and_naval_technology_section = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+			has_stability > 0.3
+			has_war = no
+		}
+
+		visible = {
+			has_idea = sfund_limited_state_sponsorship
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.05
+			research_speed_factor = -0.005
+		}
+		
+		complete_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = infantry_weapons }
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = land_doctrine }
+			add_tech_bonus = { bonus = 0.25 uses = 3 category = naval_doctrine }
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
+RUS_decision_category_milyutin_reforms = {
+
+	RUS_decision_new_russian_uniforms = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+		
+		}
+
+		visible = {
+			p
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+		
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_mayevskys_artillery = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+		
+		}
+
+		visible = {
+			p
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+		
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_baranovskys_artillery = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+		
+		}
+
+		visible = {
+			p
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+		
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_new_military_districts = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+		
+		}
+
+		visible = {
+			p
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+		
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	RUS_decision_medical_corps = {
+
+		icon = money
+
+		allowed = { tag = RUS }
+		
+		available = {
+		
+		}
+
+		visible = {
+			p
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		
+		days_remove = 180
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+		
+		}
+		
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
 }
