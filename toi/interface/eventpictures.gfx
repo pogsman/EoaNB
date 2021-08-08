@@ -3351,7 +3351,14 @@ spriteTypes = {
 		name = "GFX_event_ITA_Russian_Diplomacy"
 		texturefile = "gfx/event_pictures/italy/event_ITA_Russian_Diplomacy.dds"
 	}
-
+	spriteType = {
+		name = "GFX_event_ITA_Geographic_Society"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Geographic_Society.dds"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Gallery_Opening"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Gallery_Opening.dds"
+	}
 	
 	
 
@@ -3989,6 +3996,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_USA_1857_Panic"
 		texturefile = "gfx/event_pictures/flavor/news_event_flavor_panic_1857.dds"
+	}
 	## Native Events ##
 	spriteType = {
 		name = "GFX_native_industrial_1"
