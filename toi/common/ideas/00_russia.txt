@@ -936,6 +936,20 @@ ideas = {
 			
 			research_bonus = { mechanical_engineering = 0.05 process_engineering = 0.05 biochemistry = 0.05 }
 		}
+		
+		RUS_idea_illiterate_soldiers = {
+		    allowed = {
+                always = yes
+            }
+			
+            removal_cost = 0
+		
+            modifier = {
+               political_power_gain = 0.05
+               consumer_goods_factor = -0.02         
+            }
+		}
+		
     }
 	
 	#PEOPLE
@@ -1338,22 +1352,6 @@ ideas = {
             }
         }
 		
-		RUS_vic_Ludwig_Knoop = {
-            allowed = {
-                original_tag = RUS
-            }
-			
-            traits = { textile_merchant efficient_administrator }
-			
-			visible = {
-                date < 1894.8.16
-            }
-        
-            available = {
-                date < 1894.8.16
-            }
-        }
-		
 		RUS_vic_prince_nikolai_maximilianovich_romanovsky = {
             allowed = {
                 original_tag = RUS
@@ -1366,6 +1364,20 @@ ideas = {
         
             available = {
 				has_idea = RUS_idea_russian_technical_society
+            }
+        }
+		
+		RUS_vic_nikolai_s_tolpianskii= {
+            allowed = {
+                original_tag = RUS
+            }
+			
+            traits = {  }
+			
+			visible = {
+            }
+        
+            available = {
             }
         }
 	}
