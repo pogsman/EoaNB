@@ -180,6 +180,7 @@
         pops_rgos_life_goods_production_tt:0 "Goods Sold: §Y[?pops_rgos_life_goods_sold]/[?pops_rgos_life_goods_production]§!"
 
         rgos_aristocrats_percentage_loc:0 "[?aristocrats_percentage|1]%"
+        rgos_mechanization_percentage_loc:0 "[?rgos_mechanization_percentage|1]%"
 
         rgo_corporation_title:0 "[?rgo_corporations_state_array^i.GetCorpName]"
         rgo_corporation_percentage_loc:0 "[?rgo_corporations_percentage_array^i|0]%"
@@ -468,6 +469,21 @@
     country_decrease_debt_repayment_amount_button_tt:0 "§YLeft Click§! to decrease by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to decrease by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to decrease by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to decrease by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
     country_increase_debt_repayment_amount_button_tt:0 "§YLeft Click§! to increase by §Y1§![GetCurrencyTextIcon] \n§YShift + Left Click§! to increase by §Y5§![GetCurrencyTextIcon] \n§YControl + Left Click§! to increase by §Y25§![GetCurrencyTextIcon] \n§YShift + Control + Left Click§! to increase by §Y100§![GetCurrencyTextIcon] \n\nUsing §YRight Click§! modifies these values by §Y1000x§!"
 
+    country_repay_any_country_title:0 "Any Country"
+    country_repay_any_country_title_tt:0 "§GRECOMMENDED§!\n\n[GetRepayDebtAnyIntroduction] any debt owed to banks around the world, first paying off loans with §Yhigh interest rates.§!"
+
+    repay_debt_country_button_tt:0 "[GetRepayDebtIntroduction] debt owed to [THIS.GetRepayDebtBank] that we pay §Y[?ROOT.debt_to_bank_interest_rate^i|2]%§! interest on."
+    repay_debt_country_title:0 "[?THIS.GetNameWithFlag]"
+    repay_debt_country_national_bank_amount:0 "§Y[?ROOT.debt_to_bank_amount^i]§![GetCurrencyTextIcon]"
+    repay_debt_country_interest_rate:0 "§Y[?ROOT.debt_to_bank_interest_rate^i|2]%§!"
+    #Scripted Loc
+      repay_debt_country_will_repay:0 "You will repay"
+      repay_debt_country_repay:0 "Repay"
+
+      repay_debt_country_domestic_bank:0 "the §Y[?THIS.GetFlag][?THIS.GetAdjective] National Bank§!"
+      repay_debt_country_foreign_bank:0 "§Gyour National Bank§!"
+    #
+
     country_repay_debt_button_loc:0 "Repay Debt"
     country_repay_debt_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to repay §Y[?debt_repayment_amount|0]§![GetCurrencyTextIcon] of debt.\n§YShift + Left Click§! also closes the §YDebt Repayment§! window."
   #
@@ -504,8 +520,10 @@
     increase_raw_goods_output_5:0 "Raw Goods Output: §G+5.00%§!\n"
     increase_raw_goods_output_10:0 "Raw Goods Output: §G+10.00%§!\n"
     increase_raw_goods_output_15:0 "Raw Goods Output: §G+15.00%§!\n"
+    increase_raw_goods_output_20:0 "Raw Goods Output: §G+15.00%§!\n"
 
     increase_valuable_goods_output_10:0 "Valuable Goods Output: §G+10.00%§!\n"
+    increase_valuable_goods_output_20:0 "Valuable Goods Output: §G+20.00%§!\n"
 
 
     increase_factory_size_5:0 "Factory Size: §G+5.00%§!\n"

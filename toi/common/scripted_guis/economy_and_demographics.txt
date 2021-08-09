@@ -864,6 +864,7 @@ scripted_gui = {
 						}
 						ROOT = {
 							set_country_flag = country_borrow_money_view_open
+							global_bank_update = yes
 							close_repay_debt_window = yes
 						}
 					}
@@ -878,18 +879,21 @@ scripted_gui = {
 					set_temp_variable = { country_temp = 0 }
 					borrow_money = yes
 					add_to_variable = { update_state_econ_window = 1 }
+					global_bank_update = yes
 				}
 				govt_borrow_money_button_control_click = {
 					set_temp_variable = { borrow_money_temp = 100 }
 					set_temp_variable = { country_temp = 0 }
 					borrow_money = yes
 					add_to_variable = { update_state_econ_window = 1 }
+					global_bank_update = yes
 				}
 				govt_borrow_money_button_control_shift_click = {
 					set_temp_variable = { borrow_money_temp = 1000 }
 					set_temp_variable = { country_temp = 0 }
 					borrow_money = yes
 					add_to_variable = { update_state_econ_window = 1 }
+					global_bank_update = yes
 				}
 			#
 			#Repay Debt Button
@@ -1217,6 +1221,28 @@ scripted_gui = {
 				add_to_variable = { update_state_econ_window = 1 }
 				close_repay_debt_window = yes
 			}
+
+			country_repay_any_country_button_click = {
+				set_variable = { debt_repayment_country = 0 }
+			}
+			repay_debt_country_button_click = {
+				set_variable = { ROOT.debt_repayment_country = THIS }
+			}
+		}
+		triggers = {
+			country_repay_any_country_button_click_enabled = {
+				NOT = { check_variable = { debt_repayment_country = 0 } }
+			}
+			repay_debt_country_button_click_enabled = {
+				NOT = { check_variable = { ROOT.debt_repayment_country = THIS } }
+			}
+		}
+		dynamic_lists = {
+			country_countries_banks_entries = {
+				array = debt_to_bank_country
+				entry_container = repay_debt_country_entry
+				change_scope = yes
+			}
 		}
 	}
 	country_borrow_money_window = {
@@ -1388,6 +1414,7 @@ scripted_gui = {
 				add_to_variable = { update_state_econ_window = 1 }
 				set_variable = { borrow_money_amount = 0 }
 				set_variable = { borrow_money_country = 0 }
+				global_bank_update = yes
 			}
 			country_borrow_money_button_shift_click = {
 				set_temp_variable = { borrow_money_temp = borrow_money_amount }
@@ -1395,6 +1422,7 @@ scripted_gui = {
 				borrow_money = yes
 				add_to_variable = { update_state_econ_window = 1 }
 				close_borrow_money_window = yes
+				global_bank_update = yes
 			}
 
 			country_borrow_from_any_country_button_click = {
