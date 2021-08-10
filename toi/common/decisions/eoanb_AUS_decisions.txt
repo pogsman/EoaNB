@@ -56,7 +56,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_Hungarian_Wheat
+			has_completed_focus = AUS_hungarian_wheat
 		}
 
 		fire_only_once = yes
@@ -93,7 +93,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_Hungarian_Wheat
+			has_completed_focus = AUS_hungarian_wheat
 		}
 
 		fire_only_once = yes
@@ -130,7 +130,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_Transylvanian_Coal
+			has_completed_focus = AUS_transylvanian_iron
 		}
 
 		fire_only_once = yes
@@ -170,7 +170,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_wood
+			has_completed_focus = AUS_tyrolean_lumber
 		}
 
 		fire_only_once = yes
@@ -210,7 +210,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_coal
+			has_completed_focus = AUS_styrian_coal
 		}
 
 		fire_only_once = yes
@@ -276,6 +276,89 @@ eoanb_category_economic = {
 
         ai_will_do = {
 			base = 1
+		}
+    }
+	
+	AUS_mission_viennamaschinenfabrik = {
+
+        icon = generic_factory
+
+        allowed = { always = no }
+
+        available = {
+			owns_state = 956
+			956 = { machine_parts_factory > 0 }
+			956 = { steel_mill > 0 }
+        }
+
+        activation = { always = no }
+
+        highlight_states = {
+			state = 956
+		}
+
+        fire_only_once = yes
+
+        is_good = no
+
+        days_mission_timeout = 1600
+
+        timeout_effect = {
+            if = {
+	            limit = {
+	            	is_ai = no
+	            }
+	            add_political_power = -50
+				add_stability = -0.02
+	        }
+        }
+
+        complete_effect = {
+            956 = { add_extra_state_shared_building_slots = 2 }
+            add_stability = 0.02
+        }
+
+        ai_will_do = {
+			base = 100
+		}
+    }
+	
+	AUS_decision_support_viennamaschinenfabrik = {
+
+        icon = train
+
+        allowed = { tag = AUS }
+
+        available = {
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = AUS_viennamaschinenfabrik
+			956 = { industrial_complex > 1 }
+        }
+
+        visible = {
+			has_completed_focus = AUS_viennamaschinenfabrik
+			owns_state = 956
+        }
+
+        fire_only_once = yes
+
+		cost = 25
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		days_remove = 180
+
+        complete_effect = {
+        }
+
+		remove_effect = {
+			956 = { add_extra_state_shared_building_slots = 1 }
+        }
+
+        ai_will_do = {
+			base = 100
 		}
     }
 
