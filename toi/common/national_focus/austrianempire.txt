@@ -2105,7 +2105,7 @@ focus_tree = {
 	focus = { 
 		id = AUS_Bureaucratic_Administration 
 		icon = GFX_goal_focus_working_hours
-		x = 19              
+		x = 28              
 		y = 6   
 		cost = 70
 		available_if_capitulated = no
@@ -2122,7 +2122,7 @@ focus_tree = {
 	focus = { 
 		id = AUS_Privatize_Railways  
 		icon = GFX_goal_focus_railroad_development
-		x = 15                
+		x = 21               
 		y = 7   
 		cost = 70
 		available_if_capitulated = no
@@ -2142,23 +2142,309 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = AUS_hydroelectricity   
-		icon = GFX_goal_generic_construction
-		x = 14          
-		y = 10
-		cost = 50 
+		id = AUS_Bohemian_Industralization  
+		icon = GFX_goal_AUS_bohemian_investments
+		x = 16              
+		y = 8   
+		cost = 70
 		available_if_capitulated = no
 		
 		ai_will_do = {
 			factor = 1
 		}
-
+		
 		available = {
-		    has_tech = hydroelectric_plant
+		    9 = { is_owned_and_controlled_by = AUS }
+			NOT = {
+				building_total_bonus_present_civ = yes
+			}
+		}
+		
+		cancel_if_invalid = no
+		
+        prerequisite = {
+            focus = AUS_Privatize_Railways
+        }
+    
+       completion_reward = {
+            AUS = {
+				custom_effect_tooltip = AUS_customeffect_civ_bonus_1
+				hidden_effect = {
+					#getting the current total number of civ inside a country
+					set_variable = { civ_total = 0 }
+					every_owned_state = {
+						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
+					}
+					set_variable = { civ_total_bonus = civ_total }
+					#bonus is valid for the next 3 civ facs
+					add_to_variable = { civ_total_bonus = 3 }
+
+					#bonus idea itself
+					add_ideas = AUS_idea_industrialization_bohemia
+				}
+			}
+			9 = { add_extra_state_shared_building_slots = 1 }
+		}
+	}
+	
+	focus = { 
+		id = AUS_migration_to_prague  
+		icon = GFX_goal_AUS_Migration_Prag
+		x = 15              
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
 		}
 		
         prerequisite = {
-            focus = AUS_vienna_danube_regulation
+            focus = AUS_Bohemian_Industralization
+        }
+    
+        completion_reward = {
+            add_political_power = 25
+            activate_mission = AUS_mission_vic_Prague_Migration_1
+            activate_mission = AUS_mission_vic_Prague_Migration_2
+		}
+	}
+	
+	focus = { 
+		id = AUS_czech_railway_expansion  
+		icon = GFX_goal_focus_railroad_development
+		x = 17              
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_Bohemian_Industralization
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_moravian_manchester
+		icon = GFX_goal_focus_railroad_development
+		x = 16              
+		y = 10 
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_czech_railway_expansion focus = AUS_migration_to_prague
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_mountainuniversitat_leoben 
+		icon = GFX_goal_AUS_bohemian_investments
+		x = 20              
+		y = 8   
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_Privatize_Railways
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_styrian_coal  
+		icon = GFX_goal_AUS_Coal_Styria
+		x = 19              
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_mountainuniversitat_leoben
+        }
+    
+        completion_reward = {
+			unlock_decision_tooltip = eoanb_decision_AUS_vic_styrian_coal
+            add_tech_bonus = {
+                bonus = 0.35
+                uses = 1
+                category = resource_extraction_tech
+            }
+		}
+	}
+	
+	focus = { 
+		id = AUS_tyrolean_lumber 
+		icon = GFX_goal_focus_railroad_development
+		x = 21              
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_mountainuniversitat_leoben
+        }
+    
+        completion_reward = {
+			unlock_decision_tooltip = eoanb_decision_AUS_vic_tyrolean_lumber
+            add_tech_bonus = {
+                bonus = 0.35
+                uses = 1
+                category = biochemistry_tech
+            }
+		}
+	}
+	
+	focus = { 
+		id = AUS_erzgberbahn
+		icon = GFX_goal_focus_railroad_development
+		x = 20              
+		y = 10 
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_tyrolean_lumber focus = AUS_styrian_coal
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_urbanisation_vienna 
+		icon = GFX_goal_AUS_bohemian_investments
+		x = 24              
+		y = 8   
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+		    AUS = { has_political_power > 50 }
+			NOT = {
+				building_total_bonus_present_civ = yes
+			}
+		}
+		
+		cancel_if_invalid = no		
+
+		
+        prerequisite = {
+            focus = AUS_Privatize_Railways
+        }
+    
+        completion_reward = {
+            AUS = { 
+			    custom_effect_tooltip = AUS_customeffect_civ_bonus_2
+				hidden_effect = {
+					#getting the current total number of civ inside a country
+					set_variable = { civ_total = 0 }
+					every_owned_state = {
+						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
+					}
+					set_variable = { civ_total_bonus = civ_total }
+					#bonus is valid for the next 2 civ facs
+					add_to_variable = { civ_total_bonus = 2 }
+
+					#bonus idea itself
+					add_ideas = AUS_idea_urbanise_wien
+				}
+			}
+            956 = {
+                add_extra_state_shared_building_slots = 2
+			}	
+		}
+	}
+	
+	focus = { 
+		id = AUS_viennamaschinenfabrik
+		icon = GFX_goal_AUS_Migration_Prag
+		x = 23              
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_urbanisation_vienna
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_steyr_arms 
+		icon = GFX_goal_focus_railroad_development
+		x = 25             
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_urbanisation_vienna
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_the_danube_regulations_works
+		icon = GFX_goal_focus_railroad_development
+		x = 24             
+		y = 10 
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_steyr_arms focus = AUS_viennamaschinenfabrik
         }
     
         completion_reward = {
@@ -2188,270 +2474,15 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = AUS_wood    
-		icon = GFX_focus_back_to_basics
-		x = 16 
-		y = 8    
-		cost = 50 
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		cancel_if_invalid = no
-		
-        prerequisite = {
-            focus = AUS_Privatize_Railways
-        }
-    
-        completion_reward = {
-            unlock_decision_tooltip = eoanb_decision_AUS_vic_tyrolean_lumber
-            add_tech_bonus = {
-                bonus = 0.35
-                uses = 1
-                category = biochemistry_tech
-            }
-		}
-	}
-	
-	focus = { 
-		id = AUS_coal     
-		icon = GFX_goal_AUS_Coal_Styria
-		x = 14                
-		y = 8   
-		cost = 50
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		cancel_if_invalid = no
-		
-        prerequisite = {
-            focus = AUS_Privatize_Railways
-        }
-    
-        completion_reward = {
-            unlock_decision_tooltip = eoanb_decision_AUS_vic_styrian_coal
-            add_tech_bonus = {
-                bonus = 0.35
-                uses = 1
-                category = resource_extraction_tech
-            }
-		}
-	}
-	
-	focus = { 
-		id = AUS_vienna_danube_regulation      
-		icon = GFX_goal_generic_production
-		x = 15                  
-		y = 9    
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-        prerequisite = {
-            focus = AUS_coal
-        }
-
-        prerequisite = {
-            focus = AUS_wood
-        }
-    
-        completion_reward = {
-		    if = {
-                limit = { 956 = { infrastructure < 6 } }
-                956 = {
-			     	add_building_construction = {
-				    	type = infrastructure 
-				    	level = 1
-				     	instant_build = yes
-				    }
-			    }
-            }
-            else = {
-                add_tech_bonus = {
-                    bonus = 0.75
-                    uses = 1
-                    category = transport_tech
-                }
-            }
-            add_tech_bonus = {
-                bonus = 0.65 
-                uses = 1 
-                category = mechanical_engineering_tech 
-            }
-		}
-	}
-	
-	focus = { 
-		id = AUS_wien_urbanisation       
-		icon = GFX_goal_AUS_Urbanise_Wien
-		x = 16                     
-		y = 10      
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		available = {
-		    AUS = { has_political_power > 50 }
-			NOT = {
-				building_total_bonus_present_civ = yes
-			}
-		}
-		
-		cancel_if_invalid = no		
-
-        prerequisite = {
-            focus = AUS_vienna_danube_regulation
-        }
-    
-        completion_reward = {
-            AUS = { 
-			    custom_effect_tooltip = AUS_customeffect_civ_bonus_2
-				hidden_effect = {
-					#getting the current total number of civ inside a country
-					set_variable = { civ_total = 0 }
-					every_owned_state = {
-						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
-					}
-					set_variable = { civ_total_bonus = civ_total }
-					#bonus is valid for the next 2 civ facs
-					add_to_variable = { civ_total_bonus = 2 }
-
-					#bonus idea itself
-					add_ideas = AUS_idea_urbanise_wien
-				}
-			}
-            956 = {
-                add_extra_state_shared_building_slots = 2
-			}	
-		}
-	}
-	
-	focus = { 
-		id = AUS_sudbahn_trieste
-		icon = GFX_goal_AUS_sudbahn_trieste
-		x = 12                     
-		y = 8       
-		cost = 50  
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		available = { 
-		    736 = { is_owned_and_controlled_by = AUS }
-			1235 = { is_owned_and_controlled_by = AUS }
-			num_of_civilian_factories_available_for_projects > 8
-		}
-		
-		#cancel_if_invalid = no	
-		
-        prerequisite = {
-            focus = AUS_Privatize_Railways
-        }
-    
-        completion_reward = {
-            activate_mission = AUS_mission_vic_Triest_Railways
-			custom_effect_tooltip = AUS_tt_sudbahn_trieste
-		}
-	}
-	
-	focus = { 
-		id = AUS_Bohemian_Industrialization         
+		id = AUS_bank_galicyjski
 		icon = GFX_goal_AUS_bohemian_investments
-		x = 12                      
-		y = 9        
+		x = 28              
+		y = 8   
 		cost = 70
 		available_if_capitulated = no
 		
 		ai_will_do = {
 			factor = 1
-		}
-		
-		available = {
-		    9 = { is_owned_and_controlled_by = AUS }
-			NOT = {
-				building_total_bonus_present_civ = yes
-			}
-		}
-		
-		cancel_if_invalid = no
-		
-        prerequisite = {
-            focus = AUS_sudbahn_trieste
-        }
-    
-        completion_reward = {
-            AUS = {
-				custom_effect_tooltip = AUS_customeffect_civ_bonus_1
-				hidden_effect = {
-					#getting the current total number of civ inside a country
-					set_variable = { civ_total = 0 }
-					every_owned_state = {
-						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
-					}
-					set_variable = { civ_total_bonus = civ_total }
-					#bonus is valid for the next 3 civ facs
-					add_to_variable = { civ_total_bonus = 3 }
-
-					#bonus idea itself
-					add_ideas = AUS_idea_industrialization_bohemia
-				}
-			}
-			9 = { add_extra_state_shared_building_slots = 1 }
-		}
-	}
-	
-	focus = { 
-		id = AUS_Migration_Major_Cities
-		icon = GFX_goal_AUS_Migration_Prag
-		x = 12                      
-		y = 10         
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-        prerequisite = {
-            focus = AUS_Bohemian_Industrialization 
-        }
-    
-        completion_reward = {
-            add_political_power = 25
-            activate_mission = AUS_mission_vic_Prague_Migration_1
-            activate_mission = AUS_mission_vic_Prague_Migration_2
-		}
-	}
-	
-	focus = { 
-		id = AUS_Galician_Railways
-		icon = GFX_goal_AUS_Finish_Galician_Railways
-		x = 18                       
-		y = 8         
-		cost = 70  
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		available = {
-		    88 = { is_owned_and_controlled_by = AUS }
-			89 = { is_owned_and_controlled_by = AUS }
-			num_of_civilian_factories_available_for_projects > 8
 		}
 		
         prerequisite = {
@@ -2459,16 +2490,14 @@ focus_tree = {
         }
     
         completion_reward = {
-		    activate_mission = AUS_mission_vic_Galician_Railways
-		    custom_effect_tooltip = AUS_tt_Galician_Railways
 		}
 	}
 	
 	focus = { 
-		id = AUS_Lukasiewicz_Discoveries           
-		icon = GFX_focus_research
-		x = 18
-		y = 9
+		id = AUS_lukasiewicz
+		icon = GFX_goal_AUS_Migration_Prag
+		x = 27              
+		y = 9  
 		cost = 70
 		available_if_capitulated = no
 		
@@ -2477,7 +2506,7 @@ focus_tree = {
 		}
 		
         prerequisite = {
-            focus = AUS_Galician_Railways 
+            focus = AUS_bank_galicyjski
         }
     
         completion_reward = {
@@ -2490,10 +2519,52 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = AUS_code_crafts_trade            
-		icon = GFX_focus_generic_treaty 
-		x = 23                          
-		y = 7           
+		id = AUS_galician_railways
+		icon = GFX_goal_AUS_Finish_Galician_Railways
+		x = 29             
+		y = 9  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_bank_galicyjski
+        }
+    
+         completion_reward = {
+		    activate_mission = AUS_mission_vic_Galician_Railways
+		    custom_effect_tooltip = AUS_tt_Galician_Railways
+		}
+	}
+	
+	focus = { 
+		id = AUS_galician_oil
+		icon = GFX_goal_focus_railroad_development
+		x = 28             
+		y = 10 
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_galician_railways focus = AUS_lukasiewicz
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_trade_code
+		icon = GFX_goal_AUS_bohemian_investments
+		x = 35             
+		y = 7   
 		cost = 70
 		available_if_capitulated = no
 		
@@ -2520,10 +2591,10 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = AUS_new_farming_technology             
-		icon = GFX_goal_tfv_generic_tech_sharing 
-		x = 22                           
-		y = 8           
+		id = AUS_ganz_works
+		icon = GFX_goal_AUS_Migration_Prag
+		x = 33              
+		y = 8  
 		cost = 70
 		available_if_capitulated = no
 		
@@ -2532,24 +2603,19 @@ focus_tree = {
 		}
 		
         prerequisite = {
-            focus = AUS_code_crafts_trade  
+            focus = AUS_trade_code
         }
     
         completion_reward = {
-            add_tech_bonus = {
-                bonus = 0.75 
-                uses = 2 
-                category = biochemistry_tech
-            } 
 		}
 	}
 	
 	focus = { 
-		id = AUS_Hungarian_Wheat
-		icon = GFX_goal_AUS_Hungary_Wheat
-		x = 24                            
-		y = 8           
-		cost = 35
+		id = AUS_support_farkashazy
+		icon = GFX_goal_AUS_Finish_Galician_Railways
+		x = 33             
+		y = 9  
+		cost = 70
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2557,7 +2623,47 @@ focus_tree = {
 		}
 		
         prerequisite = {
-            focus = AUS_code_crafts_trade  
+            focus = AUS_ganz_works
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_hungarian_railways
+		icon = GFX_goal_focus_railroad_development
+		x = 35             
+		y = 8 
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_trade_code
+        }
+    
+        completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = AUS_hungarian_wheat
+		icon = GFX_goal_AUS_Hungary_Wheat
+		x = 37              
+		y = 8  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+        prerequisite = {
+            focus = AUS_trade_code
         }
     
         completion_reward = {
@@ -2571,24 +2677,44 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = AUS_Transylvanian_Coal
-		icon = GFX_goal_AUS_Transylvanian_Iron
-		x = 23                             
-		y = 9            
-		cost = 35
+		id = AUS_new_farming_technologies
+		icon = GFX_goal_AUS_Finish_Galician_Railways
+		x = 37             
+		y = 9  
+		cost = 70
 		available_if_capitulated = no
 		
 		ai_will_do = {
 			factor = 1
 		}
 		
-		cancel_if_invalid = no
+        prerequisite = {
+            focus = AUS_hungarian_wheat
+        }
+    
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 0.75 
+                uses = 2 
+                category = biochemistry_tech
+            } 
+		}
+	}
+	
+	focus = { 
+		id = AUS_transylvanian_iron
+		icon = GFX_goal_AUS_Transylvanian_Iron
+		x = 35             
+		y = 10  
+		cost = 70
+		available_if_capitulated = no
+		
+		ai_will_do = {
+			factor = 1
+		}
 		
         prerequisite = {
-            focus = AUS_new_farming_technology   
-        }
-        prerequisite = {
-            focus = AUS_Hungarian_Wheat  
+            focus = AUS_new_farming_technologies focus = AUS_support_farkashazy focus = AUS_hungarian_railways
         }
     
         completion_reward = {
@@ -2599,5 +2725,5 @@ focus_tree = {
                 category = resource_extraction_tech
             }
 		}
-	}
+	}	
 }
