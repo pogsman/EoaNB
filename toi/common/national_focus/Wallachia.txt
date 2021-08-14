@@ -54,6 +54,7 @@ focus_tree = {
 	focus = {
 		id = ROM_invite_foreign_investors
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Worker_Strike_2
 		x = 1
 		y = 2
 		mutually_exclusive = { } 
@@ -101,6 +102,7 @@ focus_tree = {
 	focus = {
 		id = ROM_danube_ports
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Naval_supplies
 		x = 3
 		y = 2
 		mutually_exclusive = { } 
@@ -135,6 +137,7 @@ focus_tree = {
 	focus = {
 		id = ROM_tax_vlach_danube
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Economy_Tax
 		x = 3
 		y = 4
 		mutually_exclusive = { } 
@@ -244,6 +247,7 @@ focus_tree = {
 	focus = {
 		id = ROM_help_land_owners
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Elite
 		x = 8
 		y = 2
 		mutually_exclusive = { } 
@@ -275,6 +279,7 @@ focus_tree = {
 	focus = {
 		id = ROM_help_peasantry
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Worker_Appeal
 		x = 8
 		y = 4
 		mutually_exclusive = { } 
@@ -358,6 +363,7 @@ focus_tree = {
 	focus = {
 		id = ROM_focus_political_situation
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Freedom
 		x = 14
 		y = 0 
 		cost = 35
@@ -385,6 +391,7 @@ focus_tree = {
 	focus = {
 		id = ROM_focus_shutdown_brotherhood
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Partisans_Elimination_2
 		x = 13
 		y = 2
 		mutually_exclusive = { focus = ROM_turn_blind_eye } 
@@ -400,6 +407,7 @@ focus_tree = {
 	focus = {
 		id = ROM_arrest_agitators
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Partisans_Elimination
 		x = 13
 		y = 3
 		mutually_exclusive = { } 
@@ -421,8 +429,8 @@ focus_tree = {
 		cost = 35
 		available_if_capitulated = no  
 		completion_reward = {
-		    add_ideas = ROM_incompetent_officers¸
-				country_event = { id = wallachia_focustree.8 }
+			add_ideas = ROM_incompetent_officers
+			country_event = { id = wallachia_focustree.8 }
 		}
 	}
 	
@@ -478,14 +486,15 @@ focus_tree = {
 	focus = {
 		id = ROM_elections
 		ai_will_do = { factor = 100 }
+		icon = GFX_Focus_Election
 		x = 14
 		y = 5
 		mutually_exclusive = { } 
 		prerequisite = { focus = ROM_demote_unionist_officers focus = ROM_unification_rallies}
 		cost = 70
 		available_if_capitulated = no
+		available = { always = no }
 		completion_reward = {
-				country_event = { id = wallachia_focustree.5 }
 		}
 	}
 	
