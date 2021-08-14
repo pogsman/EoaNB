@@ -1140,7 +1140,7 @@ ideas = {
                 date < 1882.10.28
             }
 
-            traits = { rural_innovator }
+            traits = { AUS_trait_Ludwig_Greiner }
         }
 
         AUS_vic_Robert_Schlumberger_von_Goldeck = {
@@ -1174,7 +1174,7 @@ ideas = {
                 date < 1883.07.14
             }
 
-            traits = { great_urbanizer }
+            traits = { AUS_trait_Heinrich_von_Ferstel }
         }
 
         AUS_vic_Mathias_von_Schonerer = {
@@ -1191,7 +1191,7 @@ ideas = {
                 date < 1881.10.30
             }
 
-            traits = { railroad_tycoon }
+            traits = { AUS_trait_Mathias_von_Schonerer }
         }
 
         AUS_vic_Bernhard_von_Wullerstorf_Urbair = {
@@ -1235,14 +1235,61 @@ ideas = {
             }
 
             visible = {
-                date < 1899.03.12
             }
 
             available = {
-                date < 1899.03.12
+  
             }
 
-            traits = {  }
+            traits = { AUS_trait_Josef_Werndl }
+        }
+		
+		AUS_vic_Abraham_Ganz = {
+
+            allowed = {
+                original_tag = AUS
+            }
+
+            visible = {
+            }
+
+            available = {
+  
+            }
+
+            traits = { AUS_trait_Abraham_Ganz }
+        }
+		
+		AUS_vic_Georg_Sigl = {
+
+            allowed = {
+                original_tag = AUS
+            }
+
+            visible = {
+            }
+
+            available = {
+  
+            }
+
+            traits = { AUS_trait_Georg_Sigl }
+        }
+		
+		AUS_vic_de_Farkashazy = {
+
+            allowed = {
+                original_tag = AUS
+            }
+
+            visible = {
+            }
+
+            available = {
+  
+            }
+
+            traits = { AUS_trait_de_Farkashazy }
         }
 	}
 

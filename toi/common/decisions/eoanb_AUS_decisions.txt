@@ -53,6 +53,7 @@ eoanb_category_economic = {
 		available = {
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 154
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
 		visible = {
@@ -63,11 +64,22 @@ eoanb_category_economic = {
 
 		days_remove = 90
 
-		cost = 0
+		cost = 50
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			154 = { add_building_construction = { type = farm level = 1 instant_build = yes } }
 			154 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
 		}
 
 		modifier = {
@@ -90,6 +102,7 @@ eoanb_category_economic = {
 		available = {
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 155
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
 		visible = {
@@ -100,11 +113,22 @@ eoanb_category_economic = {
 
 		days_remove = 90
 
-		cost = 0
+		cost = 50
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			155 = { add_building_construction = { type = farm level = 1 instant_build = yes } }
 			155 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
 		}
 
 		modifier = {
@@ -127,6 +151,7 @@ eoanb_category_economic = {
 		available = {
 			num_of_civilian_factories_available_for_projects > 2
 			controls_state = 84
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
 		visible = {
@@ -137,7 +162,14 @@ eoanb_category_economic = {
 
 		days_remove = 130
 
-		cost = 0
+		cost = 50
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			add_resource = {
@@ -145,6 +177,10 @@ eoanb_category_economic = {
                 amount = 6
                 state = 84
             }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
 		}
 
 		modifier = {
@@ -162,11 +198,12 @@ eoanb_category_economic = {
             tag = AUS
         }
 
-		icon = generic_operation
+		icon = wood
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 1
 			controls_state = 153
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
 		visible = {
@@ -177,7 +214,14 @@ eoanb_category_economic = {
 
 		days_remove = 70
 
-		cost = 0
+		cost = 50
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			add_resource = {
@@ -185,6 +229,10 @@ eoanb_category_economic = {
                 amount = 10
                 state = 153
             }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
 		}
 
 		modifier = {
@@ -195,6 +243,97 @@ eoanb_category_economic = {
 			base = 1000
 		}
 	}
+	
+	AUS_mission_steyr_factory = {
+
+        icon = generic_industry
+
+        allowed = { always = no }
+
+        available = {
+			owns_state = 152
+			152 = { arms_factory > 0 }
+			152 = { industrial_complex > 0 }
+        }
+
+        activation = { always = no }
+
+        highlight_states = {
+			state = 152
+		}
+
+        fire_only_once = yes
+
+        is_good = no
+
+        days_mission_timeout = 1600
+
+        timeout_effect = {
+            if = {
+	            limit = {
+	            	is_ai = no
+	            }
+	            add_political_power = -50
+				add_stability = -0.02
+	        }
+        }
+
+        complete_effect = {
+            152 = { add_extra_state_shared_building_slots = 3 }
+			add_stability = 0.02
+			EOANBSYS_institutions_innovative_add_two = yes
+        }
+
+        ai_will_do = {
+			base = 100
+		}
+    }
+
+	AUS_decision_support_steyr = {
+
+        icon = generic_industry
+
+        allowed = { tag = AUS }
+
+        available = {
+			num_of_civilian_factories_available_for_projects > 2
+			has_completed_focus = AUS_steyr_arms
+			152 = { arms_factory > 0 }
+			152 = { industrial_complex > 0 }
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
+
+        visible = {
+            has_completed_focus = AUS_steyr_arms
+			owns_state = 152
+        }
+
+        fire_only_once = yes
+
+		cost = 75
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		days_remove = 180
+
+        complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
+
+		remove_effect = {
+			152 = { add_extra_state_shared_building_slots = 1 }
+			EOANBSYS_institutions_innovative_add_one = yes
+        }
+
+        ai_will_do = {
+			base = 100
+		}
+    }
 
 	eoanb_decision_AUS_vic_styrian_coal = {
 
@@ -202,11 +341,12 @@ eoanb_category_economic = {
             tag = AUS
         }
 
-		icon = generic_operation
+		icon = coal
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 2
 			controls_state = 152
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
 		visible = {
@@ -217,7 +357,14 @@ eoanb_category_economic = {
 
 		days_remove = 100
 
-		cost = 0
+		cost = 50
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			add_resource = {
@@ -225,6 +372,10 @@ eoanb_category_economic = {
                 amount = 9
                 state = 152
             }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
 		}
 
 		modifier = {
@@ -272,6 +423,7 @@ eoanb_category_economic = {
             89 = { add_extra_state_shared_building_slots = 1 }
             88 = { add_extra_state_shared_building_slots = 1 }
             add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			EOANBSYS_institutions_innovative_add_two = yes
         }
 
         ai_will_do = {
@@ -281,7 +433,7 @@ eoanb_category_economic = {
 	
 	AUS_mission_viennamaschinenfabrik = {
 
-        icon = generic_factory
+        icon = steel
 
         allowed = { always = no }
 
@@ -299,7 +451,7 @@ eoanb_category_economic = {
 
         fire_only_once = yes
 
-        is_good = no
+        is_good = yes
 
         days_mission_timeout = 1600
 
@@ -316,6 +468,7 @@ eoanb_category_economic = {
         complete_effect = {
             956 = { add_extra_state_shared_building_slots = 2 }
             add_stability = 0.02
+			EOANBSYS_institutions_innovative_add_one = yes
         }
 
         ai_will_do = {
@@ -325,7 +478,7 @@ eoanb_category_economic = {
 	
 	AUS_decision_support_viennamaschinenfabrik = {
 
-        icon = train
+        icon = steel
 
         allowed = { tag = AUS }
 
@@ -333,7 +486,8 @@ eoanb_category_economic = {
 			num_of_civilian_factories_available_for_projects > 1
 			has_completed_focus = AUS_viennamaschinenfabrik
 			956 = { industrial_complex > 1 }
-        }
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
 
         visible = {
 			has_completed_focus = AUS_viennamaschinenfabrik
@@ -342,7 +496,7 @@ eoanb_category_economic = {
 
         fire_only_once = yes
 
-		cost = 25
+		cost = 75
 
 		modifier = {
 			civilian_factory_use = 1
@@ -351,16 +505,267 @@ eoanb_category_economic = {
 		days_remove = 180
 
         complete_effect = {
-        }
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
 
 		remove_effect = {
 			956 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_two = yes
+		}
+
+        ai_will_do = {
+			base = 100
+		}
+    }
+	
+	AUS_mission_ganzworks = {
+
+        icon = steel
+
+        allowed = { always = no }
+
+        available = {
+			owns_state = 43
+			43 = { machine_parts_factory > 0 }
+			43 = { steel_mill > 0 }
+        }
+
+        activation = { always = no }
+
+        highlight_states = {
+			state = 43
+		}
+
+        fire_only_once = yes
+
+        is_good = yes
+
+        days_mission_timeout = 1600
+
+        timeout_effect = {
+            if = {
+	            limit = {
+	            	is_ai = no
+	            }
+	            add_political_power = -50
+				add_stability = -0.02
+	        }
+        }
+
+        complete_effect = {
+            43 = { add_extra_state_shared_building_slots = 2 }
+            add_stability = 0.02
+			EOANBSYS_institutions_innovative_add_one = yes
         }
 
         ai_will_do = {
 			base = 100
 		}
     }
+	
+	AUS_decision_support_ganzworks = {
+
+        icon = steel
+
+        allowed = { tag = AUS }
+
+        available = {
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = AUS_ganz_works
+			43 = { industrial_complex > 1 }
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
+
+        visible = {
+			has_completed_focus = AUS_ganz_works
+			owns_state = 43
+        }
+
+        fire_only_once = yes
+
+		cost = 75
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		days_remove = 180
+
+        complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
+
+		remove_effect = {
+			43 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_two = yes
+		}
+
+        ai_will_do = {
+			base = 100
+		}
+    }
+	
+	AUS_decision_bank_galicyjski = {
+
+		icon = money
+
+		allowed = { tag = AUS }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			has_completed_focus = AUS_bank_galicyjski
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
+
+		visible = {
+			owns_state = 1321
+			has_completed_focus = AUS_bank_galicyjski
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		days_remove = 150
+
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
+
+		remove_effect = {
+			set_temp_variable = { eoanb_prestige_change = 5 }
+			eoanb_change_prestige_score = yes
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_two = yes
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	AUS_decision_gorlickie_zaglebie_naftowe = {
+
+		icon = oil
+
+		allowed = { tag = AUS }
+		
+		available = {
+			has_completed_focus = AUS_galician_oil
+			has_idea = AUS_advisor_ignacy_lukasiewicz
+			has_tech = refining
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
+
+		visible = {
+			has_full_control_of_state = 88
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
+		
+		remove_effect = {
+			add_resource = {
+				type = oil
+				amount = 11
+				state = 88
+			}
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	AUS_decision_boryslawskie_zaglebie_naftowe = {
+
+		icon = oil
+
+		allowed = { tag = AUS }
+		
+		available = {
+			has_completed_focus = AUS_galician_oil
+			has_idea = AUS_advisor_ignacy_lukasiewicz
+			has_tech = mechanized_mining
+			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+		}
+
+		visible = {
+			has_full_control_of_state = 91
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = SAX_industry_development_ongoing_effect_tt
+			hidden_effect = { 
+				set_country_flag = SAX_industry_development_ongoing_flag 
+			}
+		}
+		
+		remove_effect = {
+			add_resource = {
+				type = oil
+				amount = 11
+				state = 91
+			}
+			hidden_effect = {
+				clr_country_flag = SAX_industry_development_ongoing_flag
+			}
+			EOANBSYS_institutions_innovative_add_one = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
 
     AUS_mission_vic_Galician_Railways_ai = {
 
@@ -565,6 +970,7 @@ eoanb_category_economic = {
 		    }
             736 = { add_extra_state_shared_building_slots = 1 }
             add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			EOANBSYS_institutions_innovative_add_two = yes
         }
 
         ai_will_do = {
