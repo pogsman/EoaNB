@@ -2138,6 +2138,7 @@ focus_tree = {
         completion_reward = {
 		    add_political_power = 50 
 			add_stability = 0.01 
+			activate_mission = AUS_mission_vic_Triest_Railways
 		}
 	}
 	
@@ -2227,6 +2228,8 @@ focus_tree = {
         }
     
         completion_reward = {
+			activate_mission = AUS_mission_vic_Moravia
+			activate_mission = AUS_mission_vic_Bohemia
 		}
 	}
 	
@@ -2247,6 +2250,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			country_event = { id = AUSindustry.2 days = 5 }
 		}
 	}
 	
@@ -2267,6 +2271,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			country_event = { id = AUSindustry.3 days = 5 }
 		}
 	}
 	
@@ -2339,6 +2344,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			activate_mission = AUS_mission_vic_Erzbergbahn
 		}
 	}
 	
@@ -2415,25 +2421,7 @@ focus_tree = {
         }
     
         completion_reward = {
-            AUS = { 
-			    custom_effect_tooltip = AUS_customeffect_civ_bonus_2
-				hidden_effect = {
-					#getting the current total number of civ inside a country
-					set_variable = { civ_total = 0 }
-					every_owned_state = {
-						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
-					}
-					set_variable = { civ_total_bonus = civ_total }
-					#bonus is valid for the next 2 civ facs
-					add_to_variable = { civ_total_bonus = 2 }
-
-					#bonus idea itself
-					add_ideas = AUS_idea_urbanise_wien
-				}
-			}
-            956 = {
-                add_extra_state_shared_building_slots = 2
-			}	
+            country_event = { id = AUSindustry.1  days = 5 }	
 		}
 	}
 	
@@ -2696,6 +2684,8 @@ focus_tree = {
         }
     
         completion_reward = {
+			activate_mission = AUS_mission_vic_Pest_Debrecen_Railways
+			activate_mission = AUS_mission_vic_Transylvanian_Railways
 		}
 	}
 	

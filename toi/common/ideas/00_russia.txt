@@ -922,6 +922,9 @@ ideas = {
 		}
 		
 		RUS_idea_russian_technical_society = {
+		
+			picture = RUS_idea_russiantechnicalsociety
+		
 		    allowed = {
                 always = yes
             }
@@ -1265,6 +1268,9 @@ ideas = {
         }
 		
 		RUS_vic_Konstantin_Katakazi = {
+		
+			picture = RUS_Konstantin_Gavrilovich_Catacazy
+		
             allowed = {
                 original_tag = RUS
             }
@@ -1296,6 +1302,9 @@ ideas = {
         }
 		
 		RUS_vic_Pyotr_Chikhachyov = {
+		
+			picture = RUS_Pyotr_Alexandrovich_Chikhachyov
+		
             allowed = {
                 original_tag = RUS
             }
@@ -1314,6 +1323,9 @@ ideas = {
         }
 		
 		RUS_vic_Nikolay_Rudanovsky = {
+		
+			picture = RUS_Nikolay_Rudanovsky
+		
             allowed = {
                 original_tag = RUS
             }

@@ -7,6 +7,7 @@ add_namespace = AUShungaryrevolt
 add_namespace = AUSnews
 add_namespace = AUShuncompromise
 add_namespace = AUSfedcompromise
+add_namespace = AUSindustry
 
 #Fall of Freiharr von Bach 
 country_event = {
@@ -2919,4 +2920,105 @@ country_event = { #Negotiate with the Vojvodinans
 		    }
         }		
     }		
+}
+
+
+###Imperial Industry 
+
+#Vienna Urbanisation  
+country_event = {
+	id = AUSindustry.1 
+	title = AUSindustry.1.t
+	desc = AUSindustry.1.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSindustry.1.a 
+		ai_chance = { factor = 100 }
+		
+		956 = { add_extra_state_shared_building_slots = 2 }
+		956 = { set_state_category = metropolis }
+		956 = { add_dynamic_modifier = { modifier = dynmod_AUS_urbanization } } 
+		custom_effect_tooltip = AUS_customeffect_civ_bonus_2
+		hidden_effect = {
+			#getting the current total number of civ inside a country
+			set_variable = { civ_total = 0 }
+			every_owned_state = {
+				add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
+			}
+			set_variable = { civ_total_bonus = civ_total }
+			#bonus is valid for the next 2 civ facs
+			add_to_variable = { civ_total_bonus = 2 }
+
+			#bonus idea itself
+			add_ideas = AUS_idea_urbanise_wien
+		}
+	}
+}
+
+#Moravian Manchester  
+country_event = {
+	id = AUSindustry.2 
+	title = AUSindustry.2.t
+	desc = AUSindustry.2.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSindustry.2.a 
+		ai_chance = { factor = 100 }
+		
+		75 = { add_dynamic_modifier = { modifier = dynmod_AUS_moravianmanchester } }
+		activate_mission = AUS_mission_moravianmanchaster_1
+	}
+}
+
+#Montanuniversität Leoben 
+country_event = {
+	id = AUSindustry.3 
+	title = AUSindustry.3.t
+	desc = AUSindustry.3.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSindustry.3.a 
+		ai_chance = { factor = 100 }
+			add_timed_idea = {
+                    idea = AUS_idea_mountainuniversitat_leoben
+                    days = 800
+            }
+	}
+}
+
+#Hungarian_Gold 
+country_event = {
+	id = AUSindustry.4 
+	title = AUSindustry.4.t
+	desc = AUSindustry.4.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSindustry.4.a 
+		ai_chance = { factor = 100 }
+			add_timed_idea = {
+                    idea = AUS_idea_hungarian_gold
+                    days = 1800
+            }
+		EOANBSYS_institutions_innovative_add_one = yes
+	}
 }

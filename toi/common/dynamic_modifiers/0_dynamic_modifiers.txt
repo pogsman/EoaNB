@@ -328,6 +328,29 @@ dynmod_PRS_urbanization = {
 	state_production_speed_industrial_complex_factor = 0.05
 }
 
+### Austria State Modifiers ###
+
+dynmod_AUS_urbanization = {
+	enable = { always = yes }
+
+	icon = "GFX_idea_water_infrastructure_reliance"
+	
+	state_production_speed_buildings_factor = 0.20 
+	state_production_speed_infrastructure_factor = 0.15
+	state_production_speed_industrial_complex_factor = 0.05
+}
+
+dynmod_AUS_moravianmanchester = {
+	enable = { always = yes }
+
+	icon = "GFX_idea_water_infrastructure_reliance"
+	
+	state_production_speed_buildings_factor = 0.20 
+	state_production_speed_fabric_weavery_factor = 0.05
+}
+
+### Legitimacy Modifier
+
 	
 legitimacy_dynamic_modifier = {
 

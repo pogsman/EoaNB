@@ -179,4 +179,20 @@ spriteTypes = {
 		name = "GFX_idea_RUS_unorganised_army_rus"
 		texturefile = "gfx/interface/ideas/RUS/RUS_unorganised_army_rus.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_RUS_Nikolay_Rudanovsky"
+		texturefile = "gfx/interface/ideas/RUS/RUS_Nikolay_Rudanovsky.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Konstantin_Gavrilovich_Catacazy"
+		texturefile = "gfx/interface/ideas/RUS/RUS_Konstantin_Gavrilovich_Catacazy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Pyotr_Alexandrovich_Chikhachyov"
+		texturefile = "gfx/interface/ideas/RUS/RUS_Pyotr_Alexandrovich_Chikhachyov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_idea_russiantechnicalsociety"
+		texturefile = "gfx/interface/ideas/RUS/RUS_idea_russiantechnicalsociety.dds"
+	}
 }
