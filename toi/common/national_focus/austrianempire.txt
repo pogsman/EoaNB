@@ -2107,7 +2107,7 @@ focus_tree = {
 		icon = GFX_goal_focus_working_hours
 		x = 28              
 		y = 6   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2124,7 +2124,7 @@ focus_tree = {
 		icon = GFX_goal_focus_railroad_development
 		x = 21               
 		y = 7   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2147,7 +2147,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_bohemian_investments
 		x = 16              
 		y = 8   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2156,9 +2156,6 @@ focus_tree = {
 		
 		available = {
 		    9 = { is_owned_and_controlled_by = AUS }
-			NOT = {
-				building_total_bonus_present_civ = yes
-			}
 		}
 		
 		cancel_if_invalid = no
@@ -2168,23 +2165,6 @@ focus_tree = {
         }
     
        completion_reward = {
-            AUS = {
-				custom_effect_tooltip = AUS_customeffect_civ_bonus_1
-				hidden_effect = {
-					#getting the current total number of civ inside a country
-					set_variable = { civ_total = 0 }
-					every_owned_state = {
-						add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
-					}
-					set_variable = { civ_total_bonus = civ_total }
-					#bonus is valid for the next 3 civ facs
-					add_to_variable = { civ_total_bonus = 3 }
-
-					#bonus idea itself
-					add_ideas = AUS_idea_industrialization_bohemia
-				}
-			}
-			9 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 	
@@ -2193,7 +2173,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Migration_Prag
 		x = 15              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2216,7 +2196,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_czechrailways
 		x = 17              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2238,7 +2218,7 @@ focus_tree = {
 		icon = GFX_Focus_Industry_Revolution
 		x = 16              
 		y = 10 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2259,7 +2239,7 @@ focus_tree = {
 		icon = GFX_Focus_Industrial_Complex
 		x = 20              
 		y = 8   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2280,7 +2260,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Coal_Styria
 		x = 19              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2306,7 +2286,7 @@ focus_tree = {
 		icon = GFX_focus_back_to_basics
 		x = 21              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2332,7 +2312,7 @@ focus_tree = {
 		icon = GFX_goal_focus_railroad_development
 		x = 20              
 		y = 10 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2353,7 +2333,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction
 		x = 22              
 		y = 11 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2399,7 +2379,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Urbanise_Wien
 		x = 24              
 		y = 8   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2407,10 +2387,7 @@ focus_tree = {
 		}
 		
 		available = {
-		    AUS = { has_political_power > 50 }
-			NOT = {
-				building_total_bonus_present_civ = yes
-			}
+			956 = { is_owned_and_controlled_by = AUS }
 		}
 		
 		cancel_if_invalid = no		
@@ -2430,7 +2407,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_Maschinenfabrik
 		x = 23              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2442,6 +2419,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			custom_effect_tooltip = AUS_tt_support_sigl
 			activate_mission = AUS_mission_viennamaschinenfabrik
 		}
 	}
@@ -2451,7 +2429,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_Steyr
 		x = 25             
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2463,6 +2441,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			custom_effect_tooltip = AUS_tt_support_werndl
 			activate_mission = AUS_mission_steyr_factory
 		}
 	}
@@ -2472,7 +2451,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		x = 24             
 		y = 10 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2514,7 +2493,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_galician_bank
 		x = 28              
 		y = 8   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2534,7 +2513,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_ignacy_lukasiewicz
 		x = 27              
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2546,6 +2525,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			custom_effect_tooltip = AUS_tt_support_lukasiewicz
             add_tech_bonus = {
                 bonus = 0.75
                 uses = 2
@@ -2559,7 +2539,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Finish_Galician_Railways
 		x = 29             
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2581,7 +2561,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_galician_oil
 		x = 28             
 		y = 10 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2593,6 +2573,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			custom_effect_tooltip = AUS_tt_galician_black_gold_tt
 		}
 	}
 	
@@ -2601,7 +2582,7 @@ focus_tree = {
 		icon = GFX_focus_generic_treaty
 		x = 35             
 		y = 7   
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2631,7 +2612,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_Ganz
 		x = 33              
 		y = 8  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2652,7 +2633,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Finish_Galician_Railways
 		x = 33             
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2664,6 +2645,7 @@ focus_tree = {
         }
     
         completion_reward = {
+			custom_effect_tooltip = AUS_tt_support_farkashazy
 		}
 	}
 	
@@ -2672,7 +2654,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_hungaryrailways
 		x = 35             
 		y = 8 
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2686,6 +2668,7 @@ focus_tree = {
         completion_reward = {
 			activate_mission = AUS_mission_vic_Pest_Debrecen_Railways
 			activate_mission = AUS_mission_vic_Transylvanian_Railways
+			custom_effect_tooltip = AUS_tt_Hungarian_Railways
 		}
 	}
 	
@@ -2694,7 +2677,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Hungary_Wheat
 		x = 37              
 		y = 8  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2720,7 +2703,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_generic_tech_sharing
 		x = 37             
 		y = 9  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {
@@ -2745,7 +2728,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Transylvanian_Iron
 		x = 35             
 		y = 10  
-		cost = 70
+		cost = 50
 		available_if_capitulated = no
 		
 		ai_will_do = {

@@ -234,7 +234,7 @@ ideas = {
 		
 		ROM_incompetent_officers = {
 		    allowed = {
-				always = no
+				always = yes
 			}
 
 			allowed_civil_war = {
@@ -249,7 +249,9 @@ ideas = {
 			}
 		}
 	}
+	
 	political_advisor = {
+	
 		ROM_gheroghe_costraforu = {
 			allowed = {
 				original_tag = ROM
@@ -263,16 +265,20 @@ ideas = {
 				centrist
 			}
 		}
+		
 		ROM_christian_tell = {
 			allowed = {
 				original_tag = ROM
 			}
-			available = {
-			}
+			available = { }
 
-			traits = { 
+			traits = { ROM_trait_Unionist }
+			
+			research_bonus = {
+				land_doctrine = 0.05
 			}
 		}
+		
 		ROM_Ion_Ghica = {
 			allowed = {
 				original_tag = ROM
@@ -280,9 +286,9 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { economic_reformer }
 		}
+		
 		ROM_Constantin_Rosetti = {
 			allowed = {
 				original_tag = ROM
@@ -290,9 +296,9 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { ROM_trait_Unionist political_dancer }
 		}
+		
 		ROM_Nicolae_Kretzulescu = {
 			allowed = {
 				original_tag = ROM
@@ -300,9 +306,9 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { eoanb_trait_experienced_diplomat }
 		}
+		
 		ROM_Ion_Heliade_Radulescu = {
 			allowed = {
 				original_tag = ROM
@@ -310,9 +316,9 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { ROM_trait_Ion_Heliade_Radulescu }
 		}
+		
 		ROM_Ion_Ionescu_Brad = {
 			allowed = {
 				original_tag = ROM
@@ -320,9 +326,9 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { ingenious_scientist }
 		}
+		
 		ROM_Constantin_Robescu = {
 			allowed = {
 				original_tag = ROM
@@ -330,8 +336,7 @@ ideas = {
 			available = {
 			}
 
-			traits = { 
-			}
+			traits = { ROM_trait_Constantin_Robescu }
 		}
 	}
 }

@@ -431,8 +431,6 @@
  AUSfedcompromise.11.d:0 "The small province of Vojvodina is a Slavic majority region in Southern Transleithania, under official Hungary control. While they are a very small region, which wouldn't cause much trouble, we might look into making them truely autonomous. The new federation needs to take into account the needs of all of the minorities in the Empire."
  AUSfedcompromise.11.a:0 ""
  
- 
- 
  AUSitalypolitics.1.t:0 "The Fall of Sardinia-Piedmont"
  AUSitalypolitics.1.d:0 "With our capture of the Sardinian capital of Turin we have effectively won the war. The Sardinian King and their government have capitulated and a conference will be organised shortly to decide on the future of Sardinia-Piedmont. We are now presented with two options: signing a white peace with Sardinia-Piedmont and respecting the status quo or dividing the Kingdom of Sardinia into two halves with the mainland (Savoy) becoming a client state and the House of Savoy being exiled to Sardinia.\nThe first option will aleviate the fears of the other Great Powers of Europe in our upsetting of the balance of powers and it will also convince many Italians that our plans for Italy are not necessarily evil, but on the other hand it poses the risk that Sardinia-Piedmont once again tries to capture Milan and attempt to form 'Italy'.\nShould we divide the Kingdom of Sardinia-Piedmont into two we will gain control of Piedmont, an important industrial region as well as effectively destroy any nationalist movements within it, we will however suffer the price of infamy and the Italian people will become very unruly."
  AUSitalypolitics.1.a:0 "Divide Sardinia and Piedmont"
@@ -539,6 +537,17 @@
  AUS_decision_boryslawskie_zaglebie_naftowe:0 "Borysławsko-Drohobyckie Zagłębie Naftowe"
  AUS_mission_steyr_factory:0 "Steyr Factory"
  AUS_decision_support_steyr:0 "Support Steyr Factory"
+ AUS_mission_ganzworks:0 "Ganz Works Factory"
+ AUS_decision_support_ganzworks:0 "Support Ganz Works"
+ AUS_mission_vic_Moravia:0 "Moravian Railways"
+ AUS_mission_vic_Bohemia:0 "Bohemian Raiwlays"
+ AUS_mission_vic_Erzbergbahn:0 "Erzbergbahn"
+ eoanb_decision_AUS_vic_hungarian_gold:0 "Hungarian Gold"
+ AUS_mission_vic_Pest_Debrecen_Railways:0 "Pest Debrecen Railway"
+ AUS_mission_vic_Transylvanian_Railways:0 "Transylvanians Railways"
+ AUS_decision_railway_upgrade:0 "Railway Upgrade"
+ AUS_decision_category_habsburg_industry:0 "Economy of Austrian Empire"
+ AUS_decision_category_habsburg_industry_desc:0 "Economy of Austrian Empire"
  
  #######################
  # Austrian Ideas      #
@@ -583,6 +592,8 @@
  AUS_idea_PRS_boost_socialism_desc:0 "Prussia is supporting Socialism in Austria."
  GC_idea_south_german_bund:0 "Member of the South German Association"
  GC_idea_south_german_bund_desc:0 "Following our arrangement with Prussia we were able to bind the South German states to us in loose association."
+ AUS_idea_bank_galicyjski:0 "Bank Galicyjski dla Handlu i Przemysłu"
+ 
  
  AUS_idea_naval_wilhelm_von_tegetthof:0 "Wilhelm von Tegetthoff"
  AUS_vic_Adolph_von_Braun:0 "Adolph von Braun"
@@ -649,13 +660,19 @@
  AUS_tt_hungarian_wheat:0 "Unlocks §Ydecisions§! regarding the §Gdevelopment§! of §Yhungarian agriculture§!\n"
  AUS_tt_uhlans:0 "§YTwo unequipped cavalry divisions will appear in Tarnów§!\n"
  AUS_tt_sudbahn_trieste:0 "§gYou will have §Y3000 days§! to §Ybuild one infrastructure level§! in §YTrieste and Istria§!§!"
- AUS_tt_Galician_Railways:0 "§gYou will have §Y3000 days§! to §Ybuild one infrastructure level§! in §YWest and South Galicia§!§!"
+ AUS_tt_Galician_Railways:0 "§gYou will have §Y3000 days§! to §Ybuild one infrastructure level§! in §YWest and South Galicia.§!§!"
+ AUS_tt_Hungarian_Railways:0 "§gYou will have §Y3000 days§! to §Ybuild railway§! in §YHungary§! and §Y3000 days§! to §Ybuild railways§! in §YTransylvania.§!§!"
 
  AUS_tt_SMS_Novara:0 "\n§YThe SMS Novara Returns To Triest§!"
  
- ###Building bonus tooltips###
- AUS_customeffect_civ_bonus_1:0 "§Y3x§! §G25%§! Construction speed bonus for: §YCivilian Factory§!\n"
- AUS_customeffect_civ_bonus_2:0 "§Y2x§! §G20%§! Construction speed bonus for: §YCivilian Factory§!\n"
+ AUS_tt_railway_upgrade:0 "Upgrade a railways in our country demands to finish all railway related focuses and have finished 1870s railwya techs."
+ 
+ AUS_tt_support_farkashazy:0 "§Gde Farkasházy can be selected as an advisor.§!"
+ AUS_tt_support_lukasiewicz:0 "§GIgnacy Łukasiewicz can be selected as an advisor.§!"
+ AUS_tt_support_sigl:0 "§GGeorg Sigl can be selected as an advisor.§!"
+ AUS_tt_support_werndl:0 "§GJosef Werndl can be selected as an advisor.§!"
+ 
+ AUS_tt_galician_black_gold_tt:0 "§GTwo decisions to raise galician oil fields will be available.§!"
  
  ###Austrian Opinion Modifiers###
  AUS_FRA_ARRANGEMENTS_REL:0 "Political Arrangements"

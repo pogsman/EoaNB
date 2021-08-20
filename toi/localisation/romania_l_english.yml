@@ -140,3 +140,7 @@
  ROM_Ion_Heliade_Radulescu:0 "Ion Heliade-Radulescu"
  ROM_Ion_Ionescu_Brad:0 "Ion Ionescu de la Brad"
  ROM_Constantin_Robescu:0 "Constantin F. Robescu"
+ 
+ ROM_trait_Unionist:0 "Unionist"
+ ROM_trait_Constantin_Robescu:0 "Agronomical Engineer"
+ ROM_trait_Ion_Heliade_Radulescu:0 "Famous Scholar"

@@ -2938,26 +2938,29 @@ country_event = {
 	
 	option = {
 		name = AUSindustry.1.a 
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 90 }
 		
 		956 = { add_extra_state_shared_building_slots = 2 }
 		956 = { set_state_category = metropolis }
 		956 = { add_dynamic_modifier = { modifier = dynmod_AUS_urbanization } } 
-		custom_effect_tooltip = AUS_customeffect_civ_bonus_2
-		hidden_effect = {
-			#getting the current total number of civ inside a country
-			set_variable = { civ_total = 0 }
-			every_owned_state = {
-				add_to_variable = { ROOT.civ_total = building_level@industrial_complex }
-			}
-			set_variable = { civ_total_bonus = civ_total }
-			#bonus is valid for the next 2 civ facs
-			add_to_variable = { civ_total_bonus = 2 }
-
-			#bonus idea itself
-			add_ideas = AUS_idea_urbanise_wien
-		}
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
 	}
+	
+	option = {
+		name = AUSindustry.1.b
+		ai_chance = { 
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+		add_political_power = -50
+		add_stability = -0.01
+	}	
 }
 
 #Moravian Manchester  
@@ -2973,10 +2976,26 @@ country_event = {
 	
 	option = {
 		name = AUSindustry.2.a 
-		ai_chance = { factor = 100 }
-		
+		ai_chance = { factor = 90 }
 		75 = { add_dynamic_modifier = { modifier = dynmod_AUS_moravianmanchester } }
 		activate_mission = AUS_mission_moravianmanchaster_1
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = AUSindustry.2.b
+		ai_chance = { 
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+		add_political_power = -50
+		add_stability = -0.01
 	}
 }
 
@@ -3020,5 +3039,6 @@ country_event = {
                     days = 1800
             }
 		EOANBSYS_institutions_innovative_add_one = yes
+		set_temp_variable = { eoanb_prestige_change = 5 }
 	}
 }

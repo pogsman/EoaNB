@@ -1,4 +1,4 @@
-eoanb_category_economic = {
+AUS_decision_category_habsburg_industry = {
 
 	#Es ist mein Wille - Decree
 	eoanb_decision_AUS_mein_wille = {
@@ -16,8 +16,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			date > 1857.10.1
-			NOT = { date > 1859.1.1 }
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -57,7 +56,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_hungarian_wheat
+			has_completed_focus = AUS_trade_code
 		}
 
 		fire_only_once = yes
@@ -106,7 +105,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_hungarian_wheat
+			has_completed_focus = AUS_trade_code
 		}
 
 		fire_only_once = yes
@@ -155,7 +154,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_completed_focus = AUS_transylvanian_iron
+			has_completed_focus = AUS_trade_code
 		}
 
 		fire_only_once = yes
@@ -198,7 +197,7 @@ eoanb_category_economic = {
             tag = AUS
         }
 
-		icon = generic_operation
+		icon = money
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 2
@@ -226,6 +225,7 @@ eoanb_category_economic = {
 			hidden_effect = {
 				clr_country_flag = SAX_industry_development_ongoing_flag
 			}
+			country_event = { days = 5 id = AUSindustry.4 }
 		}
 
 		modifier = {
@@ -249,10 +249,11 @@ eoanb_category_economic = {
 			num_of_civilian_factories_available_for_projects > 1
 			controls_state = 153
 			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+			has_completed_focus = AUS_tyrolean_lumber
 		}
 
 		visible = {
-			has_completed_focus = AUS_tyrolean_lumber
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -349,8 +350,7 @@ eoanb_category_economic = {
 		}
 
         visible = {
-            has_completed_focus = AUS_steyr_arms
-			owns_state = 152
+            has_completed_focus = AUS_Privatize_Railways
         }
 
         fire_only_once = yes
@@ -392,10 +392,11 @@ eoanb_category_economic = {
 			num_of_civilian_factories_available_for_projects > 2
 			controls_state = 152
 			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
+			has_completed_focus = AUS_styrian_coal
 		}
 
 		visible = {
-			has_completed_focus = AUS_styrian_coal
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -532,7 +533,7 @@ eoanb_category_economic = {
             tag = AUS
         }
 
-        icon = generic_construction
+        icon = railway
 
         available = {
             88 = { infrastructure > 4 }
@@ -583,7 +584,7 @@ eoanb_category_economic = {
             tag = AUS
         }
 
-        icon = generic_construction
+        icon = railway
 
         available = {
             4 = { infrastructure > 6 }
@@ -683,8 +684,7 @@ eoanb_category_economic = {
 		}
 
         visible = {
-			has_completed_focus = AUS_viennamaschinenfabrik
-			owns_state = 956
+			has_completed_focus = AUS_Privatize_Railways
         }
 
         fire_only_once = yes
@@ -823,8 +823,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			owns_state = 1321
-			has_completed_focus = AUS_bank_galicyjski
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -850,6 +849,10 @@ eoanb_category_economic = {
 			hidden_effect = {
 				clr_country_flag = SAX_industry_development_ongoing_flag
 			}
+			add_timed_idea = {
+                    idea = AUS_idea_bank_galicyjski
+                    days = 1800
+                }
 			EOANBSYS_institutions_innovative_add_two = yes
 		}
 
@@ -872,7 +875,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_full_control_of_state = 88
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -895,7 +898,7 @@ eoanb_category_economic = {
 		remove_effect = {
 			add_resource = {
 				type = oil
-				amount = 11
+				amount = 5
 				state = 88
 			}
 			hidden_effect = {
@@ -923,7 +926,7 @@ eoanb_category_economic = {
 		}
 
 		visible = {
-			has_full_control_of_state = 91
+			has_completed_focus = AUS_Privatize_Railways
 		}
 
 		fire_only_once = yes
@@ -946,7 +949,7 @@ eoanb_category_economic = {
 		remove_effect = {
 			add_resource = {
 				type = oil
-				amount = 11
+				amount = 5
 				state = 91
 			}
 			hidden_effect = {
@@ -1102,7 +1105,7 @@ eoanb_category_economic = {
 
     AUS_mission_vic_Triest_Railways = {
 
-        icon = generic_construction
+        icon = railway
 
         allowed = {
             tag = AUS
@@ -1160,7 +1163,7 @@ eoanb_category_economic = {
 	
 	AUS_mission_vic_Pest_Debrecen_Railways = {
 
-        icon = generic_construction
+        icon = railway
 
         allowed = {
             tag = AUS
@@ -1210,7 +1213,7 @@ eoanb_category_economic = {
 	
 	AUS_mission_vic_Transylvanian_Railways = {
 
-        icon = generic_construction
+        icon = railway
 
         allowed = {
             tag = AUS
@@ -1257,6 +1260,72 @@ eoanb_category_economic = {
 			base = 1000
 		}
     }
+	
+	#Railway Upgrade
+	AUS_decision_railway_upgrade = {
+
+		icon = railway
+		
+		allowed = { tag = AUS }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = AUS_tt_railway_upgrade
+					has_completed_focus = AUS_erzgberbahn
+					has_completed_focus = AUS_galician_railways
+					has_completed_focus = AUS_hungarian_railways
+					has_completed_focus = AUS_czech_railway_expansion
+					has_tech = steam_locomotive_3
+					has_tech = standardized_gauge
+			}
+		}
+
+		visible = {
+			has_idea = NA_B_small_scale_railways
+			has_completed_focus = AUS_Privatize_Railways
+		}
+
+		fire_only_once = yes
+		
+		cost = 100
+		
+        days_remove = 365
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+        }
+		
+		complete_effect = {
+			if = {  
+				limit = { 
+					has_idea = inframain_no_subsidies_infrastructure 
+				} 
+				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_basic_maintenance_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure } 
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_well_maintaned_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion } 
+			}
+		}
+       
+        remove_effect = {
+			swap_ideas = { remove_idea = NA_B_small_scale_railways add_idea = NA_B_medium_scale_railways } 
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
 }
 
 political_actions = {

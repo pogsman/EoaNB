@@ -23,14 +23,15 @@ ai_historical_focus_list_AUS = {
 		AUS_Kaiser_Navy 
 		AUS_The_Fight_For_Dominance
 		AUS_October_Diploma 
-		AUS_code_crafts_trade 
+		AUS_trade_code 
 		AUS_von_Schmerling 
 		AUS_Fast_To_The_Border
         AUS_February_Patent
         AUS_Reform_Triest_Navy 
-        AUS_sudbahn_trieste 
-        AUS_hydroelectricity
-        AUS_wood
+        AUS_Bohemian_Industralization 
+        AUS_migration_to_prague
+        AUS_czech_railway_expansion
+		AUS_moravian_manchester
         AUS_Pola_Base 
         AUS_New_Recruits_From_The_Honved
         AUS_Protect_The_Border_Forts 		
@@ -50,9 +51,15 @@ ai_historical_focus_list_AUS = {
 		AUS_New_Leadership
 		AUS_Wilhelm_von_Tegetthoff 
         AUS_Discard_February_Patent
-		AUS_coal
-		AUS_Migration_Major_Cities 
-		AUS_Lukasiewicz_Discoveries 
+		AUS_mountainuniversitat_leoben
+		AUS_styrian_coal 
+		AUS_tyrolean_lumber
+		AUS_erzgberbahn
+		AUS_urbanisation_vienna
+		AUS_viennamaschinenfabrik
+		AUS_steyr_arms
+		AUS_the_danube_regulations_works
+		AUS_hydroelectricity
 		AUS_Austro_Italian_Race_Navy 
 		AUS_wien_urbanisation 
 		AUS_Recruits_From_The_Last_Town_Of_The_Empire
@@ -62,7 +69,18 @@ ai_historical_focus_list_AUS = {
 		AUS_vienna_danube_regulation
 		AUS_Archduke_Albrecht 
 		AUS_Patrol_Italy_Coast
-		AUS_Reform_Empire 
+		AUS_Reform_Empire
+		AUS_bank_galicyjski
+		AUS_lukasiewicz
+		AUS_galician_railways
+		AUS_galician_oil
+		AUS_trade_code
+		AUS_ganz_works
+		AUS_support_farkashazy
+		AUS_hungarian_railways
+		AUS_hungarian_wheat
+		AUS_new_farming_technologies
+		AUS_transylvanian_iron
 		#Historical Foci for the first FT end roughly in 1867 
 	}
 }

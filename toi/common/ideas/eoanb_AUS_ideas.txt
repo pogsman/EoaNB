@@ -1115,6 +1115,8 @@ ideas = {
 			allowed = {
 				always = yes
 			}
+			
+			picture = AUS_Hungarian_gold
 
 			allowed_civil_war = {
 				always = yes
@@ -1125,6 +1127,25 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.02
 				political_power_gain = 0.15
+			}
+		}
+		
+		AUS_idea_bank_galicyjski = {
+		
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.01
+				trade_laws_cost_factor = -0.1
+				trade_opinion_factor = 0.05
 			}
 		}
 	}
@@ -1140,6 +1161,7 @@ ideas = {
 
             available = {
                 date < 1882.01.07
+				has_completed_focus = AUS_lukasiewicz
             }
 
 			picture = AUS_advisor_ignacy_lukasiewicz
@@ -1274,12 +1296,14 @@ ideas = {
             allowed = {
                 original_tag = AUS
             }
+			
+			picture = AUS_advisor_Josef_Werndl
 
             visible = {
             }
 
             available = {
-  
+				has_completed_focus = AUS_steyr_arms
             }
 
             traits = { AUS_trait_Josef_Werndl }
@@ -1290,12 +1314,14 @@ ideas = {
             allowed = {
                 original_tag = AUS
             }
+			
+			picture = AUS_advisor_Abraham_Ganz
 
             visible = {
             }
 
             available = {
-  
+				has_completed_focus = AUS_ganz_works
             }
 
             traits = { AUS_trait_Abraham_Ganz }
@@ -1306,6 +1332,8 @@ ideas = {
             allowed = {
                 original_tag = AUS
             }
+			
+			picture = AUS_advisor_Georg_Sigl
 
             visible = {
             }
@@ -1327,7 +1355,7 @@ ideas = {
             }
 
             available = {
-  
+				has_completed_focus = AUS_support_farkashazy
             }
 
             traits = { AUS_trait_de_Farkashazy }
@@ -1620,6 +1648,14 @@ ideas = {
 			allowed = {
 				original_tag = AUS
 			}
+			
+			available = {
+                956 = { is_owned_by = ROOT }
+            }
+
+            visible = {
+                956 = { is_owned_by = ROOT }
+            }
 
 			cost = 150
 			removal_cost = 10

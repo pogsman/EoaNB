@@ -1340,7 +1340,7 @@ leader_traits = {
 		
 		production_factory_efficiency_gain_factor = 0.05
 		production_factory_max_efficiency_factor = 0.05
-		production_speed_arms_factory_factor = 0.05
+		production_speed_arms_factory_factor = 0.15
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1388,6 +1388,34 @@ leader_traits = {
 		production_speed_infrastructure_factor = 0.1
 		production_speed_machine_parts_factory_factor = 0.05
 		mobilization_speed = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### ROM Advisor Traits ###
+	
+	ROM_trait_Unionist = {
+		random = no
+		
+		centrism_drift = 0.1
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Constantin_Robescu = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.1
+		production_speed_farm_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Ion_Heliade_Radulescu = {
+		random = no
+		
+		research_speed_factor = 0.02
+		stability_factor = 0.04
 		
 		ai_will_do = { factor = 1 }
 	}
