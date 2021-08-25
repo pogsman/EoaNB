@@ -1,6 +1,6 @@
 EOANBSYS_pandemics_decision_category = {
 	TSH_decision_kokera_edo_festival = {
-		icon = generic_construction
+		icon = tur_the_constitutional_arrows_category
 
 		allowed = { always = no }
 		activation = { always = no }
@@ -12,14 +12,49 @@ EOANBSYS_pandemics_decision_category = {
 
 		timeout_effect = {
 			add_political_power = -15
-			# country event
+			country_event = feudal_tokugawa_shogunate.14
+		}
+	}
+}
+EOANBSYS_national_crisis_decision_category = {
+	TSH_decision_sonno_joi = {
+
+		icon = generic_construction
+
+		allowed = { TAG = TSH }
+
+		visible = {
+			has_completed_focus = JAP_vic_conciliate_the_courts
+			has_country_flag = EOANBSYS_national_crisis_bakumatsu_crisis_flag
+		}
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 100
+		days_remove = 1
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = TSH_sonno_joi_tt
+			add_stability = 0.15
+			hidden_effect = {
+				country_event = { id = shogunate_japan.20 hours = 1 }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
 		}
 	}
 }
 
 eoanb_category_politics_foreign = {
 	TSH_decision_european_amity_treaty = {
-		icon = generic_political_discourse
+		icon = jap_pacific_guardian
 
 		allowed = {
 			OR = {
@@ -42,16 +77,12 @@ eoanb_category_politics_foreign = {
 			has_navy_size = {
 				size > 10
 			}
-			TSH = {
-				is_subject = no
-				has_idea = pre_industrial_era
-				has_navy_size = {
-					size < 15
-				}
-			}
 		}
 
 		visible = {
+			USA = {
+				has_idea = TSH_spirit_vic_external_amity_treaty_west
+			}
 			TSH = {
 				is_subject = no
 				has_idea = pre_industrial_era
@@ -78,7 +109,7 @@ eoanb_category_politics_foreign = {
 		custom_cost_text = TSH_decision_european_amity_treaty_cost_tt
 
 		complete_effect = {
-			country_event = feudal_tokugawa_shogunate.20
+			country_event = feudal_tokugawa_shogunate.60
 			add_opinion_modifier = { target = TSH modifier = small_increase }
 			reverse_add_opinion_modifier = { target = TSH modifier = small_decrease }
 			hidden_effect = {
@@ -89,13 +120,9 @@ eoanb_category_politics_foreign = {
 	}
 }
 
-eoanb_category_politics_internal = {
-
-}
-
 eoanb_category_war_measures = {
 	JAP_decision_boshin_war_tokugawan_navy_defect = {
-		icon = generic_political_discourse
+		icon = revolt
 
 		allowed = { always = no }
 		activation = { always = no }
@@ -127,7 +154,7 @@ eoanb_category_war_measures = {
 		}
 	}
 	JAP_decision_boshin_war_imperial_surrender_tokugawa = {
-		icon = generic_political_discourse
+		icon = generic_nationalism
 
 		allowed = { always = no }
 		activation = { always = no }
@@ -159,7 +186,7 @@ eoanb_category_war_measures = {
 		}
 	}
 	JAP_decision_boshin_war_shogunate_surrender_japan = {
-		icon = generic_political_discourse
+		icon = generic_nationalism
 
 		allowed = { always = no }
 		activation = { always = no }
@@ -191,9 +218,305 @@ eoanb_category_war_measures = {
 	}
 }
 
+eoanb_category_institutions = {
+	TSH_decision_purchase_books = {
+		icon = generic_research
+
+		allowed = { tag = TSH }
+
+		visible = {
+			has_completed_focus = JAP_vic_legacy_of_rangaku
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = tsh_purchase_rangaku_flag
+			country_event = feudal_tokugawa_shogunate.25
+		}
+	}
+	TSH_decision_foreign_engineering_manuals = {
+		icon = generic_research
+
+		visible = {
+			has_completed_focus = JAP_vic_practical_observations
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.2 uses = 1 category = engineers_tech }
+			EOANBSYS_institutions_humanitive_add_two = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_foreign_technical_manuals = {
+		icon = generic_research
+
+		visible = {
+			has_completed_focus = JAP_vic_victorian_mechanical_theory
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.2 uses = 1 category = industry }
+			EOANBSYS_institutions_humanitive_add_two = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_foreign_weapon_manuals = {
+		icon = generic_research
+
+		visible = {
+			has_completed_focus = JAP_vic_abroad_study_programs
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.2 uses = 1 category = infantry_weapons }
+			EOANBSYS_institutions_humanitive_add_two = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_foreign_strategy_books = {
+		icon = generic_research
+
+		visible = {
+			has_completed_focus = JAP_vic_abroad_study_programs
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
+			EOANBSYS_institutions_humanitive_add_two = yes
+		}
+
+		ai_will_do = { base = 1000 }
+	}
+	TSH_decision_foreign_naval_manuals = {
+		icon = generic_research
+
+		visible = {
+			OR = {
+				has_completed_focus = JAP_vic_seek_british_expertise
+				has_completed_focus = JAP_vic_seek_dutch_expertise
+			}
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.2 uses = 1 category = naval_doctrine }
+			EOANBSYS_institutions_innovative_add_one = yes
+			EOANBSYS_institutions_humanitive_add_one = yes
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
 eoanb_category_industry = {
+	TSH_decision_nagasaki_coal_mines = {
+		icon = coal
+
+		allowed = { tag = TSH }
+
+		available = {
+			has_war = no
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_harnessing_of_steam
+		}
+
+		highlight_states = { state = 1260 }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			country_event = feudal_tokugawa_shogunate.32
+			EOANBSYS_institutions_innovative_add_one = yes
+			if = {
+				limit = { owns_state = 1260 }
+				1260 = {
+					add_extra_state_shared_building_slots = 1
+					add_resource = {
+						type = coal
+						amount = 2
+					}
+				}
+			}
+			else = {
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_resource = {
+						type = coal
+						amount = 2
+					}
+				}
+			}
+			if = {
+				limit = { SAG = { is_subject_of = ROOT } }
+				SAG = {
+					EOANBSYS_institutions_innovative_add_two = yes
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_resource = {
+							type = coal
+							amount = 2
+						}
+					}
+					add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				}
+			}
+		}
+	}
+	TSH_decision_niigata_coal_mines = {
+		icon = coal
+
+		allowed = { tag = TSH }
+
+		available = {
+			has_war = no
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_harnessing_of_steam
+		}
+
+		highlight_states = { state = 534 }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			country_event = feudal_tokugawa_shogunate.33
+			EOANBSYS_institutions_innovative_add_one = yes
+			if = {
+				limit = { owns_state = 534 }
+				534 = {
+					add_extra_state_shared_building_slots = 1
+					add_resource = {
+						type = coal
+						amount = 2
+					}
+				}
+			}
+			else = {
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_resource = {
+						type = coal
+						amount = 4
+					}
+				}
+			}
+			if = {
+				limit = { DTE = { is_subject_of = ROOT } }
+				DTE = {
+					EOANBSYS_institutions_innovative_add_two = yes
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_resource = {
+							type = coal
+							amount = 2
+						}
+					}
+					add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				}
+			}
+		}
+	}
 	TSH_decision_yokosuka_steel_mill = {
-		icon = generic_industry
+		icon = steel
 
 		allowed = { tag = TSH }
 
@@ -220,7 +543,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_two = yes
+			EOANBSYS_institutions_innovative_add_two = yes
 			if = {
 				limit = { owns_state = 282 }
 				282 = {
@@ -248,9 +571,8 @@ eoanb_category_industry = {
 			}
 		}
 	}
-
 	TSH_decision_yokohama_iron_foundry = {
-		icon = generic_construction
+		icon = steel
 
 		allowed = { tag = TSH }
 
@@ -277,7 +599,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_two = yes
+			EOANBSYS_institutions_innovative_add_two = yes
 			if = {
 				limit = { owns_state = 1266 }
 				1266 = {
@@ -305,9 +627,8 @@ eoanb_category_industry = {
 			}
 		}
 	}
-
 	TSH_decision_nagasaki_iron_foundry = {
-		icon = generic_construction
+		icon = steel
 
 		allowed = { tag = TSH }
 
@@ -334,7 +655,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_two = yes
+			EOANBSYS_institutions_innovative_add_two = yes
 			if = {
 				limit = { owns_state = 1260 }
 				1260 = {
@@ -360,9 +681,8 @@ eoanb_category_industry = {
 			}
 		}
 	}
-
 	TSH_decision_nagasaki_ironworks = {
-		icon = generic_industry
+		icon = steel
 
 		allowed = { tag = TSH }
 
@@ -389,7 +709,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_two = yes
+			EOANBSYS_institutions_innovative_add_two = yes
 			if = {
 				limit = { owns_state = 1260 }
 				1260 = {
@@ -419,7 +739,7 @@ eoanb_category_industry = {
 	}
 
 	TSH_decision_yokusuka_weapons_arsenal = {
-		icon = generic_army_support
+		icon = generic_industry
 
 		allowed = { tag = TSH }
 
@@ -446,7 +766,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_one = yes
+			EOANBSYS_institutions_innovative_add_one = yes
 			if = {
 				limit = { owns_state = 282 }
 				282 = {
@@ -474,9 +794,8 @@ eoanb_category_industry = {
 			}
 		}
 	}
-
 	TSH_decision_nagasaki_naval_arsenal = {
-		icon = generic_construction
+		icon = generic_industry
 
 		allowed = { tag = TSH }
 
@@ -503,7 +822,7 @@ eoanb_category_industry = {
 		}
 
 		complete_effect = {
-			EOANBSYS_institutions_industrialization_add_one = yes
+			EOANBSYS_institutions_innovative_add_one = yes
 			if = {
 				limit = { owns_state = 1260 }
 				1260 = {
@@ -560,7 +879,7 @@ eoanb_category_industry = {
 		}
 
 		remove_effect = {
-			EOANBSYS_institutions_industrialization_add_one = yes
+			EOANBSYS_institutions_innovative_add_one = yes
 			532 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -594,8 +913,314 @@ eoanb_category_industry = {
 		}
 	}
 
-	TSH_decision_develop_the_metropolises = {
+	TSH_decision_new_arms_factory = {
 		icon = generic_construction
+
+		highlight_states = {
+			state = 532
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_prioritize_the_gun
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 720
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			EOANBSYS_institutions_innovative_add_one = yes
+			532 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 10125
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes
+					is_demilitarized_zone = no
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	TSH_decision_silk_mills_kyoto = {
+		icon = fabric
+
+		highlight_states = {
+			state = 1106
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			1106 = { is_controlled_by = TSH }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_develop_osaka
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 350
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			1106 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = fabric
+					amount = 3
+				}
+				add_manpower = 1500
+				add_victory_points = {
+					province = 11960
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_silk_mills_edo = {
+		icon = fabric
+
+		highlight_states = {
+			state = 1266
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			1266 = { is_controlled_by = TSH }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_develop_osaka
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 350
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			1266 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = fabric
+					amount = 3
+				}
+				add_manpower = 1500
+				add_victory_points = {
+					province = 13930
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_silk_mills_osaka = {
+		icon = fabric
+
+		highlight_states = {
+			state = 1263
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			1263 = { is_controlled_by = TSH }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_develop_osaka
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 350
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			1263 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = fabric
+					amount = 3
+				}
+				add_manpower = 1500
+				add_victory_points = {
+					province = 7072
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_silk_mills_hiroshima = {
+		icon = fabric
+
+		highlight_states = {
+			state = 1261
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			1261 = { is_controlled_by = TSH }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_develop_osaka
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 350
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			1261 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = fabric
+					amount = 3
+				}
+				add_manpower = 1500
+				add_victory_points = {
+					province = 1092
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_silk_mills_kumamoto = {
+		icon = fabric
+
+		highlight_states = {
+			state = 1258
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			1258 = { is_controlled_by = TSH }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_develop_osaka
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 35
+		days_remove = 350
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			1258 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = fabric
+					amount = 3
+				}
+				add_manpower = 1500
+				add_victory_points = {
+					province = 11925
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
+eoanb_category_development = {
+	TSH_decision_develop_the_metropolises = {
+		icon = generic_factory
 
 		highlight_states = {
 			state = 532
@@ -607,7 +1232,7 @@ eoanb_category_industry = {
 		}
 
 		visible = {
-			has_completed_focus = TSH_vic_develop_the_metropolises
+			has_completed_focus = JAP_vic_develop_edo
 		}
 
 		allowed = { tag = TSH }
@@ -615,7 +1240,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 100
 		days_remove = 180
 
 		modifier = {
@@ -623,7 +1248,7 @@ eoanb_category_industry = {
 		}
 
 		remove_effect = {
-			EOANBSYS_institutions_industrialization_add_one = yes
+			EOANBSYS_institutions_innovative_add_one = yes
 			if = {
 				limit = { owns_state = 1261 }
 				1261 = {
@@ -665,9 +1290,49 @@ eoanb_category_industry = {
 			base = 1000
 		}
 	}
+	TSH_decision_kemi_reform = {
+		icon = generic_economy
+
+		allowed = { always = no }
+
+		available = {
+			NOT = {
+				OR = {
+					has_idea = TSH_spirit_vic_sakoku_kemi
+					has_idea = TSH_spirit_vic_sakoku_kemi_1
+					has_idea = TSH_spirit_vic_sakoku_kemi_2
+				}
+			}
+		}
+
+		activation = { always = no }
+
+		days_mission_timeout = 730
+
+		timeout_effect = {
+			add_political_power = -100
+			if = {
+				limit = { has_idea = TSH_spirit_vic_sakoku_kemi }
+				swap_ideas = {
+					remove_idea = TSH_spirit_vic_sakoku_kemi
+					add_idea = TSH_spirit_vic_sakoku_kemi_1
+				}
+			}
+			else_if = {
+				limit = { has_idea = TSH_spirit_vic_sakoku_kemi_1 }
+				swap_ideas = {
+					remove_idea = TSH_spirit_vic_sakoku_kemi_1
+					add_idea = TSH_spirit_vic_sakoku_kemi_2
+				}
+			}
+			else = {
+				remove_ideas = TSH_spirit_vic_sakoku_kemi_2
+			}
+		}
+	}
 
 	TSH_decision_widen_the_tokaido = {
-		icon = generic_construction
+		icon = railway
 
 		highlight_states = {
 			state = 532
@@ -701,7 +1366,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 20
+		cost = 35
 		days_remove = 180
 
 		modifier = {
@@ -719,8 +1384,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -738,8 +1403,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -754,7 +1419,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_widen_the_nakasendo = {
-		icon = generic_construction
+		icon = railway
 
 		highlight_states = {
 			state = 535
@@ -788,7 +1453,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 180
 
 		modifier = {
@@ -806,8 +1471,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -825,8 +1490,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -841,7 +1506,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_widen_the_koshu_kaido = {
-		icon = generic_construction
+		icon = railway
 
 		highlight_states = {
 			state = 534
@@ -875,7 +1540,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 180
 
 		modifier = {
@@ -893,8 +1558,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -912,8 +1577,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -928,7 +1593,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_widen_the_oshu_kaido = {
-		icon = generic_construction
+		icon = railway
 
 		highlight_states = {
 			state = 1267
@@ -962,7 +1627,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 180
 
 		modifier = {
@@ -980,8 +1645,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -999,8 +1664,8 @@ eoanb_category_industry = {
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -1015,7 +1680,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_widen_the_nikko_kaido = {
-		icon = generic_construction
+		icon = railway
 
 		highlight_states = {
 			state = 282
@@ -1042,7 +1707,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 120
 
 		modifier = {
@@ -1058,11 +1723,15 @@ eoanb_category_industry = {
 				}
 				add_extra_state_shared_building_slots = 2
 				add_manpower = 5000
+				add_victory_points = {
+					province = 4000
+					value = 1
+				}
 				if = {
 					limit = { NOT = { is_owned_by = ROOT } }
 					OWNER = {
-						EOANBSYS_institutions_industrialization_add_one = yes
-						add_opinion_modifier = { target = ROOT modifier = medium_increase }
+						EOANBSYS_institutions_innovative_add_one = yes
+						add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 						add_popularity = {
 							ideology = radical_democracy
 							popularity = 0.05
@@ -1077,155 +1746,8 @@ eoanb_category_industry = {
 		}
 	}
 
-	TSH_decision_bakuhan_initiatives_saga_domain = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1259
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			SAG = { is_subject_of = ROOT }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_bakuhan_initiatives
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 15
-		days_remove = 45
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			SAG = {
-				capital_scope = {
-					add_extra_state_shared_building_slots = 1
-					add_manpower = 1500
-				}
-				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
-				add_popularity = {
-					ideology = radical_democracy
-					popularity = 0.05
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_bakuhan_initiatives_satsuma_domain = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1054
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			SAT = { is_subject_of = ROOT }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_bakuhan_initiatives
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 15
-		days_remove = 45
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			SAT = {
-				capital_scope = {
-					add_extra_state_shared_building_slots = 1
-					add_manpower = 1500
-				}
-				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
-				add_popularity = {
-					ideology = radical_democracy
-					popularity = 0.05
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_bakuhan_initiatives_tosa_domain = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1053
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			TOS = { is_subject_of = ROOT }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_bakuhan_initiatives
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 15
-		days_remove = 45
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			TOS = {
-				capital_scope = {
-					add_extra_state_shared_building_slots = 1
-					add_manpower = 1500
-				}
-				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
-				add_popularity = {
-					ideology = radical_democracy
-					popularity = 0.05
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
 	TSH_decision_bakuhan_initiatives_choshu_domain = {
-		icon = generic_construction
+		icon = generic_factory
 
 		highlight_states = {
 			state = 1210
@@ -1246,7 +1768,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 15
+		cost = 25
 		days_remove = 45
 
 		modifier = {
@@ -1260,57 +1782,8 @@ eoanb_category_industry = {
 					add_manpower = 1500
 				}
 				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
-				add_popularity = {
-					ideology = radical_democracy
-					popularity = 0.05
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_bakuhan_initiatives_tsu_domain = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1265
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			TSU = { is_subject_of = ROOT }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_bakuhan_initiatives
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 15
-		days_remove = 45
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			TSU = {
-				capital_scope = {
-					add_extra_state_shared_building_slots = 1
-					add_manpower = 1500
-				}
-				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 				add_popularity = {
 					ideology = radical_democracy
 					popularity = 0.05
@@ -1323,7 +1796,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_bakuhan_initiatives_date_domain = {
-		icon = generic_construction
+		icon = generic_factory
 
 		highlight_states = {
 			state = 533
@@ -1344,7 +1817,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 15
+		cost = 25
 		days_remove = 45
 
 		modifier = {
@@ -1358,8 +1831,106 @@ eoanb_category_industry = {
 					add_manpower = 1500
 				}
 				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				add_popularity = {
+					ideology = radical_democracy
+					popularity = 0.05
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_bakuhan_initiatives_saga_domain = {
+		icon = generic_factory
+
+		highlight_states = {
+			state = 1259
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			SAG = { is_subject_of = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_bakuhan_initiatives
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 25
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			SAG = {
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 1500
+				}
+				add_political_power = -10
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				add_popularity = {
+					ideology = radical_democracy
+					popularity = 0.05
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_bakuhan_initiatives_satsuma_domain = {
+		icon = generic_factory
+
+		highlight_states = {
+			state = 1054
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			SAT = { is_subject_of = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_bakuhan_initiatives
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 25
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			SAT = {
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 1500
+				}
+				add_political_power = -10
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 				add_popularity = {
 					ideology = radical_democracy
 					popularity = 0.05
@@ -1372,7 +1943,7 @@ eoanb_category_industry = {
 		}
 	}
 	TSH_decision_bakuhan_initiatives_shonai_domain = {
-		icon = generic_construction
+		icon = generic_factory
 
 		highlight_states = {
 			state = 1268
@@ -1393,7 +1964,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 15
+		cost = 25
 		days_remove = 45
 
 		modifier = {
@@ -1407,8 +1978,106 @@ eoanb_category_industry = {
 					add_manpower = 1500
 				}
 				add_political_power = -10
-				EOANBSYS_institutions_industrialization_add_one = yes
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				add_popularity = {
+					ideology = radical_democracy
+					popularity = 0.05
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_bakuhan_initiatives_tosa_domain = {
+		icon = generic_factory
+
+		highlight_states = {
+			state = 1053
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			TOS = { is_subject_of = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_bakuhan_initiatives
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 25
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			TOS = {
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 1500
+				}
+				add_political_power = -10
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
+				add_popularity = {
+					ideology = radical_democracy
+					popularity = 0.05
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_bakuhan_initiatives_tsu_domain = {
+		icon = generic_factory
+
+		highlight_states = {
+			state = 1265
+		}
+
+		available = {
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 0
+			TSU = { is_subject_of = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = JAP_vic_bakuhan_initiatives
+		}
+
+		allowed = { tag = TSH }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 25
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			TSU = {
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 1500
+				}
+				add_political_power = -10
+				EOANBSYS_institutions_innovative_add_one = yes
+				add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 				add_popularity = {
 					ideology = radical_democracy
 					popularity = 0.05
@@ -1422,14 +2091,14 @@ eoanb_category_industry = {
 	}
 
 	TSH_decision_bakuhan_request_kaido_projects = {
-		icon = generic_construction
+		icon = generic_political_rally
 
 		highlight_states = { state = 282 }
 
 		available = {
 			has_war = no
 			is_subject_of = TSH
-			TSH = { NOT = { has_idea = TSH_spirit_vic_bakuhan_road_project } }
+			has_active_mission = TSH_decision_bakuhan_intiatives_kaido_projects
 		}
 
 		visible = {
@@ -1451,7 +2120,7 @@ eoanb_category_industry = {
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 
 		complete_effect = {
 			# Country Event
@@ -1467,7 +2136,7 @@ eoanb_category_industry = {
 			# 	}
 			# 	add_manpower = 1500
 			# }
-			# EOANBSYS_institutions_industrialization_add_one = yes
+			# EOANBSYS_institutions_innovative_add_one = yes
 			# add_opinion_modifier = { target = ROOT modifier = medium_increase }
 			# add_popularity = {
 			# 	ideology = radical_democracy
@@ -1478,7 +2147,6 @@ eoanb_category_industry = {
 			base = 1000
 		}
 	}
-
 	TSH_decision_bakuhan_intiatives_kaido_projects = {
 		icon = generic_construction
 
@@ -1508,8 +2176,8 @@ eoanb_category_industry = {
 				}
 				add_manpower = 1500
 			}
-			EOANBSYS_institutions_industrialization_add_one = yes
-			add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			EOANBSYS_institutions_innovative_add_one = yes
+			add_opinion_modifier = { target = ROOT modifier = TSH_assisting_daimyo }
 			add_popularity = {
 				ideology = radical_democracy
 				popularity = 0.02
@@ -1519,475 +2187,25 @@ eoanb_category_industry = {
 			base = 1000
 		}
 	}
-
-	TSH_decision_silk_mills_kyoto = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1106
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			1106 = { is_controlled_by = TSH }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_develop_osaka
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 350
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			1106 = {
-				add_extra_state_shared_building_slots = 1
-				add_resource = {
-					type = fabric
-					amount = 3
-				}
-				add_manpower = 1500
-				add_victory_points = {
-					province = 11960
-					value = 1
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_silk_mills_edo = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1266
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			1266 = { is_controlled_by = TSH }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_develop_osaka
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 350
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			1266 = {
-				add_extra_state_shared_building_slots = 1
-				add_resource = {
-					type = fabric
-					amount = 3
-				}
-				add_manpower = 1500
-				add_victory_points = {
-					province = 13930
-					value = 1
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_silk_mills_osaka = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1263
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			1263 = { is_controlled_by = TSH }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_develop_osaka
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 350
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			1263 = {
-				add_extra_state_shared_building_slots = 1
-				add_resource = {
-					type = fabric
-					amount = 3
-				}
-				add_manpower = 1500
-				add_victory_points = {
-					province = 7072
-					value = 1
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_silk_mills_hiroshima = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1261
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			1261 = { is_controlled_by = TSH }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_develop_osaka
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 350
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			1261 = {
-				add_extra_state_shared_building_slots = 1
-				add_resource = {
-					type = fabric
-					amount = 3
-				}
-				add_manpower = 1500
-				add_victory_points = {
-					province = 1092
-					value = 1
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	TSH_decision_silk_mills_kumamoto = {
-		icon = generic_construction
-
-		highlight_states = {
-			state = 1258
-		}
-
-		available = {
-			has_war = no
-			num_of_civilian_factories_available_for_projects > 0
-			1258 = { is_controlled_by = TSH }
-		}
-
-		visible = {
-			has_completed_focus = JAP_vic_develop_osaka
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 350
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-			1258 = {
-				add_extra_state_shared_building_slots = 1
-				add_resource = {
-					type = fabric
-					amount = 3
-				}
-				add_manpower = 1500
-				add_victory_points = {
-					province = 11925
-					value = 1
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-
-	TSH_decision_kemi_reform = {
-		icon = generic_nationalism
-
-		allowed = { always = no }
-
-		available = {
-			NOT = {
-				OR = {
-					has_idea = TSH_spirit_vic_sakoku_kemi
-					has_idea = TSH_spirit_vic_sakoku_kemi_1
-					has_idea = TSH_spirit_vic_sakoku_kemi_2
-				}
-			}
-		}
-
-		activation = { always = no }
-
-		days_mission_timeout = 730
-
-		timeout_effect = {
-			if = {
-				limit = { has_idea = TSH_spirit_vic_sakoku_kemi }
-				swap_ideas = {
-					remove_idea = TSH_spirit_vic_sakoku_kemi
-					add_idea = TSH_spirit_vic_sakoku_kemi_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = TSH_spirit_vic_sakoku_kemi_1 }
-				swap_ideas = {
-					remove_idea = TSH_spirit_vic_sakoku_kemi_1
-					add_idea = TSH_spirit_vic_sakoku_kemi_2
-				}
-			}
-			else = {
-				remove_ideas = TSH_spirit_vic_sakoku_kemi_2
-			}
-		}
-	}
-}
-
-eoanb_category_institutions = {
-	TSH_decision_purchase_books = {
-		icon = decision_generic_research
-
-		allowed = { tag = TSH }
-
-		visible = {
-			has_completed_focus = TSH_vic_legacy_of_ragnaku
-		}
-
-		ai_will_do = {
-			base = 50
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-
-		complete_effect = {
-			country_event = shogunate_japan.15
-		}
-	}
-
-	TSH_decision_foreign_strategy_books = {
-		icon = decision_generic_research
-
-		visible = {
-			has_completed_focus = JAP_vic_abroad_study_programs
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 180
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		remove_effect = {
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
-			EOANBSYS_institutions_industrialization_add_one = yes
-		}
-
-		ai_will_do = { base = 1000 }
-	}
-
-	TSH_decision_foreign_weapon_manuals = {
-		icon = decision_generic_research
-
-		visible = {
-			has_completed_focus = JAP_vic_abroad_study_programs
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 180
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		remove_effect = {
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = infantry_weapons }
-			EOANBSYS_institutions_industrialization_add_one = yes
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-
-	TSH_decision_foreign_engineering_manuals = {
-		icon = decision_generic_research
-
-		visible = {
-			has_completed_focus = JAP_vic_practical_observations
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 180
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		remove_effect = {
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = engineers_tech }
-			EOANBSYS_institutions_industrialization_add_one = yes
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-
-	TSH_decision_foreign_naval_manuals = {
-		icon = decision_generic_research
-
-		visible = {
-			OR = {
-				has_completed_focus = JAP_vic_seek_british_expertise
-				has_completed_focus = JAP_vic_seek_dutch_expertise
-			}
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 180
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		remove_effect = {
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = naval_doctrine }
-			EOANBSYS_institutions_industrialization_add_one = yes
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-
-	TSH_decision_foreign_technical_manuals = {
-		icon = decision_generic_research
-
-		visible = {
-			has_completed_focus = JAP_vic_victorian_mechanical_theory
-		}
-
-		allowed = { tag = TSH }
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 180
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		remove_effect = {
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = industry }
-			EOANBSYS_institutions_industrialization_add_one = yes
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
 }
 
 TSH_category_shogun_succession_crisis = {
-
-	##Succession Crisis!
-	##Esentially, it's a timer that will count down for two months. At the end of that countdown, it will pick an heir based on influence. This to both force a choice in the matter, and to keep tempo.
+	## Succession Crisis!
+	## Esentially, it's a timer that will count down for two months. At the end of that countdown, it will pick an heir based on influence. This to both force a choice in the matter, and to keep tempo.
 	TSH_mission_pick_heir = {
-
-		icon = generic_nationalism
+		icon = eng_ally_imperialist_coup
 
 		available = {
-			has_political_power < -100
-			has_stability < -0.40
+			OR = {
+				NOT = { has_country_leader = { name = "Tokugawa Iesada" ruling_only = yes } }
+				has_idea = has_heir
+				has_idea = weak_heir
+				has_idea = nonfamily_heir
+			}
 		}
 
 		activation = {
-			has_country_flag = succession_crisis_starts
+			always = no
 		}
 
 		allowed = {
@@ -1996,15 +2214,11 @@ TSH_category_shogun_succession_crisis = {
 
 		fire_only_once = yes
 
-		days_mission_timeout = 50
+		days_mission_timeout = 500
 
 		timeout_effect = {
 		custom_effect_tooltip = TSH_succession_struggle_1
 		  hidden_effect = {
-				if = {
-					limit = { has_idea = TSH_succession_struggle }
-					remove_ideas = TSH_succession_struggle
-				}
 				if = {
 					limit = { check_variable = { TSH.hitotsubashi_faction@TSH > TSH.kishu_faction@TSH }  }
 					country_event = shogunate_japan_l.7
@@ -2026,11 +2240,6 @@ TSH_category_shogun_succession_crisis = {
 			add_stability = -0.15
 
 			if = {
-				limit = { has_idea = TSH_succession_struggle }
-				remove_ideas = TSH_succession_struggle
-			}
-
-			if = {
 			    limit = { check_variable = { TSH.hitotsubashi_faction@TSH > TSH.kishu_faction@TSH }  }
 				country_event = shogunate_japan_l.7
 			}
@@ -2043,7 +2252,7 @@ TSH_category_shogun_succession_crisis = {
 	    }
 	}
 	TSH_Mission_Bakumatsu_Modernization_Ansei_Purge = {
-		icon = generic_nationalism
+		icon = generic_assassination
 
 		allowed = { always = no }
 
@@ -2066,16 +2275,51 @@ TSH_category_shogun_succession_crisis = {
 }
 
 eoanb_category_military = {
-  TSH_decision_purchase_foreign_firearms = {
-
+	TSH_decision_purchase_foreign_firearms = {
 		icon = generic_prepare_civil_war
 
-		available = {
-			has_completed_focus = TSH_vic_fireams_dealings
+		allowed = { tag = TSH }
+
+		visible = {
+			hidden_trigger = { has_idea = victorian_era }
+			has_completed_focus = JAP_vic_firearms_research
 		}
 
-		allowed = {
-			TAG = TSH
+		fire_only_once = no
+		is_good = yes
+
+		cost = 75
+		days_remove = 60
+
+		days_re_enable = 180
+
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.01
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_completed_focus = JAP_vic_french_instruction }
+				add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 500 producer = FRA }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 500 producer = PRS }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	TSH_decision_purchase_support_equipment = {
+		icon = generic_prepare_civil_war
+
+		allowed = { tag = TSH }
+
+		visible = {
+			hidden_trigger = { has_idea = victorian_era }
+			has_completed_focus = JAP_vic_western_field_training
 		}
 
 		fire_only_once = no
@@ -2087,63 +2331,36 @@ eoanb_category_military = {
 		days_re_enable = 360
 
 		modifier = {
-		    political_power_gain = -0.05
+			political_power_gain = -0.05
 			consumer_goods_factor = 0.01
 		}
 
 		remove_effect = {
-            TSH = { add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 500 producer = ENG } }
+			random_list = {
+				1 = {
+				add_equipment_to_stockpile = { type = support_equipment amount = 200 producer = FRA }
+				}
+				1 = {
+					add_equipment_to_stockpile = { type = support_equipment amount = 200 producer = PRS }
+				}
+			}
 		}
 
 		ai_will_do = {
 			base = 1000
-		    }
-        }
-
-    TSH_decision_purchase_support_equipment = {
-
-		icon = generic_prepare_civil_war
-
-		available = {
-			has_completed_focus = TSH_vic_fireams_dealings
 		}
+	}
 
-		allowed = {
-			TAG = TSH
-		}
-
-		fire_only_once = no
-		is_good = yes
-
-		cost = 75
-		days_remove = 60
-
-		days_re_enable = 360
-
-		modifier = {
-		    political_power_gain = -0.05
-			consumer_goods_factor = 0.01
-		}
-
-		remove_effect = {
-            TSH = { add_equipment_to_stockpile = { type = support_equipment amount = 200 producer = ENG } }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-        }
-
-    TSH_decision_purchase_foreign_artillery = {
-
+	TSH_decision_purchase_foreign_artillery = {
 		icon = artillery
 
-		available = {
-			has_completed_focus = TSH_vic_fireams_dealings
+		visible = {
+			hidden_trigger = { has_idea = victorian_era }
+			has_completed_focus = JAP_vic_field_gun_research
 		}
 
 		allowed = {
-			TAG = TSH
+			tag = TSH
 		}
 
 		fire_only_once = no
@@ -2155,124 +2372,93 @@ eoanb_category_military = {
 		days_re_enable = 360
 
 		modifier = {
-		    political_power_gain = -0.05
+			political_power_gain = -0.05
 			consumer_goods_factor = 0.01
 		}
 
 		remove_effect = {
-            TSH = { add_equipment_to_stockpile = { type = cannon_equipment_0 amount = 75 producer = ENG } }
+			EOANBSYS_institutions_innovative_add_ten = yes
+			TSH = { add_equipment_to_stockpile = { type = cannon_equipment_0 amount = 75 producer = ENG } }
 		}
 
 		ai_will_do = {
 			base = 1000
-		    }
-        }
+		}
+	}
 
-    TSH_mission_sakoku_army_reform = {
-
+	TSH_mission_sakoku_army_reform = {
 		icon = generic_nationalism
 
-		available = {
-		    has_army_experience < 10
-			command_power < 10
-			has_war_support < 0.1
-			has_completed_focus = TSH_vic_formation_of_command
-		}
+		allowed = { always = no }
 
-		activation = {
-		    has_completed_focus = TSH_vic_formation_of_command
-		}
+		available = { always = no }
+
+		activation = { always = no }
 
 		is_good = yes
-
-		allowed = {
-			TAG = TSH
-		}
 
 		days_mission_timeout = 350
 
 		timeout_effect = {
-		swap_ideas = {
-                remove_idea = TSH_vic_sakoku_era_army
-                add_idea = TSH_vic_sakoku_era_army_1
+			swap_ideas = {
+				remove_idea = TSH_spirit_vic_sakoku_army
+				add_idea = TSH_spirit_vic_sakoku_army_1
 			}
-		set_country_flag = TSH_army_reform_step_1
-
-        }
+		}
 
 		complete_effect = {
-		    add_war_support = -0.01
+			add_war_support = -0.01
 			add_command_power = -10
-        }
+		}
 	}
+
 	TSH_mission_sakoku_army_reform_1 = {
-
 		icon = generic_nationalism
 
-		available = {
-		    has_army_experience < 10
-			command_power < 10
-			has_war_support < 0.1
-			has_country_flag = TSH_army_reform_step_1
-		}
+		allowed = { always = no }
 
-		activation = {
-		    has_country_flag = TSH_army_reform_step_1
-		}
+		available = { always = no }
+
+		activation = { always = no }
 
 		is_good = yes
-
-		allowed = {
-			TAG = TSH
-		}
 
 		days_mission_timeout = 350
 
 		timeout_effect = {
-		    swap_ideas = {
-                remove_idea = TSH_vic_sakoku_era_army_1
-                add_idea = TSH_vic_sakoku_era_army_2
+			swap_ideas = {
+				remove_idea = TSH_spirit_vic_sakoku_army_1
+				add_idea = TSH_spirit_vic_sakoku_army_2
 			}
-		set_country_flag = TSH_army_reform_step_2
-		clr_country_flag = TSH_army_reform_step_1
-        }
+		}
 
 		complete_effect = {
-            }
+			add_war_support = -0.01
+			add_command_power = -10
+		}
 	}
-	TSH_mission_sakoku_army_reform_2 = {
 
+	TSH_mission_sakoku_army_reform_2 = {
 		icon = generic_nationalism
 
-		available = {
-		    has_army_experience < 10
-			command_power < 10
-			has_war_support < 0.1
-			has_country_flag = TSH_army_reform_step_2
-		}
+		allowed = { always = no }
 
-		activation = {
-		    has_country_flag = TSH_army_reform_step_2
-		}
+		available = { always = no }
+
+		activation = { always = no }
 
 		is_good = yes
 
-		allowed = {
-			TAG = TSH
-		}
-
-		days_mission_timeout = 350
+		days_mission_timeout = 850
 
 		timeout_effect = {
-		    swap_ideas = {
-                remove_idea = TSH_vic_sakoku_era_army_2
-                add_idea = TSH_vic_sakoku_era_army_3
-			}
-		clr_country_flag = TSH_army_reform_step_2
-        }
+			remove_ideas = TSH_spirit_vic_sakoku_army_2
+		}
 
 		complete_effect = {
-            }
+			add_war_support = -0.01
+			add_command_power = -10
+		}
 	}
 }
 
@@ -2298,82 +2484,83 @@ eoanb_category_navy = {
 		}
 
 		timeout_effect = {
-			EOANBSYS_institutions_industrialization_add_one = yes
-			country_event = feudal_tokugawa_shogunate.11
+			EOANBSYS_institutions_innovative_add_one = yes
+			country_event = feudal_tokugawa_shogunate.20
 		}
 	}
 
 	TSH_decision_catalogue_naval_assets = {
+		icon = generic
 
-		icon = generic_construction
+		allowed = { tag = TSH }
 
 		available = {
-			OR = {
-				has_completed_focus = TSH_vic_centralize_national_fleet_command
-				has_completed_focus = TSH_vic_decentralize_fleet_command
-			}
+			has_country_flag = naval_command_founded
 		}
-
-		allowed = {
-			TAG = TSH
+		visible = {
+			has_completed_focus = JAP_vic_address_bakufu_kaigun
 		}
 
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 100
+		cost = 75
 		days_remove = 350
 
 		remove_effect = {
-      navy_experience = 20
+			navy_experience = 35
+			add_tech_bonus = { bonus = 0.1 uses = 1 category = naval_doctrine }
 			set_country_flag = tsh_catalogue_naval_assets
 		}
 
 		ai_will_do = {
 			base = 1000
 		}
-  }
+	}
 	TSH_decision_begin_centralization_of_naval_forces = {
+		icon = money
 
-		icon = generic_construction
+		allowed = { tag = TSH }
+
+		visible = {
+			OR = {
+				has_completed_focus = JAP_vic_tsujki_naval_center
+				has_completed_focus = JAP_vic_koninklijke_marine_institute
+			}
+		}
 
 		available = {
 			has_country_flag = tsh_catalogue_naval_assets
 		}
 
-		allowed = {
-			TAG = TSH
-		}
-
 		fire_only_once = yes
 		is_good = yes
 
 		cost = 100
-		days_remove = 350
-
+		days_remove = 1500
 
 		modifier = {
+			political_power_gain = -0.2
+			command_power_gain = -0.5
+			consumer_goods_factor = 0.10
 		}
 
 		remove_effect = {
-            remove_ideas = TSH_vic_disorganized_navy
+			remove_ideas = TSH_spirit_vic_sakoku_navy
 			clr_country_flag = tsh_catalogue_naval_assets
 		}
 
 		ai_will_do = {
 			base = 1000
-		    }
+		}
   }
 	TSH_decision_prussian_ship = {
+		icon = generic_naval
 
-		icon = generic_construction
+		allowed = { tag = TSH }
 
-		available = {
-			has_completed_focus = TSH_vic_foreign_steamship_dealing
-		}
-
-		allowed = {
-			TAG = TSH
+		visible = {
+			has_completed_focus = JAP_vic_purchase_dutch_ships
 		}
 
 		fire_only_once = yes
@@ -2385,23 +2572,20 @@ eoanb_category_navy = {
 		}
 
 		remove_effect = {
-            PRS = { country_event = {id = shogunate_japan.21} }
+			PRS = { country_event = { id = shogunate_japan.21 } }
 		}
 
 		ai_will_do = {
 			base = 1000
-		    }
-  }
+		}
+	}
 	TSH_decision_american_ship = {
+		icon = generic_naval
 
-		icon = generic_construction
+		allowed = { tag = TSH }
 
-		available = {
-			has_completed_focus = TSH_vic_foreign_steamship_dealing
-		}
-
-		allowed = {
-			TAG = TSH
+		visible = {
+			has_completed_focus = JAP_vic_purchase_american_ships
 		}
 
 		fire_only_once = yes
@@ -2413,23 +2597,22 @@ eoanb_category_navy = {
 		}
 
 		remove_effect = {
-            USA = { country_event = {id = shogunate_japan.22} }
+			USA = { country_event = { id = shogunate_japan.22 } }
 		}
 
 		ai_will_do = {
 			base = 1000
-		    }
-  }
+		}
+	}
 	TSH_decision_british_ironclad = {
+		icon = generic_naval
 
-		icon = generic_construction
-
-		available = {
-			has_completed_focus = TSH_vic_foreign_steamship_dealing
+		visible = {
+			has_completed_focus = JAP_vic_purchase_british_ships
 		}
 
 		allowed = {
-			TAG = TSH
+			tag = TSH
 		}
 
 		fire_only_once = yes
@@ -2441,509 +2624,162 @@ eoanb_category_navy = {
 		}
 
 		remove_effect = {
-            ENG = { country_event = {id = shogunate_japan.23} }
+			ENG = { country_event = {id = shogunate_japan.23} }
 		}
 
 		ai_will_do = {
 			base = 1000
 		}
-  }
-}
-
-eoanb_category_industry = {
-	TSH_decision_steel_mill_nagasaki = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 1260
-		}
-
-		available = {
-		 NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			1260 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_nagasaki_iron_foundry
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-		hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			1260 = {add_building_construction = {
-				    type = steel_mill
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_nagasaki_arsenal_nagasaki = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 1260
-		}
-
-		available = {
-		 NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			1260 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_nagasaki_arsenal
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-            hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			1260 = {add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_nagasaki_naval_foundry = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 1260
-		}
-
-		available = {
-		 NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			1260 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_nagasaki_naval_foundry
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-		   hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			1260 = {add_building_construction = {
-				    type = dockyard
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_yokosuka_iron_mill = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 282
-		}
-
-		available = {
-		NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			282 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_yokosuka_iron_foundry
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-            hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			282 = {add_building_construction = {
-				    type = steel_mill
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_yokosuka_weapons_foundry = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 282
-		}
-
-		available = {
-		NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			282 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_yokosuka_weapons_foundry
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-		   hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			282 = {add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_yokosuka_shipyard = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 282
-		}
-
-		available = {
-		NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			282 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_yokosuka_shipyard
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-		   hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			282 = {add_building_construction = {
-				    type = dockyard
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		    }
-  }
-	TSH_decision_yokosuka_ironworks = {
-
-        icon = generic_construction
-
-		highlight_states = {
-			state = 282
-		}
-
-		available = {
-		NOT = {
-				OR = {
-					has_country_flag = TSH_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 0
-			282 = { is_controlled_by = TSH }
-			has_completed_focus = TSH_vic_yokohama_ironworks
-		}
-
-		allowed = {
-		    tag = TSH
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 1
-		}
-
-		remove_effect = {
-		 hidden_effect = {
-				set_country_flag = { flag = TSH_industry value = 1 days = 60 }
-			}
-			282 = {add_building_construction = {
-				    type = steel_mill
-				    level = 1
-				    instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-  }
+	}
 }
 
 TSH_category_ansei_purge = {
-  TSH_decision_death_of_yokoi_shonan = {
+	TSH_decision_death_of_yokoi_shonan = {
 
-    icon = generic_construction
+		icon = generic_construction
 
 		available = {
-		    NOT = {
+			NOT = {
 				OR = {
 					has_country_flag = TSH_ansei_purge_ongoing
 				}
 			}
 			has_country_leader = {
-                name = "Ii Naosuke"
-                ruling_only = yes
-            }
+				name = "Ii Naosuke"
+				ruling_only = yes
+			}
 			has_active_mission = TSH_mission_purge_phase_1
 		}
 
 		visible = {
-		    has_completed_focus = TSH_vic_ansei_purge
+			has_completed_focus = JAP_vic_ansei_purge
 		}
 
 		allowed = {
-		    tag = TSH
+				tag = TSH
 		}
 
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 25
 
 		modifier = {
 		}
 
 		remove_effect = {
-		    hidden_effect = {
+			hidden_effect = {
 				set_country_flag = { flag = TSH_ansei_purge_ongoing value = 1 days = 30 }
 			}
-		    set_country_flag = yokoi_shonan_assassinated
+			set_country_flag = yokoi_shonan_assassinated
 			SAG = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+				set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+				# TSH_Meiji_Influence_Modify = yes
+			}
 			SAT = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+				set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+				# TSH_Meiji_Influence_Modify = yes
+			}
 			DTE = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+				set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+				# TSH_Meiji_Influence_Modify = yes
+			}
 			TOS = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+				set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+				# TSH_Meiji_Influence_Modify = yes
+			}
 			CHO = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+				set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+				# TSH_Meiji_Influence_Modify = yes
+			}
 			add_stability = -0.05
 		}
 
 		ai_will_do = {
 			base = 1000
 		}
-  }
+	}
 	TSH_decision_death_of_shozan = {
-
-        icon = generic_construction
+		icon = generic_construction
 
 		available = {
-		    NOT = {
+			NOT = {
 				OR = {
 					has_country_flag = TSH_ansei_purge_ongoing
 				}
 			}
 			has_country_leader = {
-                name = "Ii Naosuke"
-                ruling_only = yes
-            }
+				name = "Ii Naosuke"
+				ruling_only = yes
+			}
 			has_active_mission = TSH_mission_purge_phase_1
 		}
 
 		visible = {
-		    has_completed_focus = TSH_vic_ansei_purge
+				has_completed_focus = JAP_vic_ansei_purge
 		}
 
 		allowed = {
-		    tag = TSH
+				tag = TSH
 		}
 
 		fire_only_once = yes
 		is_good = yes
 
-		cost = 25
+		cost = 35
 		days_remove = 25
 
 		modifier = {
 		}
 
 		remove_effect = {
-		    hidden_effect = {
+				hidden_effect = {
 				set_country_flag = { flag = TSH_ansei_purge_ongoing value = 1 days = 30 }
 			}
-		    set_country_flag = sakuma_shozan_assassinated
+				set_country_flag = sakuma_shozan_assassinated
 			SAG = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+								set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+								# TSH_Meiji_Influence_Modify = yes
+						}
 			SAT = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+								set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+								# TSH_Meiji_Influence_Modify = yes
+						}
 			DTE = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+								set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+								# TSH_Meiji_Influence_Modify = yes
+						}
 			TOS = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+								set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+								# TSH_Meiji_Influence_Modify = yes
+						}
 			CHO = {
-                set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
-                # TSH_Meiji_Influence_Modify = yes
-            }
+								set_temp_variable = { TSH_Meiji_Influence_Change = -5 }
+								# TSH_Meiji_Influence_Modify = yes
+						}
 			add_stability = -0.05
 		}
 		ai_will_do = {
 			base = 1000
 		}
-  }
-  TSH_mission_purge_phase_1 = {
+	}
+	TSH_mission_purge_phase_1 = {
 
 		icon = generic_nationalism
 
 		available = {
-		  has_political_power < -100
-		  has_stability < -0.30
+			has_political_power < -100
+			has_stability < -0.30
 			TSH = { exists = no }
-	  }
+		}
 
 		activation = {
-			has_completed_focus = TSH_vic_ansei_purge
+			has_completed_focus = JAP_vic_ansei_purge
 		}
 
 		visible = {
-		  has_completed_focus = TSH_vic_ansei_purge
+			has_completed_focus = JAP_vic_ansei_purge
 		}
 
 		allowed = {
@@ -2967,15 +2803,15 @@ TSH_category_ansei_purge = {
 		available = {
 			has_political_power < -100
 			has_stability < -0.30
-		  TSH = { exists = no }
-	  }
+			TSH = { exists = no }
+		}
 
 		activation = {
 			has_country_flag = TSH_purge_phase_2
 		}
 
 		visible = {
-		  has_country_flag = TSH_purge_phase_2
+			has_country_flag = TSH_purge_phase_2
 		}
 
 		allowed = {

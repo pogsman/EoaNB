@@ -42,7 +42,6 @@ autonomy_state = {
 			OVERLORD = {
 				tag = OTO
 				has_variable = has_afr_empire_mechanic_system
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
 				has_idea = NA_B_Spirit_New_World_Democracies
 			}
 			has_idea = AFR_french_protectorate
@@ -130,7 +129,6 @@ autonomy_state = {
 			OVERLORD = {
 				tag = OTO
 				has_variable = has_afr_empire_mechanic_system
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
 				has_idea = NA_B_Spirit_New_World_Democracies
 			}
 			has_country_flag = AFR_is_a_colonial_company_flag
@@ -218,7 +216,6 @@ autonomy_state = {
 			OVERLORD = {
 				tag = OTO
 				has_variable = has_afr_empire_mechanic_system
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
 				has_idea = NA_B_Spirit_New_World_Democracies
 			}
 			has_country_flag = AFR_is_a_colonial_company_flag
@@ -539,6 +536,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -603,6 +601,7 @@ autonomy_state = {
 	}
 	
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -667,7 +666,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -752,7 +750,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -830,6 +827,7 @@ autonomy_state = {
 	}
 	
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -885,6 +883,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		eoanb_enable_autonomy = yes
 
 		has_country_flag = is_junior_personal_union_member
@@ -963,6 +962,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		eoanb_enable_autonomy = yes
 
 		#Just HOL for now, since it's not needed elsewhere
@@ -1013,6 +1013,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		eoanb_enable_autonomy = yes
 		is_indian_country = yes
 		OVERLORD = {
@@ -1078,7 +1079,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -1165,7 +1165,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -1251,6 +1250,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1317,6 +1317,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1401,6 +1402,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1488,6 +1490,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1568,6 +1571,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1658,6 +1662,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1741,6 +1746,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1826,7 +1832,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -1945,7 +1950,6 @@ autonomy_state = {
 							OR = {
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}

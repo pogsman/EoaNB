@@ -156,7 +156,7 @@ ITA_decisions_category_wars_and_conflicts = {
 		# MEANS NO ONE SEES IT AT GAMESTART
 		icon = generic_political_actions
 		is_good = no		# AI is smarter with conditions/achieving them if it is no, trust me.
-		days_mission_timeout = 200		# Arbitrary number, but I recommend a time of 1.5x expected time to finish war, max 1000
+		days_mission_timeout = 250		# Arbitrary number, but I recommend a time of 1.5x expected time to finish war, max 1000
 		activation = {
 			always = no
 		}
@@ -164,72 +164,123 @@ ITA_decisions_category_wars_and_conflicts = {
 		available = {
 			# Conditions to trigger peace treaty
 			OR = {
-				custom_trigger_tooltip = {
-					tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_tt
+			  # SardiniaPiedmont's Victory Conditions w/ Carbonari
+				if = {
+				  limit = { 
+					PIE = { has_completed_focus = PIE_Path_of_the_Carbonari }
+				  }
+				  custom_trigger_tooltip = {
+					tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_France_Carbonari_tt
 					tag = PIE
-					PIE = {
-						if = {
-							limit = {
-								has_completed_focus = PIE_Path_of_the_Carbonari
-							}
-							LVN = {
-								has_capitulated = yes
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									has_completed_focus = PIE_Path_of_the_Carbonari
-								}
-							}
-							divisions_in_state = {
-								type = infantry
-								size > 10
-								state = 159
-							}
-						}
-					}
-					# SardiniaPiedmont's Victory Conditions
+					LVN = { has_capitulated = yes }
+				  }
 				}
-				custom_trigger_tooltip = {
-					tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_AUS_VICTORY_tt
-					tag = AUS
-					PIE = {
-						surrender_progress > 0.3						# Austria's Victory Conditions
+			  # SardiniaPiedmont's Victory Conditions Normal
+				else_if = {
+				  limit = { 
+					NOT = { has_country_flag = PIE_RUS_Alliance_2IP }
+				  }
+				  custom_trigger_tooltip = {
+					tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_NORMAL_tt
+					controls_state = 159
+				  }
+				}
+			  ####Russia and Piedmont Vicotry Conditions
+				else = {
+				  custom_trigger_tooltip = {
+					tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_Russia_tt
+					OR = {
+					  tag = PIE
+					  tag = RUS
 					}
+					OR = {
+					  AND = {
+						PIE = {
+						  controls_state = 159
+						  controls_state = 160
+						}
+						RUS = {
+						  controls_state = 88
+						  controls_state = 91
+						}
+					  }
+					  AUS = {
+						surrender_progress > 0.50
+					  }
+					}
+				  }
+				}
+			  # Austria's Victory Conditions
+				custom_trigger_tooltip = {
+				  tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_AUS_VICTORY_tt
+				  tag = AUS
+				  PIE = {
+					surrender_progress > 0.5  
+				  }
 				}
 			}
-		}
+		  }
 		complete_effect = {
 			# Peace Treaty (Simple form, you can customize it later for various outcomes)
 			if = {
 				limit = {
 					# INSERT PIEDMONT'S VICTORY CONDITIONS HERE
-					AND = {
-						tag = PIE
-						PIE = {
-							if = {
-								limit = {
-									has_completed_focus = PIE_Path_of_the_Carbonari
-								}
-								LVN = {
-									has_capitulated = yes
-								}
+					OR = {
+						# SardiniaPiedmont's Victory Conditions w/ Carbonari
+						  if = {
+							limit = { 
+							  PIE = { has_completed_focus = PIE_Path_of_the_Carbonari }
 							}
-							if = {
-								limit = {
-									NOT = {
-										has_completed_focus = PIE_Path_of_the_Carbonari
-									}
-								}
-								divisions_in_state = {
-									type = infantry
-									size > 5
-									state = 159
-								}
+							custom_trigger_tooltip = {
+							  tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_France_Carbonari_tt
+							  tag = PIE
+							  LVN = { has_capitulated = yes }
 							}
-						}
-					}
+						  }
+						# SardiniaPiedmont's Victory Conditions Normal
+						  else_if = {
+							limit = { 
+							  NOT = { has_country_flag = PIE_RUS_Alliance_2IP }
+							}
+							custom_trigger_tooltip = {
+							  tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_NORMAL_tt
+							  controls_state = 159
+							}
+						  }
+						####Russia and Piedmont Vicotry Conditions
+						  else = {
+							custom_trigger_tooltip = {
+							  tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_Russia_tt
+							  OR = {
+								tag = PIE
+								tag = RUS
+							  }
+							  OR = {
+								AND = {
+								  PIE = {
+									controls_state = 159
+									controls_state = 160
+								  }
+								  RUS = {
+									controls_state = 88
+									controls_state = 91
+								  }
+								}
+								AUS = {
+								  surrender_progress > 0.50
+								}
+							  }
+							}
+						  }
+						# Austria's Victory Conditions
+						  custom_trigger_tooltip = {
+							tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_AUS_VICTORY_tt
+							tag = AUS
+							PIE = {
+							  surrender_progress > 0.5  
+							}
+						  }
+					  }
 				}
 				# Insert Sardinia's Victory Here (Recommended you also check for tag so it only fires for Sardinia)
 				PIE = {
@@ -238,7 +289,6 @@ ITA_decisions_category_wars_and_conflicts = {
 							has_completed_focus = PIE_Path_of_the_Carbonari
 							tag = PIE
 						}
-								
 						PIE = {
 							transfer_state = 159
 							transfer_state = 160
@@ -276,6 +326,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							tag = PIE
 							NOT = {
 								has_completed_focus = PIE_Path_of_the_Carbonari
+								has_country_flag = PIE_RUS_Alliance_2IP
 							}
 						}
 						TUS = {
@@ -283,7 +334,7 @@ ITA_decisions_category_wars_and_conflicts = {
 								id = sardinia.59
 								days = 30
 							}
-						}	
+						}
 						PIE = {
 							transfer_state = 159
 						}
@@ -370,6 +421,85 @@ ITA_decisions_category_wars_and_conflicts = {
 							}
 						}
 					}
+					if = {
+						limit = {
+							OR = {
+								tag = PIE
+								tag = RUS
+								PIE = {
+									has_country_flag = PIE_RUS_Alliance_2IP
+								}
+							}
+						}
+						white_peace = LVN
+						white_peace = AUS
+						white_peace = TUS
+						white_peace = MOD
+						white_peace = PRM
+						news_event = sardinia_news.1
+						set_global_flag = PIE_2IW_Victory
+						AUS = {
+							add_to_variable = {
+								var = HUN_REVOLT_RISK
+								value = 2
+							}
+							add_to_variable = {
+								var = SLA_REVOLT_RISK
+								value = 1
+							}
+						}
+						TUS = {
+							white_peace = AUS
+						}
+						TUS = {
+							white_peace = LVN
+						}
+						RUS = {
+							white_peace = AUS
+						}
+						RUS = {
+							white_peace = LVN
+						}
+						FIN = {
+							white_peace = AUS
+						}
+						FIN = {
+							white_peace = LVN
+						}
+						GEO = {
+							white_peace = AUS
+						}
+						GEO = {
+							white_peace = LVN
+						}
+						ABK = {
+							white_peace = AUS
+						}
+						ABK = {
+							white_peace = LVN
+						}
+						PIE = {
+							if = {
+								limit = {
+									has_country_flag = PIE_RUS_taking_LVN
+								}
+								transfer_state = 160
+								add_state_core = 160
+								clr_country_flag = PIE_RUS_taking_LVN
+							}
+							transfer_state = 159
+							add_state_core = 159
+							### Galicia
+							transfer_state = 88
+							transfer_state = 91
+							transfer_state = 89
+							transfer_state = 1321 ##Krakow
+							clr_country_flag = PIE_RUS_taking_Lombardy
+							#country_event = {
+							#	id = 
+							#}
+						}
+					}
 				}
 			}
 			else_if = {
@@ -382,14 +512,14 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				# Insert Austria's Victory Here (Recommended you also check for tag so it only fires for Austria)
 				AUS = {
-					country_event = {
-						id = ita_confederation.6
-					}
+					#country_event = {
+					#	id = ita_confederation.6
+					#}
 					annex_country = {
 						target = PIE
 					}
-					set_country_flag = ITA_AUS_Divide_Italy_Yes
-					set_country_flag = ITA_AUS_won_2I_Divide_Italy
+					#set_country_flag = ITA_AUS_Divide_Italy_Yes
+					#set_country_flag = ITA_AUS_won_2I_Divide_Italy
 				}
 				TUS = {
 					white_peace = PIE
@@ -431,12 +561,14 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 	}
 	ITA_War_Mission_TUS_2IP = {
-		allowed = { always = no }
-		activation = { always = no }
-
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
 		is_good = yes
 		days_mission_timeout = 100
-
 		available = {
 			OR = {
 				custom_trigger_tooltip = {
@@ -457,7 +589,6 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 			}
 		}
-
 		complete_effect = {
 			if = {
 				limit = {
@@ -468,7 +599,7 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				# Peace Treaty Event for X_country victory
 				white_peace = TUS
-
+				### Farmer's Rebellion
 			}
 			if = {
 				limit = {
@@ -507,9 +638,188 @@ ITA_decisions_category_wars_and_conflicts = {
 				activate_mission = ITA_War_Mission_TUS_2IP
 			}
 			else_if = {
-				limit = { date > 1860.12.31 }
+				limit = {
+					date > 1860.12.31
+				}
 				white_peace = PIE
 				white_peace = TUS
+			}
+		}
+	}
+	ITA_War_Mission_PAP = {
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 200
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ITA_PIE_victory_conditions_PAP_tt1
+					# Victory Condition for Sardinia
+					tag = PIE
+					OR = {
+						157 = {
+							is_controlled_by = PIE
+						}
+						PAP = {
+							surrender_progress > 0.8
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ITA_PAP_victory_conditions_PAP_tt2
+					# Victory Condition for Papal States
+					tag = PAP
+					PIE = {
+						surrender_progress > 0.7
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					tag = PIE
+					OR = {
+						157 = {
+							is_controlled_by = PIE
+						}
+						PAP = {
+							surrender_progress > 0.8
+						}
+					}
+				}
+				# Peace Treaty Event for X_country victory
+				PIE = {
+					transfer_state = 161
+					transfer_state = 157
+					white_peace = PAP
+				}
+			}
+			if = {
+				limit = {
+					tag = PAP
+					PIE = {
+						surrender_progress > 0.6
+					}
+				}
+				# Peace Treaty for Y_country victory
+				###Country Event for Papal Victory
+				if = {
+					limit = {
+						PAP = {
+							has_completed_focus = PAP_mantle_once_discarded
+						}
+					}
+					annex_country = {
+						target = PIE
+					}
+				}
+			}
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							tag = PIE
+							has_war_with = PAP
+						}
+						AND = {
+							tag = PAP
+							has_war_with = PIE
+						}
+					}
+					date < 1861.1.1
+				}
+				activate_mission = ITA_War_Mission_PAP
+			}
+			else_if = {
+				limit = {
+					date > 1860.12.31
+				}
+				PIE = {
+					transfer_state = 161
+					transfer_state = 157
+				}
+			}
+		}
+	}
+	ITA_2IP_Mobilization_War_Imiment = {
+		allowed = {
+			tag = PIE
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_2IP_Mobilization_TT
+				always = no
+			}
+		}
+		activation = {
+			always = no
+		}
+		visible = {
+			has_completed_focus = PIE_War_Preperations_Second_War
+		}
+		is_good = yes
+		days_mission_timeout = 200
+		timeout_effect = {
+			remove_mission = ITA_2IP_Mobilization_War_Imiment
+			PRM = {
+				country_event = {
+					id = sardinia.57
+				}
+			}
+			TUS = {
+				country_event = {
+					id = sardinia.57
+				}
+			}
+			MOD = {
+				country_event = {
+					id = sardinia.57
+				}
+			}
+			AUS = {
+				declare_war_on = {
+					target = PIE
+					type = annex_everything
+				}
+				activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
+			}
+			LVN = {
+				declare_war_on = {
+					target = PIE
+					type = annex_everything
+				}
+			}
+			PIE = {
+				news_event = {
+					id = sardinia_news.7
+				}
+				if = {
+					limit = {
+						has_country_flag = PIE_RUS_Assistance_2IP
+					}
+					AUS = {
+						#add_idea = bad
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = PIE_RUS_Alliance_2IP
+					}
+
+					country_event = {
+						id = sardinia.85
+					}
+				}
+				complete_national_focus = PIE_The_War_Starts
+				activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 			}
 		}
 	}
@@ -647,15 +957,17 @@ ITA_Economic_category_decisions = {
 		available = {
 			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
 		}
-
-
 		#####
 		complete_effect = {
 			117 = {
-				add_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				add_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			812 = {
-				add_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				add_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			add_to_variable = {
 				var = southern_revolt_risk
@@ -665,15 +977,17 @@ ITA_Economic_category_decisions = {
 		}
 		remove_effect = {
 			117 = {
-				remove_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				remove_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			812 = {
-				remove_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				remove_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 		}
 		days_remove = 500
-
-
 	}
 	ITA_appoint_regional_administrator_2 = {
 		ai_will_do = {
@@ -685,12 +999,12 @@ ITA_Economic_category_decisions = {
 		available = {
 			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
 		}
-
-
 		#####
 		complete_effect = {
 			997 = {
-				add_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				add_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			add_to_variable = {
 				var = southern_revolt_risk
@@ -700,11 +1014,12 @@ ITA_Economic_category_decisions = {
 		}
 		remove_effect = {
 			997 = {
-				remove_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				remove_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 		}
 		days_remove = 500
-
 	}
 	ITA_appoint_regional_administrator_3 = {
 		ai_will_do = {
@@ -716,12 +1031,12 @@ ITA_Economic_category_decisions = {
 		available = {
 			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
 		}
-
-
 		#####
 		complete_effect = {
 			156 = {
-				add_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				add_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			add_to_variable = {
 				var = southern_revolt_risk
@@ -731,11 +1046,12 @@ ITA_Economic_category_decisions = {
 		}
 		remove_effect = {
 			156 = {
-				remove_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				remove_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 		}
 		days_remove = 500
-
 	}
 	ITA_appoint_regional_administrator_4 = {
 		ai_will_do = {
@@ -747,12 +1063,12 @@ ITA_Economic_category_decisions = {
 		available = {
 			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
 		}
-
-
 		#####
 		complete_effect = {
 			115 = {
-				add_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				add_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
 			add_to_variable = {
 				var = southern_revolt_risk
@@ -762,12 +1078,12 @@ ITA_Economic_category_decisions = {
 		}
 		remove_effect = {
 			115 = {
-				remove_dynamic_modifier = { modifier = dynmod_ITA_regional_economic_benefits }	
+				remove_dynamic_modifier = {
+					modifier = dynmod_ITA_regional_economic_benefits
+				}
 			}
-			
 		}
 		days_remove = 500
-
 	}
 }
 

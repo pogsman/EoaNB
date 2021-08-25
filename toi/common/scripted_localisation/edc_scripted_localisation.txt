@@ -238,7 +238,7 @@ defined_text = {
 				has_country_flag = afr_colony_industrializing
 				has_country_flag = afr_an_african_industrializing
 			}
-			check_variable = {ROOT.industrisation_progress < 40}
+			check_variable = {ROOT.innovation_progress < 40}
 		}
 		localization_key = flintlock_hard_no
 	}
@@ -251,7 +251,7 @@ defined_text = {
 				has_country_flag = afr_colony_industrializing
 				has_country_flag = afr_an_african_industrializing
 			}
-			check_variable = {ROOT.industrisation_progress < 40}
+			check_variable = {ROOT.innovation_progress < 40}
 		}
 		localization_key = flintlock_no
 	}
@@ -396,6 +396,15 @@ defined_text = {
 			check_variable = {super_event_displayed = 100}
 		}
 		localization_key = "Only some Burning Code"
+	}
+
+
+	####Easter Egg Super Events
+	text = {
+		trigger={
+			check_variable = {super_event_displayed = 9901}
+		}
+		localization_key = "German Confederation"
 	}
 	text = {
 		localization_key = "Super Events!"
@@ -589,6 +598,15 @@ defined_text = {
 		}
 		localization_key = "GFX_panama_canal_super_event"
 	}
+
+
+	###Easter Egg Super Events
+	text = {
+		trigger={
+			check_variable = {super_event_displayed = 9901}
+		}
+		localization_key = "GFX_ger_acw_super_event"
+	}
 	text = {
 		localization_key = "GFX_debug_super_event"
 	}
@@ -774,6 +792,15 @@ defined_text = {
 			check_variable = {super_event_displayed = 30}
 		}
 		localization_key = PANAMA_CANAL_SUPER
+	}
+
+
+	####Easter Egg Super Events
+	text = {
+		trigger={
+			check_variable = {super_event_displayed = 9901}
+		}
+		localization_key = ACW_GER_SUPER
 	}
 	text = {
 		trigger={
@@ -966,6 +993,15 @@ defined_text = {
 			check_variable = {super_event_displayed = 30}
 		}
 		localization_key = ""
+	}
+
+
+	###Easter Egg Super Events
+	text = {
+		trigger={
+			check_variable = {super_event_displayed = 9901}
+		}
+		localization_key = "For Dixie!"
 	}
 	text = {
 		trigger={

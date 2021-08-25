@@ -10,8 +10,7 @@ state = {
 		coal = 2
 	}
 
-	history=
-	{
+	history = {
 		owner = TSM
 		add_core_of = TSM
 		victory_points = {
@@ -23,7 +22,7 @@ state = {
 		buildings = {
 			infrastructure = 2
 			2189 = {
-				naval_base = 1
+				naval_base = 2
 			}
 		}
 		add_to_array = { state_culture_array = 406 }

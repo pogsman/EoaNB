@@ -107,6 +107,39 @@ on_actions = {
 				limit = {
 					has_start_date < 1858.1.1
 				}
+				### Philippines Stuff ###
+				327 = {
+					add_colonial_profits_in_state_by_5 = yes
+				}
+				623 = {  
+					set_variable = { var = SPH_integration_progress_var value = 78 }
+					set_variable = { var = SPH_establish_town_var value = 1 }
+					add_colonial_profits_in_state_by_5 = yes
+				}
+				624 = { 
+					set_state_flag = SPH_catholic_compliance_med 
+					set_variable = { var = SPH_integration_progress_var value = 14 }
+					set_variable = { var = SPH_establish_town_var value = 3 }
+				}
+				625 = { 
+					set_state_flag = SPH_catholic_compliance_low 
+					set_variable = { var = SPH_integration_progress_var value = 03 }
+					set_variable = { var = SPH_establish_town_var value = 3 }
+				}
+				626 = { 
+					set_state_flag = SPH_catholic_compliance_low 
+					set_variable = { var = SPH_integration_progress_var value = 05 }
+					set_variable = { var = SPH_establish_town_var value = 3 }
+				}
+				628 = { 
+					set_state_flag = SPH_catholic_compliance_low 
+					set_variable = { var = SPH_integration_progress_var value = 02 }
+					set_variable = { var = SPH_establish_town_var value = 3 }
+				}
+				
+				###############################
+				### afr mechanics and stuff ###
+				###############################
 				every_country = {
 					limit = {
 						OR = {
@@ -689,15 +722,46 @@ on_actions = {
 				MSN = {
 					country_event = { id = afr_jihad_repair_ribats.1 days = 100 }
 				}
+				USA = {
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_cooperative_tribe_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = NEZ
+						modifier = NA_N_cooperative_tribe_opinion_modifier
+					}
+				}
 				SHO = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_ideas = NA_N_buffalo_population_1
+					add_opinion_modifier = {
+						target = SIX
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CHY
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = BFT
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
 				}
 				NEZ = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_opinion_modifier = {
+						target = USA
+						modifier = NA_N_cooperative_tribe_opinion_modifier
+					}
 				}	
 				NAV = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
@@ -705,30 +769,100 @@ on_actions = {
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
 				}
 				CRW = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = NA_N_cooperative_tribe_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SIX
+						modifier = NA_N_territory_disputes_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SIX
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CHY
+						modifier = NA_N_territory_disputes_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CHY
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SHO
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_ideas = NA_N_buffalo_population_3
 				}
 				COM = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_ideas = NA_N_buffalo_population_3
 				}
 				CHY = {
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_territory_disputes_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SHO
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SIX
+						modifier = NA_N_history_of_alliances_opinion_modifier
+					}
+					diplomatic_relation = {
+						country = SIX
+						relation = non_aggression_pact
+						active = yes
+					}
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_ideas = NA_N_buffalo_population_3
 				}
 				BFT = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
+					add_ideas = NA_N_buffalo_population_1
+					add_opinion_modifier = {
+						target = SHO
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
 				}
 				APA = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 				}
 				SIX = {
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_territory_disputes_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CRW
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = SHO
+						modifier = NA_N_history_of_conflict_opinion_modifier
+					}
+					add_opinion_modifier = {
+						target = CHY
+						modifier = NA_N_history_of_alliances_opinion_modifier
+					}
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
 					add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 500 }
 					add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 }
+					add_ideas = NA_N_buffalo_population_3
 				}
 				SEM = {
 					add_equipment_to_stockpile = { type = cavalry_equipment amount = 200 }
@@ -823,47 +957,47 @@ on_actions = {
 						can_join_factions = no
 					}
 				}
-				every_country = {
-					limit = {
-						OR = {
-							afr_is_tribal = yes
-							oceania_is_tribal = yes
-							is_first_nations_tribe = yes
-							has_variable = has_afr_empire_mechanic_system
-						}
-					}
-					if = {
-						limit = {
-							is_subject = yes 
-							OVERLORD = {
-								OR = {
-									afr_is_tribal = yes
-									oceania_is_tribal = yes
-									is_first_nations_tribe = yes
-									has_variable = has_afr_empire_mechanic_system
-								}
-							}
-						}
-						add_autonomy_score = { 
-							value = 500 
-							localization = add_autonomy_score_on_start_loc
-						}
-						if = {
-							limit = {
-								OR = {
-									TAG = DSS
-									TAG = ADM
-									TAG = BAG
-									TAG = MOM
-								}
-							}
-							add_autonomy_score = { 
-								value = 500 
-								localization = add_autonomy_score_on_start_loc
-							}
-						}
-					}
-				}
+				#every_country = {
+				#	limit = {
+				#		OR = {
+				#			afr_is_tribal = yes
+				#			oceania_is_tribal = yes
+				#			is_first_nations_tribe = yes
+				#			has_variable = has_afr_empire_mechanic_system
+				#		}
+				#	}
+				#	if = {
+				#		limit = {
+				#			is_subject = yes 
+				#			OVERLORD = {
+				#				OR = {
+				#					afr_is_tribal = yes
+				#					oceania_is_tribal = yes
+				#					is_first_nations_tribe = yes
+				#					has_variable = has_afr_empire_mechanic_system
+				#				}
+				#			}
+				#		}
+				#		add_autonomy_score = { 
+				#			value = 500 
+				#			localization = add_autonomy_score_on_start_loc
+				#		}
+				#		if = {
+				#			limit = {
+				#				OR = {
+				#					TAG = DSS
+				#					TAG = ADM
+				#					TAG = BAG
+				#					TAG = MOM
+				#				}
+				#			}
+				#			add_autonomy_score = { 
+				#				value = 500 
+				#				localization = add_autonomy_score_on_start_loc
+				#			}
+				#		}
+				#	}
+				#}
 			}
 			######################
 			#State Setup Mechanic#
