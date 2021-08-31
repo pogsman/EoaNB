@@ -900,6 +900,17 @@ AUS_decision_category_habsburg_industry = {
 	}
 }
 
+AUS_decision_category_habsburg_navy = {
+        
+	allowed = {
+		tag = AUS
+	}
+	
+	visible = {
+		has_completed_focus = AUS_Reform_Triest_Navy
+	}
+}
+
 #### Poland Decision Cateogires ####
 
 POL_january_uprising_descision = {

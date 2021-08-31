@@ -7,7 +7,7 @@ add_namespace = AUShungaryrevolt
 add_namespace = AUSnews
 add_namespace = AUShuncompromise
 add_namespace = AUSfedcompromise
-add_namespace = AUSindustry
+add_namespace = AUSfocustree
 
 #Fall of Freiharr von Bach 
 country_event = {
@@ -2927,9 +2927,9 @@ country_event = { #Negotiate with the Vojvodinans
 
 #Vienna Urbanisation  
 country_event = {
-	id = AUSindustry.1 
-	title = AUSindustry.1.t
-	desc = AUSindustry.1.d
+	id = AUSfocustree.1 
+	title = AUSfocustree.1.t
+	desc = AUSfocustree.1.d
 	picture = GFX_report_event_AUS_wien_1
 	
 	fire_only_once = yes
@@ -2937,7 +2937,7 @@ country_event = {
     is_triggered_only = yes 
 	
 	option = {
-		name = AUSindustry.1.a 
+		name = AUSfocustree.1.a 
 		ai_chance = { factor = 90 }
 		
 		956 = { add_extra_state_shared_building_slots = 2 }
@@ -2948,7 +2948,7 @@ country_event = {
 	}
 	
 	option = {
-		name = AUSindustry.1.b
+		name = AUSfocustree.1.b
 		ai_chance = { 
 			base = 10
 			modifier = {
@@ -2965,9 +2965,9 @@ country_event = {
 
 #Moravian Manchester  
 country_event = {
-	id = AUSindustry.2 
-	title = AUSindustry.2.t
-	desc = AUSindustry.2.d
+	id = AUSfocustree.2 
+	title = AUSfocustree.2.t
+	desc = AUSfocustree.2.d
 	picture = GFX_report_event_AUS_wien_1
 	
 	fire_only_once = yes
@@ -2975,7 +2975,7 @@ country_event = {
     is_triggered_only = yes 
 	
 	option = {
-		name = AUSindustry.2.a 
+		name = AUSfocustree.2.a 
 		ai_chance = { factor = 90 }
 		75 = { add_dynamic_modifier = { modifier = dynmod_AUS_moravianmanchester } }
 		activate_mission = AUS_mission_moravianmanchaster_1
@@ -2984,7 +2984,7 @@ country_event = {
 	}
 	
 	option = {
-		name = AUSindustry.2.b
+		name = AUSfocustree.2.b
 		ai_chance = { 
 			base = 10
 			modifier = {
@@ -3001,9 +3001,9 @@ country_event = {
 
 #Montanuniversität Leoben 
 country_event = {
-	id = AUSindustry.3 
-	title = AUSindustry.3.t
-	desc = AUSindustry.3.d
+	id = AUSfocustree.3 
+	title = AUSfocustree.3.t
+	desc = AUSfocustree.3.d
 	picture = GFX_report_event_AUS_wien_1
 	
 	fire_only_once = yes
@@ -3011,7 +3011,7 @@ country_event = {
     is_triggered_only = yes 
 	
 	option = {
-		name = AUSindustry.3.a 
+		name = AUSfocustree.3.a 
 		ai_chance = { factor = 100 }
 			add_timed_idea = {
                     idea = AUS_idea_mountainuniversitat_leoben
@@ -3022,9 +3022,9 @@ country_event = {
 
 #Hungarian_Gold 
 country_event = {
-	id = AUSindustry.4 
-	title = AUSindustry.4.t
-	desc = AUSindustry.4.d
+	id = AUSfocustree.4 
+	title = AUSfocustree.4.t
+	desc = AUSfocustree.4.d
 	picture = GFX_report_event_AUS_wien_1
 	
 	fire_only_once = yes
@@ -3032,7 +3032,7 @@ country_event = {
     is_triggered_only = yes 
 	
 	option = {
-		name = AUSindustry.4.a 
+		name = AUSfocustree.4.a 
 		ai_chance = { factor = 100 }
 			add_timed_idea = {
                     idea = AUS_idea_hungarian_gold
@@ -3040,5 +3040,125 @@ country_event = {
             }
 		EOANBSYS_institutions_innovative_add_one = yes
 		set_temp_variable = { eoanb_prestige_change = 5 }
+	}
+}
+
+###Drache Class Ironclads
+country_event = {
+	id =  AUSfocustree.5
+	title = AUSfocustree.5.t
+	desc = AUSfocustree.5.d
+	picture = GFX_event_sms_konig_wilhelm
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { 
+		name = AUSfocustree.5.a
+		ai_chance = { base = 100 }
+		navy_experience = 5
+		hidden_effect = { 
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Drache-Klasse"
+					type = ship_hull_ironclad_0
+					name_group = GER_IC_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_engine_slot=ship_engine_paddle_capital
+						fixed_ship_battery_slot=ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot=fire_control_system_0
+						fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+						mid_1_custom_slot=ship_cannon_battery_1
+						mid_2_custom_slot=ship_cannon_battery_1
+						front_1_custom_slot=ship_cannon_battery_1
+						rear_1_custom_slot=ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+					load_oob = AUS_drache_ironclads
+			}
+		}
+	}
+}
+
+###Kaiser Max Class Ironclads
+country_event = {
+	id =  AUSfocustree.6
+	title = AUSfocustree.6.t
+	desc = AUSfocustree.6.d
+	picture = GFX_event_sms_konig_wilhelm
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { 
+		name = AUSfocustree.6.a
+		ai_chance = { base = 100 }
+		navy_experience = 5
+		hidden_effect = { 
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Kaiser Max-Klasse"
+					type = ship_hull_ironclad_0
+					name_group = GER_IC_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_engine_slot=ship_engine_paddle_capital
+						fixed_ship_battery_slot=ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot=fire_control_system_0
+						fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+						mid_1_custom_slot=ship_cannon_battery_1
+						mid_2_custom_slot=ship_cannon_battery_1
+						front_1_custom_slot=ship_cannon_battery_1
+						rear_1_custom_slot=ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+					load_oob = AUS_kaiser_max_ironclads
+			}
+		}
+	}
+}
+
+###Kaiser Max Class Ironclads
+country_event = {
+	id =  AUSfocustree.7
+	title = AUSfocustree.7.t
+	desc = AUSfocustree.7.d
+	picture = GFX_event_sms_konig_wilhelm
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { 
+		name = AUSfocustree.7.a
+		ai_chance = { base = 100 }
+		navy_experience = 5
+		hidden_effect = { 
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Erzherzog Ferdinand Max-Klasse"
+					type = ship_hull_ironclad_0
+					name_group = GER_IC_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_engine_slot=ship_engine_paddle_capital
+						fixed_ship_battery_slot=ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot=fire_control_system_0
+						fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+						mid_1_custom_slot=ship_cannon_battery_1
+						mid_2_custom_slot=ship_cannon_battery_1
+						front_1_custom_slot=ship_cannon_battery_1
+						rear_1_custom_slot=ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+					load_oob = AUS_kaiser_max_ironclads
+			}
+		}
 	}
 }

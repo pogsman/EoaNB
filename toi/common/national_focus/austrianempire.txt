@@ -1889,7 +1889,9 @@ focus_tree = {
         }
     
         completion_reward = {
-		    navy_experience = 25
+		   navy_experience = 35
+		   add_tech_bonus = { bonus = 1 uses = 2 category = naval_equipment }
+		   add_tech_bonus = { bonus = 1 uses = 2 category = naval_doctrine }
 		}
 	}
 	
@@ -1945,7 +1947,7 @@ focus_tree = {
             focus = AUS_Maximilian_Lessons
         }
 		
-		mutually_exclusive = { focus = AUS_Tegetthof }
+		mutually_exclusive = { focus = AUS_Wilhelm_von_Tegetthoff  }
     
         completion_reward = {
 		    navy_experience = 25
@@ -2091,7 +2093,7 @@ focus_tree = {
                 uses = 1
                 category = naval_doctrine 
             }
-		    1236 = {
+		    1235 = {
                 add_building_construction = {
                     type = naval_base 
                     level = 2
@@ -2231,7 +2233,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_new_ships_designs
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Gunboat
 		x = 45          
 		y = 2
 		cost = 70
@@ -2253,7 +2255,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Screw_Frigates
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Frigate
 		x = 44          
 		y = 3
 		cost = 70
@@ -2274,7 +2276,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Screw_Corvettes
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Corvette
 		x = 46         
 		y = 3
 		cost = 70
@@ -2501,7 +2503,7 @@ focus_tree = {
         }
     
         completion_reward = {
-			country_event = { id = AUSindustry.2 days = 5 }
+			country_event = { id = AUSfocustree.2 days = 5 }
 		}
 	}
 	
@@ -2522,7 +2524,7 @@ focus_tree = {
         }
     
         completion_reward = {
-			country_event = { id = AUSindustry.3 days = 5 }
+			country_event = { id = AUSfocustree.3 days = 5 }
 		}
 	}
 	
@@ -2669,7 +2671,7 @@ focus_tree = {
         }
     
         completion_reward = {
-            country_event = { id = AUSindustry.1  days = 5 }	
+            country_event = { id = AUSfocustree.1  days = 5 }	
 		}
 	}
 	
