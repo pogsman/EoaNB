@@ -1360,6 +1360,65 @@ ideas = {
 
             traits = { AUS_trait_de_Farkashazy }
         }
+		
+		AUS_vic_Janos_Irinyi = {
+
+            allowed = {
+                original_tag = AUS
+            }
+			
+			picture = AUS_advisor_Irinyi_jano
+
+            visible = {
+            }
+
+            available = {
+            }
+
+            traits = { AUS_trait_Janos_Irinyi }
+			
+			research_bonus = {
+				process_engineering_tech = 0.05
+			}
+        }
+		
+		AUS_vic_Carl_Than = {
+
+            allowed = {
+                original_tag = AUS
+            }
+			
+			picture = AUS_advisor_Karoly_than
+
+            visible = {
+            }
+
+            available = {
+            }
+
+            traits = { chemist }
+			
+			research_bonus = {
+				chemistry_tech = 0.05
+			}
+        }
+		AUS_vic_Ignaz_Semmelweis = {
+
+            allowed = {
+                original_tag = AUS
+            }
+			
+			picture = AUS_advisor_Ignanz_Semmelweiss
+
+            visible = {
+            }
+
+            available = {
+            }
+
+            traits = { AUS_trait_Ignaz_Semmelweis }
+			
+        }
 	}
 
 #	army_chief = {

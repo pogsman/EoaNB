@@ -1392,6 +1392,26 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	AUS_trait_Janos_Irinyi = {
+		random = no
+		
+		research_speed_factor = 0.02
+		consumer_goods_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	AUS_trait_Ignaz_Semmelweis = {
+		random = no
+		
+		research_speed_factor = 0.01
+		monthly_population = 0.1
+		consumer_goods_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}	
+	
+	
 	### ROM Advisor Traits ###
 	
 	ROM_trait_Unionist = {

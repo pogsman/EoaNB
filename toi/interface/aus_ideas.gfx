@@ -139,6 +139,18 @@ spriteTypes = {
 		name = "GFX_idea_AUS_Hungarian_gold"
 		texturefile = "gfx/interface/ideas/AUS/AUS_Hungarian_gold.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_AUS_advisor_Ignanz_Semmelweiss"
+		texturefile = "gfx/interface/ideas/AUS/AUS_advisor_Ignanz_Semmelweiss.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_advisor_Irinyi_jano"
+		texturefile = "gfx/interface/ideas/AUS/AUS_advisor_Irinyi_jano.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_advisor_Karoly_than"
+		texturefile = "gfx/interface/ideas/AUS/AUS_advisor_Karoly_than.dds"
+	}
 	#MHC Army
 	spriteType = {
 		name = "GFX_idea_AUS_vic_Ludwig_von_Gablenz"
