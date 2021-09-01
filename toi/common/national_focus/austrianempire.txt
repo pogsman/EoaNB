@@ -2249,8 +2249,18 @@ focus_tree = {
 		
     
         completion_reward = {
-		    navy_experience = 25
+		    add_tech_bonus = {
+                bonus = 0.15
+                uses = 1
+                category = naval_equipment
+            }
+			add_tech_bonus = {
+                bonus = 0.15
+                uses = 1
+                category = naval_mtg_gunboat_tech
+            }
 		}
+		navy_experience = 50
 	}
 	
 	focus = { 
@@ -2302,6 +2312,8 @@ focus_tree = {
 		y = 4
 		cost = 70
 		available_if_capitulated = no
+		available = { has_tech = tech_naval_mtg_ironclad }
+		
 		
 		ai_will_do = {
 			factor = 1
@@ -2327,6 +2339,7 @@ focus_tree = {
 		y = 4
 		cost = 70
 		available_if_capitulated = no
+		available = { has_tech = tech_naval_mtg_ironclad }
 		
 		ai_will_do = {
 			factor = 1
@@ -2352,6 +2365,7 @@ focus_tree = {
 		y = 4
 		cost = 70
 		available_if_capitulated = no
+		available = { has_tech = tech_naval_mtg_late_ironclad }
 		
 		ai_will_do = {
 			factor = 1

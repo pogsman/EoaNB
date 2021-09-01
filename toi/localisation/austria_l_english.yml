@@ -611,6 +611,9 @@
  AUS_vic_Josef_Werndl:0 "Josef Werndl"
  AUS_vic_Georg_Sigl:0 "Georg Sigl"
  AUS_vic_de_Farkashazy:0 "Móric Fischer de Farkasházy"
+ AUS_vic_Ignaz_Semmelweis:0 "Ignaz Semmelweis"
+ AUS_vic_Carl_Than:0 "Carl Than"
+ AUS_vic_Janos_Irinyi:0 "Irinyi János"
 
  AUS_vic_naval_company_osterreichischer_lloyd:0 "Österreichischer Lloyd"
  AUS_vic_naval_company_stabilimento_tecnico_triestino:0 "Stabilimento Tecnico Triestino"
@@ -698,6 +701,8 @@
  AUS_trait_Ludwig_Greiner:0 "Forester"
  AUS_trait_Heinrich_von_Ferstel:0 "Vienna Urbanizer" 
  AUS_trait_Mathias_von_Schonerer:0 "Railway Pioneer"
+ AUS_trait_Janos_Irinyi:0 "New Match Inventor"
+ AUS_trait_Ignaz_Semmelweis:0 "Pioneer of Antiseptic Procedures"
  
  ###Misc
  dynmod_AUS_urbanization:0 "Urbanisation of Vienna"
@@ -705,3 +710,9 @@
  AUS_trait_concern_austrian_andritz:0 "Austrian Heavy Industry Manufacturer" 
  AUS_trait_concern_austrian_ganzworks:0 "Hungarian Heavy Industry's Heart"
  AUS_trait_concern_austrian_lokomotivfabrik:0 "Austrian Steam Locomotive Manufacturer"
+ AUS_navy_experience_more_than_49:0 "£navy_experience §H50§!"
+ AUS_navy_experience_more_than_49_blocked:0 "£navy_experience §R50§!"
+ AUS_navy_experience_more_than_tooltip:0 "It costs 50£navy_experience to take the decision."
+ AUS_navy_experience_more_than_29:0 "£navy_experience §H30§!"
+ AUS_navy_experience_more_than_29_blocked:0 "£navy_experience §R30§!"
+ AUS_navy_experience_more_than_tooltip:0 "It costs 30£navy_experience to take the decision."

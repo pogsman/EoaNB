@@ -3123,42 +3123,39 @@ country_event = {
 	}
 }
 
-###Kaiser Max Class Ironclads
+###Austrian Screw Corvettes 
 country_event = {
-	id =  AUSfocustree.7
-	title = AUSfocustree.7.t
-	desc = AUSfocustree.7.d
+	id =  AUSfocustree.8
+	title = AUSfocustree.8.t
+	desc = AUSfocustree.8.d
 	picture = GFX_event_sms_konig_wilhelm
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { 
-		name = AUSfocustree.7.a
+		name = AUSfocustree.8.a
 		ai_chance = { base = 100 }
 		navy_experience = 5
 		hidden_effect = { 
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
-					name = "Erzherzog Ferdinand Max-Klasse"
-					type = ship_hull_ironclad_0
-					name_group = GER_IC_HISTORICAL
+					name = "Erzherzog Friedrich-Klasse"
+					type = ship_hull_corvette_2
+					name_group = GER_CO_HISTORICAL
 					parent_version = 0
 					modules = {
-						fixed_ship_engine_slot=ship_engine_paddle_capital
 						fixed_ship_battery_slot=ship_cannon_battery_1
 						fixed_ship_fire_control_system_slot=fire_control_system_0
-						fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+						fixed_ship_engine_slot=ship_engine_sail_1
+						fixed_ship_armor_slot=ship_armor_screen_hardwood_0
 						mid_1_custom_slot=ship_cannon_battery_1
-						mid_2_custom_slot=ship_cannon_battery_1
-						front_1_custom_slot=ship_cannon_battery_1
-						rear_1_custom_slot=ship_cannon_battery_1
 					}
 					#obsolete = no
 				}
-					load_oob = AUS_kaiser_max_ironclads
+				load_oob = AUS_screw_corvettes
 			}
-		}
-	}
+	    } 
+    }
 }
