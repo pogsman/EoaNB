@@ -3159,3 +3159,32 @@ country_event = {
 	    } 
     }
 }
+
+#Salvacoste  
+country_event = {
+	id = AUSfocustree.9
+	title = AUSfocustree.9.t
+	desc = AUSfocustree.9.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.9.a 
+		ai_chance = { factor = 10 }
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		add_ideas = AUS_idea_salvacoste
+	}
+	
+	option = {
+		name = AUSfocustree.9.b
+		ai_chance = { factor = 90 }
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+		navy_experience = -10
+		add_war_support = -0.05
+	}
+}

@@ -1148,6 +1148,24 @@ ideas = {
 				trade_opinion_factor = 0.05
 			}
 		}
+		
+		AUS_idea_salvacoste = {
+		
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				naval_damage_factor = 0.05
+				naval_defense_factor = 0.05
+			}
+		}
 	}
     political_advisor = {
 		AUS_advisor_ignacy_lukasiewicz = {

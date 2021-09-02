@@ -2066,7 +2066,7 @@ focus_tree = {
 		
     
         completion_reward = {
-		    navy_experience = 25
+		    activate_mission = AUS_mission_Fabbrica_Macchine_Andrea
 		}
 	}
 	
@@ -2121,17 +2121,18 @@ focus_tree = {
         }
     
         completion_reward = {
-		    navy_experience = 25
+		    country_event = { days = 5 id = AUSfocustree.9 }
 		}
 	}
 	
 	focus = { 
-		id = AUS_novara_expedition
+		id = AUS_marineschule_fiume
 		icon = GFX_goal_AUS_Kaiser_Navy
 		x = 37          
 		y = 4
 		cost = 70
 		available_if_capitulated = no
+		available = { has_completed_focus = AUS_Recover_Italy_Navy }
 		
 		ai_will_do = {
 			factor = 1
@@ -2142,7 +2143,7 @@ focus_tree = {
         }
     
         completion_reward = {
-		    navy_experience = 25
+		    
 		}
 	}
 	
@@ -2164,7 +2165,7 @@ focus_tree = {
 		
     
         completion_reward = {
-		    navy_experience = 25
+		    
 		}
 	}
 	
