@@ -677,6 +677,9 @@
  
  AUS_tt_galician_black_gold_tt:0 "§GTwo decisions to raise galician oil fields will be available.§!"
  
+ AUS_tt_increased_funding_loc:0 "Modify §YArmy and Navy Funds Balance§! by\nConsumer Goods Factories: §R+2.5%§!\nLegislative Power Gain: §G+4%§!"
+ AUS_tt_decreased_funding_loc:0 "Modify §YArmy and Navy Funds Balance§! by\nLegislative Power Gain: §R-4%§!"
+ 
  ###Austrian Opinion Modifiers###
  AUS_FRA_ARRANGEMENTS_REL:0 "Political Arrangements"
  eoanb_om_PRS_AUS_socialism:0 "Supported Austrian Socialists"

@@ -1166,6 +1166,52 @@ ideas = {
 				naval_defense_factor = 0.05
 			}
 		}
+		AUS_idea_lack_navy_funds = {
+		
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				naval_coordination = -0.15
+				naval_morale = -0.15
+				experience_gain_navy_factor = -0.15
+				experience_gain_navy = -0.10
+				political_power_gain = -0.10
+				industrial_capacity_dockyard = -0.15
+				production_speed_dockyard_factor = -0.1
+				
+			}
+		}
+		AUS_idea_lack_navy_funds_2 = {
+		
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				naval_coordination = -0.10
+				naval_morale = -0.10
+				experience_gain_navy_factor = -0.10
+				experience_gain_navy = -0.05
+				political_power_gain = -0.05
+				industrial_capacity_dockyard = -0.10
+				production_speed_dockyard_factor = -0.05
+				
+			}
+		}
 	}
     political_advisor = {
 		AUS_advisor_ignacy_lukasiewicz = {

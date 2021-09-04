@@ -1790,7 +1790,7 @@ focus_tree = {
 		}
     
         completion_reward = {
-		    navy_experience = 25
+		    
 		}
 	}
 	
@@ -1868,7 +1868,11 @@ focus_tree = {
         }
     
         completion_reward = {
-		    navy_experience = 25
+			swap_ideas = {
+				add_idea = AUS_idea_lack_navy_funds_2
+				remove_idea = AUS_idea_lack_navy_funds
+			}
+		    AUS_consume_funding_from_pool = yes
 		}
 	}
 	
@@ -2050,7 +2054,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Fabbrica_Macchine_Andrea
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Naval_supplies
 		x = 36          
 		y = 2
 		cost = 70
@@ -2067,6 +2071,8 @@ focus_tree = {
     
         completion_reward = {
 		    activate_mission = AUS_mission_Fabbrica_Macchine_Andrea
+			AUS_consume_funding_from_pool = yes
+			
 		}
 	}
 	
@@ -2101,6 +2107,7 @@ focus_tree = {
                     province = 11735 
                 } 
 		    }
+			AUS_consume_funding_from_pool = yes
 		}
 	}
 	
@@ -2127,7 +2134,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_marineschule_fiume
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Government_Military
 		x = 37          
 		y = 4
 		cost = 70
@@ -2143,7 +2150,8 @@ focus_tree = {
         }
     
         completion_reward = {
-		    
+			add_tech_bonus = { bonus = 0.25 uses = 4 category = naval_doctrine }
+			AUS_consume_funding_from_pool = yes			
 		}
 	}
 	
@@ -2261,7 +2269,6 @@ focus_tree = {
                 category = naval_mtg_gunboat_tech
             }
 		}
-		navy_experience = 50
 	}
 	
 	focus = { 
