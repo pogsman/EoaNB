@@ -352,8 +352,8 @@ ideas = {
 		    picture = placeholder
 
 		    modifier = {
-		        consumer_goods_factor = 0.02
-	            industrial_capacity_dockyard = 0.1
+		        consumer_goods_factor = 0.05
+	            industrial_capacity_dockyard = 0.05
 			}
 	    }
 
@@ -1649,12 +1649,10 @@ ideas = {
 			}
 
 			visible = {
-                date < 1871.04.07
             }
 
 			available = {
 				has_completed_focus = AUS_Wilhelm_von_Tegetthoff
-				date < 1871.04.07
 			}
 
 			picture = AUS_theorist_Wilhelm_von_Tegetthof
@@ -1662,10 +1660,15 @@ ideas = {
 			cost = 50
 
 			research_bonus = {
-				naval_doctrine = -0.1
+				naval_doctrine = 0.1
 			}
 
 			traits = { naval_theorist }
+			
+			modifier = { 
+			    naval_hit_chance = 0.05
+				naval_defense_factor = 0.05
+			}
 		}
 	}
 
