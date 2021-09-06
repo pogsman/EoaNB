@@ -20,8 +20,7 @@ country_event = {
     add_stability = -0.20
     add_political_power = -25
     decrease_ps_by_two = yes
-    set_country_flag = batto_sfez_dead #needed for french and british references
-    
+    FRA = {country_event = { id = fra_tun.01 days = 1 }}
         }
     }
     option = {
@@ -33,7 +32,7 @@ country_event = {
     decrease_ps_by_three = yes
     activate_mission = tunisia_revolt_mission
     add_to_variable = { Mejba_Revolt_var = 20 }
-    set_country_flag = batto_sfez_alive #needed for french and british references
+    country_event = { id = fra_tun.02 days = 1 }
         }
 	}
 is_triggered_only = yes
@@ -83,7 +82,7 @@ country_event = {
     add_political_power = -50
     decrease_ps_by_two = yes
     add_ideas = TUN_FRA_ENG_trades_go_down
-    set_country_flag = no_fundamental_pact
+    country_event = { id = fra_tun.03 days = 1 }
         }
     }
 is_triggered_only = yes
@@ -169,7 +168,7 @@ country_event = {
 	fire_only_once = yes
     is_triggered_only = yes
 	option = {
-		name = tunisia.3.a
+		name = tunisia.100.a
         hidden_effect = {
             start_civil_war = {
                 ideology = traditional_conservatism
@@ -178,6 +177,42 @@ country_event = {
                 states = { 
                     1012
                 }
+            }
+        }
+    }
+# ------------------------------------------------------------
+    country_event = {
+        id = tun_fra.01 #french fleet near our coast!
+        title = tun_fra.01.t
+        desc = tun_fra.01.d
+        picture = GFX_event_kor_warships_western
+        fire_only_once = yes
+        is_triggered_only = yes
+        option = {
+            name = tunisia.3.a
+            hidden_effect = {
+            add_ideas = TUN_french_military_pressure
+            }
+        }
+    }
+    country_event = {
+        id = tun_fra.02 #french fleet bombs our coast!
+        title = tun_fra.02.t
+        desc = tun_fra.02.d
+        picture = GFX_tunisia_coastal_bombing
+        fire_only_once = yes
+        is_triggered_only = yes
+        option = {
+            name = tunisia.3.a
+            hidden_effect = {
+            decrease_ps_by_one = yes
+            remove_ideas = TUN_french_military_pressure
+            9994 = { 
+                damage_building = {
+                type = infrastructure
+                damage = 1
+              }
+            }
             }
         }
     }

@@ -29,6 +29,7 @@ state = {
 			
 			9994 = {
 				naval_base = 4
+				arms_factory = 1
 			}
 		}		
 		add_to_array = { state_culture_array = 167 }

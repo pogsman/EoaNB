@@ -4722,5 +4722,117 @@ country_event = { #German Troops withdraw from France
 		}
 	}
 }
+#----------------------------------------------------------------------------------------------
+# TUNISIA LINE
+#----------------------------------------------------------------------------------------------
 
-
+country_event = { #Batto_sfez_dead
+	id = fra_tun.01
+	title = fra_tun.01.t
+	desc = fra_tun.01.d
+	picture = GFX_tun_event_carriage_accident
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = fra_tun.01.a #don't do anything
+		ai_chance = { factor = 20 }
+		hidden_effect = {
+    add_ideas = TUN_FRA_ENG_trades_go_down
+    add_political_power = -25
+    decrease_ps_by_one = yes
+		}
+	}
+  option = {
+		name = fra_tun.01.b #send the fleet
+		ai_chance = { factor = 80 }
+		hidden_effect = {
+      country_event = { id = tun_fra.01 days = 1 }
+      news_event = {id = news.25}
+      set_country_flag = FRA_send_the_fleet
+	}
+}
+}
+country_event = { #Batto_sfez_alive
+	id = fra_tun.02
+	title = fra_tun.01.t
+	desc = fra_tun.01.d
+	picture = GFX_tun_event_carriage_accident
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = fra_tun.01.a #don't do anything
+		ai_chance = { factor = 20 }
+		hidden_effect = {
+    add_ideas = TUN_FRA_ENG_trades_go_up
+    add_political_power = 25
+		}
+	}
+}
+country_event = { #no_fundamental_pact
+	id = fra_tun.03
+	title = fra_tun.03.t
+	desc = fra_tun.03.d
+	picture = GFX_event_tun_reject_reforms
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = fra_tun.03.a 
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+    if = {
+      limit = { has_contry_flag = FRA_send_the_fleet}
+      country_event = { id = tun_fra.02 days = 1 }
+  } 
+    else = {
+    country_event = { id = tun_fra.01 days = 1 }
+    news_event = {id = news.25}
+    }
+		}
+	}
+}
+country_event = { #no_fundamental_pact
+	id = fra_tun.03
+	title = fra_tun.03.t
+	desc = fra_tun.03.d
+	picture = GFX_event_tun_reject_reforms
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = fra_tun.03.a 
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+    if = {
+      limit = { has_contry_flag = FRA_send_the_fleet}
+      country_event = { id = tun_fra.02 days = 1 }
+  } 
+    else = {
+    country_event = { id = tun_fra.01 days = 1 }
+    news_event = {id = news.25}
+    }
+		}
+	}
+}
+country_event = { #fundamental_pact
+	id = fra_tun.04
+	title = fra_tun.03.t
+	desc = fra_tun.03.d
+	picture = GFX_tun_the_fundamental_pact
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = fra_tun.03.a 
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+    TUN = {
+      remove_ideas = TUN_french_military_pressure
+    }
+		}
+	}
+}

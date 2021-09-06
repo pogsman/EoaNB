@@ -2021,3 +2021,24 @@ FRA_idea_deorganized_army_3:0 "Army Disorganized"
 FRA_idea_deorganized_army_2:0 "Army Disorganized"
 FRA_idea_deorganized_army_1:0 "Army Disorganized"
 FRA_idea_socialist_influence_2:0 "Socialist Influence"
+
+##################################################
+#                TUNISIA RELATED
+##################################################
+
+fra_tun.01_t:0 "Batto Sfez is Death!"
+fra_tun.01_d:0 "This morning, the jew that accidentally killed a muslim chind in a carriage accident has been executed for blasphemy. \n We have been claiming the protégé over jews foe years but the tunisian government doesn't seems to accept it  "
+fra_tun.01.a:0 " We should send our fleet to make them understanding who is the leader "
+fra_tun.01.b:0 " We can't afford an other useless fight"
+
+fra_tun.02_t:0 "Batto Sfez is Alive!"
+fra_tun.02_d:0 "The Bey of Tunisia commuted the sentence to life imprisonment for Batto Sfez, the jew that accidentally killed a muslim child in a carriage accident"
+fra_tun.02.a:0 "Our protégé over jews is intact"
+
+fra_tun.03_t:0 "Tunisia Reject reforms"
+fra_tun.03_d:0 "The weeks of pressure over tunisian government to modernize their cultural and religious laws didn't manage to make the Elayet accepting our requests, diplomacy failed this time and we can't leave without a settling of scores. "
+fra_tun.03.a:0 "Every action must have a consequence. "
+
+fra_tun.04_t:0 "Tunisia Accepts reforms"
+fra_tun.04_d:0 "After weeks of pressure over the tunisian government they finally accepted to reform their cultural and social laws, this will give us a new economy to exploit!"
+fra_tun.04.a:0 "All’s well that ends well "

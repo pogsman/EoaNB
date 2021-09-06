@@ -1,7 +1,7 @@
 ﻿l_english:
 ### Event titels, descriptions and options
  tunisia.1.t:0 "Batto Sfez Affair"
-tunisia.1.d:0 "Today The Court of Tunisia declared Batto Sfez, the jew that killed a muslim child in a carriage accident, guilty and it will be executed for blasphemy. Few days ago we executed a muslim that murdered a jew, if we don't do the same now the stability of our nation could be affected."
+tunisia.1.d:0 "Today the Court of Tunisia declared Batto Sfez, the jew that killed a muslim child in a carriage accident, guilty and it will be executed for blasphemy. Few days ago we executed a muslim that murdered a jew, if we don't do the same now the stability of our nation could be affected."
 tunisia.1.a:0 " Hang The jew! "
 tunisia.1.b:0 " We can't anger France and England"
 
@@ -34,9 +34,14 @@ tunisia.8.t:0 "In name of Allah"
 tunisia.8.d:0 "Our path is signed, if we follow His will we will never suffer"
 tunisia.8.a:0 "Technology is coming in africa!"
 
-
 tunisia.100.t:0 "Mejba Revolt"
 tunisia.100.d:0 "We got news of the death of General Ferhat, it seems that he was killed by a group of insurgents. The entire region is fighting against us"
 tunisia.100.a:0 "May he rest in peace."
 
+tun_fra.01_t:0 "French fleet near our coasts!"
+tun_fra.01_d:0 "This morning Tunis woke up with the unexpected visit of the french navy ready for bombing our coasts if we don't change our social laws that led to the death of Batto Sfez."
+tun_fra.01.a:0 "We should have expected this..."
 
+tun_fra.02_t:0 "Naval bombing on Tunis"
+tun_fra.02_d:0 "tonight the French fleet stationed near Tunis opened fire. Victims are reported in large numbers."
+tun_fra.02.a:0 "God, they did it for real."

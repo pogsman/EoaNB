@@ -704,3 +704,33 @@ news_event = {
 		name = news.24.a
 	}
 }
+
+##Tunisia related news events 
+news_event = {
+	id = news.32 #fance send the float
+	title = news.25.t
+	desc = news.25.d
+	picture = GFX_news_event_military_planning
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.32.a
+	}
+}
+news_event = {
+	id = news.33 # france bomb tunisian coasts
+	title = news.33.t
+	desc = news.33.d
+	picture = GFX_news_event_military_planning
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.33.a
+	}
+}
