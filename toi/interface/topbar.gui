@@ -22,16 +22,16 @@ guiTypes = {
 
 			pdx_tooltip = PS_tooltip
 			pdx_tooltip_delayed = PS_tooltip_delayed
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-
 			name ="pol_stability"
 			position = { x= 264 y = 22 }
 
 			font = "hoi_18mbs"
-			text = "[?ROOT.pol_stability]"
-			format = center
+			text = "[?ROOT.pol_stability]   "
+			format = right
 			maxWidth = 52
 			maxHeight = 24
 			fixedsize = yes
@@ -257,7 +257,6 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-
 #		iconType ={
 #			name ="nuke_text_bg"
 #			spriteType = "GFX_generic_w_box"
@@ -397,7 +396,6 @@ guiTypes = {
 			name = "help_button"
 			position = { x = -29 y = -50 }
 			quadTextureSprite ="GFX_help_button"
-
 			buttonText = ""
 			buttonFont = "Main_14_black"
 			clicksound = click_ok
