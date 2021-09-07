@@ -5,9 +5,8 @@ state = {
 	manpower = 99212
 	state_category = town
 	resources = {
-		chromium =2
-		iron= 1
-		wood =2
+		iron = 1
+		wood = 2
 	}
 
 	history = {
@@ -15,8 +14,7 @@ state = {
 		add_core_of = TSH
 		add_core_of = SAT
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
+			infrastructure = 2
 			13548 = { naval_base = 1 }
 		}
 

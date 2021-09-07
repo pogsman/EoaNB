@@ -16,8 +16,10 @@ state = {
 		owner = NSW
 		buildings = {
 			infrastructure = 2
+			industrial_complex = 1
+			farm = 1
 			7564 = {
-				naval_base = 1
+				naval_base = 2
 			}
 		}
 		victory_points = {

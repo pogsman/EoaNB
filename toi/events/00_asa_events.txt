@@ -37,7 +37,11 @@ add_namespace = asa_anarchist_revolt
 add_namespace = asa_arrest_protest_leaders
 ### GILDED AGE ###
 add_namespace = asa_ga_war_plans_committee
+add_namespace = asa_ga_extracontinental_affairs_committee
+add_namespace = asa_ga_intracontinental_affairs_committee
+add_namespace = asa_ga_domestic_affairs_committee
 ### ELECTION NAMESPACES ###
+add_namespace = asa_congressional_elections
 add_namespace = asa_election_start_hidden
 add_namespace = asa_emergency_election
 add_namespace = asa_1864_election
@@ -3499,15 +3503,15 @@ country_event = { # Democratic revolt
 }
 
 country_event = { # Meeting Starts
-	id = asa_meeting_with_protestors.1
-	title = asa_meeting_with_protestors.1.t
-	desc = asa_meeting_with_protestors.1.desc
+	id = asa_meeting_with_protestors.0
+	title = asa_meeting_with_protestors.0.t
+	desc = asa_meeting_with_protestors.0.desc
 	picture = placeholder
 	
 	is_triggered_only = yes
 
 	option = { #Issue of Policy
-		name = asa_meeting_with_protestors.1.a
+		name = asa_meeting_with_protestors.0.a
 		trigger = {
 			NOT = {
 				has_country_flag = asa_meeting_with_protestors_policy_discussed
@@ -3515,165 +3519,375 @@ country_event = { # Meeting Starts
 		}
 		country_event = asa_meeting_with_protestors.2
 	}
-	option = { #Issue of Economic Downturn
-		name = asa_meeting_with_protestors.1.b
+}
+
+country_event = { # Work Hours
+	id = asa_meeting_with_protestors.1
+	title = asa_meeting_with_protestors.1.t
+	desc = asa_meeting_with_protestors.1.desc
+	picture = placeholder
+	
+	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
 		trigger = {
 			NOT = {
-				has_country_flag = asa_meeting_with_protestors_economy_discussed
+				OR = {
+					has_idea = fourteen_hour_work_day
+					has_idea = twelve_hour_work_day
+					has_idea = ten_hour_work_day
+					has_idea = eight_hour_work_day
+				}
 			}
 		}
-		country_event = asa_meeting_with_protestors.3
-	}
-	option = { #Issue of National Security
-		name = asa_meeting_with_protestors.1.c
-		trigger = {
-			NOT = {
-				has_country_flag = asa_meeting_with_protestors_national_security_discussed
+		custom_effect_tooltip = asa_discuss_with_protestors_policy_work_day_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_policy_pledge_1
+				value = fourteen_hour_work_day
+			}
+			set_country_flag = asa_discuss_with_protestors_policy_work_day_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
 			}
 		}
-		country_event = asa_meeting_with_protestors.4
+		country_event = {
+			id = asa_meeting_with_protestors.2
+			days = 1
+		}
 	}
 	option = {
-		name = asa_meeting_with_protestors.1.d
-		trigger = {
-			NOT = {
-				has_idea = ASA_Widespread_Protests_level_3
-				has_idea = ASA_Widespread_Protests_level_2
-				has_idea = ASA_Widespread_Protests_level_1
-			}
-		}
-		country_event = asa_meeting_with_protestors.5
+		name = asa_meeting_with_protestors.1.b
 	}
 }
 
-country_event = { #Issues of Policy
+country_event = { # Suffrage
 	id = asa_meeting_with_protestors.2
 	title = asa_meeting_with_protestors.2.t
 	desc = asa_meeting_with_protestors.2.desc
 	picture = placeholder
 
 	is_triggered_only = yes
-	option = { #Work With Them To Develop A Plan
-		name = asa_meeting_with_protestors.2.a
-		add_political_power = -25
-		add_stability = 0.025
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_3
-			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_3
-				add_idea = ASA_Widespread_Protests_level_2
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				has_idea = universal_suffrage
 			}
 		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_2
+		custom_effect_tooltip = asa_discuss_with_protestors_policy_suffrage_pledge
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_policy_pledge_2
+				value = universal_suffrage
 			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_2
-				add_idea = ASA_Widespread_Protests_level_1
+			set_country_flag = asa_discuss_with_protestors_policy_suffrage_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
 			}
 		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_1
-			}
-			remove_ideas = ASA_Widespread_Protests_level_1
+		country_event = {
+			id = asa_meeting_with_protestors.3
+			days = 1
 		}
-		set_country_flag = asa_meeting_with_protestors_policy_discussed
-		set_country_flag = asa_meeting_with_protestors_policy_planning
-		country_event = asa_meeting_with_protestors.1
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
 	}
 }
 
-country_event = { #Issues of Economic Downturn
+country_event = { # Child Labor
 	id = asa_meeting_with_protestors.3
 	title = asa_meeting_with_protestors.3.t
 	desc = asa_meeting_with_protestors.3.desc
 	picture = placeholder
 
 	is_triggered_only = yes
-	option = { #Work With Them To Develop A Plan
-		name = asa_meeting_with_protestors.3.a
-		add_political_power = -25
-		add_stability = 0.025
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_3
-			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_3
-				add_idea = ASA_Widespread_Protests_level_2
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = cl_restricted
+					has_idea = cl_illegal						
+				}
 			}
 		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_2
+		custom_effect_tooltip = asa_discuss_with_protestors_policy_child_labor_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_policy_pledge_3
+				value = cl_restricted
 			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_2
-				add_idea = ASA_Widespread_Protests_level_1
+			set_country_flag = asa_discuss_with_protestors_policy_child_labor_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
 			}
 		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_1
-			}
-			remove_ideas = ASA_Widespread_Protests_level_1
+		country_event = {
+			id = asa_meeting_with_protestors.4
+			days = 1
 		}
-		set_country_flag = asa_meeting_with_protestors_economy_discussed
-		set_country_flag = asa_meeting_with_protestors_economy_planning
-		country_event = asa_meeting_with_protestors.1
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
 	}
 }
 
-country_event = { # Issues of National Security
+country_event = { # Tax Rate
 	id = asa_meeting_with_protestors.4
 	title = asa_meeting_with_protestors.4.t
 	desc = asa_meeting_with_protestors.4.desc
 	picture = placeholder
+
 	is_triggered_only = yes
-	hidden = yes
-	option = { # Work with them to develop a plan
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_3
-			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_3
-				add_idea = ASA_Widespread_Protests_level_2
-			}
-		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_2
-			}
-			swap_ideas = {
-				remove_idea = ASA_Widespread_Protests_level_2
-				add_idea = ASA_Widespread_Protests_level_1
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = low_taxes
+					has_idea = very_low_taxes
+				}
 			}
 		}
-		if = {
-			limit = {
-				has_idea = ASA_Widespread_Protests_level_1
+		custom_effect_tooltip = asa_discuss_with_protestors_economy_tax_rate_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_economy_pledge_1
+				value = low_taxes
 			}
-			remove_ideas = ASA_Widespread_Protests_level_1
+			set_country_flag = asa_discuss_with_protestors_economy_tax_rate_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
 		}
-		set_country_flag = asa_meeting_with_protestors_national_security_discussed
-		set_country_flag = asa_meeting_with_protestors_national_security_planning
-		country_event = asa_meeting_with_protestors.1
+		country_event = {
+			id = asa_meeting_with_protestors.5
+			days = 1
+		}
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
 	}
 }
 
-country_event = { # End of Policy Discussion w/ Protestors
+country_event = { # Trade Policy
 	id = asa_meeting_with_protestors.5
 	title = asa_meeting_with_protestors.5.t
 	desc = asa_meeting_with_protestors.5.desc
 	picture = placeholder
+
 	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = limited_exports
+					has_idea = closed_economy
+				}
+			}
+		}
+		custom_effect_tooltip = asa_discuss_with_protestors_economy_trade_policy_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_economy_pledge_2
+				value = limited_exports
+			}
+			set_country_flag = asa_discuss_with_protestors_economy_trade_policy_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
+		}
+		country_event = {
+			id = asa_meeting_with_protestors.6
+			days = 1
+		}
+	}
 	option = {
-		name = asa_meeting_with_protestors.5.a
+		name = asa_meeting_with_protestors.1.b
+	}
+}
+
+country_event = { # Healthcare
+	id = asa_meeting_with_protestors.6
+	title = asa_meeting_with_protestors.6.t
+	desc = asa_meeting_with_protestors.6.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = hc_low_healthcare
+					has_idea = hc_decent_healthcare
+					has_idea = hc_good_healthcare
+					has_idea = hc_excellent_healthcare
+				}
+			}
+		}
+		custom_effect_tooltip = asa_discuss_with_protestors_economy_healthcare_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_economy_pledge_3
+				value = hc_low_healthcare
+			}
+			set_country_flag = asa_discuss_with_protestors_economy_healthcare_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
+		}
+		country_event = {
+			id = asa_meeting_with_protestors.7
+			days = 1
+		}
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
+	}
+}
+
+country_event = { # Border Laws
+	id = asa_meeting_with_protestors.7
+	title = asa_meeting_with_protestors.7.t
+	desc = asa_meeting_with_protestors.7.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				has_idea = closed_borders
+			}
+		}
+		custom_effect_tooltip = asa_discuss_with_protestors_national_security_border_control_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_national_security_pledge_1
+				value = closed_borders
+			}
+			set_country_flag = asa_discuss_with_protestors_national_security_border_control_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
+		}
+		country_event = {
+			id = asa_meeting_with_protestors.8
+			days = 1
+		}
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
+	}
+}
+
+country_event = { # Conscription
+	id = asa_meeting_with_protestors.8
+	title = asa_meeting_with_protestors.8.t
+	desc = asa_meeting_with_protestors.8.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+		}
+		custom_effect_tooltip = asa_discuss_with_protestors_national_security_conscription_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_national_security_pledge_2
+				value = volunteer_only
+			}
+			set_country_flag = asa_discuss_with_protestors_national_security_conscription_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
+		}
+		country_event = {
+			id = asa_meeting_with_protestors.9
+			days = 1
+		}
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
+	}
+}
+
+country_event = { # Defense Spending
+	id = asa_meeting_with_protestors.9
+	title = asa_meeting_with_protestors.9.t
+	desc = asa_meeting_with_protestors.9.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = { # Agree to compromise
+		name = asa_meeting_with_protestors.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = one_percent
+				}
+			}
+		}
+		custom_effect_tooltip = asa_discuss_with_protestors_national_security_military_spending_pledge_tt
+		hidden_effect = {
+			set_variable = {
+				var = asa_discuss_with_protestors_national_security_pledge_3
+				value = one_percent
+			}
+			set_country_flag = asa_discuss_with_protestors_national_security_military_spending_pledge
+			add_to_variable = {
+				var = asa_promises_to_protestors
+				value = 25
+			}
+		}
+		country_event = {
+			id = asa_meeting_with_protestors.10
+			days = 1
+		}
+	}
+	option = {
+		name = asa_meeting_with_protestors.1.b
+	}
+}
+
+country_event = {
+	id = asa_meeting_with_protestors.10
+	title = asa_meeting_with_protestors.10.t
+	desc = asa_meeting_with_protestors.10.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = asa_meeting_with_protestors.10.a
 		activate_mission = asa_make_good_on_promises
 	}
 }
@@ -4824,6 +5038,10 @@ country_event = { ### EMERGENCY ELECTION ###
 			country_event = {
 				id = asa_anarchist_revolt.1
 				days = 180
+			}
+			country_event = {
+				id = asa_congressional_elections.0
+				days = 1
 			}
 		}
 	}
@@ -7890,7 +8108,7 @@ country_event = { # South Info
 	}
 }
 
-country_event = { # Pssing The Deserts
+country_event = { # Passing The Deserts
 	id = asa_ga_war_plans_committee.4
 	title = asa_ga_war_plans_committee.4.t
 	desc = asa_ga_war_plans_committee.4.desc
@@ -7936,6 +8154,687 @@ country_event = { # Question of big businesses
 	}
 }
 
+country_event = {
+	id = asa_ga_domestic_affairs_committee.2
+	title = asa_ga_domestic_affairs_committee.2.t
+	desc = asa_ga_domestic_affairs_committee.2.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_domestic_affairs_committee.2.a
+		complete_national_focus = ASA_GA_DAC_50_Percent_Plan
+	}
+	option = {
+		name = asa_ga_domestic_affairs_committee.2.b
+		complete_national_focus = ASA_GA_DAC_10_Percent_Plan
+	}
+}
+
+country_event = { # Keep Europe out of America
+	id = asa_ga_extracontinental_affairs_committee.1
+	title = asa_ga_extracontinental_affairs_committee.1.t
+	desc = asa_ga_extracontinental_affairs_committee.1.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Agree
+		name = asa_ga_extracontinental_affairs_committee.1.a
+		every_other_country = {
+			limit = {
+				has_opinion_modifier = ASA_ga_eac_relations_department
+			}
+			add_opinion_modifier = {
+				target = ASA
+				modifier = ASA_ga_eac_agreed_to_stay_out_of_america
+			}
+			reverse_add_opinion_modifier = {
+				target = ASA
+				modifier = ASA_ga_eac_agreed_to_stay_out_of_america
+			}
+		}
+		ASA = {
+			country_event = {
+				id = asa_ga_extracontinental_affairs_committee.2
+				days = 1
+			}
+		}
+	}
+	option = { # Disagree
+		name = asa_ga_extracontinental_affairs_committee.1.b
+		every_other_country = {
+			limit = {
+				has_opinion_modifier = ASA_ga_eac_relations_department
+			}
+			add_opinion_modifier = {
+				target = ASA
+				modifier = ASA_ga_eac_disagreed_to_stay_out_of_america
+			}
+			reverse_add_opinion_modifier = {
+				target = ASA
+				modifier = ASA_ga_eac_disagreed_to_stay_out_of_america
+			}
+		}
+		ASA = {
+			country_event = {
+				id = asa_ga_extracontinental_affairs_committee.3
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { # (European Country) agrees to stay out of America
+	id = asa_ga_extracontinental_affairs_committee.2
+	title = asa_ga_extracontinental_affairs_committee.2.t
+	desc = asa_ga_extracontinental_affairs_committee.2.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Excellent!
+		name = asa_ga_extracontinental_affairs_committee.2.a
+		add_political_power = 50
+	}
+}
+
+country_event = { # (European Country) refuses to stay out of America
+	id = asa_ga_extracontinental_affairs_committee.3
+	title = asa_ga_extracontinental_affairs_committee.3.t
+	desc = asa_ga_extracontinental_affairs_committee.3.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Unfortunate
+		name = asa_ga_extracontinental_affairs_committee.3.a
+	}
+}
+
+country_event = { # Neutrality Agreement
+	id = asa_ga_extracontinental_affairs_committee.4
+	title = asa_ga_extracontinental_affairs_committee.4.t
+	desc = asa_ga_extracontinental_affairs_committee.4.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Agree
+		name = asa_ga_extracontinental_affairs_committee.4.a
+		ASA = {
+			country_event = asa_ga_extracontinental_affairs_committee.5
+		}
+		diplomatic_relation = {
+			country = ASA
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = NEG
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = GRL
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = CSA
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = WVG
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = KTY
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = DAK
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = TEX
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = NMX
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = ORE
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = CAL
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = UTA
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	option = { # Refuse
+		name = asa_ga_extracontinental_affairs_committee.4.a
+		ASA = {
+			country_event = asa_ga_extracontinental_affairs_committee.6
+		}
+	}
+}
+
+country_event = { # (European Country) agrees to neutrality agreement
+	id = asa_ga_extracontinental_affairs_committee.5
+	title = asa_ga_extracontinental_affairs_committee.5.t
+	desc = asa_ga_extracontinental_affairs_committee.5.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Great!
+		name = asa_ga_extracontinental_affairs_committee.5.a
+	}
+}
+
+country_event = { # (European Country) refuses to neutrality agreement
+	id = asa_ga_extracontinental_affairs_committee.6
+	title = asa_ga_extracontinental_affairs_committee.6.t
+	desc = asa_ga_extracontinental_affairs_committee.6.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # :(
+		name = asa_ga_extracontinental_affairs_committee.6.a
+	}
+}
+
+country_event = { # Free trade agreement proposal
+	id = asa_ga_extracontinental_affairs_committee.7
+	title = asa_ga_extracontinental_affairs_committee.7.t
+	desc = asa_ga_extracontinental_affairs_committee.7.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Agree
+		name = asa_ga_extracontinental_affairs_committee.7.a
+		ASA = {
+			country_event = asa_ga_extracontinental_affairs_committee.8
+			add_ideas = ASA_ga_trade_agreement_with_europe
+		}
+		add_ideas = ASA_ga_trade_agreement_with_asa
+	}
+	option = { # Refuse
+		name = asa_ga_extracontinental_affairs_committee.7.b
+		ASA = {
+			country_event = asa_ga_extracontinental_affairs_committee.9
+		}
+	}
+}
+
+country_event = { # (European Country) agrees to trade agreement
+	id = asa_ga_extracontinental_affairs_committee.8
+	title = asa_ga_extracontinental_affairs_committee.8.t
+	desc = asa_ga_extracontinental_affairs_committee.8.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # :D
+		name = asa_ga_extracontinental_affairs_committee.8.a
+	}
+}
+
+country_event = { # (European Country) refuses trade agreement
+	id = asa_ga_extracontinental_affairs_committee.9
+	title = asa_ga_extracontinental_affairs_committee.9.t
+	desc = asa_ga_extracontinental_affairs_committee.9.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # :(
+		name = asa_ga_extracontinental_affairs_committee.9.a
+	}
+}
+
+country_event = { # The Diplomatic Tour of Europe
+	id = asa_ga_extracontinental_affairs_committee.10
+	title = asa_ga_extracontinental_affairs_committee.10.t
+	desc = asa_ga_extracontinental_affairs_committee.10.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.10.a
+		every_other_country = {
+            limit = {
+                any_owned_state = {
+                    AND = {
+                        is_capital = yes
+                        is_on_continent = europe
+                    }
+                }
+            }
+            add_opinion_modifier = {
+                target = ASA
+                modifier = ASA_ga_eac_diplomatic_tour
+            }
+            reverse_add_opinion_modifier = {
+                target = ASA
+                modifier = ASA_ga_eac_diplomatic_tour
+            }
+        }
+		remove_ideas = ASA_ga_european_arms_investment
+		remove_ideas = ASA_ga_european_civilian_investment
+		remove_ideas = ASA_ga_european_students
+		swap_ideas = {
+			remove_idea = ASA_ga_european_investment_level_1
+			add_idea = ASA_ga_european_investment_level_2
+		}
+	}
+}
+
+country_event = { # ASA requests free trade
+	id = asa_ga_extracontinental_affairs_committee.11
+	title = asa_ga_extracontinental_affairs_committee.11.t
+	desc = asa_ga_extracontinental_affairs_committee.11.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Accept
+		name = asa_ga_extracontinental_affairs_committee.11.a
+		add_ideas = ASA_ga_free_trade_with_asa
+		FROM = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = ASA_ga_fruits_of_the_open_door_level_1
+					}
+				}
+				add_ideas = ASA_ga_fruits_of_the_open_door_level_1
+			}
+			else = { }
+			country_event = asa_ga_extracontinental_affairs_committee.12
+		}
+	}
+	option = { # Decline
+		name = asa_ga_extracontinental_affairs_committee.11.b
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.13
+		}
+	}
+}
+
+country_event = { # Free trade with China!
+	id = asa_ga_extracontinental_affairs_committee.12
+	title = asa_ga_extracontinental_affairs_committee.12.t
+	desc = asa_ga_extracontinental_affairs_committee.12.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.12
+	}
+}
+
+country_event = { # No free trade with China :(
+	id = asa_ga_extracontinental_affairs_committee.13
+	title = asa_ga_extracontinental_affairs_committee.13.t
+	desc = asa_ga_extracontinental_affairs_committee.13.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.13
+	}
+}
+
+country_event = { # ASA wants to re-sign trade agreements with Japan
+	id = asa_ga_extracontinental_affairs_committee.14
+	title = asa_ga_extracontinental_affairs_committee.14.t
+	desc = asa_ga_extracontinental_affairs_committee.14.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Accept
+		name = asa_ga_extracontinental_affairs_committee.14.a
+		add_ideas = ASA_ga_free_trade_with_asa
+		FROM = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = ASA_ga_riches_of_japan
+					}
+				}
+				add_ideas = ASA_ga_riches_of_japan
+			}
+			else = { }
+			country_event = asa_ga_extracontinental_affairs_committee.15
+		}
+	}
+	option = { # Decline
+		name = asa_ga_extracontinental_affairs_committee.14.b
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.16
+		}
+	}
+}
+
+country_event = { # Free trade with Japan!
+	id = asa_ga_extracontinental_affairs_committee.15
+	title = asa_ga_extracontinental_affairs_committee.15.t
+	desc = asa_ga_extracontinental_affairs_committee.15.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.15.a
+	}
+}
+
+country_event = { # No free trade with Japan :(
+	id = asa_ga_extracontinental_affairs_committee.16
+	title = asa_ga_extracontinental_affairs_committee.16.t
+	desc = asa_ga_extracontinental_affairs_committee.16.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.16.a
+	}
+}
+
+country_event = { # ASA requests free trade
+	id = asa_ga_extracontinental_affairs_committee.17
+	title = asa_ga_extracontinental_affairs_committee.17.t
+	desc = asa_ga_extracontinental_affairs_committee.17.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Accept
+		name = asa_ga_extracontinental_affairs_committee.17.a
+		add_ideas = ASA_ga_free_trade_with_asa
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.18
+		}
+	}
+	option = { # Decline
+		name = asa_ga_extracontinental_affairs_committee.17.b
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.19
+		}
+	}
+}
+
+country_event = { # Free trade with Liberia!
+	id = asa_ga_extracontinental_affairs_committee.18
+	title = asa_ga_extracontinental_affairs_committee.18.t
+	desc = asa_ga_extracontinental_affairs_committee.18.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.18.a
+	}
+}
+
+
+country_event = { # No free trade with Liberia :(
+	id = asa_ga_extracontinental_affairs_committee.19
+	title = asa_ga_extracontinental_affairs_committee.19.t
+	desc = asa_ga_extracontinental_affairs_committee.19.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.19.a
+	}
+}
+
+country_event = { # America demands colonial subjugation
+	id = asa_ga_extracontinental_affairs_committee.20
+	title = asa_ga_extracontinental_affairs_committee.20.t
+	desc = asa_ga_extracontinental_affairs_committee.20.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Fine...
+		name = asa_ga_extracontinental_affairs_committee.20.a
+		set_country_flag = usa_african_colony
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_major = no
+				add = 10
+			}
+			modifier = {
+				is_great_power = no
+				add = 10
+			}
+			modifier = {
+				check_variable = { 
+					var = this.score_array_position_var
+					value = 13
+					compare = less_than_or_equals 
+				}
+				add = 10
+			}
+			modifier = {
+				NOT = {
+					any_other_country = {
+						is_great_power = yes
+						ROOT = {
+							is_guaranteed_by = PREV
+						}
+					}
+				}
+				add = 40
+			}
+		}
+		FROM = {
+			puppet = ROOT
+		}
+		set_autonomy = {
+			target = ROOT
+			autonomy_state = autonomy_colony
+		}
+	}
+	option = { # We shall never surrender!
+		name = asa_ga_extracontinental_affairs_committee.20.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_major = yes
+				add = 10
+			}
+			modifier = {
+				is_great_power = yes
+				add = 10
+			}
+			modifier = {
+				check_variable = { 
+					var = this.score_array_position_var
+					value = 13
+					compare = greater_than 
+				}
+				add = 10
+			}
+			modifier = {
+				any_other_country = {
+					is_great_power = yes
+					ROOT = {
+						is_guaranteed_by = PREV
+					}
+				}
+				add = 40
+			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = topple_government
+		}
+	}
+}
+
+country_event = { # American-Liberian Defense Agreement Proposal
+	id = asa_ga_extracontinental_affairs_committee.21
+	title = asa_ga_extracontinental_affairs_committee.21.t
+	desc = asa_ga_extracontinental_affairs_committee.21.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Accept
+		name = asa_ga_extracontinental_affairs_committee.21.a
+		give_guarantee = FROM
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.22
+		}
+	}
+	option = { # Decline
+		name = asa_ga_extracontinental_affairs_committee.21.b
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.23
+		}
+	}
+}
+
+country_event = { # Liberia agrees to defense agreement
+	id = asa_ga_extracontinental_affairs_committee.22
+	title = asa_ga_extracontinental_affairs_committee.22.t
+	desc = asa_ga_extracontinental_affairs_committee.22.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Yay!
+		name = asa_ga_extracontinental_affairs_committee.22.a
+		give_guarantee = FROM
+	}
+}
+
+country_event = { # Liberia declines defense agreement
+	id = asa_ga_extracontinental_affairs_committee.23
+	title = asa_ga_extracontinental_affairs_committee.23.t
+	desc = asa_ga_extracontinental_affairs_committee.23.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Awww :(
+		name = asa_ga_extracontinental_affairs_committee.23.a
+	}
+}
+
+country_event = { # America proposes Treaty of Friendship
+	id = asa_ga_extracontinental_affairs_committee.24
+	title = asa_ga_extracontinental_affairs_committee.24.t
+	desc = asa_ga_extracontinental_affairs_committee.24.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Accept
+		name = asa_ga_extracontinental_affairs_committee.24.a
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.25
+		}
+	}
+	option = {
+		name = asa_ga_extracontinental_affairs_committee.24.b
+		FROM = {
+			country_event = asa_ga_extracontinental_affairs_committee.26
+		}
+	}
+}
+
+country_event = { # Liberia accepts Treaty of Friendship
+	id = asa_ga_extracontinental_affairs_committee.25
+	title = asa_ga_extracontinental_affairs_committee.25.t
+	desc = asa_ga_extracontinental_affairs_committee.25.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Yay!
+		name = asa_ga_extracontinental_affairs_committee.25.a
+	}
+}
+
+country_event = { # Liberia declines Treaty of Friendship
+	id = asa_ga_extracontinental_affairs_committee.26
+	title = asa_ga_extracontinental_affairs_committee.26.t
+	desc = asa_ga_extracontinental_affairs_committee.26.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # :(
+		name = asa_ga_extracontinental_affairs_committee.26.a
+	}
+}
+
+country_event = { # America annexes us
+	id = asa_ga_extracontinental_affairs_committee.27
+	title = asa_ga_extracontinental_affairs_committee.27.t
+	desc = asa_ga_extracontinental_affairs_committee.27.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # "fuck." - Garion, 2021
+		name = asa_ga_extracontinental_affairs_committee.27.a
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+		every_owned_state = {
+			owner = {
+				OVERLORD = {
+					add_political_power = 25
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Issues of Diplomacy
+	id = asa_ga_intracontinental_affairs_committee.1
+	title = asa_ga_intracontinental_affairs_committee.1.t
+	desc = asa_ga_intracontinental_affairs_committee.1.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = { # Aggressive
+		name = asa_ga_intracontinental_affairs_committee.1.a
+		complete_national_focus = ASA_GA_IAC_Aggressive_Diplomacy
+	}
+	option = { # Passive
+		name = asa_ga_intracontinental_affairs_committee.1.b
+		complete_national_focus = ASA_GA_IAC_Passive_Diplomacy
+	}
+}
+
+### CONGRESSIONAL ELECTIONS ###
+## Check for ASA existing ###
+country_event = {
+	id = asa_congressional_elections.0
+	title = asa_congressional_elections.0.t
+	desc = asa_congressional_elections.0.desc
+	picture = placeholder
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					ASA = {
+						AND = {
+							country_exists = yes
+							NOT = {
+								has_country_flag = asa_elections_off_flag
+							}
+						}
+					}
+				}
+				country_event = asa_congressional_elections.1
+			}
+			else = {
+				country_event = {
+					id = asa_congressional_elections.0
+					days = 365
+				}
+			}
+		}
+	}
+}
+## The election event
+country_event = {
+	id = asa_congressional_elections.1
+	title = asa_congressional_elections.1.t
+	desc = asa_congressional_elections.1.desc
+	picture = placeholder
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			compute_seats = yes
+		}
+	}
+	option = {
+		name = asa_congressional_elections.1.a
+	}
+}
+
 ### DEBUG EVENTS ###
 country_event = {
 	id = asa_debug.1
@@ -7948,5 +8847,16 @@ country_event = {
 		load_focus_tree = asa_democratic_gilded_age_focus
 		set_country_flag = NA_B_gilded_age_flag
 		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {
+	id = asa_debug.2
+	title = asa_debug.2.t
+	desc = asa_debug.2.desc
+	picture = placeholder
+	is_triggered_only = yes
+	option = {
+		name = asa_debug.2.a
+		puppet = LIB
 	}
 }

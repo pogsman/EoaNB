@@ -411,6 +411,7 @@ country_event = { ##Wuchang uprising - 10 oct 1911
 				ruling_party = radical_democracy
 			}
 			inherit_technology = ROOT
+			set_research_slots = 2
 			set_popularities = {
 				anarchism = 0
 				vanguard_communism = 0
@@ -435,7 +436,7 @@ country_event = { ##Wuchang uprising - 10 oct 1911
 				type = annex_everything
 			}
 			add_ideas ={
-				QNG_rebel_uprising
+				CHI_xinghai_rebellion
 			}
 			load_oob = ROC_wuchang
 		}
@@ -736,7 +737,7 @@ country_event = { ##shandong
 		ROC = {
 			load_oob = ROC_shandong
 			transfer_state = 597
-			transfer_state = 1433
+			transfer_state = 1232
 		}
     }
 }
@@ -830,6 +831,7 @@ country_event = { ##north-south conference
     option = { #
         name = xinghai_reb.42.a
 		QNG={
+			clr_country_flag = true_china
 			white_peace = ROC
 			every_owned_state = {
 				add_core_of = BEI
@@ -839,12 +841,17 @@ country_event = { ##north-south conference
 		}
 		BEI={
 			hidden_effect = {
+				set_country_flag = true_china
 				set_cosmetic_tag = ROC_iron_blood_flag
+				remove_ideas = {
+					QNG_autonomus_navy
+				}
 				set_capital = 608
 				set_politics = {
 					ruling_party = radical_democracy
 				}
 				inherit_technology = ROOT
+				set_research_slots = 3
 				set_popularities = {
 					anarchism = 0
 					vanguard_communism = 0
@@ -868,6 +875,27 @@ country_event = { ##north-south conference
 			annex_country = {
 				target = QNG
 				transfer_troops = yes
+			}
+			if={
+				limit = {NAY = {exists = yes}}
+				annex_country = {
+					target = NAY
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {GUN = {exists = yes}}
+				annex_country = {
+					target = GUN
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {FUJ = {exists = yes}}
+				annex_country = {
+					target = FUJ
+					transfer_troops = yes
+				}
 			}
 			ROC={country_event = {id = xinghai_reb.43}}
 			country_event = {id = xinghai_reb.44 days = 10}
@@ -996,5 +1024,24 @@ country_event = { ##uryankhay republic
 				}
 			}
 		}
+    }
+}
+
+country_event = { ##tibet declares full independace
+    id = xinghai_reb.47
+    title = xinghai_reb.47.t
+    desc = xinghai_reb.47.d
+
+#    picture = GFX_report_event_election_vote
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+    option = { #
+        name = xinghai_reb.47.a
+		1394={add_core_of = TIB}
+		947={add_core_of = TIB}
+		release = TIB
     }
 }

@@ -86,6 +86,11 @@
 		add_ideas = EOANBSYS_spirit_pandemics
 		set_variable = { EOANBSYS_pandemics_progress_var = 0 }
 		activate_mission = EOANBSYS_pandemics_progress_counter
+
+		if = {
+			limit = { NOT = { has_global_flag = EOANBSYS_pandemics_spanish_flu_happened_flag } }
+			set_variable = { global.EOANBSYS_pandemics_spanish_flu_spark = ROOT.id }
+		}
 	}
 
 	EOANBSYS_pandemics_country_clear = {
@@ -138,9 +143,6 @@
 			min = 0
 			max = EOANBSYS_pandemics_state_population_deaths_percentage_temp
 		}
-
-		
-
 
 		randomize_variable = {
 			var = EOANBSYS_pandemics_state_population_deaths
@@ -316,5 +318,49 @@
 		}
 		else = {
 			add_political_power = 100
+		}
+	}
+	EOANBSYS_pandemics_progress_minus_half = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_minus_half_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.005 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 5
+		}
+	}
+	EOANBSYS_pandemics_progress_minus_one = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_minus_one_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.010 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 10
+		}
+	}
+	EOANBSYS_pandemics_progress_minus_two = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_minus_two_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.020 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 20
+		}
+	}
+	EOANBSYS_pandemics_progress_minus_five = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_minus_five_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.050 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 40
 		}
 	}

@@ -6,10 +6,15 @@ state = {
 
 	state_category = pastoral
 
+	resources = {
+		coal =3
+		wood = 8
+	}
+
 	history = {
 		owner = HBC
 		buildings = {
-			infrastructure = 2
+			infrastructure = 1
 		}
 		add_core_of = HBC
 

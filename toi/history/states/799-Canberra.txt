@@ -4,10 +4,10 @@ state = {
 	manpower = 25620
 	
 	state_category = pastoral
-	resources={
-		cotton = 15
-		wood = 5
-		iron = 6
+	resources = {
+			cotton = 15
+			wood = 5
+			iron = 6
 	}	
 	
 
@@ -16,6 +16,7 @@ state = {
 		add_core_of = NSW
 		buildings = {
 			infrastructure = 1
+			farm = 1
 		}
 		# victory_points = {
 			# 7859 30 
