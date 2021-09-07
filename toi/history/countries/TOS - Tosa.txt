@@ -44,9 +44,9 @@
 		sfund_private_ventures_only
 
 		# National Ideas
-		TSH_sankin_kotai_obligations
 		TOS_vic_mimpeitai
-		TSH_Spirit_Tozama_Daimyo
+		TSH_spirit_vic_tozama_domain
+		TSH_spirit_vic_han_sankin_kotai_obligations
 	}
 
 	# Technology
@@ -134,8 +134,8 @@
 
 		set_party_name = {
 			ideology = radical_democracy
-			name = TSH_tokugawa_shogunate_absolute_party
-			long_name = TSH_tokugawa_shogunate_absolute_party_long
+			name = TSH_han_domain_tosa_party
+			long_name = TSH_han_domain_tosa_party_long
 		}
 		set_party_name = {
 			ideology = autocracy

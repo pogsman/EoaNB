@@ -3,8 +3,6 @@
 	capital = 533 # Date
 	set_research_slots = 1
 
-	oob = "DTE_1857"
-
 	# Laws & Ideas
 	add_ideas = {
 		# State & Country
@@ -46,11 +44,11 @@
 		sfund_private_ventures_only
 
 		# National Ideas
-		TSH_sankin_kotai_obligations
 		DTE_ikaggan_medical_school
 		DTE_vic_strained_finances
 		DTE_hermit_mountain
-		TSH_Spirit_Fudai_Daimyo
+		TSH_spirit_vic_fudai_domain
+		TSH_spirit_vic_han_sankin_kotai_obligations
 	}
 
 	# Technology
@@ -138,8 +136,8 @@
 
 		set_party_name = {
 			ideology = radical_democracy
-			name = TSH_tokugawa_shogunate_absolute_party
-			long_name = TSH_tokugawa_shogunate_absolute_party_long
+			name = TSH_han_domain_date_party
+			long_name = TSH_han_domain_date_party_long
 		}
 		set_party_name = {
 			ideology = autocracy

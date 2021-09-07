@@ -33,11 +33,12 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-		    unlock_decision_tooltip = DEN_decision_new_buissnes_act
+		    unlock_decision_category_tooltip = DEN_decision_category_industry
+			unlock_decision_tooltip = DEN_decision_new_buissnes_act
 			add_political_power = 50
 			add_tech_bonus = { bonus = 1 uses = 1 category = humanities_tech }
 		}
-	}	
+	}
 	
 	focus = {
 		id = DEN_hassel_teudt
@@ -286,7 +287,7 @@ focus_tree = {
 		available = {
 			}
 		completion_reward = {
-		    unlock_decision_tooltip = DEN_decision_basic_roads_on_bornholm
+		    #unlock_decision_tooltip = DEN_decision_basic_roads_on_bornholm
 		}
 	}
 	
@@ -555,7 +556,7 @@ focus_tree = {
 			#is_historical_focus_on = yes
 		}
 		available = {
-			date > 1864.6.1
+			date > 1864.9.1
 			NOT = { has_war_with = PRS }
 			has_idea = DEN_lost_schleswig_war 
 		}
@@ -651,7 +652,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			date > 1864.6.1
+			date > 1864.9.1
 			owns_state = 1032
 		}
 		completion_reward = {
@@ -1113,7 +1114,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			1128 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
+			#1128 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
 		}
 	}
 	
@@ -1188,6 +1189,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = historical_option
 			add_popularity = {
 	    	  	ideology = centrism
 	    	  	popularity = 0.24
