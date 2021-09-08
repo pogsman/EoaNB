@@ -17,58 +17,58 @@ guiTypes = {
 			pdx_tooltip_delayed = state_economy_button_tt_d
 		}
 	}
-	containerWindowType = {
-		name = "topbar_economy_container"
-		position = { x = 0 y = 0 }
-		size = { width=1108 height=720 }	
-		clipping = no
+	# containerWindowType = {
+		# name = "topbar_economy_container"
+		# position = { x = 0 y = 0 }
+		# size = { width=1108 height=720 }	
+		# clipping = no
 		
-		buttonType = {
-			name = "country_view_economy_button"
-			position = { x = 930 y = 6 }
-			quadTextureSprite ="GFX_state_economy_button"
-			Orientation = "UPPER_LEFT"
-			clicksound = click_close
-			oversound = ui_menu_over
+		# buttonType = {
+			# name = "country_view_economy_button"
+			# position = { x = 930 y = 6 }
+			# quadTextureSprite ="GFX_state_economy_button"
+			# Orientation = "UPPER_LEFT"
+			# clicksound = click_close
+			# oversound = ui_menu_over
 			
-			#pdx_tooltip = "ECONOMY_TOOLTIP"
-			#pdx_tooltip_delayed = "ECONOMY_TOOLTIP_DELAYED"
-		}
+			# #pdx_tooltip = "ECONOMY_TOOLTIP"
+			# #pdx_tooltip_delayed = "ECONOMY_TOOLTIP_DELAYED"
+		# }
 
-		iconType ={
-			name ="money_amount_bg"
-			spriteType = "GFX_generic_box_96"
-			position = { x = 1050 y = 6 }
-		}
-		instantTextBoxType = {
-			name = "treasury_amount"
-			position = { x = 1054 y = 10 }
-			font = "hoi_18mbs"
-			format = center
-			maxWidth = 90
-			text = "treasury_amount_loc"
-			maxHeight = 24
-			fixedsize = yes
-			#alwaystransparent = yes
-		}
-		iconType ={
-			name ="income_amount_bg"
-			spriteType = "GFX_generic_box_96"
-			position = { x = 1150 y = 6 }
-		}
-		instantTextBoxType = {
-			name = "income_amount"
-			position = { x = 1154 y = 10 }
-			font = "hoi_18mbs"
-			format = center
-			maxWidth = 90
-			text = "income_amount_loc"
-			maxHeight = 24
-			fixedsize = yes
-			#alwaystransparent = yes
-			pdx_tooltip = income_amount_tt
-		}
-	}
+		# iconType ={
+			# name ="money_amount_bg"
+			# spriteType = "GFX_generic_box_96"
+			# position = { x = 1050 y = 6 }
+		# }
+		# instantTextBoxType = {
+			# name = "treasury_amount"
+			# position = { x = 1054 y = 10 }
+			# font = "hoi_18mbs"
+			# format = center
+			# maxWidth = 90
+			# text = "treasury_amount_loc"
+			# maxHeight = 24
+			# fixedsize = yes
+			# #alwaystransparent = yes
+		# }
+		# iconType ={
+			# name ="income_amount_bg"
+			# spriteType = "GFX_generic_box_96"
+			# position = { x = 1150 y = 6 }
+		# }
+		# instantTextBoxType = {
+			# name = "income_amount"
+			# position = { x = 1154 y = 10 }
+			# font = "hoi_18mbs"
+			# format = center
+			# maxWidth = 90
+			# text = "income_amount_loc"
+			# maxHeight = 24
+			# fixedsize = yes
+			# #alwaystransparent = yes
+			# pdx_tooltip = income_amount_tt
+		# }
+	# }
 
 
 	containerWindowType = { #State Economy Window

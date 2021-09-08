@@ -71,7 +71,7 @@ guiTypes = {
 		iconType = {
 			name = "legitimacy_icon"
 			spriteType = "GFX_legitimacy_icon"
-			position = { x = -151 y = -33 }
+			position = { x = -231 y = -20 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = "EOANB_LEGITIMACY_TOOLTIP"
 			pdx_tooltip_delayed = "EOANB_LEGITIMACY_TOOLTIP_LATE"
@@ -79,7 +79,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "eoanb_legitimacy_score_text"
-			position = { x = -150 y = -29 }
+			position = { x = -232 y = -18 }
 			font = "hoi_18mbs"
 			text = "EOANB_LEGITIMACY_SCORE"
 			maxWidth = 60
