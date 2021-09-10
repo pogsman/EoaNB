@@ -7,7 +7,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "state_view_economy_button"
-			position = { x = 379 y = 05 }
+			position = { x = 250 y = 71 }
 			quadTextureSprite ="GFX_state_economy_button"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
