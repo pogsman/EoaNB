@@ -219,36 +219,10 @@ guiTypes = {
 
 				iconType = {
 					name = "gdp_icon"
-					spriteType = "GFX_producing_icon"
+					spriteType = "GFX_gdp_icon"
 					position = { x = 160 y = 90 }
 					Orientation = "UPPER_LEFT"
 				}
-
-				# instantTextboxType = {
-				# 	name = "gdp"
-				# 	position = { x = 190 y = 90 }
-				# 	textureFile = ""
-				# 	font = "hoi_18mbs"
-				# 	maxWidth = 80
-				# 	maxHeight = 30
-				# 	format = right
-				# }
-
-				iconType ={
-					name ="needs_icon"
-					spriteType = "GFX_gdp_icon"
-					position = { x = 159 y = 121 }
-				}
-
-				# instantTextboxType = {
-				# 	name = "needs"
-				# 	position = { x = 140 y = 121 }
-				# 	textureFile = ""
-				# 	font = "hoi_18mbs"
-				# 	maxWidth = 80
-				# 	maxHeight = 30
-				# 	format = right
-				# }
 
 				containerWindowType = {
 					name = "piechart_pop_types"
@@ -1169,6 +1143,25 @@ guiTypes = {
 						centerPosition = yes
 						alwaystransparent = yes
 					}
+				}
+
+				iconType ={
+					name ="pops_life_needs_fulfilled_strip"
+					spriteType = "GFX_pops_life_needs_fulfilled_strip"
+					position = { x = 164 y = 120 }
+					frame = 1
+				}
+				iconType ={
+					name ="pops_everyday_needs_fulfilled_strip"
+					spriteType = "GFX_pops_everyday_needs_fulfilled_strip"
+					position = { x = 186 y = 120 }
+					frame = 1
+				}
+				iconType ={
+					name ="pops_luxury_needs_fulfilled_strip"
+					spriteType = "GFX_pops_luxury_needs_fulfilled_strip"
+					position = { x = 210 y = 120 }
+					frame = 1
 				}
 
 			# Resistance

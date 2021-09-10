@@ -16,6 +16,18 @@ guiTypes = {
 			pdx_tooltip = state_economy_button_tt
 			pdx_tooltip_delayed = state_economy_button_tt_d
 		}
+		instantTextBoxType = {
+			name = "statistics_gdp_amount_loc"
+			position = { x = 150 y = 40 }
+			font = "hoi_18mbs"
+			format = right
+			maxWidth = 120
+			text = "statistics_gdp_amount_loc_state_menu"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+			pdx_tooltip = statistics_gdp_amount_tt_state_menu
+		}
 	}
 	# containerWindowType = {
 		# name = "topbar_economy_container"

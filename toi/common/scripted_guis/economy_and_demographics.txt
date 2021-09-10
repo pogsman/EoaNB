@@ -29,6 +29,17 @@ scripted_gui = {
 				}
 			}
 		}
+		properties = {
+			pops_life_needs_fulfilled_strip = {
+				frame = pops_life_needs_fulfilled_frame
+			}
+			pops_everyday_needs_fulfilled_strip = {
+				frame = pops_everyday_needs_fulfilled_frame
+			}
+			pops_luxury_needs_fulfilled_strip = {
+				frame = pops_luxury_needs_fulfilled_frame
+			}
+		}
 		triggers = {
 			state_view_economy_button_click_enabled = {
 				always = yes
@@ -185,7 +196,7 @@ scripted_gui = {
 			}
 		}
 		
-        properties = {
+		properties = {
 			rgos_output_icon = {
 				image = "[GetRGOsOutputIcon]"
 			}

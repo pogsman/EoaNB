@@ -286,6 +286,8 @@
 
       statistics_gdp_amount_loc:0 "§Y[?annual_gdp_amount]§![GetCurrencyTextIconState]"
       statistics_gdp_amount_tt:0 "Gross Domestic Product: §Y[?annual_gdp_amount]§![GetCurrencyTextIconState] \nGDP per Capita: §Y[?gdp_per_capita]§![GetCurrencyTextIconState]"
+      statistics_gdp_amount_loc_state_menu:0 "§Y[?THIS.annual_gdp_amount]§![THIS.GetCurrencyTextIconState]"
+      statistics_gdp_amount_tt_state_menu:0 "Gross Domestic Product: §Y[?THIS.annual_gdp_amount]§![THIS.GetCurrencyTextIconState] \nGDP per Capita: §Y[?THIS.gdp_per_capita]§![THIS.GetCurrencyTextIconState]"
 
       statistics_gdp_graph_max_loc:0 "[?gdp_graph_max][GetStateGDPGraphThousands]"
       statistics_gdp_graph_min_loc:0 "[?gdp_graph_min][GetStateGDPGraphThousands]"
