@@ -2119,7 +2119,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Salvacoste
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Naval_Armamament
 		x = 35           
 		y = 4
 		cost = 70
@@ -2412,7 +2412,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_drache_ironclad
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Ironclad
 		x = 43         
 		y = 4
 		cost = 70
@@ -2439,7 +2439,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_kaiser_max_ironclad
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Ironclad
 		x = 45         
 		y = 4
 		cost = 70
@@ -2465,7 +2465,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Erzherzog_Ferdinand_Max_ironclad
-		icon = GFX_goal_AUS_Kaiser_Navy
+		icon = GFX_Focus_Losange_Ironclad
 		x = 47         
 		y = 4
 		cost = 70

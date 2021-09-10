@@ -125,16 +125,24 @@
  AUS_Recover_Italy_Navy_desc:0 "Even though our army in Lombardy suffered a blow, after blow from the Italians our navy deffinetly had it worse, with most of it in ruins, sunk or beyond all repair, some of our civillian fundings should be diverted to not only repair but modernize our ships top to bottom."
  AUS_Emperor_Adriatic_Navy:0 "The Emperor of the Adriatic"
  AUS_Emperor_Adriatic_Navy_desc:0 "The Empire wasn't blessed with a huge coastline such as other great powers to the west and the south of it, but that will not discourage us or destroy our naval ambissions one bit, the Council has decided in favour of construction of more dockyards in Dalmatian cities such as in Zara, Sebenico, Spalato, Ragusa and Durazzo."
- AUS_Ironclads_Navy:0 "Iron Is In Vogue"
- AUS_Ironclads_Navy_desc:0 "The new model of battleships just hit a scene the infamous 'Ironclad' model is a miracle of modern technology and their price proves it we should comission a construction of several models before other great powers of Europe, so that we have an edge over them on the seas."
  AUS_Austro_Italian_Race_Navy:0 "The Race for Adriatic Supremacy"
  AUS_Austro_Italian_Race_Navy_desc:0 "With our fleet repaired and ready to set sail once more we should focus our research on new and improved models of our allready decrepit navy so we can establish naval dominance in our Adriatic that shall not be questioned by the Italian states or the Sultan in the City of the World's Desire."
  AUS_Patrol_Italy_Coast:0 "Patrol the Italian Coast"
  AUS_Patrol_Italy_Coast_desc:0 "We cannot allow Italians to make a mockery of us on the seas ever again, the Council has called for an establishment of a permanent patroling squad of corvette's and gunboats to keep a watchfull eye on the Italian shores, our power will never be questioned again."
- AUS_New_Leadership:0 "New Leadership"
- AUS_New_Leadership_desc:0 "Ludwig von Fautz, name known all over the world reaching from Havana to India and a member of many Holy Orders	his love for sailing and the Empire built a great reputation with the Imperial Court which is ever so more inclined of giving him a position of a secretary of the navy, his skills and Maximilian's reforms with our high-tech ships is sure to restore the pride of the Austrian navy."
  AUS_Wilhelm_von_Tegetthoff:0 "Promote Wilhelm von Tegetthoff"
  AUS_Wilhelm_von_Tegetthoff_desc:0 "Born in Styria and a close relative of the mayor of Wien he proved to be a capable man by not only his sailors but Maximillian as well, his genius cannot be left unused we have to help him lead us and our navy to greatness."
+ AUS_ministry_of_marine:0 "Establish Marineministerium"
+ AUS_Fautz:0 "Promote Ludwig von Fautz"
+ AUS_Fautz_desc:0 "Ludwig von Fautz, name known all over the world reaching from Havana to India and a member of many Holy Orders	his love for sailing and the Empire built a great reputation with the Imperial Court which is ever so more inclined of giving him a position of a secretary of the navy, his skills and Maximilian's reforms with our high-tech ships is sure to restore the pride of the Austrian navy."
+ AUS_Fabbrica_Macchine_Andrea:0 "Fabbrica Macchine Andrea"
+ AUS_Salvacoste:0 "Salvacoste"
+ AUS_marineschule_fiume:0 "Marineschule Fiume"
+ AUS_new_ships_designs:0 "New Ships Designs"
+ AUS_Screw_Frigates:0 "Screw Frigates Designs"
+ AUS_Screw_Corvettes:0 "Screw Corvettes Designs"
+ AUS_drache_ironclad:0 "Drache Class Ironclads"
+ AUS_kaiser_max_ironclad:0 "Kaiser Max Class Ironclads"
+ AUS_Erzherzog_Ferdinand_Max_ironclad:0 "Erzherzog Ferdinand Max Class Ironclads"
  AUS_Bureaucratic_Administration:0 "Bureaucratic Administration"
  AUS_Bureaucratic_Administration_desc:0 "Our administration has grown old over the ages and left unmodernized, if we are to restore some of our prestiege and modernize our cities we simply have to modernize it with the standards of powers such as United Kingdom and France."
  AUS_Privatize_Railways:0 "Privatize the Railways"
@@ -549,6 +557,8 @@
  AUS_decision_category_habsburg_industry:0 "Economy of Austrian Empire"
  AUS_decision_category_habsburg_industry_desc:0 "Economy of Austrian Empire"
  
+ AUS_mission_Fabbrica_Macchine_Andrea:0 "Creation fo Fabbrica Macchine Andrea"
+ 
  #######################
  # Austrian Ideas      #
  #######################
@@ -594,6 +604,9 @@
  GC_idea_south_german_bund_desc:0 "Following our arrangement with Prussia we were able to bind the South German states to us in loose association."
  AUS_idea_bank_galicyjski:0 "Bank Galicyjski dla Handlu i Przemysłu"
  
+ AUS_idea_lack_navy_funds:0 "Navy Spending Cuts"
+ AUS_idea_lack_navy_funds_2:0 "Navy Spending Cuts"
+ AUS_army_navy_funding_balance:0 "Army and Navy Funds Balance"
  
  AUS_idea_naval_wilhelm_von_tegetthof:0 "Wilhelm von Tegetthoff"
  AUS_vic_Adolph_von_Braun:0 "Adolph von Braun"
