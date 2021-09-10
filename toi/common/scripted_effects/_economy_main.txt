@@ -3879,83 +3879,17 @@
 							limit = {
 								check_variable = { everyday_goods_trade_amount > 0 }
 							}
-							#Costs & goods absorbed by pops 
-							add_to_variable = { pops_money = everyday_goods_trade_value }
-							subtract_from_variable = { pops_goods_spending = everyday_goods_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = everyday_goods_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = pops_everyday_goods_need }
-							add_to_variable = { pops_everyday_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = pops_everyday_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
+							subtract_from_variable = { everyday_goods_bought_value = everyday_goods_trade_value }
+							add_to_variable = { everyday_goods_bought_amount = everyday_goods_trade_amount }
 						}
 						#Exporting
 						else_if = {
 							limit = {
 								check_variable = { everyday_goods_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by factories/artisans 
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_everyday_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = everyday_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_everyday_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = everyday_goods_produced_amount }
-
-							set_temp_variable = { artisan_trade_value = everyday_goods_trade_value }
-							set_temp_variable = { artisan_trade_amount = everyday_goods_trade_amount }
-							multiply_temp_variable = { artisan_trade_value = artisan_share }
-							divide_temp_variable = { artisan_trade_value = 100 }
-							multiply_temp_variable = { artisan_trade_amount = artisan_share }
-							divide_temp_variable = { artisan_trade_amount = 100 }
-
-							set_temp_variable = { factory_trade_value = everyday_goods_trade_value }
-							set_temp_variable = { factory_trade_amount = everyday_goods_trade_amount }
-							multiply_temp_variable = { factory_trade_value = factory_share }
-							divide_temp_variable = { factory_trade_value = 100 }
-							multiply_temp_variable = { factory_trade_amount = factory_share }
-							divide_temp_variable = { factory_trade_amount = 100 }
-
-							set_temp_variable = { total_trade_value = artisan_trade_value }
-							add_to_temp_variable = { total_trade_value = factory_trade_value }
-							set_temp_variable = { total_trade_amount_temp = artisan_trade_amount }
-							add_to_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_value = everyday_goods_trade_value } }
-								}
-								subtract_from_temp_variable = { total_trade_value = everyday_goods_trade_value }
-								subtract_from_temp_variable = { factory_trade_value = total_trade_value }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_amount_temp = everyday_goods_trade_amount } }
-								}
-								subtract_from_temp_variable = { total_trade_amount_temp = everyday_goods_trade_amount }
-								subtract_from_temp_variable = { factory_trade_amount = total_trade_amount_temp }
-							}
-							
-							add_to_variable = { factory_money = factory_trade_value }
-							add_to_variable = { factory_earnings = factory_trade_value }
-							subtract_from_variable = { factory_everyday_goods_sold = factory_trade_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_everyday_goods_sold > factory_everyday_goods_production }
-								}
-								add_to_temp_variable = { artisan_trade_amount = factory_everyday_goods_sold }
-								subtract_from_temp_variable = { artisan_trade_amount = factory_everyday_goods_production }
-								set_variable = { factory_everyday_goods_sold = factory_everyday_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_trade_value }
-							add_to_variable = { pops_earnings = artisan_trade_value }
-							subtract_from_variable = { pops_artisans_everyday_goods_sold = artisan_trade_amount }
+							add_to_variable = { everyday_goods_sold_value = everyday_goods_trade_value }
+							subtract_from_variable = { everyday_goods_sold_amount = everyday_goods_trade_amount }
+							subtract_from_variable = { everyday_goods_left = everyday_goods_trade_amount }
 
 						}
 
@@ -4527,6 +4461,29 @@
 					add_to_variable = { life_goods_sold_value = cost_temp }
 					add_to_variable = { life_goods_sold_amount = buy_amount }
 					subtract_from_variable = { life_goods_left = buy_amount }
+				#
+				#Everyday Goods Purchases
+					set_temp_variable = { buy_amount = everyday_goods_demand }
+					subtract_from_temp_variable = { buy_amount = everyday_goods_bought_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = everyday_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						min = 0
+					}
+					set_temp_variable = { cost_temp = buy_amount }
+					multiply_temp_variable = { cost_temp = everyday_goods_price }
+
+					#Resolve
+					add_to_variable = { everyday_goods_bought_value = cost_temp }
+					add_to_variable = { everyday_goods_bought_amount = buy_amount }
+					add_to_variable = { everyday_goods_sold_value = cost_temp }
+					add_to_variable = { everyday_goods_sold_amount = buy_amount }
+					subtract_from_variable = { everyday_goods_left = buy_amount }
+
 				#
 
 				#Infrastructure Buying Goods
@@ -5301,6 +5258,98 @@
 							add_to_variable = { pops_earnings = life_goods_sold_value }
 							add_to_variable = { rgos_earnings = life_goods_sold_value }
 							add_to_variable = { pops_rgos_life_goods_sold = life_goods_sold_amount }
+						}
+					#
+					#Everyday Goods Bought
+						if = {
+							limit = {
+								OR = {
+									check_variable = { everyday_goods_bought_value > 0 }
+									check_variable = { everyday_goods_bought_amount > 0 }
+								}
+							}
+							#Only pops can demand Everyday Goods
+							subtract_from_variable = { pops_money = everyday_goods_bought_value }
+							add_to_variable = { pops_goods_spending = everyday_goods_bought_value }
+							set_temp_variable = { needs_fulfilled_temp = everyday_goods_bought_amount }
+							divide_temp_variable = { needs_fulfilled_temp = pops_everyday_goods_need }
+							add_to_variable = { pops_everyday_goods_fulfilled_percentage = needs_fulfilled_temp }
+							clamp_variable = {
+								var = pops_everyday_goods_fulfilled_percentage
+								min = 0
+								max = 1
+							}
+						}
+					#
+					#Everyday Goods Sold
+						if = {
+							limit = {
+								OR = {
+									check_variable = { everyday_goods_sold_value > 0 }
+									check_variable = { everyday_goods_sold_amount > 0 }
+								}
+							}
+							#Splitting between Factories and Artisans
+							set_temp_variable = { artisan_share = pops_artisans_everyday_goods_production }
+							multiply_temp_variable = { artisan_share = 100 }
+							divide_temp_variable = { artisan_share = everyday_goods_produced_amount }
+
+							set_temp_variable = { factory_share = factory_everyday_goods_production }
+							multiply_temp_variable = { factory_share = 100 }
+							divide_temp_variable = { factory_share = everyday_goods_produced_amount }
+
+							set_temp_variable = { artisan_cost_temp = everyday_goods_sold_value }
+							set_temp_variable = { artisan_buy_amount = everyday_goods_sold_amount }
+							multiply_temp_variable = { artisan_cost_temp = artisan_share }
+							divide_temp_variable = { artisan_cost_temp = 100 }
+							multiply_temp_variable = { artisan_buy_amount = artisan_share }
+							divide_temp_variable = { artisan_buy_amount = 100 }
+
+							set_temp_variable = { factory_cost_temp = everyday_goods_sold_value }
+							set_temp_variable = { factory_buy_amount = everyday_goods_sold_amount }
+							multiply_temp_variable = { factory_cost_temp = factory_share }
+							divide_temp_variable = { factory_cost_temp = 100 }
+							multiply_temp_variable = { factory_buy_amount = factory_share }
+							divide_temp_variable = { factory_buy_amount = 100 }
+
+							set_temp_variable = { total_cost_temp = artisan_cost_temp }
+							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
+							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
+							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
+
+							if = {
+								limit = {
+									NOT = { check_variable = { total_cost_temp = everyday_goods_sold_value } }
+								}
+								subtract_from_temp_variable = { total_cost_temp = everyday_goods_sold_value }
+								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
+							}
+							if = {
+								limit = {
+									NOT = { check_variable = { total_buy_amount_temp = everyday_goods_sold_amount } }
+								}
+								subtract_from_temp_variable = { total_buy_amount_temp = everyday_goods_sold_amount }
+								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
+								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
+								add_to_temp_variable = { artisan_buy_amount = 0.001 }
+							}
+							
+							add_to_variable = { factory_money = factory_cost_temp }
+							add_to_variable = { factory_earnings = factory_cost_temp }
+							add_to_variable = { factory_everyday_goods_sold = factory_buy_amount }
+
+							if = { 
+								limit = {
+									check_variable = { factory_everyday_goods_sold > factory_everyday_goods_production }
+								}
+								add_to_temp_variable = { artisan_buy_amount = factory_everyday_goods_sold }
+								subtract_from_temp_variable = { artisan_buy_amount = factory_everyday_goods_production }
+								set_variable = { factory_everyday_goods_sold = factory_everyday_goods_production }
+							}
+
+							add_to_variable = { artisans_earnings = artisan_cost_temp }
+							add_to_variable = { pops_earnings = artisan_cost_temp }
+							add_to_variable = { pops_artisans_everyday_goods_sold = artisan_buy_amount }
 						}
 					#
 				#
