@@ -6252,6 +6252,53 @@
 			national_debt_update = yes
 		}
 
+		#Global Bank
+			clear_array = global.global_bank_countries #Sorted by international interest rate
+			clear_array = global.global_bank_interest_rate #Sorted by international interest rate
+
+			for_each_scope_loop = {
+				array = global.econ_order_array
+				#Loops through the global econ array and adds countries to the global bank array, sorting by international interest rate
+
+				if = {
+					limit = {
+						check_variable = { national_bank_amount_left_k > 10 }
+					}
+					for_each_loop = {
+						array = global.global_bank_countries
+						index = ii
+						value = country_temp
+						break = bb
+
+						if = {
+							limit = {
+								check_variable = { global.global_bank_interest_rate^ii > national_bank_international_interest_rate }
+							}
+							add_to_array = { 
+								array = global.global_bank_countries 
+								value = THIS
+								index = ii
+							}
+							add_to_array = { 
+								array = global.global_bank_interest_rate 
+								value = national_bank_international_interest_rate
+								index = ii
+							}
+							set_temp_variable = { bb = 1 }
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { bb = 0 }
+						}
+						add_to_array = { global.global_bank_countries = THIS }
+						add_to_array = { global.global_bank_interest_rate = national_bank_international_interest_rate }
+					}
+				}
+			}
+
+		#
+
 		for_each_scope_loop = {
 			array = global.econ_order_array
 
@@ -9038,57 +9085,76 @@
 		
 		clear_array = global_bank_countries #Sorted by international interest rate
 		clear_array = global_bank_interest_rate #Sorted by international interest rate
-		for_each_scope_loop = {
-			array = global.econ_order_array
+		for_each_loop = {
+			array = global.global_bank_countries
+			index = gi
 			#Loops through the global econ array and adds countries to the global bank array, sorting by international interest rate
 
 			if = {
 				limit = {
-					tag = PREV
+					tag = global.global_bank_countries^gi
 				}
+				#Goes through the list to add it to the correct place
 				set_temp_variable = { interest_temp = national_bank_interest_from_scarcity }
-				add_to_temp_variable = { interest_temp = PREV.credit_rating_interest }
-			}
-			else = {
-				set_temp_variable = { interest_temp = national_bank_international_interest_rate }
-				add_to_temp_variable = { interest_temp = PREV.credit_rating_interest }
-			}
-			if = {
-				limit = {
-					OR = {
-						tag = PREV
-						check_variable = { national_bank_amount_left_k > 1 }
-					}
-				}
+				add_to_temp_variable = { interest_temp = credit_rating_interest }
 				for_each_loop = {
-					array = PREV.global_bank_countries
+					array = global_bank_countries
 					index = ii
 					value = country_temp
 					break = bb
 
 					if = {
 						limit = {
-							check_variable = { PREV.global_bank_interest_rate^ii > interest_temp }
+							check_variable = { global_bank_interest_rate^ii > interest_temp }
 						}
 						add_to_array = { 
-							array = PREV.global_bank_countries 
+							array = global_bank_countries 
 							value = THIS
 							index = ii
 						}
 						add_to_array = { 
-							array = PREV.global_bank_interest_rate 
+							array = global_bank_interest_rate 
 							value = interest_temp
 							index = ii
 						}
 						set_temp_variable = { bb = 1 }
 					}
 				}
+			}
+			else = {
+				add_to_array = { global_bank_countries = global.global_bank_countries^gi }
+				add_to_array = { global_bank_interest_rate = global.global_bank_interest_rate^gi }				
+				add_to_variable = { global_bank_interest_rate^gi = credit_rating_interest }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { is_in_array = { global_bank_countries = THIS } }
+			}
+			#Goes through the list to add it to the correct place
+			set_temp_variable = { interest_temp = national_bank_interest_from_scarcity }
+			add_to_temp_variable = { interest_temp = credit_rating_interest }
+			for_each_loop = {
+				array = global_bank_countries
+				index = ii
+				value = country_temp
+				break = bb
+
 				if = {
 					limit = {
-						check_variable = { bb = 0 }
+						check_variable = { global_bank_interest_rate^ii > interest_temp }
 					}
-					add_to_array = { PREV.global_bank_countries = THIS }
-					add_to_array = { PREV.global_bank_interest_rate = interest_temp }
+					add_to_array = { 
+						array = global_bank_countries 
+						value = THIS
+						index = ii
+					}
+					add_to_array = { 
+						array = global_bank_interest_rate 
+						value = interest_temp
+						index = ii
+					}
+					set_temp_variable = { bb = 1 }
 				}
 			}
 		}
