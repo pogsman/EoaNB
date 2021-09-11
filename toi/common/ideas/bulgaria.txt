@@ -1,0 +1,53 @@
+ideas = {
+	country = {
+		BUL_idea_provisional_russian_government = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.03
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.02
+			}
+		}
+
+		BUL_idea_credentials_regime = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		BUL_idea_debt_to_the_ottoman_empire = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			picture = generic_reserve_divisions
+
+			modifier = {
+				consumer_goods_factor = 0.2
+				production_factory_max_efficiency_factor = -0.03
+			}
+		}
+	}
+}
