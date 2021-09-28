@@ -1082,4 +1082,13 @@ spriteTypes = {
 		name = "GFX_Portrait_ENG_Luke_O_Connor"
 		texturefile = "gfx/leaders/ENG/Portrait_ENG_Luke_O_Connor.dds"
 	}
+#--------- Tunisia---------------
+	spriteType = {
+		name = "GFX_Portrait_TUN_Muhammad_III_al_sadiq.png"
+		texturefile = "gfx/leaders/TUN/Portrait_TUN_Muhammad_III_al_sadiq.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TUN_Muhammad_II_ibn_al_Husayn.png"
+		texturefile = "gfx/leaders/TUN/Portrait_TUN_Muhammad_II_ibn_al_Husayn.png"
+	}
 }

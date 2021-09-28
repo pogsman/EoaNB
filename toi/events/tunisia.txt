@@ -1,4 +1,6 @@
-add_namespace = tunisia # NO CAPITAL LETTER FOR THE COUNTRY!
+add_namespace = tunisia
+add_namespace = tun_fra
+# NO CAPITAL LETTER FOR THE COUNTRY!
 #batto sfez
 country_event = {
     id = tunisia.1
@@ -112,7 +114,7 @@ country_event = {
     id = tunisia.4 # trans saharian network
 	title = tunisia.4.t
 	desc = tunisia.4.d
-#	picture = 
+    picture = GFX_tun_event_chemin_de_fer
 	fire_only_once = yes
     is_triggered_only = yes
     trigger = {
@@ -139,10 +141,100 @@ country_event = {
 
 }
 country_event = {
+    id = tunisia.5 # invite the reformists
+	title = tunisia.5.t
+	desc = tunisia.5.d
+    picture = GFX_tun_event_reformist
+	fire_only_once = yes
+    is_triggered_only = yes
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_the_reformist
+    }
+	
+	option = {
+		name = tunisia.5.a
+        hidden_effect = {
+            if = {
+                limit = { has_active_mission = tunisia_revolt_mission}
+                add_to_variable = { Mejba_Revolt_var = 20 }
+            } 
+            else = {
+                activate_mission = tunisia_revolt_mission
+            }
+            swap_ideas = {
+                remove_idea = slavery_all_but_name
+                add_idea = limited_equality
+            }
+        }
+    }
+
+}
+country_event = {
+    id = tunisia.6 # the constitution
+	title = tunisia.6.t
+	desc = tunisia.6.d
+    picture = GFX_tun_event_chemin_de_fer
+	fire_only_once = yes
+    is_triggered_only = yes
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_the_reformist
+    }
+	
+	option = {
+		name = tunisia.6.a
+        hidden_effect = {
+            if = {
+                limit = { has_active_mission = tunisia_revolt_mission}
+                add_to_variable = { Mejba_Revolt_var = 20 }
+            } 
+            else = {
+                activate_mission = tunisia_revolt_mission
+            }
+            swap_ideas = {
+                remove_idea = slavery_all_but_name
+                add_idea = limited_equality
+            }
+        }
+    }
+
+}
+country_event = {
+    id = tunisia.7 # telegraph concession
+	title = tunisia.7.t
+	desc = tunisia.7.d
+    picture = GFX_tun_event_chemin_de_fer
+	fire_only_once = yes
+    is_triggered_only = yes
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_the_reformist
+    }
+	
+	option = {
+		name = tunisia.7.a
+        hidden_effect = {
+            if = {
+                limit = { has_active_mission = tunisia_revolt_mission}
+                add_to_variable = { Mejba_Revolt_var = 20 }
+            } 
+            else = {
+                activate_mission = tunisia_revolt_mission
+            }
+            swap_ideas = {
+                remove_idea = slavery_all_but_name
+                add_idea = limited_equality
+            }
+        }
+    }
+
+}
+country_event = {
     id = tunisia.8 # in name of allah
 	title = tunisia.8.t
 	desc = tunisia.8.d
-#	picture = 
+    picture = GFX_tun_in_name_of_allah
 	fire_only_once = yes
     is_triggered_only = yes
     trigger = {
@@ -159,7 +251,7 @@ country_event = {
     }
 
 }
-# ------------------------------------------------------------
+#------------------------------------------------------------
 country_event = {
     id = tunisia.100
 	title = tunisia.100.t
@@ -180,40 +272,41 @@ country_event = {
             }
         }
     }
+}
 # ------------------------------------------------------------
-    country_event = {
-        id = tun_fra.01 #french fleet near our coast!
-        title = tun_fra.01.t
-        desc = tun_fra.01.d
-        picture = GFX_event_kor_warships_western
-        fire_only_once = yes
-        is_triggered_only = yes
-        option = {
-            name = tunisia.3.a
-            hidden_effect = {
-            add_ideas = TUN_french_military_pressure
-            }
+country_event = { #french fleet near our coast!
+    id = tun_fra.01 
+    title = tun_fra.01.t
+    desc = tun_fra.01.d
+    picture = GFX_event_kor_warships_western
+    fire_only_once = yes
+    is_triggered_only = yes
+    option = {
+        name = tun_fra.01.a
+        hidden_effect = {
+        add_ideas = TUN_french_military_pressure
         }
     }
-    country_event = {
-        id = tun_fra.02 #french fleet bombs our coast!
-        title = tun_fra.02.t
-        desc = tun_fra.02.d
-        picture = GFX_tunisia_coastal_bombing
-        fire_only_once = yes
-        is_triggered_only = yes
-        option = {
-            name = tunisia.3.a
-            hidden_effect = {
-            decrease_ps_by_one = yes
-            remove_ideas = TUN_french_military_pressure
-            9994 = { 
-                damage_building = {
-                type = infrastructure
-                damage = 1
+}
+country_event = {
+    id = tun_fra.02 #french fleet bombs our coast!
+    title = tun_fra.02.t
+    desc = tun_fra.02.d
+    picture = GFX_tunisia_coastal_bombing
+    fire_only_once = yes
+    is_triggered_only = yes
+    option = {
+        name = tunisia.3.a
+        hidden_effect = {
+        decrease_ps_by_one = yes
+        remove_ideas = TUN_french_military_pressure
+        9994 = { 
+            damage_building = {
+            type = infrastructure
+            damage = 1
               }
-            }
             }
         }
     }
 }
+

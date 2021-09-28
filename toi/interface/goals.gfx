@@ -6004,6 +6004,10 @@ spriteTypes = {
 		name = "GFX_focus_tun_slavery_ban"
 		texturefile = "gfx/interface/goals/tunisia/focus_tun_slavery_ban.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_tun_bad_economy"
+		texturefile = "gfx/interface/goals/tunisia/focus_tun_bad_economy.png"
+	}
 	#---------------------------------
 	SpriteType = {
 		name = "GFX_goal_focus_qing_maintain_mandate"

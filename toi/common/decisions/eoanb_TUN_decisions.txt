@@ -4,6 +4,7 @@ tunisia_revolt_category = {
 		available = {
 			# add your variable here
 			check_variable = { Mejba_Revolt_var > 99 }
+			
 		}
 
 		activation = { always = no }
@@ -11,17 +12,50 @@ tunisia_revolt_category = {
 		days_mission_timeout = 30
 
 		timeout_effect = {
+		if{
+			limit = { has_activated_mission =  tunisia_revolt_mission }
+			
+		}
+		else{
 			activate_mission = tunisia_revolt_mission # Copy this line when you make set your your variable
 			if = {
 				limit = { date > 1865.1.1 }
 				add_to_variable = { Mejba_Revolt_var = 25 }
 			}
 		}
+		}
 
 		complete_effect = {
 			country_event = { id = tunisia.100 } # Fires Civil War
 			remove_dynamic_modifier = { modifier = TUN_Mejba_Revolt_Modifier } # removes the modifier added for civil war
 			set_variable = { Mejba_Revolt_var = 0}
+		}
+	}
+	tunisia_debt_mission = {
+		visible = { has_completed_focus = TUN_stabilize_the_nation }
+		allowed = { always = no }
+		available = {
+			# how i win
+			check_variable = { Mejba_Revolt_var < 50 }
+			has_completed_focus = TUN_the_monetary_issue
+		}
+		activation = { always = no }
+		is_good = no
+		days_mission_timeout = 120
+		timeout_effect = { #what happens if i loose
+		if {
+			has_activated_mission = tunisia_revolt_mission
+			decrease_ps_by_three = yes
+		}
+		else{
+			activate_mission = tunisia_revolt_mission # Copy this line when you make set your variable
+			
+		}
+		}
+		complete_effect = { # what happens when i win
+
+
+			
 		}
 	}
 	TUN_Increase_Military_Presence = {

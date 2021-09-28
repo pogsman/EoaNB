@@ -53743,6 +53743,7 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+#-------------TUNISIA-----------------------------
 	SpriteType = {
 		name = "GFX_goal_focus_tun_the_great_prince_shine"
 		texturefile = "gfx/interface/goals/tunisia/focus_tun_the_great_prince.dds"
@@ -53953,6 +53954,7 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+#---------------------------------------------------------------------------------------
 	SpriteType = {
 		name = "focus_qing_maintain_mandate_shine"
 		texturefile = "gfx/interface/goals/qing/focus_qing_maintain_mandate.dds"

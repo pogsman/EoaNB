@@ -277,7 +277,7 @@ focus = {
 }
 focus = {
 	id = TUN_enforce_slave_trade_ban
-	icon = GFX_focus_cze_german_puppet
+	icon = GFX_focus_tun_slavery_ban
 	x = 8
 	y = 2
 	cost = 60
@@ -519,14 +519,14 @@ focus = {
 # -------------------------pt2 monetary issue
 focus = {
 	id = TUN_the_monetary_issue
-	icon = GFX_focus_generic_concessions
+	icon = GFX_focus_tun_bad_economy
 	x = 17
 	y = 2.25
 	cost = 30
 	ai_will_do = {
 		factor = 1
 	}
-	prerequisite = { focus = TUN_economical_reforms }
+	prerequisite = { focus = TUN_the_constitution }
 	completion_reward = {
 		458 = {
 			add_extra_state_shared_building_slots = 2
