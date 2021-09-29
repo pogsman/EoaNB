@@ -729,7 +729,7 @@ country_event = {
 		option = { # Breckinridge
 			name = usa_slavery_debate.100.e
 			ai_chance = {
-				base = 10
+				base = 1
 				modifier = { factor = 0 is_historical_focus_on = yes }
 			}
 			trigger = {
@@ -1869,7 +1869,7 @@ country_event = {
 						create_country_leader = {
 							name = "Jefferson Davis"
 							desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-							picture = "Portrait_CSA_Jefferson_Davis.dds"
+							picture = "Portrait_CSA_Jefferson_Davis.png"
 							expire = "1895.1.1"
 							ideology = plutocracy
 						}
@@ -4297,7 +4297,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Robert E. Lee"
-					picture = "Portrait_CSA_Robert_Lee.dds"
+					picture = "Portrait_CSA_Robert_Lee.png"
 					traits = { brilliant_strategist unyielding_defender guerilla_fighter }
 					skill = 4
 					id = 5020
@@ -4308,7 +4308,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Thomas 'Stonewall' Jackson"
-					picture = "Portrait_CSA_Stonewall_Jackson.dds"
+					picture = "Portrait_CSA_Stonewall_Jackson.png"
 					traits = { brilliant_strategist infantry_leader }
 					skill = 3
 					id = 5021
@@ -4319,7 +4319,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Edmund Kirby Smith"
-					picture = "Portrait_CSA_Edmund_Kirby.dds"
+					picture = "Portrait_CSA_Edmund_Kirby.png"
 					traits = {}
 					skill = 3
 					id = 5022
@@ -4330,7 +4330,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Leonidas Polk"
-					picture = "Portrait_CSA_Leonidas_Polk.dds"
+					picture = "Portrait_CSA_Leonidas_Polk.png"
 					traits = { politically_connected }
 					skill = 1
 					id = 5023
@@ -4341,7 +4341,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "W. J. Hardee"
-					picture = "Portrait_CSA_PGT_Beauregard.dds"
+					picture = "Portrait_CSA_PGT_Beauregard.png"
 					traits = {}
 					skill = 3
 					id = 5024
@@ -4352,7 +4352,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "John Bell Hood"
-					picture = "Portrait_CSA_PGT_Beauregard.dds"
+					picture = "Portrait_CSA_PGT_Beauregard.png"
 					traits = {}
 					skill = 2
 					id = 5025
@@ -4363,7 +4363,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Albert Sidney Johnston"
-					picture = "Portrait_CSA_Albert_Johnson.dds"
+					picture = "Portrait_CSA_Albert_Johnson.png"
 					traits = { desert_fox }
 					skill = 3
 					id = 5026
@@ -4374,7 +4374,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Braxton Bragg"
-					picture = "Portrait_CSA_Braxton_Bragg.dds"
+					picture = "Portrait_CSA_Braxton_Bragg.png"
 					traits = { old_guard hill_fighter }
 					skill = 2
 					id = 5027
@@ -4385,7 +4385,7 @@ news_event = {
 				}
 				create_corps_commander = {
 					name = "Joseph Jonston"
-					picture = "Portrait_CSA_Joseph_Jonston.dds"
+					picture = "Portrait_CSA_Joseph_Jonston.png"
 					traits = { urban_assault_specialist old_guard }
 					skill = 3
 					id = 5028
@@ -6629,7 +6629,6 @@ country_event = {
 			owns_state = 386 # Washington
 			owns_state = 1073 # Asotin
 			owns_state = 1074 # Nez Perce
-			owns_state = 1075 # Imnaha
 			owns_state = 1076 # Coeur d'Alene
 			owns_state = 1289 # Madoc
 		}
@@ -6683,15 +6682,6 @@ country_event = {
 			if = {
 				limit = { owns_state = 1074 }
 				1074 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					ORE = { transfer_state = PREV }
-					add_core_of = ORE
-				}
-			}
-			if = {
-				limit = { owns_state = 1075 }
-				1075 = {
 					remove_core_of = USA
 					add_claim_by = USA
 					ORE = { transfer_state = PREV }
@@ -7207,9 +7197,7 @@ country_event = {
 			owns_state = 1287 # Navajo
 			owns_state = 1288 # San Juan
 			owns_state = 1297 # Arizona
-			owns_state = 1300 # Gadsden Corner
-			owns_state = 1301 # South Socorro
-			owns_state = 1302 # North Socorro
+			owns_state = 1301 # Socorro
 		}
 	}
 
@@ -7277,26 +7265,8 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { owns_state = 1300 }
-				1300 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					NMX = { transfer_state = PREV }
-					add_core_of = NMX
-				}
-			}
-			if = {
 				limit = { owns_state = 1301 }
 				1301 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					NMX = { transfer_state = PREV }
-					add_core_of = NMX
-				}
-			}
-			if = {
-				limit = { owns_state =  1302 }
-				 1302 = {
 					remove_core_of = USA
 					add_claim_by = USA
 					NMX = { transfer_state = PREV }
@@ -7309,18 +7279,6 @@ country_event = {
 					remove_core_of = USA
 					add_claim_by = USA
 					NMX = { transfer_state = PREV }
-					add_core_of = NMX
-				}
-			}
-			if = {
-				limit = { owns_state =  1295 }
-				 1295 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					NMX = {
-						transfer_state = PREV
-						set_capital = PREV
-					}
 					add_core_of = NMX
 				}
 			}
@@ -7445,14 +7403,12 @@ country_event = {
 		OR = {
 			owns_state = 375 # Texas
 			owns_state = 376 # Santa Fe
-			owns_state = 1278 # North Mosquero
-			owns_state = 1279 # South Mosquero
+			owns_state = 1279 # Mosquero
 			owns_state = 1280 # Armarillo
 			owns_state = 1281 # Comancheria
 			owns_state = 1285 # Central Pecos
 			owns_state = 1293 # Oklahoma Strip
-			owns_state = 1295 # North Pecos
-			owns_state = 1303 # South Pecos
+			owns_state = 1303 # Pecos
 			owns_state = 1304 # Lipan
 			owns_state = 1305 # East Texas
 			owns_state = 1306 # North Texas
@@ -7489,15 +7445,6 @@ country_event = {
 			if = {
 				limit = { owns_state = 376 }
 				376 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					TEX = { transfer_state = PREV }
-					add_core_of = TEX
-				}
-			}
-			if = {
-				limit = { owns_state = 1278 }
-				1278 = {
 					remove_core_of = USA
 					add_claim_by = USA
 					TEX = { transfer_state = PREV }
@@ -7543,15 +7490,6 @@ country_event = {
 			if = {
 				limit = { owns_state = 1293 }
 				1293 = {
-					remove_core_of = USA
-					add_claim_by = USA
-					TEX = { transfer_state = PREV }
-					add_core_of = TEX
-				}
-			}
-			if = {
-				limit = { owns_state = 1295 }
-				1295 = {
 					remove_core_of = USA
 					add_claim_by = USA
 					TEX = { transfer_state = PREV }
@@ -8688,7 +8626,7 @@ country_event = {
 				create_country_leader = {
 			    name = "John C. Breckinridge"
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-			    picture = "Portrait_CSA_John_Breckinridge.dds"
+			    picture = "Portrait_CSA_John_Breckinridge.png"
 			    expire = "1894.1.6"
 			    ideology = reactionary
 			    traits = {
@@ -10245,9 +10183,110 @@ country_event = {
 	option = {
 		name = acw_breckinridge.10.a
 		hidden_effect = {
-		every_state = {
-			limit = {
-				is_owned_by = USA
+			every_state = {
+				limit = {
+					is_owned_by = USA
+				}
+				set_demilitarized_zone = no
+			}
+			create_corps_commander = {
+				name = "Robert E. Lee"
+				picture = "Portrait_CSA_Robert_Lee.png"
+				traits = { brilliant_strategist unyielding_defender guerilla_fighter }
+				skill = 5
+				id = 5020
+				attack_skill = 5
+				defense_skill = 5
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Thomas 'Stonewall' Jackson"
+				picture = "Portrait_CSA_Stonewall_Jackson.png"
+				traits = { brilliant_strategist infantry_leader }
+				skill = 4
+				id = 5021
+				attack_skill = 7
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Edmund Kirby Smith"
+				picture = "Portrait_CSA_Edmund_Kirby.png"
+				traits = {}
+				skill = 3
+				id = 5022
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Leonidas Polk"
+				picture = "Portrait_CSA_Leonidas_Polk.png"
+				traits = { politically_connected }
+				skill = 1
+				id = 5023
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "W. J. Hardee"
+				picture = "Portrait_CSA_PGT_Beauregard.png"
+				traits = {}
+				skill = 3
+				id = 5024
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "John Bell Hood"
+				picture = "Portrait_CSA_PGT_Beauregard.png"
+				traits = {}
+				skill = 2
+				id = 5025
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Albert Sidney Johnston"
+				picture = "Portrait_CSA_Albert_Johnson.png"
+				traits = { desert_fox }
+				skill = 3
+				id = 5026
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Braxton Bragg"
+				picture = "Portrait_CSA_Braxton_Bragg.png"
+				traits = { old_guard hill_fighter }
+				skill = 2
+				id = 5027
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "Joseph Jonston"
+				picture = "Portrait_CSA_Joseph_Jonston.png"
+				traits = { urban_assault_specialist old_guard }
+				skill = 3
+				id = 5028
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 3
 			}
 		}
 		hidden_effect = {
@@ -12112,8 +12151,6 @@ news_event = {
 				add_state_core = 1410
 				transfer_state = 1285
 				add_state_claim = 1285
-				transfer_state = 1300
-				add_state_claim = 1300
 				transfer_state = 377
 				add_state_claim = 377
 				transfer_state = 1297

@@ -160,7 +160,6 @@
 	# Politics
 	TSH = {
 		set_politics = { ruling_party = radical_democracy }
-		set_country_flag = Oceania_industrializing
 		add_timed_idea = { idea = TSH_spirit_vic_external_amity_treaty_Negotiations days = 700 }
 		reverse_add_opinion_modifier = { target = USA modifier = embargo }
 		reverse_add_opinion_modifier = { target = SPR modifier = embargo }
@@ -378,7 +377,7 @@
 
 		create_navy_leader = {
 			name = "Enomoto Takeaki"
-			picture = "Portrait_TSH_Enomoto_Takeaki.dds"
+			picture = "Portrait_TSH_Enomoto_Takeaki.png"
 			traits = { spotter }
 			id = 3010
 			skill = 3

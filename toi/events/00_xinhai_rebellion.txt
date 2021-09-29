@@ -436,7 +436,7 @@ country_event = { ##Wuchang uprising - 10 oct 1911
 				type = annex_everything
 			}
 			add_ideas ={
-				QNG_rebel_uprising
+				CHI_xinghai_rebellion
 			}
 			load_oob = ROC_wuchang
 		}
@@ -737,7 +737,7 @@ country_event = { ##shandong
 		ROC = {
 			load_oob = ROC_shandong
 			transfer_state = 597
-			transfer_state = 1433
+			transfer_state = 1232
 		}
     }
 }
@@ -1040,6 +1040,8 @@ country_event = { ##tibet declares full independace
 
     option = { #
         name = xinghai_reb.47.a
-		
+		1394={add_core_of = TIB}
+		947={add_core_of = TIB}
+		release = TIB
     }
 }

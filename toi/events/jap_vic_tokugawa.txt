@@ -126,7 +126,7 @@ add_namespace = feudal_tokugawa_daimyos
 				}
 			}
 
-			# Quarintine the Port!
+			# Quarantine the Port!
 			option = {
 				name = feudal_tokugawa_shogunate.3.a
 				trigger = { tag = TSH }
@@ -195,7 +195,7 @@ add_namespace = feudal_tokugawa_daimyos
 				name = feudal_tokugawa_shogunate.5.b
 				EOANBSYS_pandemics_progress_add_one = yes
 				reverse_add_opinion_modifier = { target = USA modifier = eoanb_minor_opinion_malice }
-				# SEPERATECHAINHERE?
+				# SEPARATECHAINHERE?
 			}
 		}
 
@@ -831,7 +831,7 @@ add_namespace = feudal_tokugawa_daimyos
 						set_variable = { hitosubashi_faction = 0.538 }
 						set_variable = { kii_faction = 0.462 }
 						every_other_country = {
-							limit = { OR = { is_tozama_daimyo = yes is_fudai_daimyo = yes }
+							limit = { OR = { is_tozama_daimyo = yes is_fudai_daimyo = yes } }
 							country_event = feudal_tokugawa_shogunate.26
 						}
 					}
@@ -1187,7 +1187,13 @@ add_namespace = feudal_tokugawa_daimyos
 				name = feudal_tokugawa_shogunate.39.a
 				add_political_power = -10
 				navy_experience = 5
-				load_oob = JAP_NAVAL_1859
+				if = {
+					limit = { has_dlc = "Man the Guns" }
+					load_oob = JAP_NAVAL_1859
+				}
+				else = {
+					load_oob = JAP_NAVAL_1859_legacy
+				}
 			}
 		}
 	# Tokugawa Requests Army Assistance
@@ -1403,7 +1409,7 @@ add_namespace = feudal_tokugawa_daimyos
 				1260 = { set_demilitarized_zone = yes }
 				1266 = { set_demilitarized_zone = yes }
 				hidden_effect = {
-					country_event = feudal_tokugawa_shogunate.51
+					country_event = { id = feudal_tokugawa_shogunate.51 days = 20 }
 					activate_mission = TSH_mission_pick_heir
 				}
 			}
@@ -1429,6 +1435,10 @@ add_namespace = feudal_tokugawa_daimyos
 			option = {
 				name = feudal_tokugawa_shogunate.51.a
 				ai_chance = { base = 1 }
+				custom_effect_tooltip = feudal_tokugawa_shogunate.51.a_tt
+				hidden_effect = {
+					country_event = { id = feudal_tokugawa_shogunate.52 days = 10 random_days = 5 }
+				}
 			}
 			# We'll sign it without him
 			option = {
@@ -1447,10 +1457,13 @@ add_namespace = feudal_tokugawa_daimyos
 						ideology = autocracy
 						popularity = 0.05
 					}
+					hidden_effect = {
+						news_event = { id = feudal_tokugawa_shogunate.57 days = 10 }
+					}
 				}
 				add_popularity = {
 					ideology = autocracy
-					popularity = 0.02
+					popularity = 0.06
 				}
 			}
 		}
@@ -1464,12 +1477,20 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.52.a
-				ai_chance = { base = 1 }
+				ai_chance = { base = 1 modifier = { is_historical_focus_on = yes add = -1 } }
+				hidden_effect = {
+					country_event = feudal_tokugawa_shogunate.53
+				}
 			}
 			option = {
 				name = feudal_tokugawa_shogunate.52.b
+				ai_chance = { base = 1 }
+				hidden_effect = {
+					country_event = feudal_tokugawa_shogunate.56
+				}
 			}
 		}
+	# Emperor Komei Denounces Harris' Demands
 		country_event = {
 			id = feudal_tokugawa_shogunate.53
 			title = feudal_tokugawa_shogunate.53.t
@@ -1479,12 +1500,21 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.53.a
-				ai_chance = { base = 1 }
+				trigger = { tag = TSH }
+				hidden_effect = {
+					every_other_country = {
+						limit = { is_subject_of = ROOT }
+						country_event = feudal_tokugawa_shogunate.53
+					}
+					country_event = { id = feudal_tokugawa_shogunate.54 days = 5 }
+				}
 			}
 			option = {
 				name = feudal_tokugawa_shogunate.53.b
+				trigger = { is_subject_of = TSH }
 			}
 		}
+	# Hotta Masayoshi returns with Komei's Disapproval
 		country_event = {
 			id = feudal_tokugawa_shogunate.54
 			title = feudal_tokugawa_shogunate.54.t
@@ -1494,12 +1524,17 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.54.a
-				ai_chance = { base = 1 }
-			}
-			option = {
-				name = feudal_tokugawa_shogunate.54.b
+				trigger = { tag = TSH }
+				news_event = feudal_tokugawa_shogunate.57
+				hidden_effect = {
+					every_other_country = {
+						limit = { is_subject_of = ROOT }
+						country_event = feudal_tokugawa_shogunate.55
+					}
+				}
 			}
 		}
+	# (Daimyos) Bakufu Ignore Imperial Ruling
 		country_event = {
 			id = feudal_tokugawa_shogunate.55
 			title = feudal_tokugawa_shogunate.55.t
@@ -1509,12 +1544,22 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.55.a
-				ai_chance = { base = 1 }
+				ai_chance = { base = 0 modifier = { is_tozama_daimyo = yes add = 1 } }
+				add_popularity = {
+					ideology = autocracy
+					popularity = 0.04
+				}
 			}
 			option = {
 				name = feudal_tokugawa_shogunate.55.b
+				ai_chance = { base = 0 modifier = { is_fudai_daimyo = yes add = 1 } }
+				add_popularity = {
+					ideology = autocracy
+					popularity = 0.02
+				}
 			}
 		}
+	# Hotta Masayoshi returns empty handed
 		country_event = {
 			id = feudal_tokugawa_shogunate.56
 			title = feudal_tokugawa_shogunate.56.t
@@ -1524,28 +1569,72 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.56.a
-				ai_chance = { base = 1 }
-			}
-			option = {
-				name = feudal_tokugawa_shogunate.56.b
+				news_event = feudal_tokugawa_shogunate.57
 			}
 		}
-		country_event = {
+	# Harris Treaty Signing
+		news_event = {
 			id = feudal_tokugawa_shogunate.57
 			title = feudal_tokugawa_shogunate.57.t
 			desc = feudal_tokugawa_shogunate.57.d
 
 			is_triggered_only = yes
 
+			immediate = {
+				if = {
+					limit = { tag = TSH }
+					1266 = { set_demilitarized_zone = yes } # Yokohama and Edo
+					1324 = { set_demilitarized_zone = yes } # Kokura
+					530 = { set_demilitarized_zone = yes } # Niigata
+					1260 = { set_demilitarized_zone = yes } # Nagasaki
+					1262 = { set_demilitarized_zone = yes } # Hyogo
+				}
+			}
+
 			option = {
 				name = feudal_tokugawa_shogunate.57.a
-				ai_chance = { base = 1 }
+				trigger = { tag = TSH }
+				complete_national_focus = JAP_vic_submission_to_the_harris_treaty
+				remove_ideas = TSH_spirit_vic_external_amity_treaty_negotiations
+				TSH_effect_amity_treaty_signed_japan = yes
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							OR = { tag = TSH tag = RUS tag = PRS tag = ENG tag = FRA tag = HOL tag = SPR tag = QNG tag = KOR is_subject_of = TSH }
+						}
+						news_event = { id = feudal_tokugawa_shogunate.57 days = 30 random_days = 50 }
+					}
+				}
 			}
 			option = {
 				name = feudal_tokugawa_shogunate.57.b
+				trigger = { tag = USA }
+				add_opinion_modifier = { target = TSH modifier = small_increase }
+				reverse_add_opinion_modifier = { target = TSH modifier = small_decrease }
+				add_political_power = 15
+				TSH_effect_amity_treaty_signed_west = yes
+				complete_national_focus = USA_harris_treaty_focus
+			}
+			option = {
+				name = feudal_tokugawa_shogunate.57.c
+				trigger = { is_subject_of = TSH }
+				add_war_support = 0.05
+				add_political_power = 20
+			}
+			option = {
+				name = feudal_tokugawa_shogunate.57.e
+				trigger = { OR = { tag = QNG tag = KOR } }
+				add_political_power = 5
+				add_war_support = 0.15
+			}
+			option = {
+				name = feudal_tokugawa_shogunate.57.f
+				trigger = { NOT = { OR = { tag = TSH tag = USA tag = QNG tag = KOR is_subject_of = TSH } } }
+				unlock_decision_tooltip = TSH_decision_european_amity_treaty
 			}
 		}
-		country_event = {
+	# Generic Amity Treaty Event (West)
+		news_event = {
 			id = feudal_tokugawa_shogunate.58
 			title = feudal_tokugawa_shogunate.58.t
 			desc = feudal_tokugawa_shogunate.58.d
@@ -1554,12 +1643,10 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.58.a
-				ai_chance = { base = 1 }
-			}
-			option = {
-				name = feudal_tokugawa_shogunate.58.b
+				TSH_effect_amity_treaty_signed_west = yes
 			}
 		}
+	# Generic Amity Treaty Event (Japan)
 		country_event = {
 			id = feudal_tokugawa_shogunate.59
 			title = feudal_tokugawa_shogunate.59.t
@@ -1569,25 +1656,27 @@ add_namespace = feudal_tokugawa_daimyos
 
 			option = {
 				name = feudal_tokugawa_shogunate.59.a
-				ai_chance = { base = 1 }
+				trigger = { tag = TSH }
+				TSH_effect_amity_treaty_signed_japan = yes
 			}
 			option = {
 				name = feudal_tokugawa_shogunate.59.b
+				trigger = { NOT = { tag = TSH } }
+				add_popularity = {
+					ideology = traditional_conservatism
+					popularity = 0.075
+				}
 			}
 		}
+	# Remove Amity Treaty (Over time)
 		country_event = {
 			id = feudal_tokugawa_shogunate.60
-			title = feudal_tokugawa_shogunate.60.t
-			desc = feudal_tokugawa_shogunate.60.d
+			hidden = yes
 
 			is_triggered_only = yes
 
-			option = {
-				name = feudal_tokugawa_shogunate.60.a
-				ai_chance = { base = 1 }
-			}
-			option = {
-				name = feudal_tokugawa_shogunate.60.b
+			immediate = {
+				TSH_effect_amity_treaty_remove_japan = yes
 			}
 		}
 
@@ -2001,6 +2090,7 @@ add_namespace = feudal_tokugawa_daimyos
 				name = feudal_tokugawa_shogunate.209.b
 				trigger = { autocracy > 0.4 }
 				ai_chance = { base = 0 modifier = { add = 1 autocracy > 0.5 } }
+				store_current_ideologies = yes
 				JAP = {
 					if = {
 						limit = { eoanb_enable_autonomy = yes }
@@ -2013,6 +2103,7 @@ add_namespace = feudal_tokugawa_daimyos
 						puppet = PREV
 					}
 				}
+				load_prevous_ideologies = yes
 				hidden_effect = {
 					TSH = {
 						add_to_variable = { boshin_war_han_switch_tag = 1 }
