@@ -13,7 +13,7 @@ tunisia_revolt_category = {
 
 		timeout_effect = {
 		if{
-			limit = { has_activated_mission =  tunisia_revolt_mission }
+			limit = { has_active_mission =  tunisia_revolt_mission }
 			
 		}
 		else{
@@ -29,6 +29,7 @@ tunisia_revolt_category = {
 			country_event = { id = tunisia.100 } # Fires Civil War
 			remove_dynamic_modifier = { modifier = TUN_Mejba_Revolt_Modifier } # removes the modifier added for civil war
 			set_variable = { Mejba_Revolt_var = 0}
+			set_country_flag = tunisia_revolt_flag
 		}
 	}
 	tunisia_debt_mission = {
@@ -44,7 +45,9 @@ tunisia_revolt_category = {
 		days_mission_timeout = 120
 		timeout_effect = { #what happens if i loose
 		if {
-			has_activated_mission = tunisia_revolt_mission
+		limit = {
+			has_country_flag = tunisia_revolt_flag
+		}
 			decrease_ps_by_three = yes
 		}
 		else{
@@ -53,8 +56,16 @@ tunisia_revolt_category = {
 		}
 		}
 		complete_effect = { # what happens when i win
-
-
+		increase_ps_by_three = yes
+		add_manpower = 10000
+		458 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = steel_mill
+				level = 1
+				instant_build = yes
+			}
+		}
 			
 		}
 	}

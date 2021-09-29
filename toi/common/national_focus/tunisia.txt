@@ -526,7 +526,10 @@ focus = {
 	ai_will_do = {
 		factor = 1
 	}
-	prerequisite = { focus = TUN_the_constitution }
+	prerequisite = { focus = TUN_economical_reforms }
+	available = {
+		has_completed_focus = TUN_the_constitution
+	}
 	completion_reward = {
 		458 = {
 			add_extra_state_shared_building_slots = 2
