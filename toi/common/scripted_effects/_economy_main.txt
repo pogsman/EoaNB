@@ -577,6 +577,9 @@
 					set_variable = { factory_industrial_goods_fulfilled_percentage = 0 }
 
 					set_variable = { infrastructure_industrial_goods_fulfilled_percentage = 0 }
+					
+					set_variable = { pops_rgos_mechanization_industrial_goods_fulfilled_percentage = 0 }
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_fulfillment = 0 }
 				#
 
 				#Infra gets its money
@@ -4718,6 +4721,35 @@
 										set_variable = { infrastructure_construction_industrial_goods_need = 0 }
 									}
 								}
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^6 > 0 }
+											check_variable = { amount_array_temp^6 > 0 }
+										}
+									}
+									subtract_from_variable = { pops_money = value_array_temp^6 }
+									set_temp_variable = { needs_fulfilled_temp = amount_array_temp^6 }
+									divide_temp_variable = { needs_fulfilled_temp = pops_rgos_mechanization_industrial_goods_need }
+									add_to_variable = { pops_rgos_mechanization_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
+									clamp_variable = {
+										var = pops_rgos_mechanization_industrial_goods_fulfilled_percentage
+										min = 0
+										max = 1
+									}
+								}
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^7 > 0 }
+											check_variable = { amount_array_temp^7 > 0 }
+										}
+									}
+									subtract_from_variable = { pops_money = value_array_temp^7 }
+									set_variable = { pops_rgos_mechanization_expansion_industrial_goods_fulfillment = amount_array_temp^7 }
+								}
 							###############
 
 						}
@@ -4794,7 +4826,6 @@
 						}
 					#
 				#
-
 
 				#Factory Wages & Profit
 					set_variable = { factory_wages = factory_earnings }
@@ -5351,25 +5382,59 @@
 
 				#
 
-				#Mechanization Modifiers
-					set_variable = { rgos_mechanization_maintenance_fulfilled_percentage = 1 }
+				#Mechanization & Mech Modifiers
+					set_temp_variable = { needs_fulfilled_temp = pops_rgos_mechanization_expansion_industrial_goods_fulfillment }
+					divide_temp_variable = { needs_fulfilled_temp = pops_rgos_mechanization_expansion_industrial_goods_need }
+					set_temp_variable = { rgo_mech_temp = rgos_mechanization_percentage }
+					add_to_temp_variable = { rgo_mech_temp = needs_fulfilled_temp }
 
-					set_temp_variable = { rgos_mechanization_maintenance_fulfilled_temp = rgos_mechanization_maintenance_fulfilled_percentage }
+					if = {
+						limit = {
+							has_state_flag = pops_rgos_valuable_goods_flag
+						}
+						set_variable = { rgos_max_mechanization_percentage = valuable_goods_rgos_max_mechanization }
+					}
+					else_if = {
+						limit = {
+							has_state_flag = pops_rgos_raw_goods_flag
+						}
+						set_variable = { rgos_max_mechanization_percentage = raw_goods_rgos_max_mechanization }
+					}
+					else = {
+						set_variable = { rgos_max_mechanization_percentage = life_goods_rgos_max_mechanization }
+					}
+					multiply_variable = { rgos_max_mechanization_percentage = 100 }
+					clamp_temp_variable = {
+						var = rgo_mech_temp
+						min = 0
+						max = rgos_max_mechanization_percentage
+					}
+					if = {
+						limit = {
+							check_variable = { rgo_mech_temp > rgos_mechanization_percentage }
+						}
+						set_variable = { rgos_mechanization_percentage = rgo_mech_temp }
+					}
+
+					set_temp_variable = { rgos_mechanization_maintenance_fulfilled_temp = pops_rgos_mechanization_industrial_goods_fulfilled_percentage }
 					add_to_temp_variable = { rgos_mechanization_maintenance_fulfilled_temp = 1 }
 					divide_temp_variable = { rgos_mechanization_maintenance_fulfilled_temp = 2 }
 
+					set_temp_variable = { effective_mech_temp = rgos_mechanization_percentage }
+					multiply_temp_variable = { effective_mech_temp = pops_rgos_mechanization_industrial_goods_fulfilled_percentage }
+
 					set_temp_variable = { rgo_mechanization_inverse_temp = 100 }
-					subtract_from_temp_variable = { rgo_mechanization_inverse_temp = rgos_mechanization_percentage }
+					subtract_from_temp_variable = { rgo_mechanization_inverse_temp = effective_mech_temp }
 					
 					#RGO Max Size
 					set_variable = { rgos_mechanization_rgo_max_size_multiplier = global.pops_rgos_mechanization_rgo_size_multiplier }
-					multiply_variable = { rgos_mechanization_rgo_max_size_multiplier = rgos_mechanization_percentage }
+					multiply_variable = { rgos_mechanization_rgo_max_size_multiplier = effective_mech_temp }
 					add_to_variable = { rgos_mechanization_rgo_max_size_multiplier = rgo_mechanization_inverse_temp }
 					divide_variable = { rgos_mechanization_rgo_max_size_multiplier = 100 }
 
 					#RGO Output
 					set_variable = { rgos_mechanization_rgo_output_multiplier = global.pops_rgos_mechanization_rgo_output_multiplier }
-					multiply_variable = { rgos_mechanization_rgo_output_multiplier = rgos_mechanization_percentage }
+					multiply_variable = { rgos_mechanization_rgo_output_multiplier = effective_mech_temp }
 					add_to_variable = { rgos_mechanization_rgo_output_multiplier = rgo_mechanization_inverse_temp }
 					divide_variable = { rgos_mechanization_rgo_output_multiplier = 100 }
 				#
@@ -6065,7 +6130,9 @@
 						#Mechanization
 						set_variable = { global.pops_rgos_mechanization_rgo_size_multiplier = 0.1 } #At full mechanization
 						set_variable = { global.pops_rgos_mechanization_rgo_output_multiplier = 20 }
-						set_variable = { global.pops_rgos_mechanization_industrial_goods_base_need = 20.0 } #Per 100K RGOs at 100%
+						set_variable = { global.pops_rgos_mechanization_industrial_goods_base_need = 20.0 } #Per 100K RGOs at 100% mechanization
+						set_variable = { global.pops_rgos_mechanization_expansion_industrial_goods_base_need = 20.0 } #Per 100K RGOS
+						set_variable = { global.pops_rgos_mechanization_expansion_base_speed = 2.0 } #Per 100K RGOs.
 
 					#Craftsmen
 						set_variable =  { global.craftsmen_percentage = 0.0 }
@@ -6390,6 +6457,9 @@
 					set_variable = { infrastructure_industrial_goods_fulfilled_percentage = 1 }
 					set_variable = { infrastructure_crumbling_ticks = 0 }
 
+					set_variable = { pops_rgos_mechanization_industrial_goods_fulfilled_percentage = 0 }
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_fulfillment = 0 }
+
 					clr_state_flag = factory_everyday_goods_in_construction
 					clr_state_flag = factory_everyday_goods_construction_government_subsidized
 					set_variable = { factory_everyday_goods_construction_investment_money = 0 }
@@ -6409,6 +6479,9 @@
 					clr_state_flag = infrastructure_construction_government_subsidized
 					set_variable = { infrastructure_construction_investment_money = 0 }
 					set_variable = { infrastructure_construction_industrial_goods_need = 0 }
+
+					set_variable = { rgos_mechanization_percentage = 0 }
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = 0 }
 
 					clear_array = annual_gdp_amount_array
 
@@ -7990,11 +8063,33 @@
 		#
 
  		#RGO Mechanization Maintenance
-			set_variable = { rgos_industrial_goods_need = global.pops_rgos_mechanization_industrial_goods_base_need }
-			multiply_variable = { rgos_industrial_goods_need = rgos_workforce_amount }
-			divide_variable = { rgos_industrial_goods_need = 100 }
-			multiply_variable = { rgos_industrial_goods_need = rgos_mechanization_percentage }
-			divide_variable = { rgos_industrial_goods_need = 100 }
+			set_variable = { pops_rgos_mechanization_industrial_goods_need = global.pops_rgos_mechanization_industrial_goods_base_need }
+			multiply_variable = { pops_rgos_mechanization_industrial_goods_need = rgos_workforce_amount }
+			divide_variable = { pops_rgos_mechanization_industrial_goods_need = 100 }
+			multiply_variable = { pops_rgos_mechanization_industrial_goods_need = rgos_mechanization_percentage }
+			divide_variable = { pops_rgos_mechanization_industrial_goods_need = 100 }
+
+			#Expansion Reqs
+				if = {
+					limit = {
+						check_variable = { rgos_mechanization_percentage < rgos_max_mechanization_percentage }
+					}
+					set_temp_variable = { percent_temp = rgos_max_mechanization_percentage }
+					subtract_from_temp_variable = { percent_temp = rgos_mechanization_percentage }
+					clamp_temp_variable = {
+						var = percent_temp
+						max = 1
+						min = 0
+					}
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = percent_temp }
+					multiply_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = rgos_workforce_amount }
+					divide_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = 100 }
+					multiply_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = global.pops_rgos_mechanization_expansion_industrial_goods_base_need }
+				}
+				else = {
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_need = 0 }
+				}
+			#
 		#
 
 		#State Category Maintenance
@@ -8895,46 +8990,6 @@
 	#
 
 	#Functions for the system
-	shopping_algorithm = {
-		#INPUT: 
-			#buy_amount - Amount of goods that the buyer wants to buy (regardless of cost)
-			#money_temp - Max amount of money to spend
-			#good_max_temp - Maximum Goods that the seller can sell
-			#good_price_temp - Price of the Goods
-
-		#OUTPUT:
-			#buy_amount - Amount of goods sold
-			#cost_temp - Total price for all goods sold
-
-		#Shopping
-		clamp_temp_variable = {
-			var = buy_amount
-			max = good_max_temp
-		}
-		clamp_temp_variable = {
-			var = buy_amount
-			min = 0
-		}
-		set_temp_variable = { cost_temp = buy_amount }
-		multiply_temp_variable = { cost_temp = good_price_temp }
-
-		if = {
-			limit = {
-				check_variable = { cost_temp > money_temp }
-			}
-			set_temp_variable = { cost_temp = money_temp }
-			set_temp_variable = { buy_amount = money_temp }
-			divide_temp_variable = { buy_amount = good_price_temp }
-			clamp_temp_variable = {
-				var = buy_amount
-				max = good_max_temp
-			}
-			clamp_temp_variable = {
-				var = buy_amount
-				min = 0
-			}
-		}
-	}
 
 	start_everyday_goods_factory_construction = {
 		#Scope: State
@@ -10297,6 +10352,7 @@
 		add_to_variable = { industrial_goods_need = factory_industrial_goods_construction_industrial_goods_need }
 		add_to_variable = { industrial_goods_need = infrastructure_industrial_goods_need }
 		add_to_variable = { industrial_goods_need = infrastructure_construction_industrial_goods_need }
+		add_to_variable = { industrial_goods_need = pops_rgos_mechanization_expansion_industrial_goods_need }
 
 		set_variable = { life_goods_demand = 0 }
 		set_variable = { everyday_goods_demand = 0 }
@@ -10315,6 +10371,8 @@
 			
 			add_to_variable = { industrial_goods_demand = infrastructure_industrial_goods_demand }
 			add_to_variable = { industrial_goods_demand = infrastructure_construction_industrial_goods_demand }
+			add_to_variable = { industrial_goods_demand = pops_rgos_mechanization_industrial_goods_demand }
+			add_to_variable = { industrial_goods_demand = pops_rgos_mechanization_expansion_industrial_goods_demand }
 
 		#Industry Demand
 			calculate_factory_demand = yes
@@ -10566,29 +10624,29 @@
 					set_temp_variable = { money_industrial_goods_temp = rgos_earnings }
 				}
 				
-				set_variable = { rgos_industrial_goods_demand = money_industrial_goods_temp }
-				divide_variable = { rgos_industrial_goods_demand = industrial_goods_price }
+				set_variable = { pops_rgos_mechanization_industrial_goods_demand = money_industrial_goods_temp }
+				divide_variable = { pops_rgos_mechanization_industrial_goods_demand = industrial_goods_price }
 
 				if = {
 					limit = {
-						check_variable = { rgos_industrial_goods_demand > rgos_industrial_goods_need }
+						check_variable = { pops_rgos_mechanization_industrial_goods_demand > pops_rgos_mechanization_industrial_goods_need }
 					}
-					set_variable = { rgos_industrial_goods_demand = rgos_industrial_goods_need }
+					set_variable = { pops_rgos_mechanization_industrial_goods_demand = pops_rgos_mechanization_industrial_goods_need }
 				}
 				if = {
 					limit = {
-						check_variable = { rgos_industrial_goods_demand < 0 }
+						check_variable = { pops_rgos_mechanization_industrial_goods_demand < 0 }
 					}
-					set_variable = { rgos_industrial_goods_demand = 0 }
+					set_variable = { pops_rgos_mechanization_industrial_goods_demand = 0 }
 				}
 
-				set_temp_variable = { cost_temp = rgos_industrial_goods_demand }
+				set_temp_variable = { cost_temp = pops_rgos_mechanization_industrial_goods_demand }
 				multiply_temp_variable = { cost_temp = industrial_goods_price }
 				subtract_from_temp_variable = { money_left_temp = cost_temp }
 
 			}
 			else = {
-				set_variable = { rgos_industrial_goods_demand = 0 }
+				set_variable = { pops_rgos_mechanization_industrial_goods_demand = 0 }
 			}
 		#
 
@@ -10917,9 +10975,6 @@
 			}
 		#
 
-		#Mechanization Industrial Goods
-
-		#
 
 		#Construction
 			set_temp_variable = { max_demand_temp = global.infrastructure_construction_base_speed }
@@ -10940,6 +10995,26 @@
 					set_variable = { infrastructure_construction_industrial_goods_demand = infrastructure_construction_industrial_goods_need }
 				}
 
+			set_temp_variable = { max_demand_temp = rgos_workforce_amount }
+			divide_variable = { max_demand_temp = 100 }
+			multiply_variable = { max_demand_temp = global.pops_rgos_mechanization_expansion_base_speed }
+			#Mechanization
+				set_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand = money_left_temp }
+				divide_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand = industrial_goods_price }
+				divide_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand = 2 }
+				if = {
+					limit = {
+						check_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand > max_demand_temp }
+					}
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand = max_demand_temp }
+				}
+				if = {
+					limit = {
+						check_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand > pops_rgos_mechanization_expansion_industrial_goods_need }
+					}
+					set_variable = { pops_rgos_mechanization_expansion_industrial_goods_demand = pops_rgos_mechanization_expansion_industrial_goods_need }
+				}
+			#
 
 	}
 	calculate_factory_demand = {
@@ -11876,6 +11951,9 @@
 
 			#RGO Modifiers
 				set_variable = { rgo_max_size_effect = 0 }
+				set_variable = { life_goods_rgos_max_mechanization = 0 }
+				set_variable = { raw_goods_rgos_max_mechanization = 0 }
+				set_variable = { valuable_goods_rgos_max_mechanization = 0 }
 
 				set_variable = { rgo_output_effect = 0 }
 				set_variable = { raw_goods_output_effect = 0 }
@@ -11977,6 +12055,9 @@
 				add_to_variable = { PREV.valuable_goods_output_effect = tech_valuable_goods_output }
 
 				add_to_variable = { PREV.rgo_max_size_effect = tech_rgo_max_size }
+				add_to_variable = { PREV.life_goods_rgos_max_mechanization = tech_life_goods_rgos_max_mechanization }
+				add_to_variable = { PREV.raw_goods_rgos_max_mechanization = tech_raw_goods_rgos_max_mechanization }
+				add_to_variable = { PREV.valuable_goods_rgos_max_mechanization = tech_valuable_goods_rgos_max_mechanization }
 
 				#Factory Modifiers
 				add_to_variable = { PREV.factory_size_effect = tech_factory_size }
