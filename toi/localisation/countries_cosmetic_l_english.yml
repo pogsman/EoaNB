@@ -1103,6 +1103,10 @@ EQA_tribal_cosmetic_2_autocracy:0 "Equatoria Tribe"
  TUS_focus_ITA_chauvinist_populism_ADJ:0 "Italian"
  TUS_focus_ITA_fundamentalism_ADJ:0 "Italian"
 
+ PRM_Rebels_social_egalitarianism:0 "Italian Revolutionaries"
+PRM_Rebels_social_egalitarianism_DEF:0 "Italian Revolutionaries"
+PRM_Rebels_social_egalitarianism_ADJ:0 "Italian"
+
  GER_north_confederation_centrism:0 "North German Confederation"
  GER_north_confederation_traditional_conservatism:0 "North German Confederation"
  GER_north_confederation_social_egalitarianism:0 "North German Confederation"
@@ -4030,3 +4034,7 @@ TAW_formosan_republic_ADJ:0 "Formosan Republic"
  TSH_matsudaira_nippon_cosmetic:0 "Matsudaira Shogunate"
  TSH_matsudaira_nippon_cosmetic_DEF:0 "The Fourth Shogunate of Japan"
  TSH_matsudaira_nippon_cosmetic_ADJ:0 "Japanese"
+ 
+ PPG_condominium:0 "Primorskatya Condominium"
+ PPG_condominium_DEF:0 "Joint Sino-Russian Condominium of Primorskatya"
+ PPG_condominium_DEF:0 "Primorskatya Condominium"
