@@ -62,7 +62,7 @@
 			clear_array = global.econ_value_array
 			
 			for_each_scope_loop = {
-				array = global.score_tag_array #global.score_tag_array
+				array = global.econ_gp_list_array #global.score_tag_array
 
 				if = {
 					limit = {
@@ -3856,7 +3856,7 @@
 				clear_variable = cost_amount_left
 			#
 
-			#Resolve Interstate Trade
+			#Resolve All Trade
 				every_controlled_state = {
 					#life_goods
 						#Importing
@@ -3896,550 +3896,82 @@
 							subtract_from_variable = { everyday_goods_left = everyday_goods_trade_amount }
 
 						}
-
 					#luxury_goods
 						#Importing
 						if = {
 							limit = {
 								check_variable = { luxury_goods_trade_amount > 0 }
 							}
-							#Costs & goods absorbed by pops 
-							add_to_variable = { pops_money = luxury_goods_trade_value }
-							subtract_from_variable = { pops_goods_spending = luxury_goods_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = luxury_goods_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
-							add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = pops_luxury_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
+							subtract_from_variable = { luxury_goods_bought_value = luxury_goods_trade_value }
+							add_to_variable = { luxury_goods_bought_amount = luxury_goods_trade_amount }
 						}
 						#Exporting
 						else_if = {
 							limit = {
 								check_variable = { luxury_goods_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by factories/artisans 
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_luxury_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = luxury_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_luxury_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = luxury_goods_produced_amount }
-
-							set_temp_variable = { artisan_trade_value = luxury_goods_trade_value }
-							set_temp_variable = { artisan_trade_amount = luxury_goods_trade_amount }
-							multiply_temp_variable = { artisan_trade_value = artisan_share }
-							divide_temp_variable = { artisan_trade_value = 100 }
-							multiply_temp_variable = { artisan_trade_amount = artisan_share }
-							divide_temp_variable = { artisan_trade_amount = 100 }
-
-							set_temp_variable = { factory_trade_value = luxury_goods_trade_value }
-							set_temp_variable = { factory_trade_amount = luxury_goods_trade_amount }
-							multiply_temp_variable = { factory_trade_value = factory_share }
-							divide_temp_variable = { factory_trade_value = 100 }
-							multiply_temp_variable = { factory_trade_amount = factory_share }
-							divide_temp_variable = { factory_trade_amount = 100 }
-
-							set_temp_variable = { total_trade_value = artisan_trade_value }
-							add_to_temp_variable = { total_trade_value = factory_trade_value }
-							set_temp_variable = { total_trade_amount_temp = artisan_trade_amount }
-							add_to_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_value = luxury_goods_trade_value } }
-								}
-								subtract_from_temp_variable = { total_trade_value = luxury_goods_trade_value }
-								subtract_from_temp_variable = { factory_trade_value = total_trade_value }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_amount_temp = luxury_goods_trade_amount } }
-								}
-								subtract_from_temp_variable = { total_trade_amount_temp = luxury_goods_trade_amount }
-								subtract_from_temp_variable = { factory_trade_amount = total_trade_amount_temp }
-							}
-							
-							add_to_variable = { factory_money = factory_trade_value }
-							add_to_variable = { factory_earnings = factory_trade_value }
-							subtract_from_variable = { factory_luxury_goods_sold = factory_trade_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_luxury_goods_sold > factory_luxury_goods_production }
-								}
-								add_to_temp_variable = { artisan_trade_amount = factory_luxury_goods_sold }
-								subtract_from_temp_variable = { artisan_trade_amount = factory_luxury_goods_production }
-								set_variable = { factory_luxury_goods_sold = factory_luxury_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_trade_value }
-							add_to_variable = { pops_earnings = artisan_trade_value }
-							subtract_from_variable = { pops_artisans_luxury_goods_sold = artisan_trade_amount }
+							add_to_variable = { luxury_goods_sold_value = luxury_goods_trade_value }
+							subtract_from_variable = { luxury_goods_sold_amount = luxury_goods_trade_amount }
+							subtract_from_variable = { luxury_goods_left = luxury_goods_trade_amount }
 
 						}
-
 					#services
 						#Importing
 						if = {
 							limit = {
 								check_variable = { services_trade_amount > 0 }
 							}
-							#Costs & goods absorbed by pops 
-							add_to_variable = { pops_money = services_trade_value }
-							subtract_from_variable = { pops_goods_spending = services_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = services_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = pops_services_demand }
-							add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = pops_services_fulfilled_percentage
-								min = 0
-								max = 1
-							}
+							subtract_from_variable = { services_bought_value = services_trade_value }
+							add_to_variable = { services_bought_amount = services_trade_amount }
 						}
 						#Exporting
 						else_if = {
 							limit = {
 								check_variable = { services_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by pops
-							add_to_variable = { pops_earnings = services_trade_value }
+							add_to_variable = { services_sold_value = services_trade_value }
+							subtract_from_variable = { services_sold_amount = services_trade_amount }
+							subtract_from_variable = { services_left = services_trade_amount }
 
-							set_temp_variable = { capitalists_share = pops_services_production }
-							multiply_temp_variable = { capitalists_share = 50 }
-							set_temp_variable = { clerks_share = pops_clerks_services_production }
-							multiply_temp_variable = { clerks_share = 100 }
-							set_temp_variable = { professionals_share = pops_professionals_services_production }
-							multiply_temp_variable = { professionals_share = 100 }
-
-							set_temp_variable = { share_total = capitalists_share }
-							add_to_temp_variable = { share_total = clerks_share }
-							add_to_temp_variable = { share_total = professionals_share }
-							divide_temp_variable = { share_total = 100 }
-
-							divide_temp_variable = { capitalists_share = share_total }
-							divide_temp_variable = { clerks_share = share_total }
-							divide_temp_variable = { professionals_share = share_total }
-
-							set_temp_variable = { capitalists_value = services_trade_value }
-							multiply_temp_variable = { capitalists_value = capitalists_share }
-							divide_temp_variable = { capitalists_value = 100 }
-							set_temp_variable = { clerks_value = services_trade_value }
-							multiply_temp_variable = { clerks_value = clerks_share }
-							divide_temp_variable = { clerks_value = 100 }
-							set_temp_variable = { professionals_value = services_trade_value }
-							multiply_temp_variable = { professionals_value = professionals_share }
-							divide_temp_variable = { professionals_value = 100 }
-
-							add_to_variable = { capitalists_earnings = capitalists_value }
-							add_to_variable = { clerks_earnings = clerks_value }
-							add_to_variable = { professionals_earnings = professionals_value }
-
-							subtract_from_variable = { pops_services_sold = services_trade_amount }
 						}
-
 					#raw_goods
 						#Importing
 						if = {
 							limit = {
 								check_variable = { raw_goods_trade_amount > 0 }
 							}
-							#Costs & goods absorbed by factories/artisans
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_raw_goods_demand }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = raw_goods_demand }
-
-							set_temp_variable = { factory_share = factory_raw_goods_demand }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = raw_goods_demand }
-
-							set_temp_variable = { artisan_trade_value = raw_goods_trade_value }
-							set_temp_variable = { artisan_trade_amount = raw_goods_trade_amount }
-							multiply_temp_variable = { artisan_trade_value = artisan_share }
-							divide_temp_variable = { artisan_trade_value = 100 }
-							multiply_temp_variable = { artisan_trade_amount = artisan_share }
-							divide_temp_variable = { artisan_trade_amount = 100 }
-
-							set_temp_variable = { factory_trade_value = raw_goods_trade_value }
-							set_temp_variable = { factory_trade_amount = raw_goods_trade_amount }
-							multiply_temp_variable = { factory_trade_value = factory_share }
-							divide_temp_variable = { factory_trade_value = 100 }
-							multiply_temp_variable = { factory_trade_amount = factory_share }
-							divide_temp_variable = { factory_trade_amount = 100 }
-
-							set_temp_variable = { total_trade_value = artisan_trade_value }
-							add_to_temp_variable = { total_trade_value = factory_trade_value }
-							set_temp_variable = { total_trade_amount_temp = artisan_trade_amount }
-							add_to_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_value = raw_goods_trade_value } }
-								}
-								subtract_from_temp_variable = { total_trade_value = raw_goods_trade_value }
-								subtract_from_temp_variable = { factory_trade_value = total_trade_value }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_amount_temp = raw_goods_trade_amount } }
-								}
-								subtract_from_temp_variable = { total_trade_amount_temp = raw_goods_trade_amount }
-								subtract_from_temp_variable = { factory_trade_amount = total_trade_amount_temp }
-							}
-							
-							add_to_variable = { factory_money = factory_trade_value }
-							subtract_from_variable = { factory_spending = factory_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = factory_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = factory_raw_goods_need }
-							add_to_variable = { factory_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = factory_raw_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
-
-							add_to_variable = { pops_money = artisan_trade_value }
-							subtract_from_variable = { pops_spending = artisan_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = artisan_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = pops_artisans_raw_goods_need }
-							add_to_variable = { pops_artisans_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = pops_artisans_raw_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
-
+							subtract_from_variable = { raw_goods_bought_value = raw_goods_trade_value }
+							add_to_variable = { raw_goods_bought_amount = raw_goods_trade_amount }
 						}
 						#Exporting
 						else_if = {
 							limit = {
 								check_variable = { raw_goods_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by factories/artisans 
-							#add_to_variable = { pops_money = raw_goods_trade_value } #Add to either earnings or money. Never both
-							add_to_variable = { pops_earnings = raw_goods_trade_value }
-							add_to_variable = { rgos_earnings = raw_goods_trade_value }
-
-							subtract_from_variable = { pops_rgos_raw_goods_sold = raw_goods_trade_amount }
+							add_to_variable = { raw_goods_sold_value = raw_goods_trade_value }
+							subtract_from_variable = { raw_goods_sold_amount = raw_goods_trade_amount }
+							subtract_from_variable = { raw_goods_left = raw_goods_trade_amount }
 
 						}
-
 					#industrial_goods
 						#Importing
 						if = {
 							limit = {
 								check_variable = { industrial_goods_trade_amount > 0 }
 							}
-							#Costs & goods split between factories, infra, & construction 
-							#Splitting between Factories and Construction
-							set_temp_variable = { factory_share = factory_industrial_goods_demand }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_demand }
-
-							set_temp_variable = { infra_share = infrastructure_industrial_goods_demand }
-							multiply_temp_variable = { infra_share = 100 }
-							divide_temp_variable = { infra_share = industrial_goods_demand }
-							
-							set_temp_variable = { factory_trade_value = industrial_goods_trade_value }
-							set_temp_variable = { factory_trade_amount = industrial_goods_trade_amount }
-							multiply_temp_variable = { factory_trade_value = factory_share }
-							divide_temp_variable = { factory_trade_value = 100 }
-							multiply_temp_variable = { factory_trade_amount = factory_share }
-							divide_temp_variable = { factory_trade_amount = 100 }
-							
-							set_temp_variable = { infra_trade_value = industrial_goods_trade_value }
-							set_temp_variable = { infra_trade_amount = industrial_goods_trade_amount }
-							multiply_temp_variable = { infra_trade_value = infra_share }
-							divide_temp_variable = { infra_trade_value = 100 }
-							multiply_temp_variable = { infra_trade_amount = infra_share }
-							divide_temp_variable = { infra_trade_amount = 100 }
-
-							if = { #If there's any construction...
-								limit = {
-									OR = {
-										check_variable = { factory_everyday_goods_construction_industrial_goods_demand > 0 }
-										check_variable = { factory_luxury_goods_construction_industrial_goods_demand > 0 }
-										check_variable = { factory_industrial_goods_construction_industrial_goods_demand > 0 }
-										check_variable = { infrastructure_construction_industrial_goods_demand > 0 }
-									}
-								}
-								set_temp_variable = { construction_everyday_goods_share = factory_everyday_goods_construction_industrial_goods_demand }
-								multiply_temp_variable = { construction_everyday_goods_share = 100 }
-								divide_temp_variable = { construction_everyday_goods_share = industrial_goods_demand }
-
-								set_temp_variable = { construction_luxury_goods_share = factory_luxury_goods_construction_industrial_goods_demand }
-								multiply_temp_variable = { construction_luxury_goods_share = 100 }
-								divide_temp_variable = { construction_luxury_goods_share = industrial_goods_demand }
-
-								set_temp_variable = { construction_industrial_goods_share = factory_industrial_goods_construction_industrial_goods_demand }
-								multiply_temp_variable = { construction_industrial_goods_share = 100 }
-								divide_temp_variable = { construction_industrial_goods_share = industrial_goods_demand }
-
-								set_temp_variable = { construction_infrastructure_share = finfrastructure_construction_industrial_goods_demand }
-								multiply_temp_variable = { construction_infrastructure_share = 100 }
-								divide_temp_variable = { construction_infrastructure_share = industrial_goods_demand }
-
-								set_temp_variable = { construction_everyday_goods_trade_value = industrial_goods_trade_value }
-								set_temp_variable = { construction_everyday_goods_trade_amount = industrial_goods_trade_amount }
-								multiply_temp_variable = { construction_everyday_goods_trade_value = construction_everyday_goods_share }
-								divide_temp_variable = { construction_everyday_goods_trade_value = 100 }
-								multiply_temp_variable = { construction_everyday_goods_trade_amount = construction_everyday_goods_share }
-								divide_temp_variable = { construction_everyday_goods_trade_amount = 100 }
-
-								set_temp_variable = { construction_luxury_goods_trade_value = industrial_goods_trade_value }
-								set_temp_variable = { construction_luxury_goods_trade_amount = industrial_goods_trade_amount }
-								multiply_temp_variable = { construction_luxury_goods_trade_value = construction_luxury_goods_share }
-								divide_temp_variable = { construction_luxury_goods_trade_value = 100 }
-								multiply_temp_variable = { construction_luxury_goods_trade_amount = construction_luxury_goods_share }
-								divide_temp_variable = { construction_luxury_goods_trade_amount = 100 }
-
-								set_temp_variable = { construction_industrial_goods_trade_value = industrial_goods_trade_value }
-								set_temp_variable = { construction_industrial_goods_trade_amount = industrial_goods_trade_amount }
-								multiply_temp_variable = { construction_industrial_goods_trade_value = construction_industrial_goods_share }
-								divide_temp_variable = { construction_industrial_goods_trade_value = 100 }
-								multiply_temp_variable = { construction_industrial_goods_trade_amount = construction_industrial_goods_share }
-								divide_temp_variable = { construction_industrial_goods_trade_amount = 100 }
-
-								set_temp_variable = { construction_infrastructure_trade_value = industrial_goods_trade_value }
-								set_temp_variable = { construction_infrastructure_trade_amount = industrial_goods_trade_amount }
-								multiply_temp_variable = { construction_infrastructure_trade_value = construction_infrastructure_share }
-								divide_temp_variable = { construction_infrastructure_trade_value = 100 }
-								multiply_temp_variable = { construction_infrastructure_trade_amount = construction_infrastructure_share }
-								divide_temp_variable = { construction_infrastructure_trade_amount = 100 }
-
-
-								set_temp_variable = { total_trade_value = construction_everyday_goods_trade_value }
-								add_to_temp_variable = { total_trade_value = construction_luxury_goods_trade_value }
-								add_to_temp_variable = { total_trade_value = construction_industrial_goods_trade_value }
-								add_to_temp_variable = { total_trade_value = construction_infrastructure_trade_value }
-								add_to_temp_variable = { total_trade_value = factory_trade_value }
-								add_to_temp_variable = { total_trade_value = infra_trade_value }
-								set_temp_variable = { total_trade_amount_temp = construction_everyday_goods_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = construction_luxury_goods_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = construction_industrial_goods_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = construction_infrastructure_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = infra_trade_amount }
-
-								if = {
-									limit = {
-										NOT = { check_variable = { total_trade_value = industrial_goods_trade_value } }
-									}
-									subtract_from_temp_variable = { total_trade_value = industrial_goods_trade_value }
-									subtract_from_temp_variable = { construction_everyday_goods_trade_value = total_trade_value }
-								}
-								if = {
-									limit = {
-										NOT = { check_variable = { total_trade_amount_temp = industrial_goods_trade_amount } }
-									}
-									subtract_from_temp_variable = { total_trade_amount_temp = industrial_goods_trade_amount }
-									subtract_from_temp_variable = { construction_everyday_goods_trade_amount = total_trade_amount_temp }
-								}
-
-								#Goods
-								if = { 
-									limit = {
-										check_variable = { construction_everyday_goods_trade_amount > factory_everyday_goods_construction_industrial_goods_need }
-									}
-									subtract_from_temp_variable = { construction_everyday_goods_trade_amount = factory_everyday_goods_construction_industrial_goods_need }
-									set_variable = { factory_everyday_goods_construction_industrial_goods_need = 0 }
-
-									add_to_temp_variable = { construction_luxury_goods_trade_amount = construction_everyday_goods_trade_amount }
-								}
-								else = {
-									subtract_from_variable = { factory_everyday_goods_construction_industrial_goods_need = construction_everyday_goods_trade_amount }
-								}
-								add_to_variable = { factory_everyday_goods_construction_investment_money = construction_everyday_goods_trade_value }
-					
-								if = { 
-									limit = {
-										check_variable = { construction_luxury_goods_trade_amount > factory_luxury_goods_construction_industrial_goods_need }
-									}
-									subtract_from_temp_variable = { construction_luxury_goods_trade_amount = factory_luxury_goods_construction_industrial_goods_need }
-									set_variable = { factory_luxury_goods_construction_industrial_goods_need = 0 }
-
-									add_to_temp_variable = { construction_industrial_goods_trade_amount = construction_luxury_goods_trade_amount }
-								}
-								else = {
-									subtract_from_variable = { factory_luxury_goods_construction_industrial_goods_need = construction_luxury_goods_trade_amount }
-								}
-								add_to_variable = { factory_luxury_goods_construction_investment_money = construction_luxury_goods_trade_value }
-
-								if = { 
-									limit = {
-										check_variable = { construction_industrial_goods_trade_amount > factory_industrial_goods_construction_industrial_goods_need }
-									}
-									subtract_from_temp_variable = { construction_industrial_goods_trade_amount = factory_industrial_goods_construction_industrial_goods_need }
-									set_variable = { factory_industrial_goods_construction_industrial_goods_need = 0 }
-
-									add_to_temp_variable = { construction_infrastructure_trade_amount = construction_industrial_goods_trade_amount }
-								}
-								else = {
-									subtract_from_variable = { factory_industrial_goods_construction_industrial_goods_need = construction_industrial_goods_trade_amount }
-								}
-								add_to_variable = { factory_industrial_goods_construction_investment_money = construction_industrial_goods_trade_value }
-
-								if = { 
-									limit = {
-										check_variable = { construction_infrastructure_trade_amount > infrastructure_construction_industrial_goods_need }
-									}
-									subtract_from_temp_variable = { construction_infrastructure_trade_amount = infrastructure_construction_industrial_goods_need }
-									set_variable = { infrastructure_construction_industrial_goods_need = 0 }
-
-									add_to_temp_variable = { factory_trade_amount = construction_infrastructure_trade_amount }
-								}
-								else = {
-									subtract_from_variable = { infrastructure_construction_industrial_goods_need = construction_infrastructure_trade_amount }
-								}
-								add_to_variable = { infrastructure_construction_investment_money = construction_infrastructure_trade_value }
-
-								#Money
-								if = { 
-									limit = {
-										check_variable = { factory_everyday_goods_construction_investment_money < 0 }
-									}
-									add_to_variable = { factory_luxury_goods_construction_investment_money = factory_everyday_goods_construction_investment_money }
-									set_variable = { factory_everyday_goods_construction_investment_money = 0 }
-								}
-								if = { 
-									limit = {
-										check_variable = { factory_luxury_goods_construction_investment_money < 0 }
-									}
-									add_to_variable = { factory_industrial_goods_construction_investment_money = factory_luxury_goods_construction_investment_money }
-									set_variable = { factory_luxury_goods_construction_investment_money = 0 }
-								}
-								if = { 
-									limit = {
-										check_variable = { factory_industrial_goods_construction_investment_money < 0 }
-									}
-									add_to_variable = { infrastructure_construction_investment_money = factory_industrial_goods_construction_investment_money }
-									set_variable = { factory_industrial_goods_construction_investment_money = 0 }
-								}
-								if = { 
-									limit = {
-										check_variable = { infrastructure_construction_investment_money < 0 }
-									}
-									add_to_variable = { factory_money = infrastructure_construction_investment_money }
-									subtract_from_variable = { factory_spending = infrastructure_construction_investment_money }
-									set_variable = { infrastructure_construction_investment_money = 0 }
-								}
-
-							}
-							else = {
-								set_temp_variable = { total_trade_value = factory_trade_value }
-								add_to_temp_variable = { total_trade_value = infra_trade_value }
-								set_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-								add_to_temp_variable = { total_trade_amount_temp = infra_trade_amount }
-
-								if = {
-									limit = {
-										NOT = { check_variable = { total_trade_value = industrial_goods_trade_value } }
-									}
-									subtract_from_temp_variable = { total_trade_value = industrial_goods_trade_value }
-									subtract_from_temp_variable = { factory_trade_value = total_trade_value }
-								}
-								if = {
-									limit = {
-										NOT = { check_variable = { total_trade_amount_temp = industrial_goods_trade_amount } }
-									}
-									subtract_from_temp_variable = { total_trade_amount_temp = industrial_goods_trade_amount }
-									subtract_from_temp_variable = { factory_trade_amount = total_trade_amount_temp }
-								}
-							}
-
-							add_to_variable = { factory_money = factory_trade_value }
-							subtract_from_variable = { factory_spending = factory_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = factory_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = factory_industrial_goods_need }
-							add_to_variable = { factory_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = factory_industrial_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
-
-							add_to_variable = { infrastructure_money = infra_trade_value }
-							set_temp_variable = { needs_fulfilled_temp = infra_trade_amount }
-							divide_temp_variable = { needs_fulfilled_temp = infrastructure_industrial_goods_need }
-							add_to_variable = { infrastructure_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
-							clamp_variable = {
-								var = infrastructure_industrial_goods_fulfilled_percentage
-								min = 0
-								max = 1
-							}
+							subtract_from_variable = { industrial_goods_bought_value = industrial_goods_trade_value }
+							add_to_variable = { industrial_goods_bought_amount = industrial_goods_trade_amount }
 						}
 						#Exporting
 						else_if = {
 							limit = {
 								check_variable = { industrial_goods_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by factories/artisans 
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
+							add_to_variable = { industrial_goods_sold_value = industrial_goods_trade_value }
+							subtract_from_variable = { industrial_goods_sold_amount = industrial_goods_trade_amount }
+							subtract_from_variable = { industrial_goods_left = industrial_goods_trade_amount }
 
-							set_temp_variable = { factory_share = factory_industrial_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { artisan_trade_value = industrial_goods_trade_value }
-							set_temp_variable = { artisan_trade_amount = industrial_goods_trade_amount }
-							multiply_temp_variable = { artisan_trade_value = artisan_share }
-							divide_temp_variable = { artisan_trade_value = 100 }
-							multiply_temp_variable = { artisan_trade_amount = artisan_share }
-							divide_temp_variable = { artisan_trade_amount = 100 }
-
-							set_temp_variable = { factory_trade_value = industrial_goods_trade_value }
-							set_temp_variable = { factory_trade_amount = industrial_goods_trade_amount }
-							multiply_temp_variable = { factory_trade_value = factory_share }
-							divide_temp_variable = { factory_trade_value = 100 }
-							multiply_temp_variable = { factory_trade_amount = factory_share }
-							divide_temp_variable = { factory_trade_amount = 100 }
-
-							set_temp_variable = { total_trade_value = artisan_trade_value }
-							add_to_temp_variable = { total_trade_value = factory_trade_value }
-							set_temp_variable = { total_trade_amount_temp = artisan_trade_amount }
-							add_to_temp_variable = { total_trade_amount_temp = factory_trade_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_value = industrial_goods_trade_value } }
-								}
-								subtract_from_temp_variable = { total_trade_value = industrial_goods_trade_value }
-								subtract_from_temp_variable = { factory_trade_value = total_trade_value }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_trade_amount_temp = industrial_goods_trade_amount } }
-								}
-								subtract_from_temp_variable = { total_trade_amount_temp = industrial_goods_trade_amount }
-								subtract_from_temp_variable = { factory_trade_amount = total_trade_amount_temp }
-							}
-							
-							add_to_variable = { factory_money = factory_trade_value }
-							add_to_variable = { factory_earnings = factory_trade_value }
-							subtract_from_variable = { factory_industrial_goods_sold = factory_trade_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-								}
-								add_to_temp_variable = { artisan_trade_amount = factory_industrial_goods_sold }
-								subtract_from_temp_variable = { artisan_trade_amount = factory_industrial_goods_production }
-								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_trade_value }
-							add_to_variable = { pops_earnings = artisan_trade_value }
-							subtract_from_variable = { pops_artisans_industrial_goods_sold = artisan_trade_amount }
 						}
-
 				}
 			#
 
@@ -4489,654 +4021,97 @@
 					subtract_from_variable = { everyday_goods_left = buy_amount }
 
 				#
+				#Luxury Goods Purchases
+					set_temp_variable = { buy_amount = luxury_goods_demand }
+					subtract_from_temp_variable = { buy_amount = luxury_goods_bought_amount }
 
-				#Infrastructure Buying Goods
-					#industrial_goods
-						set_temp_variable = { buy_amount = infrastructure_industrial_goods_demand }
-						set_temp_variable = { money_temp = infrastructure_money } #Can theoretically be infinite
-						set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-						add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-						subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-						subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-						set_temp_variable = { good_price_temp = industrial_goods_price }
+					clamp_temp_variable = {
+						var = buy_amount
+						max = luxury_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						min = 0
+					}
+					set_temp_variable = { cost_temp = buy_amount }
+					multiply_temp_variable = { cost_temp = luxury_goods_price }
 
-						#Effect
-						shopping_algorithm = yes
+					#Resolve
+					add_to_variable = { luxury_goods_bought_value = cost_temp }
+					add_to_variable = { luxury_goods_bought_amount = buy_amount }
+					add_to_variable = { luxury_goods_sold_value = cost_temp }
+					add_to_variable = { luxury_goods_sold_amount = buy_amount }
+					subtract_from_variable = { luxury_goods_left = buy_amount }
 
-						#Resolve
-						#add_to_variable = { pops_money = cost_temp } #This would upset the balance of money supply
-						add_to_variable = { pops_earnings = cost_temp }
-						add_to_variable = { rgos_earnings = cost_temp }
-						add_to_variable = { pops_rgos_industrial_goods_sold = buy_amount }
-
-						subtract_from_variable = { infrastructure_money = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = infrastructure_industrial_goods_need }
-						add_to_variable = { infrastructure_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
-
-						clamp_variable = {
-							var = infrastructure_industrial_goods_fulfilled_percentage
-							min = 0
-							max = 1
-						}
-					#
-					#Construction
-
-						#Infrastructure
-							set_temp_variable = { buy_amount = infrastructure_construction_industrial_goods_demand }
-							set_temp_variable = { money_temp = infrastructure_construction_investment_money }
-							set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-							add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-							subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-							subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-							set_temp_variable = { good_price_temp = industrial_goods_price }
-
-							#Effect
-							shopping_algorithm = yes
-
-							#Resolve
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_industrial_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { artisan_cost_temp = cost_temp }
-							set_temp_variable = { artisan_buy_amount = buy_amount }
-							multiply_temp_variable = { artisan_cost_temp = artisan_share }
-							divide_temp_variable = { artisan_cost_temp = 100 }
-							multiply_temp_variable = { artisan_buy_amount = artisan_share }
-							divide_temp_variable = { artisan_buy_amount = 100 }
-
-							set_temp_variable = { factory_cost_temp = cost_temp }
-							set_temp_variable = { factory_buy_amount = buy_amount }
-							multiply_temp_variable = { factory_cost_temp = factory_share }
-							divide_temp_variable = { factory_cost_temp = 100 }
-							multiply_temp_variable = { factory_buy_amount = factory_share }
-							divide_temp_variable = { factory_buy_amount = 100 }
-
-							set_temp_variable = { total_cost_temp = artisan_cost_temp }
-							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_cost_temp = cost_temp } }
-								}
-								subtract_from_temp_variable = { total_cost_temp = cost_temp }
-								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-								}
-								subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
-								add_to_temp_variable = { artisan_buy_amount = 0.001 }
-							}
-							
-							add_to_variable = { factory_money = factory_cost_temp }
-							add_to_variable = { factory_earnings = factory_cost_temp }
-							add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-								}
-								add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
-								subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
-								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_cost_temp }
-							add_to_variable = { pops_earnings = artisan_cost_temp }
-							add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
-
-							subtract_from_variable = { infrastructure_construction_investment_money = cost_temp }
-							subtract_from_variable = { infrastructure_construction_industrial_goods_need = buy_amount }
-						#
-					#
-				#		
-				#Factories Buying Goods
-					#raw_goods
-						set_temp_variable = { buy_amount = factory_raw_goods_demand }
-						set_temp_variable = { money_temp = factory_money } #Can theoretically be infinite
-						set_temp_variable = { good_max_temp = pops_rgos_raw_goods_production }
-						subtract_from_temp_variable = { good_max_temp = pops_rgos_raw_goods_sold }
-						set_temp_variable = { good_price_temp = raw_goods_price }
-
-						#Effect
-						shopping_algorithm = yes
-
-						#Resolve
-						#add_to_variable = { pops_money = cost_temp } #This would upset the balance of money supply
-						add_to_variable = { pops_earnings = cost_temp }
-						add_to_variable = { rgos_earnings = cost_temp }
-						add_to_variable = { pops_rgos_raw_goods_sold = buy_amount }
-
-						subtract_from_variable = { factory_money = cost_temp }
-						add_to_variable = { factory_spending = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = factory_raw_goods_need }
-						add_to_variable = { factory_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
-
-						clamp_variable = {
-							var = factory_raw_goods_fulfilled_percentage
-							min = 0
-							max = 1
-						}
-					#
-					#industrial_goods
-						set_temp_variable = { buy_amount = factory_industrial_goods_demand }
-						set_temp_variable = { money_temp = factory_money }
-						set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-						add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-						subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-						subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-						set_temp_variable = { good_price_temp = industrial_goods_price }
-
-						#Effect
-						shopping_algorithm = yes
-
-						#Resolve
-						#Splitting between Factories and Artisans
-						set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-						multiply_temp_variable = { artisan_share = 100 }
-						divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
-
-						set_temp_variable = { factory_share = factory_industrial_goods_production }
-						multiply_temp_variable = { factory_share = 100 }
-						divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-						set_temp_variable = { artisan_cost_temp = cost_temp }
-						set_temp_variable = { artisan_buy_amount = buy_amount }
-						multiply_temp_variable = { artisan_cost_temp = artisan_share }
-						divide_temp_variable = { artisan_cost_temp = 100 }
-						multiply_temp_variable = { artisan_buy_amount = artisan_share }
-						divide_temp_variable = { artisan_buy_amount = 100 }
-
-						set_temp_variable = { factory_cost_temp = cost_temp }
-						set_temp_variable = { factory_buy_amount = buy_amount }
-						multiply_temp_variable = { factory_cost_temp = factory_share }
-						divide_temp_variable = { factory_cost_temp = 100 }
-						multiply_temp_variable = { factory_buy_amount = factory_share }
-						divide_temp_variable = { factory_buy_amount = 100 }
-
-						set_temp_variable = { total_cost_temp = artisan_cost_temp }
-						add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-						set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-						add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-						if = {
-							limit = {
-								NOT = { check_variable = { total_cost_temp = cost_temp } }
-							}
-							subtract_from_temp_variable = { total_cost_temp = cost_temp }
-							subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-						}
-						if = {
-							limit = {
-								NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-							}
-							subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-							subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-							subtract_from_temp_variable = { factory_buy_amount = 0.001 }
-							add_to_temp_variable = { artisan_buy_amount = 0.001 }
-						}
-						
-						add_to_variable = { factory_money = factory_cost_temp }
-						add_to_variable = { factory_earnings = factory_cost_temp }
-						add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
-
-						if = { 
-							limit = {
-								check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-							}
-							add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
-							subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
-							set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-						}
-
-						add_to_variable = { artisans_earnings = artisan_cost_temp }
-						add_to_variable = { pops_earnings = artisan_cost_temp }
-						add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
-
-						subtract_from_variable = { factory_money = cost_temp }
-						add_to_variable = { factory_spending = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = factory_industrial_goods_need }
-						add_to_variable = { factory_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
-
-						clamp_variable = {
-							var = factory_industrial_goods_fulfilled_percentage
-							min = 0
-							max = 1
-						}
-					#
-					#Construction
-						#Everyday Goods Factory
-							set_temp_variable = { buy_amount = factory_everyday_goods_construction_industrial_goods_demand }
-							set_temp_variable = { money_temp = factory_everyday_goods_construction_investment_money }
-							set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-							add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-							subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-							subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-							set_temp_variable = { good_price_temp = industrial_goods_price }
-
-							#Effect
-							shopping_algorithm = yes
-
-							#Resolve
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_industrial_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { artisan_cost_temp = cost_temp }
-							set_temp_variable = { artisan_buy_amount = buy_amount }
-							multiply_temp_variable = { artisan_cost_temp = artisan_share }
-							divide_temp_variable = { artisan_cost_temp = 100 }
-							multiply_temp_variable = { artisan_buy_amount = artisan_share }
-							divide_temp_variable = { artisan_buy_amount = 100 }
-
-							set_temp_variable = { factory_cost_temp = cost_temp }
-							set_temp_variable = { factory_buy_amount = buy_amount }
-							multiply_temp_variable = { factory_cost_temp = factory_share }
-							divide_temp_variable = { factory_cost_temp = 100 }
-							multiply_temp_variable = { factory_buy_amount = factory_share }
-							divide_temp_variable = { factory_buy_amount = 100 }
-
-							set_temp_variable = { total_cost_temp = artisan_cost_temp }
-							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_cost_temp = cost_temp } }
-								}
-								subtract_from_temp_variable = { total_cost_temp = cost_temp }
-								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-								}
-								subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
-								add_to_temp_variable = { artisan_buy_amount = 0.001 }
-							}
-							
-							add_to_variable = { factory_money = factory_cost_temp }
-							add_to_variable = { factory_earnings = factory_cost_temp }
-							add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-								}
-								add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
-								subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
-								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_cost_temp }
-							add_to_variable = { pops_earnings = artisan_cost_temp }
-							add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
-
-							subtract_from_variable = { factory_everyday_goods_construction_investment_money = cost_temp }
-							subtract_from_variable = { factory_everyday_goods_construction_industrial_goods_need = buy_amount }
-						#
-						#Luxury Goods Factory
-							set_temp_variable = { buy_amount = factory_luxury_goods_construction_industrial_goods_demand }
-							set_temp_variable = { money_temp = factory_luxury_goods_construction_investment_money }
-							set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-							add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-							subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-							subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-							set_temp_variable = { good_price_temp = industrial_goods_price }
-
-							#Effect
-							shopping_algorithm = yes
-
-							#Resolve
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_industrial_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { artisan_cost_temp = cost_temp }
-							set_temp_variable = { artisan_buy_amount = buy_amount }
-							multiply_temp_variable = { artisan_cost_temp = artisan_share }
-							divide_temp_variable = { artisan_cost_temp = 100 }
-							multiply_temp_variable = { artisan_buy_amount = artisan_share }
-							divide_temp_variable = { artisan_buy_amount = 100 }
-
-							set_temp_variable = { factory_cost_temp = cost_temp }
-							set_temp_variable = { factory_buy_amount = buy_amount }
-							multiply_temp_variable = { factory_cost_temp = factory_share }
-							divide_temp_variable = { factory_cost_temp = 100 }
-							multiply_temp_variable = { factory_buy_amount = factory_share }
-							divide_temp_variable = { factory_buy_amount = 100 }
-
-							set_temp_variable = { total_cost_temp = artisan_cost_temp }
-							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_cost_temp = cost_temp } }
-								}
-								subtract_from_temp_variable = { total_cost_temp = cost_temp }
-								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-								}
-								subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
-								add_to_temp_variable = { artisan_buy_amount = 0.001 }
-							}
-							
-							add_to_variable = { factory_money = factory_cost_temp }
-							add_to_variable = { factory_earnings = factory_cost_temp }
-							add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-								}
-								add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
-								subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
-								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_cost_temp }
-							add_to_variable = { pops_earnings = artisan_cost_temp }
-							add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
-
-							subtract_from_variable = { factory_luxury_goods_construction_investment_money = cost_temp }
-							subtract_from_variable = { factory_luxury_goods_construction_industrial_goods_need = buy_amount }
-						#
-						#Industrial Goods Factory
-							set_temp_variable = { buy_amount = factory_industrial_goods_construction_industrial_goods_demand }
-							set_temp_variable = { money_temp = factory_industrial_goods_construction_investment_money }
-							set_temp_variable = { good_max_temp = factory_industrial_goods_production }
-							add_to_temp_variable = { good_max_temp = pops_artisans_industrial_goods_production }
-							subtract_from_temp_variable = { good_max_temp = factory_industrial_goods_sold }
-							subtract_from_temp_variable = { good_max_temp = pops_artisans_industrial_goods_sold }
-							set_temp_variable = { good_price_temp = industrial_goods_price }
-
-							#Effect
-							shopping_algorithm = yes
-
-							#Resolve
-							#Splitting between Factories and Artisans
-							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
-							multiply_temp_variable = { artisan_share = 100 }
-							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { factory_share = factory_industrial_goods_production }
-							multiply_temp_variable = { factory_share = 100 }
-							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
-
-							set_temp_variable = { artisan_cost_temp = cost_temp }
-							set_temp_variable = { artisan_buy_amount = buy_amount }
-							multiply_temp_variable = { artisan_cost_temp = artisan_share }
-							divide_temp_variable = { artisan_cost_temp = 100 }
-							multiply_temp_variable = { artisan_buy_amount = artisan_share }
-							divide_temp_variable = { artisan_buy_amount = 100 }
-
-							set_temp_variable = { factory_cost_temp = cost_temp }
-							set_temp_variable = { factory_buy_amount = buy_amount }
-							multiply_temp_variable = { factory_cost_temp = factory_share }
-							divide_temp_variable = { factory_cost_temp = 100 }
-							multiply_temp_variable = { factory_buy_amount = factory_share }
-							divide_temp_variable = { factory_buy_amount = 100 }
-
-							set_temp_variable = { total_cost_temp = artisan_cost_temp }
-							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-							if = {
-								limit = {
-									NOT = { check_variable = { total_cost_temp = cost_temp } }
-								}
-								subtract_from_temp_variable = { total_cost_temp = cost_temp }
-								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-							}
-							if = {
-								limit = {
-									NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-								}
-								subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
-								add_to_temp_variable = { artisan_buy_amount = 0.001 }
-							}
-							
-							add_to_variable = { factory_money = factory_cost_temp }
-							add_to_variable = { factory_earnings = factory_cost_temp }
-							add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
-
-							if = { 
-								limit = {
-									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
-								}
-								add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
-								subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
-								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
-							}
-
-							add_to_variable = { artisans_earnings = artisan_cost_temp }
-							add_to_variable = { pops_earnings = artisan_cost_temp }
-							add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
-
-							subtract_from_variable = { factory_industrial_goods_construction_investment_money = cost_temp }
-							subtract_from_variable = { factory_industrial_goods_construction_industrial_goods_need = buy_amount }
-						#
-					#
 				#
-				#Pops Buying Goods
+				#Services Purchases
+					set_temp_variable = { buy_amount = services_demand }
+					subtract_from_temp_variable = { buy_amount = services_bought_amount }
 
-					#raw_goods
-						set_temp_variable = { buy_amount = pops_artisans_raw_goods_demand }
-						set_temp_variable = { buy_amount_temp = 1 }
-						subtract_from_temp_variable = { buy_amount_temp = pops_artisans_raw_goods_fulfilled_percentage }
-						multiply_temp_variable = { buy_amount = buy_amount_temp }
-						set_temp_variable = { money_temp = pops_money } #Can theoretically be infinite
-						set_temp_variable = { good_max_temp = pops_rgos_raw_goods_production }
-						subtract_from_temp_variable = { good_max_temp = pops_rgos_raw_goods_sold }
-						set_temp_variable = { good_price_temp = raw_goods_price }
+					clamp_temp_variable = {
+						var = buy_amount
+						max = services_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						min = 0
+					}
+					set_temp_variable = { cost_temp = buy_amount }
+					multiply_temp_variable = { cost_temp = services_price }
 
-						#Effect
-						shopping_algorithm = yes
+					#Resolve
+					add_to_variable = { services_bought_value = cost_temp }
+					add_to_variable = { services_bought_amount = buy_amount }
+					add_to_variable = { services_sold_value = cost_temp }
+					add_to_variable = { services_sold_amount = buy_amount }
+					subtract_from_variable = { services_left = buy_amount }
 
-						#Resolve
-						#add_to_variable = { pops_money = cost_temp } #This would upset the balance of money supply
-						add_to_variable = { pops_earnings = cost_temp }
-						add_to_variable = { rgos_earnings = cost_temp }
-						add_to_variable = { pops_rgos_raw_goods_sold = buy_amount }
+				#
+				#Raw Goods Purchases
+					set_temp_variable = { buy_amount = raw_goods_demand }
+					subtract_from_temp_variable = { buy_amount = raw_goods_bought_amount }
 
-						subtract_from_variable = { pops_money = cost_temp }
-						add_to_variable = { pops_spending = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = pops_artisans_raw_goods_need }
-						add_to_variable = { pops_artisans_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
+					clamp_temp_variable = {
+						var = buy_amount
+						max = raw_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						min = 0
+					}
+					set_temp_variable = { cost_temp = buy_amount }
+					multiply_temp_variable = { cost_temp = raw_goods_price }
 
-					#luxury_goods
-						set_temp_variable = { buy_amount = pops_luxury_goods_demand }
-						set_temp_variable = { buy_amount_temp = 1 }
-						subtract_from_temp_variable = { buy_amount_temp = pops_luxury_goods_fulfilled_percentage }
-						multiply_temp_variable = { buy_amount = buy_amount_temp }
-						set_temp_variable = { money_temp = pops_money }
-						set_temp_variable = { good_max_temp = factory_luxury_goods_production }
-						add_to_temp_variable = { good_max_temp = pops_artisans_luxury_goods_production }
-						subtract_from_temp_variable = { good_max_temp = factory_luxury_goods_sold }
-						subtract_from_temp_variable = { good_max_temp = pops_artisans_luxury_goods_sold }
-						set_temp_variable = { good_price_temp = luxury_goods_price }
+					#Resolve
+					add_to_variable = { raw_goods_bought_value = cost_temp }
+					add_to_variable = { raw_goods_bought_amount = buy_amount }
+					add_to_variable = { raw_goods_sold_value = cost_temp }
+					add_to_variable = { raw_goods_sold_amount = buy_amount }
+					subtract_from_variable = { raw_goods_left = buy_amount }
+					
+				#
+				#Industrial Goods Purchases
+					set_temp_variable = { buy_amount = industrial_goods_demand }
+					subtract_from_temp_variable = { buy_amount = industrial_goods_bought_amount }
 
-						#Effect
-						shopping_algorithm = yes
+					clamp_temp_variable = {
+						var = buy_amount
+						max = industrial_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						min = 0
+					}
+					set_temp_variable = { cost_temp = buy_amount }
+					multiply_temp_variable = { cost_temp = industrial_goods_price }
 
-						#Resolve
-						#Splitting between Factories and Artisans
-						set_temp_variable = { artisan_share = pops_artisans_luxury_goods_production }
-						multiply_temp_variable = { artisan_share = 100 }
-						divide_temp_variable = { artisan_share = luxury_goods_produced_amount }
-
-						set_temp_variable = { factory_share = factory_luxury_goods_production }
-						multiply_temp_variable = { factory_share = 100 }
-						divide_temp_variable = { factory_share = luxury_goods_produced_amount }
-
-						set_temp_variable = { artisan_cost_temp = cost_temp }
-						set_temp_variable = { artisan_buy_amount = buy_amount }
-						multiply_temp_variable = { artisan_cost_temp = artisan_share }
-						divide_temp_variable = { artisan_cost_temp = 100 }
-						multiply_temp_variable = { artisan_buy_amount = artisan_share }
-						divide_temp_variable = { artisan_buy_amount = 100 }
-
-						set_temp_variable = { factory_cost_temp = cost_temp }
-						set_temp_variable = { factory_buy_amount = buy_amount }
-						multiply_temp_variable = { factory_cost_temp = factory_share }
-						divide_temp_variable = { factory_cost_temp = 100 }
-						multiply_temp_variable = { factory_buy_amount = factory_share }
-						divide_temp_variable = { factory_buy_amount = 100 }
-
-						set_temp_variable = { total_cost_temp = artisan_cost_temp }
-						add_to_temp_variable = { total_cost_temp = factory_cost_temp }
-						set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
-						add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
-
-						if = {
-							limit = {
-								NOT = { check_variable = { total_cost_temp = cost_temp } }
-							}
-							subtract_from_temp_variable = { total_cost_temp = cost_temp }
-							subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
-						}
-						if = {
-							limit = {
-								NOT = { check_variable = { total_buy_amount_temp = buy_amount } }
-							}
-							subtract_from_temp_variable = { total_buy_amount_temp = buy_amount }
-							subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
-						}
-						
-						add_to_variable = { factory_money = factory_cost_temp }
-						add_to_variable = { factory_earnings = factory_cost_temp }
-						add_to_variable = { factory_luxury_goods_sold = factory_buy_amount }
-
-						if = { 
-							limit = {
-								check_variable = { factory_luxury_goods_sold > factory_luxury_goods_production }
-							}
-							add_to_temp_variable = { artisan_buy_amount = factory_luxury_goods_sold }
-							subtract_from_temp_variable = { artisan_buy_amount = factory_luxury_goods_production }
-							set_variable = { factory_luxury_goods_sold = factory_luxury_goods_production }
-						}
-
-						add_to_variable = { artisans_earnings = artisan_cost_temp }
-						add_to_variable = { pops_earnings = artisan_cost_temp }
-						add_to_variable = { pops_artisans_luxury_goods_sold = artisan_buy_amount }
-
-						subtract_from_variable = { pops_money = cost_temp }
-						add_to_variable = { pops_goods_spending = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
-						add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
-						if = {
-							limit = {
-								check_variable = { pops_luxury_goods_fulfilled_percentage < 0.99 }
-							}
-							#Buy from Artisans
-						}
-
-						clamp_variable = {
-							var = pops_luxury_goods_fulfilled_percentage
-							min = 0
-							max = 1
-						}
-
-					#services
-						set_temp_variable = { buy_amount = pops_services_demand }
-						set_temp_variable = { buy_amount_temp = 1 }
-						subtract_from_temp_variable = { buy_amount_temp = pops_services_fulfilled_percentage }
-						multiply_temp_variable = { buy_amount = buy_amount_temp }
-						set_temp_variable = { money_temp = pops_money }
-						set_temp_variable = { good_max_temp = pops_services_production }
-						subtract_from_temp_variable = { good_max_temp = pops_services_sold }
-						set_temp_variable = { good_price_temp = services_price }
-
-						#Effect
-						shopping_algorithm = yes
-
-						#Resolve
-						#add_to_variable = { pops_money = cost_temp }
-						add_to_variable = { pops_earnings = cost_temp }
-
-						set_temp_variable = { capitalists_share = pops_services_production }
-						multiply_temp_variable = { capitalists_share = 50 }
-						set_temp_variable = { clerks_share = pops_clerks_services_production }
-						multiply_temp_variable = { clerks_share = 100 }
-						set_temp_variable = { professionals_share = pops_professionals_services_production }
-						multiply_temp_variable = { professionals_share = 100 }
-
-						set_temp_variable = { share_total = capitalists_share }
-						add_to_temp_variable = { share_total = clerks_share }
-						add_to_temp_variable = { share_total = professionals_share }
-						divide_temp_variable = { share_total = 100 }
-
-						divide_temp_variable = { capitalists_share = share_total }
-						divide_temp_variable = { clerks_share = share_total }
-						divide_temp_variable = { professionals_share = share_total }
-
-						set_temp_variable = { capitalists_value = cost_temp }
-						multiply_temp_variable = { capitalists_value = capitalists_share }
-						divide_temp_variable = { capitalists_value = 100 }
-						set_temp_variable = { clerks_value = cost_temp }
-						multiply_temp_variable = { clerks_value = clerks_share }
-						divide_temp_variable = { clerks_value = 100 }
-						set_temp_variable = { professionals_value = cost_temp }
-						multiply_temp_variable = { professionals_value = professionals_share }
-						divide_temp_variable = { professionals_value = 100 }
-
-						add_to_variable = { capitalists_earnings = capitalists_value }
-						add_to_variable = { clerks_earnings = clerks_value }
-						add_to_variable = { professionals_earnings = professionals_value }
-
-						add_to_variable = { pops_services_sold = buy_amount }
-
-						subtract_from_variable = { pops_money = cost_temp }
-						add_to_variable = { pops_goods_spending = cost_temp }
-						set_temp_variable = { needs_fulfilled_temp = buy_amount }
-						divide_temp_variable = { needs_fulfilled_temp = pops_services_demand }
-						add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
-
-						clamp_variable = {
-							var = pops_services_fulfilled_percentage
-							min = 0
-							max = 1
-						}
-
+					#Resolve
+					add_to_variable = { industrial_goods_bought_value = cost_temp }
+					add_to_variable = { industrial_goods_bought_amount = buy_amount }
+					add_to_variable = { industrial_goods_sold_value = cost_temp }
+					add_to_variable = { industrial_goods_sold_amount = buy_amount }
+					subtract_from_variable = { industrial_goods_left = buy_amount }
+					
 				#
 
 				#Resolve Purchases
@@ -5264,6 +4239,558 @@
 							add_to_variable = { artisans_earnings = artisan_cost_temp }
 							add_to_variable = { pops_earnings = artisan_cost_temp }
 							add_to_variable = { pops_artisans_everyday_goods_sold = artisan_buy_amount }
+						}
+					#
+					#Luxury Goods Bought
+						if = {
+							limit = {
+								OR = {
+									check_variable = { luxury_goods_bought_value > 0 }
+									check_variable = { luxury_goods_bought_amount > 0 }
+								}
+							}
+							#Only pops can demand Luxury Goods
+							subtract_from_variable = { pops_money = luxury_goods_bought_value }
+							add_to_variable = { pops_goods_spending = luxury_goods_bought_value }
+							set_temp_variable = { needs_fulfilled_temp = luxury_goods_bought_amount }
+							divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
+							add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
+							clamp_variable = {
+								var = pops_luxury_goods_fulfilled_percentage
+								min = 0
+								max = 1
+							}
+						}
+					#
+					#Luxury Goods Sold
+						if = {
+							limit = {
+								OR = {
+									check_variable = { luxury_goods_sold_value > 0 }
+									check_variable = { luxury_goods_sold_amount > 0 }
+								}
+							}
+							#Splitting between Factories and Artisans
+							set_temp_variable = { artisan_share = pops_artisans_luxury_goods_production }
+							multiply_temp_variable = { artisan_share = 100 }
+							divide_temp_variable = { artisan_share = luxury_goods_produced_amount }
+
+							set_temp_variable = { factory_share = factory_luxury_goods_production }
+							multiply_temp_variable = { factory_share = 100 }
+							divide_temp_variable = { factory_share = luxury_goods_produced_amount }
+
+							set_temp_variable = { artisan_cost_temp = luxury_goods_sold_value }
+							set_temp_variable = { artisan_buy_amount = luxury_goods_sold_amount }
+							multiply_temp_variable = { artisan_cost_temp = artisan_share }
+							divide_temp_variable = { artisan_cost_temp = 100 }
+							multiply_temp_variable = { artisan_buy_amount = artisan_share }
+							divide_temp_variable = { artisan_buy_amount = 100 }
+
+							set_temp_variable = { factory_cost_temp = luxury_goods_sold_value }
+							set_temp_variable = { factory_buy_amount = luxury_goods_sold_amount }
+							multiply_temp_variable = { factory_cost_temp = factory_share }
+							divide_temp_variable = { factory_cost_temp = 100 }
+							multiply_temp_variable = { factory_buy_amount = factory_share }
+							divide_temp_variable = { factory_buy_amount = 100 }
+
+							set_temp_variable = { total_cost_temp = artisan_cost_temp }
+							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
+							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
+							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
+
+							if = {
+								limit = {
+									NOT = { check_variable = { total_cost_temp = luxury_goods_sold_value } }
+								}
+								subtract_from_temp_variable = { total_cost_temp = luxury_goods_sold_value }
+								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
+							}
+							if = {
+								limit = {
+									NOT = { check_variable = { total_buy_amount_temp = luxury_goods_sold_amount } }
+								}
+								subtract_from_temp_variable = { total_buy_amount_temp = luxury_goods_sold_amount }
+								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
+								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
+								add_to_temp_variable = { artisan_buy_amount = 0.001 }
+							}
+							
+							add_to_variable = { factory_money = factory_cost_temp }
+							add_to_variable = { factory_earnings = factory_cost_temp }
+							add_to_variable = { factory_luxury_goods_sold = factory_buy_amount }
+
+							if = { 
+								limit = {
+									check_variable = { factory_luxury_goods_sold > factory_luxury_goods_production }
+								}
+								add_to_temp_variable = { artisan_buy_amount = factory_luxury_goods_sold }
+								subtract_from_temp_variable = { artisan_buy_amount = factory_luxury_goods_production }
+								set_variable = { factory_luxury_goods_sold = factory_luxury_goods_production }
+							}
+
+							add_to_variable = { artisans_earnings = artisan_cost_temp }
+							add_to_variable = { pops_earnings = artisan_cost_temp }
+							add_to_variable = { pops_artisans_luxury_goods_sold = artisan_buy_amount }
+						}
+					#
+					#Services Bought
+						if = {
+							limit = {
+								OR = {
+									check_variable = { services_bought_value > 0 }
+									check_variable = { services_bought_amount > 0 }
+								}
+							}
+							#Only pops can demand Services
+							subtract_from_variable = { pops_money = services_bought_value }
+							add_to_variable = { pops_goods_spending = services_bought_value }
+							set_temp_variable = { needs_fulfilled_temp = services_bought_amount }
+							divide_temp_variable = { needs_fulfilled_temp = pops_services_need }
+							add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
+							clamp_variable = {
+								var = pops_services_fulfilled_percentage
+								min = 0
+								max = 1
+							}
+						}
+					#
+					#Services Sold
+						if = {
+							limit = {
+								OR = {
+									check_variable = { services_sold_value > 0 }
+									check_variable = { services_sold_amount > 0 }
+								}
+							}
+							#Revenue & goods sold absorbed by pops
+							add_to_variable = { pops_earnings = services_sold_value }
+
+							set_temp_variable = { capitalists_share = pops_services_production }
+							multiply_temp_variable = { capitalists_share = 50 }
+							set_temp_variable = { clerks_share = pops_clerks_services_production }
+							multiply_temp_variable = { clerks_share = 100 }
+							set_temp_variable = { professionals_share = pops_professionals_services_production }
+							multiply_temp_variable = { professionals_share = 100 }
+
+							set_temp_variable = { share_total = capitalists_share }
+							add_to_temp_variable = { share_total = clerks_share }
+							add_to_temp_variable = { share_total = professionals_share }
+							divide_temp_variable = { share_total = 100 }
+
+							divide_temp_variable = { capitalists_share = share_total }
+							divide_temp_variable = { clerks_share = share_total }
+							divide_temp_variable = { professionals_share = share_total }
+
+							set_temp_variable = { capitalists_value = services_sold_value }
+							multiply_temp_variable = { capitalists_value = capitalists_share }
+							divide_temp_variable = { capitalists_value = 100 }
+							set_temp_variable = { clerks_value = services_sold_value }
+							multiply_temp_variable = { clerks_value = clerks_share }
+							divide_temp_variable = { clerks_value = 100 }
+							set_temp_variable = { professionals_value = services_sold_value }
+							multiply_temp_variable = { professionals_value = professionals_share }
+							divide_temp_variable = { professionals_value = 100 }
+
+							add_to_variable = { capitalists_earnings = capitalists_value }
+							add_to_variable = { clerks_earnings = clerks_value }
+							add_to_variable = { professionals_earnings = professionals_value }
+
+							add_to_variable = { pops_services_sold = services_sold_amount }
+						}
+					#
+					#Raw Goods Bought
+						if = {
+							limit = {
+								OR = {
+									check_variable = { raw_goods_bought_value > 0 }
+									check_variable = { raw_goods_bought_amount > 0 }
+								}
+							}
+							#Costs & goods absorbed by factories/artisans
+							#Splitting between Factories and Artisans
+							set_temp_variable = { artisan_share = pops_artisans_raw_goods_demand }
+							multiply_temp_variable = { artisan_share = 100 }
+							divide_temp_variable = { artisan_share = raw_goods_demand }
+
+							set_temp_variable = { factory_share = factory_raw_goods_demand }
+							multiply_temp_variable = { factory_share = 100 }
+							divide_temp_variable = { factory_share = raw_goods_demand }
+
+							set_temp_variable = { artisan_goods_value = raw_goods_bought_value }
+							set_temp_variable = { artisan_goods_amount = raw_goods_bought_amount }
+							multiply_temp_variable = { artisan_goods_value = artisan_share }
+							divide_temp_variable = { artisan_goods_value = 100 }
+							multiply_temp_variable = { artisan_goods_amount = artisan_share }
+							divide_temp_variable = { artisan_goods_amount = 100 }
+
+							set_temp_variable = { factory_goods_value = raw_goods_bought_value }
+							set_temp_variable = { factory_goods_amount = raw_goods_bought_amount }
+							multiply_temp_variable = { factory_goods_value = factory_share }
+							divide_temp_variable = { factory_goods_value = 100 }
+							multiply_temp_variable = { factory_goods_amount = factory_share }
+							divide_temp_variable = { factory_goods_amount = 100 }
+
+							set_temp_variable = { total_goods_value = artisan_goods_value }
+							add_to_temp_variable = { total_goods_value = factory_goods_value }
+							set_temp_variable = { total_goods_amount_temp = artisan_goods_amount }
+							add_to_temp_variable = { total_goods_amount_temp = factory_goods_amount }
+
+							if = {
+								limit = {
+									NOT = { check_variable = { total_goods_value = raw_goods_bought_value } }
+								}
+								subtract_from_temp_variable = { total_goods_value = raw_goods_bought_value }
+								subtract_from_temp_variable = { factory_goods_value = total_goods_value }
+							}
+							if = {
+								limit = {
+									NOT = { check_variable = { total_goods_amount_temp = raw_goods_bought_amount } }
+								}
+								subtract_from_temp_variable = { total_goods_amount_temp = raw_goods_bought_amount }
+								subtract_from_temp_variable = { factory_goods_amount = total_goods_amount_temp }
+							}
+							
+							subtract_from_variable = { factory_money = factory_goods_value }
+							add_to_variable = { factory_spending = factory_goods_value }
+							set_temp_variable = { needs_fulfilled_temp = factory_goods_amount }
+							divide_temp_variable = { needs_fulfilled_temp = factory_raw_goods_need }
+							add_to_variable = { factory_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
+							clamp_variable = {
+								var = factory_raw_goods_fulfilled_percentage
+								min = 0
+								max = 1
+							}
+
+							subtract_from_variable = { pops_money = artisan_goods_value }
+							add_to_variable = { pops_spending = artisan_goods_value }
+							set_temp_variable = { needs_fulfilled_temp = artisan_goods_amount }
+							divide_temp_variable = { needs_fulfilled_temp = pops_artisans_raw_goods_need }
+							add_to_variable = { pops_artisans_raw_goods_fulfilled_percentage = needs_fulfilled_temp }
+							clamp_variable = {
+								var = pops_artisans_raw_goods_fulfilled_percentage
+								min = 0
+								max = 1
+							}
+
+						}
+					#
+					#Raw Goods Sold
+						if = {
+							limit = {
+								OR = {
+									check_variable = { raw_goods_sold_value > 0 }
+									check_variable = { raw_goods_sold_amount > 0 }
+								}
+							}
+							#Revenue & goods sold absorbed by rgos
+							add_to_variable = { pops_earnings = raw_goods_sold_value }
+							add_to_variable = { rgos_earnings = raw_goods_sold_value }
+
+							add_to_variable = { pops_rgos_raw_goods_sold = raw_goods_sold_amount }
+						}
+					#
+					#Industrial Goods Bought
+						if = {
+							limit = {
+								OR = {
+									check_variable = { industrial_goods_bought_value > 0 }
+									check_variable = { industrial_goods_bought_amount > 0 }
+								}
+							}
+							#So many things here...
+							#Costs & goods split between factories, infra, & construction 
+							#Splitting between Factories and Construction
+
+							#Turned it into an array b/c fuck the amount of code that I had
+							clear_temp_array = share_array_temp
+							clear_temp_array = value_array_temp
+							clear_temp_array = amount_array_temp
+
+							# Index corresponds to where the industrial goods demand goes
+							# New ones will be added onto the end
+							# INDEX NUMBERS:
+							#   0 - Factory Maintenance
+							#   1 - Everyday Goods Factory Construction
+							#   2 - Luxury Goods Factory Construction
+							#   3 - Industrial Goods Factory Construction
+							#   4 - Infrastructure Maintenance
+							#   5 - Infrastructure Construction
+							#   6 - Mechanized Agri Maintenance
+							#   7 - Mechanized Agri Expansion
+
+							# NOTE FOR SELF: 
+							#	When adding new things here, make sure to increase the size of ALL arrays
+
+							####################
+							### DEMAND SHARE ###
+							####################
+								resize_temp_array = {
+									array = share_array_temp
+									value = 0
+									size = 8
+								}
+								set_temp_variable = { share_array_temp^0 = factory_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^1 = factory_everyday_goods_construction_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^2 = factory_luxury_goods_construction_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^3 = factory_industrial_goods_construction_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^4 = infrastructure_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^5 = infrastructure_construction_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^6 = pops_rgos_mechanization_industrial_goods_demand }
+								set_temp_variable = { share_array_temp^7 = pops_rgos_mechanization_expansion_industrial_goods_demand }
+
+								for_each_loop = {
+									array = share_array_temp
+									value = vv_temp
+									index = ii_temp
+									
+									multiply_temp_variable = { share_array_temp^ii_temp = 100 }
+									divide_temp_variable = { share_array_temp^ii_temp = industrial_goods_demand }
+								}
+
+							####################
+
+							#######################
+							### VALUE & AMOUNTS ###
+							#######################
+								resize_temp_array = {
+									array = value_array_temp
+									value = 0
+									size = 8
+								}
+								resize_temp_array = {
+									array = amount_array_temp
+									value = 0
+									size = 8
+								}
+								set_temp_variable = { total_value_temp = 0 }
+								set_temp_variable = { total_amount_temp = 0 }
+
+								for_each_loop = {
+									array = value_array_temp
+									value = vv_temp
+									index = ii_temp
+									
+									set_temp_variable = { value_array_temp^ii_temp = industrial_goods_bought_value }
+									set_temp_variable = { amount_array_temp^ii_temp = industrial_goods_bought_amount }
+
+									multiply_temp_variable = { value_array_temp^ii_temp = share_array_temp^ii_temp }
+									multiply_temp_variable = { amount_array_temp^ii_temp = share_array_temp^ii_temp }
+
+									divide_temp_variable = { value_array_temp^ii_temp = 100 }
+									divide_temp_variable = { amount_array_temp^ii_temp = 100 }
+
+									add_to_temp_variable = { total_value_temp = value_array_temp^ii_temp }
+									add_to_temp_variable = { total_amount_temp = amount_array_temp^ii_temp }
+								}
+
+								if = {
+									limit = {
+										NOT = { check_variable = { total_value_temp = industrial_goods_bought_value } }
+									}
+									set_temp_variable = { missing_value_temp = industrial_goods_bought_value }
+									subtract_from_temp_variable = { missing_value_temp = total_value_temp }
+
+									subtract_from_variable = { pops_money = missing_value_temp } #Pops deal with the missing value. Should be negligible though.
+								}
+								if = {
+									limit = {
+										NOT = { check_variable = { total_amount_temp = industrial_goods_bought_amount } }
+									}
+									for_each_loop = {
+										array = value_array_temp
+										value = vv_temp
+										index = ii_temp
+										if = {
+											limit = {
+												check_variable = { amount_array_temp^ii_temp > 0 }
+											}
+											add_to_temp_variable = { amount_array_temp^ii_temp = 0.001 }
+											multiply_temp_variable = { amount_array_temp^ii_temp = 1.001 }
+										}
+									}
+								}
+
+							#######################
+
+							###############
+							### RESOLVE ###
+							###############
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^0 > 0 }
+											check_variable = { amount_array_temp^0 > 0 }
+										}
+									}
+									subtract_from_variable = { factory_money = value_array_temp^0 }
+									add_to_variable = { factory_spending = value_array_temp^0 }
+									set_temp_variable = { needs_fulfilled_temp = amount_array_temp^0 }
+									divide_temp_variable = { needs_fulfilled_temp = factory_industrial_goods_need }
+									add_to_variable = { factory_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
+									clamp_variable = {
+										var = factory_industrial_goods_fulfilled_percentage
+										min = 0
+										max = 1
+									}
+								}
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^1 > 0 }
+											check_variable = { amount_array_temp^1 > 0 }
+										}
+									}
+									subtract_from_variable = { factory_everyday_goods_construction_investment_money = value_array_temp^1 }
+									subtract_from_variable = { factory_everyday_goods_construction_industrial_goods_need = amount_array_temp^1 }
+									if = {
+										limit = {
+											check_variable = { factory_everyday_goods_construction_industrial_goods_need < 0 }
+										}
+										set_variable = { factory_everyday_goods_construction_industrial_goods_need = 0 }
+									}
+								}
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^2 > 0 }
+											check_variable = { amount_array_temp^2 > 0 }
+										}
+									}
+									subtract_from_variable = { factory_luxury_goods_construction_investment_money = value_array_temp^2 }
+									subtract_from_variable = { factory_luxury_goods_construction_industrial_goods_need = amount_array_temp^2 }
+									if = {
+										limit = {
+											check_variable = { factory_luxury_goods_construction_industrial_goods_need < 0 }
+										}
+										set_variable = { factory_luxury_goods_construction_industrial_goods_need = 0 }
+									}
+								}
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^3 > 0 }
+											check_variable = { amount_array_temp^3 > 0 }
+										}
+									}
+									subtract_from_variable = { factory_industrial_goods_construction_investment_money = value_array_temp^3 }
+									subtract_from_variable = { factory_industrial_goods_construction_industrial_goods_need = amount_array_temp^3 }
+									if = {
+										limit = {
+											check_variable = { factory_industrial_goods_construction_industrial_goods_need < 0 }
+										}
+										set_variable = { factory_industrial_goods_construction_industrial_goods_need = 0 }
+									}
+								}
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^4 > 0 }
+											check_variable = { amount_array_temp^4 > 0 }
+										}
+									}
+									subtract_from_variable = { infrastructure_money = value_array_temp^4 }
+									set_temp_variable = { needs_fulfilled_temp = amount_array_temp^4 }
+									divide_temp_variable = { needs_fulfilled_temp = infrastructure_industrial_goods_need }
+									add_to_variable = { infrastructure_industrial_goods_fulfilled_percentage = needs_fulfilled_temp }
+									clamp_variable = {
+										var = infrastructure_industrial_goods_fulfilled_percentage
+										min = 0
+										max = 1
+									}
+								}
+
+								if = {
+									limit = {
+										OR = {
+											check_variable = { value_array_temp^5 > 0 }
+											check_variable = { amount_array_temp^5 > 0 }
+										}
+									}
+									subtract_from_variable = { infrastructure_construction_investment_money = value_array_temp^5 }
+									subtract_from_variable = { infrastructure_construction_industrial_goods_need = amount_array_temp^5 }
+									if = {
+										limit = {
+											check_variable = { infrastructure_construction_industrial_goods_need < 0 }
+										}
+										set_variable = { infrastructure_construction_industrial_goods_need = 0 }
+									}
+								}
+							###############
+
+						}
+					#
+					#Industrial Goods Sold
+						if = {
+							limit = {
+								OR = {
+									check_variable = { industrial_goods_sold_value > 0 }
+									check_variable = { industrial_goods_sold_amount > 0 }
+								}
+							}
+							#Splitting between Factories and Artisans
+							set_temp_variable = { artisan_share = pops_artisans_industrial_goods_production }
+							multiply_temp_variable = { artisan_share = 100 }
+							divide_temp_variable = { artisan_share = industrial_goods_produced_amount }
+
+							set_temp_variable = { factory_share = factory_industrial_goods_production }
+							multiply_temp_variable = { factory_share = 100 }
+							divide_temp_variable = { factory_share = industrial_goods_produced_amount }
+
+							set_temp_variable = { artisan_cost_temp = industrial_goods_sold_value }
+							set_temp_variable = { artisan_buy_amount = industrial_goods_sold_amount }
+							multiply_temp_variable = { artisan_cost_temp = artisan_share }
+							divide_temp_variable = { artisan_cost_temp = 100 }
+							multiply_temp_variable = { artisan_buy_amount = artisan_share }
+							divide_temp_variable = { artisan_buy_amount = 100 }
+
+							set_temp_variable = { factory_cost_temp = industrial_goods_sold_value }
+							set_temp_variable = { factory_buy_amount = industrial_goods_sold_amount }
+							multiply_temp_variable = { factory_cost_temp = factory_share }
+							divide_temp_variable = { factory_cost_temp = 100 }
+							multiply_temp_variable = { factory_buy_amount = factory_share }
+							divide_temp_variable = { factory_buy_amount = 100 }
+
+							set_temp_variable = { total_cost_temp = artisan_cost_temp }
+							add_to_temp_variable = { total_cost_temp = factory_cost_temp }
+							set_temp_variable = { total_buy_amount_temp = artisan_buy_amount }
+							add_to_temp_variable = { total_buy_amount_temp = factory_buy_amount }
+
+							if = {
+								limit = {
+									NOT = { check_variable = { total_cost_temp = industrial_goods_sold_value } }
+								}
+								subtract_from_temp_variable = { total_cost_temp = industrial_goods_sold_value }
+								subtract_from_temp_variable = { factory_cost_temp = total_cost_temp }
+							}
+							if = {
+								limit = {
+									NOT = { check_variable = { total_buy_amount_temp = industrial_goods_sold_amount } }
+								}
+								subtract_from_temp_variable = { total_buy_amount_temp = industrial_goods_sold_amount }
+								subtract_from_temp_variable = { factory_buy_amount = total_buy_amount_temp }
+								subtract_from_temp_variable = { factory_buy_amount = 0.001 }
+								add_to_temp_variable = { artisan_buy_amount = 0.001 }
+							}
+							
+							add_to_variable = { factory_money = factory_cost_temp }
+							add_to_variable = { factory_earnings = factory_cost_temp }
+							add_to_variable = { factory_industrial_goods_sold = factory_buy_amount }
+
+							if = { 
+								limit = {
+									check_variable = { factory_industrial_goods_sold > factory_industrial_goods_production }
+								}
+								add_to_temp_variable = { artisan_buy_amount = factory_industrial_goods_sold }
+								subtract_from_temp_variable = { artisan_buy_amount = factory_industrial_goods_production }
+								set_variable = { factory_industrial_goods_sold = factory_industrial_goods_production }
+							}
+
+							add_to_variable = { artisans_earnings = artisan_cost_temp }
+							add_to_variable = { pops_earnings = artisan_cost_temp }
+							add_to_variable = { pops_artisans_industrial_goods_sold = artisan_buy_amount }
 						}
 					#
 				#
