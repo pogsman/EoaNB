@@ -747,8 +747,8 @@ focus_tree = {
 		completion_reward = {
             add_war_support = 0.03
 			add_popularity = {
-				  ideology = centrism
-				  popularity = 0.03
+				ideology = centrism
+				popularity = 0.03
 			}
 		}
 	}
@@ -1170,7 +1170,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_timed_idea = {
-		    	idea = DEN_keept_our_colony
+		    	idea = DEN_kept_our_colony
 		    	days = 100
 		    }
 		}
@@ -1217,7 +1217,7 @@ focus_tree = {
 			ARO = {
 		    	add_timed_idea = { idea = DEN_bought_our_land days = 365 }
 			}
-			add_timed_idea = { idea = DEN_Colonial_Purchases days = 365 }
+			add_timed_idea = { idea = DEN_idea_colonial_purchases days = 365 }
 		}
 	}
 	
@@ -1710,7 +1710,7 @@ focus_tree = {
 	### ARMY ###
 	
 	focus = {
-		id = DEN_focus_lundbye_act
+		id = DEN_focus_danish_military
 		icon = GFX_focus_generic_military_mission
 		x = 34
 		y = 0
@@ -1726,39 +1726,78 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			#country_event
+			add_political_power = 100
+			army_experience = 10
+		}
+	}
+	
+	focus = {
+		id = DEN_focus_lundbyes_acts
+		icon = GFX_focus_generic_military_mission
+		relative_position_id = DEN_focus_danish_military
+		x = 0
+		y = 1
+		cost = 70
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_focus_lundbyes_acts_trigger_tt
+				hidden_trigger = {
+					check_variable = { mhc_sec_value = 1 }
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		
+		prerequisite = { focus = DEN_focus_danish_military }
+		
+		completion_reward = {
+			country_event = { id = denmark_military.1 }
+			activate_mission_tooltip = DEN_mission_krigsministre_lundbyes_acts
+			hidden_effect = {
+				activate_mission = DEN_mission_krigsministre_lundbyes_acts
+			}
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_army_modernization_efforts
 		icon = GFX_focus_generic_military_academy
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -4
-		y = 1
+		y = 2
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_lundbye_act }
+		prerequisite = { focus = DEN_focus_lundbyes_acts }
 
 		completion_reward = {
-        	add_tech_bonus = { bonus = 0.5 uses = 2 category = land_doctrine }
-			army_experience = 10
+        	army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_thestrup_army_reforms
 		icon = GFX_focus_generic_military_mission
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -4
-		y = 2
+		y = 3
 		cost = 70
 		available = {
 			date > 1859.8.1
 			has_idea = DEN_theorist_army_hans_nikolai_thestrup
+			custom_trigger_tooltip = {
+				tooltip = DEN_focus_thestrup_army_reforms_trigger_tt
+				hidden_trigger = {
+					check_variable = { mhc_sec_value = 2 }
+				}
+			}
+			NOT = { has_active_mission = DEN_mission_krigsministre_lundbyes_acts }
 		}
 		ai_will_do = {
 			base = 100
@@ -1767,10 +1806,9 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_army_modernization_efforts }
 		
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.45 uses = 1 category = naval_doctrine }
-			activate_mission_tooltip = DEN_mission_thestrup_army_reforms
+			activate_mission_tooltip = DEN_mission_thestrups_army_reforms
 			hidden_effect = {
-				activate_mission = DEN_mission_thestrup_army_reforms
+				activate_mission = DEN_mission_thestrups_army_reforms
 			}
 		}
 	}
@@ -1778,9 +1816,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_artillery_modernization_efforts
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -6
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1795,11 +1833,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_espingolen
+		id = DEN_focus_espingoles
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -6
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1808,17 +1846,18 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_artillery_modernization_efforts }
 
 		completion_reward = {
+			country_event = { id = denmark_military.2 }
 			army_experience = 10
-			add_tech_bonus = { ahead_reduction = 1 uses = 1 category = artillery }
+			unlock_decision_tooltip = DEN_decision_buy_espingoles_guns
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_prince_christians_commission
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -4
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1827,17 +1866,16 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_thestrup_army_reforms }
 
 		completion_reward = {
-			army_experience = 10
-			#unlock_decision_tooltip =
+			unlock_decision_tooltip = DEN_decision_prince_christians_commission
 		}
 	}
 	
 	focus = {
-		id = DEN_focus_infantry_regiments_expansion
+		id = DEN_focus_infantry_battalion_expansion
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -4
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1846,16 +1884,17 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_prince_christians_commission }
 
 		completion_reward = {
-			army_experience = 50
+			#add_ideas
+			unlock_decision_tooltip = DEN_decision_promote_talented_leaders
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_rifle_modernization_efforts
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -2
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1870,11 +1909,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_military_uniform_exchange
+		id = DEN_focus_military_uniforms_exchange
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -2
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1890,47 +1929,47 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_new_conscription_law
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -5
-		y = 5
+		y = 6
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_espingolen }
-		prerequisite = { focus = DEN_focus_infantry_regiments_expansion }
+		prerequisite = { focus = DEN_focus_espingoles }
+		prerequisite = { focus = DEN_focus_infantry_battalion_expansion }
 
 		completion_reward = {
-			#unlock_decision_tooltip = 
+			unlock_decision_tooltip = DEN_decision_new_conscription_law
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_frilodsmaend
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -3
-		y = 5
+		y = 6
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_infantry_regiments_expansion }
-		prerequisite = { focus = DEN_focus_military_uniform_exchange }
+		prerequisite = { focus = DEN_focus_infantry_battalion_expansion }
+		prerequisite = { focus = DEN_focus_military_uniforms_exchange }
 
 		completion_reward = {
-			#add_ideas = 
+			add_ideas = DEN_idea_frilodsmaend
 		}
 	}
 	
 	focus = {
-		id = DEN_focus_increase_army_spending
+		id = DEN_focus_increase_army_budget
 		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = -4
-		y = 6
+		y = 7
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1940,22 +1979,22 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_frilodsmaend }
 
 		completion_reward = {
-			#unlock_decision_tooltip = 
+			unlock_decision_tooltip = DEN_decision_increase_army_spending
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_navy_modernization
 		icon = GFX_focus_denmark_sovaernet
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 4
-		y = 1
+		y = 2
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_lundbye_act }
+		prerequisite = { focus = DEN_focus_lundbyes_acts }
 
 		completion_reward = {
 		    unlock_decision_tooltip = DEN_decision_the_15_april_act
@@ -1967,9 +2006,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_study_modern_warships
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 4
-		y = 2
+		y = 3
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -1986,9 +2025,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_iron_hulls
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 2
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2005,9 +2044,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_ironclad_schooners
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 2
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2024,9 +2063,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_monitor_turrets
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 4
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2043,9 +2082,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_rolf_krake
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 4
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2062,9 +2101,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_modern_engines
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 6
-		y = 3
+		y = 4
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2081,9 +2120,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_screw_frigates
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
+		relative_position_id = DEN_focus_danish_military
 		x = 6
-		y = 4
+		y = 5
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2100,9 +2139,9 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_atlantic_naval_bases
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
-		x = 4
-		y = 5
+		relative_position_id = DEN_focus_danish_military
+		x = 3
+		y = 6
 		cost = 70
 		ai_will_do = {
 			base = 100
@@ -2110,7 +2149,6 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_ironclad_schooners }
 		prerequisite = { focus = DEN_focus_rolf_krake }
-		prerequisite = { focus = DEN_focus_screw_frigates }
 
 		completion_reward = {
 			#country_event =
@@ -2120,170 +2158,57 @@ focus_tree = {
 	focus = {
 		id = DEN_focus_modern_naval_tactics
 		icon = GFX_focus_gunboat_basic
-		relative_position_id = DEN_focus_lundbye_act
-		x = 4
+		relative_position_id = DEN_focus_danish_military
+		x = 5
 		y = 6
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_atlantic_naval_bases }
+		prerequisite = { focus = DEN_focus_rolf_krake }
+		prerequisite = { focus = DEN_focus_screw_frigates }
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_doctrine }
+			#country_event =
 		}
 	}
-
+	
 	focus = {
-		id = DEN_focus_prepare_next_war
-		icon = GFX_focus_generic_little_entente
-		relative_position_id = DEN_focus_lundbye_act
-		x = 0
+		id = DEN_focus_increase_navy_budget
+		icon = GFX_focus_gunboat_basic
+		relative_position_id = DEN_focus_danish_military
+		x = 4
 		y = 7
 		cost = 70
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_increase_army_spending }
+		prerequisite = { focus = DEN_focus_atlantic_naval_bases }
 		prerequisite = { focus = DEN_focus_modern_naval_tactics }
 
 		completion_reward = {
-        	#add_tech_bonus = { bonus = 0.75 uses = 1 category = land_doctrine }
+			#unlock_decision_tooltip = 
 		}
 	}
-	
+
 	focus = {
-		id = DEN_focus_electronics_advantage
-		icon = GFX_goal_focus_watts_machines
-		relative_position_id = DEN_focus_lundbye_act
-		x = -6
-		y = 15
-		cost = 70
-		ai_will_do = {
-			base = 1
-		}
-
-		#prerequisite = { focus = DEN_focus_study_modern_warships }
-		#prerequisite = { focus = DEN_focus_bornholm_navy_base }
-
-		completion_reward = {
-        	add_tech_bonus = { bonus = 0.75 uses = 1 category = electronics_devices_tech }
-		}
-	}
-	
-	focus = {
-		id = DEN_focus_recruitment_posters
-		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
-		x = -4
-		y = 15
-		cost = 70
-		ai_will_do = {
-			base = 1
-		}
-
-		#prerequisite = { focus = DEN_focus_electronics_advantage }
-		#prerequisite = { focus = DEN_focus_medicine_advancements }
-		#prerequisite = { focus = DEN_focus_integrate_pioneers }
-
-		completion_reward = {
-        	add_war_support = 0.1
-			add_manpower = 1500
-		}
-	}
-	
-	focus = {
-		id = DEN_focus_promote_talented_generals
-		icon = GFX_focus_generic_military_mission
-		relative_position_id = DEN_focus_lundbye_act
+		id = DEN_focus_prepare_next_war
+		icon = GFX_focus_generic_little_entente
+		relative_position_id = DEN_focus_danish_military
 		x = 0
-		y = 15
+		y = 8
 		cost = 70
 		ai_will_do = {
-			base = 1
+			base = 100
 		}
-		
-		#prerequisite = { focus = DEN_focus_thestrup_army_reforms }
+
+		prerequisite = { focus = DEN_focus_increase_army_budget }
+		prerequisite = { focus = DEN_focus_increase_navy_budget }
 
 		completion_reward = {
-        	add_tech_bonus = { bonus = 0.45 uses = 1 category = land_doctrine }
-        	create_corps_commander = {
-				name = "General Georg Gerlach"
-				picture = "Portrait_DEN_Georg_Gerlach.dds"
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 4
-			}
-			create_navy_leader = {
-            	name = "Edouard Suenson"
-                picture = "Portrait_DEN_Edouard_Suenson.dds"
-                traits = {}
-                skill = 1
-                attack_skill = 2
-  				defense_skill = 2
-  				maneuvering_skill = 2
-  				coordination_skill = 2
-            }
-		}
-	}
-	
-	focus = {
-		id = DEN_focus_army_drills
-		icon = GFX_focus_generic_manpower
-		relative_position_id = DEN_focus_lundbye_act
-		x = -2
-		y = 15
-		cost = 70
-		ai_will_do = {
-			base = 1
-		}
-
-		#prerequisite = { focus = DEN_focus_army_modernization_efforts }
-
-		completion_reward = {
-			army_experience = 10
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
-		}
-	}
-
-	focus = {
-		id = DEN_focus_integrate_pioneers
-		icon = GFX_focus_generic_concessions
-		relative_position_id = DEN_focus_lundbye_act
-		x = 2
-		y = 15
-		cost = 70
-		ai_will_do = {
-			base = 1
-		}
-
-		#prerequisite = { focus = DEN_focus_prepare_next_war focus = DEN_focus_army_drills }
-
-		completion_reward = {
-        	add_tech_bonus = { ahead_reduction = 1 uses = 1 category = support_tech }
-		}
-	}
-	
-	focus = {
-		id = DEN_focus_medicine_advancements
-		icon = GFX_focus_generic_provoke_border_clashes
-		relative_position_id = DEN_focus_lundbye_act
-		x = 4
-		y = 15
-		cost = 70
-		ai_will_do = {
-			base = 1
-		}
-
-		#prerequisite = { focus = DEN_focus_prepare_next_war }
-
-		completion_reward = {
-        	add_tech_bonus = { bonus = 0.75 uses = 1 category = biochemistry_tech }
+        	#add_tech_bonus = { bonus = 0.75 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -2309,7 +2234,7 @@ focus_tree = {
 		mutually_exclusive = { focus = DEN_focus_danish_victory }
 
 		completion_reward = {
-		    remove_ideas = DEN_winners_of_war	
+		    remove_ideas = DEN_idea_victors_of_first_schleswig_war	
 		}
 	}
 	
@@ -2328,8 +2253,8 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = DEN_lost_schleswig_war
-				add_idea = DEN_lost_schleswig_war_2
+				remove_idea = DEN_idea_lost_second_schleswig_war
+				add_idea = DEN_idea_lost_second_schleswig_war_2
 			}
 		}
 	}
@@ -2349,8 +2274,8 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = DEN_lost_schleswig_war_2
-			   add_idea = DEN_lost_schleswig_war_3
+				remove_idea = DEN_idea_lost_second_schleswig_war_2
+			   add_idea = DEN_idea_lost_second_schleswig_war_3
 			}
 			99 = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
 			add_tech_bonus = { bonus = 0.75 uses = 2 category = air_equipment }
@@ -2372,8 +2297,8 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-			   	remove_idea = DEN_lost_schleswig_war_3
-			   	add_idea = DEN_lost_schleswig_war_4
+			   	remove_idea = DEN_idea_lost_second_schleswig_war_3
+			   	add_idea = DEN_idea_lost_second_schleswig_war_4
 			}
 			add_tech_bonus = { bonus = 0.75 uses = 1 category = land_doctrine }
 		}
@@ -2393,9 +2318,9 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_learn_from_mistakes }
 
 		completion_reward = {
-			remove_ideas = DEN_Lost_Schleswig_War_4
+			remove_ideas = DEN_idea_lost_second_schleswig_war_4
 			add_timed_idea = {
-		    	idea = DEN_Lost_Schleswig_War_5
+		    	idea = DEN_idea_lost_second_schleswig_war_5
 		    	days = 1095
 			}
 		}
@@ -2420,8 +2345,8 @@ focus_tree = {
 		mutually_exclusive = { focus = DEN_focus_danish_defeat }
 
 		completion_reward = {
-		    remove_ideas = DEN_winners_of_war
-        	add_ideas = DEN_won_second_schleswig_War1
+		    remove_ideas = DEN_idea_victors_of_first_schleswig_war
+        	add_ideas = DEN_idea_won_second_schleswig_war_1
 		}
 	}
 	
@@ -2440,8 +2365,8 @@ focus_tree = {
 
 		completion_reward = {
         	swap_ideas = {
-			   	remove_idea = DEN_won_second_schleswig_War1
-			   	add_idea = DEN_won_second_schleswig_War2
+			   	remove_idea = DEN_idea_won_second_schleswig_war_1
+			   	add_idea = DEN_idea_won_second_schleswig_war_2
 			}
 		}
 	}
@@ -2461,8 +2386,8 @@ focus_tree = {
 
 		completion_reward = {
         	swap_ideas = {
-			   	remove_idea = DEN_won_second_schleswig_War2
-			   	add_idea = DEN_won_second_schleswig_War3
+			   	remove_idea = DEN_idea_won_second_schleswig_war_2
+			   	add_idea = DEN_idea_won_second_schleswig_war_3
 			}
 		}
 	}

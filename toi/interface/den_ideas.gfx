@@ -5,6 +5,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/DEN/DEN_kroner.png"
 	}
 	spriteType = {
+		name = "GFX_idea_SCD_smu_kroner"
+		texturefile = "gfx/interface/ideas/DEN/SCD_smu_kroner.png"
+	}
+	spriteType = {
 		name = "GFX_idea_DEN_colonies"
 		texturefile = "gfx/interface/ideas/DEN/DEN_colonies.png"
 	}
@@ -29,8 +33,16 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/DEN/DEN_LCK_trade_influence.png"
 	}
 	spriteType = {
-		name = "GFX_idea_DEN_winner_of_the_fsw"
-		texturefile = "gfx/interface/ideas/DEN/DEN_winner_of_the_fsw.png"
+		name = "GFX_idea_DEN_london_protocol"
+		texturefile = "gfx/interface/ideas/DEN/DEN_london_protocol.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_victors_of_the_first_schleswig_war"
+		texturefile = "gfx/interface/ideas/DEN/DEN_victors_of_the_first_schleswig_war.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_imperial_control"
+		texturefile = "gfx/interface/ideas/DEN/DEN_imperial_control.png"
 	}
 	
 	#Political Advisors
@@ -99,8 +111,48 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/DEN/DEN_Anton_Frederik_Tscherning_MHC.png"
 	}
 	spriteType = {
+		name = "GFX_idea_DEN_Cai_Hegermann_Lindencrone_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Cai_Hegermann_Lindencrone_MHC.png"
+	}
+	spriteType = {
 		name = "GFX_idea_DEN_Carl_Christian_Lundbye_MHC"
 		texturefile = "gfx/interface/ideas/DEN/DEN_Carl_Christian_Lundbye_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Carl_Irminger_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Carl_Irminger_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Christian_de_Meza_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Christian_de_Meza_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Christian_Emilius_Reich_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Christian_Emilius_Reich_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Hans_Herman_Grove_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Hans_Herman_Grove_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Mathias_von_Luttichau_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Mathias_von_Luttichau_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Otto_Christian_Hammer_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Otto_Christian_Hammer_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Otto_Hans_Lutken_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Otto_Hans_Lutken_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Ove_Wilhelm_Michelsen_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Ove_Wilhelm_Michelsen_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Stephan_Ankjaer_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Stephan_Ankjaer_MHC.png"
 	}
 	
 	#Manufacturers

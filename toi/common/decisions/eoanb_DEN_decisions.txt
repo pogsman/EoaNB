@@ -1,60 +1,3 @@
-political_actions = {
-	
-	#Treaty with China after SOW
-	eoanb_decision_DEN_CHI_treaty = {
-
-		icon = generic_decision
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = eoanb_tt_no_war_with_china
-			}
-			hidden_trigger = {
-				NOT = { has_war_with = QNG }
-				NOT = { has_war_with = CHI }
-			}
-		}
-		
-		allowed = { TAG = DEN }
-
-		visible = {
-			TAG = DEN
-			OR = {
-				country_exists = QNG
-				country_exists = CHI
-			}
-			has_global_flag = eoanb_flag_sow_peking_treaty
-		}
-
-		fire_only_once = yes
-
-		cost = 0
-		
-		complete_effect = {
-			if = {
-				limit = {
-					country_exists = QNG
-				}
-				QNG = { country_event = { id = asiageneraldiplomatic.4 days = 1 } }
-			}
-			else_if = {
-				limit = {
-					country_exists = CHI
-				}
-				CHI = { country_event = { id = asiageneraldiplomatic.4 days = 1 } }
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-			modifier = {
-				factor = 0
-				date < 1863.4.1
-			}
-		}
-	}
-}
-
 DEN_decision_category_economy = {
 	
 	DEN_decision_railway_upgrade = {
@@ -1193,6 +1136,662 @@ DEN_decision_category_second_schleswig_war = {
 	}
 }
 
+DEN_decision_category_army  = {
+	
+	DEN_mission_krigsministre_lundbyes_acts = {
+		
+		icon = generic_military
+		
+		allowed = {
+			always = no
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_mission_krigsministre_lundbyes_acts_trigger_1_tt
+				hidden_trigger = {
+					check_variable = { mhc_sec_value = 1 }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = DEN_mission_krigsministre_lundbyes_acts_trigger_2_tt
+				hidden_trigger = {
+					37 = {
+						any_province_building_level = {
+							province = {
+								id = 6287 # Copenhagen
+							}
+							building = coastal_bunker
+							level > 1
+						}
+					}
+				}
+			}
+			OR = {
+				has_tech = early_howitzer
+				has_tech = rml_field_gun
+			}
+			has_tech = tech_engineers
+		}
+		
+		activation = {
+			always = no
+		}
+		
+		fire_only_once = yes
+		
+		is_good = no
+		
+		days_mission_timeout = 730
+		
+		cancel_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_mission_krigsministre_lundbyes_acts_cancel_trigger_tt
+				hidden_trigger = {
+					NOT = { check_variable = { mhc_sec_value = 1 } }
+				}
+			}
+		}
+		
+		timeout_effect = {
+			add_political_power = -50
+			decrease_ps_by_one = yes
+			add_stability = -0.05
+			add_war_support = -0.05
+		}
+		
+		complete_effect = {
+			army_experience = 25
+			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = doctrine_victorian_innovative_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_doctrine }
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	DEN_decision_enhance_status_of_scientific_departments = { 
+
+		icon = artillery
+		
+		allowed = { tag = DEN }
+
+		available = {
+			has_stability > 0.5
+			PS_pol_positive = yes
+		}
+
+		visible = {
+			has_active_mission = DEN_mission_krigsministre_lundbyes_acts
+			NOT = {
+				OR = {
+					has_country_flag = MHC_military_junta_army
+					has_country_flag = MHC_military_junta_airforce
+					has_country_flag = MHC_military_junta_navy
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = DEN_mission_krigsministre_lundbyes_acts }
+		}
+		
+		complete_effect = {
+			add_stability = -0.03
+			decrease_ps_by_one = yes
+		}
+		
+		remove_effect = { 
+			army_experience = 25
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = engineers_tech }
+			add_tech_bonus = { ahead_reduction = 1 uses = 1 category = engineers_tech }
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_expand_copenhagen_sea_fortress = { 
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 37
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			has_stability > 0.5
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				centrism > 0.6
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				traditional_conservatism > 0.6
+			}
+		}
+
+		visible = {
+			37 = { is_owned_by = DEN }
+			has_active_mission = DEN_mission_krigsministre_lundbyes_acts
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 37 }
+			NOT = { has_active_mission = DEN_mission_krigsministre_lundbyes_acts }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				add_popularity = {
+					ideology = traditional_conservatism
+					popularity = 0.03
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				add_popularity = {
+					ideology = centrism
+					popularity = 0.03
+				}
+			}
+		}
+		
+		remove_effect = {
+			navy_experience = 25
+			37 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes province = 6287 } }
+			if = {
+				limit = {
+					has_idea = DEN_Ludvig_Ferdinand_Holmberg
+				}
+				add_war_support = 0.04
+				add_political_power = 25
+				add_tech_bonus = { bonus = 0.5 uses = 1 category = mechanical_engineering_tech }
+			}
+			else = {
+				add_war_support = 0.02
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_mission_thestrups_army_reforms = {
+		
+		icon = generic_military
+		
+		allowed = { always = no }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_mission_thestrups_army_reforms_trigger_1_tt
+				hidden_trigger = {
+					check_variable = { mhc_sec_value = 2 }
+				}
+			}
+			has_war_support > 0.5
+			has_army_size = {
+				size > 10
+				type = infantry
+			}
+			has_equipment = {
+				infantry_equipment > 2999
+			}
+			has_tech = rifle_equipment2
+			has_tech = sixfour_army_cloth
+			has_tech = improved_cavalry
+			has_tech = improved_handguns
+			has_idea = extensive_conscription
+			OR = {
+				has_idea = three_percent
+				has_idea = five_percent
+			}
+		}
+		
+		activation = { always = no }
+		
+		fire_only_once = yes
+		
+		is_good = no
+		
+		days_mission_timeout = 1800
+		
+		cancel_trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = DEN_mission_thestrups_army_reforms_cancel_trigger_tt
+					hidden_trigger = {
+						NOT = { check_variable = { mhc_sec_value = 2 } }
+					}
+				}
+				has_war = yes
+			}
+		}
+		
+		timeout_effect = {
+			add_political_power = -100
+			decrease_ps_by_one = yes
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+		
+		complete_effect = {
+			army_experience = 25
+			add_political_power = 100
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = doctrine_victorian_innovative_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_doctrine }
+		}
+	}
+	
+	DEN_decision_buy_espingoles_guns = {
+
+		icon = artillery
+		
+		allowed = { tag = DEN }
+
+		available = {
+			has_stability > 0.5
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				centrism > 0.4
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				traditional_conservatism > 0.4
+			}
+		}
+
+		visible = {
+			has_completed_focus = DEN_focus_espingoles
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			has_political_power > 24.9
+			has_army_experience > 24.9
+			command_power > 49.99
+		}
+		custom_cost_text = DEN_pp_more_than_25_ae_more_than_25_cp_more_than_49
+		
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		
+		complete_effect = {
+			add_political_power = -25
+			army_experience = -25
+			add_command_power = -50
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = machine_gun_equipment_0
+				amount = 50
+				producer = DEN
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_prince_christians_commission = {
+
+		icon = tribal_cavalry
+
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_army_reform_ongoing_flag }
+		}
+
+		visible = {
+			has_completed_focus = DEN_focus_prince_christians_commission
+		}
+
+		fire_only_once = yes
+		
+		cost = 25
+
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = DEN_mission_thestrups_army_reforms }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = tech_category_cavalry }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+			army_experience = 20
+			add_war_support = 0.03
+			hidden_effect = {
+				clr_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_promote_talented_leaders = {
+
+		icon = generic_army_support
+
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_army_reform_ongoing_flag }
+		}
+
+		visible = {
+			has_completed_focus = DEN_focus_infantry_battalion_expansion
+		}
+
+		fire_only_once = yes
+		
+		cost = 25
+
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = DEN_mission_thestrups_army_reforms }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+        	create_corps_commander = {
+				name = "Georg von Gerlach" #1858 Major General, 1863 Lieutenant General
+				picture = "Portrait_DEN_Georg_Gerlach.png"
+				traits = { }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 4
+				id = 3606
+			}
+			create_corps_commander = {
+				name = "Glode du Plat" #1860 Major General, died 1864 at Dybbol
+				picture = "Portrait_DEN_Glode_du_Plat.png"
+				traits = { }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+				id = 3607
+			}
+			create_corps_commander = {
+				name = "Peter Frederik Steinmann" #1862 Major General, 1864 Lieutenant General, 1867 General
+				picture = "Portrait_DEN_Peter_Frederik_Steinmann.png"
+				traits = { }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 2
+				id = 3608
+			}
+			create_navy_leader = {
+            	name = "Edouard Suenson" #1858 Captain at Sea, 1866 Rear Admiral, 1880 Vice Admiral
+                picture = "Portrait_DEN_Edouard_Suenson.png"
+                traits = { }
+                skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					maneuvering_skill = 2
+					coordination_skill = 2
+				id = 3703
+            }
+			create_navy_leader = {
+            	name = "Otto Hans Lütken" #1858 Captain at Sea
+                picture = "Portrait_DEN_Otto_Hans_Lutken.png"
+                traits = { }
+                skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					maneuvering_skill = 1
+					coordination_skill = 2
+				id = 3704
+            }
+			create_navy_leader = {
+            	name = "Hans Herman Grove" #1863 Captain at Sea
+                picture = "Portrait_DEN_Hans_Herman_Grove.png"
+                traits = { }
+                skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					maneuvering_skill = 2
+					coordination_skill = 3
+				id = 3705
+            }
+			hidden_effect = {
+				clr_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_new_conscription_law = {
+
+		icon = generic_military
+
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_army_reform_ongoing_flag }
+		}
+
+		visible = {
+			has_completed_focus = DEN_focus_new_conscription_law
+			OR = {
+				has_idea = volunteer_only
+				has_idea = early_conscription
+				has_idea = limited_conscription
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 100
+
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_gain = -0.1
+			war_support_weekly = -0.001
+			stability_weekly_factor = -0.001
+		}
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = DEN_mission_thestrups_army_reforms }
+		}
+		
+		complete_effect = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			hidden_effect = {
+				set_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {  
+			if = {
+				limit = {
+					has_idea = limited_conscription
+				}
+				swap_ideas = { remove_idea = limited_conscription add_idea = extensive_conscription }
+			}
+			else_if = {
+				limit = {
+					has_idea = early_conscription
+				}
+				swap_ideas = { remove_idea = early_conscription add_idea = limited_conscription }
+			}
+			else_if = {
+				limit = {
+					has_idea = volunteer_only
+				}
+				swap_ideas = { remove_idea = volunteer_only add_idea = early_conscription }
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_increase_army_spending = {
+
+		icon = money
+
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_army_reform_ongoing_flag }
+		}
+
+		visible = {
+			has_completed_focus = DEN_focus_increase_army_budget
+			OR = {
+				has_idea = one_percent
+				has_idea = two_percent
+				has_idea = three_percent
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 100
+
+		days_remove = 180
+		
+		modifier = {
+			political_power_gain = -0.1
+			war_support_weekly = -0.001
+		}
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = DEN_mission_thestrups_army_reforms }
+		}
+		
+		complete_effect = {
+			add_stability = -0.03
+			add_war_support = -0.03
+			hidden_effect = {
+				set_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {  
+			if = {
+				limit = {
+					has_idea = three_percent
+				}
+				swap_ideas = { remove_idea = three_percent add_idea = five_percent }
+			}
+			else_if = {
+				limit = {
+					has_idea = two_percent
+				}
+				swap_ideas = { remove_idea = two_percent add_idea = three_percent }
+			}
+			else_if = {
+				limit = {
+					has_idea = one_percent
+				}
+				swap_ideas = { remove_idea = one_percent add_idea = two_percent }
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_army_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
 DEN_decision_category_foreign_relations = {
 	
 	DEN_decision_trade_japan = {
@@ -1258,200 +1857,58 @@ DEN_decision_category_foreign_relations = {
 			base = 800
 		} 		
 	}
-}
-
-DEN_decision_category_army_reform  = {
 	
-	DEN_mission_thestrup_army_reforms = {
-		
-		icon = generic_nationalism
-		
-		allowed = { always = no }
-		
-		available = { 
-			has_war_support > 0.3
-			num_of_military_factories > 2
-			has_tech = rifle_equipment3
-			has_tech = sixfour_army_cloth
-			has_tech = improved_cavalry
-			has_tech = improved_handguns
-			has_idea = three_percent
-			has_country_flag = DEN_comision_ended
-			has_completed_focus = DEN_focus_recruitment_posters
-		}
-		
-		activation = { always = no }
-		
-		visible = {
-			#
-		}
-		
-		days_mission_timeout = 1900
-		
-		fire_only_once = yes
-		
-		timeout_effect = {
-			add_political_power = -100
-			decrease_ps_by_one = yes
-			add_stability = -0.1
-			add_war_support = -0.1
+	#Treaty with China after SOW
+	eoanb_decision_DEN_CHI_treaty = {
+
+		icon = generic_decision
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = eoanb_tt_no_war_with_china
 			}
+			hidden_trigger = {
+				NOT = { has_war_with = QNG }
+				NOT = { has_war_with = CHI }
+			}
+		}
+		
+		allowed = { TAG = DEN }
+
+		visible = {
+			TAG = DEN
+			OR = {
+				country_exists = QNG
+				country_exists = CHI
+			}
+			has_global_flag = eoanb_flag_sow_peking_treaty
+		}
+
+		fire_only_once = yes
+
+		cost = 0
 		
 		complete_effect = {
-		}
-	}
-	
-	DEN_new_law_conscription = {
-
-		icon = generic_construction
-
-		allowed = {
-			tag = DEN
-		}
-
-		available = {
-			date > 1861.3.1
-			date < 1864.8.1
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_army_reform_ongoing
+			if = {
+				limit = {
+					country_exists = QNG
 				}
+				QNG = { country_event = { id = asiageneraldiplomatic.4 days = 1 } }
+			}
+			else_if = {
+				limit = {
+					country_exists = CHI
+				}
+				CHI = { country_event = { id = asiageneraldiplomatic.4 days = 1 } }
 			}
 		}
 
-		visible = {
-			has_completed_focus = DEN_focus_thestrup_army_reforms
-		}
-
-		fire_only_once = yes
-
-		days_remove = 160
-
-		cost = 100
-		
-		remove_effect = {  
-			hidden_effect = {
-				set_country_flag = { flag = DEN_army_reform_ongoing value = 1 days = 60 }
-				}
-				swap_ideas = { remove_idea = limited_conscription add_idea = extensive_conscription }
-		}
-
-		modifier = {
-			political_power_gain = -0.4
-			war_support_weekly = -0.001
-		}
-
-		cancel_trigger = {
-			 OR = {
-			 has_global_flag = eoanb_flag_second_schleswig_war 
-		}
-	}
-
 		ai_will_do = {
 			base = 1000
-		}
-	}
-	
-	DEN_increase_army_spending = {
-
-		icon = generic_construction
-
-		allowed = {
-			tag = DEN
-		}
-
-		available = {
-			date > 1861.3.1
-			date < 1864.8.1
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_army_reform_ongoing
-				}
+			modifier = {
+				factor = 0
+				date < 1863.4.1
 			}
-		}
-
-		visible = {
-			has_completed_focus = DEN_focus_thestrup_army_reforms
-		}
-
-		fire_only_once = yes
-
-		days_remove = 160
-
-		cost = 100
-		
-		remove_effect = {  
-			hidden_effect = {
-				set_country_flag = { flag = DEN_army_reform_ongoing value = 1 days = 60 }
-				}
-				swap_ideas = { remove_idea = two_percent add_idea = three_percent }
-		}
-
-		modifier = {
-			political_power_gain = -0.4
-			war_support_weekly = -0.001
-		}
-
-		cancel_trigger = {
-			 OR = {
-			 has_global_flag = eoanb_flag_second_schleswig_war 
-		}
-	}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	DEN_prince_christian_commision = {
-
-		icon = generic_construction
-
-		allowed = {
-			tag = DEN
-		}
-
-		available = {
-			date > 1861.3.1
-			date < 1864.8.1
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_army_reform_ongoing
-				}
-			}
-		}
-
-		visible = {
-			has_completed_focus = DEN_focus_thestrup_army_reforms
-		}
-
-		fire_only_once = yes
-
-		days_remove = 160
-
-		cost = 100
-		
-		remove_effect = {  
-			hidden_effect = {
-				set_country_flag = { flag = DEN_army_reform_ongoing value = 1 days = 60 }
-				}
-			add_tech_bonus = { bonus = 0.25 uses = 3 category = tech_category_cavalry }
-			army_experience = 20
-			set_country_flag = DEN_comision_ended
-		}
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		cancel_trigger = {
-			 OR = {
-			 has_global_flag = eoanb_flag_second_schleswig_war 
-		}
-	}
-
-		ai_will_do = {
-			base = 1000
 		}
 	}
 }
@@ -1537,10 +1994,10 @@ DEN_decision_category_trade_influence = {
 			}
 			add_political_power = 25
 			LCK = { add_political_power = 50 }
-			LCK = { add_ideas = DEN_trade_lubeck_2 }
-			add_ideas = DEN_trade_lubeck_1
-			remove_ideas = DEN_hamburg_industry_influence_1
-			HAM = { remove_ideas = DEN_hamburg_industry_influence_2 }
+			LCK = { add_ideas = DEN_idea_lubeck_trade_influence_2 }
+			add_ideas = DEN_idea_lubeck_trade_influence_1
+			remove_ideas = DEN_idea_hamburg_trade_influence_1
+			HAM = { remove_ideas = DEN_idea_hamburg_trade_influence_2 }
 			add_offsite_building = { type = industrial_complex level = 1 }
 			LCK = { add_offsite_building = { type = industrial_complex level = 1 } }
 		}
