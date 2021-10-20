@@ -11,6 +11,7 @@ add_namespace = britainnews
 add_namespace = britainwalker
 add_namespace = ENG_clayton_bulwar_treaty
 add_namespace = britaingreece
+add_namespace = britainroyal
 
 ### NORMAL BRITISH EVENTS BELOW ###
 
@@ -796,7 +797,8 @@ country_event = {
 	option = {
 		name = britain.27.a
 		add_political_power = -5
-		eoanb_add_3_prestige_score = yes
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
 	}
 }
 
@@ -886,7 +888,7 @@ country_event = {
 	option = {
 		name = britain.30.a
 		ai_chance = {
-			factor = 40
+			factor = 40 
 		}
 		add_political_power = -25
 		hidden_effect = {
@@ -1567,6 +1569,27 @@ country_event = {
 		name = britain.51.a
 		ai_chance = { factor = 100 }
 		add_tech_bonus = { bonus = 0.5 uses = 1 category = biochemistry_tech }
+	}
+
+}
+
+#The British Empire 1857
+country_event = {
+	id = britain.52
+	title = britain.52.t
+	desc = britain.52.d
+	picture = GFX_report_event_british_parliament
+
+	trigger = {
+		TAG = ENG
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = britain.52.a
+		ai_chance = { factor = 100 }
 	}
 
 }
@@ -2267,7 +2290,7 @@ country_event = {
 		create_country_leader = {
     			name = "William Ewart Gladstone"
     			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-    			picture = "Portrait_ENG_William_Ewart_Gladstone.dds"
+    			picture = "Portrait_ENG_William_Ewart_Gladstone.png"
     			expire = "1886.5.2"
     			ideology = market_liberal
     			traits = { }
@@ -2322,7 +2345,7 @@ country_event = {
 		create_country_leader = {
     			name = "Lord Palmerston"
     			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-    			picture = "Portrait_ENG_Lord_Palmerston.dds"
+    			picture = "Portrait_ENG_Lord_Palmerston.png"
     			expire = "1886.5.2"
     			ideology = market_liberal
     			traits = { }
@@ -2487,7 +2510,7 @@ country_event = {
 		create_country_leader = {
     			name = "John Russell, 1st Earl Russell"
     			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-    			picture = "Portrait_ENG_John_Russell.dds"
+    			picture = "Portrait_ENG_John_Russell.png"
     			expire = "1886.5.2"
     			ideology = market_liberal
     			traits = { }
@@ -2531,7 +2554,7 @@ country_event = {
 		create_country_leader = {
     			name = "Benjamin Disraeli, 1st Earl of Beaconsfield"
     			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-    			picture = "Portrait_ENG_Benjamin_Disraeli.dds"
+    			picture = "Portrait_ENG_Benjamin_Disraeli.png"
     			expire = "1886.5.2"
     			ideology = conserv
     			traits = { }
@@ -2995,7 +3018,7 @@ country_event = {
 	#Smash by force
 	option = {
 		name = britainworkerunrest.3.b
-		#trigger = { NOT = { has_completed_focus = ENG_focus_strike_breaking } }
+		#trigger = { NOT = { has_completed_focus = ENG_focus_crackdown_on_strikes } }
 		ai_chance = { factor = 20 }
 		add_political_power = -50
 		add_stability = -0.02
@@ -3025,7 +3048,7 @@ country_event = {
 	#Smash by force - Focus
 	option = {
 		name = britainworkerunrest.3.e
-		#trigger = { has_completed_focus = ENG_focus_strike_breaking }
+		#trigger = { has_completed_focus = ENG_focus_crackdown_on_strikes }
 		ai_chance = { factor = 20 }
 		add_political_power = -25
 		add_stability = -0.02
@@ -3348,6 +3371,7 @@ country_event = {
 			has_idea = ENG_idea_working_class_exploitation_4
 		}
 		has_country_flag = ENG_workers_revolution_impending
+		check_variable = { ENG_worker_unrest > 19 }
 		NOT = {
 			AND = {
 				is_ai = yes
@@ -3390,6 +3414,7 @@ country_event = {
 				set_province_controller = 377
 				set_province_controller = 3369
 			}
+			activate_mission = ENG_bring_order_ireland
 		}
 	}
 
@@ -3921,10 +3946,11 @@ country_event = {
 			check_variable = { ENG_irish_unrest > 30 }
 		}
 	}
-
+	
+	#Contain Ireland
 	option = {
 		name = britainirishunrest.12.a
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 95 }
 		set_country_flag = fenian_rising_dublin
 		add_political_power = -100
 		add_stability = -0.05
@@ -3940,41 +3966,153 @@ country_event = {
 			134 = { add_compliance = -50 }
 	    }
 	}
-
+	
+	#Home Rule
 	option = {
 		name = britainirishunrest.12.b
-		ai_chance = { factor = 5 }
+		ai_chance = { factor = 0 }
 		add_political_power = -100
-		add_stability = -0.02
-		add_war_support = 0.02
-		add_to_variable = { var = ENG_irish_unrest value = -20 }
-		release_puppet = IRE
-	    }
-
+		add_stability = 0.1
+		remove_ideas = ENG_unrest_in_ireland
+		release_autonomy = {
+			target = IRE
+			autonomy_state = autonomy_dominion
+			freedom_level = 0.4
+		}
+		country_event = britainirishunrest.16
+    }
+	
+	#Free Ireland
 	option = {
 		name = britainirishunrest.12.c
-		ai_chance = { factor = 5 }
-		add_political_power = -200
+		ai_chance = { factor = 0 }
+		add_political_power = -50
 		add_stability = 0.05
 		add_war_support = -0.05
 		remove_ideas = ENG_unrest_in_ireland
 		release = IRE
-	    }
+		country_event = britainirishunrest.16
     }
+	
+	#Dualism
+	option = {
+		name = britainirishunrest.12.e
+		ai_chance = { factor = 0 }
+		add_political_power = -200
+		add_stability = 0.15
+		remove_ideas = ENG_unrest_in_ireland
+		release_autonomy = {
+			target = IRE
+			autonomy_state = autonomy_autonomous_territory
+			freedom_level = 0.4
+		}
+		country_event = britainirishunrest.16
+    }
+}
 	
 ###news event for irish independance
 news_event = {
 	id = britainirishunrest.13
 	title = britainirishunrest.13.t
 	desc = britainirishunrest.13.d
+	
+	major = yes
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = britainirishunrest.13.a
+		if={
+			limit={is_ai = no}
+			set_variable = {super_event_displayed = 21}
+		}
 	}
 }
 
+###Fenian full revolt (british fail to contain the threat)
+news_event = {
+	id = britainirishunrest.14
+	title = britainirishunrest.14.t
+	desc = britainirishunrest.14.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	major = yes
+
+    trigger = {
+		TAG = ENG
+		#date > 1863.11.28
+    }
+
+	option = {
+		name = britainirishunrest.14.a
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = -25
+		IRE={
+			set_cosmetic_tag = IRE_fenian_1867_republic
+			transfer_state = 113
+			transfer_state = 135
+			transfer_state = 134
+			inherit_technology = ENG
+			load_oob = "IRE_1857"
+		}
+		set_country_flag = IRE_in_revolt
+		declare_war_on = {
+			target = IRE
+			type = annex_everything
+		}
+		activate_mission = ENG_defeat_1867_ireland_rebellion
+		country_event = britainirishunrest.16
+	}
+	option = {
+		name = britainirishunrest.14.b
+		trigger = {
+			tag = IRE
+		}
+	}
+	option = {
+		name = britainirishunrest.14.c
+		trigger = {
+			NOT={tag = ENG}
+			NOT={tag = IRE}
+		}
+	}
+}
+
+###Play as Ireland?
+country_event = {
+	id = britainirishunrest.16
+	title = britainirishunrest.16.t
+	desc = britainirishunrest.16.d
+	picture = GFX_report_event_iww_demonstration
+
+	fire_only_once = yes
+
+	trigger = {
+		TAG = ENG
+		if = {
+			IRE = {
+				exists = yes
+			}
+		}
+	}
+	
+	#Play Ireland
+	option = {
+		name = britainirishunrest.16.a
+		ai_chance = { factor = 0 }
+	    IRE = { change_tag_from = ENG }
+	}
+	
+	#Play UK
+	option = {
+		name = britainirishunrest.16.b
+		ai_chance = { factor = 100 }
+    }
+}
 
 ### EVENTS RELATING TO BRITISH AFRICA BELOW ###
 
@@ -4586,7 +4724,7 @@ country_event = {
 	option = {
 		name = britainspain.1.a
 		ai_chance = { factor = 100 }
-		transfer_state = 1436
+		transfer_state = 1198
 		297 = { 
 			add_claim_by = ENG 
 			remove_claim_by = SPR
@@ -4613,6 +4751,393 @@ country_event = {
 				id = spain.6
 				days = 20
 			}
+		}
+	}
+}
+
+## Princess Alice Marriage
+country_event = {
+	id = britainroyal.1
+	title = britainroyal.1.t
+	desc = britainroyal.1.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1861.4.25
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Orange
+	option = {
+		name = britainroyal.1.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = HOL
+			modifier = small_increase
+		}
+	}
+
+	#Prussia Albert
+	option = {
+		name = britainroyal.1.b
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+	}
+	
+	#Hesse
+	option = {
+		name = britainroyal.1.c
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 90
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = HES
+			modifier = small_increase
+		}
+	}
+}
+	
+## Edward VII Marriage
+country_event = {
+	id = britainroyal.2
+	title = britainroyal.2.t
+	desc = britainroyal.2.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1862.9.9
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Alex Princess of Denmark
+	option = {
+		name = britainroyal.2.a
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 95
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = DEN
+			modifier = small_increase
+		}
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_decrease
+		}
+	}
+
+	#Elisabeth of Wied
+	option = {
+		name = britainroyal.2.b
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = NAS
+			modifier = small_increase
+		}
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+	}
+}
+
+## Princess Helena Engagement
+country_event = {
+	id = britainroyal.3
+	title = britainroyal.3.t
+	desc = britainroyal.3.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1865.12.5
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Prince Christian of Schleswig-Holstein
+	option = {
+		name = britainroyal.3.a
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = DEN
+			modifier = small_decrease
+		}
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+	}
+}
+
+## Princess Louise Marriage
+country_event = {
+	id = britainroyal.4
+	title = britainroyal.4.t
+	desc = britainroyal.4.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1870.10.3
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Crown Prince of Denmark
+	option = {
+		name = britainroyal.4.a
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = DEN
+			modifier = small_increase
+		}
+		add_opinion_modifier = {
+			target = PRS
+			modifier = medium_decrease
+		}
+	}
+	
+	#Prussia Albert
+	option = {
+		name = britainroyal.4.b
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 15
+		add_stability = -0.05
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+	}
+	
+	#Orange
+	option = {
+		name = britainroyal.4.c
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = HOL
+			modifier = small_increase
+		}
+	}
+	
+	#Duke of Argyll
+	option = {
+		name = britainroyal.4.e
+		ai_chance = {
+			factor = 97
+		}
+		add_political_power = 10
+		add_stability = 0.05
+	}
+}
+
+## Prince Arthur
+country_event = {
+	id = britainroyal.5
+	title = britainroyal.5.t
+	desc = britainroyal.5.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1879.3.13
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Princess Louise Margaret of Prussia
+	option = {
+		name = britainroyal.5.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+	}
+}
+
+## Prince Leopold
+country_event = {
+	id = britainroyal.6
+	title = britainroyal.6.t
+	desc = britainroyal.6.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1882.4.27
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Princess Helen of Waldeck and Pyrmont
+	option = {
+		name = britainroyal.6.a
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 97
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = GER
+			modifier = small_increase
+		}
+	}
+	
+	#Mary Baring, daughter of Lord Ashburton
+	option = {
+		name = britainroyal.6.b
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 10
+		add_stability = 0.05
+	}
+}
+
+## Princess Beatrice
+country_event = {
+	id = britainroyal.7
+	title = britainroyal.7.t
+	desc = britainroyal.7.d
+	picture = GFX_report_event_royalwedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+		#date > 1885.7.25
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Prince Henry of Battenberg
+	option = {
+		name = britainroyal.5.a
+		custom_effect_tooltip = "Historical Option"
+		ai_chance = {
+			factor = 97
+		}
+		add_political_power = 15
+		add_stability = 0.05
+	}
+}
+
+## Ireland Requests Aid
+country_event = {
+	id = britainirishunrest.15
+	title = britainirishunrest.15.t
+	desc = britainirishunrest.15.d
+	picture = GFX_report_event_british_belfast
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		TAG = ENG
+	}
+
+	#Reject Aid
+	option = {
+		name = britainirishunrest.15.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 25
+		IRE = {
+		country_event = ireland.5
+		}
+	}
+	
+	#Some Aid
+	option = {
+		name = britainirishunrest.15.b
+		ai_chance = {
+			factor = 60
+		}
+		add_political_power = -25
+		IRE = {
+		country_event = ireland.6
+		}
+	}
+	
+	#lots Aid
+	option = {
+		name = britainirishunrest.15.c
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = -50
+		IRE = {
+		country_event = ireland.7
 		}
 	}
 }

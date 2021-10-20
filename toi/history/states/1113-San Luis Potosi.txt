@@ -1,12 +1,12 @@
 
-state={
-	id=1113
-	name="STATE_1113" # San Luis Potosi
+state = {
+	id = 1113
+	name = "STATE_1113" # San Luis Potosi
 	manpower = 10000
 	
 	state_category = pastoral
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 3
@@ -15,9 +15,13 @@ state={
 		victory_points = {
 			4956 1 
 		}
+		add_to_array = { state_culture_array = 427 } #Mexican
+		add_to_array = { state_culture_array_num = 0.7 }
+		add_to_array = { state_culture_array = 441 } #Nahua?
+		add_to_array = { state_culture_array_num = 0.3 }
 	}
 
-	provinces={
+	provinces = {
 		1952 4956 13670 13671
 	}
 	

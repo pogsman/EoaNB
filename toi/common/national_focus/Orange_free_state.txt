@@ -1479,7 +1479,7 @@ focus_tree = {
 			focus = ofs_vic_army_focus
 		}
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
 		}
 		available_if_capitulated = no
 		ai_will_do = {
@@ -1497,7 +1497,7 @@ focus_tree = {
 			focus = ofs_vic_inovate_our_guns
 		}
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
 		}
 		available_if_capitulated = no
 		ai_will_do = {
@@ -1942,7 +1942,7 @@ focus_tree = {
 		#}
 		available={
 			owns_state = 1142
-			841={
+			843={
 				owner = {
 					NOT = {
 						has_idea = afr_colonial_power
@@ -1956,13 +1956,22 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
-			add_state_claim = 841
-			841={
-				owner={
-					ROOT = {
-						create_wargoal = {
-							type = take_state_focus
-							target = PREV
+			add_state_claim = 843
+			if={
+				limit={
+					843={is_owned_by = AFR}
+				}
+				transfer_state = 843
+				
+			}
+			else={
+				843={
+					owner={
+						ROOT = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+							}
 						}
 					}
 				}
@@ -2050,7 +2059,7 @@ focus_tree = {
 						if = {
 							limit = {
 								afr_is_tribal = yes
-								check_variable = {ROOT.industrisation_progress < 100}
+								check_variable = {ROOT.innovation_progress < 100}
 								NOT = {
 									has_idea = afr_reforming_kingdom
 									has_country_flag = Oceania_industrializing
@@ -2196,8 +2205,8 @@ focus_tree = {
 			545 = {
 				OWNER={
 					custom_trigger_tooltip = {
-						tooltip = Oceania_industrisation_progress_greater_than_75
-						check_variable = {THIS.industrisation_progress > 74.9}
+						tooltip = Oceania_innovation_progress_greater_than_75
+						check_variable = {THIS.innovation_progress > 74.9}
 					}
 					custom_trigger_tooltip = {
 						tooltip = afr_rrp_is_reforming_regional_power_tooltip
@@ -2231,7 +2240,7 @@ focus_tree = {
 					owner = {
 						custom_effect_tooltip = afr_become_industrialised_tooltip
 						hidden_effect = {
-							clear_variable = THIS.industrisation_progress
+							clear_variable = THIS.innovation_progress
 							if = {
 								limit = { has_idea = afr_reforming_kingdom }
 								remove_ideas = afr_reforming_kingdom

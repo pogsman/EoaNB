@@ -48,7 +48,7 @@
  SWE_education_reform2:0 "Education Reform"
  SWE_education_reform_promise2:0 "Education Reform"
  SWE_moderate_economy:0 "An Economy for the Wealthy"
- SWE_workers_economy_1: "An Economy for the Workers"
+ SWE_workers_economy_1:0 "An Economy for the Workers"
  SWE_moderate_economy_1:0 "An Economy for the Wealthy"
  SWE_workers_economy_1:0 "An Economy for the Workers"
  SWE_moderate_economy_2:0 "An Economy for the Wealthy"
@@ -132,9 +132,9 @@
  SWE_payed_loan:0 "Repayed loan to us"
  SWE_payed_loan_desc:0 "Sweden repayed our loan"
  
- SWE_russian_reparations_to_swe:0 "Russian war reperations to Sweden"
+ SWE_russian_reparations_to_swe:0 "Russian war reparations to Sweden"
  SWE_russian_reparations_to_swe_desc:0 ""
- SWE_russian_reparations_to_swe_for_swe:0 "Russian war reperations gains"
+ SWE_russian_reparations_to_swe_for_swe:0 "Russian war reparations gains"
  SWE_russian_reparations_to_swe_for_swe_desc:0 ""
  SWE_tired_tropps:0 "Tired tropps"
  SWE_tired_tropps_desc:0 ""
@@ -184,7 +184,7 @@
  SWE_Carl_Fredrik_Meijer:0 "Carl Fredrik Meijer"
  SWE_Carl_Fredrik_Meijer_HC:0 "Carl Fredrik Meijer"
  SWE_Oscar_I:0 "Oscar I"
- SWE_Charles_XV:0 "Charles XV" 
+ SWE_Charles_XV:0 "Charles XV"
  SWE_Louise_I:0 "Louise I"
  SWE_idea_Charles_XV:0 "Prince - Regent Charles"
  SWE_swedish_norwegian_union:0 "$NOR_idea_swedish_norwegian_union$"
@@ -200,3 +200,8 @@
  kongl_elecktriska_telegraf_werket:0 "Kongl. Elecktriska Telegraf-Werket"
  
  allotment_system:0 "Indelningsverket"
+
+ SWE_women_in_workforce:0 "Women in Workforce"
+ SWE_Conservative_gain:0 "Conservative Gains"
+ SWE_conservative_opposition:0 "Conservative Opposition"
+ SWE_liberal_opposition:0 "Liberal Opposition"

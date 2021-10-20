@@ -1,10 +1,10 @@
-state={
-	id=1154
-	name="STATE_1154"
-	provinces={
+state = {
+	id = 1154
+	name = "STATE_1154"
+	provinces = {
 		13722 13723 13724 
 	}
-	manpower = 32870
+	manpower = 9870
 
 	resources = {
 		wood = 4
@@ -12,8 +12,7 @@ state={
 	}
 	
 	state_category = enclave
-	history=
-	{
+	history = {
 		controller = ENG
 		buildings = {
 			infrastructure = 2

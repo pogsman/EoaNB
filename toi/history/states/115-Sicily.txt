@@ -1,16 +1,16 @@
 
-state={
-	id=115
-	name="STATE_115"
+state = {
+	id = 115
+	name = "STATE_115"
 	manpower = 2333920
 
 	resources = {
-		wood = 7
-		iron = 2
+		coal = 12
+		wood = 4
 	}
 
 	state_category = city
-	history={
+	history = {
 		owner = NSC
 		victory_points = {
 			10074 20
@@ -28,6 +28,7 @@ state={
 			infrastructure = 3
 			industrial_complex = 1
 			dockyard = 1
+			farm = 2
 			10074 = {
 				naval_base = 2
 			}
@@ -56,13 +57,14 @@ state={
 		add_to_array = { state_culture_array_num = 0.01 }
 		add_to_array = { state_culture_array_num = 0.01 }
 		
-		1870.1.1={
+		1870.1.1= {
 			owner = PIE
 			add_core_of = PIE
 		}
+		add_extra_state_shared_building_slots = 2
 	}
 
-	provinces={
-		1009 1156 3857 4014 4159 7059 7147 10074 12047
+	provinces = {
+		1009 1156 3857 4014 4159 7059 7147 10074 12047 14150 14151
 	}
 }

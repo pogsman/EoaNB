@@ -1,7 +1,7 @@
-state={
-	id=1289
-	name="STATE_1289"
-	provinces={
+state = {
+	id = 1289
+	name = "STATE_1289"
+	provinces = {
 		1414 4347 4826 7865 7721 10305 10625 14036
 	}
 	state_category = pastoral
@@ -11,7 +11,7 @@ state={
 		}
 		owner = SHO
 		add_core_of = SHO
-		add_claim_by = USA
+		#add_claim_by = USA
 		victory_points = {
 			4826 1
 		}
@@ -29,6 +29,6 @@ state={
 
 		set_state_flag = NA_B_Disregardable_State
 	}
-	manpower=5230
+	manpower =5230
 	
 }

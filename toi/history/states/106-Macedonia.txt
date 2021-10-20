@@ -1,12 +1,12 @@
 
-state={
-	id=106
-	name="STATE_106"
-	resources={
+state = {
+	id = 106
+	name = "STATE_106"
+	resources = {
 		
 	}
 
-	history={
+	history = {
 		owner = OTO
 		buildings = {
 			infrastructure = 3
@@ -25,7 +25,7 @@ state={
 		add_to_array = { state_culture_array_num = 0.64 }
 		add_to_array = { state_culture_array = 62 }
 		add_to_array = { state_culture_array_num = 0.17 }
-		add_to_array = { state_culture_array = 104 }
+		add_to_array = { state_culture_array = 106 }
 		add_to_array = { state_culture_array_num = 0.12 }
 		add_to_array = { state_culture_array = 69 }
 		add_to_array = { state_culture_array_num = 0.078 }
@@ -51,10 +51,10 @@ state={
 
 	}
 
-	provinces={
+	provinces = {
 		833 867 907 974 3833 3865 3882 6886 11832 11856 
 	}
-	manpower=322578
+	manpower =322578
 	
-	state_category=rural
+	state_category =rural
 }

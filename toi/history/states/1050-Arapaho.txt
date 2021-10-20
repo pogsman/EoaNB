@@ -1,16 +1,16 @@
-state={
-	id=1050
-	name="STATE_1050"
+state = {
+	id = 1050
+	name = "STATE_1050"
 	manpower = 10255
 	state_category = pastoral
 	
-	history={
+	history = {
 		buildings = {
 			infrastructure = 1
 		}
 		owner = CHY
 		add_core_of = CHY
-		add_claim_by = USA
+		#add_claim_by = USA
 
 		add_to_array = { state_culture_array = 451 } #Algonquin
 		add_to_array = { state_culture_array_num = 0.93 }
@@ -26,7 +26,7 @@ state={
 		set_state_flag = NA_B_Disregardable_State
 	}
 
-	provinces={
+	provinces = {
 		4760 4830
 	}
 	

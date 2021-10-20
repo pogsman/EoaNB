@@ -270,6 +270,26 @@ spriteTypes = {
 			name = "GFX_culture_spanish_basque"
 			textureFile = "gfx//interface//ideas//culture//culture_spanish_basque.dds"
 		}
+		spriteType = {
+			name = "GFX_culture_spanish_asturian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_asturian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_cantabrian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_cantabrian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_canarian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_canarian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_balearic"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_balearic.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_spanish_valencian"
+			textureFile = "gfx//interface//ideas//culture//culture_spanish_valencian.dds"
+		}
 		
 			### PORTUGUESE CULTURE GROUP ###
 		spriteType = {
@@ -279,6 +299,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_culture_portuguese_galician"
 			textureFile = "gfx//interface//ideas//culture//culture_portuguese_galician.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_portuguese_alentejan"
+			textureFile = "gfx//interface//ideas//culture//culture_portuguese_alentejan.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_portuguese_nortenho"
+			textureFile = "gfx//interface//ideas//culture//culture_portuguese_nortenho.dds"
 		}
 		
 		spriteType = {
@@ -810,6 +838,11 @@ spriteTypes = {
 			name = "GFX_culture_latino_platine"
 			textureFile = "gfx//interface//ideas//culture//culture_latin_american_platinean.dds"
 		}
+		spriteType = {
+			name = "GFX_culture_latin_america_norteno"
+			textureFile = "gfx//interface//ideas//culture//culture_latin_america_norteno.dds"
+		}
+		
 		
 			### NATIVE AMERICAN CULTURE GROUP ###
 			
@@ -986,6 +1019,10 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_culture_south_asian_telugu"
 			textureFile = "gfx//interface//ideas//culture//culture_south_asian_telugu.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_indo-aryan_sinhalese"
+			textureFile = "gfx//interface//ideas//culture//culture_indo-aryan_sinhala.dds"
 		}
 		
 		
@@ -1428,8 +1465,9 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_culture_indo-aryan_sindhi"
-			textureFile = "gfx//interface//ideas//culture//culture_indo-aryan_sindhi.dds"
-		}spriteType = {
+			textureFile = "gfx//interface//ideas//culture//culture_indo-aryan_sindi.dds"
+		}
+		spriteType = {
 			name = "GFX_culture_indo-aryan_rajasthanis"
 			textureFile = "gfx//interface//ideas//culture//culture_indo-aryan_rajput.dds"
 		}
@@ -1447,11 +1485,11 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_culture_travelling_indo-aryan_doms"
-			textureFile = "gfx//interface//ideas//culture//culture_travelling_indo-aryan_doms.dds"
+			textureFile = "gfx//interface//ideas//culture//culture_travelling_indo-ayran_doms.dds"
 		}
 		spriteType = {
 			name = "GFX_culture_travelling_indo-aryan_roma"
-			textureFile = "gfx//interface//ideas//culture//culture_travelling_indo-aryan_roma.dds"
+			textureFile = "gfx//interface//ideas//culture//culture_travelling_indo_ayran_roma.dds"
 		}
 		spriteType = {
 			name = "GFX_culture_dravidian_telugu"
@@ -1470,12 +1508,32 @@ spriteTypes = {
 			textureFile = "gfx//interface//ideas//culture//culture_dravidian_malayali.dds"
 		}
 		spriteType = {
+			name = "GFX_culture_sahyadri_khokani"
+			textureFile = "gfx//interface//ideas//culture//culture_sahyadri_khokani.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_bagheli"
+			textureFile = "gfx//interface//ideas//culture//culture_hindi_bagheli.dds"
+		}
+		spriteType = {
 			name = "GFX_culture_himalayan_nepali"
 			textureFile = "gfx//interface//ideas//culture//culture_himalayan_nepali.dds"
 		}
 		spriteType = {
 			name = "GFX_culture_himalayan_sikkimese"
 			textureFile = "gfx//interface//ideas//culture//culture_himalayan_sikkimese.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_dhivehian_maldivian"
+			textureFile = "gfx//interface//ideas//culture//culture_dhivehian_maldivian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bengal_bihari"
+			textureFile = "gfx//interface//ideas//culture//culture_bengal_bihari.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_chattisgahri"
+			textureFile = "gfx//interface//ideas//culture//culture_hindi_chattisgahri.dds"
 		}
 		
 		spriteType = {
@@ -1560,10 +1618,6 @@ spriteTypes = {
 			textureFile = "gfx//interface//ideas//culture//culture_southern_asian_vietnamese.dds"
 		}
 		spriteType = {
-			name = "GFX_culture_southern_asian_cham"
-			textureFile = "gfx//interface//ideas//culture//culture_southern_asian_cham.dds"
-		}
-		spriteType = {
 			name = "GFX_culture_southern_asian_gelao"
 			textureFile = "gfx//interface//ideas//culture//culture_southern_asian_gelao.dds"
 		}
@@ -1586,6 +1640,18 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_culture_malay_minangkabau"
 			textureFile = "gfx//interface//ideas//culture//culture_malay_minangkabau.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_malay_lampung"
+			textureFile = "gfx//interface//ideas//culture//culture_malayo-champaic_lampung.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_malay_degar"
+			textureFile = "gfx//interface//ideas//culture//culture_malayo-champaic_degar.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_malay_champa"
+			textureFile = "gfx//interface//ideas//culture//culture_southern_asian_cham.dds"
 		}
 		
 		spriteType = {
@@ -1992,6 +2058,34 @@ spriteTypes = {
 			name = "GFX_culture_bantu_jukun"
 			textureFile = "gfx//interface//ideas//culture//culture_bantu_jukun.dds"
 		}
+		spriteType = {
+			name = "GFX_culture_bantu_lozi"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_lozi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_ndebele"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_ndebele.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_makua"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_makua.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_ababemba"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_ababemba.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_botatwe"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_batonga.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_unyamwezi"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_unyamwezi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bantu_nyasa"
+			textureFile = "gfx//interface//ideas//culture//culture_bantu_nysaa.dds"
+		}
 		
 		spriteType = {
 			name = "GFX_culture_adamawa-ubangian_banda"
@@ -2081,7 +2175,7 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_culture_nilo-saharan_cameroon_highlander"
-			textureFile = "gfx//interface//ideas//culture//culture_nilo-saharan_cameroon_highlander.dds"
+			textureFile = "gfx//interface//ideas//culture//culture_nilo-saharan_cameroon_highlanders.dds"
 		}
 		spriteType = {
 			name = "GFX_culture_nilo-saharan_duala"
@@ -2393,6 +2487,66 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_culture_cushitic_afar"
 			textureFile = "gfx//interface//ideas//culture//culture_cushitic_afar.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_indic_kohistani"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_kohistani.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_indic_lahndi"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_lahndi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_indic_khari"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_khari.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_bodic_ladakhi"
+			textureFile = "gfx//interface//ideas//culture//culture_bodic_ladakhi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_dravidian_karava"
+			textureFile = "gfx//interface//ideas//culture//culture_dravidian_karava.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_dravidian_gondi"
+			textureFile = "gfx//interface//ideas//culture//culture_dravidian_gondi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_sahyadri_jaipuri"
+			textureFile = "gfx//interface//ideas//culture//culture_sahyadri_jaipuri.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_sahyadri_bhili"
+			textureFile = "gfx//interface//ideas//culture//culture_sahyadri_bhili.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_sahyadri_marwari"
+			textureFile = "gfx//interface//ideas//culture//culture_sahyadri_marwari.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_bundeli"
+			textureFile = "gfx//interface//ideas//culture//culture_hindi_bundeli.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_hariyanavi"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_hariyanavi.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_hindi_pahari"
+			textureFile = "gfx//interface//ideas//culture//culture_indic_pahari.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_mon-khmer_aslaian"
+			textureFile = "gfx//interface//ideas//culture//culture_mon-khmer_aslaian.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_mon-khmer_mon"
+			textureFile = "gfx//interface//ideas//culture//culture_mon-khmer_mon.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_mon-khmer_nicobarese"
+			textureFile = "gfx//interface//ideas//culture//culture_mon-khmer_nicobarese.dds"
 		}
 		
 		

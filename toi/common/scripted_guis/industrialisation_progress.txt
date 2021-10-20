@@ -1,81 +1,110 @@
 scripted_gui = {
-	industrialisation_progress = {
-		window_name = "industrialisation_progress_container"
+	innovation_progress = {
+		window_name = "innovation_progress_container"
 
 		context_type = country_context
-		ai_enabled={
-			always = no
-		}
+
+		ai_enabled = { always = no }
  
-       visible = {
-			is_ai = no
-			OR = {
-				# has_idea = AF_T_unorganized_tribal_nation
-				# has_idea = AF_T_unorganized_tribal_nation_2
-				# has_idea = AF_T_unorganized_tribal_nation_3
-				# has_idea = AF_T_unorganized_tribal_nation_4
-				# has_idea = AF_T_unorganized_tribal_nation_5
-				# has_idea = AF_T_organized_tribal_nation
-				has_idea = afr_reforming_kingdom
-				has_country_flag = Oceania_industrializing
-				has_country_flag = afr_colony_industrializing
-				has_country_flag = afr_an_african_industrializing
+		visible = {
+		# 	OR = {
+		# 		# has_idea = AF_T_unorganized_tribal_nation
+		# 		# has_idea = AF_T_unorganized_tribal_nation_2
+		# 		# has_idea = AF_T_unorganized_tribal_nation_3
+		# 		# has_idea = AF_T_unorganized_tribal_nation_4
+		# 		# has_idea = AF_T_unorganized_tribal_nation_5
+		# 		# has_idea = AF_T_organized_tribal_nation
+		# 		has_idea = afr_reforming_kingdom
+		# 		has_country_flag = Oceania_industrializing
+		# 		has_country_flag = afr_colony_industrializing
+		# 		has_country_flag = afr_an_african_industrializing
+		# 	}
+		}
+
+		effects = {
+			innovation_progress_bg_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_innovation_progress }
+				set_variable = { show_innovation_progress = show }
+			}
+			# innovation_progress_bg_click = {
+			# 	add_to_variable = { innovation_progress = 10 }
+			# 	# clamp_variable = { var = innovation_progress min = 0 max = 100 }
+			# }
+		}
+		triggers = {
+			innovation_progress_bg_click_enabled = { always = yes }
+		}
+
+		properties = {
+			innovation_progress_icon = {
+				frame = ROOT.institutions_country_era
 			}
 		}
- 
-        #effects = {
-            #industrialisation_progress_bg_click = {
-            #    set_temp_variable = { show = 1 }
-            #    subtract_from_temp_variable = { show = show_industrialisation_progress }
-            #    set_variable = { show_industrialisation_progress = show }
-            #}
-            # industrialisation_progress_bg_click = {##for testing
-               # add_to_variable = { industrisation_progress = 10 }
-				# clamp_variable = { var = industrisation_progress min = 0 max = 100 }
-            # }
-        #}
-        triggers = {
-            industrialisation_progress_bg_click_enabled = {
-                always = yes
-            }
-        }
+	}
+	humanities_progress = {
+		window_name = "humanities_progress_container"
+
+		context_type = country_context
+
+		ai_enabled = { always = no }
+
+		visible = {
+
+		}
+
+		effects = {
+			humanities_progress_bg_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_humanities_progress }
+				set_variable = { show_humanities_progress = show }
+			}
+			# humanities_progress_bg_click = {
+			# 	add_to_variable = { humanities_progress = 10 }
+			# 	# clamp_variable = { var = humanities_progress min = 0 max = 100 }
+			# }
+		}
+		triggers = {
+			humanities_progress_bg_click_enabled = { always = yes }
+		}
+
+		properties = {
+			humanities_progress_icon = {
+				frame = ROOT.institutions_country_era
+			}
+		}
 	}
 	colonial_power = {
 		window_name = "colonial_power_container_1"
 		
 		context_type = country_context
-	    ai_enabled={
-			always = no
-		}
+		ai_enabled = { always = no }
  
-		visible = {
-			has_idea = afr_colonial_power
-		}
- 
-        effects = {
-            #industrialisation_progress_bg_click = {
-            #    set_temp_variable = { show = 1 }
-            #    subtract_from_temp_variable = { show = show_industrialisation_progress }
-            #    set_variable = { show_industrialisation_progress = show }
-            #}
-            colonial_power_bg_right_click = {##for testing
-                add_to_variable = { colonial_power = 10 }
+		visible = { has_idea = afr_colonial_power}
+
+		effects = {
+			innovation_progress_bg_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_innovation_progress }
+				set_variable = { show_innovation_progress = show }
+			}
+			colonial_power_bg_right_click = {
+				add_to_variable = { colonial_power = 10 }
 				clamp_variable = { var = colonial_power min = 0 max = colonial_power_max }
-            }
-        }
-        triggers = {
-            colonial_power_bg_click_enabled = {
-                always = yes
-            }
-        }
+			}
+		}
+		triggers = {
+			colonial_power_bg_click_enabled = { always = yes
+			}
+		}
 	}
 	colonisation_powers_in_colonial_state = {
-       window_name = "progress_in_colonial_area_container"
+		window_name = "progress_in_colonial_area_container"
  
-       context_type = selected_state_context
-	   parent_window_token = selected_state_view 
-	   ai_enabled={
-			OR={
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		ai_enabled = {
+			OR = {
 				tag = PRS
 				tag = GEC
 				tag = ENG
@@ -89,12 +118,12 @@ scripted_gui = {
 				tag = OTO
 				tag = PIE
 			}
-	   }
-	   ai_check={
+		}
+		ai_check = {
 			is_colonial_nation = yes
-	   }
+		}
 		
-       visible = {
+		visible = {
 			ROOT = {
 				is_colonial_nation = yes
 			}
@@ -2067,12 +2096,101 @@ scripted_gui = {
 			check_variable = {super_event_displayed = 30}
 		}
 	}
+	eoanb_se_1873_panic_sound = {
+		context_type = player_context
+		window_name = "1873_panic_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 31}
+		}
+	}
+	eoanb_se_sa_unifaction_sound = {
+		context_type = player_context
+		window_name = "sa_unifaction_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 32}
+		}
+	}
+	eoanb_se_canada_unifaction_sound = {
+		context_type = player_context
+		window_name = "canada_unifaction_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 33}
+		}
+	}
+	eoanb_se_100_days_sound = {
+		context_type = player_context
+		window_name = "100_days_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 34}
+		}
+	}
+	eoanb_se_xinghai_revo_sound = {
+		context_type = player_context
+		window_name = "xinghai_revo_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 35}
+		}
+	}
+	eoanb_se_great_war_sound = {
+		context_type = player_context
+		window_name = "great_war_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 36}
+		}
+	}
+	eoanb_se_2WW_sound = {
+		context_type = player_context
+		window_name = "2WW_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 37}
+		}
+	}
+	eoanb_se_krakatoa_sound = {
+		context_type = player_context
+		window_name = "krakatoa_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 38}
+		}
+	}
+	eoanb_se_great_depression_sound = {
+		context_type = player_context
+		window_name = "great_depression_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 39}
+		}
+	}
+	eoanb_se_great_famine_sound = {
+		context_type = player_context
+		window_name = "great_famine_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 40}
+		}
+	}
+	eoanb_se_55_days_sound = {
+		context_type = player_context
+		window_name = "55_days_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 41}
+		}
+	}
+
+	##### Easter Egg Super Events
+	eoanb_se_acw_ger_sound = {
+		context_type = player_context
+		window_name = "ger_acw_sound_container"
+		visible = {
+			check_variable = {super_event_displayed = 9901}
+		}
+	}
 	
 	eoanb_se_super_event_sound = {
 		context_type = player_context
 		window_name = "superevent_sound_container"
 		visible = {
-			check_variable = {super_event_displayed > 30}
+			check_variable = {super_event_displayed > 41}
+			NOT = {
+				check_variable = { super_event_displayed > 9900 }
+			}
 		}
 	}
 	

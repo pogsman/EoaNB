@@ -1,4 +1,4 @@
-defined_text = {
+﻿defined_text = {
 	name = GetMHCNavyNasImageAUS
 	
 	text = {
@@ -15,25 +15,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_nas_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nas_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nas_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nas_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nas_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nas_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Nas Replacement Marker###
 	
@@ -62,25 +74,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_ncs_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_ncs_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_ncs_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_ncs_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_ncs_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_ncs_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Ncs Replacement Marker###
 	
@@ -109,25 +133,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_nog_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nog_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nog_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nog_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nog_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nog_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Nog Replacement Marker###
 	
@@ -156,25 +192,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_cog_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_cog_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_cog_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_cog_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_cog_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_cog_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Cog Replacement Marker###
 	
@@ -203,25 +251,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_nlg_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nlg_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nlg_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_nlg_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nlg_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_nlg_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Nlg Replacement Marker###
 	
@@ -250,25 +310,37 @@ defined_text = {
 		trigger = {
 			check_variable = { mhc_mog_value = 1 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_theorist_Archduke_Maximillian"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_mog_value = 2 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_advisor_Ludwig_von_Fautz"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_mog_value = 3 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Littrow"
 	}
 	text = {
 		trigger = {
 			check_variable = { mhc_mog_value = 4 }
 		}
-		localization_key = "GFX_MHC_no_advisor_gfx"
+		localization_key = "GFX_idea_AUS_vic_Maximilian_Daublebsky_von_Sterneck"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_mog_value = 5 }
+		}
+		localization_key = "GFX_idea_AUS_Romako"
+	}
+	text = {
+		trigger = {
+			check_variable = { mhc_mog_value = 6 }
+		}
+		localization_key = "GFX_idea_AUS_Jilek"
 	}
 	###Navy Mog Replacement Marker###
 	

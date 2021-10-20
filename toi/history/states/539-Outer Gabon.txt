@@ -1,19 +1,20 @@
 
-state={
-	id=539
-	name="STATE_539"
-	manpower = 264000
+state = {
+	id =539
+	name = "STATE_539"
+	manpower = 164000
 
 	state_category = rural
-	resources={
-		wood=1
+	resources = {
+		wood = 5
+                iron = 3
 	}
 	
 
-	provinces={
+	provinces = {
 		5139 10948 13417
 	}
-	history={
+	history = {
 		victory_points = {
 			5139 1
 		}
@@ -22,6 +23,19 @@ state={
 		}
 		owner = FNG
 		add_core_of = FNG
+
+		add_to_array = { state_culture_array = 320 } 
+		add_to_array = { state_culture_array = 313 } 
+		add_to_array = { state_culture_array = 338 } 
+				
+		add_to_array = { state_culture_array_num = 0.91 }
+		add_to_array = { state_culture_array_num = 0.05 }
+		add_to_array = { state_culture_array_num = 0.04 }
+	
+					add_to_array = { state_religion_array = 20 } 
+
+					add_to_array = { state_religion_array_num = 1.00}
+
 		afr_state_setup_scripted_effect = yes
 	}
 }

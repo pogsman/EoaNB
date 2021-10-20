@@ -1,9 +1,9 @@
-state={
-	id=739
-	name="STATE_739"
+state = {
+	id =739
+	name = "STATE_739"
 
-	history={
-		owner = QCI
+	history = {
+		owner = BCO
 		buildings = {
 			infrastructure = 1
 
@@ -12,7 +12,7 @@ state={
 
 			}
 		}
-		add_core_of = QCI
+		add_core_of = BCO
 		set_state_flag = NA_B_Disregardable_State
 		add_to_array = { state_culture_array = 432 }
 		add_to_array = { state_culture_array_num = 0.77 }
@@ -31,10 +31,10 @@ state={
 		add_to_array = { state_religion_array_num = 0.01 }
 	}
 
-	provinces={
+	provinces = {
 		1869
 	}
-	manpower=1684
-	buildings_max_level_factor=1
-	state_category="small_island"
+	manpower = 1684
+	buildings_max_level_factor = 1
+	state_category = "small_island"
 }

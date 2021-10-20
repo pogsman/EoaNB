@@ -15,6 +15,8 @@ ideologies = {
 			third = { }
 
 			parlia_repub = { }
+
+			liberal_nationalism = { }
 		}
 
 		dynamic_faction_names = {
@@ -35,6 +37,9 @@ ideologies = {
 			can_lower_tension = yes
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = yes
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -88,6 +93,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -111,6 +119,8 @@ ideologies = {
 			kongsi = { }
 
 			religious_social = { }
+
+			democratic_socialism = { }
 		}
 
 		dynamic_faction_names = {
@@ -133,6 +143,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -156,6 +169,10 @@ ideologies = {
 			market_social = { }
 
 			republicanism = { }
+
+			social_democracy = { }
+
+			tridemism = { }
 		}
 
 		dynamic_faction_names = {
@@ -178,6 +195,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -194,13 +214,13 @@ ideologies = {
  # Conservative Democracy
 	traditional_conservatism = {
 		types = {
+			conserv = { }
+			
 			toryism = { }
 
 			federal = { }
 
 			neoconserv = { }
-
-			conserv = { }
 
 			paleoconserv = { }
 
@@ -225,6 +245,9 @@ ideologies = {
 			can_lower_tension = yes
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = yes
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -240,22 +263,26 @@ ideologies = {
 		ai_democratic = yes
 	}
 
- # Authoritarian Democracy
+ # Peripheral
 	radical_democracy = {
 		types = {
-			authoritarian_democracy = { }
+			authoritarian_democracy = { can_be_randomly_selected = no }
 
 			reactionary = { }
 
-			revolutionary = { }
+			revolutionary = { can_be_randomly_selected = no }
 
 			plutocracy = { }
 
-			military_junta = { }
+			military_junta = { can_be_randomly_selected = no }
 
-			military_goverment = { }
+			military_goverment = { can_be_randomly_selected = no }
 
-            daimyo_republic = { }
+			daimyo_republic = { can_be_randomly_selected = no }
+
+			shogunate = { can_be_randomly_selected = no }
+
+			kemalism = { can_be_randomly_selected = no }
 		}
 
 		dynamic_faction_names = {
@@ -277,6 +304,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = yes
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -301,6 +331,12 @@ ideologies = {
 
 			absolutism = { }
 
+			bonapartism = { can_be_randomly_selected = no }
+
+			legitimism = { can_be_randomly_selected = no } # Bourbon Dynasty
+
+			orleanism = { can_be_randomly_selected = no }
+
 			tribe = { }
 		} 
 
@@ -322,6 +358,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = yes
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -341,13 +380,13 @@ ideologies = {
 	fundamentalism = {
 
 		types = {
-			shogunate = { }
-
 			christian = { }
 
 			islamist = { }
 
 			shamanism = { }
+			
+			mayan_ideology = { can_be_randomly_selected = no }
 
 			other_ideology = { }
 		}
@@ -370,6 +409,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -424,6 +466,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {
@@ -442,11 +487,11 @@ ideologies = {
  # Decentralist or syndicalism or mutualism
 	anarchism = {
 		types = {
+			anarchism_sub = { }
+			
 			egoism = { }
 
 			libertarianism = { }
-
-			anarchism_sub = { }
 
 			mutualism = { }
 
@@ -471,6 +516,9 @@ ideologies = {
 			can_lower_tension = no
 			can_only_justify_war_on_threat_country = no
 			can_guarantee_other_ideologies = no
+			
+			can_join_factions = no
+			can_create_factions = no
 		}
 
 		modifiers = {

@@ -1,17 +1,17 @@
-state={
-	id=1292
-	name="STATE_1292"
-	provinces={
+state = {
+	id = 1292
+	name = "STATE_1292"
+	provinces = {
 		1736 4741 6742 7779
 	}
 	state_category = pastoral
-	history={
+	history = {
 		owner = BFT
 		buildings = {
 			infrastructure = 1
 		}
 		add_core_of = BFT
-		add_claim_by = USA
+		#add_claim_by = USA
 		victory_points = {
 			7779 1
 		}
@@ -29,6 +29,6 @@ state={
 
 		set_state_flag = NA_B_Disregardable_State
 	}
-	manpower=9986
+	manpower =9986
 	
 }

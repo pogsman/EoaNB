@@ -1,20 +1,20 @@
 
-state={
-	id=1312
-	name="STATE_1312"
+state = {
+	id = 1312
+	name = "STATE_1312"
 	manpower = 1200
 
 	state_category = pastoral
 
-	history={
-		owner = OMA
+	history = {
+		owner = MAH
 		buildings = {
 			infrastructure = 1
 			8000 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = OMA
+		add_core_of = MAH
 		
 		add_to_array = { state_culture_array = 156 }
 		
@@ -27,7 +27,7 @@ state={
 		add_to_array = { state_religion_array_num = 0.20 }
 	}
 
-	provinces={
+	provinces = {
 		8000
 	}
 }

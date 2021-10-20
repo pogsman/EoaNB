@@ -1,20 +1,23 @@
-state={
-	id=872
-	name="STATE_872"
+state = {
+	id =872
+	name = "STATE_872"
 
 	state_category = rural
-
-	
-
-	provinces={
-		12817 
+	resources = {
+		wood = 2
+                iron = 1
 	}
-	manpower=323440
+		
+
+	provinces = {
+		12817 14219
+	}
+	manpower =323440
 	
-	history={
-        victory_points ={
+	history = {
+				victory_points = {
 			12817 1
-        }
+				}
 		buildings = {
 			infrastructure = 2
 		}

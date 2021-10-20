@@ -1,21 +1,20 @@
-state=
-{
-	id=765
-	name="STATE_765"
-	manpower = 91078
+state = {
+	id =765
+	name = "STATE_765"
+	manpower = 196579
 	
-	state_category = pastoral
-	resources={
+	state_category = rural
+	resources = {
 	}	
 	
 
 	
-	provinces={
-		13225 13234 13227 13233 13231 13226 13235 13232 
+	provinces = {
+		13225 13234 13227 13233 13235 13232 
 	}
-	history= {
-		owner = KOY
-		add_core_of = KOY
+	history = {
+		owner = MNH
+		add_core_of = MNH
 		buildings = {
 			infrastructure = 1
 		}

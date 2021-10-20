@@ -1,17 +1,17 @@
 
-state={
-	id=740
-	name="STATE_740"
+state = {
+	id =740
+	name = "STATE_740"
 	manpower = 31524
 
 	state_category = rural
 
-	history={
-		owner = VAN
+	history = {
+		owner = BCO
 		buildings = {
 			infrastructure = 1
 		}
-		add_core_of = VAN
+		add_core_of = BCO
 		victory_points = { 7259 5 }
 		set_state_flag = NA_B_Disregardable_State
 		add_to_array = { state_culture_array = 432 }
@@ -27,7 +27,7 @@ state={
 		add_to_array = { state_religion_array_num = 0.39 }
 	}
 
-	provinces={
+	provinces = {
 		7259 1214 12259 12272 1420
 	}
 

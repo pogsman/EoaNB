@@ -1711,7 +1711,7 @@ focus_tree = {
 				name = navaltroops_tech_bonus
 				bonus = 0.25
 				uses = 1
-				category = navaltroops_tech
+				category = naval_mtg_module_transport_tech
 			}
 		}
 	}
@@ -1800,14 +1800,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 80
 		}
-        completion_reward = {
-		    EPD = { add_manpower = 2000 }
+		completion_reward = {
+			EPD = { add_manpower = 2000 }
 			EPD = { add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 3000 producer = FRA } }
 			SNG = { add_manpower = 2000 }
 			SNG = { add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 3000 producer = FRA } }
-		    GBS = { add_manpower = 2000 }
-			GBS = { add_equipment_to_stockpile = { type = infantry_equipment_rifle_1 amount = 3000 producer = FRA } }
-	    }
+		}
 	}
 
 	#---------------------------------------------------------------------------------------
@@ -2378,7 +2376,7 @@ focus_tree = {
 				}
 				create_country_leader = {
 					name = "Norodom"
-					picture = "Portrait_CMB_Norodom.dds"
+					picture = "Portrait_CMB_Norodom.png"
 					ideology = despotism
 				}
 				custom_effect_tooltip = afr_colonial_effect_tooltip
@@ -3255,10 +3253,6 @@ focus_tree = {
 		x = 60
 		y = 1
 		available = {
-			#OR = {
-			#	USA = { has_war_with = CSA }
-			#	NOT = { country_exists = USA }
-			#}
 			custom_trigger_tooltip = {
 				tooltip = FRA_mexican_intervention_tooltip
 				always = no
@@ -3269,6 +3263,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			#FRA = { country_event = { id = nap_france.360 } }
+			custom_effect_tooltip = FRA_mexican_intervention_tooltip2
 		}
 	}
 	
@@ -3287,6 +3282,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = FRA_mexican_intervention_tooltip3
+		}
 	}
 	focus = {
 		id = FRA_mexico_ourselves
@@ -3295,8 +3294,8 @@ focus_tree = {
 
 		available = {
 			always = no
-            has_country_flag = FRA_soledad_conv_england_end
-			has_country_flag = FRA_soledad_conv_spain_end
+			# has_country_flag = FRA_soledad_conv_england_end
+			# has_country_flag = FRA_soledad_conv_spain_end
 		}
 
 		prerequisite = {
@@ -3314,7 +3313,7 @@ focus_tree = {
 			add_political_power = -50
 			add_war_support = 0.05
 			add_stability = 0.05
-	    }
+		}
 	}
 
 	focus = {

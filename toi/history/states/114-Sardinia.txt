@@ -1,16 +1,17 @@
-state=
-{
-	id=114
-	name="STATE_114"
-	manpower = 574670
+state = {
+	id = 114
+	name = "STATE_114"
+	manpower = 575020
 
 	state_category = town
 
 	resources = {
-	 	wood = 5
+	 	wood = 6
+		coal = 4
+		iron = 2
 	}
 
-	history=
+	history =
 	{
 		owner = PIE
 		victory_points = {
@@ -23,9 +24,7 @@ state=
 			9772 3
 		}
 		buildings = {
-			infrastructure = 3
-			arms_factory = 0
-			industrial_complex = 1
+			infrastructure = 2
 
 			11773 = {
 				naval_base = 3
@@ -51,7 +50,7 @@ state=
 		add_to_array = { state_culture_array_num = 0.03 }
 		add_to_array = { state_culture_array_num = 0.02 }
 	}
-	provinces=
+	provinces =
 	{
 902 6891 9772 9863 11755 11773 11824 11874 	}
 }

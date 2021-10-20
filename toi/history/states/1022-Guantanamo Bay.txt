@@ -1,33 +1,35 @@
-state= {
-	id=1022
-	name="STATE_1022"
+state = {
+	id = 1022
+	name = "STATE_1022"
 	manpower = 844
-	resources={
-		wood=1
+	resources = {
+		wood = 1
 	}
 
 	state_category = enclave
 
-	history= {
+	history = {
 		owner = SPR
 		buildings = {
 			infrastructure = 2
 		}
-		add_core_of = CUB
 		victory_points = {
 			13527 1
 		}
 		set_state_flag = NA_B_Disregardable_State
 		
-		add_to_array = { state_culture_array = 423 }
-		add_to_array = { state_culture_array = 420 }
-		add_to_array = { state_culture_array = 251 }
-					
-		add_to_array = { state_culture_array_num = 0.55 }
-		add_to_array = { state_culture_array_num = 0.43 }
-		add_to_array = { state_culture_array_num = 0.02 }
+		#cultures
+			add_to_array = { state_culture_array = 423 }
+			add_to_array = { state_culture_array = 420 }
+		#culture percentage	
+		 	add_to_array = { state_culture_array_num = 0.60 }
+		 	add_to_array = { state_culture_array_num = 0.40 }
+		#religion
+			add_to_array = { state_religion_array = 2 }
+		#relgion percentage
+			add_to_array = { state_religion_array_num = 1.00 }
 	}
-	provinces={
+	provinces = {
 		13527
 	}
 }

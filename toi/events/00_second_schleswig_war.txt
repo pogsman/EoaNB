@@ -84,6 +84,12 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_war_support = 0.05
 		add_political_power = 10
+		if = {
+			limit = {
+				tag = SAX
+			}
+			complete_national_focus = SAX_focus_schleswig_holstein_question
+		}
 	}
 }
 
@@ -529,7 +535,7 @@ country_event = {
 			HAN = { give_military_access = AUS }
 			MCK = { give_military_access = PRS }
 			MCK = { give_military_access = AUS }
-			DEN = { country_event = { days = 1 id = secschwar.21 } }
+			DEN = { country_event = { days = 8 id = secschwar.21 } }
 			every_country = {
 				limit = {
 					has_idea = GER_general_idea_ger_confed
@@ -542,7 +548,7 @@ country_event = {
 	}
 }
 
-#Denmark - PM Carl Christian Hall Resigns - 24 December 1863
+#Denmark - PM Carl Christian Hall Resigns - 31 December 1863
 country_event = {
 	id = secschwar.21
 	title = secschwar.21.t
@@ -552,12 +558,99 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
+	#Ditlev Gothard Monrad - Liberals Remain in Power
 	option = {
 		name = secschwar.21.a
+		trigger = {
+			has_government = centrism
+		}
 		ai_chance = { base = 100 }
 		add_stability = -0.05
 		add_political_power = -50
-		#swap_ideas
+		custom_effect_tooltip = historical_option
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Ditlev Gothard Monrad"
+			desc = "POLITICS_GENERIC_EOANB_DESC"
+			picture = "gfx/leaders/DEN/Portrait_DEN_Ditlev_Gothard_Monrad.dds"
+			expire = "1930.1.1"
+			ideology = market_liberal
+			traits = {}
+		}
+	}
+	
+	#Christian Emil Frijs - Conservatives Take Over
+	option = {
+		name = secschwar.21.b
+		trigger = {
+			has_government = centrism
+		}
+		ai_chance = { base = 100 }
+		add_stability = -0.05
+		add_political_power = -50
+		retire_country_leader = yes
+		set_politics = { ruling_party = traditional_conservatism }
+		hidden_effect = {
+			create_country_leader = {
+				name = "Ditlev Gothard Monrad"
+				desc = "POLITICS_GENERIC_EOANB_DESC"
+				picture = "gfx/leaders/DEN/Portrait_DEN_Ditlev_Gothard_Monrad.dds"
+				expire = "1930.1.1"
+				ideology = market_liberal
+				traits = {}
+			}
+		}
+	}
+	
+	#Ditlev Gothard Monrad - Liberals Take Over
+	option = {
+		name = secschwar.21.c
+		trigger = {
+			has_government = traditional_conservatism
+		}
+		ai_chance = { base = 100 }
+		add_stability = -0.05
+		add_political_power = -50
+		retire_country_leader = yes
+		set_politics = { ruling_party = centrism }
+		create_country_leader = {
+			name = "Ditlev Gothard Monrad"
+			desc = "POLITICS_GENERIC_EOANB_DESC"
+			picture = "gfx/leaders/DEN/Portrait_DEN_Ditlev_Gothard_Monrad.dds"
+			expire = "1930.1.1"
+			ideology = market_liberal
+			traits = {}
+		}
+		hidden_effect = {
+			create_country_leader = {
+				name = "Christen Andreas Fonnesbech"
+				desc = "POLITICS_GENERIC_EOANB_DESC"
+				picture = "gfx/leaders/DEN/Portrait_DEN_Christen_Andreas_Fonnesbech.dds"
+				expire = "1930.1.1"
+				ideology = conserv
+				traits = {}
+			}
+		}
+	}
+	
+	#Christen Andreas Fonnesbech - Conservatives Remain in Power
+	option = {
+		name = secschwar.21.e
+		trigger = {
+			has_government = traditional_conservatism
+		}
+		ai_chance = { base = 100 }
+		add_stability = -0.05
+		add_political_power = -50
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Christen Andreas Fonnesbech"
+			desc = "POLITICS_GENERIC_EOANB_DESC"
+			picture = "gfx/leaders/DEN/Portrait_DEN_Christen_Andreas_Fonnesbech.dds"
+			expire = "1930.1.1"
+			ideology = conserv
+			traits = {}
+		}
 	}
 }
 
@@ -915,12 +1008,7 @@ country_event = {
 		name = secschwar.33.b
 		ai_chance = { base = 89 }
 		custom_effect_tooltip = eoanb_tt_event_secschwar_bismarck_proposal
-		if = {
-			limit = {
-				is_historical_focus_on = yes
-			}
-			custom_effect_tooltip = eoanb_tt_option_is_historical
-		}
+		custom_effect_tooltip = historical_option
 		hidden_effect = {
 			AUS = { country_event = { days = 5 id = secschwar.34 } }
 			set_global_flag = eoanb_flag_PRS_supported_bismarck
@@ -968,12 +1056,7 @@ country_event = {
 		name = secschwar.34.b
 		ai_chance = { base = 59 }
 		custom_effect_tooltip = eoanb_tt_event_secschwar_bismarck_proposal
-		if = {
-			limit = {
-				is_historical_focus_on = yes
-			}
-			custom_effect_tooltip = eoanb_tt_option_is_historical
-		}
+		custom_effect_tooltip = historical_option
 		hidden_effect = {
 			DEN = { country_event = { days = 5 id = secschwar.35 } }
 			set_global_flag = eoanb_flag_AUS_supported_bismarck
@@ -1011,12 +1094,7 @@ country_event = {
 		name = secschwar.35.a
 		ai_chance = { base = 95 }
 		custom_effect_tooltip = eoanb_tt_event_secschwar_russell_proposal
-		if = {
-			limit = {
-				is_historical_focus_on = yes
-			}
-			custom_effect_tooltip = eoanb_tt_option_is_historical
-		}
+		custom_effect_tooltip = historical_option
 		hidden_effect = {
 			set_global_flag = eoanb_flag_DEN_supported_russell
 		}
@@ -1154,9 +1232,9 @@ country_event = {
 			}
 			clr_global_flag = eoanb_flag_second_schleswig_war
 			PRS = { set_country_flag = eoanb_flag_won_2_schleswig_war }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = {
-			    add_ideas = DEN_Lost_Schleswig_War
+			    add_ideas = DEN_idea_lost_second_schleswig_war
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
 			}
@@ -1217,10 +1295,10 @@ country_event = {
 			clr_global_flag = eoanb_flag_second_schleswig_war
 			PRS = { set_country_flag = eoanb_flag_won_2_schleswig_war }
 			PRS = { country_event = { days = 5 id = prussia.16 } }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = { white_peace = SCH }
 			DEN = {
-			    add_ideas = DEN_Lost_Schleswig_War
+			    add_ideas = DEN_idea_lost_second_schleswig_war
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
 			}
@@ -1279,9 +1357,9 @@ country_event = {
 			clr_global_flag = eoanb_flag_second_schleswig_war
 			PRS = { set_country_flag = eoanb_flag_won_2_schleswig_war_gc }
 			PRS = { country_event = { days = 5 id = prussia.16 } }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = {
-			    add_ideas = DEN_Lost_Schleswig_War
+			    add_ideas = DEN_idea_lost_second_schleswig_war
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
 			}
@@ -1376,11 +1454,12 @@ country_event = {
 		name = secschwar.41.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = eoanb_tt_event_secschwar_41
+		complete_national_focus = DEN_focus_danish_defeat
 		hidden_effect = {
 			white_peace = PRS
 			white_peace = AUS
 			PRS = { set_country_flag = PRS_denmark_sues_for_peace_flag }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			every_country = {
 				limit = {
 					has_idea = GER_general_idea_ger_confed
@@ -1433,7 +1512,7 @@ country_event = {
 			PRS = { set_country_flag = eoanb_flag_won_2_schleswig_war }
 			PRS = { country_event = { days = 5 id = prussia.16 } }
 			DEN = {
-			    add_ideas = DEN_Lost_Schleswig_War
+			    add_ideas = DEN_idea_lost_second_schleswig_war
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
 			}
@@ -1452,6 +1531,7 @@ country_event = {
 				}
 				949 = { remove_dynamic_modifier = { modifier = dynmod_PRS_SSW_holstein_supply } }
 			}
+			SAX = { complete_national_focus = SAX_focus_trias_fails }
 		}
 	}
 }
@@ -1638,6 +1718,12 @@ country_event = {
 				PRS = { set_country_flag = eoanb_flag_avoided_2_schleswig_war_gc }
 			}
 			PRS = { country_event = { days = 5 id = prussia.16 } }
+			if = {
+				limit = {
+					tag = SAX
+				}
+				complete_national_focus = SAX_focus_trias_succeeds
+			}
 		}
 	}
 }
@@ -1715,10 +1801,11 @@ country_event = {
 		name = secschwar.51.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = eoanb_tt_event_secschwar_51
+		complete_national_focus = DEN_focus_danish_defeat
 		hidden_effect = {
 			white_peace = PRS
 			PRS = { set_country_flag = PRS_denmark_sues_for_peace_flag }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			every_country = {
 				limit = {
 					has_idea = GER_general_idea_ger_confed
@@ -1773,7 +1860,7 @@ country_event = {
 			PRS = { set_country_flag = eoanb_flag_won_2_schleswig_war_gc }
 			PRS = { country_event = { days = 5 id = prussia.16 } }
 			DEN = {
-			    add_ideas = DEN_Lost_Schleswig_War
+			    add_ideas = DEN_idea_lost_second_schleswig_war
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
 				add_war_support = -0.65
@@ -1915,6 +2002,26 @@ country_event = {
 				}
 				country_event = { days = 1 id = secschwar.55 }
 			}
+			if = {
+				limit = {
+					SAX = { 
+						OR = {
+							has_country_flag = SAX_decision_notify_the_middle_states_failure_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_small_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_large_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_unanimity_flag
+						}
+					}
+				}
+				add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+				reverse_add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+			}
+			else_if = {
+				limit = {
+					SAX = { has_variable = SAX_bundesreform_positive_votes }
+				}
+				SCH = { country_event = { id = saxonyforeign.4 } }
+			}
 		}
 	}
 }
@@ -1936,6 +2043,12 @@ country_event = {
 		ROOT = {
 			add_opinion_modifier = { target = FROM modifier = eoanb_SCHLESWIG_GC_MEMBER_REL }
 			reverse_add_opinion_modifier = { target = FROM modifier = eoanb_SCHLESWIG_GC_MEMBER_REL }
+		}
+		if = {
+			limit = {
+				tag = SAX
+			}
+			complete_national_focus = SAX_focus_trias_succeeds
 		}
 	}
 }
@@ -2050,7 +2163,7 @@ country_event = {
 				create_country_leader = {
 					name = "Franz Joseph I"
 					desc = "POLITICS_GENERIC_EOANB_DESC"
-					picture = "gfx/leaders/AUS/Portrait_AUS_Franz_Joseph_I.dds"
+					picture = "gfx/leaders/AUS/Portrait_AUS_Franz_Joseph_I.png"
 					expire = "1917.1.1"
 					ideology = despotism
 					traits = { }
@@ -2377,7 +2490,7 @@ country_event = {
 			HLS = { inherit_technology = DEN }
 			HLS = { load_oob = "SCH_free_GC_member" }
 			clr_global_flag = eoanb_flag_second_schleswig_war
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = {
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
@@ -2552,6 +2665,26 @@ country_event = {
 				}
 				country_event = { days = 1 id = secschwar.75 }
 			}
+			if = {
+				limit = {
+					SAX = { 
+						OR = {
+							has_country_flag = SAX_decision_notify_the_middle_states_failure_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_small_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_large_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_unanimity_flag
+						}
+					}
+				}
+				add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+				reverse_add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+			}
+			else_if = {
+				limit = {
+					SAX = { has_variable = SAX_bundesreform_positive_votes }
+				}
+				HLS = { country_event = { id = saxonyforeign.4 } }
+			}
 		}
 	}
 }
@@ -2573,6 +2706,12 @@ country_event = {
 		ROOT = {
 			add_opinion_modifier = { target = FROM modifier = eoanb_HOLSTEIN_GC_MEMBER_REL }
 			reverse_add_opinion_modifier = { target = FROM modifier = eoanb_HOLSTEIN_GC_MEMBER_REL }
+		}
+		if = {
+			limit = {
+				tag = SAX
+			}
+			complete_national_focus = SAX_focus_trias_succeeds
 		}
 	}
 }
@@ -2847,7 +2986,7 @@ country_event = {
 			HLS = { set_party_name = { ideology = autocracy name = HLS_autocracy_party_augustenburg } }
 			HLS = { inherit_technology = DEN }
 			HLS = { load_oob = "SCH_free_GC_member" }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = {
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1
@@ -3056,6 +3195,26 @@ country_event = {
 				}
 				country_event = { days = 1 id = secschwar.75 }
 			}
+			if = {
+				limit = {
+					SAX = { 
+						OR = {
+							has_country_flag = SAX_decision_notify_the_middle_states_failure_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_small_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_large_majority_flag
+							has_country_flag = SAX_decision_notify_the_middle_states_unanimity_flag
+						}
+					}
+				}
+				add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+				reverse_add_opinion_modifier = { target = SAX modifier = SAX_GC_BUNDESREFORM_CAUTIOUS_REL }
+			}
+			else_if = {
+				limit = {
+					SAX = { has_variable = SAX_bundesreform_positive_votes }
+				}
+				HLS = { country_event = { id = saxonyforeign.4 } }
+			}
 		}
 	}
 }
@@ -3194,7 +3353,7 @@ country_event = {
 			HLS = { set_party_name = { ideology = autocracy name = HLS_autocracy_party_augustenburg } }
 			HLS = { inherit_technology = DEN }
 			HLS = { load_oob = "SCH_free_GC_member" }
-			PRS = { remove_ideas = DEN_pomerania_blockade }
+			PRS = { remove_ideas = DEN_idea_pomerania_blockade }
 			DEN = {
 				remove_ideas = hidden_idea_never_surrender
 				remove_ideas = SCH_idea_profits_from_altona_1

@@ -1,513 +1,4 @@
 autonomy_state = {
-	id = autonomy_afr_colonial_company
-	
-	is_puppet = yes
-	
-	min_freedom_level = 0.0
-	
-	manpower_influence = 0.1
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = yes
-	}
-	
-	modifier = {
-		extra_trade_to_overlord_factor = 1
-		overlord_trade_cost_factor = -0.25
-		autonomy_manpower_share = 0.10
-		research_sharing_per_country_bonus_factor = 0.25
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-		has_country_flag = AFR_is_a_colonial_company_flag
-		NOT = {
-			OVERLORD = {
-				tag = OTO
-				afr_is_tribal = yes
-				oceania_is_tribal = yes
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
-				has_idea = NA_B_Spirit_New_World_Democracies
-			}
-			has_idea = AFR_french_protectorate
-			has_idea = AFR_british_protectorate
-			has_idea = AFR_netherland_protectorate
-			has_idea = AFR_spanish_protectorate
-			has_idea = AFR_portuguese_protectorate
-			has_idea = AFR_swedish_protectorate
-			has_idea = AFR_german_protectorate
-			has_idea = AFR_hamburg_protectorate
-			has_idea = AFR_bremen_protectorate
-		}
-		OR={
-			has_idea = AFR_french_colony
-			has_idea = AFR_french_colony_tribute
-			has_idea = AFR_british_colony
-			has_idea = AFR_british_colony_tribute
-			has_idea = AFR_portuguese_colony
-			has_idea = AFR_portuguese_colony_tribute
-			has_idea = AFR_netherland_colony
-			has_idea = AFR_netherland_colony_tribute
-			has_idea = AFR_spanish_colony
-			has_idea = AFR_spanish_colony_tribute
-			has_idea = AFR_swedish_colony
-			has_idea = AFR_swedish_colony_tribute
-			has_idea = AFR_german_colony
-			has_idea = AFR_german_colony_tribute
-			has_idea = AFR_hamburg_colony
-			has_idea = AFR_hamburg_colony_tribute
-			has_idea = AFR_bremen_colony
-			has_idea = AFR_bremen_colony_tribute
-		}		
-	}
-	
-	can_take_level = {
-		#trigger here
-	}
-
-	can_lose_level = {
-		#trigger here
-	}
-}
-autonomy_state = {
-	id = autonomy_afr_colony
-	
-	is_puppet = yes
-	
-	min_freedom_level = 0.0
-	
-	manpower_influence = 0.1
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = no
-	}
-	
-	modifier = {
-		extra_trade_to_overlord_factor = 1
-		overlord_trade_cost_factor = -0.5
-		can_master_build_for_us = 1
-		autonomy_manpower_share = 0.15
-		research_sharing_per_country_bonus_factor = 0.25
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-
-		NOT = {
-			OVERLORD = {
-				tag = OTO
-				afr_is_tribal = yes
-				oceania_is_tribal = yes
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
-				has_idea = NA_B_Spirit_New_World_Democracies
-			}
-			has_country_flag = AFR_is_a_colonial_company_flag
-			
-			has_idea = AFR_french_protectorate
-			has_idea = AFR_british_protectorate
-			has_idea = AFR_netherland_protectorate
-			has_idea = AFR_spanish_protectorate
-			has_idea = AFR_portuguese_protectorate
-			has_idea = AFR_swedish_protectorate
-			has_idea = AFR_german_protectorate
-			has_idea = AFR_hamburg_protectorate
-			has_idea = AFR_bremen_protectorate
-		}
-		OR={
-			has_idea = AFR_french_colony
-			has_idea = AFR_french_colony_tribute
-			has_idea = AFR_british_colony
-			has_idea = AFR_british_colony_tribute
-			has_idea = AFR_portuguese_colony
-			has_idea = AFR_portuguese_colony_tribute
-			has_idea = AFR_netherland_colony
-			has_idea = AFR_netherland_colony_tribute
-			has_idea = AFR_spanish_colony
-			has_idea = AFR_spanish_colony_tribute
-			has_idea = AFR_swedish_colony
-			has_idea = AFR_swedish_colony_tribute
-			has_idea = AFR_german_colony
-			has_idea = AFR_german_colony_tribute
-			has_idea = AFR_hamburg_colony
-			has_idea = AFR_hamburg_colony_tribute
-			has_idea = AFR_bremen_colony
-			has_idea = AFR_bremen_colony_tribute
-		}		
-	}
-	
-	can_take_level = {
-		#trigger here
-	}
-
-	can_lose_level = {
-		#trigger here
-	}
-}
-autonomy_state = {
-	id = autonomy_afr_dominion
-	
-	is_puppet = yes
-	
-	min_freedom_level = 0.75
-	
-	manpower_influence = 0.1
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = no
-	}
-	
-	modifier = {
-		autonomy_manpower_share = 0.0
-		extra_trade_to_overlord_factor = 0.25
-		overlord_trade_cost_factor = -0.25
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-		
-		NOT = {
-			OVERLORD = {
-				tag = OTO
-				afr_is_tribal = yes
-				oceania_is_tribal = yes
-				has_idea = TSH_Spirit_Unpopular_Shogunate_1
-				has_idea = NA_B_Spirit_New_World_Democracies
-			}
-			has_country_flag = AFR_is_a_colonial_company_flag
-			
-			has_idea = AFR_french_protectorate
-			has_idea = AFR_british_protectorate
-			has_idea = AFR_netherland_protectorate
-			has_idea = AFR_spanish_protectorate
-			has_idea = AFR_portuguese_protectorate
-			has_idea = AFR_swedish_protectorate
-			has_idea = AFR_german_protectorate
-			has_idea = AFR_hamburg_protectorate
-			has_idea = AFR_bremen_protectorate
-		}
-		OR={
-			has_idea = AFR_french_colony
-			has_idea = AFR_french_colony_tribute
-			has_idea = AFR_british_colony
-			has_idea = AFR_british_colony_tribute
-			has_idea = AFR_portuguese_colony
-			has_idea = AFR_portuguese_colony_tribute
-			has_idea = AFR_netherland_colony
-			has_idea = AFR_netherland_colony_tribute
-			has_idea = AFR_spanish_colony
-			has_idea = AFR_spanish_colony_tribute
-			has_idea = AFR_swedish_colony
-			has_idea = AFR_swedish_colony_tribute
-			has_idea = AFR_german_colony
-			has_idea = AFR_german_colony_tribute
-			has_idea = AFR_hamburg_colony
-			has_idea = AFR_hamburg_colony_tribute
-			has_idea = AFR_bremen_colony
-			has_idea = AFR_bremen_colony_tribute
-		}		
-	}
-	
-	can_take_level = {
-		#trigger here
-	}
-
-	can_lose_level = {
-		#trigger here
-	}
-}
-autonomy_state = {
-	id = autonomy_afr_empire_level_1
-	
-	use_overlord_color = yes
-	
-	min_freedom_level = 0.0
-	
-	manpower_influence = 0.5
-	
-	rule = {
-		can_not_declare_war = yes
-		can_decline_call_to_war = no
-		units_deployed_to_overlord = no
-	}
-	
-	modifier = {
-		autonomy_manpower_share = 0.5
-		can_master_build_for_us = 1
-		extra_trade_to_overlord_factor = 1.0
-		cic_to_overlord_factor = 0.75
-		mic_to_overlord_factor = 0.75
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-		OVERLORD = {
-			has_variable = has_afr_empire_mechanic_system		
-		}
-	}
-	
-	can_take_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_gain_level_1_tooltip
-			always = no
-		}
-	}
-
-	can_lose_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_lose_level_1_tooltip
-			always = no
-		}
-	}
-}
-
-autonomy_state = {
-	id = autonomy_afr_empire_level_2
-	
-	use_overlord_color = yes
-	
-	min_freedom_level = 0.25
-	
-	manpower_influence = 0.5
-	
-	rule = {
-		can_not_declare_war = yes
-		can_decline_call_to_war = no
-		units_deployed_to_overlord = no
-	}
-	
-	modifier = {
-		autonomy_manpower_share = 0.50
-		overlord_trade_cost_factor = -0.5
-		can_master_build_for_us = 1
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-
-		OVERLORD = {
-			has_variable = has_afr_empire_mechanic_system		
-		}
-		
-	}
-	
-	can_take_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_gain_level_2_tooltip
-			always = no
-		}
-	}
-
-	can_lose_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_lose_level_2_tooltip
-			always = no
-		}
-	}
-}
-
-autonomy_state = {
-	id = autonomy_afr_empire_level_3
-	
-	use_overlord_color = yes
-	
-	min_freedom_level = 0.50
-	
-	manpower_influence = 0
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = no
-		units_deployed_to_overlord = no
-	}
-	
-	modifier = {
-		can_master_build_for_us = 1
-		research_sharing_per_country_bonus_factor = 0.1
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-
-		OVERLORD = {
-			has_variable = has_afr_empire_mechanic_system		
-		}
-		
-	}
-	
-	can_take_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_gain_level_3_tooltip
-			always = no
-		}
-	}
-
-	can_lose_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_lose_level_3_tooltip
-			always = no
-		}
-	}
-}
-
-autonomy_state = {
-	id = autonomy_afr_empire_level_4
-	
-	use_overlord_color = yes
-	
-	min_freedom_level = 0.75
-	
-	manpower_influence = 0
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = yes
-		units_deployed_to_overlord = no
-	}
-	
-	modifier = {
-		
-		research_sharing_per_country_bonus_factor = 0.25
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		}
-
-		OVERLORD = {
-			has_variable = has_afr_empire_mechanic_system		
-		}
-		
-	}
-	
-	can_take_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_gain_level_4_tooltip
-			always = no
-		}
-	}
-
-	can_lose_level = {
-		custom_trigger_tooltip = {
-			tooltip = afr_empire_autonomy_lose_level_4_tooltip
-			always = no
-		}
-	}
-}
-autonomy_state = {
 	id = autonomy_confederation_member
 	
 	min_freedom_level = 0.85
@@ -542,6 +33,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -606,6 +98,7 @@ autonomy_state = {
 	}
 	
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -669,9 +162,7 @@ autonomy_state = {
 						OVERLORD = {
 							OR = {
 								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
+								has_variable = has_afr_empire_mechanic_system
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -755,9 +246,7 @@ autonomy_state = {
 						OVERLORD = {
 							OR = {
 								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
+								has_variable = has_afr_empire_mechanic_system
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -835,6 +324,7 @@ autonomy_state = {
 	}
 	
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -890,6 +380,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		eoanb_enable_autonomy = yes
 
 		has_country_flag = is_junior_personal_union_member
@@ -968,6 +459,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		eoanb_enable_autonomy = yes
 
 		#Just HOL for now, since it's not needed elsewhere
@@ -985,6 +477,8 @@ autonomy_state = {
 }
 autonomy_state = {
 	id = autonomy_princely_state
+	
+	use_overlord_color = yes
 
 	is_puppet = yes
 
@@ -1016,59 +510,15 @@ autonomy_state = {
 	}
 
 	allowed = {
-		if = {
-			limit = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-			if = {
-				limit = {
-					OR = {
-						OVERLORD = {
-							OR = {
-								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
-								has_idea = NA_B_Spirit_New_World_Democracies
-							}
-						}
-						has_country_flag = AFR_is_a_colonial_company_flag
-						has_idea = AFR_french_colony
-						has_idea = AFR_french_colony_tribute
-						has_idea = AFR_british_colony
-						has_idea = AFR_british_colony_tribute
-						has_idea = AFR_portuguese_colony
-						has_idea = AFR_portuguese_colony_tribute
-						has_idea = AFR_netherland_colony
-						has_idea = AFR_netherland_colony_tribute
-						has_idea = AFR_spanish_colony
-						has_idea = AFR_spanish_colony_tribute
-						has_idea = AFR_swedish_colony
-						has_idea = AFR_swedish_colony_tribute
-						has_idea = AFR_german_colony
-						has_idea = AFR_german_colony_tribute
-						has_idea = AFR_hamburg_colony
-						has_idea = AFR_hamburg_colony_tribute
-						has_idea = AFR_bremen_colony
-						has_idea = AFR_bremen_colony_tribute
-
-						has_idea = AFR_french_protectorate
-						has_idea = AFR_british_protectorate
-						has_idea = AFR_netherland_protectorate
-						has_idea = AFR_spanish_protectorate
-						has_idea = AFR_portuguese_protectorate
-						has_idea = AFR_swedish_protectorate
-						has_idea = AFR_german_protectorate
-						has_idea = AFR_hamburg_protectorate
-						has_idea = AFR_bremen_protectorate
-					}
-				}
-				always = no
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
+		eoanb_enable_autonomy = yes
+		is_indian_country = yes
+		OVERLORD = {
+			OR={
+				tag = RAJ 
+				tag = ENG
 			}
 		}
-		else = { always = no }
 	}
 
 	can_take_level = {
@@ -1125,9 +575,7 @@ autonomy_state = {
 						OVERLORD = {
 							OR = {
 								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
+								has_variable = has_afr_empire_mechanic_system
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -1169,103 +617,6 @@ autonomy_state = {
 	}
 }
 autonomy_state = {
-	id = autonomy_afr_protectorate
-	
-	#is_puppet = yes
-	
-	min_freedom_level = 0.0
-	
-	manpower_influence = 0.05
-	
-	rule = {
-		can_not_declare_war = no
-		can_decline_call_to_war = yes
-	}
-	
-	modifier = {
-		overlord_trade_cost_factor = -0.25
-		autonomy_manpower_share = 0.05
-		research_sharing_per_country_bonus_factor = 0.10
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 1.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		if = {
-			limit = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-			if = {
-				limit = {
-					OR = {
-						OVERLORD = {
-							OR = {
-								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
-								has_idea = NA_B_Spirit_New_World_Democracies
-							}
-						}
-						has_country_flag = AFR_is_a_colonial_company_flag
-						has_idea = AFR_french_colony
-						has_idea = AFR_french_colony_tribute
-						has_idea = AFR_british_colony
-						has_idea = AFR_british_colony_tribute
-						has_idea = AFR_portuguese_colony
-						has_idea = AFR_portuguese_colony_tribute
-						has_idea = AFR_netherland_colony
-						has_idea = AFR_netherland_colony_tribute
-						has_idea = AFR_spanish_colony
-						has_idea = AFR_spanish_colony_tribute
-						has_idea = AFR_swedish_colony
-						has_idea = AFR_swedish_colony_tribute
-						has_idea = AFR_german_colony
-						has_idea = AFR_german_colony_tribute
-						has_idea = AFR_hamburg_colony
-						has_idea = AFR_hamburg_colony_tribute
-						has_idea = AFR_bremen_colony
-						has_idea = AFR_bremen_colony_tribute
-					}
-				}
-				always = no
-			}
-		}
-		else = { always = no }
-		OR = {
-			has_idea = AFR_french_protectorate
-			has_idea = AFR_british_protectorate
-			has_idea = AFR_netherland_protectorate
-			has_idea = AFR_spanish_protectorate
-			has_idea = AFR_portuguese_protectorate
-			has_idea = AFR_swedish_protectorate
-			has_idea = AFR_german_protectorate
-			has_idea = AFR_hamburg_protectorate
-			has_idea = AFR_bremen_protectorate
-		}		
-	}
-	
-	can_take_level = {
-		always = no
-	}
-
-	can_lose_level = {
-		#trigger here
-	}
-}
-autonomy_state = {
 	id = autonomy_daimyo
 	
 	is_puppet = yes
@@ -1301,15 +652,22 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
 			has_dlc = "Death or Dishonor"
 		}
-		OVERLORD = { 
-			has_government = autocracy
+		OVERLORD = {
+			OR = {
+				has_government = autocracy
+				has_government = radical_democracy
+				has_government = fundamentalism
+				has_government = traditional_conservatism
+			}
 			is_japanese_country = yes
 		}
+		is_japanese_country = yes
 	}
 
 	can_take_level = {
@@ -1361,6 +719,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1373,19 +732,17 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
+
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1447,6 +804,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1460,19 +818,16 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1537,6 +892,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1550,19 +906,16 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1620,6 +973,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1633,19 +987,16 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1713,6 +1064,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1726,19 +1078,16 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1799,6 +1148,7 @@ autonomy_state = {
 	}
 
 	allowed = {
+		if = { limit = { OVERLORD = { has_variable = has_afr_empire_mechanic_system } always = no } }
 		OR = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Waking the Tiger"
@@ -1812,19 +1162,16 @@ autonomy_state = {
 				tag = GRL
 				tag = NEG
 				tag = MHC
-				tag = ALA
 				tag = FLO
 				tag = USG
 				tag = MIS
 				tag = LOU
-				tag = TEN
 				tag = KTY
 				tag = WVG
 				tag = DAK
 				tag = KNS
 				tag = OKL
 				tag = TEX
-				tag = ARK
 				tag = ALK
 				tag = CAL
 				tag = ORE
@@ -1886,9 +1233,7 @@ autonomy_state = {
 						OVERLORD = {
 							OR = {
 								tag = OTO
-								afr_is_tribal = yes
-								oceania_is_tribal = yes
-								has_idea = TSH_Spirit_Unpopular_Shogunate_1
+								has_variable = has_afr_empire_mechanic_system
 								has_idea = NA_B_Spirit_New_World_Democracies
 							}
 						}
@@ -1994,11 +1339,73 @@ autonomy_state = {
 	}
 
 	allowed = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
+		if = {
+			limit = { OR = {
+				has_dlc = "Together for Victory"
+				has_dlc = "Waking the Tiger"
+				has_dlc = "Death or Dishonor"
+			} }
+			if = {
+				limit = {
+					OR = {
+						OVERLORD = {
+							OR = {
+								tag = OTO
+								has_variable = has_afr_empire_mechanic_system
+								has_idea = NA_B_Spirit_New_World_Democracies
+							}
+						}
+						tag = HJZ
+						tag = LBA
+						tag = KUW
+						tag = EGY
+						tag = TUN
+						
+						tag = TRA
+						tag = HYD
+						tag = REW
+						tag = GWA
+						tag = BIK
+						tag = KAR
+						tag = KLT
+						tag = KAS
+						tag = OUD
+						tag = NEP
+						has_country_flag = AFR_is_a_colonial_company_flag
+						has_idea = AFR_french_colony
+						has_idea = AFR_french_colony_tribute
+						has_idea = AFR_british_colony
+						has_idea = AFR_british_colony_tribute
+						has_idea = AFR_portuguese_colony
+						has_idea = AFR_portuguese_colony_tribute
+						has_idea = AFR_netherland_colony
+						has_idea = AFR_netherland_colony_tribute
+						has_idea = AFR_spanish_colony
+						has_idea = AFR_spanish_colony_tribute
+						has_idea = AFR_swedish_colony
+						has_idea = AFR_swedish_colony_tribute
+						has_idea = AFR_german_colony
+						has_idea = AFR_german_colony_tribute
+						has_idea = AFR_hamburg_colony
+						has_idea = AFR_hamburg_colony_tribute
+						has_idea = AFR_bremen_colony
+						has_idea = AFR_bremen_colony_tribute
+
+						has_idea = AFR_french_protectorate
+						has_idea = AFR_british_protectorate
+						has_idea = AFR_netherland_protectorate
+						has_idea = AFR_spanish_protectorate
+						has_idea = AFR_portuguese_protectorate
+						has_idea = AFR_swedish_protectorate
+						has_idea = AFR_german_protectorate
+						has_idea = AFR_hamburg_protectorate
+						has_idea = AFR_bremen_protectorate
+					}
+				}
+				always = no
+			}
 		}
+		else = { always = no }
 	}
 
 	can_take_level = {

@@ -1,17 +1,17 @@
 
-state={
-	id=479
-	name="STATE_479"
+state = {
+	id =479
+	name = "STATE_479"
 	manpower = 681772
 	
 	state_category = rural
 
 	resources = {
-		wood=3
-		iron=1
+		wood =3
+		iron= 1
 	}
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 3
@@ -19,9 +19,17 @@ state={
 		}
 		add_core_of = MEX
 
+		add_to_array = { state_culture_array = 472 } #Mexican
+		add_to_array = { state_culture_array_num = 0.862 }
+		# add_to_array = { state_culture_array = 427 } #Mesito?
+		# add_to_array = { state_culture_array_num = 0.697 }
+		# add_to_array = { state_culture_array = 47 } #Spainish/white?
+		# add_to_array = { state_culture_array_num = 0.136 }
+		add_to_array = { state_culture_array = 441 } #Nahua?
+		add_to_array = { state_culture_array_num = 0.138 }
 	}
 
-	provinces={
+	provinces = {
 		2083 5015 5021 12721 13088 
 	}
 	

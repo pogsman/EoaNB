@@ -1,22 +1,22 @@
 
-state={
-	id=451
-	name="STATE_451"
+state = {
+	id =451
+	name = "STATE_451"
 	manpower = 25114
 
 	resources = {
-		wood=12
+		wood = 12
 	}
 	
 	state_category = pastoral
 
 	
 
-	provinces={
+	provinces = {
 		1130 1204 4136 4151 7082 9992 10120 12094 
 	}
-	history={
-		owner = OTO
+	history = {
+		owner = LBA
 		
 		victory_points = {
 			1130 5 
@@ -30,7 +30,6 @@ state={
 			}
 		}
 		add_core_of = LBA
-		add_claim_by = SNS
 		afr_state_setup_scripted_effect = yes
 
 		add_to_array = { state_culture_array = 169 }
@@ -40,7 +39,7 @@ state={
 
 		add_to_array = { state_religion_array = 8 }		
 		add_to_array = { state_religion_array = 9 }			
-       	add_to_array = { state_religion_array_num = 0.991 } 
+			 	add_to_array = { state_religion_array_num = 0.991 } 
 		add_to_array = { state_religion_array_num = 0.009 } 
 	}
 }

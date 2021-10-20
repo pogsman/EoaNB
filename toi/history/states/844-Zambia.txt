@@ -1,23 +1,37 @@
-state={
-	id=844
-	name="STATE_844"
+state = {
+	id =844
+	name = "STATE_844"
 
 	state_category = wasteland
-	resources={
-		rubber=2
+	resources = {
+		rubber =2
+                  wood =3
 	}
 	
 
-	provinces={
+	provinces = {
 		1846 5221 10594 10930 13173
 	}
-	manpower=472457
+	manpower=772457
 	
-	history={
+	history = {
 		buildings = {
 		}
 		owner = LOZ
 		add_core_of = LOZ
+
+		add_to_array = { state_culture_array = 542 } 
+		add_to_array = { state_culture_array = 310 } 
+		add_to_array = { state_culture_array = 541 } 
+				
+		add_to_array = { state_culture_array_num = 0.84 }
+		add_to_array = { state_culture_array_num = 0.10 }
+		add_to_array = { state_culture_array_num = 0.06 }
+	
+		add_to_array = { state_religion_array = 20 } 
+
+                add_to_array = { state_religion_array_num = 1.00}
+
 		afr_state_setup_scripted_effect = yes
 	}
 }

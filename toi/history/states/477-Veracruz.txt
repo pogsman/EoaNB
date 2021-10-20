@@ -1,16 +1,16 @@
 
-state={
-	id=477
-	name="STATE_477"
+state = {
+	id =477
+	name = "STATE_477"
 	manpower = 1287963
 	
 	resources = {
-		wood=8
+		wood =8
 	}
 
 	state_category = town
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 2
@@ -26,9 +26,17 @@ state={
 		victory_points = {
 			12810 1
 		}
+		add_to_array = { state_culture_array = 427 } #Mexican
+		add_to_array = { state_culture_array_num = 0.634 }
+		# add_to_array = { state_culture_array = 427 } #Mesito?
+		# add_to_array = { state_culture_array_num = 0.50 }
+		# add_to_array = { state_culture_array = 47 } #Spainish/white?
+		# add_to_array = { state_culture_array_num = 0.102 }
+		add_to_array = { state_culture_array = 441 } #Nahua?
+		add_to_array = { state_culture_array_num = 0.366 }
 	}
 
-	provinces={
+	provinces = {
 		8079 10732 12810 10889 2021
 	}
 	

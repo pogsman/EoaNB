@@ -1,19 +1,32 @@
 
-state={
-	id=547
-	name="STATE_547" #Kenya
+state = {
+	id =547
+	name = "STATE_547" #Kenya
 	manpower = 222000
 
 	state_category = rural
 
 	
 
-	provinces={
+	provinces = {
 		5160 10962 
 	}
-	history={
+	history = {
 		owner = KKY
 		add_core_of = KKY
+
+		add_to_array = { state_culture_array = 319 } 
+		add_to_array = { state_culture_array = 327 } 
+		add_to_array = { state_culture_array = 382 } 
+				
+		add_to_array = { state_culture_array_num = 0.69 }
+		add_to_array = { state_culture_array_num = 0.28 }
+		add_to_array = { state_culture_array_num = 0.03 }
+	
+		add_to_array = { state_religion_array = 20 } 
+
+                add_to_array = { state_religion_array_num = 1.00}
+
 		afr_state_setup_scripted_effect = yes
 	}
 }

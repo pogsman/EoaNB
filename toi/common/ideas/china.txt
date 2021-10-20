@@ -349,6 +349,204 @@ ideas = {
 				min_export = -0.05
 			}
 		}
+		MNG_idea_chosen_men = {
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_flexible_foreign_policy2
+			
+			modifier = {
+				political_power_gain = -0.1
+				research_speed_factor = 0.1
+			}
+		}
+		MNG_idea_chosen_men_2 = {
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_flexible_foreign_policy2
+			
+			modifier = {
+				political_power_gain = -0.1
+				research_speed_factor = 0.1
+				local_manpower = 0.2
+			}
+		}
+		
+		CHI_idea_of_factories = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+			}
+		
+		}
+		
+		CHI_xinghai_rebellion= {
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_intel_bonus
+			
+			modifier = {
+				surrender_limit = 1.00
+				no_supply_grace = 1020
+				out_of_supply_factor = -0.5
+				supply_consumption_factor = -0.15
+			}
+			targeted_modifier = { 
+				tag = QNG
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.22
+			}
+		}
+		
+		CHI_rebel_administration = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			modifier = {
+				stability_weekly = -0.03
+				stability_factor = -0.3
+				political_power_factor = -0.2
+			}
+		
+		}
+		CHI_rebel_administration_2 = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			modifier = {
+				stability_weekly = -0.02
+				stability_factor = -0.2
+				political_power_factor = -0.2
+			}
+		
+		}
+		CHI_rebel_administration_3 = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			modifier = {
+				stability_weekly = -0.01
+				stability_factor = -0.1
+				political_power_factor = -0.2
+			}
+		
+		}
+		CHI_rebel_administration_4 = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.1
+			}
+		
+		}
+		
+		CHI_white_lotus = {
+			
+			allowed = {
+				always = yes
+			}
+			picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.1
+			}
+		}
+		CHI_white_lotus_2 = {
+			
+			allowed = {
+				always = yes
+			}
+			picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.1
+				stability_factor = 0.05
+			}
+		}
+		CHI_white_lotus_3 = {
+			
+			allowed = {
+				always = yes
+			}
+			picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.1
+				stability_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+		CHI_bandit_state = {
+			
+			allowed = {
+				always = yes
+			}
+			#picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.3
+				stability_factor = -0.075
+			}
+		}
+		CHI_bandit_state_2 = {
+			
+			allowed = {
+				always = yes
+			}
+			#picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.2
+				stability_factor = -0.05
+			}
+		}
+		CHI_bandit_state_3 = {
+			
+			allowed = {
+				always = yes
+			}
+			#picture = white_lotus
+			
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.025
+			}
+		}
 	}
 	materiel_manufacturer = {
 	
@@ -359,7 +557,18 @@ ideas = {
 			allowed = {
 				tag = TAI
 			}
-			
+			visible = {
+				has_completed_focus = CHI_rse_TAI_obtain_arms_makers
+			}
+			equipment_bonus={
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				production_factory_start_efficiency_factor = 0.05
+			}
 			cost = 150
 			removal_cost = -1
 			

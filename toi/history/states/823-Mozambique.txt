@@ -1,25 +1,34 @@
 
-state={
-	id=823
-	name="STATE_823" #Mozambique
-	manpower = 2075000
+state = {
+	id =823
+	name = "STATE_823" #Mozambique
+	manpower = 1925000
 
 	state_category = rural
 
-	history={
+	history = {
 		victory_points = {
-			8245 1
-		}
+			2120 1
+		}		
 		add_core_of = MZB
 		owner = POR
-		buildings = {
-			8245 = {
-				naval_base = 1
-			}
-		}
+
+		add_to_array = { state_culture_array = 543 } 
+		add_to_array = { state_culture_array = 537 } 
+		add_to_array = { state_culture_array = 318 } 
+				
+		add_to_array = { state_culture_array_num = 0.44 }
+		add_to_array = { state_culture_array_num = 0.37 }
+		add_to_array = { state_culture_array_num = 0.19 }
+	
+		add_to_array = { state_religion_array = 20 } 
+
+                add_to_array = { state_religion_array_num = 1.00}		
+
 	}
 
-	provinces={
-		8245 2193 12935 2120 12971 2123 2202 5164 
+	provinces = {
+	         12935 2120 12971 2123 2202 5164 
+
 	}
 }

@@ -350,7 +350,7 @@ country_event = {
 			create_country_leader = {
 				name = "Egyptian Regency Council"
 				desc = "POLITICS_GEORGE_V_DESC"
-				picture = "Portrait_EGY_regency.dds"
+				picture = "Portrait_EGY_regency.png"
 				expire = "2100.1.1"
 				ideology = despotism
 				traits = {
@@ -372,7 +372,7 @@ country_event = {
 		create_country_leader = {
 			name = "Isma'il Pasha"
 			desc = "POLITICS_GEORGE_V_DESC"
-			picture = "Portrait_EGY_Ismail_Pasha.dds"
+			picture = "Portrait_EGY_Ismail_Pasha.png"
 			expire = "1879.1.1"
 			ideology = despotism
 			traits = {
@@ -410,7 +410,7 @@ country_event = {
 		create_country_leader = {
 			name = "Ahmad Rifaat Pasha"
 			desc = "POLITICS_GEORGE_V_DESC"
-			picture = "Portrait_EGY_Ahmad_Rifaat_Pasha.dds"
+			picture = "Portrait_EGY_Ahmad_Rifaat_Pasha.png"
 			expire = "1879.1.1"
 			ideology = despotism
 			traits = {
@@ -457,12 +457,12 @@ country_event = {
 
 	option = { #install a loyal leader
 		name = afr_EGY_vic.7.a
-		#leaving the current regency in place untill i find a realistic new leader- maybe this general, he was a governer. maybe a 'promotion'?
+		#leaving the current regency in place until i find a realistic new leader- maybe this general, he was a governer. maybe a 'promotion'?
 		FROM={
 			create_country_leader = {
 				name = "Abdülkerim Nadir Pasha"
 				desc = "POLITICS_GEORGE_V_DESC"
-				picture = "Portrait_EGY_regency.dds"
+				picture = "Portrait_EGY_regency.png"
 				expire = "2100.1.1"
 				ideology = despotism
 				traits = {
@@ -490,12 +490,12 @@ country_event = {
 	}
 	option = { #install a war hero
 		name = afr_EGY_vic.7.a
-		#leaving the current regency in place untill i find a realistic new leader- maybe this general, he was a governer. maybe a 'promotion'?
+		#leaving the current regency in place until i find a realistic new leader- maybe this general, he was a governer. maybe a 'promotion'?
 		FROM={
 			create_country_leader = {
 				name = "Antoni Aleksander Iliński"
 				desc = "POLITICS_GEORGE_V_DESC"
-				picture = "Portrait_EGY_regency.dds"
+				picture = "Portrait_EGY_regency.png"
 				expire = "2100.1.1"
 				ideology = despotism
 				traits = {
@@ -527,7 +527,7 @@ country_event = {
 			create_country_leader = {
 				name = "Isma'il Pasha"
 				desc = "POLITICS_GEORGE_V_DESC"
-				picture = "Portrait_EGY_Ismail_Pasha.dds"
+				picture = "Portrait_EGY_Ismail_Pasha.png"
 				expire = "1879.1.1"
 				ideology = despotism
 				traits = {
@@ -1024,13 +1024,15 @@ news_event = {# Grand Opening of the Suez
 				has_country_flag = suez_constructor
 				check_variable = { suez_investment > 20 }
 			}
-			eoanb_add_10_prestige_score = yes
+			set_temp_variable = { eoanb_prestige_change = 10 }
+			eoanb_change_prestige_score = yes
 		}
 		if={
 			limit={
 				tag = EGY
 			}
-			eoanb_add_10_prestige_score = yes
+			set_temp_variable = { eoanb_prestige_change = 10 }
+			eoanb_change_prestige_score = yes
 		}
 		if={#contributed less than 20% but more than 4%
 			limit={
@@ -1039,7 +1041,8 @@ news_event = {# Grand Opening of the Suez
 				check_variable = { suez_investment < 20 }
 				check_variable = { suez_investment > 3 }
 			}
-			eoanb_add_5_prestige_score = yes
+			set_temp_variable = { eoanb_prestige_change = 5 }
+			eoanb_change_prestige_score = yes
 		}
 		if={#contributed less than 4%
 			limit={
@@ -1047,7 +1050,8 @@ news_event = {# Grand Opening of the Suez
 				has_country_flag = suez_constructor
 				check_variable = { suez_investment < 4 }
 			}
-			eoanb_add_2_prestige_score = yes
+			set_temp_variable = { eoanb_prestige_change = 2 }
+			eoanb_change_prestige_score = yes
 		}
 	}
 	option = {##Impressive

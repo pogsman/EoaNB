@@ -1,17 +1,17 @@
 
-state={
-	id=474
-	name="STATE_474"
-	manpower = 290590
+state = {
+	id =474
+	name = "STATE_474"
+	manpower = 285053
 
 	resources = {
-		coal = 10
-		wood=20
+		coal = 6
+		wood = 13
 	}
 	
 	state_category = pastoral
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 2
@@ -20,14 +20,21 @@ state={
 			4904 = {
 				naval_base = 2
 			}
-			#4965 = {
-			#	naval_base = 3
-			#}
 		}
 		add_core_of = MEX
+		add_core_of = MAY
+		
+		add_to_array = { state_culture_array = 427 } #Mexican
+		add_to_array = { state_culture_array_num = 0.567 }
+		# add_to_array = { state_culture_array = 427 } #Mesito?
+		# add_to_array = { state_culture_array_num = 0.338 }
+		# add_to_array = { state_culture_array = 47 } #Spainish/white?
+		# add_to_array = { state_culture_array_num = 0.218 }
+		add_to_array = { state_culture_array = 439 } #maya
+		add_to_array = { state_culture_array_num = 0.433 }
 	}
 
-	provinces={
-		4904 4965 12715 14076
+	provinces = {
+		4904 12715 14076
 	}
 }

@@ -63,15 +63,15 @@
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyNasImagePRS]"
+		localization_key = "[GetMHCNavyNasImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyNasImagePRS]"
+		localization_key = "[GetMHCNavyNasImageDEN]"
 	}
 	###Navy Nas Replacement Marker###
 	
@@ -148,15 +148,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyNcsImagePRS]"
+		localization_key = "[GetMHCNavyNcsImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyNcsImagePRS]"
+		localization_key = "[GetMHCNavyNcsImageDEN]"
 	}
 	###Navy Ncs Replacement Marker###
 	
@@ -231,18 +231,17 @@ defined_text = {
 		}
 		localization_key = "[GetMHCNavyNogImageNOR]"
 	}
-
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyNogImagePRS]"
+		localization_key = "[GetMHCNavyNogImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyNogImagePRS]"
+		localization_key = "[GetMHCNavyNogImageDEN]"
 	}
 	###Navy Nog Replacement Marker###
 	
@@ -319,15 +318,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyCogImagePRS]"
+		localization_key = "[GetMHCNavyCogImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyCogImagePRS]"
+		localization_key = "[GetMHCNavyCogImageDEN]"
 	}
 	###Navy Cog Replacement Marker###
 	
@@ -402,18 +401,17 @@ defined_text = {
 		}
 		localization_key = "[GetMHCNavyNlgImageNOR]"
 	}
-
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyNlgImagePRS]"
+		localization_key = "[GetMHCNavyNlgImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyNlgImagePRS]"
+		localization_key = "[GetMHCNavyNlgImageDEN]"
 	}
 	###Navy Nlg Replacement Marker###
 	
@@ -490,15 +488,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCNavyMogImagePRS]"
+		localization_key = "[GetMHCNavyMogImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCNavyMogImagePRS]"
+		localization_key = "[GetMHCNavyMogImageDEN]"
 	}
 	###Navy Mog Replacement Marker###
 	

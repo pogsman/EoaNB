@@ -1388,9 +1388,7 @@ country_event = { #UK cedes Ionian islands to Greece
 		name = GREdiplo.1.a  
 		
         GRE = { 
-            annex_country = {
-                target = ION 
-            }		
+            transfer_state = 809		
             complete_national_focus = GRE_ionian_islands
         }
 		hidden_effect = {
@@ -1400,7 +1398,7 @@ country_event = { #UK cedes Ionian islands to Greece
                 modifier = GRE_Ionian_Islands_modifier 
             }		
 		}
-		ION = {
+		ENG = {
         remove_state_core = 809
 		}
 		}
@@ -1744,16 +1742,17 @@ country_event = { #greece wins
 	}
 	option = { #we won?    
 		name = GREdiplo.15.b  
-		trigger={
+		trigger = {
 			tag = GRE
 		}
 		ai_chance = {
 			factor = 80
 		}
-		GRE={
+		GRE = {
 			transfer_state = 811
 		}
-		eoanb_add_10_prestige_score = yes
+		set_temp_variable = { eoanb_prestige_change = 10 }
+		eoanb_change_prestige_score = yes
 		hidden_effect = {
 			#Crete decides to be independant or part of greece again
 			CET = { country_event = { id = GREcrete.5 days = 20 } }

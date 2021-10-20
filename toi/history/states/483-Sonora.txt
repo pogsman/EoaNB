@@ -1,12 +1,12 @@
 
-state={
-	id=483
-	name="STATE_483"
-	manpower = 200631
+state = {
+	id =483
+	name = "STATE_483"
+	manpower = 195031
 
 	state_category = pastoral
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 2
@@ -25,10 +25,20 @@ state={
 			4908 1
 		}
 		add_core_of = MEX
+		add_core_of = YAQ
+		
+		add_to_array = { state_culture_array = 472 } #Mexican
+		add_to_array = { state_culture_array_num = 0.86 }
+		# add_to_array = { state_culture_array = 427 } #Mesito?
+		# add_to_array = { state_culture_array_num = 0.41 }
+		# add_to_array = { state_culture_array = 47 } #Spainish/white?
+		# add_to_array = { state_culture_array_num = 0.42 }
+		add_to_array = { state_culture_array = 441 } #Nahua?
+		add_to_array = { state_culture_array_num = 0.14 }
 	}
 
-	provinces={
-		2069 4908 4977 5071 8012 8033 10765 10848 12833
+	provinces = {
+		2069 4908 5071 8012 10765 10848 12833
 	}
 
 }

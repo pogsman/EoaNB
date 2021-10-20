@@ -1,10 +1,10 @@
-state={
-	id=1293
-	name="STATE_1293"
-	provinces={
+state = {
+	id = 1293
+	name = "STATE_1293"
+	provinces = {
 		12624
 	}
-	history={
+	history = {
 		owner = COM
 
 		buildings = {
@@ -12,7 +12,7 @@ state={
 		}
 
 		add_core_of = COM
-		add_claim_by = USA
+		#add_claim_by = USA
 		victory_points = {
 			12624 1
 		}
@@ -28,7 +28,7 @@ state={
 
 		set_state_flag = NA_B_Disregardable_State
 	}
-	manpower=2120
+	manpower =2120
 	state_category = pastoral
 	
 }

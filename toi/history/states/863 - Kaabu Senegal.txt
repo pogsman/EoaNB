@@ -1,20 +1,20 @@
-state={
-	id=863
-	name="STATE_863"
+state = {
+	id =863
+	name = "STATE_863"
 
-	state_category = wasteland
-	resources={
-		rubber=2
+	state_category = rural
+	resources = {
+		rubber =2
 	}
 
 	
 
-	provinces={
+	provinces = {
 		12834
 	}
-	manpower=91244
+	manpower =126604
 	
-	history={
+	history = {
 		buildings = {
 		}
 		owner = KAB

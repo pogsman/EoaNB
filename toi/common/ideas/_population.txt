@@ -64,7 +64,7 @@ ideas = {
 			}
 
 			modifier = {
-				monthly_population = 0.15
+				MONTHLY_POPULATION = 0.15
 				consumer_goods_factor = 0.05
 				political_power_factor = -0.05
 			}
@@ -588,6 +588,12 @@ ideas = {
 						}
 					}
 				}
+				if = {
+					limit = {
+						tag = SAX
+					}
+					has_completed_focus = SAX_focus_conserve_the_status_quo
+				}
 				hidden_trigger = {
 					always = no
 				}
@@ -722,6 +728,12 @@ ideas = {
 							has_country_flag = Elections_suspended
 						}
 					}
+				}
+				if = {
+					limit = {
+						tag = SAX
+					}
+					has_completed_focus = SAX_focus_thorough_reforms
 				}
 				hidden_trigger = {
 					always = no

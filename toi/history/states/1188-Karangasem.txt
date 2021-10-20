@@ -1,21 +1,21 @@
-state={
-	id=1188
-	name="STATE_1188"
+state = {
+	id = 1188
+	name = "STATE_1188"
 	manpower = 77624
 	
 	state_category = town
 
 	
 
-	provinces={
-		13749 13747
+	provinces = {
+		13749 13747 13751
 	}
-	history={
-		owner = KAN
+	history = {
+		owner = SUN
 		victory_points = {
 			13749 1
 		}
-		add_core_of = KAN
+		add_core_of = SUN
 		add_claim_by = INS
 		buildings = {
 			infrastructure = 1 
@@ -23,7 +23,7 @@ state={
 		# Blood and Iron
 		1870.1.1 = {
 			owner = INS
-			remove_core_of = KAN
+			remove_core_of = SUN
 		}
 		afr_state_setup_scripted_effect = yes
 	}

@@ -1,4 +1,4 @@
-﻿add_namespace = cochinchina_expedition 
+﻿add_namespace = cochinchina_expedition
 
 #-----------------------------------------
 #Ask France To Protect Churches
@@ -57,8 +57,8 @@ country_event = {
 			limit = { TAG = SPR }
 			set_country_flag = SPR_cochinchina_intervention_flag
 			set_global_flag = SPR_cochinchina_intervention_flag
-					
-			complete_national_focus = SPR_conchinchina_expedition
+			hidden_effect = { SPR = { set_country_flag = SPR_cochinchina_expedition_focus_flag } }
+			#complete_national_focus = SPR_cochinchina_expedition
 		}
 		if = {
 			limit = { TAG = FRA }
@@ -143,7 +143,8 @@ country_event = {
 			limit = { TAG = SPR }
 			set_country_flag = SPR_cochinchina_intervention_flag
 			set_global_flag = SPR_cochinchina_intervention_flag
-			complete_national_focus = SPR_cochinchina_expedition
+			hidden_effect = { SPR = { set_country_flag = SPR_cochinchina_expedition_focus_flag } }
+			#complete_national_focus = SPR_cochinchina_expedition
 			hidden_effect = { FRA = { country_event = { id = cochinchina_expedition.6 days = 1 } } }
 		}
 		if = {
@@ -893,10 +894,6 @@ country_event = {
 										target = JAI
 										transfer_troops = no
 									}
-									annex_country = {
-										target = PHU
-										transfer_troops = no
-									}
 									
 								}
 							}
@@ -909,10 +906,6 @@ country_event = {
 									}
 									annex_country = {
 										target = JAI
-										transfer_troops = no
-									}
-									annex_country = {
-										target = PHU
 										transfer_troops = no
 									}
 									
@@ -956,11 +949,6 @@ country_event = {
 										target = JAI
 										transfer_troops = no
 									}
-									annex_country = {
-										target = PHU
-										transfer_troops = no
-									}
-									
 								}
 							}
 							else = {
@@ -974,11 +962,6 @@ country_event = {
 										target = JAI
 										transfer_troops = no
 									}
-									annex_country = {
-										target = PHU
-										transfer_troops = no
-									}
-									
 								}
 							}
 						}
@@ -1013,12 +996,6 @@ country_event = {
 									autonomous_state = autonomy_colony
 									freedom_level = 0.1
 								}
-								set_autonomy = {
-									target = PHU
-									autonomous_state = autonomy_colony
-									freedom_level = 0.1
-								}
-								
 							}
 						}
 						else = {
@@ -1029,7 +1006,6 @@ country_event = {
 									transfer_troops = no
 								}
 								puppet = JAI
-								puppet = PHU
 							}
 						}
 					}
@@ -1062,11 +1038,6 @@ country_event = {
 									target = JAI
 									transfer_troops = no
 								}
-								annex_country = {
-									target = PHU
-									transfer_troops = no
-								}
-								
 							}
 						}
 						else = {
@@ -1080,11 +1051,6 @@ country_event = {
 									target = JAI
 									transfer_troops = no
 								}
-								annex_country = {
-									target = PHU
-									transfer_troops = no
-								}
-								
 							}
 						}
 					}
@@ -1126,18 +1092,12 @@ country_event = {
 										autonomous_state = autonomy_colony
 										freedom_level = 0.1
 									}
-									set_autonomy = {
-										target = PHU
-										autonomous_state = autonomy_colony
-										freedom_level = 0.1
-									}
 								}
 							}
 							else = {
 								FRA = { puppet = VIN }
 								VIN = {
 									puppet = JAI
-									puppet = PHU
 								}
 							}
 							if = {
@@ -1175,18 +1135,12 @@ country_event = {
 										autonomous_state = autonomy_colony
 										freedom_level = 0.1
 									}
-									set_autonomy = {
-										target = PHU
-										autonomous_state = autonomy_colony
-										freedom_level = 0.1
-									}
 								}
 							}
 							else = {
 								FRA = { puppet = VIN }
 								VIN = {
 									puppet = JAI
-									puppet = PHU
 								}
 							}
 						}
@@ -1222,11 +1176,6 @@ country_event = {
 										autonomous_state = autonomy_colony
 										freedom_level = 0.1
 									}
-									set_autonomy = {
-										target = PHU
-										autonomous_state = autonomy_colony
-										freedom_level = 0.1
-									}
 								}
 							}
 							else = {
@@ -1243,11 +1192,6 @@ country_event = {
 										autonomous_state = autonomy_colony
 										freedom_level = 0.1
 									}
-									set_autonomy = {
-										target = PHU
-										autonomous_state = autonomy_colony
-										freedom_level = 0.1
-									}
 								}
 							}
 						}
@@ -1255,7 +1199,6 @@ country_event = {
 							SPR = { puppet = VIN }
 							VIN = {
 								puppet = JAI
-								puppet = PHU
 							}
 						}
 					}
@@ -1285,18 +1228,12 @@ country_event = {
 									autonomous_state = autonomy_colony
 									freedom_level = 0.1
 								}
-								set_autonomy = {
-									target = PHU
-									autonomous_state = autonomy_colony
-									freedom_level = 0.1
-								}
 							}
 						}
 						else = {
 							FRA = { puppet = VIN }
 							VIN = {
 								puppet = JAI
-								puppet = PHU
 							}
 						}
 					}

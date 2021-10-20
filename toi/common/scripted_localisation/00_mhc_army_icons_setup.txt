@@ -67,7 +67,6 @@
 		}
 		localization_key = "[GetMHCArmySecImageGRE]"
 	}
-
 	text = {
 		trigger = {
 			tag = NOR
@@ -82,75 +81,9 @@
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmySecImagePRS]"
+		localization_key = "[GetMHCArmySecImageSIX]"
 	}
 	text = {
 		trigger = {
@@ -160,45 +93,27 @@
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmySecImageBAD]"
+		localization_key = "[GetMHCArmySecImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmySecImageBAD]"
+		localization_key = "[GetMHCArmySecImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmySecImageBAD]"
+		localization_key = "[GetMHCArmySecImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmySecImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmySecImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmySecImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmySecImageBAD]"
+		localization_key = "[GetMHCArmySecImageDEN]"
 	}
 	###Army Sec Replacement Marker###
 	
@@ -293,75 +208,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyChiefImagePRS]"
+		localization_key = "[GetMHCArmyChiefImageSIX]"
 	}
 	text = {
 		trigger = {
@@ -371,45 +220,27 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
+		localization_key = "[GetMHCArmyChiefImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
+		localization_key = "[GetMHCArmyChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
+		localization_key = "[GetMHCArmyChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyChiefImageBAD]"
+		localization_key = "[GetMHCArmyChiefImageDEN]"
 	}
 	###Army Chief Replacement Marker###
 	
@@ -504,69 +335,124 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SIX
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = BAD
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageBAD]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
+	}
+	###Army VChief Replacement Marker###
+	
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "[GetMHCArmyVChiefImageGeneric]"
+	}
+}
+
+defined_text = {
+	name = GetMHCArmyVChiefImage
+
+	text = {
+		trigger = {
+			tag = BAV
+		}
+		localization_key = "[GetMHCArmyVChiefImageBAV]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = FRA
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageFRA]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = ENG
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageENG]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = SWE
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageSWE]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = USA
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageUSA]"
 	}
 	text = {
 		trigger = {
-			tag = PRS
+			tag = AUS
 		}
-		localization_key = "[GetMHCArmyVChiefImagePRS]"
+		localization_key = "[GetMHCArmyVChiefImageAUS]"
+	}
+	text = {
+		trigger = {
+			tag = FIN
+		}
+		localization_key = "[GetMHCArmyVChiefImageFIN]"
+	}
+	text = {
+		trigger = {
+			tag = RYU
+		}
+		localization_key = "[GetMHCArmyVChiefImageRYU]"
+	}
+	text = {
+		trigger = {
+			tag = RUS
+		}
+		localization_key = "[GetMHCArmyVChiefImageRUS]"
+	}
+	text = {
+		trigger = {
+			tag = MXE
+		}
+		localization_key = "[GetMHCArmyVChiefImageMXE]"
+	}
+	text = {
+		trigger = {
+			tag = GRE
+		}
+		localization_key = "[GetMHCArmyVChiefImageGRE]"
+	}
+	text = {
+		trigger = {
+			tag = NOR
+		}
+		localization_key = "[GetMHCArmyVChiefImageNOR]"
 	}
 	text = {
 		trigger = {
@@ -582,45 +468,33 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SIX
 		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
+		localization_key = "[GetMHCArmyVChiefImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
+		localization_key = "[GetMHCArmyVChiefImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyVChiefImageBAD]"
+		localization_key = "[GetMHCArmyVChiefImageDEN]"
 	}
 	###Army VChief Replacement Marker###
 	
@@ -679,6 +553,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			tag = SIX
+		}
+		localization_key = "[GetMHCArmyQuartImageSIX]"
+	}
+	text = {
+		trigger = {
 			tag = RYU
 		}
 		localization_key = "[GetMHCArmyQuartImageRYU]"
@@ -715,123 +595,33 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyQuartImagePRS]"
-	}
-	text = {
-		trigger = {
 			tag = BAD
 		}
 		localization_key = "[GetMHCArmyQuartImageBAD]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
+		localization_key = "[GetMHCArmyQuartImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
+		localization_key = "[GetMHCArmyQuartImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
+		localization_key = "[GetMHCArmyQuartImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyQuartImageBAD]"
+		localization_key = "[GetMHCArmyQuartImageDEN]"
 	}
 	###Army Quart Replacement Marker###
 	
@@ -926,123 +716,39 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyPChiefImagePRS]"
-	}
-	text = {
-		trigger = {
 			tag = BAD
 		}
 		localization_key = "[GetMHCArmyPChiefImageBAD]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SIX
 		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
+		localization_key = "[GetMHCArmyPChiefImageSIX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
+		localization_key = "[GetMHCArmyPChiefImageSAX]"
+	}	
+	text = {
+		trigger = {
+			tag = DEN
+		}
+		localization_key = "[GetMHCArmyPChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
+		localization_key = "[GetMHCArmyPChiefImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyPChiefImageBAD]"
+		localization_key = "[GetMHCArmyPChiefImageDEN]"
 	}
 	###Army PChief Replacement Marker###
 	
@@ -1101,6 +807,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			tag = SIX
+		}
+		localization_key = "[GetMHCArmyInsImageSIX]"
+	}
+	text = {
+		trigger = {
 			tag = RYU
 		}
 		localization_key = "[GetMHCArmyInsImageRYU]"
@@ -1137,123 +849,33 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
-			tag = PRS
-		}
-		localization_key = "[GetMHCArmyInsImagePRS]"
-	}
-	text = {
-		trigger = {
 			tag = BAD
 		}
 		localization_key = "[GetMHCArmyInsImageBAD]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = SAX
 		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
+		localization_key = "[GetMHCArmyInsImageSAX]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
+		localization_key = "[GetMHCArmyInsImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
+		localization_key = "[GetMHCArmyInsImageDEN]"
 	}
 	text = {
 		trigger = {
-			tag = BAD
+			tag = DEN
 		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
-	}
-	text = {
-		trigger = {
-			tag = BAD
-		}
-		localization_key = "[GetMHCArmyInsImageBAD]"
+		localization_key = "[GetMHCArmyInsImageDEN]"
 	}
 	###Army Ins Replacement Marker###
 	

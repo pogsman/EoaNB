@@ -1,11 +1,11 @@
-state={
-	id=1124
-	name="STATE_1124" #Guanajuato
+state = {
+	id = 1124
+	name = "STATE_1124" #Guanajuato
 
 	resources = {
 	}
 
-	history={
+	history = {
 		owner = MEX
 		buildings = {
 			infrastructure = 2
@@ -15,12 +15,17 @@ state={
 			2008 1
 		}
 		add_core_of = MEX
+		
+		add_to_array = { state_culture_array = 427 } #Mexican
+		add_to_array = { state_culture_array_num = 0.97 }
+		add_to_array = { state_culture_array = 441 } #Nahua?
+		add_to_array = { state_culture_array_num = 0.03 }
 	}
 
-	provinces={
+	provinces = {
 		2008 2011
 	}
-	manpower=10000
+	manpower = 10000
 	
-	state_category=rural
+	state_category =rural
 }
