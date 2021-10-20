@@ -10,50 +10,50 @@
 units = {
 		division= {
 			name = "1st Tropa Colorada"
-			location = 13614
+			location = 13620
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 
 		division= {
 			name = "2nd Tropa Colorada"
-			location = 13614
+			location = 13584
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "3rd Tropa Colorada"
-			location = 13614
+			location = 13594
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "4th Tropa Colorada"
-			location = 4457
+			location = 13616
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "5th Tropa Colorada"
-			location = 10502
+			location = 13596
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "6th Tropa Colorada"
-			location = 12496
+			location = 13595
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "7th Tropa Colorada"
-			location = 13611
+			location = 13593
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}
 		division= {
 			name = "8th Tropa Colorada"
-			location = 13612
+			location = 13594
 			division_template = "South American Infantry"
 			start_experience_factor = 0.1
 		}

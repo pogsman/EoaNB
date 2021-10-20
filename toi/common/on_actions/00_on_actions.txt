@@ -784,31 +784,46 @@ on_actions = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					tag = PAR
-					FROM = {
-						OR = {
-							tag = BRA
-							tag = ARG
-							tag = URC
-							tag = URG
-						}
-					}
-					PAR = { has_country_flag = Paraguayan_War }
-				}
-				ROOT = { white_peace = FROM }
-				PAR = { country_event = { id = par.15 } }
-			}
-			if = {
-				limit = {
-					tag = BRA
-					FROM = { tag = PAR }
-					PAR = { has_country_flag = Paraguayan_War }
-				}
-				ROOT = { white_peace = FROM }
-				PAR = { country_event = { id = par.16 } }
-			}
+			#if = {
+			#	limit = {
+			#		tag = PAR
+			#		FROM = {
+			#			OR = {
+			#				tag = BRA
+			#				tag = ARG
+			#				tag = URC
+			#				tag = URG
+			#				tag = BOL
+			#				if = {
+			#					limit = {
+			#						CIS = { exists = yes }
+			#					}
+			#					tag = CIS
+			#				}
+			#			}
+			#		}
+			#		PAR = { has_country_flag = Paraguayan_War }
+			#	}
+			#	ROOT = { white_peace = FROM }
+			#	PAR = { country_event = { id = par.15 } }
+			#}
+			#if = {
+			#	limit = {
+			#		tag = BRA
+			#		FROM = {
+			#			OR = {
+			#				tag = PAR
+			#				tag = ARG
+			#				tag = URC
+			#				tag = URG
+			#				tag = BOL
+			#			}
+			#		}
+			#		PAR = { has_country_flag = Paraguayan_War }
+			#	}
+			#	ROOT = { white_peace = FROM }
+			#	PAR = { country_event = { id = par.16 } }
+			#}
 			if = {
 				limit = {
 					TAG = ECU

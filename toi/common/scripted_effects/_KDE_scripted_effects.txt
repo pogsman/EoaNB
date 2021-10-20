@@ -204,6 +204,9 @@ KDE_bi_yearly_event_fire_1862 = {
 		country_event = { id = prussia.43 days = 507 } #1863.05.23
 		country_event = { id = prussiamonuments.1 days = 516 } #1863.06.01
 	}
+	BRA = {
+		country_event = { id = brazil.foreign.17 days 473 }#1863.04.19
+	}
 }
 
 KDE_bi_yearly_event_fire_1864 = {
@@ -255,6 +258,18 @@ KDE_bi_yearly_event_fire_1864 = {
 	SPR = {
 		country_event = { id = spanishflavour.2 days = 35 } ###1864.02.5
 		country_event = { id = spanishflavour.3 days = 703 } ###1865.12.5
+	}
+	BRA = {
+		country_event = { id = brazil.foreign.18 days 125 } ###1864.05.06
+		country_event = { id = brazil.foreign.19 days 131 } ###1864.05.12
+		country_event = { id = brazil.foreign.20 days 137 } ###1864.05.18
+		country_event = { id = brazil.foreign.21 days 181 } ###1864.07.01
+		country_event = { id = brazil.foreign.22 days 210 } ###1864.07.30
+		country_event = { id = brazil.foreign.23 days 214 } ###1864.08.03
+		country_event = { id = brazil.foreign.24 days 221 } ###1864.08.10
+	}
+	PAR = {
+		country_event = { id = par.8 days 374 } ##1865.01.10
 	}
 }
 

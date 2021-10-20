@@ -1063,3 +1063,15 @@ BRA_decision_category_coffee_economy = {
 	
 	allowed = { original_tag = BRA }
 }
+
+Paraguayan_War_Decision_Category = {
+	icon = power_struggle
+	
+	allowed = {
+		OR = {
+			original_tag = BRA
+			original_tag = PAR
+			#original_tag = ARG
+		}
+	}
+}

@@ -2620,9 +2620,13 @@
  URC_marxist_leninism:0 "Socialist Republic of Uruguay"
  URC_marxist_leninism_DEF:0 "The Socialist Republic of Uruguay"
  URC_chauvinist_populism_ADJ:0 "Uruguayan"
- URG_centrism_ADJ:0 "Uruguayan"
+ URC_centrism_ADJ:0 "Uruguayan"
  URC_autocracy_ADJ:0 "Uruguayan"
  URC_marxist_leninism_ADJ:0 "Uruguayan"
+
+ CIS_autocracy:0 "Cisplatina"
+ CIS_autocracy_ADJ: "Cisplatine"
+ CIS_autocracy_DEF: "Cisplatina"
 
  ARG_traditional_conservatism:0 "Argentine Confederation"
  ARG_traditional_conservatism_DEF:0 "The Argentine Confederation"

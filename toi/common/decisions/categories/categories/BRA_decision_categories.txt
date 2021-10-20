@@ -1,5 +1,0 @@
-#BRA_decision_category_coffee_economy = {
-#	icon = generic_contruction
-#	
-#	allowed = { original_tag = BRA }
-#}
