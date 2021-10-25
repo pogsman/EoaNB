@@ -1,0 +1,193 @@
+#This is for all the stuff I haven't tested yet b/c I've done it at Uni.
+
+__advance_time__ = {
+    #Within advance time in economy_main.
+
+
+    
+}
+
+industrial_investment_calc = {
+    #Calculates the vars for investment interest
+    #State Scope
+
+    # Note: 
+    #   IE is short for Ingame Effect, not an example
+    #
+    # Investment:
+    #   Things that affect the likelyhood to build a new factory:
+    #       = Market Conditions
+    #           IE - Investors take into account goods prices & supply/demand.
+    #               - Local, National, and Global supply & price of Raw Goods & Production Good
+    #                   - Latter 2's weight depend on transport cost & shipping cost respectively
+    #       = Existing buildings VS new sites
+    #           IE - Corporations will consider buying factories off other corps or locals in state
+    #       = Financial Incentives/Disincentives
+    #           IE - Private Investors will take into account the following:
+    #               +  Industrial Subsidies (if applied to the state/industry)
+    #               -  Taxation (Corporate/Income/Sales, Tariffs if countrywide production > demand)
+    #       = Construction Cost 
+    #           IE - Industrial Goods price in the state & countrywide. Industrial Goods supply/demand countrywide. 
+    #       = Infrastructure
+    #           IE - Transport Cost in state, Electricity Generation in state/neighbors
+    #       = Labor Availability
+    #           IE - Investors like Unemployment
+    #       = National/Global Status
+    #           IE - Different laws & values & modifiers affect investment confidence
+    #               + Investment Confidence (Adds onto investment interest)
+    #                   +- Govt. Policy (Property, Child Labor, Workhours, Growth Policies, 
+    #                                   Border, Discrim (if non-accepted culture), Econ Mob, Conscription)
+    #                   +  High Stability
+    #                   -  Low Stability (REALLY BAD. Businesses want stability)
+    #                   +  National GDP Growth
+    #                   +  National Inflation (Inflation means money is better spent today)
+    #                   -  National Deflation (Deflation means money is better saved)
+    #                   +  National Population Growth
+    #                   +- Events & Focuses
+
+
+    # If the value is *Positive,* then it will be considered to be built.
+    # That does not mean that construction will occur right away. It just means that ppl think that it's a good investment.
+
+    set_variable = { factory_everyday_goods_investment_interest = 0 }
+
+    #Get Factory Production
+        #Get Employment Amount
+        set_temp_variable = { factory_employment_amount_temp = private_factory_amount }
+        add_to_temp_variable = { factory_employment_amount_temp = 1 }
+		multiply_temp_variable = { factory_employment_amount_temp = factory_employment_amount_per_factory }
+
+		set_temp_variable = { govt_employment_max_temp = industrial_complex_level }
+		add_to_temp_variable = { govt_employment_max_temp = arms_factory_level }
+		add_to_temp_variable = { govt_employment_max_temp = building_level@dockyard }
+		multiply_temp_variable = { govt_employment_max_temp = global.factory_jobs_base_amount }
+		add_to_temp_variable = { factory_employment_amount_temp = govt_employment_max_temp }
+
+        set_temp_variable = { factory_employment_percentage_temp = factory_employment_amount_temp }
+
+		set_temp_variable = { factory_employment_max_temp = specialists_workforce_amount }
+		add_to_temp_variable = { factory_employment_max_temp = craftsmen_workforce_amount }
+		if = {
+			limit = {
+				check_variable = { factory_employment_amount_temp > factory_employment_max_temp }
+			}
+			set_variable = { factory_employment_amount_temp = factory_employment_max_temp }
+		}
+
+        multiply_temp_variable = { factory_employment_percentage_temp = 100 }
+        divide_temp_variable = { factory_employment_percentage_temp = factory_employment_amount_temp }
+
+        #Specialist Bonus
+        set_temp_variable = { specialists_bonus_multiplier = 1 }
+        set_temp_variable = { specialists_percentage_temp = specialists_workforce_amount }
+        divide_temp_variable = { specialists_percentage_temp = factory_employment_amount_temp }
+        multiply_temp_variable = { specialists_percentage_temp = global.pops_specialists_production_bonus }
+        add_to_temp_variable = { specialists_bonus_multiplier = specialists_percentage_temp }
+
+        #Throughput
+        set_temp_variable = { factory_production_temp = factory_employment_amount_per_factory }
+        multiply_temp_variable = { factory_production_temp = global.factory_everyday_goods_base_production }
+        multiply_temp_variable = { factory_production_temp = specialists_bonus_multiplier }
+        divide_temp_variable = { factory_production_temp = 100 }
+        multiply_temp_variable = { factory_production_temp = factory_employment_percentage_temp }
+        divide_temp_variable = { factory_production_temp = 100 }
+        set_temp_variable = { modifier_temp = factory_everyday_goods_throughput_effect }
+        add_to_temp_variable = { modifier_temp = 1 }
+        multiply_temp_variable = { factory_production_temp = modifier_temp }
+
+        #Maintenace
+        set_temp_variable = { factory_industrial_goods_need_temp = factory_production_temp }
+        multiply_temp_variable = { factory_industrial_goods_need_temp = global.factory_industrial_goods_base_need }
+        set_temp_variable = { modifier_temp = factory_industrial_goods_maintenance_effect }
+        add_to_temp_variable = { modifier_temp = 1 }
+        multiply_temp_variable = { factory_industrial_goods_need_temp = modifier_temp }
+
+        #Input
+        set_temp_variable = { factory_raw_goods_need_temp = global.factory_everyday_goods_raw_goods_base_need }
+        multiply_temp_variable = { factory_raw_goods_need_temp = factory_production_temp }
+        set_temp_variable = { modifier_temp = factory_everyday_goods_raw_goods_input_effect }
+        add_to_temp_variable = { modifier_temp = 1 }
+        multiply_temp_variable = { factory_raw_goods_need_temp = modifier_temp }
+
+        #Output
+        set_temp_variable = { modifier_temp = factory_everyday_goods_output_effect }
+        add_to_temp_variable = { modifier_temp = 1 }
+        multiply_temp_variable = { factory_production_temp = modifier_temp }
+
+        #factory_production_temp
+        #factory_industrial_goods_need_temp
+        #factory_raw_goods_need_temp
+    #
+    
+    #Market Conditions
+        #Local
+        set_temp_variable = { local_raw_goods_weight_temp = raw_goods_price }
+        divide_temp_variable = { local_raw_goods_weight_temp = raw_goods_base_price }
+        
+        #Country
+        set_temp_variable = { country_raw_goods_weight_temp = PREV.raw_goods_price }
+        divide_temp_variable = { country_raw_goods_weight_temp = raw_goods_base_price }
+
+        #Global
+        set_temp_variable = { global_raw_goods_weight_temp = global.raw_goods_price }
+        divide_temp_variable = { global_raw_goods_weight_temp = raw_goods_base_price }
+
+        multiply_temp_variable = { local_raw_goods_weight_temp = 89 }
+        multiply_temp_variable = { country_raw_goods_weight_temp = 10 }
+        
+        set_temp_variable = { raw_goods_weight_temp = local_raw_goods_weight_temp }
+        add_to_temp_variable = { raw_goods_weight_temp = country_raw_goods_weight_temp }
+        add_to_temp_variable = { raw_goods_weight_temp = global_raw_goods_weight_temp }}
+
+        set_temp_variable = { raw_goods_condition_temp = 5000 } #50 default
+        divide_temp_variable = { raw_goods_condition_temp = raw_goods_weight_temp }
+        
+
+        #Local
+        set_temp_variable = { local_industrial_goods_weight_temp = industrial_goods_price }
+        divide_temp_variable = { local_industrial_goods_weight_temp = industrial_goods_base_price }
+        
+        #Country
+        set_temp_variable = { country_industrial_goods_weight_temp = PREV.industrial_goods_price }
+        divide_temp_variable = { country_industrial_goods_weight_temp = industrial_goods_base_price }
+
+        #Global
+        set_temp_variable = { global_industrial_goods_weight_temp = global.industrial_goods_price }
+        divide_temp_variable = { global_industrial_goods_weight_temp = industrial_goods_base_price }
+
+        multiply_temp_variable = { local_industrial_goods_weight_temp = 89 }
+        multiply_temp_variable = { country_industrial_goods_weight_temp = 10 }
+        
+        set_temp_variable = { industrial_goods_weight_temp = local_industrial_goods_weight_temp }
+        add_to_temp_variable = { industrial_goods_weight_temp = country_industrial_goods_weight_temp }
+        add_to_temp_variable = { industrial_goods_weight_temp = global_industrial_goods_weight_temp }}
+
+        set_temp_variable = { industrial_goods_condition_temp = 5000 } #50 default
+        divide_temp_variable = { industrial_goods_condition_temp = industrial_goods_weight_temp }
+
+        
+        #Local
+        set_temp_variable = { local_everyday_goods_weight_temp = everyday_goods_price }
+        divide_temp_variable = { local_everyday_goods_weight_temp = everyday_goods_base_price }
+        
+        #Country
+        set_temp_variable = { country_everyday_goods_weight_temp = PREV.everyday_goods_price }
+        divide_temp_variable = { country_everyday_goods_weight_temp = everyday_goods_base_price }
+
+        #Global
+        set_temp_variable = { global_everyday_goods_weight_temp = global.everyday_goods_price }
+        divide_temp_variable = { global_everyday_goods_weight_temp = everyday_goods_base_price }
+
+        multiply_temp_variable = { local_everyday_goods_weight_temp = 89 }
+        multiply_temp_variable = { country_everyday_goods_weight_temp = 10 }
+        
+        set_temp_variable = { everyday_goods_weight_temp = local_everyday_goods_weight_temp }
+        add_to_temp_variable = { everyday_goods_weight_temp = country_everyday_goods_weight_temp }
+        add_to_temp_variable = { everyday_goods_weight_temp = global_everyday_goods_weight_temp }}
+
+        set_temp_variable = { everyday_goods_condition_temp = 10000 } #100 default
+        divide_temp_variable = { everyday_goods_condition_temp = everyday_goods_weight_temp }
+    #
+
+
+}
