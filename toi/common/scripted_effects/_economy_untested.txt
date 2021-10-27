@@ -49,7 +49,7 @@ industrial_investment_calc = {
     # If the value is *Positive,* then it will be considered to be built.
     # That does not mean that construction will occur right away. It just means that ppl think that it's a good investment.
 
-    set_variable = { factory_everyday_goods_investment_interest = -100 } #Base of -100
+    set_variable = { factory_everyday_goods_investment_interest = -200 } #Base of -200
 
     #Get Factory Production
         #Get Employment Amount
@@ -63,17 +63,16 @@ industrial_investment_calc = {
 		multiply_temp_variable = { govt_employment_max_temp = global.factory_jobs_base_amount }
 		add_to_temp_variable = { factory_employment_amount_temp = govt_employment_max_temp }
 
-        set_temp_variable = { factory_employment_percentage_temp = factory_employment_amount_temp }
-
 		set_temp_variable = { factory_employment_max_temp = specialists_workforce_amount }
 		add_to_temp_variable = { factory_employment_max_temp = craftsmen_workforce_amount }
 		if = {
 			limit = {
-				check_variable = { factory_employment_amount_temp > factory_employment_max_temp }
+				check_variable = { factory_employment_max_temp > factory_employment_amount_temp }
 			}
-			set_variable = { factory_employment_amount_temp = factory_employment_max_temp }
+			set_variable = { factory_employment_max_temp = factory_employment_amount_temp }
 		}
 
+        set_temp_variable = { factory_employment_percentage_temp = factory_employment_max_temp }
         multiply_temp_variable = { factory_employment_percentage_temp = 100 }
         divide_temp_variable = { factory_employment_percentage_temp = factory_employment_amount_temp }
 
@@ -207,10 +206,16 @@ industrial_investment_calc = {
             }
             divide_temp_variable = { revenue_cost_ratio = goods_cost_temp }
         }
-        else = {
+        else_if = {
+            limit = {
+                check_variable = { revenue_cost_ratio > 0 }
+            }
             set_temp_variable = { revenue_cost_ratio = 11 }
         }
-        subtract_from_temp_variable = { revenue_cost_ratio = -1 }
+        else = {
+            set_temp_variable = { revenue_cost_ratio = 0 }
+        }
+        subtract_from_temp_variable = { revenue_cost_ratio = 1 }
 
         set_temp_variable = { everyday_goods_condition_temp = 100 }
         multiply_temp_variable = { everyday_goods_condition_temp = revenue_cost_ratio }
@@ -220,6 +225,8 @@ industrial_investment_calc = {
         #industrial_goods_cost_temp
         #goods_cost_temp
         #everyday_goods_revenue_temp
+        set_variable = { goods_revenue_s = everyday_goods_revenue_temp }
+        set_variable = { goods_cost_s = goods_cost_temp }
     #
 
     #Financial Incentives
@@ -239,7 +246,7 @@ industrial_investment_calc = {
 
     #Infrastructure
         set_temp_variable = { transport_cost_condition_temp = transport_cost_effect }
-        multiply_temp_variable = { transport_cost_condition_temp = -50 } #at -100% transport cost, +50 interest
+        multiply_temp_variable = { transport_cost_condition_temp = -100 } #at -100% transport cost, +100 interest
         add_to_variable = { factory_everyday_goods_investment_interest = transport_cost_condition_temp }
     #
 

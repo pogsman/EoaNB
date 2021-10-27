@@ -214,29 +214,35 @@ scripted_gui = {
 				reset = yes
 			}
 			extra_button_click = {
-				clear_array = factory_corporations_state_array
-				clear_array = factory_corporations_amount_array
-				add_to_array = { factory_corporations_state_array = 954 }
-				add_to_array = { factory_corporations_state_array = 357 }
-				add_to_array = { factory_corporations_amount_array = 2 }
-				add_to_array = { factory_corporations_amount_array = 1 }
-				954 = { set_variable = { corporation_type = 2 } }
-				357 = { set_variable = { corporation_type = 3 } }
+				# clear_array = factory_corporations_state_array
+				# clear_array = factory_corporations_amount_array
+				# add_to_array = { factory_corporations_state_array = 954 }
+				# add_to_array = { factory_corporations_state_array = 357 }
+				# add_to_array = { factory_corporations_amount_array = 2 }
+				# add_to_array = { factory_corporations_amount_array = 1 }
+				# 954 = { set_variable = { corporation_type = 2 } }
+				# 357 = { set_variable = { corporation_type = 3 } }
 
-				clear_array = rgo_corporations_state_array
-				clear_array = rgo_corporations_percentage_array
-				add_to_array = { rgo_corporations_state_array = 358 }
-				add_to_array = { rgo_corporations_state_array = 396 }
-				add_to_array = { rgo_corporations_percentage_array = 25 }
-				add_to_array = { rgo_corporations_percentage_array = 25 }
-				358 = { set_variable = { corporation_type = 1 } }
-				396 = { set_variable = { corporation_type = 1 } }
+				# clear_array = rgo_corporations_state_array
+				# clear_array = rgo_corporations_percentage_array
+				# add_to_array = { rgo_corporations_state_array = 358 }
+				# add_to_array = { rgo_corporations_state_array = 396 }
+				# add_to_array = { rgo_corporations_percentage_array = 25 }
+				# add_to_array = { rgo_corporations_percentage_array = 25 }
+				# 358 = { set_variable = { corporation_type = 1 } }
+				# 396 = { set_variable = { corporation_type = 1 } }
 
-				clear_array = service_corporations_state_array
-				clear_array = service_corporations_percentage_array
-				add_to_array = { service_corporations_state_array = 359 }
-				add_to_array = { service_corporations_percentage_array = 25 }
-				359 = { set_variable = { corporation_type = 4 } }
+				# clear_array = service_corporations_state_array
+				# clear_array = service_corporations_percentage_array
+				# add_to_array = { service_corporations_state_array = 359 }
+				# add_to_array = { service_corporations_percentage_array = 25 }
+				# 359 = { set_variable = { corporation_type = 4 } }
+
+				ROOT = {
+					PREV = {
+						industrial_investment_calc = yes
+					}
+				}
 
 				add_to_variable = { update_state_econ_window = 1 }
 			}
