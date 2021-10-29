@@ -151,11 +151,13 @@ industrial_investment_calc = {
         multiply_temp_variable = { country_raw_goods_weight_temp = country_weight_temp }
         multiply_temp_variable = { global_raw_goods_weight_temp = global_weight_temp }
         
-        set_temp_variable = { raw_goods_cost_temp = local_raw_goods_weight_temp }
-        add_to_temp_variable = { raw_goods_cost_temp = country_raw_goods_weight_temp }
-        add_to_temp_variable = { raw_goods_cost_temp = global_raw_goods_weight_temp }
+        set_temp_variable = { raw_goods_price_temp = local_raw_goods_weight_temp }
+        add_to_temp_variable = { raw_goods_price_temp = country_raw_goods_weight_temp }
+        add_to_temp_variable = { raw_goods_price_temp = global_raw_goods_weight_temp }
+        divide_temp_variable = { raw_goods_price_temp = weight_total_temp }
+
+        set_temp_variable = { raw_goods_cost_temp = raw_goods_price_temp }
         multiply_temp_variable = { raw_goods_cost_temp = factory_raw_goods_need_temp }
-        divide_temp_variable = { raw_goods_cost_temp = weight_total_temp }
         
 
         #Local
@@ -171,11 +173,13 @@ industrial_investment_calc = {
         multiply_temp_variable = { country_industrial_goods_weight_temp = country_weight_temp }
         multiply_temp_variable = { global_industrial_goods_weight_temp = global_weight_temp }
         
-        set_temp_variable = { industrial_goods_cost_temp = local_industrial_goods_weight_temp }
-        add_to_temp_variable = { industrial_goods_cost_temp = country_industrial_goods_weight_temp }
-        add_to_temp_variable = { industrial_goods_cost_temp = global_industrial_goods_weight_temp }
+        set_temp_variable = { industrial_goods_price_temp = local_industrial_goods_weight_temp }
+        add_to_temp_variable = { industrial_goods_price_temp = country_industrial_goods_weight_temp }
+        add_to_temp_variable = { industrial_goods_price_temp = global_industrial_goods_weight_temp }
+        divide_temp_variable = { industrial_goods_price_temp = weight_total_temp }
+
+        set_temp_variable = { industrial_goods_cost_temp = industrial_goods_price_temp }
         multiply_temp_variable = { industrial_goods_cost_temp = factory_industrial_goods_need_temp }
-        divide_temp_variable = { industrial_goods_cost_temp = weight_total_temp }
 
         
         #Local
@@ -222,7 +226,9 @@ industrial_investment_calc = {
         add_to_variable = { factory_everyday_goods_investment_interest = everyday_goods_condition_temp }
 
         #raw_goods_cost_temp
+        #raw_goods_price_temp
         #industrial_goods_cost_temp
+        #industrial_goods_price_temp
         #goods_cost_temp
         #everyday_goods_revenue_temp
         set_variable = { goods_revenue_s = everyday_goods_revenue_temp }
@@ -241,7 +247,23 @@ industrial_investment_calc = {
         #TODO
     #
     
-    #Construction Cost
+    #Construction Cost        
+        set_variable = { constr_cost_temp = global.factory_everyday_goods_construction_industrial_goods_base_need }
+        multiply_variable = { constr_cost_temp = factory_employment_amount_per_factory }
+        divide_variable = { constr_cost_temp = 100 }
+        set_temp_variable = { modifier_temp = factory_build_cost_effect }
+        add_to_temp_variable = { modifier_temp = 1 }
+        multiply_variable = { constr_cost_temp = modifier_temp }
+        multiply_temp_variable = { constr_cost_temp = raw_goods_price_temp }
+        multiply_temp_variable = { constr_cost_temp = 2 }
+
+        set_temp_variable = { revenue_excess_temp = everyday_goods_revenue_temp }
+        subtract_from_temp_variable = { revenue_excess_temp = goods_cost_temp }
+
+        set_temp_variable = { constr_cost_condition_temp = constr_cost_temp }
+        divide_temp_variable = { constr_cost_condition_temp = revenue_excess_temp }
+        multiply_temp_variable = { constr_cost_condition_temp = -20 } #Every multiple of excess revenue reduces interest by 20
+
     #
 
     #Infrastructure
