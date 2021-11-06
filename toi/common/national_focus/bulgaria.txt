@@ -324,14 +324,14 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					CAN = { has_idea = 	free_press }
+					BUL = { has_idea = 	free_press }
 				}
 					swap_ideas = { remove_idea = free_press add_idea = censored_press }
 				}
 
 			if = {
 				limit = {
-					CAN = { has_idea = censored_press }
+					BUL = { has_idea = censored_press }
 				}
 				swap_ideas = { remove_idea = censored_press add_idea = state_controlled_press }
 			}
@@ -401,7 +401,7 @@ focus_tree = {
 
 	
 	focus = {
-		id = BUL__national_assembly_of
+		id = BUL_national_assembly_of
 		x = 35
 		y = 10
 		cost = 35
@@ -557,7 +557,7 @@ focus_tree = {
 		completion_reward = {
 
 		}
-		prerequisite = { focus = BUL__national_assembly_of}
+		prerequisite = { focus = BUL_national_assembly_of}
 	}
 
 	focus = {
@@ -572,7 +572,7 @@ focus_tree = {
 		completion_reward = {
 
 		}
-		prerequisite = { focus = BUL__national_assembly_of}
+		prerequisite = { focus = BUL_national_assembly_of}
 	}
 
 	focus = {
@@ -587,7 +587,7 @@ focus_tree = {
 		completion_reward = {
 
 		}
-		prerequisite = { focus = BUL__national_assembly_of }
+		prerequisite = { focus = BUL_national_assembly_of }
 	}
 
 	focus = {
@@ -602,7 +602,7 @@ focus_tree = {
 		completion_reward = {
 
 		}
-		prerequisite = { focus = BUL__national_assembly_of}
+		prerequisite = { focus = BUL_national_assembly_of}
 	}
 
 	focus = {
@@ -617,7 +617,7 @@ focus_tree = {
 		completion_reward = {
 
 		}
-		prerequisite = { focus = BUL__national_assembly_of}
+		prerequisite = { focus = BUL_national_assembly_of}
 	}
 
 	focus = {
@@ -934,7 +934,11 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 3
+				category = biochemistry_tech
+			}
 		}
 		prerequisite = { focus = BUL_tarnovo_constitution }
 		mutually_exclusive = { focus = BUL_reforms_of_manufacturing }
@@ -950,9 +954,21 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_timed_idea = {
+				idea = BUL_idea_development_of_the_bulgarian_land
+				days = 720
+			}
+			48 = { add_extra_state_shared_building_slots = 1}
+			211 = { add_extra_state_shared_building_slots = 1}
+			77 = { add_extra_state_shared_building_slots = 1}
 
 		}
-		prerequisite = { focus = BUL_focus_on_agriculture }
+		available = {
+			48 = { is_owned_and_controlled_by = BUL }
+			211 = { is_owned_and_controlled_by = BUL }
+			77 = { is_owned_and_controlled_by = BUL }
+	   }
+	   prerequisite = { focus = BUL_focus_on_agriculture }
 	}
 
 	focus = {
@@ -965,7 +981,42 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			if = {
+                limit = { 48 = { infrastructure < 6 } 211 = { infrastructure < 7 } 77 = { infrastructure < 5} }
+                48 = {
+			     	add_building_construction = {
+				    	type = infrastructure 
+				    	level = 1
+				     	instant_build = yes
+				    }
+			    }
+				211 = {
+					add_building_construction = {
+					   type = infrastructure 
+					   level = 1
+						instant_build = yes
+				   }
+			   }
+			   77 = {
+				add_building_construction = {
+				   type = infrastructure 
+				   level = 1
+					instant_build = yes
+			   }
+		   }
+            }
+            else = {
+                add_tech_bonus = {
+                    bonus = 0.75
+                    uses = 2
+                    category = transport_tech
+                }
+            }
+		}
+		available = {
+			48 = { is_owned_and_controlled_by = BUL }
+			211 = { is_owned_and_controlled_by = BUL }
+			77 = { is_owned_and_controlled_by = BUL }
 		}
 		prerequisite = { focus = BUL_the_development_of_bulgarian_land }
 	}
@@ -980,7 +1031,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			
+
 		}
 		prerequisite = { focus = BUL_focus_on_agriculture }
 	}
@@ -995,6 +1046,8 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_stability = -0.05
+			unlock_decision_tooltip = BUL_decision_privatization_of_the_turkish_lands
 
 		}
 		prerequisite = { focus = BUL_focus_on_agriculture }
@@ -1010,7 +1063,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+		   unlock_decision_tooltip = BUL_decision_modernize_the_sliven_textile_mill
+		}
+		available = {
+			owns_state = 1023
 		}
 		prerequisite = { focus = BUL_the_development_of_bulgarian_land}
 	}
@@ -1025,7 +1081,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
 		}
 		prerequisite = { focus = BUL_dependent_on_farming }
 	}
@@ -1040,7 +1100,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = biochemistry_tech
+			}
 		}
 		prerequisite = { focus = BUL_modernization_of_agricultural_machinery }
 	}
@@ -1055,7 +1119,13 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_the_first_bulgarian_technical_company
+				days = 1095
+			}
+		}
+		available = {
+			date > 1885.1.1
 		}
 		prerequisite = { focus = BUL_massive_infrastructure_project }
 		prerequisite = { focus = BUL_modernize_sliven_textile_mill }
@@ -1068,10 +1138,10 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		ai_will_do = {
-			factor =1 
+			factor = 1 
 		}
 		completion_reward = {
-
+			add_ideas = BUL_idea_bulgarian_national_bank
 		}
 		prerequisite = { focus = BUL_liquidation_of_turkish_feudal_system }
 	}
@@ -1086,7 +1156,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			swap_ideas = { remove_idea = BUL_idea_bulgarian_national_bank add_idea = BUL_idea_bulgarian_national_bank2 }
 		}
 		available = {
 			date > 1885.1.1
@@ -1119,7 +1189,12 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			48 = {
+				add_resource = {
+					type = iron
+					amount = 2
+				}
+			}
 		}
 		prerequisite = { focus = BUL_quadruple_convention }
 	}
@@ -1134,7 +1209,19 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					CAN = { has_idea = 	limited_exports }
+				}
+					swap_ideas = { remove_idea = limited_exports add_idea = export_focus }
+				}
 
+			if = {
+				limit = {
+					CAN = { has_idea = export_focus }
+				}
+				swap_ideas = { remove_idea = export_focus add_idea = free_trade }
+			}
 		}
 		prerequisite = { focus = BUL_operating_the_new_railway_line }
 	}
@@ -1154,7 +1241,7 @@ focus_tree = {
 			add_opinion_modifier = { target = FRA modifier = eoanb_om_RUS_decrease_small }
 			reverse_add_opinion_modifier = { target = FRA modifier = eoanb_om_RUS_decrease_small }
 		}
-		prerequisite = { focus = BUL_open_trade_with_the_european_countries}
+		prerequisite = { focus = BUL_open_trade_with_the_european_countries }
 		mutually_exclusive = { focus = BUL_trade_with_france }
 	}
 
@@ -1216,7 +1303,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_rifle_0
+				amount = 2000
+				producer = BUL
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_germany }
 	}
@@ -1231,7 +1322,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_bavarian_beer
+				days = 1095
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_germany}
 	}
@@ -1246,7 +1340,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_import_coal
+				days = 1095
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_the_uk}
 	}
@@ -1261,7 +1358,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_french_steel
+				days = 1095
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_france}
 	}
@@ -1314,7 +1414,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_russian_wheat
+				days = 1095
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_russia }
 	}
@@ -1329,7 +1432,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_austrohungarian_mining
+				days = 1095
+			}
 		}
 		prerequisite = { focus = BUL_trade_with_astriahungary }
 	}
@@ -1344,7 +1450,16 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.30
+				uses = 1
+				category = mechanical_engineering_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = process_engineering_tech
+			}
 		}
 		prerequisite = { focus = BUL_tarnovo_constitution }
 		mutually_exclusive = { focus = BUL_focus_on_agriculture }
@@ -1390,7 +1505,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_centralised_economy
+				days = 365
+			}
 		}
 		prerequisite = { focus = BUL_study_british_ships }
 		prerequisite = { focus = BUL_highquality_good_imports }
@@ -1407,6 +1525,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.30
+				uses = 3
+				category = industry
+			}
 
 		}
 		prerequisite = { focus = BUL_reforms_of_manufacturing }
@@ -1422,7 +1545,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_industrializing
+				days = 1825
+			}
 		}
 		prerequisite = { focus = BUL_hasten_the_modernization }
 	}
@@ -1437,7 +1563,8 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			navy_experience = 10
+			army_experience = 10
 		}
 		prerequisite = { focus = BUL_hasten_the_modernization }
 	}
@@ -1452,7 +1579,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = naval_mtg_gunboat_tech
+			}
 		}
 		prerequisite = { focus = BUL_new_experienced_engineers }
 	}
@@ -1481,7 +1612,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			
+			activate_mission_tooltip = BUL_misison_massive_coal_extractions_in_sofia
 		}
 		prerequisite = { focus = BUL_start_industrializing }
 	}
@@ -1496,7 +1627,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			activate_mission_tooltip = BUL_mission_exploitation_of_wood_resources
 		}
 		prerequisite = { focus = BUL_start_industrializing }
 	}
@@ -1511,7 +1642,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_high_quality_goods_import
+				days = 365
+			}
 		}
 		prerequisite = { focus = BUL_exploitation_of_wood_resources }
 		prerequisite = { focus = BUL_massive_coal_extractions }
@@ -1527,7 +1661,31 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					BUL = { has_idea = 	hc_no_healthcare }
+				}
+					swap_ideas = { remove_idea = hc_no_healthcare add_idea = hc_low_healthcare }
+				}
 
+			if = {
+				limit = {
+					BUL = { has_idea = hc_low_healthcare }
+				}
+				swap_ideas = { remove_idea = hc_low_healthcare add_idea = hc_decent_healthcare }
+			}
+			if = {
+				limit = {
+					BUL = { has_idea = hc_decent_healthcare }
+				}
+				swap_ideas = { remove_idea = hc_decent_healthcare add_idea = hc_good_healthcare }
+			}
+			if = {
+				limit = {
+					BUL = { has_idea = hc_good_healthcare }
+				}
+				swap_ideas = { remove_idea = hc_good_healthcare add_idea = hc_exellent_healthcare }
+			}
 		}
 		prerequisite = { focus = BUL_send_diplomatic_mission_to_germany }
 	}
@@ -1542,7 +1700,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_the_way_to_the_west
+				days = 720
+			}
+			add_research_slot = 1
 		}
 		prerequisite =  { focus = BUL_improve_quality_of_life }
 		prerequisite = { focus = BUL_towards_a_more_centralised_economy }
@@ -1653,13 +1815,13 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_ideas = BUL_idea_newly_established_army
 		}
 		prerequisite = { focus = BUL_tarnovo_constitution }
 	}
 
 	focus = {
-		id = BUL_establishment_of_barracks_troughout_the_country
+		id = BUL_establishment_of_barracks
 		x = 18
 		y = 4
 		cost = 70
@@ -1683,9 +1845,9 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			
 		}
-		prerequisite = { focus = BUL_establishment_of_barracks_troughout_the_country }
+		prerequisite = { focus = BUL_establishment_of_barracks}
 	}
 
 	focus = {
@@ -1698,7 +1860,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_ideas = BUL_idea_active_forces
 		}
 		prerequisite = { focus = BUL_bulgarian_zemska_army }
 	}
@@ -1713,7 +1875,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 2
+				category = infantry_weapons
+			}
 		}
 		prerequisite = { focus = BUL_establish_active_forces }
 	}
@@ -1728,7 +1894,11 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
 		}
 		prerequisite = { focus = BUL_the_national_military_university }
 		prerequisite = { focus = BUL_recruitment_campaign }
@@ -1769,13 +1939,18 @@ focus_tree = {
 		id = BUL_serbobulgarian_war
 		x = 12
 		y = 5
-		cost = 3
+		cost = 1
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 
+		}
+		available = {
+			has_war_with = SER
+			date > 1885.1.1
+			owns_state = 1023
 		}
 		prerequisite = { focus = BUL_bulgarian_zemska_army}
 	}
@@ -1790,7 +1965,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = BUL_idea_army_mobilization
+				days = 10
+			}
 		}
 		prerequisite = { focus = BUL_serbobulgarian_war }
 	}
