@@ -22,10 +22,10 @@ defined_text = {
 		localization_key = idea_category_afr_political
 	}
 	text = {
-		trigger = { always = yes }
 		localization_key = idea_category_non_afr_political
 	}
 }
+
 defined_text = {
 	name = idea_category_political_desc_scripted
 	text = {
@@ -40,7 +40,6 @@ defined_text = {
 		localization_key = idea_category_afr_political_desc
 	}
 	text = {
-		trigger = { always = yes }
 		localization_key = idea_category_non_afr_political_desc
 	}
 }
@@ -60,7 +59,6 @@ defined_text = {
 		localization_key = afr_empire_politics_legitimacy_tooltip
 	}
 	text = {
-		trigger = { always = yes }
 		localization_key = non_afr_empire_politics_legitimacy_tooltip
 	}
 }
@@ -78,9 +76,6 @@ defined_text = {
 	text = { # Reform Vote in process
 		trigger = {
 			NOT = {
-				check_variable = { current_reform_id = 0 }
-			}
-			NOT = {
 				check_variable = { current_reform_id = -1 }
 			}
 		}
@@ -88,13 +83,9 @@ defined_text = {
 	}
 
 	text = { # Custom Vote in process
-		trigger = {
-			check_variable = { current_reform_id = -1 }
-		}
 		localization_key = EOANBSYS_legislative_reform_process_decision_category_desc_2
 	}
 }
-
 
 defined_text = {
 	name = GetLegitimacyState
@@ -189,13 +180,6 @@ defined_text = {
 	}
 
 	text = { # Excellent
-		trigger = {
-			check_variable = {
-				var = political_legitimacy
-				value = 0.9
-				compare = greater_than
-			}
-		}
 		localization_key = legitimacy_state_6
 	}
 }
@@ -422,9 +406,6 @@ defined_text = {
 		localization_key = political_legitimacy_political_stability_pos2_tt
 	}
 	text = {
-		trigger = {
-			check_variable = { pol_stability = 3 }
-		}
 		localization_key = political_legitimacy_political_stability_pos3_tt
 	}
 }
@@ -432,14 +413,9 @@ defined_text = {
 	name = political_legitimacy_unpopular_rulers
 	text = {
 		trigger = {
-			OR = {
-				has_idea = VIN_Spirit_Dinh_Dao_Opposition1
-				has_idea = VIN_Spirit_Dinh_Dao_Opposition2
-				has_idea = VIN_Spirit_Dinh_Dao_Opposition3
-				has_idea = VIN_Spirit_Dinh_Dao_Opposition4
-			}
+			has_country_leader_with_trait = controversial_figure
 		}
-		localization_key = political_legitimacy_unpopular_rulers_vin_tuc_duc_tt
+		localization_key = political_legitimacy_unpopular_ruler_tt
 	}
 }
 defined_text = {
@@ -518,10 +494,6 @@ defined_text = {
 		localization_key = political_legitimacy_power_rank_great_power_tt
 	}
 	text = {
-		trigger = { is_great_power = yes }
-		localization_key = political_legitimacy_power_rank_great_power_tt
-	}
-	text = {
 		trigger = { is_secondary_power = yes }
 		localization_key = political_legitimacy_power_rank_secondary_power_tt
 	}
@@ -530,7 +502,6 @@ defined_text = {
 		localization_key = political_legitimacy_power_rank_minor_power_tt
 	}
 	text = {
-		trigger = { is_insignificant_power = yes }
 		localization_key = political_legitimacy_power_rank_insignificant_power_tt
 	}
 }
@@ -2828,7 +2799,71 @@ defined_text = {
         }
         localization_key = reform_name_25_8
     }
-
+	
+	#Danish Custom Parliament Votes
+	text = { # Vote on Moving the Copenhagen Naval Base to Holmen
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 26.3
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_26_3
+    }
+	text = { # Vote on Wartime Infantry Battalion Duplication
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 26.4
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_26_4
+    }
+	text = { # Vote on Danish Conscription Act
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 26.5
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_26_5
+    }
+	text = { # Vote on Danish Army Budget Act
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 26.6
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_26_6
+    }
+	text = { # Vote on Danish Navy Budget Act
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 26.7
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_26_7
+    }
+	
+	
+	#Scandinavian Custom Parliament Votes
+	text = { # Ratification of the Monetary Union Treaty
+        trigger = {
+            check_variable = {
+                var = current_reform_id
+                value = 27.1
+                  compare = equals
+            }
+        }
+        localization_key = reform_name_27_1
+    }
 }
 
 
@@ -6135,90 +6170,4 @@ defined_text = {
 		}
 		localization_key = EOANB_FUN_PARTY_INFO
 	}
-}
-
-##################################################
-##################################################
-#               FRENCH PARLIAMENT
-##################################################
-##################################################
-
-defined_text = {
-	name = GetFrenchParliamentDesc
-	text = { # No vote
-		trigger = {
-			check_variable = { current_france_reform_id = 0 }
-		}
-		localization_key = french_reform_voting_process_category_desc_0
-	}
-
-	text = { # Reform Vote in process
-		trigger = {
-			NOT = {
-				check_variable = { current_france_reform_id = 0 }
-			}
-			NOT = {
-				check_variable = { current_france_reform_id = -1 }
-			}
-		}
-		localization_key = french_reform_voting_process_category_desc_1
-	}
-
-	text = { # Custom Vote in process
-		trigger = {
-			check_variable = { current_france_reform_id = -1 }
-		}
-		localization_key = french_reform_voting_process_category_desc_2
-	}
-}
-
-
-defined_text = {
-	name = GetFrenchCurrentVotedReform
-	text = { # The "I am ERROR" Act
-		trigger = {
-			check_variable = { 
-				var = current_france_reform_id
-				value = 0
-          		compare = equals
-			}
-		}
-		localization_key = french_reform_name_1_1
-	}
-
-
-	text = { # General Imperial Security Act
-		trigger = {
-			check_variable = { 
-				var = current_france_reform_id
-				value = 1.1
-          		compare = equals
-			}
-		}
-		localization_key = french_reform_name_1_1
-	}
-
-	text = { # Loi Duruy
-		trigger = {
-			check_variable = { 
-				var = current_france_reform_id
-				value = 1.2
-          		compare = equals
-			}
-		}
-		localization_key = french_reform_name_1_2
-	}
-
-	text = { # Loi Ollivier
-		trigger = {
-			check_variable = { 
-				var = current_france_reform_id
-				value = 1.3
-			 	 compare = equals
-			}
-		}
-		localization_key = french_reform_name_1_3
-	}
-
-
 }

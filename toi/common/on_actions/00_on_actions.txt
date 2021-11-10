@@ -576,6 +576,26 @@ on_actions = {
 					set_global_flag = MEX_reform_war_end
 				}
 			}
+			if = {
+				limit={
+					FROM={has_country_flag = true_china}
+					ROOT={
+						tag = QNG 
+						tag = ROC 
+						tag = PRC 
+						tag = TAI 
+						tag = GXC 
+						tag = TAW 
+						tag = PTH 
+						tag = SIC 
+						tag = YAL 
+						tag = NIE 
+						tag = BEI
+					}
+				}
+				FROM={clr_country_flag = true_china}
+				ROOT={set_country_flag = true_china}
+			}
 		}
 	}
 
@@ -757,45 +777,60 @@ on_actions = {
 					}
 				}
 			}
-			if = {#tripple alliance, paraguay loses
+			#if = {
+			#	limit = {
+			#		tag = PAR
+			#		FROM = {
+			#			OR = {
+			#				tag = BRA
+			#				tag = ARG
+			#				tag = URC
+			#				tag = URG
+			#				tag = BOL
+			#				if = {
+			#					limit = {
+			#						CIS = { exists = yes }
+			#					}
+			#					tag = CIS
+			#				}
+			#			}
+			#		}
+			#		PAR = { has_country_flag = Paraguayan_War }
+			#	}
+			#	ROOT = { white_peace = FROM }
+			#	PAR = { country_event = { id = par.15 } }
+			#}
+			#if = {
+			#	limit = {
+			#		tag = BRA
+			#		FROM = {
+			#			OR = {
+			#				tag = PAR
+			#				tag = ARG
+			#				tag = URC
+			#				tag = URG
+			#				tag = BOL
+			#			}
+			#		}
+			#		PAR = { has_country_flag = Paraguayan_War }
+			#	}
+			#	ROOT = { white_peace = FROM }
+			#	PAR = { country_event = { id = par.16 } }
+			#}
+			if = {
 				limit = {
-					tag = PAR
-					FROM = {
-						OR = {
-							tag = BRA
-							tag = ARG
-							tag = URC
-							tag = URG
-						}
+					TAG = ECU
+					COL = { has_country_flag = COL_ecu_war }
+					FROM = { TAG = COL }
+				}
+				COL = {
+					annex_country = {
+						target = ECU
+						transfer_troops = no
 					}
-					PAR = { has_country_flag = Paraguayan_War }
 				}
-				ROOT = { white_peace = FROM }
-				PAR = { country_event = { id = par.15 } }
 			}
-			if = {#triple aliance, brazil loses
-				limit = {
-					tag = BRA
-					FROM = { tag = PAR }
-					PAR = { has_country_flag = Paraguayan_War }
-				}
-				ROOT = { white_peace = FROM }
-				PAR = { country_event = { id = par.16 } }
-			}
-			# if = {#if you want COL to annex ECU, give them claims or cores
-				# limit = {
-					# TAG = ECU
-					# COL = { has_country_flag = COL_ecu_war }
-					# FROM = { TAG = COL }
-				# }
-				# COL = {
-					# annex_country = {
-						# target = ECU
-						# transfer_troops = no
-					# }
-				# }
-			# }
-			if = {#ottomans put down the bosnia revolt
+			if = {
                 limit = {
 					FROM = { 
 						tag = OTO 
@@ -838,6 +873,32 @@ on_actions = {
 					}
 				}
 				FROM = {
+					annex_country = {
+						target = ROOT
+					}
+				}
+			}
+			if = {#BUE wins civil war
+				limit = {
+					ROOT = { tag = ARG }
+					FROM = { 
+						tag = BUE
+					}
+				}
+				ROOT = { white_peace = FROM }
+				FROM = {
+					puppet = ARG
+				}
+			}
+			if = {#ARG wins civil war
+				limit = {
+					ROOT = { tag = BUE }
+					FROM = { 
+						tag = ARG
+					}
+				}
+				FROM = {
+					country_event = {id=arg.1}
 					annex_country = {
 						target = ROOT
 					}
@@ -1063,11 +1124,11 @@ on_actions = {
 	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
 	#ROOT = nation being released, FROM = overlord
 
-	#on_release_as_puppet = {
-	#	effect = {
-	#
-	#	}
-	#}
+	on_release_as_puppet = {
+		effect = {
+			compute_national_vote = yes
+		}
+	}
 
 	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
 	#on_annex = {
@@ -1222,4 +1283,15 @@ on_actions = {
 		}
 	}
 	
+	on_war = {
+		effect = {
+			if = {
+				limit = {
+					tag = DEN
+					DEN = { has_country_flag = DEN_wartime_battalion_duplication_flag }
+				}
+				DEN = { add_ideas = DEN_idea_wartime_battalion_duplication }
+			}
+		}
+	}
 }

@@ -218,445 +218,278 @@ political_actions = {
 	}
 }
 
-eoanb_category_economic = {
+GRE_decision_category_obtain_foreign_equipment = {
+	
+	#Buy Rifles from Belgium
+	GRE_decision_buy_belgian_rifles = {
 
-	GRE_decision_control_debt = {
-		icon = money
+		icon = generic_industry
 		
-		allowed = {
-			tag = GRE
-		}
-		
+		allowed = { tag = GRE }
+
 		available = {
-			has_idea = GRE_idea_economic_comission
-			has_completed_focus = GRE_control_debts
-			NOT = { 
-				has_country_flag = GRE_debt_cut
-			}
+			has_completed_focus = GRE_belgian_rifles
+			num_of_civilian_factories_available_for_projects > 0
+			BEL = { has_war = no }
+			#debt condition
 		}
 
 		visible = {
-			has_idea = egy_vic_debt
-			check_variable = {ROOT.debt_level > 0}
-			NOT = { 
-				has_country_flag = debt_declared_bankruptcy_flag 
-			}
+			country_exists = BEL
+			BEL = { owns_state = 977 }
 		}
-		
-		fire_only_once = yes
 
-		#cost = 25
-		days_remove = 100
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
 		
 		complete_effect = {
-		    hidden_effect = {
-			    set_country_flag = GRE_debt_cut 
-			}
+			#increase debt
 		}
-		
-		remove_effect = {
-			custom_effect_tooltip = EGY_afr_decrease_debt_5
-			hidden_effect = {
-					add_to_variable = {var = debt_level value = -5}
-					country_event = { id = calc_spain_debt.1 days = 1 }
-					add_timed_idea = {
-						idea = egy_vic_debt_payments
-						days = 180
-					}
-					if = {
-						limit = { 
-							has_idea = egy_vic_debt_payments 
-						}
-						modify_timed_idea = {
-							idea = egy_vic_debt_payments
-							days = 60
-						}
-					}	
-				}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = BEL
 			}
-
+	    }
+       
 		ai_will_do = {
-			base = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { check_variable = {ROOT.debt_level > 8} }
-			#	num_of_civilian_factories < 2
-			#}
-		}
-	}
-
-	GRE_decision_cut_administration = {
-		icon = money
-		
-		allowed = {
-			tag = GRE
-		}
-		
-		available = {
-			has_idea = GRE_idea_economic_comission
-			has_completed_focus = GRE_cut_administration
-			NOT = { 
-				has_country_flag = GRE_debt_cut
-			}
-		}
-
-		visible = {
-			has_idea = egy_vic_debt
-			check_variable = {ROOT.debt_level > 0}
-			NOT = { 
-				has_country_flag = debt_declared_bankruptcy_flag 
-			}
-		}
-		
-		fire_only_once = yes
-
-		#cost = 25
-		days_remove = 100
-		
-		complete_effect = {
-		    hidden_effect = {
-			    set_country_flag = GRE_debt_cut 
-			}
-		}
-		
-		remove_effect = {
-			custom_effect_tooltip = EGY_afr_decrease_debt_5
-			hidden_effect = {
-					add_to_variable = {var = debt_level value = -5}
-					country_event = { id = calc_spain_debt.1 days = 1 }
-					add_timed_idea = {
-						idea = egy_vic_debt_payments
-						days = 180
-					}
-					if = {
-						limit = { 
-							has_idea = egy_vic_debt_payments 
-						}
-						modify_timed_idea = {
-							idea = egy_vic_debt_payments
-							days = 60
-						}
-					}	
-				}
-			}
-
-		ai_will_do = {
-			base = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { check_variable = {ROOT.debt_level > 8} }
-			#	num_of_civilian_factories < 2
-			#}
+			base = 500
 		}
 	}
 	
-	GRE_decision_fiscal_responsability = {
-		icon = money
+	#Buy Rifles from Prussia
+	GRE_decision_buy_prussian_rifles = {
+
+		icon = generic_industry
 		
-		allowed = {
-			tag = GRE
-		}
-		
+		allowed = { tag = GRE }
+
 		available = {
-			has_idea = GRE_idea_economic_comission
-			has_completed_focus = GRE_fiscal_responsability
-			NOT = { 
-				has_country_flag = GRE_debt_cut
-			}
+			has_completed_focus = GRE_prussian_rifles
+			num_of_civilian_factories_available_for_projects > 0
+			PRS = { has_war = no }
+			#debt condition
 		}
 
 		visible = {
-			has_idea = egy_vic_debt
-			check_variable = {ROOT.debt_level > 0}
-			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+			country_exists = PRS
 		}
-		
-		fire_only_once = yes
 
-		#cost = 25
-		days_remove = 100
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
 		
 		complete_effect = {
-		    hidden_effect = {
-			    set_country_flag = GRE_debt_cut 
-			}
+			#increase debt
 		}
-		
-		remove_effect = {
-			custom_effect_tooltip = EGY_afr_decrease_debt_5
-			hidden_effect = {
-					add_to_variable = {var = debt_level value = -5}
-					country_event = { id = calc_spain_debt.1 days = 1 }
-					add_timed_idea = {
-						idea = egy_vic_debt_payments
-						days = 180
-					}
-					if = {
-						limit = { 
-							has_idea = egy_vic_debt_payments 
-						}
-						modify_timed_idea = {
-							idea = egy_vic_debt_payments
-							days = 60
-						}
-					}	
-				}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = PRS
 			}
-
+	    }
+       
 		ai_will_do = {
-			base = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { check_variable = {ROOT.debt_level > 8} }
-			#	num_of_civilian_factories < 2
-			#}
+			base = 500
 		}
 	}
 	
-	GRE_decision_cut_down_corruption = {
-		icon = money
+	#Buy Rifles from France
+	GRE_decision_buy_french_rifles = {
+
+		icon = generic_industry
 		
-		allowed = {
-			tag = GRE
-		}
-		
+		allowed = { tag = GRE }
+
 		available = {
-			has_idea = GRE_idea_economic_comission
-			has_completed_focus = GRE_clamp_on_corruption
-			NOT = { 
-				has_country_flag = GRE_debt_cut
-			}
+			has_completed_focus = GRE_french_rifles
+			num_of_civilian_factories_available_for_projects > 0
+			FRA = { has_war = no }
+			#debt condition
 		}
 
 		visible = {
-			has_idea = egy_vic_debt
-			check_variable = {ROOT.debt_level > 0}
-			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+			country_exists = FRA
+			
 		}
-		
-		fire_only_once = yes
 
-		#cost = 25
-		days_remove = 100
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
 		
 		complete_effect = {
-		    hidden_effect = {
-			    set_country_flag = GRE_debt_cut 
-			}
+			#increase debt
 		}
-		
-		remove_effect = {
-			custom_effect_tooltip = EGY_afr_decrease_debt_5
-			hidden_effect = {
-					add_to_variable = {var = debt_level value = -5}
-					country_event = { id = calc_spain_debt.1 days = 1 }
-					add_timed_idea = {
-						idea = egy_vic_debt_payments
-						days = 180
-					}
-					if = {
-						limit = { 
-							has_idea = egy_vic_debt_payments 
-						}
-						modify_timed_idea = {
-							idea = egy_vic_debt_payments
-							days = 60
-						}
-					}	
-				}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = FRA
 			}
-
+	    }
+       
 		ai_will_do = {
-			base = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { check_variable = {ROOT.debt_level > 8} }
-			#	num_of_civilian_factories < 2
-			#}
+			base = 500
 		}
 	}
-	
-	GRE_decision_temporary_rise_taxes = {
-		icon = money
+
+	##Buy canons from Britain
+	GRE_decision_buy_english_cannons = {
+
+		icon = artillery
 		
-		allowed = {
-			tag = GRE
-		}
-		
+		allowed = { tag = GRE }
+
 		available = {
-			has_idea = egy_vic_debt
-			check_variable = { ROOT.debt_level > 30 }
-			NOT = { 
-				has_country_flag = GRE_debt_cut
-			}
+			has_completed_focus = GRE_british_artillery
+			num_of_civilian_factories_available_for_projects > 0
+			ENG = { has_war = no }
+			#debt condition
 		}
 
 		visible = {
-			has_idea = egy_vic_debt
-			check_variable = {ROOT.debt_level > 0}
-			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+			country_exists = ENG
 		}
-		
-		fire_only_once = yes
 
-		cost = 25
-		days_remove = 180
+		fire_only_once = yes
 		
-		modifier = {
-			stability_weekly = -0.005
-		}
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
 		
 		complete_effect = {
-		custom_effect_tooltip = GRE_raise_taxes
-			hidden_effect = {
-			if = {
-				limit = {
-					has_idea = very_low_taxes
-				}
-				swap_ideas = {
-					remove_idea = very_low_taxes
-					add_idea = low_taxes
-				}
-			}
-			else_if = { 
-				limit = {
-					has_idea = low_taxes
-				}
-				swap_ideas = {
-					remove_idea = low_taxes
-					add_idea = normal_taxes
-				}
-			}
-			else_if = { 
-				limit = {
-					has_idea = normal_taxes
-				}
-				swap_ideas = {
-					remove_idea = normal_taxes
-					add_idea = high_taxes
-				}
-			}
-			else_if = { 
-				limit = {
-					has_idea = high_taxes
-				}
-				swap_ideas = {
-					remove_idea = high_taxes
-					add_idea = very_high_taxes
-				}
-			}
-			set_country_flag = GRE_debt_cut 
-			}
+			#increase debt
 		}
-		
-		remove_effect = {
-			custom_effect_tooltip = EGY_afr_decrease_debt_5
-			hidden_effect = {
-			if = { 
-				limit = {
-					has_idea = low_taxes
-				}
-				swap_ideas = {
-					remove_idea = low_taxes
-					add_idea = very_low_taxes
-				}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = cannon_equipment
+				amount = 50
+				producer = ENG
 			}
-			else_if = { 
-				limit = {
-					has_idea = normal_taxes
-				}
-				swap_ideas = {
-					remove_idea = normal_taxes
-					add_idea = low_taxes
-				}
-			}
-			else_if = { 
-				limit = {
-					has_idea = high_taxes
-				}
-				swap_ideas = {
-					remove_idea = high_taxes
-					add_idea = normal_taxes
-				}
-			}
-			else_if = { 
-				limit = {
-					has_idea = very_high_taxes
-				}
-				swap_ideas = {
-					remove_idea = very_high_taxes
-					add_idea = high_taxes
-				}
-			}
-			add_to_variable = {var = debt_level value = -5}
-			country_event = { id = calc_spain_debt.1 days = 1 }	
-			}
-		}
-
+	    }
+       
 		ai_will_do = {
-			base = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { check_variable = {ROOT.debt_level > 8} }
-			#	num_of_civilian_factories < 2
-			#}
+			base = 500
 		}
 	}
-	
-	GRE_decision_naval_ironworks = { 
 
-        icon = steel
+	GRE_decision_buy_prussian_cannons = {
+
+		icon = artillery
 		
+		allowed = { tag = GRE }
+
 		available = {
-		    debt_not_bankrupt_trigger = yes 
-		    has_completed_focus = GRE_ironworks 
-			controls_state = 47
-			NOT = { has_country_flag = GRE_industry_development_ongoing_flag }
+			has_completed_focus = GRE_krupp_cannons
+			num_of_civilian_factories_available_for_projects > 0
+			PRS = { has_war = no }
+			#debt condition
 		}
 
 		visible = {
+			country_exists = PRS
 		}
-		
-		allowed = { TAG = GRE }
-		
-		custom_cost_trigger = { check_variable = { debt_level < 50 } }
-		custom_cost_text = eoanb_decision_cost_5_debt_loc
 
 		fire_only_once = yes
-		is_good = yes
-
-		#cost = 50
-		days_remove = 80
-
-		modifier = {
-			civilian_factory_use = 1
-			political_power_gain = -0.1
-		}
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
 		
 		complete_effect = {
-		    hidden_effect = {
-			    set_country_flag = GRE_industry_development_ongoing_flag
-			}
+			#increase debt
 		}
-
-		remove_effect = { 
-			47 = {
-				add_building_construction = {
-					type = steel_mill
-					level = 1
-					instant_build = yes
-				}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = cannon_equipment
+				amount = 50
+				producer = PRS
 			}
-			hidden_effect = {
-				debt_level_increase_by_5 = yes
-				clr_country_flag = GRE_industry_development_ongoing_flag 
-			}
-		}
-
+	    }
+       
 		ai_will_do = {
-			base = 1
+			base = 500
 		}
-    }
+	}
+
+	## Buy french cannons
+	GRE_decision_buy_french_cannons = {
+
+		icon = artillery
+		
+		allowed = { tag = GRE }
+
+		available = {
+			has_completed_focus = GRE_french_artillery
+			num_of_civilian_factories_available_for_projects > 0
+			FRA = { has_war = no }
+			#debt condition
+		}
+
+		visible = {
+			country_exists = FRA
+		}
+
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
+		
+		complete_effect = {
+			#increase debt
+		}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = cannon_equipment
+				amount = 50
+				producer = FRA
+			}
+	    }
+       
+		ai_will_do = {
+			base = 500
+		}
+	}
 }
 
 eoanb_category_diplomatic_actions = {
@@ -971,7 +804,7 @@ GRE_decision_category_industry = {
 				NOT = {
 					has_idea = GRE_idea_Athens_Piraeus_rail
 				}
-				has_completed_focus = GRE_athens-piraeus_rail
+				has_completed_focus = GRE_the_athens-piraeus_rail
 			}
         }
 

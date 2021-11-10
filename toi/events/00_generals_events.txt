@@ -60,11 +60,13 @@ unit_leader_event = {
 # }
 
 ##ping event to age a leader
-unit_leader_event = {
+country_event = {
 	id = generals_aging_generic.4
 	title = generals_aging_generic.4.t
 	desc = generals_aging_generic.4.d
 	picture = GFX_report_event_royal_visit
+
+	#is_triggered_only = yes
 	
 	immediate ={
 		every_unit_leader={

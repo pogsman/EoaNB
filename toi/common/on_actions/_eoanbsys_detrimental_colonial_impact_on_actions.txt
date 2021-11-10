@@ -6,6 +6,11 @@ on_actions = {
 				limit = {
 					has_start_date < 1858.1.1
 				}
+				#Sets DCI Event Check Cycle Every 90 Days (Unrelated to DCI Missions)
+				random_country = {
+					limit = { is_major = yes }
+					country_event = { id = DCI_caribbean_incident_event.3 days = 90 }
+				}
 				#Unclaimed Territories
 				# 633 = { 
 				# 	add_to_variable = { var = detrimental_colonial_impact_value@SPR value = 2 }
@@ -110,15 +115,15 @@ on_actions = {
 				389 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				388 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1076 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
-				386 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
+				386 = { state_event = { id = afr_rrp_racial_tension_increase.15 } }
+				1073 = { state_event = { id = afr_rrp_racial_tension_increase.15 } }
 				385 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
-				1342 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
+				1342 = { state_event = { id = afr_rrp_racial_tension_increase.21 } }
 				1343 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				378 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1093 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1297 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				377 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
-				1300 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1285 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1303 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
 				1304 = { state_event = { id = afr_rrp_racial_tension_increase.8 } }
@@ -147,15 +152,13 @@ on_actions = {
 				332 = { state_event = { id = afr_rrp_racial_tension_increase.7 } }
 				466 = { state_event = { id = afr_rrp_racial_tension_increase.7 } }
 				683 = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
-				472 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-				1137 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-				471 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
+				472 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }				471 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 				739 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 				
 				463 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 				
 				#Spanish Colonies
-				1436 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+				1198 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 				638 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 				646 = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
 				

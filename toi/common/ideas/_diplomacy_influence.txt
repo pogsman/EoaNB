@@ -1,33 +1,23 @@
 ideas = {
-
 	country = {
 		generic_rival_modifier = {
-
-			allowed = {
-				always = no
-			}
-
 			allowed_civil_war = {
 				always = yes
 			}
-
-			removal_cost = -1
 
 			picture = AUS_hungarian_revolution
 			
 			targeted_modifier = {
 				tag = "[?rival_country.GetTag]"
-                attack_bonus_against = 0.15 
-                defense_bonus_against = 0.2 				
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.2
 			}
 		}
-		eoanbdiplomacy_rival_war = {
-			removal_cost = -1
-			
+		eoanbdiplomacy_rival_war = {	
 			picture = generic_secret_police
 			
 			modifier = {
-			    army_attack_factor = 0.1
+				army_attack_factor = 0.1
 				army_core_defence_factor = 0.15 
 			}
 			cancel = { NOT = { has_war_with = var:rival_country } }

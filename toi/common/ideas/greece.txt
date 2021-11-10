@@ -39,6 +39,97 @@ ideas = {
 			}
 	    }
 		
+		GRE_idea_King_Otto_Army = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+	
+	        picture = placeholder
+	
+	        modifier = { 
+			    stability_factor = -0.1
+				war_support_factor = -0.1
+				army_infantry_defence_factor = 0.05
+				army_org_factor = 0.05
+				planning_speed = 0.05
+			}
+		}
+
+		GRE_idea_Military_Academy = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+	
+	        picture = placeholder
+	
+	        modifier = { 
+				army_infantry_defence_factor = 0.05
+				army_org_factor = 0.05
+				experience_gain_army_factor = 0.15 
+			    training_time_army_factor = 0.05 
+			}
+		}
+
+		GRE_idea_Military_Academy_2 = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+	
+	        picture = placeholder
+	
+	        modifier = { 
+				army_infantry_defence_factor = 0.05
+				army_org_factor = 0.05
+				experience_gain_army_factor = 0.3 
+			    training_time_army_factor = 0.1 
+				planning_speed = 0.05
+			}
+
+		}
+
+		GRE_idea_Memories_Greek_Revolution = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+	
+	        picture = placeholder
+	
+	        modifier = { 
+			    max_surrender_limit_offset = 0.05
+				drift_defence_factor = -0.05
+				political_power_gain  = 0.5 
+			}
+		}
+
+
 	    GRE_idea_certain_succession = {
 	
 	        allowed = { 
@@ -118,7 +209,7 @@ ideas = {
 			}
         }
 		
-	    GRE_idea_euvelpidon_academy = {
+	    GRE_idea_evzones_army_unit = {
 	
 	        allowed = {
 	            always = no 
@@ -133,11 +224,13 @@ ideas = {
 	        picture = placeholder
 	
 	        modifier = { 
-			    experience_gain_army_factor = 0.15 
-			    training_time_army_factor = 0.05 
+				minimum_training_level = 0.25
+				army_morale_factor = 0.1
+				army_infantry_defence_factor = 0.05
+				training_time_factor = 0.05
 			}
         }
-		
+
 	    GRE_idea_general_staff = {
 	
 	        allowed = {
@@ -912,6 +1005,28 @@ ideas = {
 			}
 
 			#traits = { ENG_trait_concern_bic }
+		}
+
+		GRE_hellenic_material_authority = {
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				tag = GRE
+			}
+
+			available = {
+				has_completed_focus = GRE_eforeia_ylikou_polemou
+			}
+
+			cost = 150
+			removal_cost = 10
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
 		}
 	}
 	

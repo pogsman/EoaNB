@@ -156,7 +156,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-			tag = RUS
+			always = no
 		}
 
 		available = {
@@ -183,8 +183,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 1600
 		timeout_effect = {
-			add_political_power = -80
-			add_stability = -0.02
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			96 = { add_extra_state_shared_building_slots = 1 }
@@ -196,100 +201,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Petersburg_Warsaw_Railway_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Petersburg_Warsaw_Railway
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Petersburg_Warsaw_Railway
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Petersburg_Warsaw_Railway
-			num_of_civilian_factories_available_for_projects > 11
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 209
-			owns_state = 96
-			owns_state = 97
-			owns_state = 1135
-			controls_state = 209
-			controls_state = 96
-			controls_state = 97
-			OR = {
-				209 = { infrastructure < 4 }
-				96 = { infrastructure < 4 }
-				97 = { infrastructure < 4 }
-				1135 = { infrastructure < 4 }
-			}
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 580
-
-		modifier = {
-			civilian_factory_use = 12
-		}
-
-		remove_effect = {
-			if = {
-				limit = { 209 = { infrastructure < 4 } }
-				209 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 96 = { infrastructure < 4 } }
-				96 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 97 = { infrastructure < 4 } }
-				97 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 1135 = { infrastructure < 4 } }
-				1135 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 15
-			}
 		}
 	}
 
@@ -1143,7 +1054,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			always = no
 		}
 
 		available = {
@@ -1168,8 +1079,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 1600
 		timeout_effect = {
-			add_political_power = -80
-			add_stability = -0.02
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			add_political_power = 60
@@ -1180,88 +1096,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Moscow_Tsaritsyn_Railway_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Moscow_Tsaritsyn_Railway
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Moscow_Tsaritsyn_Railway
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Moscow_Tsaritsyn_Railway
-			num_of_civilian_factories_available_for_projects > 9
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 265
-			owns_state = 257
-			owns_state = 254
-			controls_state = 265
-			controls_state = 257
-			controls_state = 254
-			OR = {
-				265 = { infrastructure < 4 }
-				257 = { infrastructure < 3 }
-				254 = { infrastructure < 4 }
-			}
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 1100
-
-		modifier = {
-			civilian_factory_use = 10
-		}
-
-		remove_effect = { 
-			if = {
-				limit = { 265 = { infrastructure < 4 } }
-				265 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 257 = { infrastructure < 3 } }
-				257 = {
-					add_building_construction = {
-						type = infrastructure 
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 254 = { infrastructure < 4 } }
-				254 = {
-				 	add_building_construction = {
-						type = infrastructure 
-					  	level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 15
-			}
 		}
 	}
 
@@ -1320,7 +1154,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			always = no
 		}
 
 		available = {
@@ -1341,8 +1175,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 800
 		timeout_effect = {
-			add_political_power = -80
-			add_stability = -0.02
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			add_political_power = 60
@@ -1353,57 +1192,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Railways_In_Tbilisi_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Railways_In_Tbilisi
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Railways_In_Tbilisi
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Railways_In_Tbilisi
-			num_of_civilian_factories_available_for_projects > 6
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 1120
-			controls_state = 1120
-			1120 = { infrastructure < 3 }
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 450
-
-		modifier = {
-			civilian_factory_use = 7
-		}
-
-		remove_effect = { 
-			1120 = {
-				add_building_construction = {
-					type = infrastructure 
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 10
-			}
 		}
 	}
 
@@ -1456,7 +1244,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			always = no
 		}
 
 		available = {
@@ -1479,8 +1267,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 1400
 		timeout_effect = {
-			add_political_power = -80
-			add_stability = -0.02
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			add_political_power = 80
@@ -1492,75 +1285,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Railways_In_Volga_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Railways_In_The_Volga_Region
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Railways_In_Volga
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Railways_In_The_Volga_Region
-			num_of_civilian_factories_available_for_projects > 9
-			ROOT = {
-				is_ai = yes
-			}
-			OR = {
-				236 = { infrastructure < 4 }
-				238 = { infrastructure < 4 }
-			}
-			owns_state = 236
-			owns_state = 238
-			controls_state = 236
-			controls_state = 238
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 860
-
-		modifier = {
-			civilian_factory_use = 10
-		}
-
-		remove_effect = { 
-			if = {
-				limit = { 236 = { infrastructure < 4 } }
-				236 = {
-					add_building_construction = {
-						type = infrastructure 
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 238 = { infrastructure < 4 } }
-				238 = {
-				 	add_building_construction = {
-						type = infrastructure 
-					  	level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 14
-			}
 		}
 	}
 
@@ -1759,7 +1483,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-
+			always = no
 		}
 
 		available = {
@@ -1784,8 +1508,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 1600
 		timeout_effect = {
-			add_political_power = -80
-			add_stability = -0.02
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			add_political_power = 80
@@ -1800,94 +1529,12 @@ RUS_Industrialisation_decisions = {
 		}
 	}
 
-	RUS_mission_vic_Railways_In_The_Urals_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Railways_In_The_Urals
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Railways_In_The_Urals
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Railways_In_The_Urals
-			num_of_civilian_factories_available_for_projects > 11
-			ROOT = {
-				is_ai = yes
-			}
-			OR = {
-				653 = { infrastructure < 4 }
-				651 = { infrastructure < 4 }
-				652 = { infrastructure < 3 }
-			}
-			owns_state = 653
-			owns_state = 651
-			owns_state = 652
-			controls_state = 653
-			controls_state = 651
-			controls_state = 652
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 960
-
-		modifier = {
-			civilian_factory_use = 12
-		}
-
-		remove_effect = { 
-			if = {
-				limit = { 653 = { infrastructure < 4 } }
-				653 = {
-					add_building_construction = {
-						type = infrastructure 
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 651 = { infrastructure < 4 } }
-				651 = {
-				 	add_building_construction = {
-						type = infrastructure 
-					  	level = 1
-						instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 652 = { infrastructure < 3 } }
-				652 = {
-				 	add_building_construction = {
-						type = infrastructure 
-					  	level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 15
-			}
-		}
-	}
-
 	RUS_mission_vic_Tula_Armory = {
 
 		icon = generic_construction
 
 		allowed = {
-
+			tag = RUS
 		}
 
 		available = {
@@ -2255,13 +1902,17 @@ RUS_Industrialisation_decisions = {
 	RUS_mission_vic_Yuzovka_Mining = { # Hughesovka
 
 		icon = generic_operation
+		
+		allowed = {
+			tag = RUS
+		}
 
 		highlight_states = {
 			state = 227
 		}
 
 		available = {
-			RUS = { has_completed_focus = RUS_vic_Yuzovka_Mining_Operation }
+			has_completed_focus = RUS_vic_Yuzovka_Mining_Operation 
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 228
 			owns_state = 227
@@ -2537,6 +2188,7 @@ RUS_Industrialisation_decisions = {
 			has_completed_focus = RUS_vic_Support_The_Coal_Mining_Industry 
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 575
+			owns_state = 575
 		}
 
 		visible = {
@@ -2582,6 +2234,8 @@ RUS_Industrialisation_decisions = {
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 221
 			controls_state = 226
+			owns_state = 221
+			owns_state = 226
 		}
 
 		visible = {
@@ -2623,7 +2277,7 @@ RUS_Industrialisation_decisions = {
 		icon = generic_construction
 
 		allowed = {
-			tag = RUS
+			always = no
 		}
 
 		available = {
@@ -2650,8 +2304,13 @@ RUS_Industrialisation_decisions = {
 		is_good = no
 		days_mission_timeout = 3650
 		timeout_effect = {
-			add_political_power = -100
-			add_stability = -0.05
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
 		complete_effect = {
 			add_political_power = 100
@@ -2666,101 +2325,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Trans_Siberian_Railway_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Trans_Siberian_Railway
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Trans_Siberian_Railway
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Trans_Siberian_Railway
-			num_of_civilian_factories_available_for_projects > 14
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 953
-			owns_state = 252
-			owns_state = 398
-			owns_state = 571
-			controls_state = 953
-			controls_state = 252
-			controls_state = 398
-			controls_state = 571
-			OR = {
-				953 = { infrastructure < 5 }
-				252 = { infrastructure < 4 }
-				398 = { infrastructure < 3 }
-				571 = { infrastructure < 3 }
-			}
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 1600
-
-		modifier = {
-			civilian_factory_use = 15
-		}
-
-		remove_effect = {
-			if = {
-				limit = { 953 = { infrastructure < 5 } }
-				953 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 252 = { infrastructure < 4 } }
-				252 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 398 = { infrastructure < 3 } }
-				398 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-			if = {
-				limit = { 571 = { infrastructure < 3 } }
-				571 = {
-				 	add_building_construction = {
-						type = infrastructure 
-						level = 1
-					 	instant_build = yes
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 20
-			}
 		}
 	}
 	
