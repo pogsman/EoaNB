@@ -98,6 +98,7 @@
  ROM_preparing_industralization2:0 "Preparing for Industralization"
  ROM_compensating_landowners:0 "Compensating the Landowners"
  ROM_start_industralization:0 "Started Industralization"
+ ROM_romanul_newspaper:0 "Românul"
  
  wallachia_focustree.1.t:0 "The Industrial Situation"
  wallachia_focustree.1.d:0 "The Industrial situation in Wallachia is as expected, horrible. With countless wars ruining any chances for the development of a industry, Wallachia based itself on the agriculture, which, while also sometimes destroyed by wars between the Ottomans and Russian was still worth investing in. Still, the Crimean War has caused much more damage than we would have wanted to our agriculture. On the bright side, some of our advisors are proposing that this is the right time to begin to industrialize and modernize Vlach society as a whole."
@@ -131,6 +132,14 @@
  
  ####Decisions
  ROM_economy_descision_wallachia:0 "Wallachian Economy"
+ ROM_decision_reparing_countryside:0 "Reparing The Countryside"
+ ROM_decision_bucharest_braila_railway:0 "Bucharest - Braila Railway"
+ ROM_decision_bucharest_craiova_railway:0 "Bucharest - Craiova Railway"
+ ROM_decision_construction_university:0 "Bucharest University"
+ ROM_decision_jiu_valley:0 "Jiu Valley"
+ ROM_decision_secularize_land:0 "Secularize Land"
+ ROM_repair_agriculture:0 "Revive Agriculture" 
+ ROM_decision_invite_foreign_investors:0 "Foreign Investments"
  
  ####Advisors
  ROM_christian_tell:0 "Christian Tell"
@@ -144,3 +153,6 @@
  ROM_trait_Unionist:0 "Unionist"
  ROM_trait_Constantin_Robescu:0 "Agronomical Engineer"
  ROM_trait_Ion_Heliade_Radulescu:0 "Famous Scholar"
+ ROM_trait_Christian_Tell:0 "Sword of Revolution"
+ ROM_trait_Ion_Ionescu_Brad:0 "Agrarian Reformer"
+ ROM_trait_Ion_Ghica:0 "Stateman and Mathematician"

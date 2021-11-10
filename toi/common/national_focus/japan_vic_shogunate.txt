@@ -8,7 +8,8 @@ focus_tree = {
 		}
 	}
 
-	continuous_focus_position = {x = 100 y = 1150 }
+	continuous_focus_position = { x = 100 y = 1150 }
+	default = no
 
 	focus = {
 		id = JAP_vic_legacy_of_rangaku
@@ -86,6 +87,10 @@ focus_tree = {
 			x = 1
 			y = 1
 
+			available = {
+				has_country_flag = TSH_van_meerdervoort_arrive_flag
+			}
+
 			prerequisite = { focus = JAP_vic_expand_medical_wisdom }
 			mutually_exclusive = { focus = JAP_vic_beyond_byogaku_tsuron }
 			ai_will_do = { factor = 2 modifier = { add = 100 has_pandemic = yes } }
@@ -108,6 +113,8 @@ focus_tree = {
 			x = -1
 			y = 2
 
+			mutually_exclusive = { focus = JAP_vic_nagasaki_medical_school }
+
 			prerequisite = { focus = JAP_vic_invite_van_meerdervort focus = JAP_vic_beyond_byogaku_tsuron }
 			ai_will_do = { factor = 2 modifier = { add = 100 has_pandemic = yes } }
 
@@ -118,7 +125,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_nagasaki_medical_school
 			icon = GFX_Focus_Elementary_School_0
-			cost = 35
+			cost = 56
 
 			search_filters = {
 				FOCUS_FILTER_RESEARCH
@@ -128,11 +135,19 @@ focus_tree = {
 			x = 1
 			y = 2
 
-			prerequisite = { focus = JAP_vic_invite_van_meerdervort focus = JAP_vic_beyond_byogaku_tsuron }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = GENERIC_Triggered_By_Event_tt
+					always = no
+				}
+			}
+
+			mutually_exclusive = { focus = JAP_vic_study_the_kokera }
+
+			prerequisite = { focus = JAP_vic_beyond_byogaku_tsuron }
 			ai_will_do = { factor = 2 modifier = { add = 100 has_pandemic = yes } }
 
 			completion_reward = {
-				EOANBSYS_pandemics_progress_add_five = yes
 				add_ideas = TSH_spirit_vic_nagasaki_medical_school
 			}
 		}
@@ -144,18 +159,25 @@ focus_tree = {
 			search_filters = {
 				FOCUS_FILTER_RESEARCH
 				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
 			}
 
 			relative_position_id = JAP_vic_expand_medical_wisdom
 			x = 0
 			y = 3
 
-			prerequisite = { focus = JAP_vic_study_the_kokera }
-			prerequisite = { focus = JAP_vic_nagasaki_medical_school }
+			prerequisite = { focus = JAP_vic_study_the_kokera focus = JAP_vic_nagasaki_medical_school }
 			ai_will_do = { factor = 2 modifier = { add = 100 has_pandemic = yes } }
 
 			completion_reward = {
-				activate_mission = TSH_decision_kokera_edo_festival
+				if = {
+					limit = { has_pandemic = yes}
+					activate_mission = TSH_decision_kokera_edo_festival
+				}
+				else = {
+					add_stability = 0.025
+					increase_ps_by_one = yes
+				}
 			}
 		}
 		focus = {
@@ -213,8 +235,8 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				clr_country_flag = tsh_purchase_rangaku_flag
 				add_tech_bonus = { category = process_engineering_tech uses = 1 bonus = 0.2 }
-				# COUNTRY EVENT
 			}
 		}
 		focus = {
@@ -443,7 +465,6 @@ focus_tree = {
 
 			completion_reward = {
 				unlock_decision_tooltip = TSH_decision_foreign_engineering_manuals
-				# COUNTRY EVENT
 			}
 		}
 		focus = {
@@ -465,7 +486,6 @@ focus_tree = {
 
 			completion_reward = {
 				unlock_decision_tooltip = TSH_decision_foreign_technical_manuals
-				# COUNTRY EVENT
 			}
 		}
 		focus = {
@@ -486,7 +506,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
-				# COUNTRY EVENT
+				country_event = feudal_tokugawa_shogunate.29
 				add_tech_bonus = { category = electronics_devices_tech uses = 1 bonus = 0.2 }
 			}
 		}
@@ -509,7 +529,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
-				# COUNTRY EVENT
+			country_event = feudal_tokugawa_shogunate.30
 				add_war_support = 0.1
 				add_tech_bonus = { category = naval_equipment uses = 1 bonus = 0.15 }
 			}
@@ -532,7 +552,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
-				# COUNTRY EVENT
+				country_event = feudal_tokugawa_shogunate.31
 				add_tech_bonus = { category = electronics_devices_tech uses = 1 bonus = 0.2 }
 			}
 		}
@@ -562,7 +582,7 @@ focus_tree = {
 		}
 		focus = {
 			id = JAP_vic_nagasaki_naval_arsenal
-			icon = GFX_goal_focus_refugee_management
+			icon = GFX_Focus_Refugee_Management
 			cost = 35
 
 			search_filters = {
@@ -639,6 +659,13 @@ focus_tree = {
 
 			completion_reward = {
 				EOANBSYS_institutions_innovative_add_ten = yes
+				if = {
+					limit = { has_idea = agrarian }
+					swap_ideas = {
+						remove_idea = agrarian
+						add_idea = industrializing
+					}
+				}
 			}
 		}
 	# Military Reforms
@@ -683,6 +710,16 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 129
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -150
+			}
+
 			completion_reward = {
 				unlock_decision_tooltip = TSH_decision_catalogue_naval_assets
 			}
@@ -690,7 +727,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_steps_to_modern_fleet
 			icon = GFX_focus_JAP_naval_modernization
-			cost = 35
+			cost = 70
 
 			search_filters = {
 				FOCUS_FILTER_NAVY
@@ -704,15 +741,24 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 129
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -150
+			}
+
 			completion_reward = {
-				add_tech_bonus = { category = naval_mtg_gunboat_tech uses = 1 bonus = 0.2 }
-				add_tech_bonus = { category = naval_mtg_frigate_tech uses = 1 bonus = 0.2 }
+				unlock_decision_tooltip = TSH_decision_begin_centralization_of_naval_forces
 			}
 		}
 		focus = {
 			id = JAP_vic_seek_british_expertise
 			icon = GFX_goal_focus_colonial_empire_uk
-			cost = 35
+			cost = 105
 
 			search_filters = {
 				FOCUS_FILTER_NAVY
@@ -728,14 +774,26 @@ focus_tree = {
 			bypass = { ENG = { is_great_power = no is_secondary_power = no } HOL = { is_great_power = no is_secondary_power = no } }
 
 			ai_will_do = { factor = 2 }
+
+			available = {
+				has_political_power > 50
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_political_power = -50
+			}
+
 			completion_reward = {
+				ENG = { country_event = feudal_tokugawa_shogunate.37 }
 				unlock_decision_tooltip = TSH_decision_foreign_naval_manuals
 			}
 		}
 		focus = {
 			id = JAP_vic_seek_dutch_expertise
-			icon = GFX_focus_colonial_power_HOL
-			cost = 35
+			icon = GFX_focus_colonial_power_GER
+			cost = 105
 
 			search_filters = {
 				FOCUS_FILTER_NAVY
@@ -752,14 +810,26 @@ focus_tree = {
 			bypass = { ENG = { is_great_power = no is_secondary_power = no } HOL = { is_great_power = no is_secondary_power = no } }
 
 			ai_will_do = { factor = 2 }
+
+			available = {
+				has_political_power > 50
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_political_power = -50
+			}
+
 			completion_reward = {
+				PRS = { country_event = feudal_tokugawa_shogunate.37 }
 				unlock_decision_tooltip = TSH_decision_foreign_naval_manuals
 			}
 		}
 		focus = {
 			id = JAP_vic_tsujki_naval_center
 			icon = GFX_goal_focus_commision_monitors
-			cost = 35
+			cost = 70
 
 			search_filters = {
 				FOCUS_FILTER_NAVY
@@ -774,13 +844,15 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 			completion_reward = {
-				unlock_decision_tooltip = TSH_decision_begin_centralization_of_naval_forces
+				add_ideas = TSH_spirit_royal_navy_training
+				add_tech_bonus = { category = naval_mtg_gunboat_tech uses = 1 bonus = 0.2 }
+				add_tech_bonus = { category = naval_mtg_frigate_tech uses = 2 bonus = 0.2 }
 			}
 		}
 		focus = {
 			id = JAP_vic_koninklijke_marine_institute
 			icon = GFX_goal_generic_amphibious_assault
-			cost = 35
+			cost = 70
 
 			search_filters = {
 				FOCUS_FILTER_NAVY
@@ -795,9 +867,11 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 			completion_reward = {
-				unlock_decision_tooltip = TSH_decision_begin_centralization_of_naval_forces
+				add_ideas = TSH_spirit_koninklijke_marine_training
+				add_tech_bonus = { category = naval_mtg_gunboat_tech uses = 2 bonus = 0.2 }
+				add_tech_bonus = { category = naval_mtg_frigate_tech uses = 1 bonus = 0.2 }
 				division_template = {
-					name = "Oranda shidan"
+					name = "Oranda Shidan"
 					is_locked = no
 					priority = 0
 					template_counter = 2
@@ -906,8 +980,19 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 79
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -80
+			}
+
 			completion_reward = {
-				navy_experience	= 50
+				navy_experience	= 150
+				country_event = feudal_tokugawa_shogunate.48
 				# add_building_construction = {
 				# 	type = dockyard
 				# 	level = 2
@@ -941,10 +1026,21 @@ focus_tree = {
 				}
 			}
 
+			available = {
+				command_power > 129
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -150
+			}
+
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
 				activate_mission = TSH_mission_sakoku_army_reform
+				country_event = feudal_tokugawa_shogunate.44
 			}
 		}
 		focus = {
@@ -964,8 +1060,6 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
-			available = { has_idea = TSH_spirit_vic_sakoku_army_1 }
-
 			bypass = {
 				NOT = {
 					OR = {
@@ -976,6 +1070,16 @@ focus_tree = {
 				}
 			}
 
+			available = {
+				command_power > 129
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -150
+			}
+
 			completion_reward = {
 				activate_mission = TSH_mission_sakoku_army_reform_1
 			}
@@ -983,7 +1087,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_rely_on_daimyo_levies
 			icon = GFX_focus_death_or_dishonor
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_reorganization_of_forces
 			x = -1
@@ -1008,14 +1112,26 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			completion_reward = {
+				add_war_support = 0.05
+				add_stability = -0.05
 				unlock_decision_tooltip = TSH_mission_sakoku_army_reform_2
 			}
 		}
 		focus = {
 			id = JAP_vic_greater_daimyo_contributions
 			icon = GFX_focus_JAP_daimyo_lords
-			cost = 35
+			cost = 70
 
 			search_filters = {
 				FOCUS_FILTER_MILITARY
@@ -1030,14 +1146,34 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			completion_reward = {
-				add_political_power = 50
+				every_other_country = {
+					limit = { is_subject_of = ROOT }
+					add_manpower = -5000
+					ROOT = { add_manpower = 5000 }
+					add_opinion_modifier = { target = ROOT modifier = large_decrease }
+					reverse_add_opinion_modifier = { target = ROOT modifier = large_increase }
+					add_popularity = {
+						ideology = autocracy
+						popularity = 0.15
+					}
+				}
 			}
 		}
 		focus = {
 			id = JAP_vic_integration_of_han_leadership
 			icon = GFX_Goal_Generic_Samurai_War
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_greater_daimyo_contributions
 			x = 0
@@ -1051,14 +1187,25 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			completion_reward = {
-				add_political_power = 50
+				add_command_power = 50
+				add_tech_bonus = { category = land_doctrine uses = 1 bonus = 0.05 }
 			}
 		}
 		focus = {
 			id = JAP_vic_centralize_the_military
 			icon = GFX_Goal_Generic_Political_Pressure_Purple
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_reorganization_of_forces
 			x = 1
@@ -1075,14 +1222,26 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			completion_reward = {
-				add_political_power = 50
+				add_war_support = -0.05
+				add_stability = 0.05
+				unlock_decision_tooltip = TSH_mission_sakoku_army_reform_2
 			}
 		}
 		focus = {
 			id = JAP_vic_nationalize_command_structure
 			icon = GFX_Focus_Army_Staff
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_centralize_the_military
 			x = 0
@@ -1096,6 +1255,16 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			bypass = {
 				NOT = {
 					OR = {
@@ -1108,13 +1277,13 @@ focus_tree = {
 
 
 			completion_reward = {
-				unlock_decision_tooltip = TSH_mission_sakoku_army_reform_1
+				add_ideas = TSH_spirit_vic_hatamoto_troops
 			}
 		}
 		focus = {
 			id = JAP_vic_rotation_tactics
 			icon = GFX_goal_generic_position_armies
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_nationalize_command_structure
 			x = 0
@@ -1129,8 +1298,18 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 49
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -50
+			}
+
 			completion_reward = {
-				add_political_power = 50
+				add_tech_bonus = { category = land_doctrine uses = 2 bonus = 0.075 }
 			}
 		}
 		focus = {
@@ -1152,8 +1331,19 @@ focus_tree = {
 
 			ai_will_do = { factor = 2 }
 
+			available = {
+				command_power > 79
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -80
+			}
+
 			completion_reward = {
-				add_political_power = 50
+				army_experience = 50
+				unlock_decision_tooltip = TSH_decision_new_arms_factory
 			}
 		}
 		focus = {
@@ -1182,6 +1372,8 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				army_experience = 150
+				country_event = feudal_tokugawa_shogunate.49
 			}
 		}
 		focus = {
@@ -1199,6 +1391,7 @@ focus_tree = {
 
 			available = {
 				has_national_crisis_progress_under_80 = yes
+				has_institution_progress_complete = yes
 			}
 
 			prerequisite = { focus = JAP_vic_sword_of_the_rising_sun focus = JAP_vic_fleet_of_the_rising_sun }
@@ -1208,6 +1401,23 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				if = {
+					limit = { has_idea = pre_industrial_era }
+					swap_ideas = {
+						remove_idea = pre_industrial_era
+						add_idea = victorian_era
+					}
+				}
+				set_country_flag = JAP_machine_era_ft
+				custom_effect_tooltip = VICTORIAN_ERA_FOCUS_TREE_UNLOCK
+				EOANBSYS_national_crisis_clear = yes
+				hidden_effect = {
+					mark_focus_tree_layout_dirty = yes
+					load_focus_tree = {
+						tree = japan_mac_ft
+						keep_completed = yes
+					}
+				}
 			}
 		}
 		focus = {
@@ -1219,6 +1429,16 @@ focus_tree = {
 			x = 2
 			y = 1
 
+			available = {
+				command_power > 129
+			}
+
+			cancel_if_invalid = no
+
+			select_effect = {
+				add_command_power = -150
+			}
+
 			search_filters = {
 				FOCUS_FILTER_MILITARY
 				FOCUS_FILTER_RESEARCH
@@ -1229,6 +1449,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				army_experience = 35
 			}
 		}
 		focus = {
@@ -1249,13 +1470,14 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_tech_bonus = { category = support_tech uses = 1 bonus = 0.2 }
 				unlock_decision_tooltip = TSH_decision_purchase_support_equipment
 			}
 		}
 		focus = {
 			id = JAP_vic_french_instruction
 			icon = GFX_goal_focus_colonial_empire_france
-			cost = 35
+			cost = 105
 
 			relative_position_id = JAP_vic_western_field_training
 			x = -1
@@ -1273,13 +1495,13 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
-				
+				FRA = { country_event = feudal_tokugawa_shogunate.40 }
 			}
 		}
 		focus = {
 			id = JAP_vic_prussian_instruction
 			icon = GFX_focus_colonial_power_GER
-			cost = 35
+			cost = 105
 
 			relative_position_id = JAP_vic_western_field_training
 			x = 1
@@ -1295,6 +1517,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				PRS = { country_event = feudal_tokugawa_shogunate.40 }
 			}
 		}
 		focus = {
@@ -1316,6 +1539,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_tech_bonus = { category = infantry_weapons uses = 1 bonus = 0.4 }
 				unlock_decision_tooltip = TSH_decision_purchase_foreign_firearms
 			}
 		}
@@ -1338,6 +1562,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_tech_bonus = { category = artillery uses = 1 bonus = 0.4 }
 				unlock_decision_tooltip = TSH_decision_purchase_foreign_artillery
 			}
 		}
@@ -1371,12 +1596,14 @@ focus_tree = {
 					remove_idea = closed_economy
 					add_idea = free_trade
 				}
-				if = {
-					limit = { has_dlc = "Man the Guns" }
-					load_oob = JAP_NAVAL_1859
+				hidden_effect = {
+					if = {
+						limit = { has_dlc = "Man the Guns" }
+						load_oob = JAP_NAVAL_1859
 
-					else = {
-						load_oob = JAP_NAVAL_1859_legacy
+						else = {
+							load_oob = JAP_NAVAL_1859_legacy
+						}
 					}
 				}
 			}
@@ -1395,7 +1622,7 @@ focus_tree = {
 				FOCUS_FILTER_POLITICAL
 				FOCUS_FILTER_RESEARCH
 			}
-
+ 
 			prerequisite = { focus = JAP_vic_submission_to_the_harris_treaty }
 
 			ai_will_do = { factor = 2 }
@@ -1407,7 +1634,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_invest_in_terakoya
 			icon = GFX_goal_school_opening_focus
-			cost = 35
+			cost = 42
 
 			search_filters = {
 				FOCUS_FILTER_POLITICAL
@@ -1428,7 +1655,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_abroad_study_programs
 			icon = GFX_goal_tfv_generic_tech_sharing
-			cost = 35
+			cost = 42
 
 			relative_position_id = JAP_vic_invest_in_terakoya
 			x = 0
@@ -1444,6 +1671,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				country_event = feudal_tokugawa_shogunate.46
 				unlock_decision_tooltip = TSH_decision_foreign_strategy_books
 				unlock_decision_tooltip = TSH_decision_foreign_weapon_manuals
 			}
@@ -1515,11 +1743,13 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_revitalize_negotiations_with_europe
 			icon = GFX_goal_focus_foreign_diplomacy
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_embassy_to_europe_one
 			x = 1
 			y = 1
+
+			mutually_exclusive = { focus = JAP_vic_revitalize_national_protections }
 
 			search_filters = {
 				FOCUS_FILTER_POLITICAL
@@ -1536,7 +1766,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_secure_ties_with_west
 			icon = GFX_goal_focus_continent_west_europe
-			cost = 35
+			cost = 105
 
 			relative_position_id = JAP_vic_embassy_to_europe_one
 			x = 0
@@ -1647,7 +1877,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_revitalize_negotiations_with_america
 			icon = GFX_focus_generic_america_paper
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_submission_to_the_harris_treaty
 			x = -1
@@ -1668,11 +1898,13 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_revitalize_national_protections
 			icon = GFX_goal_focus_one_people_one_nation
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_revitalize_negotiations_with_america
 			x = 1
 			y = 1
+
+			mutually_exclusive = { focus = JAP_vic_revitalize_negotiations_with_europe }
 
 			search_filters = {
 				FOCUS_FILTER_POLITICAL
@@ -1690,7 +1922,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_stalwart_of_the_east
 			icon = GFX_focus_continent_asia
-			cost = 35
+			cost = 105
 
 			relative_position_id = JAP_vic_revitalize_national_protections
 			x = -1
@@ -1759,7 +1991,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_crisis_control
 			icon = GFX_goal_focus_economic_crisis
-			cost = 35
+			cost = 42
 
 			relative_position_id = JAP_vic_great_gold_exodus
 			x = 0
@@ -1767,8 +1999,8 @@ focus_tree = {
 
 			search_filters = {
 				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_POLITICAL
 			}
-
 			prerequisite = { focus = JAP_vic_great_gold_exodus }
 
 			ai_will_do = { factor = 2 }
@@ -1863,7 +2095,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_issue_unbacked_notes
 			icon = GFX_goal_focus_issue_unbacked_notes
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_adjust_to_exchange_rates
 			x = -1
@@ -1882,7 +2114,7 @@ focus_tree = {
 		focus = {
 			id = JAP_vic_adopt_aratume_sanbu_sadame
 			icon = GFX_goal_JAP_Mexican_Pesos
-			cost = 35
+			cost = 70
 
 			relative_position_id = JAP_vic_adjust_to_exchange_rates
 			x = 1
@@ -1936,6 +2168,10 @@ focus_tree = {
 			y = 0
 
 			ai_will_do = { factor = 2 }
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
 
 			completion_reward = {
 				# Country Event
@@ -2003,6 +2239,13 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				if = {
+					limit = { has_idea = agrarian }
+					add_ideas =TSH_spirit_shihasho_territory
+				}
+				else = {
+					add_political_power = 35
+				}
 			}
 		}
 		focus = {
@@ -2055,6 +2298,10 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				every_country = {
+					limit = { is_tozama_daimyo = yes }
+					unlock_decision_tooltip = TSH_decision_bakuhan_request_kaido_projects
+				}
 			}
 		}
 		focus = {
@@ -2121,6 +2368,7 @@ focus_tree = {
 			y = 2
 
 			prerequisite = { focus = JAP_vic_develop_edo }
+			prerequisite = { focus = JAP_vic_encourage_artisanship }
 
 			ai_will_do = { factor = 2 }
 
@@ -2146,6 +2394,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_ideas = TSH_spirit_vic_assist_merchant_classes
 			}
 		}
 		focus = {
@@ -2162,6 +2411,22 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = farm
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = farm
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 		}
 		focus = {
@@ -2210,6 +2475,12 @@ focus_tree = {
 
 			prerequisite = { focus = JAP_vic_stagnation_of_the_tokugawa }
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
 			ai_will_do = { factor = 2 }
 
 			available = {
@@ -2230,6 +2501,12 @@ focus_tree = {
 
 			prerequisite = { focus = JAP_vic_confirm_fudai_allegiances }
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
 			ai_will_do = { factor = 2 }
 
 			available = { date > 1862.7.1 }
@@ -2247,6 +2524,12 @@ focus_tree = {
 
 			prerequisite = { focus = JAP_vic_bunkuyu_reforms }
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
 			ai_will_do = { factor = 2 }
 
 			available = { date > 1865.1.1 }
@@ -2262,9 +2545,14 @@ focus_tree = {
 
 			relative_position_id = JAP_vic_stagnation_of_the_tokugawa
 			x = 4
-			y = 1
+			y = 0
 
-			prerequisite = { focus = JAP_vic_stagnation_of_the_tokugawa }
+			# prerequisite = { focus = JAP_vic_stagnation_of_the_tokugawa }
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
 
 			available = {
 				custom_trigger_tooltip = {
@@ -2276,6 +2564,7 @@ focus_tree = {
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_command_power = -50
 			}
 		}
 		focus = {
@@ -2285,7 +2574,12 @@ focus_tree = {
 
 			relative_position_id = JAP_vic_illness_of_shogun_iesada
 			x = 0
-			y = 1
+			y = 2
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
 
 			available = {
 				custom_trigger_tooltip = {
@@ -2294,11 +2588,13 @@ focus_tree = {
 				}
 			}
 
-			prerequisite = { focus = JAP_vic_illness_of_shogun_iesada }
+			prerequisite = { focus = JAP_vic_illness_of_shogun_iesada focus = JAP_vic_stagnation_of_the_tokugawa }
 
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_political_power = 20
+				add_stability = 0.10
 			}
 		}
 		focus = {
@@ -2310,6 +2606,10 @@ focus_tree = {
 			x = -2
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
+
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = GENERIC_Triggered_By_Event_tt
@@ -2319,10 +2619,6 @@ focus_tree = {
 
 			prerequisite = { focus = JAP_vic_feud_of_the_shinpan }
 			mutually_exclusive = { focus = JAP_vic_kii_shogun }
-
-			search_filters = {
-				FOCUS_FILTER_HISTORICAL
-			}
 
 			ai_will_do = { factor = 2 }
 
@@ -2337,6 +2633,11 @@ focus_tree = {
 			relative_position_id = JAP_vic_feud_of_the_shinpan
 			x = 2
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_HISTORICAL
+			}
 
 			available = {
 				custom_trigger_tooltip = {
@@ -2362,11 +2663,17 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
+
 			prerequisite = { focus = JAP_vic_hitosubashi_shogun focus = JAP_vic_kii_shogun }
 
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				unlock_decision_tooltip = TSH_decision_sonno_joi
 			}
 		}
 		focus = {
@@ -2377,6 +2684,11 @@ focus_tree = {
 			relative_position_id = JAP_vic_conciliate_the_courts
 			x = 0
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
 
 			prerequisite = { focus = JAP_vic_conciliate_the_courts }
 
@@ -2394,6 +2706,10 @@ focus_tree = {
 			x = 2
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_STABILITY
+			}
+
 			prerequisite = { focus = JAP_vic_hitosubashi_shogun focus = JAP_vic_kii_shogun }
 
 			ai_will_do = { factor = 2 }
@@ -2409,6 +2725,11 @@ focus_tree = {
 			relative_position_id = JAP_vic_hitosubashi_shogun
 			x = 4
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_WAR_SUPPORT
+			}
 
 			prerequisite = { focus = JAP_vic_hitosubashi_shogun focus = JAP_vic_kii_shogun }
 
@@ -2426,6 +2747,10 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
+
 			prerequisite = { focus = JAP_vic_ansei_purge }
 
 			ai_will_do = { factor = 2 }
@@ -2441,6 +2766,10 @@ focus_tree = {
 			relative_position_id = JAP_vic_alleviation_of_shogun_authority
 			x = 0
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
 
 			available = {
 				custom_trigger_tooltip = {
@@ -2471,6 +2800,10 @@ focus_tree = {
 			x = 4
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = GENERIC_Triggered_By_Event_tt
@@ -2496,8 +2829,16 @@ focus_tree = {
 			x = -2
 			y = 1
 
-			prerequisite = { focus = JAP_vic_retain_consultive_stance }
-			prerequisite = { focus = JAP_vic_kobu_gattai }
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
+			prerequisite = {
+				focus = JAP_vic_retain_consultive_stance
+				focus = JAP_vic_kobu_gattai
+			}
 
 			available = {
 				custom_trigger_tooltip = {
@@ -2519,6 +2860,11 @@ focus_tree = {
 			relative_position_id = JAP_vic_retain_consultive_stance
 			x = -6
 			y = 2
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
 
 			prerequisite = { focus = JAP_vic_kemi_reforms }
 			prerequisite = { focus = JAP_vic_relax_sankin_kotai }
@@ -2600,6 +2946,11 @@ focus_tree = {
 				}
 			}
 
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_MILITARY
+			}
+
 			completion_reward = {
 
 			}
@@ -2612,11 +2963,21 @@ focus_tree = {
 			relative_position_id = JAP_vic_the_boshin_war
 			x = -1
 			y = 1
+
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_MILITARY
+				FOCUS_FILTER_MANPOWER
+			}
+
 			prerequisite = { focus = JAP_vic_the_boshin_war }
 
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_ideas = TSH_spirit_vic_hatamoto_troops
 			}
 		}
 		focus = {
@@ -2627,6 +2988,14 @@ focus_tree = {
 			relative_position_id = JAP_vic_gather_reactionary_support
 			x = 0
 			y = 1
+
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+			}
+
+
 			prerequisite = { focus = JAP_vic_gather_reactionary_support }
 
 			ai_will_do = { factor = 2 }
@@ -2642,6 +3011,14 @@ focus_tree = {
 			relative_position_id = JAP_vic_the_boshin_war
 			x = 1
 			y = 1
+
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_MILITARY
+			}
+
 			prerequisite = { focus = JAP_vic_the_boshin_war }
 
 			ai_will_do = { factor = 2 }
@@ -2657,6 +3034,13 @@ focus_tree = {
 			relative_position_id = JAP_vic_counterbalance_imperial_foreign_support
 			x = 0
 			y = 1
+
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_MILITARY
+			}
+
 			prerequisite = { focus = JAP_vic_counterbalance_imperial_foreign_support }
 
 			ai_will_do = { factor = 2 }
@@ -2673,6 +3057,10 @@ focus_tree = {
 			x = -1
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_MILITARY
+			}
+
 			prerequisite = { focus = JAP_vic_rally_the_fudai }
 			prerequisite = { focus = JAP_vic_japanese_soldier_western_rifle }
 
@@ -2680,7 +3068,10 @@ focus_tree = {
 
 
 			completion_reward = {
-				unlock_decision_tooltip = TSH_mission_sakoku_army_reform_1
+				swap_ideas = {
+					remove_idea = law_pre_industrial_army
+					add_idea = law_victorian_army
+				}
 			}
 		}
 		focus = {
@@ -2692,16 +3083,20 @@ focus_tree = {
 			x = -1
 			y = 1
 
+			bypass = { NOT = { has_war_with = JAP } }
+
 			prerequisite = { focus = JAP_vic_assess_the_council }
 			mutually_exclusive = { focus = JAP_vic_assault_on_kyoto }
 
 			search_filters = {
 				FOCUS_FILTER_HISTORICAL
+				FOCUS_FILTER_MILITARY
 			}
 
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_ideas = TSH_spirit_fortress_osaka
 			}
 		}
 		focus = {
@@ -2713,11 +3108,18 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_MILITARY
+			}
+
 			prerequisite = { focus = JAP_vic_prepare_the_north }
 
 			ai_will_do = { factor = 2 }
 
 			completion_reward = {
+				add_ideas = TSH_spirit_the_roches_plan
 			}
 		}
 		focus = {
@@ -2728,6 +3130,12 @@ focus_tree = {
 			relative_position_id = JAP_vic_assess_the_council
 			x = 1
 			y = 1
+
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_MILITARY
+			}
 
 			prerequisite = { focus = JAP_vic_assess_the_council }
 			mutually_exclusive = { focus = JAP_vic_prepare_the_north }
@@ -2746,6 +3154,20 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			bypass = { NOT = { has_war_with = JAP } }
+
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_MILITARY
+			}
+
+			bypass = {
+				NOT = { has_war_with = CHO }
+				NOT = { has_war_with = SAG }
+				NOT = { has_war_with = SAT }
+				NOT = { has_war_with = TOS }
+			}
+
 			prerequisite = { focus = JAP_vic_assault_on_kyoto }
 
 			ai_will_do = { factor = 2 }
@@ -2762,6 +3184,11 @@ focus_tree = {
 			x = -1
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_MILITARY
+			}
+
 			prerequisite = { focus = JAP_vic_entrenchment_on_ezo focus = JAP_vic_tackle_the_tozama }
 
 			ai_will_do = { factor = 2 }
@@ -2777,6 +3204,10 @@ focus_tree = {
 			relative_position_id = JAP_vic_strengthen_the_shinsengumi
 			x = -2
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
 
 			prerequisite = { focus = JAP_vic_strengthen_the_shinsengumi }
 			mutually_exclusive = { focus = JAP_vic_ezo_accords }
@@ -2795,6 +3226,10 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
+
 			prerequisite = { focus = JAP_vic_karafuto_agreement }
 
 			ai_will_do = { factor = 2 }
@@ -2810,6 +3245,10 @@ focus_tree = {
 			relative_position_id = JAP_vic_strengthen_the_shinsengumi
 			x = 2
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
 
 			prerequisite = { focus = JAP_vic_strengthen_the_shinsengumi }
 			mutually_exclusive = { focus = JAP_vic_karafuto_agreement }
@@ -2832,6 +3271,10 @@ focus_tree = {
 			x = 0
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+			}
+
 			prerequisite = { focus = JAP_vic_ezo_accords }
 
 			ai_will_do = { factor = 2 }
@@ -2848,6 +3291,11 @@ focus_tree = {
 			x = -2
 			y = 1
 
+			search_filters = {
+				FOCUS_FILTER_POLITICAL
+				FOCUS_FILTER_STABILITY
+			}
+
 			prerequisite = { focus = JAP_vic_ezo_accords focus = JAP_vic_karafuto_agreement }
 
 			ai_will_do = { factor = 2 }
@@ -2863,6 +3311,10 @@ focus_tree = {
 			relative_position_id = JAP_vic_second_ansei_purge
 			x = 0
 			y = 1
+
+			search_filters = {
+				FOCUS_FILTER_MILITARY
+			}
 
 			prerequisite = { focus = JAP_vic_second_ansei_purge }
 

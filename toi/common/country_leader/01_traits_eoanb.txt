@@ -853,7 +853,7 @@ leader_traits = {
 		
 		trade_laws_cost_factor = -0.05
         political_power_factor = -0.05	
-        stability_factor = 0.05		
+        stability_factor = 0.05	
 		
 		ai_will_do = {
 			factor = 1
@@ -942,6 +942,149 @@ leader_traits = {
 		random = no
 		political_power_gain = 0.5 
 	}
+	
+	## AUS Advisor Traits ###
+	
+	AUS_trait_Abraham_Ganz = {
+		random = no
+		
+		production_speed_steel_mill_factor = 0.04
+		production_speed_machine_parts_factory_factor = 0.04
+		consumer_goods_factor = -0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Josef_Werndl = {
+		random = no
+		
+		production_speed_arms_factory_factor = 0.15
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Georg_Sigl = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.05
+		army_speed_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_de_Farkashazy = {
+		random = no
+		
+		production_speed_buildings_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Ludwig_Greiner = {
+		random = no
+		
+		production_speed_logging_camp_factor = 0.1
+		local_resources_factor 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Heinrich_von_Ferstel = {
+		random = no
+		
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_buildings_factor = 0.02
+		political_power_factor = -0.15
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Mathias_von_Schonerer = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.1
+		production_speed_machine_parts_factory_factor = 0.05
+		mobilization_speed = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	AUS_trait_Janos_Irinyi = {
+		random = no
+		
+		research_speed_factor = 0.02
+		consumer_goods_factor = -0.03
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	AUS_trait_Ignaz_Semmelweis = {
+		random = no
+		
+		research_speed_factor = 0.01
+		monthly_population = 0.1
+		consumer_goods_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### ROM Advisor Traits ###
+	
+	ROM_trait_Unionist = {
+		random = no
+		
+		centrism_drift = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Constantin_Robescu = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.1
+		production_speed_farm_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Ion_Heliade_Radulescu = {
+		random = no
+		
+		research_speed_factor = 0.02
+		stability_factor = 0.04
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Christian_Tell = {
+		random = no
+		
+		experience_gain_army = 0.03
+		war_support_factor = 0.03
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Ion_Ionescu_Brad = {
+		random = no
+		
+		monthly_population = 0.05
+		production_speed_farm_factor = 0.05
+		consumer_goods_factor = -0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	ROM_trait_Ion_Ghica = {
+		random = no
+		
+		political_power_gain = 0.5 
+		research_speed_factor = 0.01
+		consumer_goods_factor = -0.01
+		
+		ai_will_do = { factor = 1 }
+	}
 
 	###Russian Leader Traits
 
@@ -956,6 +1099,87 @@ leader_traits = {
 
 		political_power_gain = -0.1
 	}
+	
+	RUS_trait_Imperial_Finance_Minister = {
+		random = no
+		
+		consumer_goods_factor = -0.02
+		trade_laws_cost_factor = -0.05
+		political_power_gain = -0.1
+	}
+	
+	RUS_trait_Marian_Albertovich_Kowalski = {
+		random = no
+		
+		research_speed_factor = 0.03
+		political_power_gain = -0.05
+	}
+	
+	RUS_trait_Nicholas_Benois = {
+		random = no
+		
+		production_speed_buildings_factor = 0.03
+		production_speed_industrial_complex_factor = 0.03
+		production_speed_infrastructure_factor = 0.03	
+	}
+	
+	RUS_trait_Nikolay_Stepanovich_Kobozev = {
+		random = no
+		
+		monthly_population = 0.03
+		industrial_capacity_dockyard = 0.03
+		production_speed_dockyard_factor = 0.03
+	}
+	
+	RUS_trait_Artemy_Yakovlevich_Tereshchenko = {
+		random = no
+		
+		consumer_goods_factor = -0.01
+		production_factory_max_efficiency_factor = 0.03
+		stability_factor = 0.03
+	}
+	
+	RUS_trait_John_Hughes = {
+		random = no
+		
+		production_speed_steel_mill_factor = 0.03
+		production_speed_machine_parts_factory_factor = 0.03
+		local_resources_factor = 0.03
+	}
+	
+	RUS_trait_Krisjanis_Valdemars = {
+		random = no
+		
+		occupation_cost = -0.05
+		political_power_gain = 0.05
+		stability_factor = -0.05
+	}
+	
+	RUS_trait_Ludwig_Knoop = {
+		random = no
+		
+		production_speed_buildings_factor = 0.03
+		production_speed_cotton_farm_factor = 0.03
+		consumer_goods_factor = 0.03
+	}
+	
+	RUS_trait_Nikolay_Putilov = {
+		random = no
+		
+		production_speed_industrial_complex_factor = 0.02
+		production_speed_steel_mill_factor = 0.04
+		production_speed_machine_parts_factory_factor = 0.04
+		consumer_goods_factor = -0.02
+	}
+	
+	RUS_trait_Eduard_Ivanovich_Gerstfeld = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.05
+		consumer_goods_factor = 0.05
+	}
+	
+	
 	
 	###Prussian/German Leader Traits
 	
@@ -975,7 +1199,7 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	###Prussian/German Advisor Traits
+	### Prussian/German Advisor Traits ###
 	
 	PRS_trait_Albert_Borsig = {
 		random = no
@@ -1128,7 +1352,7 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	###Saxon Advisor Traits
+	### Saxon Advisor Traits ###
 	
 	SAX_trait_Gustav_Fechner = {
 		random = no
@@ -1282,162 +1506,173 @@ leader_traits = {
 		ai_will_do = { factor = 10 }
 	}
 	
-	###Baden Advisor Traits
+	### Danish Advisor Traits ###
 	
-	BAD_trait_Franz_Anton_Regnauer = {
+	DEN_trait_Johan_Fridolin_Hassel = {
 		random = no
-		political_power_factor = 0.05
+		consumer_goods_factor = -0.02
+		production_speed_machine_parts_factory_factor = 0.1
 		
-		ai_will_do = { factor = 3 }
+		ai_will_do = { factor = 5 }
 	}
 	
-	BAD_trait_Franz_Freiherr_von_Roggenbach = {
-		random = no
-		stability_factor = 0.05
-		opinion_gain_monthly = 5
-		
-		ai_will_do = { factor = 3 }
-	}
-	
-	BAD_trait_August_Lamey = {
-		random = no
-		stability_factor = 0.05
-		political_power_factor = 0.05
-		
-		ai_will_do = { factor = 3 }
-	}
-	
-	BAD_trait_Gideon_Weizel = {
+	DEN_trait_Carl_Frederik_Tietgen = {
 		random = no
 		consumer_goods_factor = -0.05
-		trade_opinion_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
 		
-		ai_will_do = { factor = 3 }
+		ai_will_do = { factor = 8 }
 	}
 	
-	BAD_trait_Anton_von_Stabel = {
+	DEN_trait_Johan_Nicolai_Madvig = {
 		random = no
-		political_power_gain = 0.10
-		stability_factor = 0.05
+		political_power_factor = 0.1
+		research_speed_factor = 0.02
 		
-		ai_will_do = { factor = 3 }
+		ai_will_do = { factor = 8 }
 	}
 	
-	### AUS Advisor Traits ###
-	
-	AUS_trait_Abraham_Ganz = {
+	DEN_trait_Jacob_Christian_Jacobsen = {
 		random = no
+		production_speed_industrial_complex_factor = 0.03
+		consumer_goods_factor = -0.02
+		research_speed_factor = 0.01
+		political_power_factor = 0.05
 		
-		production_speed_steel_mill_factor = 0.04
-		production_speed_machine_parts_factory_factor = 0.04
+		ai_will_do = { factor = 10 }
+	}
+	
+	DEN_trait_Christian_Albrecht_Bluhme = {
+		random = no
+		political_power_factor = 0.1
+		stability_weekly = 0.001
+		opinion_gain_monthly_factor = 0.2
+		consumer_goods_factor = 0.03
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	DEN_trait_Adam_Wilhelm_Moltke = {
+		random = no
+		trade_laws_cost_factor = -0.05
+        political_power_factor = 0.05
+        stability_factor = 0.05
+		
+		ai_will_do = { factor = 6 }
+	}
+	
+	DEN_trait_Orla_Lehmann = {
+		random = no
+		political_power_factor = 0.03
+		political_power_gain = 0.01
+		war_support_factor = 0.05
 		consumer_goods_factor = -0.02
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 9 }
 	}
 	
-	AUS_trait_Josef_Werndl = {
+	DEN_trait_Steffen_Peder_Anker_Heegaard = {
 		random = no
+		trade_laws_cost_factor = -0.2
+        consumer_goods_factor = -0.03
+		min_export = 0.05
+		trade_opinion_factor = 0.15
 		
-		production_factory_efficiency_gain_factor = 0.05
-		production_factory_max_efficiency_factor = 0.05
-		production_speed_arms_factory_factor = 0.15
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 6 }
 	}
 	
-	AUS_trait_Georg_Sigl = {
+	DEN_trait_Ferdinand_Meldahl = {
 		random = no
+		production_speed_buildings_factor = 0.03
+		global_building_slots_factor = 0.1
 		
-		production_speed_infrastructure_factor = 0.05
-		army_speed_factor = 0.05
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 4 }
 	}
 	
-	AUS_trait_de_Farkashazy = {
+	DEN_trait_Andreas_Frederik_Krieger = {
 		random = no
+		political_power_factor = 0.05
+		political_power_gain = 0.02
+		trade_opinion_factor = 0.1
 		
+		ai_will_do = { factor = 6 }
+	}
+	
+	DEN_trait_Ludvig_Ferdinand_Holmberg = {
+		random = no
 		production_speed_buildings_factor = 0.05
-		production_speed_industrial_complex_factor = 0.05
+		production_speed_naval_base_factor = 0.25
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 6 }
 	}
 	
-	AUS_trait_Ludwig_Greiner = {
+	DEN_trait_Jens_Andersen_Hansen = {
 		random = no
+		political_power_factor = 0.05
+		stability_weekly = 0.001
+		stability_factor = 0.03
+		local_resources_factor = 0.03
 		
-		production_speed_logging_camp_factor = 0.1
-		local_resources_factor 0.05
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 3 }
 	}
 	
-	AUS_trait_Heinrich_von_Ferstel = {
+	DEN_trait_Anton_Frederik_Tscherning = {
 		random = no
+		political_power_factor = -0.05
+		weekly_manpower = 10
+		recruitable_population_factor = 0.002
+		production_speed_arms_factory_factor = 0.05
+		production_speed_bunker_factor = 0.25
+		production_speed_coastal_bunker_factor = 0.25
 		
-		production_speed_industrial_complex_factor = 0.05
-		production_speed_buildings_factor = 0.02
-		political_power_factor = -0.15
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 7 }
 	}
 	
-	AUS_trait_Mathias_von_Schonerer = {
+	### SWEDEN Advisor Traits ###
+	
+	SWE_trait_Goran_Fredrik_Goransson = {
+		random = no
+		consumer_goods_factor = -0.02
+		production_speed_steel_mill_factor = 0.1
+		production_speed_machine_parts_factory_factor = 0.1
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	SWE_trait_Nils_Ericson = {
 		random = no
 		
 		production_speed_infrastructure_factor = 0.1
-		production_speed_machine_parts_factory_factor = 0.05
-		mobilization_speed = 0.05
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 5 }
 	}
 	
-	AUS_trait_Janos_Irinyi = {
+	SWE_trait_Andre_Oscar_Wallenberg = {
 		random = no
 		
-		research_speed_factor = 0.02
-		consumer_goods_factor = 0.05
-		
-		ai_will_do = { factor = 1 }
-	}
-
-	AUS_trait_Ignaz_Semmelweis = {
-		random = no
-		
-		research_speed_factor = 0.01
-		monthly_population = 0.1
-		consumer_goods_factor = 0.05
-		
-		ai_will_do = { factor = 1 }
-	}	
-	
-	
-	### ROM Advisor Traits ###
-	
-	ROM_trait_Unionist = {
-		random = no
-		
-		centrism_drift = 0.1
-		
-		ai_will_do = { factor = 1 }
+		consumer_goods_factor = -0.02
+		stability_factor = 0.05
+		political_power_gain = -0.05
+		ai_will_do = { factor = 5 }
 	}
 	
-	ROM_trait_Constantin_Robescu = {
-		random = no
+	SWE_trait_leijonhufvud = {
+		experience_gain_army = 0.05
+		army_artillery_attack_factor = 0.05
 		
-		production_speed_infrastructure_factor = 0.1
-		production_speed_farm_factor = 0.05
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = {  
+			factor = 500
+		}
 	}
 	
-	ROM_trait_Ion_Heliade_Radulescu = {
-		random = no
+	SWE_trait_raab = {
+		sprite = 14
+		experience_gain_army = 0.05
+		planning_speed = 0.1
+		max_planning = 0.1
 		
-		research_speed_factor = 0.02
-		stability_factor = 0.04
-		
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 500
+		}
 	}
 	
 	### UK Advisor Traits ###
@@ -1518,7 +1753,7 @@ leader_traits = {
 	
 	RYU_trait_chinese_advisor = {
 		random = no
-		#DIFFICULT TO AQUIRE
+		#DIFFICULT TO ACQUIRE
 		autocracy_drift = 0.01
 		production_speed_infrastructure_factor = 0.05
 		production_speed_farm_factor = 0.1
@@ -1534,7 +1769,7 @@ leader_traits = {
 	
 	RYU_trait_british_advisor = {
 		random = no
-		#DIFFICULT TO AQUIRE
+		#DIFFICULT TO ACQUIRE
 		centrism_drift = 0.01
 		production_speed_fabric_weavery_factor = 0.25
 		production_speed_industrial_complex_factor = 0.10
@@ -1549,7 +1784,7 @@ leader_traits = {
 	
 	RYU_trait_french_advisor = {
 		random = no
-		#DIFFICULT TO AQUIRE
+		#DIFFICULT TO ACQUIRE
 		autocracy_drift = 0.01
 		improve_relations_maintain_cost_factor = -0.90
 		stability_weekly = 0.001
@@ -1564,7 +1799,7 @@ leader_traits = {
 	
 	RYU_trait_usa_advisor = {
 		random = no
-		#DIFFICULT TO AQUIRE
+		#DIFFICULT TO ACQUIRE
 		traditional_conservatism_drift = 0.01
 		amphibious_invasion = 0.1
 		production_speed_dockyard_factor = 0.1
@@ -1668,4 +1903,29 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 
+
+	# Japan
+	trait_kii_party = {
+		random = no
+
+		radical_democracy_drift = 0.001
+	}
+
+	trait_hitosubashi_party = {
+		random = no
+
+		radical_democracy_drift = 0.001
+	}
+
+	trait_sonno_joi_party = {
+		random = no
+
+		autocracy_drift = 0.001
+	}
+
+	trait_bakumatsu_party = {
+		random = no
+
+		traditional_conservatism_drift = 0.001
+	}
 }

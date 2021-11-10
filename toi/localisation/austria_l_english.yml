@@ -78,10 +78,6 @@
  AUS_Abolish_Internal_Customs_desc:0 "It was decided in 1855 that all internal customs should be abolished between the Austrian Empire and the Lands of the Crown of Saint Stephen in order to facilitate trade and cooperation. Now the time has come to put this into effect."
  AUS_Abolish_Serfdom:0 "Abolish Serfdom"
  AUS_Abolish_Serfdom_desc:0 "The long awaited decision to abolish serfdom once for all from the Empire will be finally enacted bringing freedom upon millions of subjects who will naturally thank the Emperor for it."
- AUS_Subdue_Czechs:0 "Subdue the Czechs"
- AUS_Subdue_Czechs_desc:0 "The inhabitants of Bohemia-Moravia, known as the 'Czechs' have allied themselves with the German liberals and are a constant thorn in our side and aim to prevent the policies of Baron von Bach and his colleagues."
- AUS_Crack_Down_Hungarians:0 "Crack down on the Magyars"
- AUS_Crack_Down_Hungarians_desc:0 "The Magyars have remained extremelly disobedient since their crushing defeat in the revolution of 1848 and have systematically refused to participate in civil governance and to pay taxes. They are surely very bad subjects of His Majesty and it is very urgent that any revolutionary ideas that they carry should be stopped."
  AUS_Disaster_Italy:0 "Disaster in Italy"
  AUS_Disaster_Italy_desc:0 "The unexpected has happened! His Majesty's armies have been defeated in Lombardy, and it seems that even His Majesty intervened the tide could not be turned. The Italians could not have done this were it not for the French. Now that the defeat army is returning home many are already talking about a financial crisis and a political crisis and as in 1848 it is important to act quickly to avoid a disaster."
  AUS_lost_italy:0 "Disaster in Italy"
@@ -100,7 +96,7 @@
  AUS_Reichsrat_Advice_desc:0 "The first step to making the Empire more constitutional is to ask the advice of the Reichsrat which until presently has served as an advisory body to His Majesty with no real political power. Should the reforms pass we could see a Reichsrat acting as a legislative body as is the case with the other German states."
  AUS_October_Diploma:0 "The October Diploma"
  AUS_October_Diploma_desc:0 "Count Gołuchowski, the recently appointed Interior Minister, has proposed that we pass a constitution, one that would satisfy both the population with a faint idea of constitutionalism and the aristocrats who wish to preserve the decentralisation."
- AUS_tt_october_diploma:0 "Promulgate a §YConservative Constitution§!\n\n"
+ AUS_tt_october_diploma:0 "Promulgate a §YConservative Constitution§!\n \n"
  AUS_flag_unlock_February_Patent:0 "The October Diploma §RDiscarded§!"
  AUS_von_Schmerling:0 "Appoint von Schmerling"
  AUS_von_Schmerling_desc:0 "Count Gołuchowski has proven an unreliable leader and his policies have received severe attacks from the liberals. The solution has appeared to appoint the leader of the German Liberals, Anton von Schmerling. He will seek to pass liberal policies which should restore full confidence to the Emperor."
@@ -196,10 +192,15 @@
  AUS_marineschule_fiume:0 "Marineschule Fiume"
  AUS_new_ships_designs:0 "New Ships Designs"
  AUS_Screw_Frigates:0 "Screw Frigates Designs"
+ AUS_Screw_Frigates_desc:0 "To effectively create a fleet capable of spanning the entire Mediterranean, and for easy construction, pushing towards frigate designs will better our position as a naval power by mass-producing smaller, lighter, and faster ships."
  AUS_Screw_Corvettes:0 "Screw Corvettes Designs"
+ AUS_Screw_Corvettes_desc:0 "Like Frigates, but smaller in size, the Corvette steamship is a unit of a ship, capable of being mass-produced and, when used well and in groups, can demolish any enemy fleets. To dominate the Adriatic, these ships will be of great use."
  AUS_drache_ironclad:0 "Drache Class Ironclads"
+ AUS_drache_ironclad_desc:0 "The ironclad ships have proven their worth and might as the new ships of the century, with large guns, fine movement, and overall heavy weight to protect against enemy ships. Design Director Josef von Romako has put his blood, sweat, and tears towards this design; let us see if Romako is correct."
  AUS_kaiser_max_ironclad:0 "Kaiser Max Class Ironclads"
+ AUS_kaiser_max_ironclad_desc:0 "Design Director Josef von Romako has once again sent his designs to the government for inspection, in hopes of the following; these new Kaiser-Max class Ironclads will take the previous Drache class and include a better battery, better engines, more firepower, and heavier firepower. Parliament has approved, and the ships have begun production."
  AUS_Erzherzog_Ferdinand_Max_ironclad:0 "Erzherzog Ferdinand Max Class Ironclads"
+ AUS_Erzherzog_Ferdinand_Max_ironclad_desc:0 "The new Erzherzog Class has proved its capability and strength on the seas, and was decided for its heavy guns and thick armor to be the next ship class for the Austrian Navy. The class's first ship, Erzherzog Ferdinand Max, has begun its production and will be set for 1865. These heavy ships will dominate the Adriatic, and crush any Italian resistance."
  AUS_Bureaucratic_Administration:0 "Bureaucratic Administration"
  AUS_Bureaucratic_Administration_desc:0 "Our administration has grown old over the ages and left unmodernized, if we are to restore some of our prestiege and modernize our cities we simply have to modernize it with the standards of powers such as United Kingdom and France."
  AUS_Privatize_Railways:0 "Privatize the Railways"
@@ -237,8 +238,11 @@
  AUS_steyr_arms:0 "Steyr Arms"
  AUS_erzgberbahn:0 "Erzbergbahn"
  AUS_mountainuniversitat_leoben:0 "Montanuniversität Leoben"
+ AUS_mountainuniversitat_leoben_desc:0 "The University of Leoben, centered around the city of Leoben in Styria, was the first and largest University for mining, metallurgy and materials. Having been founded in 1840, the university has undergone many revisions and structural changes, and a proposed increase towards the school has been talked about. This is one of Austria’s finest schools, it’s best we keep it to standard."
  AUS_czech_railway_expansion:0 "Czech Railways"
+ AUS_czech_railway_expansion_desc:0 "The bohemian lands in the northern region of our Empire have always relied on extensive road systems and time-consuming travel carts. The only viable, long-distance railway is from the regional capital of Prague to Vienna, and even so, the rail line breaks down regularly. Expanding the rail lines across the entire bohemian region, especially towards our lower Silesian lands, will allow us to move our troops and goods quickly across our massive empire."
  AUS_support_farkashazy:0 "Support de Farkasházy"
+ AUS_support_farkashazy_desc:0 "Móric Fischer de Farkasházy has forever been a rising name among the Hungarian half of our Empire, as his distinguished craftsmanship goes unmatched by others. Many others have concurred with Kaiser Franz Joseph on the topic of raising Farkasházy to nobility as a strong connection between him and the monarchy will surely lessen the tensions between our split Empire. Send the word to Farkasházy!"
  AUS_transylvanian_iron:0 "Transylvanian Iron"
  AUS_transylvanian_iron_desc:0 "This mountainous province on the complete eastern border of our domain has many secrets left, but today we found one of them a great and wealthy amount of coal is burried under the mountains, we should invest into extraction technology so all of the iron under the mountains finds it's way in the light of day."
  AUS_allow_protestants:0 "Allow Protestantism"
@@ -251,6 +255,10 @@
  AUS_Settlements_East_desc:0 "With the nobilities sattisfied it is finally time to encourage our own German population to emigrate eastwards, by giving them some land and money where they can build new farms and even cities they will raise the new generation of Germans in our multi-ethnic eastern lands."
  AUS_Coerce_Nobility:0 "Coerce the Nobility"
  AUS_Coerce_Nobility_desc:0 "The commoners might not be able to resist our Germanisation attempts, but when encouraged by their Nobles to resist it will make things complicated, by giving their Nobility more privileges and political power where their Kingdoms once layed they are sure to side with us, everyone can be bought for the right price."
+ AUS_ottoman_danube:0 "Ottoman Threat on Danube"
+ AUS_gardaseeflotilla:0 "Gardaseeflotilla"
+ AUS_danube_flotilla:0 "Danubeflotilla"
+ AUS_river_lake_flotillas:0 "Rivers and Lakes Flotillas"
  
  ###################
  # Austrian Events #
@@ -616,6 +624,11 @@
  
  AUS_mission_Fabbrica_Macchine_Andrea:0 "Creation fo Fabbrica Macchine Andrea"
  
+ GEC_decision_austria_suspress_hungarians:0 "Crack down on the Magyars"
+ GEC_decision_austria_suspress_hungarians_desc:0 "The Magyars have remained extremelly disobedient since their crushing defeat in the revolution of 1848 and have systematically refused to participate in civil governance and to pay taxes. They are surely very bad subjects of His Majesty and it is very urgent that any revolutionary ideas that they carry should be stopped."
+ GEC_decision_austria_suspress_slavs:0 "Subdue the Czechs"
+ GEC_decision_austria_suspress_slavs_desc:0 "The inhabitants of Bohemia-Moravia, known as the 'Czechs' have allied themselves with the German liberals and are a constant thorn in our side and aim to prevent the policies of Baron von Bach and his colleagues."
+ 
  #######################
  # Austrian Ideas      #
  #######################
@@ -750,7 +763,7 @@
  AUS_tt_increased_funding_loc:0 "Modify §YArmy and Navy Funds Balance§! by\nConsumer Goods Factories: §R+2.5%§!\nLegislative Power Gain: §G+4%§!"
  AUS_tt_decreased_funding_loc:0 "Modify §YArmy and Navy Funds Balance§! by\nLegislative Power Gain: §R-4%§!"
  
- AUS_focus_build_ironclads_effect_tt:0 "\§GThis will, over time, unlock §Ydecision§! to expand our navy, including domestic ship production.§!"
+ AUS_focus_build_ironclads_effect_tt:0 "§GThis will, over time, unlock §Ydecision§! to expand our navy, including domestic ship production.§!"
  ###Austrian Opinion Modifiers###
  AUS_FRA_ARRANGEMENTS_REL:0 "Political Arrangements"
  eoanb_om_PRS_AUS_socialism:0 "Supported Austrian Socialists"

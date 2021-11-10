@@ -1,14 +1,12 @@
 ﻿l_english:
 
 ##################################################
-##################################################
-#                 FRENCH EMPIRE
-##################################################
+#                    SPECIAL
 ##################################################
 
-##################################################
-#          COLONIES AND MAINLAND TAG
-##################################################
+ ALG_FRENCH_COLONY_autocracy:0 "French Algeria"
+ ALG_FRENCH_COLONY_autocracy_DEF:0 "French Algeria"
+ ALG_FRENCH_COLONY_autocracy_ADJ:0 "French Algerian"
 
  SNG_FRENCH_COLONY_autocracy:0 "French Senegal"
  SNG_FRENCH_COLONY_autocracy_DEF:0 "French Senegal"
@@ -30,40 +28,6 @@
  AQU_FRA_MILITARY_TEMP_radical_democracy_DEF:0 "The French National Defense Government"
  AQU_FRA_MILITARY_TEMP_radical_democracy_ADJ:0 "French National Defense"
 
-##################################################
-#             DECISION CATEGORIES
-##################################################
-
-### FRENCH EMPIRE
- eoanb_category_suez_canal:0 "Construction of the Suez Canal"
- FRA_decision_category_continental_system:0 "The Continental System"
- FRA_decision_category_latin_monetary_union:0 "Latin Monetary Union"
- FRA_decision_political_actions:0 "Political Actions" 
- FRA_decision_political_actions_desc:0 "List of available act projects to send for review to the Parliament" 
- FRA_category_Industrialisation_decisions:0 "French Industry"
-
-### IIIrd FRENCH REPUBLIC
-
-
-##################################################
-#                 DECISIONS
-##################################################
-
-### POLITICAL ACTIONS
-
- FRA_decision_enact_general_security_act:0 "Submit General Security Act to Parliament"
- 
- FRA_decision_enact_loi_ollivier:0 "Submit the Olliver Law to Parliament"
- FRA_decision_enact_loi_ollivier_desc:0 "Proposed by the liberal politician Émile Ollivier, this law will allow the repeal of the 1791 law Le Chapellier that made the rallying of peasants and workers illegal. Viewed as a first step towards a friendlier government for the poor class, its enactment will calm down the republicans and the socialist movement."
- FRA_decision_enact_loi_duruy:0 "Enact the Duruy Law"
- FRA_decision_enact_loi_duruy_desc:0 "The law proposed by Victor Duruy aims to improve schooling. After debate the law content is the following :\n- Obligation to have an elementary school in all towns with more 500 inhabitants (800 in the Falloux Law 1850)\n- Improvement of the teacher salaries\n- The towns, the Departments and France can finance elementary otherwise the parents pay to send their children.\n- Authorisation of towns to give money to hardworking children to improve school frequentation (school stays facultative to keep father liberty).\n- History and Geography are mandatory"
-
- FRA_decision_enact_loi_niel:0 "Submit the Niel Law to Parliament"
- FRA_decision_enact_loi_niel_desc:0 "The War Minister, the Marshal Adolphe Niel shares with Napoleon III the admiration of the Prussian military administration. In Prussia all men between 20 and 40 must do military service. In France, conscription is still done by lottery and the rich can pay other to serve in their place to avoid it. Even if the number of active soldiers of both countries are comparable, the French Army must divide its soldiers between colonies and the reserve is not ready to fight. Adolphe Niel estimated that there are 200,000 French soldiers who can defend the Rhine against up to 350,000 Prussians (double with the reserve). Adolphe Niel proposed the \"Garde Nationale mobile\" a copy of the Prussian military system, but the people and the deputies don’t want it."
-
-
-
-
  CAM_ask_french_protectorate:0 "Ask to be a French Protectorate"
  CAM_ask_french_protectorate_tt:0 "The French leaders will be notified that you request their protection."
 
@@ -76,10 +40,12 @@
  el_qantara_port_said_section:0 "El Qantara-Port-Saïd Section"
  el_qantara_port_said_section_desc:0 "El Qantara-Port-Saïd Section"
 
+ eoanb_category_suez_canal:0 "Construction of the Suez Canal"
  FRA_decision_suez_canal_section_3:0 "Construct the Suez-Bitter Lake section."
  FRA_decision_suez_canal_section_2:0 "Construct the Bitter Lake-El Qantara section."
  FRA_decision_suez_canal_section_1:0 "Construct the El Qantara-Port-Saïd section."
 
+ FRA_decision_category_continental_system:0 "The Continental System"
  FRA_decision_continental_system_BEL:0 "Invite [BEL.GetName] in the Continental System"
  FRA_decision_continental_system_LUX:0 "Invite [LUX.GetName] in the Continental System"
  FRA_decision_continental_system_AUS:0 "Invite [AUS.GetName] in the Continental System"
@@ -97,120 +63,48 @@
  FRA_faction_continental_system:0 "The Continental System"
  CPR_front_communard_uni:0 "Front Communard Uni"
 
- FRA_general_amnesty:0 "Offer a General Amnesty"
- FRA_general_amnesty_desc:0 ""
- FRA_decision_join_war_against_modena_parma:0 "Join the Piedmont war against Modena and Parma"
- FRA_decision_join_war_against_modena_parma_desc:0 ""
- FRA_decision_join_war_against_lombardy_venetio:0 "Join the Piedmont war against Lombardy-Venetio"
- FRA_decision_join_war_against_lombardy_venetio_desc:0 ""
- FRA_decision_join_war_against_tuscany:0 "Join the Piedmont war against Tuscany"
- FRA_decision_join_war_against_tuscany_desc:0 ""
- FRA_decision_join_war_against_two_sicilies:0 "Join the Piedmont war against the Two Sicilies"
- FRA_decision_join_war_against_two_sicilies_desc:0 ""
- FRA_decision_start_siege_tourane:0 "Start the siege of Tourane"
- FRA_decision_start_siege_tourane_desc:0 ""
- FRA_mission_northern_lines:0 "Northern France railways"
- FRA_mission_southern_lines:0 "Southern France railways"
- FRA_mission_connect_the_country:0 "Central France railways"
- FRA_latin_monetary_union_establishment:0 "Founding Treaty of Latin Monetary Union"
- FRA_latin_monetary_union_establishment_desc:0 "France is, as all other nations, dependent on the exchange of trade between peoples. In the recognition of this truth, an interesting proposition has come forth from within trade commissions and economic circles...\n\nA typical inconvenience in international trade are unfixed exchange rates between currencies, as each currency follows its own standards of minting, weighing and metal composition. This leads to exchange uncertainty, as a trader in France may not get the value of goods for the weight of his coin abroad. Thusly, a proposal for a so-called 'Monetary Union' has been presented.\n\nThis 'Union' would, if agreed upon by other nations, standardize exchange rates between nations. This would make it so that coins from abroad can be exchanged for the French Franc at a set equal value, per bimetallic standard, both ways. This would make trade a much simpler and effective affair, but requires some fellow nations to participate... shall we form this Monetary Union?"
- FRA_latin_monetary_union_greece:0 "Ask Greece to join us!"
- FRA_latin_monetary_union_greece_desc:0 "The Greeks have expressed an interest in joining the LMU, citing one of the clauses of the treaty which allows nations willing to abide by the treaty's stipulations to join the union's member states. The Kingdom of Greece lies in a valuable position to contest the waters along the Bosphorous, and letting them into the union may work just as much as a diplomatic move as an economic one... shall Greece enter the Monetary Union?"
- FRA_latin_monetary_union_russia:0 "Bilateral agreement with Russia"
- FRA_latin_monetary_union_russia_desc:0 "While St. Petersburg has expressed no desire in joining the treaty, the interest of the equal exchange concept has not fallen on deaf ears it seems. A seperate agreement may be able to be struck, however, but with exchange rates being standardized from banks of the member unions in relation to the Bank of Russia, with regards to fiscal and monetary notes. This agreement, while different, could make trade simpler for our partners in Russia."
- FRA_latin_monetary_union_spain:0 "Bilateral agreement with Spain"
- FRA_latin_monetary_union_spain_desc:0 "Spain is doubtful of the implications of the treaty, and negotiations have thusfar been fruitless despite interest in the concept. A bilateral agreement might be beneficial as a replacement to union membership, even if the agreement has to be slightly slanted to the Spaniards..."
- FRA_latin_monetary_union_romania:0 "Bilateral agreement with Romania"
- FRA_latin_monetary_union_romania_desc:0 "The newly founded nation of the Romani people have expressed an interest in our currency union, and is willing to enter as a member. However, disagreements in treaty application and organization has lead to unsuccessful negotiations, and Romania remains outside the agreement. Despite the concessions, perhaps we can persuade the Romanians with a modified bilateral agreement?"
- FRA_latin_monetary_union_austria_hungary:0 "Bilateral agreement with Austria-Hungary"
- FRA_latin_monetary_union_austria_hungary_desc:0 "Vienna has expressed a clear rejection of the LMU treaty and its stipulations, reasoning that a bimetallic monetary system is not appealing to their economic interests, as their own system is that of a monometallic monetary system. Maybe we could persuade them with an agreement of equal exchange between our gold Francs and their Florin between treasuries?"
- FRA_latin_monetary_union_monaco:0 "Bilateral agreement with Monaco"
- FRA_latin_monetary_union_monaco_desc:0 "Our small neighbour in the south, Monaco, is tied to us in a way that is inseverable. They do not want a full membership in our union, but have expressed a positive desire to make use of the LMU standard for trade between currencies. An agreement would be most beneficial for us both."
- FRA_latin_monetary_union_serbia:0 "Unilateral agreement with Serbia"
- FRA_latin_monetary_union_serbia_desc:0 "The Serbians are not interested in participating directly in the union and its exchanges, but has shown to want to make use of the LMU standard for coin minting. While we can't make them abide by our standardization and exchange rate due to metal percentages being different, we could perhaps set special exchange rates between their standard and ours?"
- FRA_latin_monetary_union_bulgaria:0 "Unilateral agreement with Bulgaria"
- FRA_latin_monetary_union_bulgaria_desc:0 "Bulgaria, much like Serbia, does not want to enter the union but does want to use the LMU standardization of minting. We could make a unilateral agreement which would exchange union currency at a rate which is equal to the value of the Bulgarian coins; all we need to know is if the Bulgarian's will agree to this or not..."
- FRA_decision_category_garde_mobile:0 "Garde Mobile"
- FRA_garde_mobile_ile_de_france:0 "Regiments from Ile de France"
- FRA_garde_mobile_bretagne:0 "Regiments from Bretagne"
- FRA_garde_mobile_charente:0 "Regiments from Charente"
- FRA_garde_mobile_burgundy:0 "Regiments from Burgundy"
- FRA_garde_mobile_centre:0 "Regiments from Centre"
- FRA_garde_mobile_maine:0 "Regiments from Maine"
- FRA_garde_mobile_rhone:0 "Regiments from Rhone"
- FRA_garde_mobile_normandie:0 "Regiments from Normandie"
- FRA_garde_mobile_midi:0 "Regiments from Midi"
-
+ FRA_decision_category_latin_monetary_union:0 "Latin Monetary Union"
 
 ##################################################
 #                     FOCUS
 ##################################################
-
  # Politics and army
-
  FRA_legislative_election_1857:0 "Legislative Elections of 1857"
  FRA_legislative_election_1857_desc:0 "The Legislative Election will decide how the assembly will be filled, giving either the Emperor or his opponent more power over politics."
-
- FRA_societe_prince_imperial:0 "Establish the Société du Prince Impérial"
- FRA_societe_prince_imperial_desc:0 ""
-
- FRA_general_security_law:0 "General Security Act"
- FRA_general_security_law_desc:0 "[FRA_general_security_act_event_desc_scripted]"
- FRA_general_security_act_before_orsini_desc:0 "The law on general security aims to eliminate any threat to the empire and its institutions by the arrest and immediate deportation of any opponents of the regime deemed dangerous.  \n \n §RTrying to vote such law now could end with catastrophic results for the stability of the empire. §R"
- FRA_general_security_act_after_successful_orsini_desc:0 "After the death of our beloved emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposes a law on security aimed at eliminating all anarchists and potential threats against the empire."
- FRA_general_security_act_after_failed_orsini_desc:0 "After the failed attack on our emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposed a law on security aimed at eliminating all forms of threat against the empire and its representatives."
-
  FRA_future_empire:0 "The Future of the Empire"
  FRA_future_empire_desc:0 "In 1852, the Second French Republic was struck down by a coup, led by its one and only president, Louis-Napoléon Bonaparte. Crowned Napoléon III, he restored the empire. But the cost of destroying, again, the republic is low legitimacy. The empire needs to find its future now or be doomed to fall."
-
  FRA_keep_authoritarian_empire:0 "Keep the Authoritarian Empire"
  FRA_keep_authoritarian_empire_desc:0 "We are a strong Empire, our nation values tradition and a strong government. We need to go back to the great days of the First Napoleonic Empire, when we were the greatest nation in Europe and when all countries feared us for our might."
-
  FRA_proclaim_liberal_empire:0 "Proclaim the Liberal Empire"
  FRA_proclaim_liberal_empire_desc:0 "We are a liberal Empire, one that promotes the French culture and arts. We need to leave the values of the past in the past. In an ever-changing world, we need to evolve, we need to adapt. After all, we are now a modern nation."
-
  FRA_reform_empire:0 "Constitutional Reforms in the Empire"
  FRA_reform_empire_desc:0 "The constitution was originally built for an authoritarian leader, although in the end, the nation ended up more liberal than planned, and now this constitution seem more and more obsolete in this new nation. Some improvements are needed for us to move forward."
-
  FRA_legislative_election_1863:0 "Legislative Elections of 1863"
  FRA_legislative_election_1863_desc:0 "The Legislative Election will decide how the assembly will be filled, giving either the Emperor or his opponent more power over politics."
-
  FRA_legislative_elections_1869:0 "Legislative Elections of 1869"
  FRA_legislative_elections_1869_desc:0 "The Legislative Election will decide how the assembly will be filled, giving either the Emperor or his opponent more power over politics."
-
  FRA_loi_ollivier:0 "Enact the Loi Ollivier"
  FRA_loi_ollivier_desc:0 "The Loi Ollivier gives the right for workers to strike. While this law has the simple premise of legalizing strikes, it is opening the dialogue between workers and the French Empire's government, a needed dialogue in a world of rising socialism, and in a country of rising republican spirit."
-
  FRA_loi_duruy:0 "Enact the Loi Duruy"
  FRA_loi_duruy_desc:0 "The Loi Duruy allows for girls to attend school, and to make the school system more accessible for all, by giving free school and education for everyone."
-
  FRA_end_censorship:0 "End of Censorship"
  FRA_end_censorship_desc:0 "The censorship of the press gave the emperor power during the early years of his reign, but people are starting to be annoyed at the fact that every newspaper praises an unpopular emperor. Now, the press will be free, and now not every news article must be supportive of L'Empereur. Everyone is entitled to their opinion, after all."
-
  FRA_counter_european_rivalry:0 "Counter the European Rivalries"
  FRA_counter_european_rivalry_desc:0 "Will it be Prussian and Austria, the United Kingdom and us, Spain and Portugal, our continent is full of bitter rivalries. One of our main tactics should be to remain neutral, as we cannot fight, once again, entire coalitions and win. However we must always be prepared for a european conflict."
-
  FRA_defend_alsace:0 "Defensive Line in Alsace"
  FRA_defend_alsace_desc:0 "The Prussians are a menace in Europe, and Alsace is one of our weakest points, right on the border of the German Confederation. With the Prussians expanding their ambitions to all of Germany, we should we wary of their actions and build forts and military infrastructure on the Rhine."
-
  FRA_defensive_tactics:0 "Defensive Tactics"
  FRA_defensive_tactics_desc:0 ""
-
  FRA_learn_italian_intervention:0 "Learn from the Italian Intervention"
  FRA_learn_italian_intervention_desc:0 ""
-
  FRA_niel_plan:0 "The Niel Plan"
  FRA_niel_plan_desc:0 "The Niel Plan was proposed by Field Marshall Adolphe Niel, and proposed modernizing our armies. Our officiers are very poorly trained, and our tactics dated. In case of an attack, we are ill-prepared. Enacting this plan will give our nation some breathing space by beginning the process of transforming our land forces."
-
  FRA_modern_war_logistics:0 "Modern War Logistics"
  FRA_modern_war_logistics_desc:0 "Even if we have some of the most advanced military equipment, we still lack innovation in our logistics, stuck in the model established by Napoleon's Wars, and in regulations too strictely followed by our generals and officer corps."
-
  FRA_loi_niel:0 "Enact the Loi Niel"
  FRA_loi_niel_desc:0 "The Loi Niel is a modernization of the army to improve French conscription, which is partial and unequal according to the wealth of individuals. This is contrary to the Prussian system which is universal conscription."
-
  FRA_redraw_cantons:0 "Redraw our Cantons"
  FRA_redraw_cantons_desc:0 "Before important legislative elections, we always redraw cantons to ensure our victory in the elections. Now that our place on the throne has been strenghtened, we don't have any reason to cease that pratice."
-
  FRA_stop_gerrymendering:0 "Stop the Gerrymandering"
  FRA_stop_gerrymendering_desc:0 "Gerrymandering allows for corruption to take root in our nation. We must find a way to stop this."
  FRA_fund_partisans:0 "Increase the Pay of our Partisans"
@@ -222,7 +116,8 @@
  # The unthinkable
  FRA_the_unthinkable:0 "The Unthinkable"
  FRA_the_unthinkable_desc:0 "The unthinkable has happened, France is shocked. We shall recover, but we shall never forget."
-
+ FRA_societe_prince_imperial:0 "Establish the Société du Prince Impérial"
+ FRA_societe_prince_imperial_desc:0 ""
  FRA_regency_jerome_napoleon:0 "The Regency of Jérôme"
  FRA_regency_jerome_napoleon_desc:0 "After the January attack on our monarch, a new regency has been put in place. Napoleon IV is very far from being of age to rule the nation, the next in line would be Jérôme Bonaparte, uncle of Napoleon III and ex-king of Westphalia. He is old, but he has the needed legitimacy to keep our country united."
  FRA_liberalisation_of_press:0 "Liberalisation of the Press"
@@ -386,6 +281,8 @@
  FRA_mexican_intervention:0 "Mexican Intervention"
  FRA_mexican_intervention_desc:0 ""
  FRA_mexican_intervention_tooltip:0 "Has been invited to the Mexican Expedition by Spain"
+ FRA_mexican_intervention_tooltip2:0 "§YDiscussions on intervention in Mexico Begin§!"
+ FRA_mexican_intervention_tooltip3:0 "§Y[ROOT.GetNameDef]§! Joins Soledad Conference"
  FRA_mexico_british_spanish_help:0 "British and Spanish Aid"
  FRA_mexico_british_spanish_help_desc:0 ""
  FRA_british_spanish_appeasement:0 "Appease Britain and Spain"
@@ -493,6 +390,7 @@
  FRA_allow_formation_special_assembly_desc:0 ""
  FRA_Division_of_Italy:0 "Division of Italy"
 
+
    # Tooltips
 
  FRA_flag_elections_1857:0 "The Legislative Elections of 1857 have taken place."
@@ -509,6 +407,7 @@
  FRA_tooltip_contain_prussia:0 "$YDecisions$! will be unlocked to invite neighboring countries in the $MContinental System$!"
  FRA_has_colonial_ambitions:0 "France has colonial ambitions"
  FRA_mission_new_mines:0 "Open new mines"
+ FRA_category_Industrialisation_decisions:0 "French Industry"
  FRA_focus_tt_continue_haussmann_renovations:0 "Renovations of french cities"
  latin_monetary_union_established:0 "Latin Monetary Union is established!"
  FRA_soledad_conv_spain_end:0 "Spain withdraws from the war"
@@ -517,111 +416,60 @@
  FRA_soledad_conv_england_con:0 "United Kingdom continues the war"
  FRA_vic_La_Gloire_Class_tt:0 "The ironclad La Gloire will finish constrution in Toulon"
 
+
 ##################################################
-#                 PARLIAMENT LAWS
+#                     DECISIONS
 ##################################################
 
-  french_reform_voting_process_category:0 "Corps Législatif"
-  french_reform_voting_process_category_desc:0 "[GetFrenchParliamentDesc]"
-  
-  french_reform_voting_process_category_desc_0:0 "Currently, no laws are being voted on."
-  
-  french_reform_voting_process_category_desc_1:0 "The parliament is currently voting on the reform: §Y[Root.GetFrenchCurrentVotedReform]§!\n\n    §YVanguard Communist§! approval: [Root.GetVanComApproval]\n    §YCollectivist Socialist§! approval: [Root.GetColSocApproval]\n    §YSocial Egalitarian§! approval: [Root.GetSocEgaApproval]\n    §YCentrist§! approval: [Root.GetCenApproval]\n    §YTraditional Conservative§! approval: [Root.GetTraConApproval]\n    §YRadical Democrat§! approval: [Root.GetRadDemApproval]\n    §YChauvinist Populist§! approval: [Root.GetChauvPopApproval]\n    §YAutocrat§! approval: [Root.GetAutApproval]\n    §YFundamentalist§! approval: [Root.GetFunApproval]\n\nWe §Gestimate§! that the vote will have §Y[?parl_est_num_seats]§! for the reform out of §Y[?parl_tot_num_seats]§! total votes. (§Y[?parl_num_seats_half]§! votes needed to pass)"
-  
-  french_reform_voting_process_category_desc_2:0 "The parliament will vote on a special out-of-program issue. (§gThis vote was launched either by a focus, a decision or an event and not the Reform system.§!)\n\n    §YVanguard Communist§! approval: [Root.GetVanComApproval]\n    §YCollectivist Socialist§! approval: [Root.GetColSocApproval]\n    §YSocial Egalitarian§! approval: [Root.GetSocEgaApproval]\n    §YCentrist§! approval: [Root.GetCenApproval]\n    §YTraditional Conservative§! approval: [Root.GetTraConApproval]\n    §YRadical Democrat§! approval: [Root.GetRadDemApproval]\n    §YChauvinist Populist§! approval: [Root.GetChauvPopApproval]\n    §YAutocrat§! approval: [Root.GetAutApproval]\n    §YFundamentalist§! approval: [Root.GetFunApproval]\n\nWe §Gestimate§! that the vote will have §Y[?parl_est_num_seats]§! for the reform out of §Y[?parl_tot_num_seats]§! total votes. (§Y[?parl_num_seats_half]§! votes needed to pass)"
-
-  french_parl_vote_for_the_reform:0 "Time before the vote :"
-
-  reform_vote_approval_no_rep:0 "§RNo representation§!"
-  reform_vote_approval_id_0:0 "[?parl_voting_approval_array^0|%1]"
-  reform_vote_approval_id_1:0 "[?parl_voting_approval_array^1|%1]"
-  reform_vote_approval_id_2:0 "[?parl_voting_approval_array^2|%1]"
-  reform_vote_approval_id_3:0 "[?parl_voting_approval_array^3|%1]"
-  reform_vote_approval_id_4:0 "[?parl_voting_approval_array^4|%1]"
-  reform_vote_approval_id_5:0 "[?parl_voting_approval_array^5|%1]"
-  reform_vote_approval_id_6:0 "[?parl_voting_approval_array^6|%1]"
-  reform_vote_approval_id_7:0 "[?parl_voting_approval_array^7|%1]"
-  reform_vote_approval_id_8:0 "[?parl_voting_approval_array^8|%1]"
-
-  EOANB_VAN_COM_PARTY_INFO:0 "Party issues of the §YVanguard Communists§!: \n    Cultural Policy : §Y[Root.GetVanComCulturalIssue]§!\n    Economic Policy : §Y[Root.GetVanComEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetVanComDemographicIssue]§!\n    War Policy : §Y[Root.GetVanComWarIssue]§!"
-  EOANB_COL_SOC_PARTY_INFO:0 "Party issues of the §YCollectivist Socialists§!: \n    Cultural Policy : §Y[Root.GetColSocCulturalIssue]§!\n    Economic Policy : §Y[Root.GetColSocEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetColSocDemographicIssue]§!\n    War Policy : §Y[Root.GetColSocWarIssue]§!"
-  EOANB_SOC_EGA_PARTY_INFO:0 "Party issues of the §YSocial Egalitarians§!: \n    Cultural Policy : §Y[Root.GetSocEgaCulturalIssue]§!\n    Economic Policy : §Y[Root.GetSocEgaEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetSocEgaDemographicIssue]§!\n    War Policy : §Y[Root.GetSocEgaWarIssue]§!"
-  EOANB_CEN_PARTY_INFO:0 "Party issues of the §YCentrists§!: \n    Cultural Policy : §Y[Root.GetCenCulturalIssue]§!\n    Economic Policy : §Y[Root.GetCenEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetCenDemographicIssue]§!\n    War Policy : §Y[Root.GetCenWarIssue]§!"
-  EOANB_TRA_CON_PARTY_INFO:0 "Party issues of the §YTraditional Conservatives§!: \n    Cultural Policy : §Y[Root.GetTraConCulturalIssue]§!\n    Economic Policy : §Y[Root.GetTraConEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetTraConDemographicIssue]§!\n    War Policy : §Y[Root.GetTraConWarIssue]§!"
-  EOANB_RAD_DEM_PARTY_INFO:0 "Party issues of the §YRadical Democrats§!: \n    Cultural Policy : §Y[Root.GetRadDemCulturalIssue]§!\n    Economic Policy : §Y[Root.GetRadDemEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetRadDemDemographicIssue]§!\n    War Policy : §Y[Root.GetRadDemWarIssue]§!"
-  EOANB_CHAUV_POP_PARTY_INFO:0 "Party issues of the §YChauvinist Populists§!: \n    Cultural Policy : §Y[Root.GetChauvPopCulturalIssue]§!\n    Economic Policy : §Y[Root.GetChauvPopEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetChauvPopDemographicIssue]§!\n    War Policy : §Y[Root.GetChauvPopWarIssue]§!"
-  EOANB_AUT_PARTY_INFO:0 "Party issues of the §YAutocrats§!: \n    Cultural Policy : §Y[Root.GetAutCulturalIssue]§!\n    Economic Policy : §Y[Root.GetAutEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetAutDemographicIssue]§!\n    War Policy : §Y[Root.GetAutWarIssue]§!"
-  EOANB_FUN_PARTY_INFO:0 "Party issues of the §YFundamentalists§!: \n    Cultural Policy : §Y[Root.GetFunCulturalIssue]§!\n    Economic Policy : §Y[Root.GetFunEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetFunDemographicIssue]§!\n    War Policy : §Y[Root.GetFunWarIssue]§!"
-
-### PARLIAMENT DECISION ACTIONS
-
-french_parl_van_com_seek_support:0 "Seek Support from the Vanguard Communists"
-french_parl_col_soc_meet_party_leaders:0 "Seek Support from the Collectivist Socialists"
-french_parl_soc_ega_meet_party_leaders:0 "Seek Support from the Social Egalitarian"
-french_parl_cen_meet_party_leaders:0 "Seek Support from the Centrists"
-french_parl_tra_con_meet_party_leaders:0 "Seek Support from the Traditional Conservatists"
-french_parl_rad_dem_meet_party_leaders:0 "Seek Support from the Radicals"
-french_parl_aut_meet_party_leaders:0 "Seek Support from the Authoritarians"
-french_parl_chauv_pop_meet_party_leaders:0 "Seek Support from the Populists"
-french_parl_fun_meet_party_leaders:0 "Seek Support from the Fundamentalists"
-french_parl_make_speech_in_parliament:0 "Make a speech in the parliament"
-french_parl_pressure_the_lobbies:0 "Pressure the Lobbies"
-french_parl_talk_with_the_unions:0 "Talk with the unions"
-french_parl_silence_out_opponants:0 "Silence out opponants"
-
-effect_french_parl_van_com_seek_support:0 "Support from Communists"
-effect_french_parl_col_soc_meet_party_leaders:0 "Support from the Collectivist Socialists"
-effect_french_parl_soc_ega_meet_party_leaders:0 "Support from the Social Egalitarian"
-effect_french_parl_cen_meet_party_leaders:0 "Support from the Centrists"
-effect_french_parl_tra_con_meet_party_leaders:0 "Support from the Traditional Conservatists"
-effect_french_parl_rad_dem_meet_party_leaders:0 "Support from the Radicals"
-effect_french_parl_aut_meet_party_leaders:0 "Support from the Authoritarians"
-effect_french_parl_chauv_pop_meet_party_leaders:0 "Support from the Populists"
-effect_french_parl_fun_meet_party_leaders:0 "Seek Support from the Fundamentalists"
-effect_french_parl_make_speech_in_parliament:0 "Support from the majority"
-effect_french_parl_pressure_the_lobbies:0 "Support from the lobbyists"
-effect_french_parl_talk_with_the_unions:0 "Support from the Syndicalists"
-effect_french_parl_silence_out_opponants:0 "Opponants crushed"
-
-### LIST OF FRENCH ACTS ###
-
-french_reform_name_1_1:0 "General Imperial Security Act"
-french_reform_name_1_2:0 "Elementary School Reform"
-french_reform_name_1_3:0 ""
-
-### FRENCH ACTS ###
-
-france_votes_results.1:0 "The result of the vote"
-france_votes_results.1.t:0 ""
-france_votes_results.1.d:0 ""
-france_votes_results.1.a:0 "It's a success !"
-france_votes_results.1.b:0 "It's a failure..."
-france_votes_results.1.c:0 "This is worse than a failure"
-
-# General Security Act
-
-france_votes.1:0 "General Security Act"
-france_votes.1.t:0 "§BGeneral Security Act§!"
-france_votes.1.d:0 "[FRA_general_security_act_event_desc_scripted]"
-france_votes.1.a:0 "Submit the act to the parliament"
-france_votes.1.b:0 "Later..."
-
-orsini_affair.4.t:0 "Liberals and Conservatives break from the United Bonapartist Party"
-orsini_affair.4.d:0 ""
-orsini_affair.4.a:0 "The only insecure thing here is the Empire"
-
-orsini_affair.5.t:0 "The law divides the majority"
-orsini_affair.5.d:0 "The excessively authoritarian nature of this reform tears the majority between conservatives and liberalists, who could quickly join the ranks of the opposition. To resolve this crisis, we will have to find solid arguments to justify the need for this law."
-orsini_affair.5.a:0 "Republican opposition must be contained !"
-orsini_affair.5.b:0 "Anarchists are a great threat to the empire !"
-orsini_affair.5.c:0 "We need to find compromises"
-
-orsini_affair.6.t:0 "Review the reform"
-orsini_affair.6.d:0 ""
-orsini_affair.6.a:0 "Review the reform budget"
-orsini_affair.6.b:0 "Review the objective of the reform"
-orsini_affair.6.c:0 ""
-
+ FRA_decision_enact_loi_ollivier:0 "Enact the Olliver Law"
+ FRA_decision_enact_loi_ollivier_desc:0 "Proposed by the liberal politician Émile Ollivier, this law will allow the repeal of the 1791 law Le Chapellier that made the rallying of peasants and workers illegal. Viewed as a first step towards a friendlier government for the poor class, its enactment will calm down the republicans and the socialist movement."
+ FRA_decision_enact_loi_duruy:0 "Enact the Duruy Law"
+ FRA_decision_enact_loi_duruy_desc:0 "The law proposed by Victor Duruy aims to improve schooling. After debate the law content is the following :\n- Obligation to have an elementary school in all towns with more 500 inhabitants (800 in the Falloux Law 1850)\n- Improvement of the teacher salaries\n- The towns, the Departments and France can finance elementary otherwise the parents pay to send their children.\n- Authorisation of towns to give money to hardworking children to improve school frequentation (school stays facultative to keep father liberty).\n- History and Geography are mandatory"
+ FRA_decision_enact_loi_niel:0 "Enact the Niel Law"
+ FRA_decision_enact_loi_niel_desc:0 "The War Minister, the Marshal Adolphe Niel shares with Napoleon III the admiration of the Prussian military administration. In Prussia all men between 20 and 40 must do military service. In France, conscription is still done by lottery and the rich can pay other to serve in their place to avoid it. Even if the number of active soldiers of both countries are comparable, the French Army must divide its soldiers between colonies and the reserve is not ready to fight. Adolphe Niel estimated that there are 200,000 French soldiers who can defend the Rhine against up to 350,000 Prussians (double with the reserve). Adolphe Niel proposed the \"Garde Nationale mobile\" a copy of the Prussian military system, but the people and the deputies don’t want it."
+ FRA_general_amnesty:0 "Offer a General Amnesty"
+ FRA_general_amnesty_desc:0 ""
+ FRA_decision_join_war_against_modena_parma:0 "Join the Piedmont war against Modena and Parma"
+ FRA_decision_join_war_against_modena_parma_desc:0 ""
+ FRA_decision_join_war_against_lombardy_venetio:0 "Join the Piedmont war against Lombardy-Venetio"
+ FRA_decision_join_war_against_lombardy_venetio_desc:0 ""
+ FRA_decision_join_war_against_tuscany:0 "Join the Piedmont war against Tuscany"
+ FRA_decision_join_war_against_tuscany_desc:0 ""
+ FRA_decision_join_war_against_two_sicilies:0 "Join the Piedmont war against the Two Sicilies"
+ FRA_decision_join_war_against_two_sicilies_desc:0 ""
+ FRA_decision_start_siege_tourane:0 "Start the siege of Tourane"
+ FRA_decision_start_siege_tourane_desc:0 ""
+ FRA_mission_northern_lines:0 "Northern France railways"
+ FRA_mission_southern_lines:0 "Southern France railways"
+ FRA_mission_connect_the_country:0 "Central France railways"
+ FRA_latin_monetary_union_establishment:0 "Founding Treaty of Latin Monetary Union"
+ FRA_latin_monetary_union_establishment_desc:0 "France is, as all other nations, dependent on the exchange of trade between peoples. In the recognition of this truth, an interesting proposition has come forth from within trade commissions and economic circles...\n\nA typical inconvenience in international trade are unfixed exchange rates between currencies, as each currency follows its own standards of minting, weighing and metal composition. This leads to exchange uncertainty, as a trader in France may not get the value of goods for the weight of his coin abroad. Thusly, a proposal for a so-called 'Monetary Union' has been presented.\n\nThis 'Union' would, if agreed upon by other nations, standardize exchange rates between nations. This would make it so that coins from abroad can be exchanged for the French Franc at a set equal value, per bimetallic standard, both ways. This would make trade a much simpler and effective affair, but requires some fellow nations to participate... shall we form this Monetary Union?"
+ FRA_latin_monetary_union_greece:0 "Ask Greece to join us!"
+ FRA_latin_monetary_union_greece_desc:0 "The Greeks have expressed an interest in joining the LMU, citing one of the clauses of the treaty which allows nations willing to abide by the treaty's stipulations to join the union's member states. The Kingdom of Greece lies in a valuable position to contest the waters along the Bosphorous, and letting them into the union may work just as much as a diplomatic move as an economic one... shall Greece enter the Monetary Union?"
+ FRA_latin_monetary_union_russia:0 "Bilateral agreement with Russia"
+ FRA_latin_monetary_union_russia_desc:0 "While St. Petersburg has expressed no desire in joining the treaty, the interest of the equal exchange concept has not fallen on deaf ears it seems. A separate agreement may be able to be struck, however, but with exchange rates being standardized from banks of the member unions in relation to the Bank of Russia, with regards to fiscal and monetary notes. This agreement, while different, could make trade simpler for our partners in Russia."
+ FRA_latin_monetary_union_spain:0 "Bilateral agreement with Spain"
+ FRA_latin_monetary_union_spain_desc:0 "Spain is doubtful of the implications of the treaty, and negotiations have thusfar been fruitless despite interest in the concept. A bilateral agreement might be beneficial as a replacement to union membership, even if the agreement has to be slightly slanted to the Spaniards..."
+ FRA_latin_monetary_union_romania:0 "Bilateral agreement with Romania"
+ FRA_latin_monetary_union_romania_desc:0 "The newly founded nation of the Romani people have expressed an interest in our currency union, and is willing to enter as a member. However, disagreements in treaty application and organization has lead to unsuccessful negotiations, and Romania remains outside the agreement. Despite the concessions, perhaps we can persuade the Romanians with a modified bilateral agreement?"
+ FRA_latin_monetary_union_austria_hungary:0 "Bilateral agreement with Austria-Hungary"
+ FRA_latin_monetary_union_austria_hungary_desc:0 "Vienna has expressed a clear rejection of the LMU treaty and its stipulations, reasoning that a bimetallic monetary system is not appealing to their economic interests, as their own system is that of a monometallic monetary system. Maybe we could persuade them with an agreement of equal exchange between our gold Francs and their Florin between treasuries?"
+ FRA_latin_monetary_union_monaco:0 "Bilateral agreement with Monaco"
+ FRA_latin_monetary_union_monaco_desc:0 "Our small neighbour in the south, Monaco, is tied to us in a way that is inseverable. They do not want a full membership in our union, but have expressed a positive desire to make use of the LMU standard for trade between currencies. An agreement would be most beneficial for us both."
+ FRA_latin_monetary_union_serbia:0 "Unilateral agreement with Serbia"
+ FRA_latin_monetary_union_serbia_desc:0 "The Serbians are not interested in participating directly in the union and its exchanges, but has shown to want to make use of the LMU standard for coin minting. While we can't make them abide by our standardization and exchange rate due to metal percentages being different, we could perhaps set special exchange rates between their standard and ours?"
+ FRA_latin_monetary_union_bulgaria:0 "Unilateral agreement with Bulgaria"
+ FRA_latin_monetary_union_bulgaria_desc:0 "Bulgaria, much like Serbia, does not want to enter the union but does want to use the LMU standardization of minting. We could make a unilateral agreement which would exchange union currency at a rate which is equal to the value of the Bulgarian coins; all we need to know is if the Bulgarian's will agree to this or not..."
+ FRA_decision_category_garde_mobile:0 "Garde Mobile"
+ FRA_garde_mobile_ile_de_france:0 "Regiments from Ile de France"
+ FRA_garde_mobile_bretagne:0 "Regiments from Bretagne"
+ FRA_garde_mobile_charente:0 "Regiments from Charente"
+ FRA_garde_mobile_burgundy:0 "Regiments from Burgundy"
+ FRA_garde_mobile_centre:0 "Regiments from Centre"
+ FRA_garde_mobile_maine:0 "Regiments from Maine"
+ FRA_garde_mobile_rhone:0 "Regiments from Rhone"
+ FRA_garde_mobile_normandie:0 "Regiments from Normandie"
+ FRA_garde_mobile_midi:0 "Regiments from Midi"
 
 ##################################################
 #          NATIONAL SPIRITS AND ADVISORS
@@ -698,7 +546,6 @@ orsini_affair.6.c:0 ""
  FRA_VIN_victory_desc:0 "Like the Cochinchina war is a victory, France has got war reparations"
  SPR_VIN_victory:0 "Cochinchina war reparation"
  SPR_VIN_victory_desc:0 "Like the Cochinchina war is a victory, Spain has got war reparations"
- FRA_TSH_trade:0 "Trade with the Japanese Shogunate"
 
  FRA_napoleon_illness:0 "Napoleon's illness"
  FRA_napoleon_illness_desc:0 "The health of our leader is important for future of France!"
@@ -767,44 +614,7 @@ orsini_affair.6.c:0 ""
 #               EVENT TEXTS
 ##################################################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 1857 POLITICAL PATH EVENTS
-
- nap_france.370.t:0 "The Legislative Elections of 1857"
- nap_france.370.d:0 "The second legislative election of the history of the Second Empire shouldn't put too much pressure on the government. The Official Candidate, Charles de Morny, is in a very confortable place, being a close ally of the Empire and a popular figure among the politicians. Michel Goudchaux has little support, as the opposition is still split between republicans and monarchists, allowing it to be outshined."
- nap_france.370.a:0 "Time for democracy"
-
- nap_france.3701.t:0 "Election Results"
- nap_france.3701.d:0 "Unsurprisingly, the election was won with a large majority by the Empire's official candidate, Charles de Morny, who received 89% of the vote."
- nap_france.3701.a:0 "Congratulation to M.Morny"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Custom Tooltips
+  # Custom Tooltips
 
  FRA_traty_lux_finished:0 "This focus will unlock when the negotiations of the Treaty of Luxembourg are finished"
  FRA_orisini_branch:0 "A new focus tree branch will be unlocked next to the External Politics branch. If it doesn't, save and reload to display it."
@@ -814,7 +624,9 @@ orsini_affair.6.c:0 ""
 
   # News Text
 
-
+ nap_france_flavor.1.t:0 "Death of Eugène-François Vidocq"
+ nap_france_flavor.1.d:0 "The great adventurer Eugène-François Vidocq has passed away today, at the age of 81. He started his life as a bandit, but after a life of evading his prison sentence, he first became an informer for the police, then created the first private detective agency, creating at the same time the basis of modern judicial police in France. After many years of great service to the french police, he will still be remembered."
+ nap_france_flavor.1.a:0 "A great loss for France"
 
  nap_france_flavor.2.t:0 "Extention of Paris"
  nap_france_flavor.2.d:0 "For decades, Paris has been confined to the Wall of the Ferme générale. But in this century, its population has increased greatly, and now suburbs have appeared all around it, inside the Wall of Thiers, built in 1840. Haussmann had in his plan to expand the city to this wall, incorporating those small communities and redoing entirely the map of Paris' Arrondissements. This is another step in Haussmann's great reorganization of the city."
@@ -1017,7 +829,7 @@ orsini_affair.6.c:0 ""
  nap_france.14.a:0 "We have no choice but to accept this."
 
  nap_france.15.t:0 "The Franco-Monegasque Treaty has been signed"
- nap_france.15.d:0 "Monaco, while small, is one of the great trading partners of the Mediterranean. The small but strong economic powerhouse sorrounded by us, has today signed a treaty with us, giving economic priviledge and furthering cooperation between our two countries. This is the start of a great friendship between the nations of France and Monaco."
+ nap_france.15.d:0 "Monaco, while small, is one of the great trading partners of the Mediterranean. The small but strong economic powerhouse sorrounded by us, has today signed a treaty with us, giving economic privilege and furthering cooperation between our two countries. This is the start of a great friendship between the nations of France and Monaco."
  nap_france.15.a:0 "As small as it is, Monaco will be a great partner!"
 
  nap_france.16.t:0 "Proposition for a trade treaty between France and the United Kingdom"
@@ -1144,7 +956,7 @@ orsini_affair.6.c:0 ""
  nap_france.123.a:0 "Fine"
 
  nap_france.124.t:0 "The Government forces us to give the citizenship to some natives"
- nap_france.124.d:0 "Our Assimilation model has been a relative success, but there's still high demand from the locals for equal treatment in out colony. As a way of proving their good faith, the French government has enacted a decree, stipulating that "all the colonised "indigenous" were under French jurisdiction, French nationals subjected to French laws". This was followed by a promise of citizenship for all Arab and Berber Algerians that abandonned their Muslim religion and culture. The local Jewish population was also given access to citizenship, following a recent letter signed by 10000 local Jews asking for the priviledge.\n\nThis is a great step towards a fully French Algeria, and we are hoping that this will further stabilize the region."
+ nap_france.124.d:0 "Our Assimilation model has been a relative success, but there's still high demand from the locals for equal treatment in out colony. As a way of proving their good faith, the French government has enacted a decree, stipulating that "all the colonised "indigenous" were under French jurisdiction, French nationals subjected to French laws". This was followed by a promise of citizenship for all Arab and Berber Algerians that abandonned their Muslim religion and culture. The local Jewish population was also given access to citizenship, following a recent letter signed by 10000 local Jews asking for the privilege.\n\nThis is a great step towards a fully French Algeria, and we are hoping that this will further stabilize the region."
  nap_france.124.a:0 "Fine"
 
  nap_france.125.t:0 "The Government calls us their model colony"
@@ -1279,7 +1091,7 @@ orsini_affair.6.c:0 ""
  nap_france.160.b:0 "Continuing this war will bring nothing"
 
  nap_france.161.t:0 "Victory in the Cochinchina Campaign"
- nap_france.161.d:0 "The Treaty of Saigon ended the war in Cochinchina.\nFrance and Spain will recieve war reparations.\nSpain is not interested in territorial gains.\nShould we demand the provinces under our control in the lower Cochinchina?"
+ nap_france.161.d:0 "The Treaty of Saigon ended the war in Cochinchina.\nFrance and Spain will receive war reparations.\nSpain is not interested in territorial gains.\nShould we demand the provinces under our control in the lower Cochinchina?"
  nap_france.161.a:0 "Yes, we should use the newly acquired land as a jumping-off point for future endeavors."
  nap_france.161.b:0 "Cochinchina is too far away to be of any use to us."
 
@@ -1503,164 +1315,10 @@ orsini_affair.6.c:0 ""
  nap_france.352.d:0 ""
  nap_france.352.a:0 "If that's what they want"
 
- nap_france.360.t:0 "Treaty of London"
- nap_france.360.d:0 "The Convention of London is a treaty signed by France, Spain, and the United Kingdom. The purpose of the treaty is to agree on a course of action towards obtaining loan repayments from Mexico. The Convention of London was preceded by a quadrilateral convention in 1860, by which France, Spain, the United Kingdom and Prussia threatened intervention in Mexico unless the incapacity of its government was changed. The stalemate between the Mexican political parties, both of whose actions depended on the support of the said European nations and the United States, resulted in a six-year civil war and rendered the country bankrupt."
- nap_france.360.a:0 "Let's settle the Mexican situation"
-
- nap_france.361.t:0 "European Powers asks for repayments"
- nap_france.361.d:0 "The British financial claims dated back to the end of 1851 when, at the Doyle Convention, Mexico agreed to pay 5,000,000 pesos on a 3% yearly interest rate and a 5% redeem rate. That same year, the Spanish and Mexican Government settled an old claim of 983,000 pesos (the Juarez party still hadn't recognized the 2 million dollars owed by the Santa Anna government) and additionally provided a new fund of 6,600,000 pesos. The interest rate of the first bonds was set at 3% while the latter was issued at 5%. Mexico also had similar negotiations with France in 1851 and 1853. Those claims totaled 1,759,000 pesos."
- nap_france.361.d:0 "Money?"
-
- nap_france.362.t:0 "Mexico refuses!"
- nap_france.362.d:0 "Mexico refused to pay all it's debts. We should really consider military intervention as solution for this situation."
- nap_france.362.a:0 "It's war then!"
- nap_france.362.b:0 "It's war then!"
- nap_france.362.c:0 "It's war then!"
-
- nap_france.363.t:0 "Mexico accepts!"
- nap_france.363.d:0 "Mexico accepted to pay all it's debts. Now situation is better for us, we don't need to send troops there and persuade them to pay debts."
- nap_france.363.a:0 ""
-
- nap_france.364.t:0 "Troops lands on Veracruz"
- nap_france.364.d:0 ""
- nap_france.364.a:0 "March to Mexico City!"
-
- nap_france.365.t:0 "Proposal to end the Mexican Intervention"
- nap_france.365.d:0 ""
- nap_france.365.a:0 ""
-
- nap_france.366.t:0 "Proposal to end the Mexican Intervention"
- nap_france.366.d:0 ""
- nap_france.366.a:0 "Accept the Proposal"
- nap_france.366.b:0 "Refuse the Proposal"
-
- nap_france.367.t:0 "The Soledad Convention"
- nap_france.367.d:0 ""
- nap_france.367.a:0 "Let's try to find an arrangement"
-
- nap_france.368.t:0 "The Soledad Convention - The French Empire's position"
- nap_france.368.d:0 ""
- nap_france.368.a:0 "Continue the War"
- nap_france.368.b:0 "End it here"
-
- nap_france.369.t:0 "The Soledad Convention - The United Kingdom's position"
- nap_france.369.d:0 ""
- nap_france.369.a:0 "Conitnue the War"
- nap_france.369.b:0 "End it here"
-
- nap_france.3610.t:0 "The Soledad Convention - Spain withdraws from the war"
- nap_france.3610.d:0 ""
- nap_france.3610.a:0 "Conitnue the War"
- nap_france.3610.b:0 "End it here"
-
- nap_france.3611.t:0 "The End of the Mexican Intervention"
- nap_france.3611.d:0 ""
- nap_france.3611.a:0 "A miracle!"
-
- nap_france.3612.t:0 "Mexico City in our hands!"
- nap_france.3612.d:0 ""
- nap_france.3612.a:0 "Finally!"
-
- nap_france.3613.t:0 "Juan Nepomuceno Almonte named President of Mexico"
- nap_france.3613.d:0 ""
- nap_france.3613.a:0 "The only true president of Mexico"
-
- nap_france.3614.t:0 "Appointment of the Junta Superior de Gobierno"
- nap_france.3614.d:0 ""
- nap_france.3614.a:0 "At last, stability"
-
- nap_france.3615.t:0 "Proclamation of the Second Mexican Empire"
- nap_france.3615.d:0 ""
- nap_france.3615.a:0 "An Empire without an Emperor"
-
- nap_france.3616.t:0 "The Comisiòn Mexicana meets Maximilian in Austria"
- nap_france.3616.d:0 ""
- nap_france.3616.a:0 "He will have his referundum"
-
- nap_france.3617.t:0 "The Emperor's referundum"
- nap_france.3617.d:0 ""
- nap_france.3617.a:0 "It passes"
- nap_france.3617.b:0 "It doesn't pass"
-
- nap_france.3618.t:0 "Maximilian sets sail for Mexico"
- nap_france.3618.d:0 ""
- nap_france.3618.a:0 ""
-
- nap_france.3619.t:0 "Maximilian signs the Treaty of Miramar"
- nap_france.3619.d:0 ""
- nap_france.3619.a:0 ""
-
- nap_france.3620.t:0 "The coronation of Emperor Maximilian"
- nap_france.3620.d:0 ""
- nap_france.3620.a:0 "Viva el Emperador"
-
- nap_france.3621.t:0 "Spanish expeditionares arrives"
- nap_france.3621.d:0 ""
- nap_france.3621.a:0 ""
-
- nap_france.3622.t:0 "Egyptian expeditionares arrives"
- nap_france.3622.d:0 ""
- nap_france.3622.a:0 ""
-
- nap_france.3623.t:0 "Belgian Grenadier Battalion arrives"
- nap_france.3623.d:0 ""
- nap_france.3623.a:0 ""
-
- nap_france.3624.t:0 "Austrian Voluntary Corps Arrive arrives"
- nap_france.3624.d:0 ""
- nap_france.3624.a:0 ""
-
- nap_france.3625.t:0 "Belgian Battalion arrives"
- nap_france.3625.d:0 ""
- nap_france.3625.a:0 ""
-
- nap_france.3626.t:0 "Imperial Mexican Army is Formed"
- nap_france.3626.d:0 ""
- nap_france.3626.a:0 ""
-
- nap_france.3627.t:0 "Empire of Mexico declare war on liberals"
- nap_france.3627.d:0 ""
- nap_france.3627.a:0 ""
-
- nap_france.3628.t:0 "Defection of conservative generals"
- nap_france.3628.d:0 ""
- nap_france.3628.a:0 ""
-
- nap_france.3628.t:0 "The Republicans take Chiuhaha and Guadalajara"
- nap_france.3628.d:0 ""
- nap_france.3628.a:0 ""
-
- nap_france.3628.t:0 "French Withdrawal - event for France"
- nap_france.3628.d:0 ""
- nap_france.3628.a:0 ""
-
- nap_france.3629.t:0 "French Withdrawal - event for France"
- nap_france.3629.d:0 ""
- nap_france.3629.a:0 ""
-
- nap_france.3630.t:0 "French Withdrawal - event for Imperial Mexico"
- nap_france.3630.d:0 ""
- nap_france.3630.a:0 ""
-
- nap_france.3631.t:0 "The Imperials take the North"
- nap_france.3631.d:0 ""
- nap_france.3631.a:0 ""
-
- nap_france.3632.t:0 "American Withdrawal - event for Liberal Mexico"
- nap_france.3632.d:0 ""
- nap_france.3632.a:0 ""
-
- nap_france.3634.t:0 "Republican Triumph"
- nap_france.3634.d:0 ""
- nap_france.3634.a:0 ""
-
- nap_france.36201.t:0 "Faliure in Mexico"
- nap_france.36201.d:0 "After years of fighting and a failed invasion of Mexico, many in our populace and diplomats have demanded we sue for peace."
- nap_france.36201.a:0 "We have lost Belize. We should end this war."
- nap_france.36201.b:0 "We have lost many men. We should end this war."
- nap_france.36201.c:0 "§RWe have surrendered our colony in Belize.§!\n""
-
-
+ nap_france.370.t:0 "The Legislative Elections of 1857"
+ nap_france.370.d:0 "The second legislative election of the history of the Second Empire shouldn't put too much pressure on the government. The Official Candidate, Charles de Morny, is in a very confortable place, being a close ally of the Empire and a popular figure among the politicians. Michel Goudchaux has little support, as the opposition is still split between republicans and monarchists, allowing it to be outshined."
+ nap_france.370.a:0 "Give the power to the Official Candidate, Charles de Morny"
+ nap_france.370.b:0 "Give the power to the Opposition Candidate, Michel Goudchaux"
 
  nap_france.371.t:0 "The Legislative Elections of 1863"
  nap_france.371.d:0 "For this third legislative elections, three candidates are able to take power in the chamber. There is still Charles de Morny, still highly supported, who again represent the Bonapartist official party. Against him, Émile Ollivier represents the support of the Republic, those still bitter about the coup-d'état of 1852. And there is Pierre-Antoine Berryer, representing the Monarchist faction, who wants a return to the Orleanist monarchy, seeing Napoleon III as an unrightful monarch."
@@ -1687,6 +1345,26 @@ orsini_affair.6.c:0 ""
  nap_france.375.t:0 "Victor Hugo denouces the government"
  nap_france.375.d:0 "We have offered partial amnesty to our opposition, meaning only to the moderate republicans, and not the socialists. This wasn't to the taste of Victor Hugo, who has denounced our practices and the censorship of our government towards the socialists voices of France. It seems that hate towards the Empire is stronger than the will of freedom. Politically speaking, this might hurt us in the long run, but the Emperor is satisfied by his offer, and points out that he can only give his good will."
  nap_france.375.a:0 "Damn"
+
+ nap_france.380.t:0 "The Republicans demand more liberties"
+ nap_france.380.d:0 "Recent turns towards authoritarianism has made lots of republican weary. They are calling the government to act in a more moderate and considerate way, and to listen to the pleas of their people. While the Emperor hasn't responded yet, the government is already preparing their response. We hope that the political effects of such fears stops there, but in the French Empire, nothing is for certain."
+ nap_france.380.a:0 "They will have them!"
+ nap_france.380.b:0 "We will not give in to them."
+
+ nap_france.381.t:0 "The Legitimists are worried"
+ nap_france.381.d:0 "Recent turns towards liberalism has made lots of legitimists weary. They are calling the government to act in a more traditionalist and conservative war, and to listen to the demand of the elite. While the Emperor hasn't responded yet, the government is already preparing their response. We hope that the political effects of such fears stops there, but in the French Empire, nothing is for certain."
+ nap_france.381.a:0 "Try to reassure them."
+ nap_france.381.b:0 "They will have to deal with that."
+
+ nap_france.382.t:0 "Republican Strikes!"
+ nap_france.382.d:0 ""
+ nap_france.382.a:0 "Send in the Army!"
+ nap_france.382.b:0 "Negotiate with them"
+
+ nap_france.383.t:0 "Legitimist Uprising!"
+ nap_france.383.d:0 ""
+ nap_france.383.a:0 "Send in the Army!"
+ nap_france.383.b:0 "Negotiate with them"
 
  nap_france.397.t:0 "Napoleon III captured!"
  nap_france.397.d:0 "During the Battle of Sedan, in Champagne, the Emperor of the French was captured by the Prussian army. An emergency council decided that a military commander should act as the head of state until the end of the war."
@@ -1785,7 +1463,7 @@ orsini_affair.6.c:0 ""
  carbonari_italy.16.d:0 ""
  carbonari_italy.16.a:0 "Fantastic"
 
- carbonari_italy.17.t:0 "Negotiations between the Carbonari and the Papal States ends succesfully"
+ carbonari_italy.17.t:0 "Negotiations between the Carbonari and the Papal States ends successfully"
  carbonari_italy.17.d:0 ""
  carbonari_italy.17.a:0 "Fantastic"
 
@@ -1889,7 +1567,7 @@ orsini_affair.6.c:0 ""
  army_france.1007.b:0 "We have enough generals"
 
  latin_monetary_union.1.t:0 "Establishment of Latin Monetary Union"
- latin_monetary_union.1.d:0 "Today, the governments of France, Italy, Belgium and Switzerland have made a joint statement adressing the conclusion of discussions, and the founding of a new treaty union: The Latin Monetary Union.\n\nThe Latin Monetary Union, abreviated as the LMU, seeks to unify the currency of each member-state under one standardized system of mintage. This system makes the exchange rates of coinage between the members Italy, Switzerland, Belgium and France equal. This meaning the coins are united in value and are usable without conversion in all member nations, as long as the dimensions, weight and metal compositions remain mostly identical. The Union was a proposal made by French officials, and its founding would suggest a closer cooperation between each member-state's and French economic interests in Europe.\n\nWhat will become of this union over the ages, only time will tell..."
+ latin_monetary_union.1.d:0 "Today, the governments of France, Italy, Belgium and Switzerland have made a joint statement addressing the conclusion of discussions, and the founding of a new treaty union: The Latin Monetary Union.\n\nThe Latin Monetary Union, abreviated as the LMU, seeks to unify the currency of each member-state under one standardized system of mintage. This system makes the exchange rates of coinage between the members Italy, Switzerland, Belgium and France equal. This meaning the coins are united in value and are usable without conversion in all member nations, as long as the dimensions, weight and metal compositions remain mostly identical. The Union was a proposal made by French officials, and its founding would suggest a closer cooperation between each member-state's and French economic interests in Europe.\n\nWhat will become of this union over the ages, only time will tell..."
  latin_monetary_union.1.a:0 "A union is born!"
  latin_monetary_union.2.t:0 "Ask Greece to join Latin Monetary Union"
  latin_monetary_union.2.d:0 "Our diplomats to Greece have reported a possibility to invite the Greeks into joining the FMU.\n\nFeelers among the diplomatic corps sent to Greece have gotten positive impressions of the potential prospects of a Greek entry into the FMU, and believe that giving them a direct invitation might be a good way to give off a good impression about the LMU. The Greeks are generally positive about the stipulations of the treaty, and have shown an definitive interest in the coinage standardization which the LMU offers, besides the currency having the strength of the other members economic backing.\n\nThere are many potential benefits for the Greeks if they decide to fully enter the monetary union, however, the decision ultimately falls to them."
@@ -1904,7 +1582,7 @@ orsini_affair.6.c:0 ""
  latin_monetary_union.4.b:0 "Our existing coins are sufficient"
 
   # Mexico events
-  
+
   nap_france_mexico.1.t:0 "Mexico ask for help"
   nap_france_mexico.1.d:0 "The Empress met today with a Mexican diplomat. Apparently things are not going very well on the other side of the Atlantic and the Mexican government asks us to establish a monarchy in Mexico that stabilizes the nation and saves Catholicism and the latin race."
   nap_france_mexico.1.a:0 "Of course, help them find a strong monarch."
@@ -1939,50 +1617,6 @@ orsini_affair.6.c:0 ""
  fra_cut_relations_piedmont:0 "Cut relations with Sardinia-Piedmont"
  fra_renew_relations_france:0 "Renewed relations between France and Austria"
  fra_accept_romanian_unification:0 "Has supported Romanian unification"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2075,9 +1709,9 @@ orsini_affair.6.c:0 ""
  third_rep_france.0104.d:0 "If the republican armies have been able until today to limit the Prussian advance as much as possible, today the battle took place which will seal the tragic fate of this war which has cost France so much ..."
  third_rep_france.0104.a:0 "Looks like it is the End..."
 
- third_rep_france.0104.t:0 "National Defence Governement captured in Paris !"
- third_rep_france.0104.d:0 ""
- third_rep_france.0104.a:0 "Looks like it is the End..."
+ third_rep_france.0105.t:0 "Paris Falls!"
+ third_rep_france.0105.d:0 "National Defence Governement captured in Paris!"
+ third_rep_france.0105.a:0 "Looks like it is the End..."
 
  third_rep_france.011.t:0 "Armistice signed between France and Prussia!"
  third_rep_france.011.d:0 "After months of back and forth from the French government, the armistice has been signed. During the next few days, Legislative Elections will be organized and the two countries will have to find a definitive peace agreement which will finally ends the Franco-Prussian War. At least, if everything goes as planned ..."
@@ -2117,7 +1751,7 @@ orsini_affair.6.c:0 ""
  third_rep_france.016.d:0 ""
  third_rep_france.016.a:0 "We lost our land, but not our anger !"
 
- 
+
 
 #FIRST RESTAURATION TRIALS
 
@@ -2161,17 +1795,17 @@ france_general_strike.2.b:0 "They deserved it!"
 france_general_strike.3.t:0 "Anger roars"
 france_general_strike.3.d:0 ""
 france_general_strike.3.a:0 "In the name of the Emperor Napoleon III, the city council of Saint-Etienne is dismissed!"
-    
+
 france_general_strike.4.t:0 "L'interpellation des 116"
 france_general_strike.4.d:0 ""
 france_general_strike.4.a:0 "This is a legitimate demand, give them more power."
 france_general_strike.4.b:0 "This is unacceptable ! They want to steal power from the Emperor."
-      
+
 france_general_strike.5.t:0 "The Trial"
 france_general_strike.5.d:0 ""
 france_general_strike.5.a:0 "We cannot let them do this! By imperial ordonnace: amnesty for all!"
 france_general_strike.5.b:0 "Vive l'Empereur! Those criminals got what they deserved!"
-      
+
 france_general_strike.6.t:0 "The Captain Gausserand Case"
 france_general_strike.6.d:0 ""
 france_general_strike.6.a:0 "They are brave soldiers, they did their job. Decorate the captain!"
@@ -2189,7 +1823,7 @@ france_general_strike.6.e:0 "They're all guilty!"
 
 
 
- 
+
  third_rep_france.15.t:0 "Resentment in Paris"
  third_rep_france.15.d_thiers:0 "Adolphe Thiers has been in French politics for years before becomming the President. During the July Monarchy, he erected what was later called the "Thiers Wall" to protect the city from invaders following the 1848 revolution. Not only that, but he also has shown some resentment towards the National Guards, fearing that they might rise up to oust him. Now his fears might become true. Rumors are going around that they are planning to take over the government. They are socialists at heart, the very young republic might get destroyed once again, we cannot let that happen."
  third_rep_france.15.d_gambetta:0 "Léon Gambetta is a popular figure, both for the republicans and the socialists. He is charismatic, and has made clear that nobody is going to stop his societal reforms following his election. But both the Military and the Socialists want to be assured of his policies. The military fears that he'll be too liberal, the socialist fear that he will be too conservative to please the majority. Léon Gambetta is in a tough position, and has to choose which faction he wants to help, and which faction he needs to betray."
