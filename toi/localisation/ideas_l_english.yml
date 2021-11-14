@@ -1584,6 +1584,7 @@ Generic_Investigation_Proceeding_1_desc:0 "[Root.GetNameDef] is spending resourc
  BRA_coffee_economy7:0 "Coffee Economy"
  BRA_coffee_economy8:0 "Coffee Economy"
  BRA_coffee_economy9:0 "Coffee Economy"
+ BRA_coffee_economy10:0 "Coffee Economy"
  BRA_coffee_economy_workforce_capital1:0 "Slave workers building infrastructure"
  BRA_coffee_economy_workforce_capital2:0 "Free workers building infrastructure"
  BRA_coffee_economy_workforce_capital3:0 "Qualified workers of Fluminense Transport Company building infrastructure"
@@ -1691,3 +1692,5 @@ Generic_Investigation_Proceeding_1_desc:0 "[Root.GetNameDef] is spending resourc
  BRA_visconde_do_cruzeiro_infrastructure:0 "Jerônimo José Teixeira Jr, Viscount of Cruzeiro"
  BRA_joao_alfredo_infrastructure:0 "João Alfredo Correia Oliveira"
  BRA_barao_de_maua_adv:0 "Irineu Evangelista de Sousa, Baron of Mauá"
+ BRA_ACW_volunteers:0 "Volunteers for American Civil War"
+ BRA_UCW_volunteers:0 "Volunteers for Uruguayan Civil War"

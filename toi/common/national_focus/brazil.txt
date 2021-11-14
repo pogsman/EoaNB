@@ -1,5 +1,6 @@
 focus_tree = {
 	id = bra
+	
 	country = {
 		factor = 0
 		modifier = {
@@ -7,7 +8,9 @@ focus_tree = {
 			tag = BRA
 		}
 	}
+	
 	default = no
+	
 	focus = {
 		id = BRA_the_rise_of_the_empire
 		icon = GFX_goal_focus_brazil
@@ -805,17 +808,16 @@ focus_tree = {
 		y = 6
 
 		prerequisite = {
-		focus = BRA_rio_de_janeiro_coffee_elites
+			focus = BRA_rio_de_janeiro_coffee_elites
 		}
 		
 	    mutually_exclusive = {
-		focus = BRA_convince_elitists_to_support_industry
+			focus = BRA_convince_elitists_to_support_industry
 		}
 
 		completion_reward = {
-	    add_political_power = -75
-		remove_ideas = BRA_massive_industrial_loans
-		
+			add_political_power = -75
+			remove_ideas = BRA_massive_industrial_loans
 		}
 	}
 	
@@ -827,17 +829,16 @@ focus_tree = {
 		y = 6
 
 		prerequisite = {
-		focus = BRA_rio_de_janeiro_coffee_elites
+			focus = BRA_rio_de_janeiro_coffee_elites
 		}
 		
 	    mutually_exclusive = {
-		focus = BRA_prevent_massive_loans
+			focus = BRA_prevent_massive_loans
 		}
 
 		completion_reward = {
-	    add_political_power = 15
-		remove_ideas = BRA_agrarian_influence
-		
+			add_political_power = 15
+			remove_ideas = BRA_agrarian_influence
 		}
 	}
 	
@@ -849,14 +850,14 @@ focus_tree = {
 		y = 6
 
 		prerequisite = {
-		focus = BRA_rio_de_janeiro_coffee_elites
+			focus = BRA_rio_de_janeiro_coffee_elites
 		}
 
 		completion_reward = {
-	    add_timed_idea = {
- 		idea = BRA_new_trade
-		days = 200
-		}
+			add_timed_idea = {
+				idea = BRA_new_trade
+				days = 200
+			}
 		}
 	}
 	
@@ -868,11 +869,11 @@ focus_tree = {
 		y = 7
 
 		prerequisite = {
-		focus = BRA_the_transatlantic_coffee_trade
+			focus = BRA_the_transatlantic_coffee_trade
 		}
 
 		completion_reward = {
-	    add_political_power = 35
+			add_political_power = 35
 		}
 	}
 	
@@ -884,27 +885,27 @@ focus_tree = {
 		y = 8
 
 		prerequisite = {
-		focus = BRA_trading_with_the_european_powers
+			focus = BRA_trading_with_the_european_powers
 		}
 		
 		mutually_exclusive = {
-		focus = BRA_trading_with_the_french_empire 
+			focus = BRA_trading_with_the_french_empire 
 		}
 
 		completion_reward = {
-	    add_political_power = 35
-		ENG = {
-      add_opinion_modifier = {
-        target = BRA
-        modifier = FRA_cobden_chevalier_treaty
-      }
-    }
-    BRA = {
-      add_opinion_modifier = {
-        target = ENG
-        modifier = FRA_cobden_chevalier_treaty
-      }
-    }
+			add_political_power = 35
+			ENG = {
+				add_opinion_modifier = {
+					target = BRA
+					modifier = FRA_cobden_chevalier_treaty
+				}
+			}
+			BRA = {
+				add_opinion_modifier = {
+					target = ENG
+					modifier = FRA_cobden_chevalier_treaty
+				}
+			}
 		}
 	}
 	
@@ -916,12 +917,12 @@ focus_tree = {
 		y = 9
 
 		prerequisite = {
-		focus = BRA_trading_with_the_united_kingdom
+			focus = BRA_trading_with_the_united_kingdom
 		}
 
 		completion_reward = {
 	    ENG = {
-		country_event = brazil.1 
+			country_event = brazil.1 
 		}
 		add_political_power = -25
 		}
@@ -935,11 +936,11 @@ focus_tree = {
 		y = 10
 
 		prerequisite = {
-		focus = BRA_propose_a_research_treaty
+			focus = BRA_propose_a_research_treaty
 		}
 
 		completion_reward = {
-	    add_political_power = 30
+			add_political_power = 30
 		}
 	}
 	
@@ -951,28 +952,28 @@ focus_tree = {
 		y = 8
 
 		prerequisite = {
-		focus = BRA_trading_with_the_european_powers
+			focus = BRA_trading_with_the_european_powers
 		}
 		
 		mutually_exclusive = {
-		focus = BRA_trading_with_the_united_kingdom 
+			focus = BRA_trading_with_the_united_kingdom 
 		}
 
-	completion_reward = {
-	    add_political_power = 35
-		FRA = {
-      add_opinion_modifier = {
-        target = BRA
-        modifier = FRA_cobden_chevalier_treaty
-      }
-    }
-    BRA = {
-      add_opinion_modifier = {
-        target = FRA
-        modifier = FRA_cobden_chevalier_treaty
-      }
-    }
-	}
+		completion_reward = {
+			add_political_power = 35
+			FRA = {
+				add_opinion_modifier = {
+					target = BRA
+					modifier = FRA_cobden_chevalier_treaty
+				}
+			}
+			BRA = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = FRA_cobden_chevalier_treaty
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -983,16 +984,16 @@ focus_tree = {
 		y = 9
 
 		prerequisite = {
-		focus = BRA_trading_with_the_french_empire
+			focus = BRA_trading_with_the_french_empire
 		}
 	
 
-	completion_reward = {
-		FRA = {
-		country_event = brazil.3
+		completion_reward = {
+			FRA = {
+				country_event = brazil.3
+			}
+			add_stability = -0.01
 		}
-		add_stability = -0.01
-    }
 	}
 	
 	
@@ -1005,18 +1006,17 @@ focus_tree = {
 		y = 10
 
 		prerequisite = {
-		focus = BRA_propose_an_economic_treaty
+			focus = BRA_propose_an_economic_treaty
 		}
 	
 
-	completion_reward = {
-    add_timed_idea { 
-	idea = FRA_idea_new_banks
-	days = 50
-	}
-	add_stability = 0.02
-    }
-	
+		completion_reward = {
+			add_timed_idea { 
+				idea = FRA_idea_new_banks
+				days = 50
+			}
+			add_stability = 0.02
+		}
 	}
 	
 	focus = {
@@ -1027,22 +1027,20 @@ focus_tree = {
 		y = 10
 
 		prerequisite = {
-		focus = BRA_propose_a_research_treaty
-		focus = BRA_propose_an_economic_treaty
+			focus = BRA_propose_a_research_treaty
+			focus = BRA_propose_an_economic_treaty
 		}
 	
-
-	completion_reward = {
-    		501 = {
+		completion_reward = {
+			501 = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 			}
-	add_political_power = -15
-    }
-	
+			add_political_power = -15
+		}	
 	}
 	
 	focus = {
@@ -1053,20 +1051,19 @@ focus_tree = {
 		y = 11
 
 		prerequisite = {
-		focus = BRA_construct_industrial_centers_in_sao_paulo
+			focus = BRA_construct_industrial_centers_in_sao_paulo
 		}
 	
-
-	completion_reward = {
-    		500 = {
+		completion_reward = {
+			500 = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 			}
-	add_political_power = -15		
-    }
+			add_political_power = -15		
+		}
 	
 	}
 	
@@ -1078,14 +1075,12 @@ focus_tree = {
 		y = 12
 
 		prerequisite = {
-		focus = BRA_construct_industrial_centers_in_rio_de_janeiro
+			focus = BRA_construct_industrial_centers_in_rio_de_janeiro
 		}
-	
 
-	completion_reward = {
-	add_political_power = 15
-	}
-	
+		completion_reward = {
+			add_political_power = 15
+		}	
 	}
 	
 	
@@ -1101,13 +1096,13 @@ focus_tree = {
 		}
 
 		prerequisite = {
-		focus = BRA_the_rise_of_the_empire
+			focus = BRA_the_rise_of_the_empire
 		}
 	
 
-	completion_reward = {
-    add_political_power = 45
-	}
+		completion_reward = {
+			add_political_power = 45
+		}
 	
 	}
 	
@@ -1119,17 +1114,16 @@ focus_tree = {
 		y = 2
 
 		prerequisite = {
-		focus = BRA_discuss_our_politics
+			focus = BRA_discuss_our_politics
 		}
 		
 		ai_will_do = {
 			factor = 80
 		}
-	
 
-	completion_reward = {
-    add_political_power = 30
-	}
+		completion_reward = {
+			add_political_power = 30
+		}
 	
 	}
 	
@@ -1141,19 +1135,17 @@ focus_tree = {
 		y = 3
 
 		prerequisite = {
-		focus = BRA_prepare_the_cabinet
+			focus = BRA_prepare_the_cabinet
 		}
 		
 		ai_will_do = {
 			factor = 80
 		}
-	
 
-	completion_reward = {
-    add_political_power = 15
-	country_event = brazil.5
-	}
-	
+		completion_reward = {
+			add_political_power = 15
+			country_event = brazil.5
+		}
 	}
 	
 	focus = {
@@ -1164,19 +1156,19 @@ focus_tree = {
 		y = 4
 
 		prerequisite = {
-		focus = BRA_reorganize_the_parliament
+			focus = BRA_reorganize_the_parliament
 		}
 		
 		ai_will_do = {
 			factor = 1000
 		}
-	   available = {
-	   date > 1858.01.01
-       }
+		available = {
+			date > 1858.01.01
+		}
 
-	completion_reward = {
-    add_political_power = 10
-	}
+		completion_reward = {
+			add_political_power = 10
+		}
 	
 	}
 	
@@ -1197,13 +1189,13 @@ focus_tree = {
 	   }
 
 	completion_reward = {
-    add_political_power = 10
-	#country_event = brazil.11
-	set_country_flag=brazil_progressive
-	#swap_ideas = {
-	#add_idea = BRA_zacaria_de_gois
-	#remove_idea = BRA_marques_de_olinda
-    #}
+		add_political_power = 10
+		#country_event = brazil.11
+		set_country_flag = brazil_progressive
+		#swap_ideas = {
+		#	add_idea = BRA_zacaria_de_gois
+		#	remove_idea = BRA_marques_de_olinda
+		#}
 	}
 	
 	}
@@ -1217,27 +1209,27 @@ focus_tree = {
 		y = 5
        
 	   
-	   available = {
-	   has_country_flag = BRA_conservative
-	   }
-		prerequisite = {
-		focus = BRA_hold_the_elections
+		available = {
+			has_country_flag = BRA_conservative
 		}
-	   
-	   mutually_exclusive = {
-	   focus = BRA_elect_a_liberal_minister
-	   focus = BRA_elect_a_progressive_minister
-	   }
+		prerequisite = {
+			focus = BRA_hold_the_elections
+		}
+		
+		mutually_exclusive = {
+			focus = BRA_elect_a_liberal_minister
+			focus = BRA_elect_a_progressive_minister
+		}
 
-	completion_reward = {
-    add_political_power = 10
-    	set_country_flag=brazil_conservative
-	#country_event = brazil.12
-	#swap_ideas = {
-	#add_idea = BRA_marques_de_monte_alegre
-	#remove_idea = BRA_marques_de_olinda
-    #}
-	}
+		completion_reward = {
+			add_political_power = 10
+			set_country_flag = brazil_conservative
+			#country_event = brazil.12
+			#swap_ideas = {
+			#	add_idea = BRA_marques_de_monte_alegre
+			#	remove_idea = BRA_marques_de_olinda
+			#}
+		}
 	
 	}
 	
@@ -1247,30 +1239,29 @@ focus_tree = {
 		cost = 70
 		x = 30
 		y = 5
-       
 	   
-	   available = {
-	   has_country_flag = BRA_liberal
-	   }
+		available = {
+			has_country_flag = BRA_liberal
+		}
 		prerequisite = {
-		focus = BRA_hold_the_elections
+			focus = BRA_hold_the_elections
 		}
 	   
-	   mutually_exclusive = {
-	   focus = BRA_elect_a_conservative_minister
-	   focus = BRA_elect_a_progressive_minister
-	   }
+		mutually_exclusive = {
+			focus = BRA_elect_a_conservative_minister
+			focus = BRA_elect_a_progressive_minister
+		}
 
-	completion_reward = {
-    add_political_power = 10
-    	set_country_flag = brazil_liberal
-	#country_event = brazil.13
-	#swap_ideas = {
-	#add_idea = BRA_vinsconde_de_sinimbu
-	#remove_idea = BRA_marques_de_olinda
-    #}
-	}
-	
+		completion_reward = {
+			add_political_power = 10
+			set_country_flag = brazil_liberal
+			#country_event = brazil.13
+			#swap_ideas = {
+				#add_idea = BRA_vinsconde_de_sinimbu
+				#remove_idea = BRA_marques_de_olinda
+			#}
+		}
+
 	}
 	
 	focus = {
@@ -1281,15 +1272,12 @@ focus_tree = {
 		y = 6
 
 		prerequisite = {
-		focus = BRA_elect_a_progressive_minister
+			focus = BRA_elect_a_progressive_minister
 		}
-	   
-	   
-
-	completion_reward = {
-    add_political_power = 15
-	}
-	
+		
+		completion_reward = {
+			add_political_power = 15
+		}
 	}
 	
 	focus = {
@@ -1300,19 +1288,16 @@ focus_tree = {
 		y = 7
 
 		prerequisite = {
-		focus = BRA_progress_and_prosperity
+			focus = BRA_progress_and_prosperity
 		}
-	   
-	   
 
-	completion_reward = {
-    add_stability = 0.01
-	add_popularity = {
+		completion_reward = {
+			add_stability = 0.01
+			add_popularity = {
 				ideology = centrism
 				popularity = 0.1
 			}
-	}
-	
+		}
 	}
 	
 	focus = {
@@ -1798,9 +1783,9 @@ focus_tree = {
 		}
 		
 		
-	completion_reward = {
-		remove_ideas = BRA_divided_parliament
-	}
+		completion_reward = {
+			remove_ideas = BRA_divided_parliament
+		}
 	}
 	
 	focus = {
@@ -1840,9 +1825,9 @@ focus_tree = {
 		}		
 		
 		
-	completion_reward = {
-		add_war_support = 0.015
-	}
+		completion_reward = {
+			add_war_support = 0.015
+		}
 	}
 	
 	focus = {
@@ -1864,11 +1849,10 @@ focus_tree = {
 			factor = 1000
 		}		
 		
-		
-	completion_reward = {
-		add_war_support = 0.035
-		add_political_power = 25
-	}
+		completion_reward = {
+			add_war_support = 0.035
+			add_political_power = 25
+		}
 	}
 	
 focus = {
@@ -2603,8 +2587,19 @@ focus = {
 		}
 		completion_reward = {
 			add_political_power = -30
-			URG = { 
-				country_event = brazil.15 
+			URG = {
+				every_state={
+					limit = { is_owned_by = URG	}
+					add_claim_by = BRA
+				}
+				country_event = brazil.15
+			}
+			URC = {
+				every_state = {
+					limit = { is_owned_by = URC }
+					add_claim_by = BRA
+				}
+				country_event = brazil.15
 			}
 		}
 	}
@@ -2629,6 +2624,9 @@ focus = {
 			every_country = {
 				country_event = brazil.25
 			}
+			hidden_effect = { 
+				add_ideas = { BRA_UCW_volunteers }
+			}
 		}
 	}
 
@@ -2649,7 +2647,7 @@ focus = {
 		}
 		completion_reward = {
 			start_border_war = {
-				change_state_after_war = no
+				change_state_after_war = yes
 				attacker = {
 					state = 502
 					num_provinces = 3
@@ -2658,6 +2656,17 @@ focus = {
 					state = 1097
 					num_provinces = 3
 				}	
+			}
+			hidden_effect = {
+				BRA = {
+					add_manpower = -18000
+					load_oob = "BRA_volunteers2"
+					add_equipment_to_stockpile = {
+						type = cavalry_equipment
+						amount = 1000
+						producer = BRA
+					}
+				}
 			}
 		}
 	}
@@ -2678,10 +2687,6 @@ focus = {
 			factor = 1000
 		}
 		completion_reward = {
-			#create_wargoal = {
-			#	type = take_claimed_state
-			#	target = URG
-			#}
 			every_country = {
 				country_event = brazil.25
 			}
@@ -3137,8 +3142,8 @@ focus = {
 			}
 		}
 		completion_reward = {
-		add_political_power = -50
-		add_stability = -0.01
+			add_political_power = -50
+			add_stability = -0.01
 		}
 	}
 	focus = {
@@ -3147,8 +3152,8 @@ focus = {
 		cost = 70
 		
 		available = {
-			NOT= {has_country_flag=BRA_conservative}
-	}
+			NOT= { has_country_flag = BRA_conservative }
+		}
 		prerequisite = {
 			focus = BRA_american_civil_war
 		}
@@ -3170,9 +3175,10 @@ focus = {
 					modifier = offered_support
 				}
 			}
-		add_stability = 0.01	
+			add_stability = 0.01	
 		}
 	}
+	
 	focus = {
 		id = BRA_ensure_our_neutrality
 		icon = GFX_goal_generic_neutrality_focus
@@ -3186,21 +3192,23 @@ focus = {
 		}
 		x = 47
 		y = 2
-
 	}
 	
 	focus = {
 		id = BRA_take_in_refugees
 		icon = GFX_goal_continuous_boost_freedom
 		cost = 70
+		
 		prerequisite = {
 			focus = BRA_ensure_our_neutrality
 		}
+		
 		completion_reward = {
-	  501 = {
-		add_manpower = 15000
+			501 = {
+				add_manpower = 15000
+			}
 		}
-		}
+		
 		x = 47
 		y = 3
 
@@ -3215,9 +3223,9 @@ focus = {
 		mutually_exclusive = {
 			focus = BRA_honor_our_alliance
 		}
-	available = {
-    has_country_flag=BRA_conservative
-}
+		available = {
+			has_country_flag = BRA_conservative
+		}
 		x = 49
 		y = 1
 		
@@ -3235,7 +3243,6 @@ focus = {
 				}
 			}
 			add_political_power = 50
-			
 		}
 	}
 	focus = {
@@ -3256,7 +3263,15 @@ focus = {
 				}
 			}
 			add_political_power = 100
-			add_stability = -0.01
+			hidden_effect = { 
+				add_ideas = { BRA_ACW_volunteers }
+				load_oob = "BRA_volunteers"
+				add_equipment_to_stockpile = {
+					type = cavalry_equipment
+					amount = 1000
+					producer = BRA
+				}
+			}
 		}
 	}
 	
@@ -3271,7 +3286,7 @@ focus = {
 		y = 3
 		completion_reward = {
 			CSA = {
-		    add_manpower = 5000
+				add_manpower = 5000
 			}
 			add_manpower = 5000
 			add_political_power = 50
