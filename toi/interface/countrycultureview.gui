@@ -673,20 +673,20 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "culture_names"
-			font = "hoi_16mbs"     
-			position = { x = 52 y = 15 }   
+			font = "hoi_16mbs"
+			position = { x = 42 y = 15 }
 			text = "[?state_culture_array^i.GetSubcultureName]"
-			format = center  
-			maxWidth = 112
-			maxHeight = 18 
-			fixedsize = yes 
+			format = left
+			maxWidth = 132
+			maxHeight = 18
+			fixedsize = yes
 		}
-  
-		iconType = { 
-			name = "culture_icons"  
+
+		iconType = {
+			name = "culture_icons"
 			position = { x = -5 y = 0 }
-			spriteType = "GFX_add_pol_idea_button"     
-			#format = left 
+			spriteType = "GFX_add_pol_idea_button"
+			#format = left
 			scale = 0.75
 		}
 
