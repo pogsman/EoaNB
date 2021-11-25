@@ -98,11 +98,32 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_lille_syd_railway
+		id = DEN_focus_fredericia_aarhus_railway
 		icon = GFX_goal_focus_berlin_anhalt_rail
 		relative_position_id = DEN_focus_danish_economy
 		x = -5
 		y = 4
+		cost = 70
+		available = {
+			date > 1867.1.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+		
+		prerequisite = { focus = DEN_focus_aarhus_randers_railway }
+		
+		completion_reward = {
+		    unlock_decision_tooltip = DEN_decision_fredericia_aarhus_railway
+	    }
+    }
+	
+	focus = {
+		id = DEN_focus_lille_syd_railway
+		icon = GFX_goal_focus_berlin_anhalt_rail
+		relative_position_id = DEN_focus_danish_economy
+		x = -5
+		y = 5
 		cost = 70
 		available = {
 			date > 1870.1.1
@@ -111,7 +132,7 @@ focus_tree = {
 			base = 100
 		}
 		
-		prerequisite = { focus = DEN_focus_aarhus_randers_railway }
+		prerequisite = { focus = DEN_focus_fredericia_aarhus_railway }
 
 		completion_reward = {
 		    unlock_decision_tooltip = DEN_decision_lille_syd_railway
@@ -123,7 +144,7 @@ focus_tree = {
 		icon = GFX_goal_focus_berlin_anhalt_rail
 		relative_position_id = DEN_focus_danish_economy
 		x = -5
-		y = 5
+		y = 6
 		cost = 70
 		available = {
 			date > 1875.1.1
@@ -138,27 +159,6 @@ focus_tree = {
             unlock_decision_tooltip = DEN_decision_odense_svendborg_railway
 		}
 	}
-	
-	focus = {
-		id = DEN_focus_aarhus_grenaa_railway
-		icon = GFX_goal_focus_berlin_anhalt_rail
-		relative_position_id = DEN_focus_danish_economy
-		x = -5
-		y = 6
-		cost = 70
-		available = {
-			date > 1876.1.1
-		}
-		ai_will_do = {
-			base = 100
-		}
-		
-		prerequisite = { focus = DEN_focus_odense_svendborg_railway }
-		
-		completion_reward = {
-		    unlock_decision_tooltip = DEN_decision_aarhus_grenaa_railway
-	    }
-    }
 	
 	focus = {
 		id = DEN_focus_infrastructure_bornholm
@@ -666,7 +666,7 @@ focus_tree = {
 			NOT = { has_idea = agrarian }
 		}
 		
-		prerequisite = { focus = DEN_focus_aarhus_grenaa_railway }
+		prerequisite = { focus = DEN_focus_odense_svendborg_railway }
 		prerequisite = { focus = DEN_focus_infrastructure_greenland }
 		prerequisite = { focus = DEN_focus_population_boom }
 		prerequisite = { focus = DEN_focus_dfds_company }
@@ -709,7 +709,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_deal_with_helstaten
-		icon = GFX_Focus_Government_Struggle
+		icon = GFX_focus_denmark_helstaten_four_flag
 		relative_position_id = DEN_focus_danish_imperialism
 		x = -2
 		y = 1
@@ -905,7 +905,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_iceland_question
-		icon = GFX_goal_demand_sudetenland
+		icon = GFX_focus_denmark_iceland_question
 		relative_position_id = DEN_focus_danish_imperialism
 		x = 0
 		y = 2
@@ -996,7 +996,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_appease_icelandic_nationalists
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_focus_denmark_iceland_appeasement
 		relative_position_id = DEN_focus_danish_imperialism
 		x = 1
 		y = 3
@@ -1711,7 +1711,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_danish_military
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_denmark_military
 		x = 34
 		y = 0
 		cost = 70
@@ -1733,7 +1733,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_lundbyes_acts
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_denmark_lundbye
 		relative_position_id = DEN_focus_danish_military
 		x = 0
 		y = 1
@@ -1763,7 +1763,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_army_modernization_efforts
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_focus_denmark_army
 		relative_position_id = DEN_focus_danish_military
 		x = -4
 		y = 2
@@ -1778,12 +1778,13 @@ focus_tree = {
         	army_experience = 10
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
+			unlock_decision_tooltip = DEN_decision_military_uniform_exchange
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_thestrup_army_reforms
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_denmark_thestrup
 		relative_position_id = DEN_focus_danish_military
 		x = -4
 		y = 3
@@ -1815,7 +1816,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_artillery_modernization_efforts
-		icon = GFX_focus_generic_manpower
+		icon = GFX_Focus_Weapon_Canon_7
 		relative_position_id = DEN_focus_danish_military
 		x = -6
 		y = 4
@@ -1834,7 +1835,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_espingoles
-		icon = GFX_focus_generic_manpower
+		icon = GFX_focus_denmark_espingole
 		relative_position_id = DEN_focus_danish_military
 		x = -6
 		y = 5
@@ -1854,7 +1855,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_prince_christians_commission
-		icon = GFX_focus_generic_manpower
+		icon = GFX_Focus_Army_Cavalry
 		relative_position_id = DEN_focus_danish_military
 		x = -4
 		y = 4
@@ -1871,8 +1872,8 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_infantry_battalion_expansion
-		icon = GFX_focus_generic_manpower
+		id = DEN_focus_wartime_battalion_duplication
+		icon = GFX_focus_denmark_duplication
 		relative_position_id = DEN_focus_danish_military
 		x = -4
 		y = 5
@@ -1884,14 +1885,13 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_prince_christians_commission }
 
 		completion_reward = {
-			#add_ideas
-			unlock_decision_tooltip = DEN_decision_promote_talented_leaders
+			unlock_decision_tooltip = DEN_decision_wartime_battalion_duplication
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_rifle_modernization_efforts
-		icon = GFX_focus_generic_manpower
+		icon = GFX_Focus_Rifle_Production
 		relative_position_id = DEN_focus_danish_military
 		x = -2
 		y = 4
@@ -1909,8 +1909,8 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_military_uniforms_exchange
-		icon = GFX_focus_generic_manpower
+		id = DEN_focus_promote_talented_army_leaders
+		icon = GFX_Focus_Army_Staff
 		relative_position_id = DEN_focus_danish_military
 		x = -2
 		y = 5
@@ -1922,13 +1922,13 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_rifle_modernization_efforts }
 
 		completion_reward = {
-			#unlock_decision_tooltip = 
+			unlock_decision_tooltip = DEN_decision_promote_talented_army_leaders
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_new_conscription_law
-		icon = GFX_focus_generic_manpower
+		icon = GFX_Focus_Army_Conscription
 		relative_position_id = DEN_focus_danish_military
 		x = -5
 		y = 6
@@ -1938,7 +1938,7 @@ focus_tree = {
 		}
 
 		prerequisite = { focus = DEN_focus_espingoles }
-		prerequisite = { focus = DEN_focus_infantry_battalion_expansion }
+		prerequisite = { focus = DEN_focus_wartime_battalion_duplication }
 
 		completion_reward = {
 			unlock_decision_tooltip = DEN_decision_new_conscription_law
@@ -1947,7 +1947,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_frilodsmaend
-		icon = GFX_focus_generic_manpower
+		icon = GFX_focus_denmark_frilodsmaend
 		relative_position_id = DEN_focus_danish_military
 		x = -3
 		y = 6
@@ -1956,8 +1956,8 @@ focus_tree = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_infantry_battalion_expansion }
-		prerequisite = { focus = DEN_focus_military_uniforms_exchange }
+		prerequisite = { focus = DEN_focus_wartime_battalion_duplication }
+		prerequisite = { focus = DEN_focus_promote_talented_army_leaders }
 
 		completion_reward = {
 			add_ideas = DEN_idea_frilodsmaend
@@ -1966,7 +1966,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_increase_army_budget
-		icon = GFX_focus_generic_manpower
+		icon = GFX_Focus_Army_Budget
 		relative_position_id = DEN_focus_danish_military
 		x = -4
 		y = 7
@@ -1979,13 +1979,28 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_frilodsmaend }
 
 		completion_reward = {
-			unlock_decision_tooltip = DEN_decision_increase_army_spending
+			if = {
+				limit = {
+					has_active_mission = DEN_mission_thestrups_army_reforms
+					OR = {
+						has_idea = one_percent
+						has_idea = two_percent
+						has_idea = three_percent
+					}
+				}
+				unlock_decision_tooltip = DEN_decision_increase_army_budget
+			}
+			else = {
+				add_political_power = 25
+				army_experience = 25
+				add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			}
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_navy_modernization
-		icon = GFX_focus_denmark_sovaernet
+		icon = GFX_focus_denmark_navy
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 2
@@ -1997,9 +2012,10 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_lundbyes_acts }
 
 		completion_reward = {
-		    unlock_decision_tooltip = DEN_decision_the_15_april_act
-			add_tech_bonus = { bonus = 0.55 uses = 2 category = naval_doctrine }
-			add_war_support = 0.02
+		    navy_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_equipment }
+			unlock_decision_tooltip = DEN_decision_move_navy_base_to_holmen
 		}
 	}
 	
@@ -2017,14 +2033,18 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_navy_modernization }
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_equipment }
-        	add_tech_bonus = { ahead_reduction = 1 uses = 1 category = naval_equipment }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_equipment }
+        	add_tech_bonus = { ahead_reduction = 0.5 uses = 1 category = naval_equipment }
+			activate_mission_tooltip = DEN_mission_study_modern_warships
+			hidden_effect = {
+				activate_mission = DEN_mission_study_modern_warships
+			}
 		}
 	}
 	
 	focus = {
-		id = DEN_focus_iron_hulls
-		icon = GFX_focus_gunboat_basic
+		id = DEN_focus_reinforced_hulls
+		icon = GFX_Focus_Armor_Plates
 		relative_position_id = DEN_focus_danish_military
 		x = 2
 		y = 4
@@ -2036,37 +2056,60 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_study_modern_warships }
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.75 uses = 1 category = naval_mtg_ironclad_hulls_tech }
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_equipment }
+			navy_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_mtg_gunboat_hulls_tech }
 		}
 	}
 	
 	focus = {
-		id = DEN_focus_ironclad_schooners
-		icon = GFX_focus_gunboat_basic
+		id = DEN_focus_armored_schooners
+		icon = GFX_Focus_Losange_Gunboat
 		relative_position_id = DEN_focus_danish_military
 		x = 2
 		y = 5
 		cost = 70
+		available = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				has_tech = tech_naval_mtg_1860_gunboat
+			}
+			else = {
+				has_tech = tech_naval_1860_gunboat
+			}
+		}
 		ai_will_do = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_iron_hulls }
+		prerequisite = { focus = DEN_focus_reinforced_hulls }
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 1 uses = 1 category = naval_mtg_ironclad_tech }
-			#unlock_decision_tooltip =
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_mtg_gunboat_tech }
+			unlock_decision_tooltip = DEN_decision_foreign_armored_schooners
+			unlock_decision_tooltip = DEN_decision_danish_armored_schooners
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_monitor_turrets
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Turret_Early
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 4
 		cost = 70
+		available = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				has_tech = tech_naval_mtg_prototype_ironclad
+			}
+			else = {
+				has_tech = tech_naval_prototype_ironclad
+			}
+		}
 		ai_will_do = {
 			base = 100
 		}
@@ -2081,7 +2124,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_rolf_krake
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Losange_Ironclad
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 5
@@ -2094,13 +2137,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = { bonus = 1 uses = 1 category = naval_mtg_capital_ship_tech }
-			#unlock_decision_tooltip =
+			unlock_decision_tooltip = DEN_decision_order_the_rolf_krake
+			unlock_decision_tooltip = DEN_decision_refit_the_dannebrog_to_ironclad
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_modern_engines
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Screw_Engine
 		relative_position_id = DEN_focus_danish_military
 		x = 6
 		y = 4
@@ -2119,7 +2163,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_screw_frigates
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Losange_Frigate
 		relative_position_id = DEN_focus_danish_military
 		x = 6
 		y = 5
@@ -2132,13 +2176,13 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = { bonus = 1 uses = 1 category = naval_mtg_frigate_tech }
-			#unlock_decision_tooltip =
+			unlock_decision_tooltip = DEN_decision_danish_screw_frigates
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_atlantic_naval_bases
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Naval_Supplies
 		relative_position_id = DEN_focus_danish_military
 		x = 3
 		y = 6
@@ -2147,17 +2191,17 @@ focus_tree = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_ironclad_schooners }
+		prerequisite = { focus = DEN_focus_armored_schooners }
 		prerequisite = { focus = DEN_focus_rolf_krake }
 
 		completion_reward = {
-			#country_event =
+			country_event = { id = denmark_military.8 }
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_modern_naval_tactics
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Navy_Tactics
 		relative_position_id = DEN_focus_danish_military
 		x = 5
 		y = 6
@@ -2170,13 +2214,14 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_screw_frigates }
 
 		completion_reward = {
-			#country_event =
+			navy_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_doctrine }
 		}
 	}
 	
 	focus = {
 		id = DEN_focus_increase_navy_budget
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Navy_Budget
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 7
@@ -2189,7 +2234,21 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_modern_naval_tactics }
 
 		completion_reward = {
-			#unlock_decision_tooltip = 
+			if = {
+				limit = {
+					OR = {
+						has_idea = navinfra_no_naval_infrastructure
+						has_idea = navinfra_low_naval_infrastructure
+						has_idea = navinfra_decent_naval_infrastructure
+					}
+				}
+				unlock_decision_tooltip = DEN_decision_increase_navy_budget
+			}
+			else = {
+				add_political_power = 25
+				navy_experience = 25
+				add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+			}
 		}
 	}
 
@@ -2208,7 +2267,8 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_increase_navy_budget }
 
 		completion_reward = {
-        	#add_tech_bonus = { bonus = 0.75 uses = 1 category = land_doctrine }
+        	add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
 		}
 	}
 

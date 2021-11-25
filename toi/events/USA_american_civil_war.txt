@@ -1846,7 +1846,7 @@ country_event = {
 							limit = { USA = { owns_state = 364 } }
 							transfer_state = 364
 							add_state_core = 364
-							set_capital = 364
+							set_capital = { state = 364 }
 						}
 						else = {
 							USA = {
@@ -1855,7 +1855,7 @@ country_event = {
 									CSA = {
 										transfer_state = PREV
 										add_state_core = PREV
-										set_capital = PREV
+										set_capital = { state = PREV }
 									}
 								}
 							}
@@ -2875,7 +2875,7 @@ country_event = {
 						if = {
 							limit = { USA = { owns_state = 1022 } }
 							transfer_state = 1022
-							add_state_core 1022
+							add_state_core = 1022
 						}
 					}
 					else = {
@@ -2890,7 +2890,7 @@ country_event = {
 							limit = { USA = { owns_state = 1022 } }
 							CUB = {
 								transfer_state = 1022
-								add_state_core 1022
+								add_state_core = 1022
 							}
 						}
 						CUB = {
@@ -6731,7 +6731,7 @@ country_event = {
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 					picture = ""
 					expire = "1885.3.6"
-					ideology = moderatism
+					ideology = federal
 				}
 				if = {
 					limit = {
@@ -6903,7 +6903,7 @@ country_event = {
 				create_country_leader = {
 					name = "John C. Fremont"
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-					picture = "Portrait_USA_John_C_Fremont.dds"
+					picture = "USA/Portrait_USA_John_C_Fremont.dds"
 					expire = "1885.3.6"
 					ideology = moderatism
 				}
@@ -7316,7 +7316,7 @@ country_event = {
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 					picture = "Portrait_USA_Daniel_Edgar_Sickles.dds"
 					expire = "1885.3.6"
-					ideology = moderatism
+					ideology = federal
 				}
 				if = {
 					limit = {
@@ -7980,7 +7980,7 @@ country_event = {
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 			    picture = ""
 			    expire = "1894.1.6"
-			    ideology = liberal_social
+			    ideology = social_liberal
 			    traits = {
 			    }
 			  }
@@ -8172,7 +8172,7 @@ country_event = {
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 					picture = "Portrait_USA_Wilmot_Brookings.dds"
 					expire = "1905.1.6"
-					ideology = moderatism
+					ideology = federal
 					traits = {
 					}
 				}
@@ -8383,7 +8383,7 @@ country_event = {
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 			    picture = "Portrait_USA_Abraham_Lincoln.dds"
 			    expire = "1894.1.6"
-			    ideology = liberal_social
+			    ideology = social_liberal
 			    traits = {
 			    }
 			  }
@@ -9012,7 +9012,7 @@ country_event = {
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 			    picture = "Portrait_NEG_Hannibal_Hamlin.dds"
 			    expire = "1947.1.1"
-			    ideology = social_liberal
+			    ideology = liberal_social
 			  }
 				if = {
 					limit = { country_exists = CSA }
@@ -11306,7 +11306,7 @@ country_event = {
 		}
 		hidden_effect = {
 			add_timed_idea = {
-				idea = Generic_Martial_law_1
+				idea = Generic_Martial_Law_1
 				days = 100
 			}
 			if = {
@@ -11343,7 +11343,7 @@ country_event = {
 	immediate = {
 		add_manpower = -1200
 		hidden_effect = {
-			remove_ideas = Generic_Martial_law_1
+			remove_ideas = Generic_Martial_Law_1
 		}
 	}
 	option = {

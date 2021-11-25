@@ -133,7 +133,6 @@
 		tech_naval_mtg_32_pounder_battery = 1
 		tech_naval_mtg_sails = 1
 		tech_naval_mtg_paddle_wheels = 1
-		tech_naval_mtg_steam_driven_single_screw_propeller = 1
 		tech_naval_mtg_crows_nest = 1
 		tech_naval_mtg_repair_crews = 1
 		tech_naval_mtg_capital_ship_naval_transportation = 1
@@ -165,7 +164,7 @@
 	create_country_leader = {
 		name = "Carl Christoffer Georg Andræ"
 		desc = "POLITICS_TEMP_DESC"
-		picture = "Portrait_DEN_Carl_Christoffer_Georg_Andrae.png"
+		picture = "gfx/leaders/DEN/Portrait_DEN_Carl_Christoffer_Georg_Andrae.png"
 		expire = 1857.12.31
 		ideology = conserv
 	}
@@ -181,7 +180,7 @@
 	create_country_leader = {
 		name = "Frederick VII"
 		desc = "POLITICS_GENERIC_EOANB_DESC"
-		picture = "Portrait_DEN_Frederick_VII.png"
+		picture = "gfx/leaders/DEN/Portrait_DEN_Frederick_VII.png"
 		expire = 1863.12.31
 		ideology = constit_monarch
 	}
@@ -300,12 +299,24 @@
 		id = 3702
 	}
 	
+	create_navy_leader = {
+		name = "Carl van Dockum" #1847 Captain at Sea, 1860 Rear Admiral
+		picture = "Portrait_DEN_Carl_van_Dockum.png"
+		traits = {	}
+		skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		id = 3706
+	}
+	
 	if = {
 		limit = { has_dlc = "Man the Guns" }
 		create_equipment_variant = {
 			name = "Brigg Class"
 			type = ship_hull_corvette_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_CO_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -321,7 +332,7 @@
 		create_equipment_variant = {
 			name = "Corvette Class"
 			type = ship_hull_corvette_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_CO_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -337,7 +348,7 @@
 		create_equipment_variant = {
 			name = "Paddle Steamer Class"
 			type = ship_hull_corvette_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_CO_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -353,7 +364,7 @@
 		create_equipment_variant = {
 			name = "Gunboat Class"
 			type = ship_hull_gunboat_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_GB_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -371,12 +382,12 @@
 		create_equipment_variant = {
 			name = "1850 Gunboat Class"
 			type = ship_hull_gunboat_1
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_GB_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_1
 				fixed_ship_fire_control_system_slot = fire_control_system_0
-				fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
+				fixed_ship_engine_slot = ship_engine_paddle_gunboat
 				fixed_ship_secondaries_slot = empty
 				fixed_ship_armor_slot = ship_armor_capital_hardwood_0
 				mid_1_custom_slot = empty
@@ -389,7 +400,7 @@
 		create_equipment_variant = {
 			name = "Frigate Class"
 			type = ship_hull_frigate_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_IC_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -407,12 +418,30 @@
 		create_equipment_variant = {
 			name = "1850 Frigate Class"
 			type = ship_hull_frigate_1
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_IC_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_1
 				fixed_ship_fire_control_system_slot = fire_control_system_0
 				fixed_ship_engine_slot = ship_engine_sail_2
+				fixed_ship_armor_slot = ship_armor_capital_hardwood_0
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_cannon_battery_1
+				mid_2_custom_slot = ship_cannon_battery_1
+				rear_1_custom_slot = empty
+			}
+			obsolete = yes
+		}
+		
+		create_equipment_variant = {
+			name = "Niels Juel Class"
+			type = ship_hull_frigate_1
+			name_group = DEN_IC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_cannon_battery_1
+				fixed_ship_fire_control_system_slot = fire_control_system_0
+				fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
 				fixed_ship_armor_slot = ship_armor_capital_hardwood_0
 				front_1_custom_slot = empty
 				mid_1_custom_slot = ship_cannon_battery_1
@@ -425,7 +454,7 @@
 		create_equipment_variant = {
 			name = "Ship of the Line Class"
 			type = ship_hull_lineship_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_IC_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_0
@@ -445,7 +474,7 @@
 		create_equipment_variant = {
 			name = "Late Ship of the Line Class"
 			type = ship_hull_lineship_0
-			name_group = GER_CA_HISTORICAL
+			name_group = DEN_IC_HISTORICAL
 			parent_version = 0
 			modules = {
 				fixed_ship_battery_slot = ship_cannon_battery_1
@@ -465,7 +494,7 @@
 	#	create_equipment_variant = {
 	#		name = "Early Ironclad Class"
 	#		type = ship_hull_ironclad_0
-	#		name_group = GER_CA_HISTORICAL
+	#		name_group = DEN_IC_HISTORICAL
 	#		parent_version = 0
 	#		modules = {
 	#			fixed_ship_battery_slot = ship_cannon_battery_1
@@ -510,6 +539,17 @@
 			name = "Uffo"
 			requested_factories = 1
 			progress = 0.8
+			amount = 1
+		}
+		
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_gunboat_1
+				version_name = "1850 Gunboat Class"
+			}
+			name = "Thura"
+			requested_factories = 1
+			progress = 0.75
 			amount = 1
 		}
 	}

@@ -2,6 +2,8 @@ state = {
 	id = 1369
 	name = "STATE_1369"
 	
+
+	local_supplies=0.0 
 	history = {
 		owner = SMK
 		add_core_of = SMK
@@ -27,6 +29,9 @@ state = {
 		add_to_array = { state_culture_array_num = 0.023 }
 		add_to_array = { state_culture_array = 118 } #turkmen
 		add_to_array = { state_culture_array_num = 0.021 }
+		
+		add_to_array = { state_religion_array = 8 } # Sunni	
+		add_to_array = { state_religion_array_num = 1.00 }
 	}
 		
 	provinces = {

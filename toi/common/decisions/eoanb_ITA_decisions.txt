@@ -353,6 +353,14 @@ ITA_decisions_category_wars_and_conflicts = {
 								has_country_flag = PIE_RUS_Alliance_2IP
 							}
 						}
+						###Villafranca event
+						###add for france
+						PIE = {
+							country_event = {
+								id = sardinia.125
+								days = 2
+							}
+						}
 						PAP = {
 							country_event = {
 								id = sardinia.122
@@ -460,6 +468,13 @@ ITA_decisions_category_wars_and_conflicts = {
 								tag = RUS
 							}
 						}
+						####Villafranca event ### Add for Russia
+						PIE = {
+							country_event = {
+								id = sardinia.125
+								days = 2
+							}
+						}
 						PAP = {
 							country_event = {
 								id = sardinia.122
@@ -539,6 +554,10 @@ ITA_decisions_category_wars_and_conflicts = {
 							#}
 						}
 					}
+					##### Central States Events
+					## needs check for if tuscany resisted or not, if bologna existed. Puppet ones which did not
+
+
 				}
 			}
 			else_if = {
@@ -576,16 +595,16 @@ ITA_decisions_category_wars_and_conflicts = {
 					date > 1862.1.1
 				}
 				# Optional Trigger in case war lasting too long
-				AUS = {
-					country_event = {
-						id = ita_confederation.6
-					}
-					annex_country = {
-						target = PIE
-					}
-					set_country_flag = ITA_AUS_Divide_Italy_Yes
-					set_country_flag = ITA_AUS_won_2I_Divide_Italy
-				}
+				#AUS = {
+				#	country_event = {
+				#		id = ita_confederation.6
+				#	}
+				#	annex_country = {
+				#		target = PIE
+				#	}
+				#	set_country_flag = ITA_AUS_Divide_Italy_Yes
+				#	set_country_flag = ITA_AUS_won_2I_Divide_Italy
+				#}
 				# Stalemate if it is lasting too long
 			}
 			else_if = {
@@ -738,9 +757,12 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				# Peace Treaty Event for X_country victory
 				PIE = {
-					transfer_state = 161
+					#transfer_state = 161
 					transfer_state = 157
 					white_peace = PAP
+					country_event = {
+						id = sardinia.147
+					}
 				}
 			}
 			if = {
@@ -786,7 +808,7 @@ ITA_decisions_category_wars_and_conflicts = {
 					date > 1860.12.31
 				}
 				PIE = {
-					transfer_state = 161
+					#transfer_state = 161
 					transfer_state = 157
 				}
 			}
@@ -840,22 +862,25 @@ ITA_decisions_category_wars_and_conflicts = {
 						type = annex_everything
 					}
 				}
-				complete_national_focus = PIE_The_War_Starts
-				activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
-				PRM = {
-					country_event = {
-						id = sardinia.57
-					}
+			}
+			#complete_national_focus = PIE_The_War_Starts
+			activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
+			PRM = {
+				country_event = {
+					id = sardinia.57
+					days = 5
 				}
-				TUS = {
-					country_event = {
-						id = sardinia.57
-					}
+			}
+			TUS = {
+				country_event = {
+					id = sardinia.57
+					days = 5
 				}
-				MOD = {
-					country_event = {
-						id = sardinia.57
-					}
+			}
+			MOD = {
+				country_event = {
+					id = sardinia.57
+					days = 5
 				}
 			}
 		}

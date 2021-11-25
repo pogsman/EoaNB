@@ -45,8 +45,9 @@
 		navinfra_no_naval_infrastructure
 		sfund_private_ventures_only
 
-				#NATIONAL SPIRITS
-
+	#NATIONAL SPIRITS
+		SWI_The_Neuchatel_Crisis
+		SWI_The_Federal_Constitution
 	}
 
 
@@ -138,7 +139,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Swiss Parliament"
 	desc = "POLITICS_TEMP_DESC"
-	picture = "Portrait_SWI_Caspar_Decurtins.dds"
+	picture = "Portrait_SWI_Parliament.dds"
 	expire = "1858.1.1"
 	ideology = parlia_repub
 	traits = { }

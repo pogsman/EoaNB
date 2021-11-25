@@ -53,7 +53,7 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 28
+		x = 27
 		y = 0
 		available = {
 			OR = {
@@ -137,19 +137,14 @@ focus_tree = {
 				is_historical_focus_on = yes
 				factor = 0
 			}
-			modifier = {
-				NOT = {
-					is_historical_focus_on = yes
-				}
-				factor = 30
-			}
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_SOCIAL_EGAL
+			FOCUS_FILTER_ALTHISTORY
 		}
 		x = 6
-		y = 1
+		y = 1 
 		completion_reward = {
 			army_experience = 10
 			add_stability = 0.05
@@ -739,7 +734,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Support_for_Garibaldi
 		icon = GFX_focus_PIE_Garibaldi2
-		cost = 50
+		cost = 25
 		prerequisite = {
 			focus = PIE_Encourage_Resistance_Italy
 		}
@@ -774,8 +769,22 @@ focus_tree = {
 					set_cosmetic_tag = CBI_garibaldi
 				}
 			}
+			if = {
+				limit = {
+					has_country_flag = PIE_British_Diplomacy_yes
+				}
+				country_event = {
+					id = sardinia.148
+				}
+			}
 			country_event = {
 				id = sardinia.70
+			}
+			NSC = {
+				news_event = {
+					id = sardinia_news.12
+					days = 10
+				}
 			}
 		}
 	}
@@ -817,7 +826,10 @@ focus_tree = {
 	focus = {
 		id = PIE_Influence_Central_States
 		icon = GFX_focus_central_italian_states
-		cost = 35
+		cost = 25
+		bypass = {
+			has_country_flag = PIE_Central_States_Flag
+		}
 		prerequisite = {
 			focus = PIE_Encourage_Resistance_Italy
 		}
@@ -830,6 +842,9 @@ focus_tree = {
 		cost = 50
 		prerequisite = {
 			focus = PIE_Influence_Central_States
+		}
+		bypass = {
+			has_country_flag = PIE_Central_States_Flag
 		}
 		x = 23
 		y = 4
@@ -846,9 +861,27 @@ focus_tree = {
 		}
 		available = {
 			has_completed_focus = PIE_The_War_Ends
+			custom_trigger_tooltip = {
+				tooltip = PIE_Central_States_Flag_TT
+				has_country_flag = PIE_Central_States_Flag
+			}
 		}
 		x = 23
 		y = 5
+
+		completion_reward = {
+			TUS = {
+				annex_country = {
+					target = PRM
+					transfer_troops = yes
+				}
+				annex_country = {
+					target = TIC
+					transfer_troops = yes
+				}
+			}
+			####Event for tuscany instead maybe
+		}
 	}
 	focus = {
 		id = PIE_Annex_Central_Italian_States
@@ -857,8 +890,19 @@ focus_tree = {
 		prerequisite = {
 			focus = PIE_Formation_of_the_Central_States
 		}
+		available = {
+
+		}
 		x = 23
 		y = 6
+
+		completion_reward = {
+			### Check for if tuscany has gone down its path
+			annex_country = {
+				target = TUS
+				transfer_troops = yes
+			}
+		}
 	}
 	# Massive icon focus, needs approval
 	#focus = {
@@ -892,12 +936,6 @@ focus_tree = {
 				is_historical_focus_on = yes
 				factor = 100
 			}
-			modifier = {
-				NOT = {
-					is_historical_focus_on = yes
-				}
-				factor = 35
-			}
 		}
 		bypass = {
 			#has_country_flag = PIE_Plombieres_Starts_Focus_Clear
@@ -925,7 +963,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Plombieres_Meeting
 		icon = GFX_focus_Globe_colonial_RUS
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Seek_Help_Major
 		}
@@ -948,7 +986,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Casus_Belli_ft
 		icon = GFX_goal_focus_ally_RUS
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Plombieres_Meeting
 		}
@@ -1177,6 +1215,7 @@ focus_tree = {
 				has_country_flag = PIE_Plombieres_complete
 				}
 			}
+			date > 1858.12.1
 		}
 		x = 17
 		y = 6
@@ -1233,6 +1272,12 @@ focus_tree = {
 		prerequisite = {
 			focus = PIE_Plan_for_Plombieres
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no
+			}
+		}
 		x = 17
 		y = 7
 	}
@@ -1248,7 +1293,7 @@ focus_tree = {
 			FOCUS_FILTER_RESEARCH
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 28
+		x = 27
 		y = 1
 		completion_reward = {
 			country_event = {
@@ -1276,7 +1321,7 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 28
+		x = 27
 		y = 2
 		bypass = {
 			has_idea = industrializing
@@ -1298,7 +1343,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 27
+		x = 26
 		y = 3
 		completion_reward = {
 			add_resource = {
@@ -1319,7 +1364,7 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 29
+		x = 28
 		y = 3
 		completion_reward = {
 			add_offsite_building = {
@@ -1338,7 +1383,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 29
+		x = 28
 		y = 4
 		completion_reward = {
 			add_offsite_building = {
@@ -1357,7 +1402,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 29
+		x = 28
 		y = 5
 		completion_reward = {
 			add_offsite_building = {
@@ -1368,7 +1413,7 @@ focus_tree = {
 	}
 	focus = {
 		id = PIE_Army_Focus
-		icon = GFX_focus_generic_commonwealth_build_infantry
+		icon = GFX_focus_PIE_sardinian_army
 		cost = 35
 		prerequisite = {
 			focus = PIE_Military_Focus
@@ -1387,6 +1432,28 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+		}
+	}
+	focus = {
+		id = PIE_Kings_Army_Reform
+		icon = GFX_focus_PIE_kings_military_code
+		cost = 15
+		prerequisite = {
+			focus = PIE_Army_Focus
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_MILITARY
+		}
+		available = {
+			date > 1858.1.1
+		}
+		x = 30
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = sardinia.146
 			}
 		}
 	}
@@ -1459,12 +1526,11 @@ focus_tree = {
 			#}
 		}
 		completion_reward = {
-			#annex_country = {
-			#	target = TUS
-			#	transfer_troops = yes
-			#}
-		}
-		bypass = {
+			FRA = {
+				country_event = {
+					id = sardinia.134
+				}
+			}
 		}
 	}
 	focus = {
@@ -1561,21 +1627,20 @@ focus_tree = {
 		prerequisite = {
 			focus = PIE_post_war_organization
 		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = PIE_Russian_Focus_Trigger_2IP_TT
-				OR = {
-					has_country_flag = PIE_RUS_Assistance_2IP
-					has_country_flag = PIE_RUS_Alliance_2IP
-				}
-			}
-		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		x = 17
 		y = 11
 		completion_reward = {
+			add_state_core = 159
+			if = {
+				limit = {
+					owns_state = 160
+				}
+				add_state_core = 160
+			}
+			add_stability = 0.02
 		}
 	}
 	focus = {
@@ -1597,6 +1662,34 @@ focus_tree = {
 		x = 15
 		y = 10
 		completion_reward = {
+			country_event = {
+				id = sardinia.154
+			}
+			RUS = {
+				country_event = {
+					id = sardinia.154
+				}
+			}
+			AUS = {
+				country_event = {
+					id = sardinia.154
+				}
+			}
+			ENG = {
+				country_event = {
+					id = sardinia.154
+				}
+			}
+			FRA = {
+				country_event = {
+					id = sardinia.154
+				}
+			}
+			PRS = {
+				country_event = {
+					id = sardinia.154
+				}
+			}
 		}
 	}
 	focus = {
@@ -1682,6 +1775,9 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
 		}
+		bypass = {
+			has_completed_focus = PIE_The_War_Ends
+		}
 		x = 18
 		y = 8
 		available = {
@@ -1706,6 +1802,9 @@ focus_tree = {
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
+		}
+		bypass = {
+			has_completed_focus = PIE_The_War_Ends
 		}
 		x = 16
 		y = 8
@@ -1815,7 +1914,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 27
+		x = 26
 		y = 4
 		completion_reward = {
 			add_resource = {
@@ -1840,7 +1939,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		x = 27
+		x = 26
 		y = 5
 		completion_reward = {
 			add_resource = {

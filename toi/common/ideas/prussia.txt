@@ -1247,80 +1247,6 @@ ideas = {
 		
 		### NGC POLITICS ###
 		
-		PRS_idea_ngc_constitution_bismarck = {
-			allowed = {
-				original_tag = PRS
-			}
-
-			removal_cost = -1
-
-			picture = PRS_NGC_constitution
-
-			modifier = {
-				political_power_factor = 0.15
-				max_command_power = 25
-				research_speed_factor = -0.03
-				opinion_gain_monthly_factor = -0.02
-				political_advisor_cost_factor = 0.25
-				consumer_goods_factor = 0.06
-				custom_modifier_tooltip = PRS_idea_ngc_constitution_bismarck_Legitimacy_View_tt
-			}
-		}
-		
-		PRS_idea_ngc_constitution_other = {
-			allowed = {
-				original_tag = PRS
-			}
-
-			removal_cost = -1
-
-			picture = PRS_NGC_constitution
-
-			modifier = {
-				political_power_factor = 0.1
-				research_speed_factor = -0.01
-				opinion_gain_monthly_factor = 0.02
-				consumer_goods_factor = 0.12
-				custom_modifier_tooltip = PRS_idea_ngc_constitution_other_Legitimacy_View_tt
-			}
-		}
-		
-		PRS_idea_ngc_constitution_liberal = {
-			allowed = {
-				original_tag = PRS
-			}
-
-			removal_cost = -1
-
-			picture = PRS_NGC_constitution
-
-			modifier = {
-				political_power_factor = 0.05
-				max_command_power = -25
-				research_speed_factor = 0.02
-				opinion_gain_monthly_factor = 0.05
-				political_advisor_cost_factor = -0.25
-				consumer_goods_factor = 0.18
-				custom_modifier_tooltip = PRS_idea_ngc_constitution_liberal_Legitimacy_View_tt
-			}
-		}
-		
-		PRS_idea_ngc_constitution_stopgap = {
-			allowed = {
-				original_tag = PRS
-			}
-
-			removal_cost = -1
-
-			picture = PRS_NGC_constitution
-
-			modifier = {
-				political_power_factor = -0.05
-				max_command_power = -25
-				consumer_goods_factor = 0.15
-			}
-		}
-		
 		PRS_idea_foreign_ministry_1 = {
 			allowed = {
 				original_tag = PRS
@@ -1975,7 +1901,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_execute_hobrecht_plan
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_execute_hobrecht_plan
+				}
 			}
 
 			traits = {
@@ -2129,7 +2060,12 @@ ideas = {
 			
 			visible = {
 				NOT = { has_country_flag = PRS_gustav_freytag_dead }
-				has_completed_focus = PRS_focus_north_german_confederation
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_north_german_confederation
+				}
 			}
 
 			traits = {
@@ -2304,7 +2240,12 @@ ideas = {
 			visible = {
 				NOT = { has_government = traditional_conservatism }
 				NOT = { has_government = autocracy }
-				has_completed_focus = PRS_focus_king_deposed
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_king_deposed
+				}
 				NOT = { has_country_flag = PRS_wilhelm_liebknecht_dead }
 			}
 
@@ -2440,7 +2381,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_vulcan_ag
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_vulcan_ag
+				}
 				owns_state = 62
 			}
 
@@ -2463,7 +2409,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_build_high_fleet
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_build_high_fleet
+				}
 				owns_state = 1002
 			}
 
@@ -2491,7 +2442,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_spandau_arsenal
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_spandau_arsenal
+				}
 				owns_state = 64
 			}
 
@@ -2514,7 +2470,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_krupp_cooperation
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_krupp_cooperation
+				}
 				owns_state = 1009
 			}
 
@@ -2540,7 +2501,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_borsig
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_borsig
+				}
 				owns_state = 951
 			}
 
@@ -2560,7 +2526,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_krupp_cooperation
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_krupp_cooperation
+				}
 				owns_state = 1009
 			}
 
@@ -2580,7 +2551,12 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = PRS_focus_siemens_halske
+				if = {
+					limit = {
+						PRS_trigger_formed_germany = no
+					}
+					has_completed_focus = PRS_focus_siemens_halske
+				}
 				owns_state = 951
 			}
 

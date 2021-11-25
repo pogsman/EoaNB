@@ -1723,50 +1723,50 @@ country_event = {
 }
 
 #The Isle of Man Question
-country_event = {
-	id = britainfocus.2
-	title = britainfocus.2.t
-	desc = britainfocus.2.d
-	picture = GFX_report_event_british_parliament
-
-	is_triggered_only = yes
-
-	option = {
-		name = britainfocus.2.a
-		ai_chance = { factor = 85 }
-		add_political_power = 50
-		1152 = { add_manpower = 2000 }
-	}
-
-	option = {
-		name = britainfocus.2.b
-		ai_chance = {
-			factor = 15
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		release = IOM
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = IOM
-				autonomy_state = autonomy_integrated_puppet
-			}
-		}
-		else = {
-			ENG = { puppet = IOM }
-		}
-	}
-
-}
+#country_event = {
+#	id = britainfocus.2
+#	title = britainfocus.2.t
+#	desc = britainfocus.2.d
+#	picture = GFX_report_event_british_parliament
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = britainfocus.2.a
+#		ai_chance = { factor = 85 }
+#		add_political_power = 50
+#		1152 = { add_manpower = 2000 }
+#	}
+#
+#	option = {
+#		name = britainfocus.2.b
+#		ai_chance = {
+#			factor = 15
+#			modifier = {
+#				factor = 0
+#				is_historical_focus_on = yes
+#			}
+#		}
+#		release = IOM
+#		if = {
+#			limit = {
+#				OR = {
+#					has_dlc = "Together for Victory"
+#					has_dlc = "Waking the Tiger"
+#					has_dlc = "Death or Dishonor"
+#				}
+#			}
+#			set_autonomy = {
+#				target = IOM
+#				autonomy_state = autonomy_integrated_puppet
+#			}
+#		}
+#		else = {
+#			ENG = { puppet = IOM }
+#		}
+#	}
+#
+#}
 
 #The Calais Staple Port
 country_event = {
@@ -3362,26 +3362,10 @@ country_event = {
 	desc = britainworkerunrest.7.d
 	picture = GFX_report_event_iww_demonstration
 
+	is_triggered_only = yes
+
 	trigger = {
 		TAG = ENG
-		OR = {
-			has_idea = ENG_idea_working_class_exploitation
-			has_idea = ENG_idea_working_class_exploitation_2
-			has_idea = ENG_idea_working_class_exploitation_3
-			has_idea = ENG_idea_working_class_exploitation_4
-		}
-		has_country_flag = ENG_workers_revolution_impending
-		check_variable = { ENG_worker_unrest > 19 }
-		NOT = {
-			AND = {
-				is_ai = yes
-				is_historical_focus_on = yes
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 30
 	}
 
 	immediate = {
@@ -3391,7 +3375,7 @@ country_event = {
 				transfer_state = 128
 				transfer_state = 130
 				transfer_state = 132
-				set_capital = 128
+				set_capital = { state = 128 }
 				inherit_technology = ENG
 				load_oob = "BWR_revolt"
 			}
@@ -4173,7 +4157,7 @@ country_event = {
 	option = {
 		name = britaincanada.1.b
 		ai_chance = { factor = 80 }
-		CAN = { set_capital = 1310 }
+		CAN = { set_capital = { state = 1310 } }
 	}
 
 	option = {
@@ -4185,7 +4169,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		CAN = { set_capital = 1311 }
+		CAN = { set_capital = { state = 1311 } }
 	}
 
 }

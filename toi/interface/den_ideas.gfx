@@ -91,6 +91,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/DEN/DEN_Ludvig_Ferdinand_Holmberg.png"
 	}
 	spriteType = {
+		name = "GFX_idea_DEN_Orla_Lehmann"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Orla_Lehmann.png"
+	}
+	spriteType = {
 		name = "GFX_idea_DEN_Steffen_Peder_Anker_Heegaard"
 		texturefile = "gfx/interface/ideas/DEN/DEN_Steffen_Peder_Anker_Heegaard.png"
 	}
@@ -121,6 +125,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_DEN_Carl_Irminger_MHC"
 		texturefile = "gfx/interface/ideas/DEN/DEN_Carl_Irminger_MHC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_DEN_Carl_van_Dockum_MHC"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Carl_van_Dockum_MHC.png"
 	}
 	spriteType = {
 		name = "GFX_idea_DEN_Christian_de_Meza_MHC"

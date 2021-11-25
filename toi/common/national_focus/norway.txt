@@ -250,7 +250,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			country_event = {id = eoanb_norway.34}
+			country_event = eoanb_norway.34
 		}
 	}
 
@@ -388,6 +388,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = NOR_decision_category_worker_unrest
+			
+			set_variable = { NOR_var_worker_unrest = 0.25 }
 		}
 	}
 
@@ -428,7 +430,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
+		completion_reward = {
+			set_temp_variable = { NOR_arg_unrest_change = -0.05 }
+			NOR_scripted_effect_worker_unrest_change = yes
+
+			add_popularity = {
+				ideology = centrism
+				popularity = 0.05
+			}
+		}
 	}
 
 	focus = {
@@ -445,7 +455,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = NOR_idea_new_mining_drills
+				days = 1825
+			}
+		}
 	}
 
 	focus = {
@@ -465,7 +480,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = NOR_idea_abolish_privileges
+				days = 365
+			}
+		}
 	}
 
 	focus = {
@@ -502,7 +522,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+		}
 	}
 
 	focus = {
@@ -587,36 +609,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = NOR_focus_state_investments
-		prerequisite = { focus = NOR_focus_future_of_transport }
-
-		relative_position_id = NOR_focus_future_of_transport
-		x = -1
-		y = 1
-
-		mutually_exclusive = { focus = NOR_focus_private_investments }
-
-		cost = 35
-		#icon =
-
-		available = {
-			has_country_flag = NOR_flag_transport_state
-		}
-
-		completion_reward = {
-			add_popularity = {
-				ideology = social_egalitarianism
-				popularity = 0.025
-			}
-		}
-	}
-
-	focus = {
 		id = NOR_focus_private_investments
 		prerequisite = { focus = NOR_focus_future_of_transport }
 
 		relative_position_id = NOR_focus_future_of_transport
-		x = 1
+		x = -1
 		y = 1
 
 		mutually_exclusive = { focus = NOR_focus_state_investments }
@@ -626,6 +623,31 @@ focus_tree = {
 
 		available = {
 			has_country_flag = NOR_flag_transport_private
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = traditional_conservatism
+				popularity = 0.025
+			}
+		}
+	}
+
+	focus = {
+		id = NOR_focus_state_investments
+		prerequisite = { focus = NOR_focus_future_of_transport }
+
+		relative_position_id = NOR_focus_future_of_transport
+		x = 1
+		y = 1
+
+		mutually_exclusive = { focus = NOR_focus_private_investments }
+
+		cost = 35
+		#icon =
+
+		available = {
+			has_country_flag = NOR_flag_transport_state
 		}
 
 		completion_reward = {
@@ -640,7 +662,7 @@ focus_tree = {
 		id = NOR_focus_faster_and_faster
 		prerequisite = { focus = NOR_focus_state_investments focus = NOR_focus_private_investments }
 
-		relative_position_id = NOR_focus_state_investments
+		relative_position_id = NOR_focus_private_investments
 		x = 1
 		y = 1
 
@@ -1481,6 +1503,8 @@ focus_tree = {
 	focus = {
 		id = NOR_focus_kammerloader_modernization
 		prerequisite = { focus = NOR_focus_train_with_sweden focus = NOR_focus_develop_training_standards }
+		
+		available = { has_tech = improved_matchlock }
 
 		relative_position_id = NOR_focus_train_with_sweden
 		x = 1
@@ -1490,12 +1514,20 @@ focus_tree = {
 		#icon = GFX_focus_generic_the_giant_wakes
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = infantry_weapons
+				technology = rifle_equipment3
+			}
 		}
 	}
 
 	focus = {
 		id = NOR_focus_chassepot_rifle
 		prerequisite = { focus = NOR_focus_kammerloader_modernization }
+		
+		available = { has_tech = needle_guns } 
 
 		relative_position_id = NOR_focus_kammerloader_modernization
 		x = -1
@@ -1507,12 +1539,28 @@ focus_tree = {
 		#icon = GFX_focus_generic_the_giant_wakes
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = infantry_weapons
+				technology = rifle_equipment4
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = medium_increase  
+			}
+			reverse_add_opinion_modifier = {
+				target = FRA
+				modifier = medium_increase  
+			}
 		}
 	}
 
 	focus = {
 		id = NOR_focus_remington_rifle
 		prerequisite = { focus = NOR_focus_kammerloader_modernization }
+		
+		available = { has_tech = needle_guns } 
 
 		relative_position_id = NOR_focus_kammerloader_modernization
 		x = 1
@@ -1524,6 +1572,20 @@ focus_tree = {
 		#icon = GFX_focus_generic_the_giant_wakes
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = infantry_weapons
+				technology = rifle_equipment4
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = medium_increase  
+			}
+			reverse_add_opinion_modifier = {
+				target = USA
+				modifier = medium_increase  
+			}
 		}
 	}
 
@@ -2075,7 +2137,15 @@ focus_tree = {
 		cost = 35
 		icon = GFX_focus_generic_destroyer
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 3
+				category = naval_equipment
+				category = naval_mtg_ironclad_tech
+				category = naval_mtg_ironclad_hulls_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2089,7 +2159,14 @@ focus_tree = {
 		cost = 35
 		icon = GFX_focus_NOR_armstrong_guns
 
-		completion_reward = { }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 3
+				category = naval_mtg_module_batteries_light_tech
+				category = naval_mtg_module_batteries_medium_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2108,6 +2185,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { NOR_loyalty_change = -1.25 }
 			NOR_scripted_effect_loyalty_change = yes
+			navy_experience = 20
 		}
 	}
 
@@ -2127,6 +2205,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { NOR_loyalty_change = 1.25 }
 			NOR_scripted_effect_loyalty_change = yes
+			navy_experience = 20
 		}
 	}
 
