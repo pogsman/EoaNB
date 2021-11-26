@@ -5,6 +5,9 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Victor_Emmanuel_II.dds"
 			}
+			army = {
+				large = "gfx/leaders/PIE/portrait_Victor_Emmanuel_II_Military.dds"
+			}
 		}
 		country_leader = {
 			desc = "POLITICS_Emmanuel_DESC"
@@ -12,7 +15,42 @@ characters = {
 			expire = "1870.11.7.1"
 			#id=-1
 		}
+		field_marshal = {
+			traits = {
+				politically_connected
+				offensive_doctrine
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+			legacy_id = 119
+		}
 	}
+	#PIE_vittorio_emanuele_ii_di_savoia = {
+	#	name = "Vittorio Emanuele II di Savoia"
+	#	portraits = {
+	#		army = {
+	#			small = ""
+	#		}
+	#		army = {
+	#			large = "gfx/leaders/PIE/portrait_Victor_Emmanuel_II_Military.dds"
+	#		}
+	#	}
+	#	field_marshal = {
+	#		traits = {
+	#			politically_connected
+	#			offensive_doctrine
+	#		}
+	#		skill = 3
+	#		attack_skill = 2
+	#		defense_skill = 2
+	#		planning_skill = 2
+	#		logistics_skill = 4
+	#		legacy_id = 119
+	#	}
+	#}
 	PIE_camillo_cavour = {
 		name = "Camillo Cavour"
 		portraits = {
@@ -94,29 +132,7 @@ characters = {
 			#legacy_id = -1
 		}
 	}
-	PIE_vittorio_emanuele_ii_di_savoia = {
-		name = "Vittorio Emanuele II di Savoia"
-		portraits = {
-			army = {
-				small = ""
-			}
-			army = {
-				large = "gfx/leaders/PIE/portrait_Victor_Emmanuel_II_Military.dds"
-			}
-		}
-		field_marshal = {
-			traits = {
-				politically_connected
-				offensive_doctrine
-			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 4
-			legacy_id = 119
-		}
-	}
+	
 	PIE_enrico_cialdini = {
 		name = "Enrico Cialdini"
 		portraits = {
@@ -435,101 +451,6 @@ characters = {
 			maneuvering_skill = 1
 			coordination_skill = 1
 			#legacy_id = -1
-		}
-	}
-	PIE_nicola_caviglia = {
-		name = "Nicola Caviglia"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_36.png"
-			}
-		}
-		country_leader = {
-			ideology = marxism
-			traits = {
-				reluctant_interventionist
-			}
-			expire = "1865.5.11.1"
-			#id = -1
-		}
-	}
-	PIE_carlo_perruchetti = {
-		name = "Carlo Perruchetti"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_36.png"
-			}
-		}
-		country_leader = {
-			ideology = syndicalism
-			traits = {
-				eoanb_trait_military_leader
-			}
-			expire = "1862.5.11.1"
-			#id = -1
-		}
-	}
-	PIE_benito_cadorna = {
-		name = "Benito Cadorna"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_22.png"
-			}
-		}
-		country_leader = {
-			ideology = conserv
-			traits = {
-				captain_of_industry_1
-				silent_workhorse
-			}
-			expire = "1876.5.11.1"
-			#id = -1
-		}
-	}
-	PIE_marco_pecorigiraldi = {
-		name = "Marco Pecori-Giraldi"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_26.png"
-			}
-		}
-		country_leader = {
-			ideology = reactionary
-			traits = {
-				geologist
-				hawk
-			}
-			expire = "1873.5.11.1"
-			#id = -1
-		}
-	}
-	PIE_pasquale_baratieri = {
-		name = "Pasquale Baratieri"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_3.png"
-			}
-		}
-		country_leader = {
-			ideology = christian
-			traits = {
-				eoanb_trait_strict_authoritarian
-			}
-			expire = "1871.5.11.1"
-			#id = -1
-		}
-	}
-	PIE_costanzo_orengo = {
-		name = "Costanzo Orengo"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_21.png"
-			}
-		}
-		country_leader = {
-			ideology = nazism
-			expire = "1868.5.11.1"
-			#id = -1
 		}
 	}
 }
