@@ -66,12 +66,87 @@ scripted_map_modes = {
                     limit = {
                         FROM = { check_variable = { annual_gdp_amount > 0 } }
                     }
-                    set_temp_variable = { red = FROM.annual_gdp_amount }
-                    set_temp_variable = { green = FROM.annual_gdp_amount }
-                    set_temp_variable = { blue = FROM.annual_gdp_amount }
-                    divide_temp_variable = { red = global.highest_state_gdp }
-                    divide_temp_variable = { green = global.highest_state_gdp }
-                    divide_temp_variable = { blue = global.highest_state_gdp }
+                    set_temp_variable = { hue = FROM.annual_gdp_amount }
+                    divide_temp_variable = { hue = global.highest_state_gdp }
+                    multiply_temp_variable = { hue = 5 }
+
+                    set_temp_variable = { hmod = hue }
+                    #multiply_temp_variable = { hmod = 6 }
+                    if = {
+                        limit = {
+                            NOT = { check_variable = { hmod < 2 } }
+                        }
+                        subtract_from_temp_variable = { hmod = 2 }
+                        if = {
+                            limit = {
+                                NOT = { check_variable = { hmod < 2 } }
+                            }
+                            subtract_from_temp_variable = { hmod = 2 }
+                        }
+                    }
+                    subtract_from_temp_variable = { hmod = 1 }
+                    if = {
+                        limit = {
+                           check_variable = { hmod < 0 }
+                        }
+                        multiply_temp_variable = { hmod = -1 }
+                    }
+
+                    set_temp_variable = { xmod = 1 }
+                    subtract_from_temp_variable = { xmod = hmod }
+                    
+                    set_temp_variable = { x = 1 }
+                    multiply_temp_variable = { x = xmod }
+                    
+                    #multiply_temp_variable = { hue = 6 }
+                    if = {
+                        limit = {
+                            check_variable = { hue < 1 }
+                        }
+                        set_temp_variable = { red = 1 }
+                        set_temp_variable = { green = x }
+                        set_temp_variable = { blue = 0 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 2 }
+                        }
+                        set_temp_variable = { red = x }
+                        set_temp_variable = { green = 1 }
+                        set_temp_variable = { blue = 0 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 3 }
+                        }
+                        set_temp_variable = { red = 0 }
+                        set_temp_variable = { green = 1 }
+                        set_temp_variable = { blue = x }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 4 }
+                        }
+                        set_temp_variable = { red = 0 }
+                        set_temp_variable = { green = x }
+                        set_temp_variable = { blue = 1 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 5 }
+                        }
+                        set_temp_variable = { red = x }
+                        set_temp_variable = { green = 0 }
+                        set_temp_variable = { blue = 1 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 6 }
+                        }
+                        set_temp_variable = { red = 1 }
+                        set_temp_variable = { green = 0 }
+                        set_temp_variable = { blue = x }
+                    }
                     set_temp_variable = { alpha = 1 }
                 }
                 
@@ -110,12 +185,87 @@ scripted_map_modes = {
                     limit = {
                         FROM = { check_variable = { gdp_per_capita > 0 } }
                     }
-                    set_temp_variable = { red = FROM.gdp_per_capita }
-                    set_temp_variable = { green = FROM.gdp_per_capita }
-                    set_temp_variable = { blue = FROM.gdp_per_capita }
-                    divide_temp_variable = { red = global.highest_state_gdp_c }
-                    divide_temp_variable = { green = global.highest_state_gdp_c }
-                    divide_temp_variable = { blue = global.highest_state_gdp_c }
+                    set_temp_variable = { hue = FROM.gdp_per_capita }
+                    divide_temp_variable = { hue = global.highest_state_gdp_c }
+                    multiply_temp_variable = { hue = 5 }
+
+                    set_temp_variable = { hmod = hue }
+                    #multiply_temp_variable = { hmod = 6 }
+                    if = {
+                        limit = {
+                            NOT = { check_variable = { hmod < 2 } }
+                        }
+                        subtract_from_temp_variable = { hmod = 2 }
+                        if = {
+                            limit = {
+                                NOT = { check_variable = { hmod < 2 } }
+                            }
+                            subtract_from_temp_variable = { hmod = 2 }
+                        }
+                    }
+                    subtract_from_temp_variable = { hmod = 1 }
+                    if = {
+                        limit = {
+                           check_variable = { hmod < 0 }
+                        }
+                        multiply_temp_variable = { hmod = -1 }
+                    }
+
+                    set_temp_variable = { xmod = 1 }
+                    subtract_from_temp_variable = { xmod = hmod }
+                    
+                    set_temp_variable = { x = 1 }
+                    multiply_temp_variable = { x = xmod }
+                    
+                    #multiply_temp_variable = { hue = 6 }
+                    if = {
+                        limit = {
+                            check_variable = { hue < 1 }
+                        }
+                        set_temp_variable = { red = 1 }
+                        set_temp_variable = { green = x }
+                        set_temp_variable = { blue = 0 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 2 }
+                        }
+                        set_temp_variable = { red = x }
+                        set_temp_variable = { green = 1 }
+                        set_temp_variable = { blue = 0 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 3 }
+                        }
+                        set_temp_variable = { red = 0 }
+                        set_temp_variable = { green = 1 }
+                        set_temp_variable = { blue = x }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 4 }
+                        }
+                        set_temp_variable = { red = 0 }
+                        set_temp_variable = { green = x }
+                        set_temp_variable = { blue = 1 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 5 }
+                        }
+                        set_temp_variable = { red = x }
+                        set_temp_variable = { green = 0 }
+                        set_temp_variable = { blue = 1 }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { hue < 6 }
+                        }
+                        set_temp_variable = { red = 1 }
+                        set_temp_variable = { green = 0 }
+                        set_temp_variable = { blue = x }
+                    }
                     set_temp_variable = { alpha = 1 }
                 }
                 
