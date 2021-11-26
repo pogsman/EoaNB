@@ -1,0 +1,144 @@
+scripted_map_modes = {
+    # culture_map_mode = { #From Debt and Taxes
+    #     top = {
+    #         type = state
+            
+    #         color = {
+    #             set_temp_variable = { red = 0.0 }
+    #             set_temp_variable = { blue = 0.0 }
+    #             set_temp_variable = { green = 0.0 }
+    #             set_temp_variable = { alpha = 1 }
+    #             if = {
+    #                 limit = {
+    #                     FROM = { check_variable = { pops_culture_percentage^0 > 0 } }
+    #                 }
+    #                 set_temp_variable = { cInd = FROM.pops_culture_type^0 }
+
+    #                 set_temp_variable = { red = global.culture_r_array^cInd }
+    #                 set_temp_variable = { green = global.culture_g_array^cInd }
+    #                 set_temp_variable = { blue = global.culture_b_array^cInd }
+    #                 divide_temp_variable = { red = 255 }
+    #                 divide_temp_variable = { green = 255 }
+    #                 divide_temp_variable = { blue = 255 }
+    #                 set_temp_variable = { alpha = FROM.pops_culture_percentage^0 }
+    #                 multiply_temp_variable = { alpha = 2 }
+    #                 subtract_from_temp_variable = { alpha = 1 }
+    #                 if = {
+    #                     limit = {
+    #                         check_variable = { alpha < 0.25 }
+    #                     }
+    #                     set_temp_variable = { alpha = 0.25 }
+    #                 }
+    #             }
+                
+    #             #set_temp_variable = { thickness = 1 }
+    #             set_temp_variable = { highlighted = 0 }
+                
+    #             #always = yes
+    #         }
+            
+    #         targets = {
+
+    #         }
+            
+    #         thickness = no
+    #     }
+
+    #     bottom = {
+    #         type = none
+    #     }
+
+    #     far_text = country
+    #     near_text = state
+
+    #     update_daily = no
+    # }
+    gdp_map_mode = {
+        top = {
+            type = state
+            
+            color = {
+                set_temp_variable = { red = 0.0 }
+                set_temp_variable = { blue = 0.0 }
+                set_temp_variable = { green = 0.0 }
+                set_temp_variable = { alpha = 1 }
+                if = {
+                    limit = {
+                        FROM = { check_variable = { annual_gdp_amount > 0 } }
+                    }
+                    set_temp_variable = { red = FROM.annual_gdp_amount }
+                    set_temp_variable = { green = FROM.annual_gdp_amount }
+                    set_temp_variable = { blue = FROM.annual_gdp_amount }
+                    divide_temp_variable = { red = global.highest_state_gdp }
+                    divide_temp_variable = { green = global.highest_state_gdp }
+                    divide_temp_variable = { blue = global.highest_state_gdp }
+                    set_temp_variable = { alpha = 1 }
+                }
+                
+                #set_temp_variable = { thickness = 1 }
+                set_temp_variable = { highlighted = 0 }
+                
+                #always = yes
+            }
+            
+            targets = {
+
+            }
+            
+            thickness = no
+        }
+
+        bottom = {
+            type = none
+        }
+
+        far_text = country
+        near_text = state
+
+        update_daily = no
+    }
+    gdp_c_map_mode = {
+        top = {
+            type = state
+            
+            color = {
+                set_temp_variable = { red = 0.0 }
+                set_temp_variable = { blue = 0.0 }
+                set_temp_variable = { green = 0.0 }
+                set_temp_variable = { alpha = 1 }
+                if = {
+                    limit = {
+                        FROM = { check_variable = { gdp_per_capita > 0 } }
+                    }
+                    set_temp_variable = { red = FROM.gdp_per_capita }
+                    set_temp_variable = { green = FROM.gdp_per_capita }
+                    set_temp_variable = { blue = FROM.gdp_per_capita }
+                    divide_temp_variable = { red = global.highest_state_gdp_c }
+                    divide_temp_variable = { green = global.highest_state_gdp_c }
+                    divide_temp_variable = { blue = global.highest_state_gdp_c }
+                    set_temp_variable = { alpha = 1 }
+                }
+                
+                #set_temp_variable = { thickness = 1 }
+                set_temp_variable = { highlighted = 0 }
+                
+                #always = yes
+            }
+            
+            targets = {
+
+            }
+            
+            thickness = no
+        }
+
+        bottom = {
+            type = none
+        }
+
+        far_text = country
+        near_text = state
+
+        update_daily = no
+    }
+}

@@ -180,6 +180,8 @@
 					set_variable = { global.industrial_goods_demand = 0 }
 				#
 				set_variable = { global.total_money = 0 }
+				set_variable = { global.highest_state_gdp = 0 }
+				set_variable = { global.highest_state_gdp_c = 0 }
 			#
 		}
 		for_each_scope_loop = {
@@ -6064,7 +6066,21 @@
 				#Industrial Investment
 					industrial_investment_calc = yes
 				#
+
+				if = {
+					limit = {
+						check_variable = { global.highest_state_gdp < annual_gdp_amount }
+					}
+					set_variable = { global.highest_state_gdp = annual_gdp_amount }
+				}
+				if = {
+					limit = {
+						check_variable = { global.highest_state_gdp_c < gdp_per_capita }
+					}
+					set_variable = { global.highest_state_gdp_c = gdp_per_capita }
+				}
 			}
+			force_update_map_mode = yes
 
 			#Adding to Global
 				add_to_variable = { global.life_goods_supply = life_goods_supply }
