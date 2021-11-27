@@ -18,7 +18,7 @@ focus = {
 	icon = GFX_goal_focus_tun_the_great_prince
 	x = 3
 	y = 0
-	cost = 60
+	cost = 50
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -56,10 +56,11 @@ focus = {
 	icon = GFX_focus_generic_concessions
 	x = 2
 	y = 2
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
+	mutually_exclusive = { focus = TUN_the_old_order }
 	prerequisite = { focus = TUN_batto_sfez_affair }
 	completion_reward = {
 	add_manpower = 10000
@@ -72,14 +73,18 @@ focus = {
 	icon = GFX_goal_focus_reform_administration
 	x = 4
 	y = 2
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
+	mutually_exclusive = { focus = TUN_the_old_order }
 	prerequisite = { focus = TUN_batto_sfez_affair }
 	completion_reward = {
 	add_political_power = 50
 	add_stability = 0.05
+	add_to_variable = { 
+		var = debt_level
+		value = -2 }
 	}
 }
 focus = {
@@ -104,7 +109,7 @@ focus = {
 	icon = GFX_focus_generic_home_defense
 	x = 2
 	y = 6
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
@@ -114,6 +119,9 @@ focus = {
 	}
 	completion_reward = {
 		add_ideas = { TUN_royal_palace }
+		add_to_variable = { 
+			var = debt_level 
+			value = 5 }
 	}
 }
 focus = {
@@ -131,8 +139,8 @@ focus = {
 	prerequisite = { focus = TUN_social_reforms }
 	completion_reward = {
 		add_to_variable = {
-				var = Mejba_Revolt_var
-				value = 5
+ 	 	var = Mejba_Revolt_var
+ 	 	value = 5
 		}
 		country_event = {
 			id = tunisia.2
@@ -144,7 +152,7 @@ focus = {
 	icon = GFX_focus_generic_support_the_left_right
 	x = 3
 	y = 4.5
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
@@ -166,12 +174,13 @@ focus = {
 	icon = GFX_goal_focus_tun_in_the_name_of_allah
 	x = 0.8
 	y = 2
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 0.3
 	}
 	prerequisite = { focus = TUN_batto_sfez_affair }
-	available = { has_country_flag = batto_sfez_dead }
+	mutually_exclusive = { focus = TUN_social_reforms }
+	mutually_exclusive = { focus = TUN_political_reform }
 	completion_reward = {
 		add_political_power= 50
 		add_stability = 0.2
@@ -182,7 +191,7 @@ focus = {
 	icon = GFX_focus_generic_concessions
 	x = 0.8
 	y = 3
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
@@ -202,7 +211,7 @@ focus = {
 	icon = GFX_focus_tribal_slavery
 	x = 0.8
 	y = 4
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
@@ -210,6 +219,8 @@ focus = {
 
 	completion_reward = {
 		add_political_power = 50
+		add_to_variable = { var = debt_level 
+		value = -5 }
 		swap_ideas = {
 			remove_idea = racial_laws
 			add_idea = slavery_all_but_name
@@ -221,7 +232,7 @@ focus = {
 	icon = GFX_focus_holy_quran
 	x = 0.8
 	y = 5
-	cost = 60
+	cost = 90
 	ai_will_do = {
 		factor = 1
 	}
@@ -241,7 +252,7 @@ focus = {
 	icon = GFX_goal_focus_tun_the_reformist 
 	x = 11
 	y = 0
-	cost = 20
+	cost = 60
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -264,7 +275,7 @@ focus = {
 	icon = GFX_focus_generic_self_management
 	x = 8
 	y = 1
-	cost = 30
+	cost = 60
 	ai_will_do = {
 		factor = 1
 	}
@@ -285,14 +296,14 @@ focus = {
 		factor = 1
 	}
 	prerequisite = { focus = TUN_the_reformist }
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = slavery_all_but_name
-				add_idea = limited_equality
-			}
-		add_political_power = 50
-		decrease_ps_by_one = yes
+	completion_reward = {
+	swap_ideas = {
+	remove_idea = slavery_all_but_name
+	add_idea = limited_equality
 	}
+	add_political_power = 50
+	decrease_ps_by_one = yes
+ }
 }
 focus = {
 	id = TUN_Trans_Saharan_networks
@@ -326,24 +337,10 @@ focus = {
 			swap_ideas = {
 				remove_idea = state_controlled_press
 				add_idea = censored_press
-			}
 		}
+	}
 }
 #POLITICAL REFORMS-----------------------------
-focus = {
-	id = TUN_succession_reforms
-	icon = GFX_focus_rom_royal_dictatorship
-	x = 10
-	y = 3
-	cost = 60
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = { focus = TUN_organize_the_ministries }
-	completion_reward = {
-		add_political_power = 50
-	}
-}
 focus = {
 	id = TUN_organize_the_ministries
 	icon = GFX_goal_generic_intelligence_exchange
@@ -359,6 +356,20 @@ focus = {
 	}
 }
 focus = {
+	id = TUN_succession_reforms
+	icon = GFX_focus_rom_royal_dictatorship
+	x = 10
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_organize_the_ministries }
+	completion_reward = {
+		add_political_power = 50
+	}
+}
+focus = {
 	id = TUN_invite_reformists
 	icon = GFX_goal_generic_major_alliance
 	x = 12
@@ -370,7 +381,7 @@ focus = {
 	prerequisite = { focus = TUN_organize_the_ministries }
 	completion_reward = {
 		country_event = {
-			id = tunisia.5
+		id = tunisia.5
 		}
 	}
 }
@@ -386,7 +397,6 @@ focus = {
 	}
 	prerequisite = { focus = TUN_invite_reformists }
 	prerequisite = { focus = TUN_succession_reforms }
-	available = { has_completed_focus = TUN_the_monetary_issue }
 	completion_reward = {
 		country_event = {
 			id = tunisia.6
@@ -427,12 +437,15 @@ focus = {
 	completion_reward = {
 		458 = {
 			add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 2
-									instant_build = yes
-								}
+			add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
 			}
+		}
+		add_to_variable = { var = debt_level 
+		value = -5 
+		}
 	}	
 }
 focus = {
@@ -450,7 +463,7 @@ focus = {
 	prerequisite = { focus = TUN_renew_old_infrastructures }
 	completion_reward = {
 		hidden_effect = {
-			add_ideas = { TUN_FRA_ENG_trades_go_up }
+		add_ideas = { TUN_FRA_ENG_trades_go_up }
 		}
 	}
 }
@@ -466,7 +479,10 @@ focus = {
 	prerequisite = { focus = TUN_influences_from_the_north}
 	completion_reward = {
 		country_event = {
-			id = tunisia.7
+		id = tunisia.7
+		}
+		add_to_variable = { var = debt_level 
+		value = -5 
 		}
 	}
 }	
@@ -486,13 +502,14 @@ focus = {
 		completion_reward = {
 			458 = {
 				add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-										type = infrastructure
-										level = 2
-										instant_build = yes
-									}
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
 				}
-		}
+			}
+		add_to_variable = { var = debt_level value = 10 }
+	}
 }
 focus = {
 	id = TUN_industrialize_the_country
@@ -514,6 +531,8 @@ focus = {
 			add_idea = industrializing
 			remove_idea = agrarian
 		}
+		add_to_variable = { var = debt_level 
+		value = -2 }
 	}
 }
 # -------------------------pt2 monetary issue
@@ -533,12 +552,52 @@ focus = {
 	completion_reward = {
 		458 = {
 			add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 2
-									instant_build = yes
-								}
+			add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
 			}
+		}
+		add_ideas = { TUN_corrupted_ministers }
+	}	
+}
+focus = {
+	id = TUN_khazdanar_is_a_dick
+	icon = GFX_focus_tun_khazdanar_scandal
+	x = 17
+	y = 4
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_monetary_issue }
+	completion_reward = {
+		#remove khazdanar and other people that are not here yet, add founds = reduce variable of mejba revolt and decrease the effects of corrupted ministry 
+		#Kherradine Pasha is the new Grand vizir
+		country_event = {
+			id = tunisia.9
+		}
+		add_to_variable = { 
+			var = debt_level 
+			value = -10 
+		}
+	}
+}
+focus = {
+	id = TUN_khazdanar_is_fine
+	icon = GFX_focus_tun_khazdanar_scandal
+	x = 19
+	y = 4
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_monetary_issue }
+	completion_reward = {
+		add_to_variable = { 
+			var = debt_level 
+			value = 20 
+		}
 	}	
 }
 #NAVY------------------------------------------
@@ -563,12 +622,11 @@ focus = {
 	458 = {
 	add_extra_state_shared_building_slots = 2
 	add_building_construction = {
-			type = dockyard
-			level = 2
-			instant_build = yes
-		}
-}
-				
+		type = dockyard
+		level = 2
+		instant_build = yes
 	}
-}
+   }
+  }
+ }
 }

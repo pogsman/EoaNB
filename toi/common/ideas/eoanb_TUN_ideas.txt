@@ -50,9 +50,17 @@ ideas = {
                 political_power_cost = 0.1
                 political_advisor_cost_factor = 1.00
                 }
+        }
+        TUN_corrupted_ministers = {
     
-            }
+            removal_cost = -1
+            picture = placeholder
     
+            modifier = {
+                political_power_cost = 0.1
+                stability_weekly = -0.01
+                }
+        }
         TUN_the_fundamental_pact = {
             allowed = {
                 always = yes
@@ -105,4 +113,68 @@ ideas = {
             }
         }
     }
-}    
+	political_advisor = { 
+        TUN_Mohamed_Bayram_IV = {
+        
+           allowed = {
+               original_tag = TUN
+           }
+            
+            picture = placeholder
+        
+            traits = {  
+                eoanb_philanthropist
+            }
+            
+            modifier = {
+                policies_tech = 0.1
+            }
+            available = {
+				date < 1861.11.5
+			}
+			visible = {
+				date < 1861.11.5
+			}
+        }
+		TUN_Mahmoud_Kabadou = {
+		
+            allowed = {
+                original_tag = TUN
+            }
+            picture = placeholder
+            
+            traits = {  
+                eoanb_trait_work_minister
+            }
+			
+            research_bonus = {
+                law_tech = 0.1
+            }
+            available = {
+				date < 1871.09.17
+			}
+			visible = {
+				date < 1861.09.17
+			}
+	    }
+        Mustapha_Kaznadar = {
+		
+            allowed = {
+                original_tag = TUN
+            }
+            picture = TUN_Khazdanar
+            
+            traits = {  
+                eoanb_trait_work_minister
+            }
+			
+            research_bonus = {
+                law_tech = 0.1
+            }
+        
+            available = {
+                has_completed_focus = CHO_Gain_Takasugis_Support
+            }
+	    }
+	}
+}   
