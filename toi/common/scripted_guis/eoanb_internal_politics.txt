@@ -8094,4 +8094,141 @@ scripted_gui = {
 			}
 		}
 	}
+	
+	
+	internal_politics_open = {
+		context_type = player_context
+
+		window_name = "internal_politics_parliament"
+		
+		visible = {
+			is_ai = no
+			has_country_flag = TTT_opened
+		}
+		
+		ai_enabled = {
+			always = no
+		}
+		
+		dirty = parliament_pie_dirty
+		
+		dynamic_lists = {
+			parliament_pie_list = {
+				array = global.embedgui
+				change_scope = no
+				entry_container = pie_container
+			}
+		}
+		
+		properties = {
+			pie0 = { frame = parliament_pie^0 }
+			pie1 = { frame = parliament_pie^1 }
+			pie2 = { frame = parliament_pie^2 }
+			pie3 = { frame = parliament_pie^3 }
+			pie4 = { frame = parliament_pie^4 }
+			pie5 = { frame = parliament_pie^5 }
+			pie6 = { frame = parliament_pie^6 }
+			pie7 = { frame = parliament_pie^7 }
+			pie8 = { frame = parliament_pie^8 }
+			pie9 = { frame = parliament_pie^9 }
+			pie10 = { frame = parliament_pie^10 }
+			pie11 = { frame = parliament_pie^11 }
+			pie12 = { frame = parliament_pie^12 }
+			pie13 = { frame = parliament_pie^13 }
+			pie14 = { frame = parliament_pie^14 }
+			pie15 = { frame = parliament_pie^15 }
+			pie16 = { frame = parliament_pie^16 }
+			pie17 = { frame = parliament_pie^17 }
+			pie18 = { frame = parliament_pie^18 }
+			pie19 = { frame = parliament_pie^19 }
+			pie20 = { frame = parliament_pie^20 }
+			pie21 = { frame = parliament_pie^21 }
+			pie22 = { frame = parliament_pie^22 }
+			pie23 = { frame = parliament_pie^23 }
+			pie24 = { frame = parliament_pie^24 }
+			pie25 = { frame = parliament_pie^25 }
+			pie26 = { frame = parliament_pie^26 }
+			pie27 = { frame = parliament_pie^27 }
+			pie28 = { frame = parliament_pie^28 }
+			pie29 = { frame = parliament_pie^29 }
+			pie30 = { frame = parliament_pie^30 }
+			pie31 = { frame = parliament_pie^31 }
+			pie32 = { frame = parliament_pie^32 }
+			pie33 = { frame = parliament_pie^33 }
+			pie34 = { frame = parliament_pie^34 }
+			pie35 = { frame = parliament_pie^35 }
+			pie36 = { frame = parliament_pie^36 }
+			pie37 = { frame = parliament_pie^37 }
+			pie38 = { frame = parliament_pie^38 }
+			pie39 = { frame = parliament_pie^39 }
+			pie40 = { frame = parliament_pie^40 }
+			pie41 = { frame = parliament_pie^41 }
+			pie42 = { frame = parliament_pie^42 }
+			pie43 = { frame = parliament_pie^43 }
+			pie44 = { frame = parliament_pie^44 }
+			pie45 = { frame = parliament_pie^45 }
+			pie46 = { frame = parliament_pie^46 }
+			pie47 = { frame = parliament_pie^47 }
+			pie48 = { frame = parliament_pie^48 }
+			pie49 = { frame = parliament_pie^49 }
+			pie50 = { frame = parliament_pie^50 }
+			pie51 = { frame = parliament_pie^51 }
+			pie52 = { frame = parliament_pie^52 }
+			pie53 = { frame = parliament_pie^53 }
+			pie54 = { frame = parliament_pie^54 }
+			pie55 = { frame = parliament_pie^55 }
+			pie56 = { frame = parliament_pie^56 }
+			pie57 = { frame = parliament_pie^57 }
+			pie58 = { frame = parliament_pie^58 }
+			pie59 = { frame = parliament_pie^59 }
+			pie60 = { frame = parliament_pie^60 }
+			pie61 = { frame = parliament_pie^61 }
+			pie62 = { frame = parliament_pie^62 }
+			pie63 = { frame = parliament_pie^63 }
+			pie64 = { frame = parliament_pie^64 }
+			pie65 = { frame = parliament_pie^65 }
+			pie66 = { frame = parliament_pie^66 }
+			pie67 = { frame = parliament_pie^67 }
+			pie68 = { frame = parliament_pie^68 }
+			pie69 = { frame = parliament_pie^69 }
+			pie70 = { frame = parliament_pie^70 }
+			pie71 = { frame = parliament_pie^71 }
+			pie72 = { frame = parliament_pie^72 }
+			pie73 = { frame = parliament_pie^73 }
+			pie74 = { frame = parliament_pie^74 }
+			pie75 = { frame = parliament_pie^75 }
+			pie76 = { frame = parliament_pie^76 }
+			pie77 = { frame = parliament_pie^77 }
+			pie78 = { frame = parliament_pie^78 }
+			pie79 = { frame = parliament_pie^79 }
+			pie80 = { frame = parliament_pie^80 }
+			pie81 = { frame = parliament_pie^81 }
+			pie82 = { frame = parliament_pie^82 }
+			pie83 = { frame = parliament_pie^83 }
+			pie84 = { frame = parliament_pie^84 }
+			pie85 = { frame = parliament_pie^85 }
+			pie86 = { frame = parliament_pie^86 }
+			pie87 = { frame = parliament_pie^87 }
+			pie88 = { frame = parliament_pie^88 }
+			pie89 = { frame = parliament_pie^89 }
+			pie90 = { frame = parliament_pie^90 }
+			pie91 = { frame = parliament_pie^91 }
+			pie92 = { frame = parliament_pie^92 }
+			pie93 = { frame = parliament_pie^93 }
+			pie94 = { frame = parliament_pie^94 }
+			pie95 = { frame = parliament_pie^95 }
+			pie96 = { frame = parliament_pie^96 }
+			pie97 = { frame = parliament_pie^97 }
+			pie98 = { frame = parliament_pie^98 }
+			pie99 = { frame = parliament_pie^99 }
+		}
+		
+		effects = {
+			
+		}
+		
+		triggers = {
+			
+		}
+	}
 }

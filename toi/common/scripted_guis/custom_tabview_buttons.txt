@@ -87,10 +87,15 @@ scripted_gui = {
 			open_internal_politics_click = {
 				if = {
 					limit = { NOT = { has_country_flag = TTT_opened } }
+					
+					eoanb_parliament_setup_pie_seats = yes
+					
 					set_country_flag = TTT_opened
+					add_to_variable = { parliament_pie_dirty = 1 }
 				}
 				else = {
 					clr_country_flag = TTT_opened
+					clear_array = parliament_pie
 				}
 				if = {
 					limit = {
