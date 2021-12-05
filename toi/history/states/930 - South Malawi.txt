@@ -1,12 +1,14 @@
 state = {
 	id =930
 	name = "STATE_930"
-	state_category = rural
+	state_category = pastoral
 
 	resources={
 		wood=2
 	}
 
+
+	local_supplies=0.0 
 	history = {
 		buildings = {
 		}

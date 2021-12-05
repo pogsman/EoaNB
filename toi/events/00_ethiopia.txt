@@ -1804,7 +1804,7 @@ country_event = {
 		add_command_power = 100
 		create_corps_commander = {
 			name = "Sati Mered"
-			picture = ""
+			#picture = ""
 			traits = { trickster brilliant_strategist }
 			skill = 4
 			attack_skill = 4
@@ -1875,7 +1875,7 @@ country_event = {
 		add_command_power = 100
 		create_corps_commander = {
 			name = "Sati Mered"
-			picture = ""
+			#picture = ""
 			traits = { trickster brilliant_strategist }
 			skill = 4
 			attack_skill = 4
@@ -2920,7 +2920,7 @@ country_event = {
 					}
 		}
 		ROOT = { 
-			set_capital = 815	
+			set_capital = { state = 815 }	
 			set_country_flag = is_trading_company
 			if = {
 				limit = {

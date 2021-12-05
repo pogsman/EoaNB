@@ -1846,7 +1846,7 @@ country_event = {
 							limit = { USA = { owns_state = 364 } }
 							transfer_state = 364
 							add_state_core = 364
-							set_capital = 364
+							set_capital = { state = 364 }
 						}
 						else = {
 							USA = {
@@ -1855,7 +1855,7 @@ country_event = {
 									CSA = {
 										transfer_state = PREV
 										add_state_core = PREV
-										set_capital = PREV
+										set_capital = { state = PREV }
 									}
 								}
 							}
@@ -2875,7 +2875,7 @@ country_event = {
 						if = {
 							limit = { USA = { owns_state = 1022 } }
 							transfer_state = 1022
-							add_state_core 1022
+							add_state_core = 1022
 						}
 					}
 					else = {
@@ -2890,7 +2890,7 @@ country_event = {
 							limit = { USA = { owns_state = 1022 } }
 							CUB = {
 								transfer_state = 1022
-								add_state_core 1022
+								add_state_core = 1022
 							}
 						}
 						CUB = {
@@ -4228,7 +4228,7 @@ news_event = {
 			create_corps_commander = {
 				name = "Edward Ord"
 				picture = "Portrait_USA_Edward_Ord.dds"
-				traits = { bearer_of_artillery artillery_officer artillery_leader }
+				traits = { bearer_of_artillery  }
 				skill = 3
 				id = 5018
 				attack_skill = 3
@@ -6502,7 +6502,7 @@ country_event = {
 		create_country_leader = {
 			name = "William Herschel"
 			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-			picture = ""
+			#picture = ""
 			expire = "1900.1.1"
 			ideology = conserv_liberal
 		}
@@ -6538,7 +6538,7 @@ country_event = {
 		create_country_leader = {
 			name = "William Pennington"
 			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-			picture = ""
+			#picture = ""
 			expire = "1900.1.1"
 			ideology = market_liberal
 		}
@@ -6729,9 +6729,9 @@ country_event = {
 				create_country_leader = {
 					name = "John Whiteaker"
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-					picture = ""
+					#picture = ""
 					expire = "1885.3.6"
-					ideology = moderatism
+					ideology = federal
 				}
 				if = {
 					limit = {
@@ -6888,7 +6888,7 @@ country_event = {
 				create_country_leader = {
 					name = "Leland Stanford"
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-					picture = ""
+					#picture = ""
 					expire = "1947.1.1"
 					ideology = liberal_social
 				}
@@ -6903,7 +6903,7 @@ country_event = {
 				create_country_leader = {
 					name = "John C. Fremont"
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-					picture = "Portrait_USA_John_C_Fremont.dds"
+					picture = "USA/Portrait_USA_John_C_Fremont.dds"
 					expire = "1885.3.6"
 					ideology = moderatism
 				}
@@ -7316,7 +7316,7 @@ country_event = {
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 					picture = "Portrait_USA_Daniel_Edgar_Sickles.dds"
 					expire = "1885.3.6"
-					ideology = moderatism
+					ideology = federal
 				}
 				if = {
 					limit = {
@@ -7554,7 +7554,7 @@ country_event = {
 				create_country_leader = {
 			    name = "Edward Clark"
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-			    picture = ""
+			    #picture = ""
 			    expire = "1894.1.6"
 			    ideology = federal
 			    traits = {
@@ -7717,7 +7717,7 @@ country_event = {
 				create_country_leader = {
 			    name = "Council of Oklahoma"
 			    desc = ""
-			    picture = ""
+			    #picture = ""
 			    expire = "1894.1.6"
 			    ideology = federal
 			    traits = {
@@ -7978,9 +7978,9 @@ country_event = {
 				create_country_leader = {
 			    name = "Thomas Carney"
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-			    picture = ""
+			    #picture = ""
 			    expire = "1894.1.6"
-			    ideology = liberal_social
+			    ideology = social_liberal
 			    traits = {
 			    }
 			  }
@@ -8172,7 +8172,7 @@ country_event = {
 					desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 					picture = "Portrait_USA_Wilmot_Brookings.dds"
 					expire = "1905.1.6"
-					ideology = moderatism
+					ideology = federal
 					traits = {
 					}
 				}
@@ -8383,7 +8383,7 @@ country_event = {
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 			    picture = "Portrait_USA_Abraham_Lincoln.dds"
 			    expire = "1894.1.6"
-			    ideology = liberal_social
+			    ideology = social_liberal
 			    traits = {
 			    }
 			  }
@@ -9012,7 +9012,7 @@ country_event = {
 			    desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 			    picture = "Portrait_NEG_Hannibal_Hamlin.dds"
 			    expire = "1947.1.1"
-			    ideology = social_liberal
+			    ideology = liberal_social
 			  }
 				if = {
 					limit = { country_exists = CSA }
@@ -9324,7 +9324,7 @@ country_event = {
 			create_corps_commander = {
 				name = "Edward Ord"
 				picture = "Portrait_USA_Edward_Ord.dds"
-				traits = { bearer_of_artillery artillery_officer artillery_leader }
+				traits = { bearer_of_artillery }
 				skill = 3
 				id = 5018
 				attack_skill = 3
@@ -10048,7 +10048,7 @@ country_event = {
 					create_corps_commander = {
 						name = "Edward Ord"
 						picture = "Portrait_USA_Edward_Ord.dds"
-						traits = { bearer_of_artillery artillery_officer artillery_leader }
+						traits = { bearer_of_artillery   }
 						skill = 3
 						id = 5018
 						attack_skill = 3
@@ -10119,57 +10119,51 @@ country_event = {
 					}
 				}
 				if = {
-				limit {
-					USA = {
-						owns_state = 1045
+					limit = {
+						USA = { owns_state = 1045 }
 					}
-				}
-				357 = {
-					owner = {
-						transfer_state = 1045
-						add_state_core = 1045
+					357 = {
+						OWNER = {
+							transfer_state = 1045
+							add_state_core = 1045
 						}
 					}
 				}
 				if = {
-				limit {
-					USA = {
-						owns_state = 1046
+					limit = {
+						USA = { owns_state = 1046 }
 					}
-				}
-				357 = {
-					owner = {
-						transfer_state = 1046
-						add_state_core = 1046
+					357 = {
+						OWNER = {
+							transfer_state = 1046
+							add_state_core = 1046
 						}
 					}
 				}
 				if = {
-				limit {
-					USA = {
-					owns_state = 1050
+					limit = {
+						USA = { owns_state = 1050 }
 					}
-				}
-				357 = {
-					owner = {
-						transfer_state = 1050
-						add_state_core = 1050
+					357 = {
+						owner = {
+							transfer_state = 1050
+							add_state_core = 1050
 						}
 					}
 				}
 			}
 			if = {
 				limit = {
-				USA = {
-					has_country_flag = USA_Breckinridge_Moderate_Appeal
+					USA = {
+						has_country_flag = USA_Breckinridge_Moderate_Appeal
 					}
 				}
 				USA = {
 					load_oob = "USA_FSA_revolt_moderate"
 				}
 				357 = {
-				owner = {
-					load_oob = "FSA_acw_start_moderate"
+					owner = {
+						load_oob = "FSA_acw_start_moderate"
 					}
 				}
 			}
@@ -10288,35 +10282,30 @@ country_event = {
 				planning_skill = 4
 				logistics_skill = 3
 			}
-		}
-		hidden_effect = {
 			if = {
 				limit = {
-				NOT = {
-					USA = {
-						has_idea = USA_Spirit_Civil_War_Initial_Disorganize
+					NOT = {
+						USA = {
+							has_idea = USA_Spirit_Civil_War_Initial_Disorganize
 						}
 					}
 				}
 				USA = { country_event = { id = acw_generic.11 } }
-				}
 			}
-			hidden_effect = {
 			if = {
 				limit = {
-				has_global_flag = ACW_Norton_Marked
+					has_global_flag = ACW_Norton_Marked
 				}
 				country_event = { id = acw.52 days = 1 }
 			}
 			else_if = {
 				limit = {
-				has_global_flag = ACW_Manhattan_Marked
+					has_global_flag = ACW_Manhattan_Marked
 				}
 				country_event = { id = acw.53 days = 1 }
 			}
 			else = {
 				country_event = { id = acw.46 days = 4 }
-				}
 			}
 		}
 	}
@@ -10324,26 +10313,26 @@ country_event = {
 		name = acw_breckinridge.10.b
 		trigger = { is_ai = no }
 		357 = {
-		owner = {
-			change_tag_from = USA
-		}
+			owner = {
+				change_tag_from = USA
+			}
 		}
 		hidden_effect = {
-		if = {
-			limit = {
-			has_global_flag = ACW_Norton_Marked
+			if = {
+				limit = {
+					has_global_flag = ACW_Norton_Marked
+				}
+				country_event = { id = acw.52 days = 1 }
 			}
-			country_event = { id = acw.52 days = 1 }
-		}
-		else_if = {
-			limit = {
-			has_global_flag= ACW_Manhattan_Marked
+			else_if = {
+				limit = {
+					has_global_flag= ACW_Manhattan_Marked
+				}
+				country_event = { id = acw.53 days = 1 }
 			}
-			country_event = { id = acw.53 days = 1 }
-		}
-		else = {
-			country_event = { id = acw.46 days = 4 }
-		}
+			else = {
+				country_event = { id = acw.46 days = 4 }
+			}
 		}
 	}
 }
@@ -11317,7 +11306,7 @@ country_event = {
 		}
 		hidden_effect = {
 			add_timed_idea = {
-				idea = Generic_Martial_law_1
+				idea = Generic_Martial_Law_1
 				days = 100
 			}
 			if = {
@@ -11354,7 +11343,7 @@ country_event = {
 	immediate = {
 		add_manpower = -1200
 		hidden_effect = {
-			remove_ideas = Generic_Martial_law_1
+			remove_ideas = Generic_Martial_Law_1
 		}
 	}
 	option = {

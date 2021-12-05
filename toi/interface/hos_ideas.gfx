@@ -12,6 +12,11 @@ spriteTypes = {
 	
 	# BAD
 	spriteType = {
+		name = "GFX_idea_BAD_Friedrich_I_young"
+		texturefile = "gfx/interface/ideas/BAD/BAD_Friedrich_I_young.png"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_BAD_Friedrich_I"
 		texturefile = "gfx/interface/ideas/BAD/BAD_Friedrich_I.png"
 	}
@@ -47,6 +52,16 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_DEN_Christian_IX"
 		texturefile = "gfx/interface/ideas/DEN/DEN_Christian_IX.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_DEN_Frederick_VIII"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Frederick_VIII.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_DEN_Christian_X"
+		texturefile = "gfx/interface/ideas/DEN/DEN_Christian_X.png"
 	}
 
 	# ENG

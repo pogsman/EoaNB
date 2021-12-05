@@ -71,25 +71,8 @@ focus_tree = {
 			focus = EGY_mac_take_dafur
 		}
 		completion_reward = {
-			if={
-				limit={
-					817={controlled_by = ETH}
-				}
-				817={add_claim_by = EGY}
-			}
-			if={
-				limit={
-					815={controlled_by = ETH}
-					MED={
-						OR={
-							is_subject_of = EGY
-							is_puppet_of = EGY
-						}
-					}
-				}
-				815={add_claim_by = MED}
-			}
-			816={add_claim_by = EGY}
+			add_state_claim = 1295
+			add_state_claim = 816
 		}
 	}
 	focus = {
@@ -106,7 +89,7 @@ focus_tree = {
 			focus = EGY_mac_control_blue_nile
 		}
 		completion_reward = {
-			
+			add_war_support = 0.05
 		}
 	}
 	focus = {
@@ -123,7 +106,7 @@ focus_tree = {
 			focus = EGY_mac_strike_ETH
 		}
 		completion_reward = {
-			
+			#dec on ETH
 		}
 	}
 	focus = {
@@ -139,8 +122,12 @@ focus_tree = {
 		prerequisite = {
 			focus = EGY_mac_into_gondar
 		}
-		mutually_exclusive={
-			focus = EGY_mac_fortify_blue_nile_source
+		available={
+			NOT={has_war_with = ETH}
+			NOT={
+				controls_state = 816
+				has_subject = ETH
+			}
 		}
 		completion_reward = {
 			
@@ -164,6 +151,13 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = EGY_mac_into_gondar
+		}
+		available={
+			NOT={has_war_with = ETH}
+			OR={
+				controls_state = 816
+				has_subject = ETH
+			}
 		}
 		completion_reward = {
 			
@@ -193,7 +187,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			add_political_power = 50
+			ETH={add_political_power = 50}
 		}
 	}
 	focus = {
@@ -454,7 +449,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
-		available{
+		available={
 			has_country_leader = {
 				name = "Ahmad Rifaat Pasha"
 				ruling_only = yes
@@ -606,7 +601,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
-		available{
+		available={
 			has_country_leader = {
 				name = "Isma'il Pasha"
 				ruling_only = yes
