@@ -12,46 +12,45 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
-		pre_industrial_era
-		agrarian
-		no_heir
-		absolute_monarchy
+	hos_is_leader
+	pre_industrial_era
+	agrarian
+	no_heir
+	absolute_monarchy
 	law_army_tribal_advanced
 
-		civilian_economy
-		limited_exports
-		two_percent
-		normal_taxes
+	civilian_economy
+	limited_exports
+	two_percent
+	normal_taxes
 	cl_legal
 	lp_land_estates
 
-		stagnation_growth
-		border_control
-    racial_laws
-    absolutism
+	stagnation_growth
+	border_control
+   	racial_laws
+   	absolutism
 
-    sharia_constitution
-    no_elections
-    no_separation
-    no_federalism
+   	sharia_constitution
+   	no_elections
+   	no_separation
+   	no_federalism
 
-    traditional_uluma
-    state_religion
-    state_controlled_press
+   	traditional_uluma
+   	state_religion
+   	state_controlled_press
 	religion_sunni
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	hc_no_healthcare
+	law_police_force
+	inframain_no_subsidies_infrastructure
+	navinfra_no_naval_infrastructure
+	sfund_private_ventures_only
 
-				 #NATIONAL SPIRITS
-			OTO_Abdulmecid
-			TUN_unorganized_ministries
-			egy_vic_debt
-
+	#NATIONAL SPIRITS
+	OTO_Abdulmecid
+	TUN_unorganized_ministries
+	egy_vic_debt
 	}
 
 	TUN = {
@@ -82,9 +81,9 @@
 
 	set_politics = {
 		ruling_party = autocracy
-}
+	}
 
-set_popularities = {
+	set_popularities = {
 		anarchism = 0
 		vanguard_communism = 0
 		collectivist_socialism = 0
@@ -95,7 +94,7 @@ set_popularities = {
 		chauvinist_populism = 0
 		autocracy = 100
 		fundamentalism = 0
-}
+	}
 
 	set_technology = {
 	tribaltech = 1
@@ -125,83 +124,13 @@ set_popularities = {
 	basic_cavalry = 1
 	tech_infantry_napoleonic_uniform = 1
 	}
-
   # POLITICAL LEADERS
-	create_country_leader = {
-		name = "Muhammad III al-Sadiq"
-		desc = "POLITICS_MUHAMMAD_III_IBN_AL_HUSAYN"
-		picture = "Portrait_TUN_Muhammad_III_al_sadiq.png"
-		expire = "1882.10.27"
-		ideology = constit_monarch
-		traits = {
+	recruit_character = TUN_muhammad_iii_alsadiq
+	recruit_character = TUN_muhammad_ii_ibn_alhusayn
+	recruit_character = TUN_mustapha_khaznadar
+	recruit_character = TUN_al_fariq_hussein
+	recruit_character = TUN_mohamed_baccouche
+	recruit_character = TUN_al_fariq_osman
 
-	  }
-	}
-	create_country_leader = {
-		name = "Muhammad II ibn al-Husayn"
-		desc = "POLITICS_MUHAMMAD_II_IDN_AL_HUSAYN"
-		picture = "Portrait_TUN_Muhammad_II_ibn_al_Husayn.png"
-		expire = "1859.09.20"
-		ideology = despotism
-	  	traits = {
-
-	  }
-  	}
-	create_field_marshal = {
-		name = "Muhammad II ibn al-Husayn"
-		desc = "POLITICS_MUHAMMAD_II_IDN_AL_HUSAYN"
-		picture = "Portrait_TUN_Muhammad_II_ibn_al_Husayn.png"
-		id = 2520
-		traits = { organizer defensive_doctrine }
-		skill = 2
-		attack_skill = 2
-		defense_skill = 2
-		planning_skill = 1
-	}
-	create_field_marshal = {
-		name = "Mustapha Khaznadar"
-		desc = "POLITICS_Mustapha_Kaznadar"
-		picture = "Portrait_TUN_Mustapha_Khaznadar.png"
-		id = 2521
-		traits = { organizer defensive_doctrine desert_fox}
-		skill = 3
-		attack_skill = 2 
-		defense_skill = 2
-		planning_skill = 1
-		logistics_skill = 1
-	}
-	create_corps_commander = {
-		name = "Al fariq Hussein"
-		picture = "Portrait_TUN_General_Hussein.png"
-		id = 2522
-		traits = { }
-		skill = 3
-		attack_skill = 1
-		defense_skill = 1
-		planning_skill = 2
-		logistics_skill = 2
-	}
-	create_corps_commander = {
-		name = "Mohamed Baccouche"
-		picture = "Portrait_TUN_Mohamed_Baccouche.png"
-		id = 2523
-		traits = { }
-		skill = 2
-		attack_skill = 1
-		defense_skill = 1
-		planning_skill = 1
-		logistics_skill = 1
-	}
-	create_corps_commander = {
-		name = "Al Fariq Osman"
-		picture = "Portrait_TUN_Al_Fariq_Osman.png"
-		id = 2524
-		traits = { }
-		skill = 2
-		attack_skill = 1
-		defense_skill = 1
-		planning_skill = 1
-		logistics_skill = 1
-	}
 
 }
