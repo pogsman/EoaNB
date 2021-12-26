@@ -236,7 +236,7 @@ country_event = {
 				#has_completed_focus = PIE_French_Aid
 				has_completed_focus = PIE_Start_Border_Operations
 			}
-			has_completed_focus = PIE_Provoke_Austria
+			#has_completed_focus = PIE_Provoke_Austria
 		}
 		NOT = {
 			has_country_flag = is_literally_italy
@@ -259,7 +259,7 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				complete_national_focus = PIE_The_War_Starts
+				#complete_national_focus = PIE_The_War_Starts
 			}
 			hidden_effect = {
 				complete_national_focus = PIE_French_Army_Arrives
@@ -290,7 +290,7 @@ country_event = {
 				}
 				PIE = {
 					NOT = {
-						has_completed_focus = PIE_Ensure_Russias_Neutrality
+						#has_completed_focus = PIE_Ensure_Russias_Neutrality
 					}
 				}
 			}
@@ -362,7 +362,7 @@ country_event = {
 	trigger = {
 		TAG = PIE
 		NOT = {
-			has_completed_focus = PIE_The_Carboneria
+			#has_completed_focus = PIE_The_Carboneria
 		}
 		OR = {
 			NSC = {
@@ -486,7 +486,7 @@ country_event = {
 			base = 1
 		}
 		custom_effect_tooltip = PIE_Carboneria_Influences_Government
-		complete_national_focus = PIE_The_Carboneria
+		#complete_national_focus = PIE_The_Carboneria
 		add_popularity = {
 			ideology = social_egalitarianism
 			popularity = .1
@@ -611,7 +611,7 @@ country_event = {
 			complete_national_focus = FRA_the_orsini_letter
 		}
 		PIE = {
-			complete_national_focus = PIE_A_Deal_with_Napoleon
+			#complete_national_focus = PIE_A_Deal_with_Napoleon
 			country_event = {
 				id = sardinia.41
 			}
@@ -623,7 +623,7 @@ country_event = {
 			factor = 90
 		}
 		PIE = {
-			complete_national_focus = PIE_The_Carboneria
+			#complete_national_focus = PIE_The_Carboneria
 			country_event = {
 				id = sardinia.42
 			}
@@ -660,118 +660,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = sardinia.43
-	title = sardinia.43.t
-	desc = sardinia.43.d
-	picture = GFX_event_ITA_Creation_Army
-	is_triggered_only = yes
-	option = {
-		name = sardinia.43.a
-		custom_effect_tooltip = PIE_CBI_Uprising_Sicily
-		If = {
-			limit = {
-				has_completed_focus = PIE_The_Carboneria
-			}
-			hidden_effect = {
-				CBI = {
-					transfer_state = 115
-					transfer_state = 156
-					load_oob = "PIE_Expedition_Thousand_CBI"
-					load_oob = "PIE_Expedition_Thousand"
-					load_oob = "PIE_Expedition_Thousand_CBI"
-					load_oob = "PIE_Expedition_Thousand"
-					hidden_effect = {
-						add_state_core = 158
-						add_state_core = 981
-						add_state_core = 161
-						add_state_core = 2
-						add_state_core = 159
-						add_state_core = 162
-						add_state_core = 808
-						add_state_core = 813
-						add_state_core = 157
-						add_state_core = 785
-						add_state_core = 812
-						add_state_core = 117
-						add_state_core = 997
-						add_state_core = 156
-						add_state_core = 115
-						add_state_core = 114
-						add_state_claim = 979
-						add_state_claim = 160
-						add_state_claim = 1234
-						add_state_claim = 787
-					}
-				}
-				CBI = {
-					set_politics = {
-						ruling_party = social_egalitarianism
-					}
-					declare_war_on = {
-						target = NSC
-						type = annex_everything
-					}
-					create_country_leader = {
-						name = "Giuseppe Garibaldi"
-						picture = "Portrait_CBI_Giuseppe_Garibaldi.dds"
-						expire = "1965.1.1"
-						ideology = conserv_liberal
-						traits = {
-						}
-					}
-				}
-				PIE = {
-					remove_unit_leader = 114
-					declare_war_on = {
-						target = NSC
-						type = annex_everything
-					}
-					puppet = CBI
-				}
-			}
-		}
-		IF = {
-			limit = {
-				has_completed_focus = PIE_A_Deal_with_Napoleon
-			}
-			hidden_effect = {
-				transfer_state = 115
-				transfer_state = 156
-				declare_war_on = {
-					target = NSC
-					type = annex_everything
-				}
-				load_oob = "PIE_Expedition_Thousand"
-				load_oob = "PIE_Expedition_Thousand_French_Aid"
-			}
-		}
-	}
-}
-
-country_event = {
-	id = sardinia.44
-	title = sardinia.44.t
-	desc = sardinia.44.d
-	fire_only_once = yes
-	trigger = {
-		TAG = PIE
-		NSC = {
-			surrender_progress > 0.8
-		}
-		has_country_flag = PIE_go_with_Garibaldi_Focus
-		has_completed_focus = PIE_The_Carboneria
-	}
-	option = {
-		name = sardinia.44.a
-		CBI = {
-			annex_country = {
-				target = NSC
-				transfer_troops = yes
-			}
-		}
-	}
-}
 
 country_event = {
 	id = sardinia.45
@@ -1054,7 +942,7 @@ country_event = {
 	option = {
 		name = sardinia.54.a
 		PIE = {
-			complete_national_focus = PIE_Go_with_Garibaldi
+			#complete_national_focus = PIE_Go_with_Garibaldi
 		}
 		hidden_effect = {
 			set_country_flag = PIE_risorgimento_failed
@@ -1570,19 +1458,13 @@ country_event = {
 		}
 		trigger = {
 			NOT = {
-				has_completed_focus = PIE_The_Carboneria
+				#has_completed_focus = PIE_The_Carboneria
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.64
 			}
-		}
-		if = {
-			limit = {
-				has_completed_focus = PIE_Go_with_Garibaldi
-			}
-			complete_national_focus = PIE_A_Deal_with_Napoleon
 		}
 		hidden_effect = {
 			set_country_flag = PIE_FRA_Plombieres_Happening
@@ -1719,6 +1601,14 @@ country_event = {
 			modifier = {
 				add = 2
 				is_historical_focus_on = no
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					PIE = {
+						has_country_flag = PIE_RUS_Alliance_2IP
+					}
+				}
 			}
 		}
 		PIE = {
@@ -2051,18 +1941,13 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.86.a
-		AUS = {
-			declare_war_on = {
-				target = RUS
-				type = annex_everything
-			}
+		add_to_war = {
+			targeted_alliance = PIE
+			enemy = LVN
+			hostility_reason = asked_to_join
 		}
-		LVN = {
-			declare_war_on = {
-				target = RUS
-				type = annex_everything
-			}
-		}
+		create_faction = RUS_PIE_alliance_faction
+		add_to_faction = PIE
 		activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 	}
 }
@@ -2686,15 +2571,16 @@ country_event = {
 		AUS = {
 			declare_war_on = {
 				target = PIE
-				type = annex_everything
+				type = wargoal_second_italian_war_of_independence
+			}
+			LVN = {
+				add_to_war = {
+					targeted_alliance = AUS
+					enemy = PIE
+					hostility_reason = asked_to_join
+				}
 			}
 			activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
-		}
-		LVN = {
-			declare_war_on = {
-				target = PIE
-				type = annex_everything
-			}
 		}
 		if = {
 			limit = {
@@ -2717,6 +2603,8 @@ country_event = {
 					relation = military_access
 					active = yes
 				}
+				create_faction = FRA_PIE_alliance_faction
+				add_to_faction = PIE
 			}
 		}
 		PIE = {
@@ -2781,12 +2669,12 @@ country_event = {
 		}
 		white_peace = PIE
 		white_peace = FRA
-		remove_decision = ITA_War_Mission_TUS_2IP
+		remove_mission = ITA_War_Mission_TUS_2IP
 		news_event = {
 			id = sardinia_news.8
 		}
 		PIE = {
-			remove_decision = ITA_War_Mission_TUS_2IP
+			remove_mission = ITA_War_Mission_TUS_2IP
 			puppet = TUS
 			country_event = {
 				id = sardinia.120
@@ -2960,7 +2848,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.125.a
-		complete_national_focus = PIE_The_War_Ends
+		#complete_national_focus = PIE_The_War_Ends
 		country_event = {
 			id = sardinia.123
 		}
@@ -3063,6 +2951,9 @@ country_event = {
 				id = sardinia.130
 				days = 5
 			}
+		}
+		PIE = {
+			complete_national_focus = PIE_Formation_of_the_Central_States
 		}
 	}
 }
@@ -3539,11 +3430,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.145.a
-		hidden_effect = {
-			PIE = {
-				set_country_flag = PIE_Central_States_Flag
-			}
-		}
 	}
 }
 
@@ -3719,6 +3605,11 @@ country_event = {
 	option = {
 		#West Galicia
 		name = sardinia.155.a
+		trigger = {
+			NOT = {
+				has_country_flag = RUS_GAL_WEST_BORDER_STATE
+			}
+		}
 		ai_chance = {
 			base = 1
 		}
@@ -3762,6 +3653,11 @@ country_event = {
 	option = {
 		# East Galicia
 		name = sardinia.155.b
+		trigger = {
+			NOT = {
+				has_country_flag = RUS_GAL_EAST_BORDER_STATE
+			}
+		}
 		ai_chance = {
 			base = 1
 		}
@@ -3805,6 +3701,11 @@ country_event = {
 	option = {
 		# West Galicia + Krakow
 		name = sardinia.155.c
+		trigger = {
+			NOT = {
+				has_country_flag = RUS_GAL_WEST_BORDER_STATE_KRAKOW
+			}
+		}
 		ai_chance = {
 			base = 3
 		}
@@ -3869,6 +3770,11 @@ country_event = {
 	option = {
 		#### East Galicia + Krakow
 		name = sardinia.160.a
+		trigger = {
+			NOT = {
+				has_country_flag = RUS_GAL_EAST_BORDER_STATE_KRAKOW
+			}
+		}
 		ai_chance = {
 			base = 3
 		}
@@ -3912,19 +3818,101 @@ country_event = {
 	option = {
 		###Full annexation
 		name = sardinia.160.b
+		trigger = {
+			NOT = {
+				has_country_flag = RUS_GAL_FULL_ANNEXATION
+			}
+		}
 		ai_chance = {
 			base = 1
 		}
-
-	}
-	option = {
-		###Autonomous Galicia
-		name = sardinia.160.c
-		ai_chance = {
-			base = 3
+		hidden_effect = {
+			set_country_flag = RUS_GAL_FULL_ANNEXATION
+		}
+		PIE = {
+			country_event = {
+				id = sardinia.163
+			}
+		}
+		AUS = {
+			country_event = {
+				id = sardinia.163
+			}
+		}
+		ENG = {
+			country_event = {
+				id = sardinia.163
+			}
+		}
+		FRA = {
+			country_event = {
+				id = sardinia.163
+			}
+		}
+		PRS = {
+			country_event = {
+				id = sardinia.163
+			}
+		}
+		hidden_effect = {
+			UCT = {
+				set_variable = {
+					var = var_galicia_conference
+					value = 0
+				}
+			}
 		}
 
 	}
+	#option = {
+	#	###Autonomous Galicia
+	#	name = sardinia.160.c
+	#	trigger = {
+	#		NOT = {
+	#			has_country_flag = RUS_GAL_Autonomous
+	#		}
+	#	}
+	#	ai_chance = {
+	#		base = 3
+	#	}
+	#	hidden_effect = {
+	#		set_country_flag = RUS_GAL_Autonomous
+	#	}
+	#	PIE = {
+	#		country_event = {
+	#			id = sardinia.165
+	#		}
+	#	}
+	#	AUS = {
+	#		country_event = {
+	#			id = sardinia.165
+	#		}
+	#	}
+	#	ENG = {
+	#		country_event = {
+	#			id = sardinia.165
+	#		}
+	#	}
+	#	FRA = {
+	#		country_event = {
+	#			id = sardinia.165
+	#		}
+	#	}
+	#	PRS = {
+	#		country_event = {
+	#			id = sardinia.165
+	#		}
+	#	}
+	#	hidden_effect = {
+	#		UCT = {
+	#			set_variable = {
+	#				var = var_galicia_conference
+	#				value = 0
+	#			}
+	#		}
+	#	}
+	#
+	#}
 	option = {
 		###Back
 		name = sardinia.160.e
@@ -3961,6 +3949,22 @@ country_event = {
 	desc = sardinia.157.d
 	picture = GFX_event_ITA_Galicia_Conference_vote
 	is_triggered_only = yes
+	timeout_days = 9
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = PIE
+				}
+				RUS = {
+					country_event = {
+						id = sardinia.170
+						days = 10
+					}
+				}
+			}
+		}
+	}
 	option = {
 		name = sardinia.157.a
 		#yes
@@ -4014,19 +4018,19 @@ country_event = {
 				tag = PRS
 			}
 			modifier = {
-				add = 1
+				add = 0
 				tag = FRA
 			}
 		}
 		#no
 		custom_effect_tooltip = ITA_Galicia_Conference_vote_no_tt
 		hidden_effect = {
-			UCT = {
-				subtract_from_variable = {
-					var = var_galicia_conference
-					value = 1
-				}
-			}
+			#UCT = {
+			#	subtract_from_variable = {
+			#		var = var_galicia_conference
+			#		value = 1
+			#	}
+			#}
 		}
 	}
 }
@@ -4063,12 +4067,28 @@ country_event = {
 }
 
 country_event = {
-	### The Vote (one state + Krakow)
+	### The Vote (West Galicia + Krakow)
 	id = sardinia.159
 	title = sardinia.159.t
 	desc = sardinia.159.d
 	picture = GFX_event_ITA_Galicia_Conference_vote
 	is_triggered_only = yes
+	timeout_days = 9
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = PIE
+				}
+				RUS = {
+					country_event = {
+						id = sardinia.170
+						days = 10
+					}
+				}
+			}
+		}
+	}
 	option = {
 		name = sardinia.159.a
 		#yes
@@ -4129,12 +4149,12 @@ country_event = {
 		#no
 		custom_effect_tooltip = ITA_Galicia_Conference_vote_no_tt
 		hidden_effect = {
-			UCT = {
-				subtract_from_variable = {
-					var = var_galicia_conference
-					value = 1
-				}
-			}
+			#UCT = {
+			#	subtract_from_variable = {
+			#		var = var_galicia_conference
+			#		value = 1
+			#	}
+			#}
 		}
 	}
 }
@@ -4153,6 +4173,852 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	### Russia Asks Full Annexation
+	id = sardinia.163
+	title = sardinia.163.t
+	desc = sardinia.163.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	option = {
+		name = sardinia.163.a
+		country_event = {
+			id = sardinia.164
+		}
+	}
+}
+
+country_event = {
+	### The Vote (Full Annexation)
+	id = sardinia.164
+	title = sardinia.164.t
+	desc = sardinia.164.d
+	picture = GFX_event_ITA_Galicia_Conference_vote
+	is_triggered_only = yes
+	timeout_days = 9
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = PIE
+				}
+				RUS = {
+					country_event = {
+						id = sardinia.170
+						days = 10
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sardinia.164.a
+		#yes
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				tag = PIE
+			}
+			modifier = {
+				add = 1
+				tag = ENG
+			}
+			modifier = {
+				add = 1
+				tag = PRS
+			}
+			modifier = {
+				add = 3
+				tag = FRA
+			}
+		}
+		custom_effect_tooltip = ITA_Galicia_Conference_vote_yes_tt
+		hidden_effect = {
+			UCT = {
+				add_to_variable = {
+					var = var_galicia_conference
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = sardinia.164.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				tag = AUS
+			}
+			modifier = {
+				add = 4
+				tag = ENG
+			}
+			modifier = {
+				add = 5
+				tag = PRS
+			}
+			modifier = {
+				add = 2
+				tag = FRA
+			}
+		}
+		#no
+		custom_effect_tooltip = ITA_Galicia_Conference_vote_no_tt
+		hidden_effect = {
+			#UCT = {
+			#	subtract_from_variable = {
+			#		var = var_galicia_conference
+			#		value = 1
+			#	}
+			#}
+		}
+	}
+}
+
+country_event = {
+	### Russia Asks Autonomous Galicia
+	id = sardinia.165
+	title = sardinia.165.t
+	desc = sardinia.165.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	option = {
+		name = sardinia.165.a
+		country_event = {
+			id = sardinia.166
+		}
+	}
+}
+
+country_event = {
+	### The Vote (Autonomous)
+	id = sardinia.166
+	title = sardinia.166.t
+	desc = sardinia.166.d
+	picture = GFX_event_ITA_Galicia_Conference_vote
+	is_triggered_only = yes
+	timeout_days = 9
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = PIE
+				}
+				RUS = {
+					country_event = {
+						id = sardinia.170
+						days = 10
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sardinia.166.a
+		#yes
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				tag = PIE
+			}
+			modifier = {
+				add = 3
+				tag = ENG
+			}
+			modifier = {
+				add = 2
+				tag = PRS
+			}
+			modifier = {
+				add = 3
+				tag = FRA
+			}
+		}
+		custom_effect_tooltip = ITA_Galicia_Conference_vote_yes_tt
+		hidden_effect = {
+			UCT = {
+				add_to_variable = {
+					var = var_galicia_conference
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = sardinia.166.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				tag = AUS
+			}
+			modifier = {
+				add = 1
+				tag = ENG
+			}
+			modifier = {
+				add = 1
+				tag = PRS
+			}
+			modifier = {
+				add = 1
+				tag = FRA
+			}
+		}
+		#no
+		custom_effect_tooltip = ITA_Galicia_Conference_vote_no_tt
+		hidden_effect = {
+			#UCT = {
+			#	subtract_from_variable = {
+			#		var = var_galicia_conference
+			#		value = 1
+			#	}
+			#}
+		}
+	}
+}
+
+country_event = {
+	### Vote Counting Results
+	id = sardinia.167
+	title = sardinia.167.t
+	desc = sardinia.167.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	option = {
+		name = sardinia.167.a
+		hidden_effect = {
+			if = {
+				limit = { #Vote Passed
+					UCT = {
+						check_variable = {
+							var = var_galicia_conference
+							value = 3
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				country_event = {
+					id = sardinia.168
+				}
+				PIE = {
+					country_event = {
+						id = sardinia.168
+					}
+				}
+				AUS = {
+					country_event = {
+						id = sardinia.168
+					}
+				}
+				ENG = {
+					country_event = {
+						id = sardinia.168
+					}
+				}
+				FRA = {
+					country_event = {
+						id = sardinia.168
+					}
+				}
+				PRS = {
+					country_event = {
+						id = sardinia.168
+					}
+				}
+			}
+			if = {
+				limit = {
+					UCT = {
+						check_variable = {
+							var = var_galicia_conference
+							value = 3
+							compare = less_than
+						}
+					}
+				}
+				country_event = {
+					id = sardinia.169
+				}
+				PIE = {
+					country_event = {
+						id = sardinia.169
+					}
+				}
+				AUS = {
+					country_event = {
+						id = sardinia.169
+					}
+				}
+				ENG = {
+					country_event = {
+						id = sardinia.169
+					}
+				}
+				FRA = {
+					country_event = {
+						id = sardinia.169
+					}
+				}
+				PRS = {
+					country_event = {
+						id = sardinia.169
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	### Vote Passed
+	id = sardinia.168
+	title = sardinia.168.t
+	desc = sardinia.168.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	option = {
+		name = sardinia.168.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			RUS_PIE_Galicia_Conference_Pass = yes
+		}
+	}
+}
+
+country_event = {
+	### Vote Failed
+	id = sardinia.169
+	title = sardinia.169.t
+	desc = sardinia.169.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	option = {
+		name = sardinia.169.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			country_event = {
+				id = sardinia.155
+			}
+			RUS = {
+				hidden_effect = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_WEST_BORDER_STATE_KRAKOW
+								NOT = {
+									has_country_flag = RUS_GAL_WEST_BORDER_STATE_KRAKOW2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_WEST_BORDER_STATE_KRAKOW2
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_EAST_BORDER_STATE_KRAKOW
+								NOT = {
+									has_country_flag = RUS_GAL_EAST_BORDER_STATE_KRAKOW2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_EAST_BORDER_STATE_KRAKOW2
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_WEST_BORDER_STATE
+								NOT = {
+									has_country_flag = RUS_GAL_WEST_BORDER_STATE2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_WEST_BORDER_STATE2
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_EAST_BORDER_STATE
+								NOT = {
+									has_country_flag = RUS_GAL_EAST_BORDER_STATE2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_EAST_BORDER_STATE2
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_FULL_ANNEXATION
+								NOT = {
+									has_country_flag = RUS_GAL_FULL_ANNEXATION2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_FULL_ANNEXATION2
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = RUS_GAL_Autonomous
+								NOT = {
+									has_country_flag = RUS_GAL_Autonomous2
+								}
+							}
+						}
+						set_country_flag = RUS_GAL_Autonomous2
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	### Vote Check NOT MEANT TO BE SEEN #####
+	id = sardinia.170
+	title = sardinia.170.t
+	desc = sardinia.170.d
+	picture = GFX_event_ITA_Galicia_Conference
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = sardinia.170.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			country_event = {
+				id = sardinia.167
+			}
+		}
+	}
+}
+
+##################
+### Expedition ###
+##################
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.171
+	title = sardinia.171.t
+	desc = sardinia.171.d
+	picture = GFX_event_ITA_generic_port
+	is_triggered_only = yes
+	option = {
+		name = sardinia.171.a
+
+	}
+}
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.172
+	title = sardinia.172.t
+	desc = sardinia.172.d
+	picture = GFX_event_ITA_il_piemonte
+	is_triggered_only = yes
+	option = {
+		name = sardinia.172.a
+		country_event = {
+			id = sardinia.173
+		}
+	}
+}
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.173
+	title = sardinia.173.t
+	desc = sardinia.173.d
+	picture = GFX_event_ITA_il_piemonte
+	is_triggered_only = yes
+	option = {
+		name = sardinia.173.a
+		country_event = {
+			id = sardinia.174
+		}
+	}
+}
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.174
+	title = sardinia.174.t
+	desc = sardinia.174.d
+	picture = GFX_event_ITA_il_piemonte
+	is_triggered_only = yes
+	option = {
+		name = sardinia.174.a
+		country_event = {
+			id = sardinia.175
+		}
+	}
+}
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.175
+	title = sardinia.175.t
+	desc = sardinia.175.d
+	picture = GFX_event_ITA_Papal_Insurrection
+	is_triggered_only = yes
+	option = {
+		name = sardinia.175.a
+		country_event = {
+			id = sardinia.176
+		}
+	}
+}
+
+country_event = {
+	### Expedition Preparation
+	id = sardinia.176
+	title = sardinia.176.t
+	desc = sardinia.176.d
+	picture = GFX_event_ITA_Expedition_Thousand_Naples
+	is_triggered_only = yes
+	option = {
+		name = sardinia.176.a
+		hidden_effect = {
+			CBI = {
+				set_state_owner = 115
+				set_state_controller = 115
+				set_cosmetic_tag = CBI_garibaldi
+				load_oob = PIE_Expedition_Reworked
+			}
+			news_event = {
+				id = sardinia_news.13
+			}
+		}
+		activate_mission = ITA_War_Mission_NSC_Expedition
+		activate_mission = ITA_War_Mission_Garibaldis_Decree_Expedition
+		activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
+		NSC = {
+			activate_mission = ITA_War_Mission_NSC_Expedition
+		}
+		if = {
+			limit = {
+				has_country_flag = PIE_British_Diplomacy_yes
+			}
+			country_event = {
+				id = sardinia.148
+			}
+		}
+		country_event = {
+			id = sardinia.70
+		}
+		NSC = {
+			news_event = {
+				id = sardinia_news.12
+				days = 10
+			}
+		}
+	}
+}
+
+###### Elections in the Central States
+country_event = {
+	### Election of the dude
+	id = sardinia.177
+	title = sardinia.177.t
+	desc = sardinia.177.d
+	picture = GFX_ITA_Proclamation_of_the_Kingdom_of_Italy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.177.a
+		TUS_eugene_emmanuel_de_savoiecarignan = {
+			promote_character = yes
+		}
+		PIE = {
+			country_event = {
+				id = sardinia.178
+			}
+		}
+	}
+}
+
+country_event = {
+	### Piedmont replaces Eugene
+	id = sardinia.178
+	title = sardinia.178.t
+	desc = sardinia.178.d
+	picture = GFX_ITA_Proclamation_of_the_Kingdom_of_Italy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.178.a
+		TUS = {
+			TUS_carlo_bon_compagni_di_mombello = {
+				promote_character = yes
+			}
+		}
+		FRA = {
+			country_event = {
+				id = sardinia.179
+			}
+		}
+	}
+}
+
+country_event = {
+	### France informed of new leader
+	id = sardinia.179
+	title = sardinia.179.t
+	desc = sardinia.179.d
+	picture = GFX_ITA_Proclamation_of_the_Kingdom_of_Italy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.179.a
+
+	}
+}
+
+########### Cignoli Massacre event chain (2ip)
+country_event = {
+	### Cignoli Massacre
+	id = sardinia.180
+	title = sardinia.180.t
+	desc = sardinia.180.d
+	picture = GFX_event_ITA_cignoli_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.180.a
+		country_event = {
+			id = sardinia.181
+			hours = 5
+		}
+	}
+}
+
+country_event = {
+	### Cignoli Massacre Judiciary Formed, Ambassadors Called
+	id = sardinia.181
+	title = sardinia.181.t
+	desc = sardinia.181.d
+	picture = GFX_event_ITA_cignoli_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.181.a
+		ENG = {
+			country_event = {
+				id = sardinia.182
+			}
+		}
+		FRA = {
+			country_event = {
+				id = sardinia.182
+			}
+		}
+		PRS = {
+			country_event = {
+				id = sardinia.182
+			}
+		}
+		RUS = {
+			country_event = {
+				id = sardinia.182
+			}
+		}
+	}
+}
+
+country_event = {
+	### Cignoli Massacre other nations informed
+	id = sardinia.182
+	title = sardinia.182.t
+	desc = sardinia.182.d
+	picture = GFX_event_ITA_cignoli_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.182.a
+		if = {
+			limit = {
+				tag = ENG
+			}
+			PIE = {
+				country_event = {
+					id = sardinia.183
+					hours = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	### Cignoli Massacre Austria Denounced
+	id = sardinia.183
+	title = sardinia.183.t
+	desc = sardinia.183.d
+	picture = GFX_event_ITA_cignoli_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.183.a
+		AUS = {
+			country_event = {
+				id = sardinia.184
+			}
+		}
+	}
+}
+
+country_event = {
+	### Cignoli Massacre Austria Denounced (AUS)
+	id = sardinia.184
+	title = sardinia.184.t
+	desc = sardinia.184.d
+	picture = GFX_event_ITA_cignoli_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.184.a
+		### Edit Urban so that he has negative modifier
+	}
+	option = {
+		name = sardinia.184.b
+		### Remove Urban (suicide event)
+	}
+}
+#################################
+
+#### Perugian Massacre Events
+country_event = {
+	### Papal States informed of volunteer regiment and National Committe
+	id = sardinia.187
+	title = sardinia.187.t
+	desc = sardinia.187.d
+	picture = GFX_event_ITA_perugian_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.187.a
+		hidden_effect = {
+			country_event = {
+				id = sardinia.188
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	### The Massacre
+	id = sardinia.188
+	title = sardinia.188.t
+	desc = sardinia.188.d
+	picture = GFX_event_ITA_perugian_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.188.a
+		news_event = {
+			id = sardinia_news.15
+		}
+		add_manpower = -250
+	}
+}
+
+country_event = {
+	### The Massacre USA
+	id = sardinia.189
+	title = sardinia.189.t
+	desc = sardinia.189.d
+	picture = GFX_event_ITA_perugian_massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.189.a
+
+	}
+}
+
+
+###Cavour institutes National Guard
+country_event = {
+	id = sardinia.192
+	title = sardinia.192.t
+	desc = sardinia.192.d
+	picture = GFX_event_ITA_Turin_Generic
+	is_triggered_only = yes
+	option = {
+		name = sardinia.192.a
+		custom_effect_tooltip = PIE_national_guard_tt
+		add_war_support = 0.04
+	}
+}
+
+###Garibaldi Forms Dictatorship
+country_event = {
+	id = sardinia.193
+	title = sardinia.193.t
+	desc = sardinia.193.d
+	picture = GFX_event_ITA_garibaldi_dictatorship
+	is_triggered_only = yes
+	option = {
+		name = sardinia.193.a
+		CBI = {
+			add_popularity = {
+				ideology = radical_democracy
+				popularity = 0.5
+			}
+			set_politics = {
+				ruling_party = radical_democracy
+				elections_allowed = no
+			}
+			CBI_giuseppe_garibaldi = {
+				add_country_leader_role = {
+					promote_leader = Yes
+					country_leader = {
+						ideology = military_goverment
+						expire = "1950.1.1"
+						traits = {
+
+						}
+					}
+				}
+			}
+		}
+		news_event = {
+			id = sardinia_news.14
+		}
+	}
+}
+
+###French response to Garibaldi's Announcement
+country_event = {
+	id = sardinia.194
+	title = sardinia.194.t
+	desc = sardinia.194.d
+	picture = GFX_event_ITA_Nap_Victor_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.194.a
+		PIE = {
+			country_event = {
+				id = sardinia.195
+			}
+		}
+	}
+}
+
+###Treaty of Chambery
+country_event = {
+	id = sardinia.195
+	title = sardinia.195.t
+	desc = sardinia.195.d
+	picture = GFX_event_ITA_Nap_Victor_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.195.a
+		set_country_flag = PIE_treaty_of_chambery
+	}
+}
+
 #######################
 ### News Events #######
 #######################
@@ -4287,6 +5153,77 @@ news_event = {
 	}
 }
 
+#Expedition Thousand
+news_event = {
+	id = sardinia_news.13
+	title = sardinia_news.13.t
+	desc = sardinia_news.13.d
+	picture = GFX_news_event_ITA_expedition_thousand
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = sardinia_news.13.a
+	}
+}
+
+#Dictatorship of Garibaldi
+news_event = {
+	id = sardinia_news.14
+	title = sardinia_news.14.t
+	desc = sardinia_news.14.d
+	picture = GFX_news_event_ITA_Garibaldi_Dictatorship
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = sardinia_news.14.a
+	}
+}
+
+#Perugia Massacre
+news_event = {
+	id = sardinia_news.15
+	title = sardinia_news.15.t
+	desc = sardinia_news.15.d
+	picture = GFX_news_event_ITA_perugia_massacre
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = sardinia_news.15.a
+		if = {
+			limit = {
+				tag = USA
+			}
+			country_event = {
+				id = sardinia.189
+			}
+		}
+	}
+}
+
+#Garibaldi Announces Decree to Advance to Rome and Venice
+news_event = {
+	id = sardinia_news.16
+	title = sardinia_news.16.t
+	desc = sardinia_news.16.d
+	picture = GFX_news_event_ITA_Garibaldi_decree_romevenice
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = sardinia_news.16.a
+		if = {
+			limit = {
+				tag = FRA
+			}
+			country_event = {
+				id = sardinia.194
+			}
+		}
+	}
+}
 ###Flavor Events###
 country_event = {
 	id = sardinia.33

@@ -144,7 +144,7 @@
 	#}
 
 	### POLITICAL LEADERS ###
-	recruit_character = WUR_wilhelm_i
+	recruit_character = WUR_king_wilhelm_i
 	recruit_character = WUR_regency
 	recruit_character = WUR_karl_i
 	

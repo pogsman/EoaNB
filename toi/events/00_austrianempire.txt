@@ -9,7 +9,7 @@ add_namespace = AUShuncompromise
 add_namespace = AUSfedcompromise
 add_namespace = AUSfocustree
 
-#Fall of Freiharr von Bach 
+#Fall of Freiherr von Bach 
 country_event = {
 	id = AUSpolitics.1 
 	title = AUSpolitics.1.t
@@ -525,12 +525,12 @@ country_event = { #Retire Ferenc Gyulay
 	    TAG = AUS
 		date > 1859.05.15 
 		AUS = {
-		any_war_score < 2 
-		has_war_with = PIE 
+			any_war_score < 2 
+			has_war_with = PIE 
 		}
 	}
 	
-	option = { #Retire him      
+	option = { #Retire him, Heß will take over      
 		name = AUSgenerals.1.a 
 		ai_chance = { 
             factor = 75     
@@ -539,12 +539,26 @@ country_event = { #Retire Ferenc Gyulay
                 is_historical_focus_on = yes
             }
         }
-		
-	    remove_unit_leader = 168305
+	    retire_character = AUS_ferenc_gyulay
+		AUS_heinrich_von_hess = {
+			remove_unit_leader_role = yes
+			add_field_marshal_role = {
+				traits = { politically_connected }
+				skill = 3
+					attack_skill = 2 
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 3 
+				legacy_id = 16802
+			}
+		}
 	}
 	
 	option = { #Do not Retire him      
-		name = AUSgenerals.1.b 
+		name = AUSgenerals.1.b
+		trigger = {
+			command_power > 99.9
+		}
 		ai_chance = { 
             factor = 25     
             modifier = {
@@ -552,12 +566,10 @@ country_event = { #Retire Ferenc Gyulay
                 is_historical_focus_on = yes
             }
         }
-	
 	    AUS = {
 		    add_stability = -0.05 
-			add_political_power = -50 
+			add_political_power = -100 
 		}
-	
 	}
 }
 
@@ -573,17 +585,21 @@ country_event = { #Retire Heinrich von Hess
 		name = AUSgenerals.2.a 
 		ai_chance = { factor = 100 }
 		
-	    remove_unit_leader = 168306
+	    AUS_heinrich_von_hess = {
+			remove_unit_leader_role = yes
+		}
 	}
 	
 	option = { #Do not Retire him      
-		name = AUSgenerals.2.b 
+		name = AUSgenerals.2.b
+		trigger = {
+			command_power > 49.9
+		}
 		ai_chance = { factor = 0 }
 	
 	    AUS = {
 			add_command_power = -50   
 		}
-	
 	}
 }
 
@@ -599,17 +615,19 @@ country_event = { #Retire Eduard Clam-Gallas
 		name = AUSgenerals.3.a 
 		ai_chance = { factor = 100 }
 		
-	    remove_unit_leader = 16832
+	    retire_character = AUS_eduard_clam_gallas
 	}
 	
 	option = { #Do not Retire him      
-		name = AUSgenerals.3.b 
+		name = AUSgenerals.3.b
+		trigger = {
+			command_power > 74.9
+		}
 		ai_chance = { factor = 0 }
 	
 	    AUS = {
 			add_command_power = -75    
 		}
-	
 	}
 }
 
@@ -624,9 +642,7 @@ country_event = { #Make Leopold Gondrecourt Tutor of Rudolf
 	option = { #Retire him      
 		name = AUSgenerals.4.a 
 		ai_chance = { factor = 100 }
-		
-	    remove_unit_leader = 16833
-	}     
+	}
 }
 
 country_event = { #Retire Leopold Gondrecourt as Tutor        
@@ -640,21 +656,7 @@ country_event = { #Retire Leopold Gondrecourt as Tutor
 	option = { #Retire him      
 		name = AUSgenerals.5.a 
 		ai_chance = { factor = 100 }
-		
-	    AUS = {
-            create_corps_commander = {
-                name = "Leopold Gondrecourt"
-                picture = "Portrait_AUS_Leopold_Gondrecourt.png"
-                traits = { skilled_staffer }
-                skill = 3 
-                attack_skill = 2 
-             	defense_skill = 2
-               	planning_skill = 2
-             	logistics_skill = 3 
-            	id = 16833
-		    }
-	    }
-    }		     
+    }
 }
 
 country_event = { #Promote Kuhnenfeld as General      
@@ -669,23 +671,21 @@ country_event = { #Promote Kuhnenfeld as General
 		name = AUSgenerals.6.a 
 		ai_chance = { factor = 100 }
 		
-	    AUS = {
-            create_corps_commander = {
-            name = "Franz Kuhn von Kuhnenfeld"
-            picture = "Portrait_AUS_Franz_von_Kuhnenfeld.png"
-            traits = { trait_mountaineer }
-            skill = 3
-            attack_skill = 3
-	        defense_skill = 2 
-	        planning_skill = 3
-	        logistics_skill = 2
-	        id = 168307
-		    }
-	    }
-    }		     
+		AUS_franz_kuhn_von_kuhnenfeld = {
+			add_corps_commander_role = {
+				traits = { trait_mountaineer }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 2 
+					planning_skill = 3
+					logistics_skill = 2
+				legacy_id = 16814
+			}
+		}
+    }
 }
 
-country_event = { #Promote Archduke Wilhelm Franz Karl      
+country_event = { #Promote Archduke Wilhelm    
 	id = AUSgenerals.7
 	title = AUSgenerals.7.t
 	desc = AUSgenerals.7.d
@@ -697,23 +697,21 @@ country_event = { #Promote Archduke Wilhelm Franz Karl
 		name = AUSgenerals.7.a 
 		ai_chance = { factor = 100 }
 		
-	    AUS = {
-            create_corps_commander = {
-            name = "Wilhelm Franz Karl of Austria"
-            picture = "Portrait_AUS_Archduke_Wilhelm_Karl_Franz.png"
-            traits = { bearer_of_artillery }
-            skill = 2 
-            attack_skill = 1 
-	        defense_skill = 3 
-	        planning_skill = 2 
-	        logistics_skill = 2 
-	        id = 168308 
-		    }
-	    }
-    }		     
+		AUS_wilhelm_von_osterreich = {
+			add_corps_commander_role = {
+				traits = { bearer_of_artillery }
+				skill = 2 
+					attack_skill = 1 
+					defense_skill = 3 
+					planning_skill = 2 
+					logistics_skill = 2 
+				legacy_id = 16815
+			}
+		}
+    }
 }
 
-country_event = { #Promote Leopold Gondrecout       
+country_event = { #Promote Leopold Gondrecourt       
 	id = AUSgenerals.8
 	title = AUSgenerals.8.t
 	desc = AUSgenerals.8.d
@@ -725,20 +723,18 @@ country_event = { #Promote Leopold Gondrecout
 		name = AUSgenerals.8.a 
 		ai_chance = { factor = 100 }
 		
-	    AUS = {
-            create_corps_commander = {
-                name = "Leopold Gondrecourt"
-                picture = "Portrait_AUS_Leopold_Gondrecourt.png"
-                traits = { skilled_staffer }
-                skill = 3 
-                attack_skill = 2 
-             	defense_skill = 2
-               	planning_skill = 2
-             	logistics_skill = 3 
-            	id = 16833
-		    }
-	    }
-    }		     
+		AUS_leopold_gondrecourt = {
+			add_corps_commander_role = {
+				traits = { skilled_staffer }
+				skill = 3
+					attack_skill = 2 
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 3 
+				legacy_id = 16816
+			}
+		}
+    }     
 }
 
 
@@ -1684,27 +1680,27 @@ country_event = { # SMS Novara Circumnavigates The Globe
 
 	option = { 
 		name = AUSflavour.19.a 
-		create_navy_leader = {
-  			name = "Bernhard von Wüllerstorf-Urbair"
- 			picture = "Portrait_AUS_Bernhard_von_Wullerstorf_Urbair.png"
-			traits = { blue_water_expert navy_media_personality }
-  			skill = 3
-  			id = 16838
-  			attack_skill = 2
-  			defense_skill = 2
-  			maneuvering_skill = 3
-  			coordination_skill = 3
+		AUS_bernhard_von_wullerstorf_urbair = {
+			add_naval_commander_role = {
+				traits = { blue_water_expert navy_media_personality }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 2
+					maneuvering_skill = 3
+					coordination_skill = 3
+				legacy_id = 16903
+			}
 		}
-		create_navy_leader = {
-  			name = "Friedrich von Pöck"
-  			picture = "Portrait_AUS_Friedrich_von_Pock.png"
-  			traits = { blue_water_expert }
-  			skill = 3
-  			id = 16839
-  			attack_skill = 1
-  			defense_skill = 2
-  			maneuvering_skill = 3
-  			coordination_skill = 2
+		AUS_friedrich_von_pock = {
+			add_naval_commander_role = {
+				traits = { blue_water_expert }
+				skill = 2
+					attack_skill = 1
+					defense_skill = 2
+					maneuvering_skill = 3
+					coordination_skill = 2
+				legacy_id = 16904
+			}
 		}
 		add_tech_bonus = {
             bonus = 0.75
@@ -1799,8 +1795,7 @@ country_event = { #Beginning of Revolution
                 add_ideas = HUN_idea_Revolt 
                 set_politics = {
 	                ruling_party = centrism
-            }
-
+				}
                 set_popularities = {
                     collectivist_socialism = 3
                     social_egalitarianism = 10
@@ -1825,19 +1820,19 @@ country_event = { #Beginning of Revolution
                     producer = HUN 
                 }
                 create_country_leader = {
-                name = "Lajos Kossuth"
-                desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
-                picture = "Portrait_HUN_Lajos_Kossuth.dds"
-                expire = 2000.09.10
-                ideology = social_liberal
-                }		
+					name = "Lajos Kossuth"
+					desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
+					picture = "Portrait_HUN_Lajos_Kossuth.dds"
+					expire = 2000.09.10
+					ideology = social_liberal
+                }
                 create_country_leader = {
-                name = "Ferenc Deák"
-                desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
-                picture = "Portrait_HUN_Ferenc_Deak.dds"
-                expire = 2000.09.10
-                ideology = moderatism
-                }				
+					name = "Ferenc Deák"
+					desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
+					picture = "Portrait_HUN_Ferenc_Deak.dds"
+					expire = 2000.09.10
+					ideology = moderatism
+                }
 		    }
 			if = {
 			    limit = {
@@ -2399,7 +2394,7 @@ country_event = { #Appoint Prime Minister for Hungary
     }	
 }
 
-country_event = { #Franz Joseph crowned King of Hungary  
+country_event = { #Franz Joseph crowned King of Hungary
 	id = AUShuncompromise.5
 	title = AUShuncompromise.5.t
 	desc = AUShuncompromise.5.d
@@ -3204,4 +3199,53 @@ country_event = {
 		name = AUSfocustree.10.a 
 		ai_chance = { factor = 100 }
 	}
+}
+
+### Italian Situation focus tree
+
+country_event = { #Appoint new Viceroy
+	#focus id AUS_new_viceroy
+	id = AUSfocustree.11
+	title = AUSpolitics.11.t
+	desc = AUSpolitics.11.d
+	#picture = 
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	immediate = {
+	    
+	}
+	
+	option = {
+		name = AUSpolitics.11.a  #Appoint Maximillion
+		ai_chance = { 
+            factor = 60 
+            modifier = {
+                factor = 100
+                is_historical_focus_on = yes
+            }
+        }
+			AUS = {
+				set_country_flag = "appoint_maximillion"
+			}
+			#custom_effect_tooltip = 
+	}
+	
+	option = {
+		name = AUSpolitics.11.b  #Appoint Archduke Rainier
+		ai_chance = { 
+            factor = 40 
+            modifier = {
+                factor = 0 
+                is_historical_focus_on = yes
+            }
+        }
+			AUS = {
+				set_country_flag = "appoint_rainier"
+			}			
+           # custom_effect_tooltip = 	
+	}
+	
 }

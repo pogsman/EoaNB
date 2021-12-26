@@ -2563,7 +2563,13 @@ country_event = { # Treaty of Luxemburg - Victory
 
   option = { # France fully annex Luxemburg
       name = nap_france.320.a
-      ai_chance = { factor = 35 }
+      ai_chance = { 
+		factor = 35 
+		modifier = {
+			factor = 0 
+			LUX = { is_ai = no }
+		}
+	  }
       annex_country = { target = LUX }
       PRS = {
         country_event = { days = 1 id = nap_france.321 }
@@ -3852,14 +3858,14 @@ country_event = { # Orsini Affair
         id = sardinia.68
         days = 5
       }
-      PIE = {
-        if = {
-          limit = {
-            has_completed_focus = PIE_Go_with_Garibaldi
-          }
-          complete_national_focus = PIE_Aftermath_of_Orsini
-        }
-      }
+    #PIE = {
+    #  if = {
+    #    limit = {
+    #      has_completed_focus = PIE_Go_with_Garibaldi
+    #    }
+    #    complete_national_focus = PIE_Aftermath_of_Orsini
+    #  }
+    #}
     }
   }
 

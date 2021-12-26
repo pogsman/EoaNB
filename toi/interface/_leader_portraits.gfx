@@ -8,6 +8,11 @@ spriteTypes = {
 		name = "GFX_Portrait_AUS_Alexander_von_Bach"
 		texturefile = "gfx/leaders/AUS/Portrait_AUS_Alexander_von_Bach.png"
 	}
+	
+	spriteType = {
+		name = "GFX_Portrait_AUS_Franz_Joseph_I"
+		texturefile = "gfx/leaders/AUS/Portrait_AUS_Franz_Joseph_I.png"
+	}
 
 	### BAD
 
@@ -103,6 +108,13 @@ spriteTypes = {
 		texturefile = "gfx/leaders/BRE/Portrait_BRE_TradCon.png"
 	}
 	
+	### CBI
+
+	spriteType = {
+		name = "GFX_Portrait_CBI_Giuseppe_Garibaldi"
+		texturefile = "gfx/leaders/CBI/Portrait_CBI_Giuseppe_Garibaldi.png"
+	}
+
 	### DEN
 
 	spriteType = {
@@ -249,6 +261,108 @@ spriteTypes = {
 		texturefile = "gfx/leaders/FRA/Portrait_FRA_Auguste_Blanqui.png"
 	}
 	
+	### GRE
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Alexandros_Koumoundouros"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Alexandros_Koumoundouros.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Alexandros_Mavrokordatos"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Alexandros_Mavrokordatos.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Alfred_I"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Alfred_I.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Athanasios_Miaoulis"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Athanasios_Miaoulis.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Christodoulos_Chatzipetros"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Christodoulos_Chatzipetros.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_GRE_Constantine_Canaris"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Constantine_Canaris.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_GRE_Constantine_I_young"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Constantine_I_young.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Dimitrios_Voulgaris"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Dimitrios_Voulgaris.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Gennaios_Kolokotronis"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Gennaios_Kolokotronis.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_George_I"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_George_I.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_GRE_George_I_young"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_George_I_young.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_GRE_Ioannis_Mamouris"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Ioannis_Mamouris.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Ludwig_I"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Ludwig_I.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Luitpold_I"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Luitpold_I.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Otto_I"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Otto_I.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_GRE_Panos_Koronaios"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Panos_Koronaios.png"
+	}
+	
+	### HLS
+
+	spriteType = {
+		name = "GFX_Portrait_HLS_Friedrich_VIII"
+		texturefile = "gfx/leaders/HLS/Portrait_HLS_Friedrich_VIII.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_HLS_Provisional_Administration"
+		texturefile = "gfx/leaders/HLS/Portrait_HLS_Provisional_Administration.png"
+	}
+
+	### LIE
+
+	spriteType = {
+		name = "GFX_Portrait_LIE_Aloys_II"
+		texturefile = "gfx/leaders/LIE/Portrait_LIE_Aloys_II.png"
+	}
+
+	
 	### PRS
 	
 	spriteType = {
@@ -386,6 +500,23 @@ spriteTypes = {
 		texturefile = "gfx/leaders/PRS/Portrait_PRS_Wilhelm_Marr.png"
 	}
 	
+	### SCH
+	
+	spriteType = {
+		name = "GFX_Portrait_SCH_Frederick_VII"
+		texturefile = "gfx/leaders/SCH/Portrait_SCH_Frederick_VII.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_SCH_Provisional_Administration"
+		texturefile = "gfx/leaders/SCH/Portrait_SCH_Provisional_Administration.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_SCH_Carl_von_Scheel_Plessen"
+		texturefile = "gfx/leaders/SCH/Portrait_SCH_Carl_von_Scheel_Plessen.png"
+	}
+	
 	### SWI
 
 	spriteType = {
@@ -420,6 +551,14 @@ spriteTypes = {
 
 	### RUS
 
+
+	### TUS
+
+	spriteType = {
+		name = "GFX_Portrait_TUS_Eugen_di_Savoy"
+		texturefile = "gfx/leaders/TUS/Portrait_TUS_Eugen_di_Savoy.png"
+	}
+	
 
 
 	# leaders we need to override in DLC go in this file
@@ -1542,5 +1681,27 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_IRE_meagher"
 		texturefile = "gfx/leaders/IRE/Portrait_IRE_meagher.png"
+	}
+	##ASH
+	
+	spriteType = {
+		name = "GFX_Portrait_ASH_Kwaku"
+		texturefile = "gfx/leaders/ASH/Portrait_ASH_Kwaku_Dua_I_Panyin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_EGY_Ismail_Pasha"
+		texturefile = "gfx/leaders/EGY/Portrait_EGY_Ismail_Pasha.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_EGY_Muhammad_Sa_id_Pasha"
+		texturefile = "gfx/leaders/EGY/Portrait_EGY_Muhammad_Sa_id_Pasha.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_EGY_Ahmad_Rifaat_Pasha"
+		texturefile = "gfx/leaders/EGY/Portrait_EGY_Ahmad_Rifaat_Pasha.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_EGY_regency"
+		texturefile = "gfx/leaders/EGY/Portrait_EGY_regency.png"
 	}
 }
