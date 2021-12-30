@@ -543,3 +543,35 @@ country_event = { #Event for player PIedmont
 		SAR = { change_tag_from = ROOT }
 	}
 }
+
+country_event = { #Ultimatum Event for Bring the War to the Italians
+	id = AUSitalypolitics.12
+	title = AUSitalypolitics.12.t
+	desc = AUSitalypolitics.12.d
+	picture = 
+	
+	is_triggered_only = yes 
+    
+	fire_only_once = yes 
+	
+	option = { 
+		name = AUSitalypolitics.12.a
+		ai_chance = { factor = 100 }  		
+	}
+}
+
+country_event = { #Ultimatum Event for Ultimatum to the Central States 
+	id = AUSitalypolitics.13
+	title = AUSitalypolitics.13.t
+	desc = AUSitalypolitics.13.d
+	picture = 
+	
+	is_triggered_only = yes 
+    
+	fire_only_once = yes 
+	
+	option = { 
+		name = AUSitalypolitics.13.a
+		ai_chance = { factor = 100 }  		
+	}
+}

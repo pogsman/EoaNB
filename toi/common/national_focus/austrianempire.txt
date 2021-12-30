@@ -23,7 +23,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_Italian_Question
 		x = 4
 		y = 0
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			#factor = 5
@@ -41,14 +41,8 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-            #LVN = {
-			#   add_war_support = 0.1 
-			#			add_political_power = 100  
-			#}
 			add_political_power = 50
-			ITA = {
-				#italy gets event
-			}
+			country_event = AUSfocustree.13
 		}
 	}
 	
@@ -57,7 +51,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		x = 2
 		y = 1
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 5
@@ -99,7 +93,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		x = 2
 		y = 2
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 5
@@ -123,13 +117,14 @@ focus_tree = {
 		cancel_if_invalid = no
 		
 		completion_reward = {  
-			160 = {
-				remove_building = {
-					type = bunker
-					level = 1
-					province = 603
+				160 = {
+					remove_building = {
+						type = bunker
+						level = 1
+						province = 603
+					}
 				}
-			}
+			
 			activate_mission = AUS_mission_fort_refit2
 		}
 	}
@@ -139,7 +134,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		x = 2
 		y = 3
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 5
@@ -179,7 +174,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		x = 2
 		y = 4
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 5
@@ -403,10 +398,13 @@ focus_tree = {
 			focus = AUS_Viceroy_Rainer
         }
 		completion_reward = {
-		   LVN = {
-				#experience_gain_army = 0.1
-				#training_time_factor = 0.1
-		   }	
+		   
+			modifier = {
+				experience_gain_army = 0.1
+				training_time_factor = 0.1
+				tag = LVN
+			}
+		   	   
 		}
 	}
 	
@@ -437,7 +435,8 @@ focus_tree = {
         }
 				
 		completion_reward = {
-			
+			PRM = { country_event = AUSitalypolitics.12}
+			MOD = { country_event = AUSitalypolitics.12}
 		}
 	}
 	
@@ -479,6 +478,11 @@ focus_tree = {
 		y = 6
 		cost = 35
 		available_if_capitulated = no
+		
+		available = {
+			has_completed_focus = AUS_war_to_italians
+		}
+		
 		ai_will_do = {
 			factor = 5 
 		}
@@ -499,7 +503,10 @@ focus_tree = {
         }
 				
 		completion_reward = {
-		   
+		   declare_war_on = {
+					target = PIE
+					type = annex_everything
+			}
 		}
 	}
 	
@@ -513,6 +520,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5 
 		}
+		
+		available = {
+			has_global_flag = PIE_2IW_Victory
+		}	
 		
 		bypass = {
 		    OR = {
@@ -548,6 +559,17 @@ focus_tree = {
 			factor = 5 
 		}
 		
+		available = {
+			AND = {
+				LVN = {
+					is_puppet_of = AUS
+				}
+				160 = {
+					is_owned_and_controlled_by = LVN
+				}
+			}
+		}
+		
 		bypass = {
 		    OR = {
                 LVN = { 
@@ -564,7 +586,11 @@ focus_tree = {
         }
 				
 		completion_reward = {
-		   
+		   add_stability = -0.05
+		   AUS = {
+				transfer_state = 160
+		   }
+		   country_event = AUSfocustree.12
 		}
 	}
 	
@@ -573,7 +599,7 @@ focus_tree = {
 		icon = GFX_goal_AUS_viceroy_maximilian
 		x = 0
 		y = 8
-		cost = 1
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 5 
@@ -592,6 +618,8 @@ focus_tree = {
 		
         prerequisite = {
 			focus = AUS_Refit_fort_mantua 
+        }
+		prerequisite = {
 			focus = AUS_Disaster_Italy2
         }
 				
@@ -792,6 +820,16 @@ focus_tree = {
 			factor = 5 
 		}
 		
+		available = {
+			AND = {
+				LVN = {
+					has_cosmetic_tag = LVN_Northern_Confederation
+				}
+				NOT = { has_global_flag = PIE_2IW_Victory }
+				has_war = no
+			}
+		}
+		
 		bypass = {
 		    OR = {
                 LVN = { 
@@ -842,7 +880,8 @@ focus_tree = {
         }
 				
 		completion_reward = {
-		   
+		   PRM = { country_event = AUSitalypolitics.13}
+		   MOD = { country_event = AUSitalypolitics.13}
 		}
 	}
 	
