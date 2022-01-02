@@ -2753,10 +2753,59 @@ spriteTypes = {
 		name = "GFX_event_ITA_Galicia_Conference_vote"
 		texturefile = "gfx/event_pictures/italy/event_ITA_Galicia_Conference_vote.png"
 	}
+	spriteType = {
+		name = "GFX_event_ITA_generic_port"
+		texturefile = "gfx/event_pictures/italy/event_ITA_generic_port.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_il_piemonte"
+		texturefile = "gfx/event_pictures/italy/event_ITA_il_piemonte.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Papal_Insurrection"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Papal_Insurrection.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Expedition_Thousand_Naples"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Expedition_Thousand_Naples.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ITA_expedition_thousand"
+		texturefile = "gfx/event_pictures/italy/news_event_ITA_expedition_thousand.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_cignoli_massacre"
+		texturefile = "gfx/event_pictures/italy/event_ITA_cignoli_massacre.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_perugian_massacre"
+		texturefile = "gfx/event_pictures/italy/event_ITA_perugian_massacre.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ITA_perugia_massacre"
+		texturefile = "gfx/event_pictures/italy/news_event_ITA_perugia_massacre.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_garibaldi_dictatorship"
+		texturefile = "gfx/event_pictures/italy/event_ITA_garibaldi_dictatorship.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ITA_Garibaldi_Dictatorship"
+		texturefile = "gfx/event_pictures/italy/news_event_ITA_Garibaldi_Dictatorship.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Nap_Victor_Meeting"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Nap_Victor_Meeting.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ITA_Garibaldi_decree_romevenice"
+		texturefile = "gfx/event_pictures/italy/news_event_ITA_Garibaldi_decree_romevenice.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Gioivanni_Pantaleo"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Gioivanni_Pantaleo.png"
+	}
 	
-	
-	
-
 	# USA UNITED STATES
 		# Generic
 			spriteType = {
@@ -3385,6 +3434,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_NOR_report_event_hans_christian_heg"
 		texturefile = "gfx/event_pictures/norway/report_event_hans_christian_heg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_report_event_vogt"
+		texturefile = "gfx/event_pictures/norway/report_event_vogt.png"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_news_event_kongsvingerbanen"
+		texturefile = "gfx/event_pictures/norway/news_event_kongsvingerbanen.png"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_news_event_elverum_stasjon"
+		texturefile = "gfx/event_pictures/norway/news_event_elverum_stasjon.png"
 	}
 
 	###Italy
@@ -4169,5 +4233,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_royalwedding"
 		texturefile = "gfx/event_pictures/uk/report_event_royalwedding.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_romanul"
+		texturefile = "gfx/event_pictures/romania/report_event_romanul.png"
 	}
 }

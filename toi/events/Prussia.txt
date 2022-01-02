@@ -11,7 +11,7 @@ add_namespace = prussiaadvisors
 
 ### GENERAL EVENTS ###
 
-#Marriage of Prince Friedrich Wilhelm and Princess Victoria 
+#Marriage of Prince Friedrich Wilhelm and Princess Victoria (25.01.1858)
 country_event = {
 	id = prussia.1
 	title = prussia.1.t
@@ -20,11 +20,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1858.1.25
-	}
 	
 	option = {
 		name = prussia.1.a
@@ -35,7 +30,7 @@ country_event = {
 	}
 }
 
-#Museum für polnisches und slawisches Altertum (Posen) 
+#Museum für polnisches und slawisches Altertum (Posen) (25.06.1857)
 country_event = {
 	id = prussia.2
 	title = prussia.2.t
@@ -44,11 +39,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1857.6.25
-	}
 	
 	option = {
 		name = prussia.2.a 
@@ -60,7 +50,7 @@ country_event = {
 	}
 }
 
-#Establishing König Brewery 
+#Establishing König Brewery (25.07.1858)
 country_event = {
 	id = prussia.3
 	title = prussia.3.t
@@ -69,11 +59,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1858.7.25
-	}
 	
 	option = {
 		name = prussia.3.a 
@@ -85,7 +70,7 @@ country_event = {
 	}
 } 
 
-#Kölner Zoo
+#Kölner Zoo (22.07.1860)
 country_event = {
 	id = prussia.4
 	title = prussia.4.t
@@ -95,22 +80,14 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = PRS
-		#date > 1860.7.22
-	}	
-	
 	option = {
 		name = prussia.4.a 
 		ai_chance = { base = 100 }
 		add_political_power = 10
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.7 days = 1186 } }
-		}
 	}
 }
 
-#Deutsches Rotes Kreuz
+#Deutsches Rotes Kreuz (22.02.1860)
 country_event = {
 	id = prussia.5
 	title = prussia.5.t
@@ -119,11 +96,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1860.2.22
-	}
 	
 	option = {
 		name = prussia.5.a 
@@ -135,7 +107,7 @@ country_event = {
 	}
 }
 
-#Berliner Entomologische Zeitschrift
+#Berliner Entomologische Zeitschrift (22.09.1857)
 country_event = {
 	id = prussia.6
 	title = prussia.6.t
@@ -145,22 +117,14 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = PRS
-		#date > 1857.9.22
-	}
-	
 	option = {
 		name = prussia.6.a 
 		ai_chance = { base = 100 }
 		add_political_power = 10
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.3 days = 308 } }
-		}
 	}
 }
 
-#Katholischer Studentenverein Arminia Bonn
+#Katholischer Studentenverein Arminia Bonn (23.10.1863)
 country_event = {
 	id = prussia.7
 	title = prussia.7.t
@@ -169,23 +133,15 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1863.10.23
-	}
-	
+
 	option = {
 		name = prussia.7.a 
 		ai_chance = { base = 100 }
 		add_political_power = 10
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.27 days = 687 } }
-		}
 	}
 }
 
-#Death of Alexander von Humboldt 
+#Death of Alexander von Humboldt (06.05.1859)
 country_event = {
 	id = prussia.8
 	title = prussia.8.t
@@ -195,17 +151,11 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = PRS
-		#date > 1859.5.6
-	}
-	
 	option = {
 		name = prussia.8.a 
 		ai_chance = { base = 100 }
 		add_political_power = -10
 		hidden_effect = {
-			PRS = { country_event = { id = prussia.32 days = 90 } }
 			PRS = { country_event = { id = prussia.17 days = 205 } }
 		}
 	}
@@ -299,7 +249,7 @@ country_event = {
 	}
 }
 
-#End of Neuchatel Crisis
+#End of Neuchatel Crisis (26.05.1857)
 country_event = {
     id = prussia.13
 	title = prussia.13.t
@@ -308,12 +258,7 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-	    tag = PRS
-		#date > 1857.5.26
-	}
-	
+
 	option = {
 	    name = prussia.13.a
 		ai_chance = { base = 100 }
@@ -445,7 +390,7 @@ country_event = {
 	}
 }
 
-#Heydt Rescript
+#Heydt Rescript (01.11.1859)
 country_event = {
     id = prussia.17
 	title = prussia.17.t
@@ -454,12 +399,7 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-	    tag = PRS
-		#date > 1859.11.1
-	}
-	
+
 	option = {
 	    name = prussia.17.a
 		ai_chance = { base = 100 }
@@ -479,9 +419,6 @@ country_event = {
 			    target = BRA
 				modifier = eoanb_om_heydt_edict
 			}
-		}
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.5 days = 116 } }
 		}
 	}
 }
@@ -523,7 +460,7 @@ country_event = {
 	}
 }
 
-#Siemens-Halske telegraphic line
+#Siemens-Halske telegraphic line (01.01.1859)
 country_event = {
     id = prussia.19
 	title = prussia.19.t
@@ -532,12 +469,7 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-	    tag = PRS
-		#date > 1859.1.1
-	}
-	
+
 	option = {
 	    name = prussia.19.a
 		add_political_power = 50 #I'm a generous person
@@ -635,26 +567,13 @@ country_event = {
 	option = {
 		name = prussia.23.a
 		ai_chance = { base = 100 }
-		swap_ideas = {
-			remove_idea = hos_is_leader
-			add_idea = PRS_Wilhelm_I
-		}
+		add_stability = 0.03
+		add_political_power = 10
 		remove_ideas = PRS_idea_prince_wilhelm_regency
-		hidden_effect = {
-			retire_ideology_leader = autocracy
-			create_country_leader = {
-				name = "Wilhelm I."
-				desc = "POLITICS_GENERIC_EOANB_DESC"
-				picture = "gfx/leaders/PRS/Portrait_PRS_Wilhelm_I.dds"
-				expire = "1889.1.1"
-				ideology = constit_monarch
-				traits = { }
-			}
-		}	
 	}
 }
 
-#Prussian Postal Service
+#Prussian Postal Service (04.07.1857)
 country_event = {
 	id = prussia.24
 	title = prussia.24.t
@@ -663,11 +582,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		tag = PRS
-		#date > 1857.7.4
-	}
 	
 	option = {
 		name = prussia.24.a
@@ -708,7 +622,7 @@ country_event = {
 	}
 }
 
-#Wolin Excavations
+#Wolin Excavations (01.04.1872)
 country_event = {
 	id = prussia.26
 	title = prussia.26.t
@@ -719,8 +633,6 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = PRS
-		#date > 1871.2.2
 		owns_state = 63
 	}
 	
@@ -729,10 +641,10 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 10
 		63 = { add_manpower = 500 }
-	}	
+	}
 }
 
-#City Rights for Kattowitz
+#City Rights for Kattowitz (10.09.1865)
 country_event = {
 	id = prussia.27
 	title = prussia.27.t
@@ -743,8 +655,6 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = PRS
-		#date > 1865.9.10
 		owns_state = 1107
 	}
 	
@@ -754,10 +664,7 @@ country_event = {
 		1107 = {
 			add_extra_state_shared_building_slots = 1 
 		}
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.26 days = 1972 } }
-		}
-	}	
+	}
 }
 
 #Invited to the Zollverein by Prussia
@@ -864,11 +771,12 @@ country_event = {
 		custom_effect_tooltip = PRS_event_german_rename_effect_tt
 		hidden_effect = {
 			5 = { set_state_name = "Ostpreussen" }
+			42 = { set_state_name = "Pfalz" }
 			50 = { set_state_name = "Württemberg" }
 			51 = { set_state_name = "Rheinland" }
 			52 = { set_state_name = "Oberbayern" }
 			53 = { set_state_name = "Niederbayern" }
-			55 = { set_state_name = "Ost-Hessen" }
+			55 = { set_state_name = "Niederhessen" }
 			57 = { set_state_name = "Westfalen" }
 			60 = { set_state_name = "Thüringen" }
 			62 = { set_state_name = "Pommern" }
@@ -877,16 +785,19 @@ country_event = {
 			66 = { set_state_name = "Niederschlesien" }
 			67 = { set_state_name = "Oberschlesien" }
 			85 = { set_state_name = "Pomerellen" }
+			870 = { set_state_name = "Rheinhessen" }
 			938 = { set_state_name = "Lübeck" }
+			950 = { set_state_name = "Nordsachsen" }
 			1001 = { set_state_name = "Königsberg" }
 			1003 = { set_state_name = "Ost-Berlin" }
 			1009 = { set_state_name = "Ost-Rheinland" }
-			1061 = { set_state_name = "West-Hessen" }
+			1032 = { set_state_name = "Nord-Schleswig" }
+			1061 = { set_state_name = "Oberhessen" }
 			set_province_name = { id = 587 name = "Köln" }
 			set_province_name = { id = 692 name = "München" }
+			set_province_name = { id = 6583 name = "Luxemburg" }
 			set_province_name = { id = 11331 name = "Lübeck" }
 			set_province_name = { id = 11544 name = "Nürnberg" }
-			set_province_name = { id = 13497 name = "Ost-Berlin" }
 		}
 	}
 	
@@ -956,6 +867,24 @@ country_event = {
 		name = prussia.32.a 
 		ai_chance = { base = 100 }
 		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+		PRS_rudolf_virchow = {
+			add_advisor_role = {
+				advisor = {
+					slot = political_advisor
+					idea_token = PRS_advisor_rudolf_virchow
+					allowed = {
+						original_tag = PRS
+					}
+					traits = {
+						PRS_trait_Rudolf_Virchow
+						centrism_alignment
+					}
+					ai_will_do = {
+						factor = 0
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -1110,9 +1039,6 @@ country_event = {
 		else = {
 			add_political_power = 25
 		}
-		hidden_effect = {
-			PRS = { country_event = { id = prussia.40 days = 767 } }
-		}
 	}
 }
 
@@ -1216,14 +1142,19 @@ country_event = {
 	option = {
 		name = prussia.42.a 
 		ai_chance = { base = 100 }
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "Karl Anton von Hohenzollern"
-			desc = "PRS_KARL_ANTON_VON_HOHENZOLLERN_SIGMARINGEN_LEADER_DESC"
-			picture = "gfx/leaders/PRS/Portrait_PRS_Karl_Anton_von_Hohenzollern.dds"
-			expire = "1900.1.1"
-			ideology = conserv
-			traits = { }
+		retire_character = PRS_otto_theodor_von_manteuffel
+		PRS_karl_anton_von_hohenzollern = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1900.1.1"
+					desc = "PRS_KARL_ANTON_VON_HOHENZOLLERN_SIGMARINGEN_LEADER_DESC"
+					ideology = conserv
+					traits = {
+						#
+					}
+				}
+			}
 		}
 		add_ideas = PRS_idea_new_era
 	}
@@ -1305,13 +1236,19 @@ country_event = {
 		ai_chance = { base = 100 }
 		set_party_name = { ideology = collectivist_socialism long_name = PRS_sdap_party_long name = PRS_sdap_party }
 		retire_ideology_leader = collectivist_socialism
-		create_country_leader = {
-			name = "August Bebel"
-			desc = "POLITICS_GENERIC_EOANB_DESC"
-			picture = "Portrait_PRS_August_Bebel.dds"
-			expire = "1914.1.1"
-			ideology = syndicalism
-			traits = { }
+		PRS_august_bebel = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1914.1.1"
+					desc = "POLITICS_GENERIC_EOANB_DESC"
+					ideology = syndicalism
+					traits = {
+						#
+					}
+				}
+			}
+			promote_character = yes
+			promote_character = syndicalism
 		}
 		add_popularity = {
 			ideology = collectivist_socialism
@@ -1339,13 +1276,19 @@ country_event = {
 		set_party_name = { ideology = social_egalitarianism long_name = PRS_sap_party_long name = PRS_sap_party }
 		set_party_name = { ideology = collectivist_socialism long_name = PRS_collectivist_socialism_party name = PRS_collectivist_socialism_party }
 		retire_ideology_leader = social_egalitarianism
-		create_country_leader = {
-			name = "August Bebel"
-			desc = "POLITICS_GENERIC_EOANB_DESC"
-			picture = "Portrait_PRS_August_Bebel.dds"
-			expire = "1914.1.1"
-			ideology = liberal_social
-			traits = { }
+		PRS_august_bebel = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1914.1.1"
+					desc = "POLITICS_GENERIC_EOANB_DESC"
+					ideology = liberal_social
+					traits = {
+						#
+					}
+				}
+			}
+			promote_character = yes
+			promote_character = liberal_social
 		}
 		add_popularity = {
 			ideology = social_egalitarianism
@@ -1434,14 +1377,19 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_stability = -0.02
 		set_party_name = { ideology = fundamentalism long_name = PRS_zentrum_party_long name = PRS_zentrum_party }
-		retire_ideology_leader = fundamentalism
-		create_country_leader = {
-			name = "Ludwig Windthorst"
-			desc = "POLITICS_GENERIC_EOANB_DESC"
-			picture = "Portrait_PRS_Ludwig_Windthorst.dds"
-			expire = "1914.1.1"
-			ideology = christian
-			traits = { }
+		retire_character = PRS_peter_reichensperger
+		PRS_ludwig_windthorst = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1914.1.1"
+					ideology = christian
+					traits = {
+						#
+					}
+				}
+			}
+			promote_character = yes
+			promote_character = christian
 		}
 		add_popularity = {
 			ideology = fundamentalism
@@ -1540,7 +1488,7 @@ country_event = {
 
 ##Cologne Cathedral
 
-#Cologne Cathedral - Nave and Transept Finished - Interior Complete
+#Cologne Cathedral - Nave and Transept Finished - Interior Complete (01.06.1863)
 country_event = {
 	id = prussiamonuments.1
 	title = prussiamonuments.1.t
@@ -1548,9 +1496,7 @@ country_event = {
 	picture = GFX_event_kolner_dom_1863
 	
 	trigger = {
-		tag = PRS
 		controls_state = 51
-		#date > 1863.6.1
 	}
 	
 	is_triggered_only = yes
@@ -1564,13 +1510,10 @@ country_event = {
 			ideology = fundamentalism
 			popularity = 0.02
 		}
-		hidden_effect = {
-			PRS = { country_event = { id = prussiamonuments.2 days = 4139 } }
-		}
 	}
 }
 
-#Cologne Cathedral - Forging of the Kaiserglocke
+#Cologne Cathedral - Forging of the Kaiserglocke (03.10.1874)
 country_event = {
 	id = prussiamonuments.2
 	title = prussiamonuments.2.t
@@ -1578,10 +1521,8 @@ country_event = {
 	picture = GFX_event_kolner_dom_glocke
 	
 	trigger = {
-		tag = PRS
 		controls_state = 51
 		PRS = { has_country_flag = eoanb_flag_won_fra_prs_war }
-		#date > 1874.10.3
 	}
 	
 	is_triggered_only = yes
@@ -1596,13 +1537,10 @@ country_event = {
 			popularity = 0.01
 		}
 		add_war_support = 0.02
-		hidden_effect = {
-			PRS = { country_event = { id = prussiamonuments.3 days = 2066 } }
-		}
 	}
 }
 
-#Cologne Cathedral - Towers Finished
+#Cologne Cathedral - Towers Finished (01.06.1880)
 country_event = {
 	id = prussiamonuments.3
 	title = prussiamonuments.3.t
@@ -1610,9 +1548,7 @@ country_event = {
 	picture = GFX_event_kolner_dom_1880_bau
 	
 	trigger = {
-		tag = PRS
 		controls_state = 51
-		#date > 1880.6.1
 	}
 	
 	is_triggered_only = yes
@@ -1634,7 +1570,7 @@ country_event = {
 	}
 }
 
-#Cologne Cathedral - Completion Celebration
+#Cologne Cathedral - Completion Celebration (15.10.1880)
 country_event = {
 	id = prussiamonuments.4
 	title = prussiamonuments.4.t
@@ -1642,9 +1578,7 @@ country_event = {
 	picture = GFX_event_kolner_dom_1880
 	
 	trigger = {
-		tag = PRS
 		controls_state = 51
-		#date > 1880.10.15
 	}
 	
 	is_triggered_only = yes
@@ -1669,7 +1603,7 @@ country_event = {
 
 ##Siegessäule
 
-#Siegessäule - Initial Plans - Heinrich Strack
+#Siegessäule - Initial Plans - Heinrich Strack (1864 or 1870)
 country_event = {
 	id = prussiamonuments.5
 	title = prussiamonuments.5.t
@@ -1696,9 +1630,7 @@ country_event = {
 	picture = GFX_event_heinrich_strack
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1864 or 1870
 	}
 	
 	is_triggered_only = yes
@@ -1726,7 +1658,7 @@ country_event = {
 	}
 }
 
-#Siegessäule - Adaption of Plans
+#Siegessäule - Adaption of Plans (1866)
 country_event = {
 	id = prussiamonuments.6
 	title = prussiamonuments.6.t
@@ -1734,9 +1666,7 @@ country_event = {
 	picture = GFX_event_bauakademie
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1866
 	}
 	
 	is_triggered_only = yes
@@ -1750,7 +1680,7 @@ country_event = {
 	}
 }
 
-#Siegessäule - Readaption of Plans
+#Siegessäule - Readaption of Plans (1870)
 country_event = {
 	id = prussiamonuments.7
 	title = prussiamonuments.7.t
@@ -1758,9 +1688,7 @@ country_event = {
 	picture = GFX_event_bauakademie
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1870
 	}
 	
 	is_triggered_only = yes
@@ -1774,7 +1702,7 @@ country_event = {
 	}
 }
 
-#Siegessäule - Construction Progress
+#Siegessäule - Construction Progress (1871)
 country_event = {
 	id = prussiamonuments.8
 	title = prussiamonuments.8.t
@@ -1782,9 +1710,7 @@ country_event = {
 	picture = GFX_event_siegessaeule_baubeginn
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1871
 	}
 	
 	is_triggered_only = yes
@@ -1798,7 +1724,7 @@ country_event = {
 	}
 }
 
-#Siegessäule - Construction Completed
+#Siegessäule - Construction Completed (1872/1873)
 country_event = {
 	id = prussiamonuments.9
 	title = prussiamonuments.9.t
@@ -1806,9 +1732,7 @@ country_event = {
 	picture = GFX_event_siegessaeule_fertig
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1872-73
 	}
 	
 	is_triggered_only = yes
@@ -1822,7 +1746,7 @@ country_event = {
 	}
 }
 
-#Siegessäule - Inauguration Ceremony
+#Siegessäule - Inauguration Ceremony (1872/1873)
 country_event = {
 	id = prussiamonuments.10
 	title = prussiamonuments.10.t
@@ -1830,9 +1754,7 @@ country_event = {
 	picture = GFX_event_siegessaeule_einweihung
 	
 	trigger = {
-		tag = PRS
 		controls_state = 951
-		#date > 1872-73
 	}
 	
 	is_triggered_only = yes
@@ -1853,7 +1775,7 @@ country_event = {
 
 ##Hohenzollern Castle
 
-#Hohenzollern Castle - Reconstructing Burg Hohenzollern
+#Hohenzollern Castle - Reconstructing Burg Hohenzollern (1858)
 country_event = {
 	id = prussiamonuments.12
 	title = prussiamonuments.12.t
@@ -1861,9 +1783,7 @@ country_event = {
 	picture = GFX_event_hohenzollern_rebuild1
 	
 	trigger = {
-		tag = PRS
 		controls_state = 1033
-		#date > 1858
 	}
 	
 	is_triggered_only = yes
@@ -1881,7 +1801,7 @@ country_event = {
 	}
 }
 
-#Hohenzollern Castle - Future of the Castle
+#Hohenzollern Castle - Future of the Castle (1858)
 country_event = {
 	id = prussiamonuments.13
 	title = prussiamonuments.13.t
@@ -1889,9 +1809,7 @@ country_event = {
 	picture = GFX_event_hohenzollern_rebuild2
 	
 	trigger = {
-		tag = PRS
 		controls_state = 1033
-		#date > 1858
 	}
 	
 	is_triggered_only = yes
@@ -1930,7 +1848,7 @@ country_event = {
 	}
 }
 
-#Hohenzollern Castle - Reconstruction Completed
+#Hohenzollern Castle - Reconstruction Completed (1867)
 country_event = {
 	id = prussiamonuments.14
 	title = prussiamonuments.14.t
@@ -1938,9 +1856,7 @@ country_event = {
 	picture = GFX_event_hohenzollern_rebuild3
 	
 	trigger = {
-		tag = PRS
 		controls_state = 1033
-		#date > 1867
 	}
 	
 	is_triggered_only = yes
@@ -1959,7 +1875,7 @@ country_event = {
 	}
 }
 
-#Hohenzollern Castle - Inauguration
+#Hohenzollern Castle - Inauguration (03.10.1867)
 country_event = {
 	id = prussiamonuments.15
 	title = prussiamonuments.15.t
@@ -1967,9 +1883,7 @@ country_event = {
 	picture = GFX_event_hohenzollern_rebuild4
 	
 	trigger = {
-		tag = PRS
 		controls_state = 1033
-		#date > 1867.10.3
 	}
 	
 	is_triggered_only = yes
@@ -2000,38 +1914,38 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.1.a
-	    create_corps_commander = {
-			name = "Wilhelm von Radziwill"
-			picture = "Portrait_PRS_Wilhelm_von_Radziwill.dds"
-			traits = { PRS_prussian_general trait_engineer }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1957
+		PRS_wilhelm_von_radziwill = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general trait_engineer }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1957
+			}
 		}
-		create_corps_commander = {
-			name = "Eduard von Peucker"
-			picture = "Portrait_PRS_Eduard_von_Peucker.dds"
-			traits = { PRS_prussian_general }
-			skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			id = 1958
+		PRS_eduard_von_peucker = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general }
+				skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				legacy_id = 1958
+			}
 		}
-		create_navy_leader = {
-			name = "Eduard von Jachmann"
-			picture = "Portrait_PRS_Eduard_von_Jachmann.dds"
-			traits = { }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				maneuvering_skill = 2
-				coordination_skill = 2
-			id = 2001
+		PRS_eduard_von_jachmann = {
+			add_naval_commander_role = {
+				traits = { }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					maneuvering_skill = 2
+					coordination_skill = 2
+				legacy_id = 2001
+			}
 		}
 		add_command_power = -50
 		hidden_effect = {
@@ -2051,10 +1965,7 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.2.a
-		remove_unit_leader = 1950
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.3 days = 874 } }
-		}
+		retire_character = PRS_karl_friedrich_emil_zu_dohnaschlobitten
     }
 }
 
@@ -2069,48 +1980,45 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.3.a
-	    create_corps_commander = {
-			name = "Eberhard Herwarth von Bittenfeld"
-			picture = "Portrait_PRS_Karl_Eberhard_Herwarth_von_Bittenfeld.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 3
-				logistics_skill = 4
-			id = 1959
+	    PRS_eberhard_herwarth_von_bittenfeld = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 3
+					logistics_skill = 4
+				legacy_id = 1959
+			}
 		}
-		create_corps_commander = {
-			name = "Konstantin von Hohenzollern-Hechingen"
-			picture = "Portrait_PRS_Konstantin_von_Hohenzollern_Hechingen.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 1
-				attack_skill = 1
-				defense_skill = 2
-				planning_skill = 1
-				logistics_skill = 1
-			id = 1960
+		PRS_konstantin_von_hohenzollern_hechingen = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 1
+					attack_skill = 1
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 1
+				legacy_id = 1960
+			}
 		}
-		create_navy_leader = {
-			name = "Hans Kuhn"
-			picture = "Portrait_PRS_Hans_Kuhn.dds"
-			traits = { }
-			skill = 1
-				attack_skill = 2
-				defense_skill = 1
-				maneuvering_skill = 2
-				coordination_skill = 1
-			id = 2002
+		PRS_hans_kuhn = {
+			add_naval_commander_role = {
+				traits = { }
+				skill = 1
+					attack_skill = 2
+					defense_skill = 1
+					maneuvering_skill = 2
+					coordination_skill = 1
+				legacy_id = 2002
+			}
 		}
 		add_command_power = -50
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.4 days = 1187 } }
-		}
     }
 }
 
 country_event = {
-	id = prussiagenerals.4 	###Friedrich Karl von Preußen, Adolf von Bonin and Konstantin Bernhard von Voigts-Rhetz Promoted to General, Eduard Heldt Promoted to Admiral
+	id = prussiagenerals.4 	###Friedrich Karl von Preußen, Adolf von Bonin, Konstantin Bernhard von Voigts-Rhetz and Karl Friedrich von Steinmetz Promoted to General, Eduard Heldt Promoted to Admiral
 							###Friedrich von Wrangel, Ernst von Pfuel, Franz Karl von Werder and Wilhelm von Radziwill Retired
 	title = prussiagenerals.4.t
 	desc = prussiagenerals.4.d
@@ -2121,54 +2029,67 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.4.a
-	    create_corps_commander = {
-			name = "Friedrich Karl von Preußen"
-			picture = "Portrait_PRS_Friedrich_Karl_of_Prussia.dds"
-			traits = { PRS_prussian_general cavalry_officer cavalry_leader }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1961
+	    PRS_friedrich_karl_von_preußen = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general cavalry_officer cavalry_leader }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1961
+			}
 		}
-		create_corps_commander = {
-			name = "Adolf von Bonin"
-			picture = "Portrait_PRS_Adolf_von_Bonin.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 1
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			id = 1962
+		PRS_adolf_von_bonin = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 1
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				legacy_id = 1962
+			}
 		}
-		create_corps_commander = {
-			name = "Konstantin Bernhard von Voigts-Rhetz"
-			picture = "Portrait_PRS_Konstantin_Bernhard_von_Voigts_Rhetz.dds"
-			traits = { PRS_prussian_general skilled_staffer }
-			skill = 3
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 4
-			id = 1963
-        }
-		create_navy_leader = {
-			name = "Eduard Heldt"
-			picture = "Portrait_PRS_Eduard_Heldt.dds"
-			traits = { }
-			skill = 1
-				attack_skill = 2
-				defense_skill = 1
-				maneuvering_skill = 2
-				coordination_skill = 1
-			id = 2003
+		PRS_konstantin_bernhard_von_voigts_rhetz = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general skilled_staffer }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 4
+				legacy_id = 1963
+			}
 		}
-		remove_unit_leader = 1951
-		remove_unit_leader = 1954
-		remove_unit_leader = 1956
-		remove_unit_leader = 1957
+		PRS_karl_friedrich_von_steinmetz = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general PRS_pour_le_merite PRS_iron_cross old_guard }
+				skill = 3
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1979
+			}
+		}
+		PRS_eduard_heldt = {
+			add_naval_commander_role = {
+				traits = { }
+				skill = 1
+					attack_skill = 2
+					defense_skill = 1
+					maneuvering_skill = 2
+					coordination_skill = 1
+				legacy_id = 2003
+			}
+		}
+		PRS_friedrich_von_wrangel = {
+			remove_unit_leader_role = yes
+		}
+		retire_character = PRS_ernst_von_pfuel
+		retire_character = PRS_franz_karl_von_werder
+		retire_character = PRS_wilhelm_von_radziwill
 		add_command_power = -50
 		hidden_effect = {
 			PRS = { country_event = { id = prussiagenerals.5 days = 148 } }
@@ -2187,17 +2108,25 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.5.a
-		remove_unit_leader = 1952
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.6 days = 400 } }
-		}
+		retire_character = PRS_eduard_von_bonin
     }
 }
 
 country_event = {
 	id = prussiagenerals.6 ###Eduard Vogel von Falckenstein, Gustav Eduard von Hindersin, Edwin von Manteuffel and Friedrich Wilhelm von Preußen Promoted to General
 	title = prussiagenerals.6.t
-	desc = prussiagenerals.6.d
+	desc = {
+		trigger = { 
+			NOT = { PRS = { has_idea = PRS_Friedrich_III } }
+		}
+		text = prussiagenerals.6.d_freddy
+	}
+	desc = {
+		trigger = { 
+			PRS = { has_idea = PRS_Friedrich_III }
+		}
+		text = prussiagenerals.6.d_nofreddy
+	}
 	picture = GFX_event_prussian_generals
 		
 	fire_only_once = yes
@@ -2205,59 +2134,56 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.6.a
-	    create_corps_commander = {
-			name = "Eduard Vogel von Falckenstein"
-			picture = "Portrait_PRS_Eduard_Vogel_von_Falckenstein.dds"
-			traits = { PRS_prussian_general }
-			skill = 2
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
-			id = 1964
+	    PRS_eduard_vogel_von_falckenstein = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general }
+				skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 1
+				legacy_id = 1964
+			}
 		}
-		create_corps_commander = {
-			name = "Gustav Eduard von Hindersin"
-			picture = "Portrait_PRS_Gustav_Eduard_von_Hindersin.dds"
-			traits = { PRS_prussian_general fortress_buster bearer_of_artillery }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1965
-        }
-		create_corps_commander = {
-			name = "Edwin von Manteuffel"
-			picture = "Portrait_PRS_Edwin_von_Manteuffel.dds"
-			traits = { PRS_prussian_general skilled_staffer cavalry_officer cavalry_leader }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
-			id = 1966
+		PRS_gustav_eduard_von_hindersin = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general fortress_buster bearer_of_artillery }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1965
+			}
+		}
+		PRS_edwin_von_manteuffel = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general skilled_staffer cavalry_officer cavalry_leader }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 3
+				legacy_id = 1966
+			}
 		}
 		if = {
 			limit = {
 				NOT = { PRS = { has_idea = PRS_Friedrich_III } }
 			}
-			create_corps_commander = {
-				name = "Friedrich Wilhelm von Preußen"
-				picture = "Portrait_PRS_Friedrich_III_military.dds"
-				traits = { PRS_prussian_general skilled_staffer }
-				skill = 3
-					attack_skill = 3
-					defense_skill = 3
-					planning_skill = 2
-					logistics_skill = 2
-				id = 1978
+			PRS_friedrich_wilhelm_von_preußen = {
+				add_corps_commander_role = {
+					traits = { PRS_prussian_general skilled_staffer }
+					skill = 3
+						attack_skill = 3
+						defense_skill = 3
+						planning_skill = 2
+						logistics_skill = 2
+					legacy_id = 1978
+				}
 			}
 		}
 		add_command_power = -50
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.7 days = 851 } }
-		}
     }
 }
 
@@ -2278,18 +2204,18 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.7.a
-	    create_corps_commander = {
-			name = "Gustav von Manstein"
-			picture = "Portrait_PRS_Gustav_von_Manstein.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 2
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1967
-        }
-		remove_unit_leader = 1964
+	    PRS_gustav_von_manstein = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1967
+			}
+		}
+		retire_character = PRS_eduard_vogel_von_falckenstein
 		add_command_power = -50
 		hidden_effect = {
 			PRS = { country_event = { id = prussiagenerals.8 days = 383 } }
@@ -2308,10 +2234,7 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.8.a
-		remove_unit_leader = 1960
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.9 days = 196 } }
-		}
+		retire_character = PRS_konstantin_von_hohenzollern_hechingen
     }
 }
 
@@ -2326,71 +2249,71 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.9.a
-	    create_corps_commander = {
-			name = "August von Werder"
-			picture = "Portrait_PRS_August_von_Werder.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 4
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1968
-        }
-		create_corps_commander = {
-			name = "Eduard von Fransecky"
-			picture = "Portrait_PRS_Eduard_von_Fransecky.dds"
-			traits = { PRS_prussian_general infantry_leader quick_marcher }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 2
-			id = 1969
-        }
-		create_corps_commander = {
-			name = "Hugo von Kirchbach"
-			picture = "Portrait_PRS_Hugo_von_Kirchbach.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 3
-			id = 1970
-        }
-		create_corps_commander = {
-			name = "August Karl von Goeben"
-			picture = "Portrait_PRS_August_Karl_von_Goeben.dds"
-			traits = { PRS_prussian_general bearer_of_artillery }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 1
-				logistics_skill = 2
-			id = 1971
-        }
-		create_corps_commander = {
-			name = "Moritz Karl Ernst von Prittwitz"
-			picture = "Portrait_PRS_Moritz_Karl_Ernst_von_Prittwitz.dds"
-			traits = { PRS_prussian_general }
-			skill = 2
-				attack_skill = 1
-				defense_skill = 4
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1972
+	    PRS_august_von_werder = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 4
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1968
+			}
 		}
-		create_navy_leader = {
-			name = "Karl Ferdinand Batsch"
-			picture = "Portrait_PRS_Karl_Ferdinand_Batsch.dds"
-			traits = { navy_career_officer }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				maneuvering_skill = 2
-				coordination_skill = 2
-			id = 2004
+		PRS_eduard_von_fransecky = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader quick_marcher }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+				legacy_id = 1969
+			}
+		}
+		PRS_hugo_von_kirchenbach = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 3
+				legacy_id = 1970
+			}
+		}
+		PRS_august_karl_von_goeben = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general bearer_of_artillery }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 2
+				legacy_id = 1971
+			}
+		}
+		PRS_moritz_karl_ernst_von_prittwitz = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general }
+				skill = 2
+					attack_skill = 1
+					defense_skill = 4
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1972
+			}
+		}
+		PRS_karl_ferdinand_batsch = {
+			add_naval_commander_role = {
+				traits = { navy_career_officer }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					maneuvering_skill = 2
+					coordination_skill = 2
+				legacy_id = 2004
+			}
 		}
 		add_command_power = -50
 		hidden_effect = {
@@ -2400,7 +2323,7 @@ country_event = {
 }
 
 country_event = {
-	id = prussiagenerals.10 ###Eberhard Herwarth von Bittenfeld and Adolf von Bonin Retired
+	id = prussiagenerals.10 ###Eberhard Herwarth von Bittenfeld, Adolf von Bonin and Karl Friedrich von Steinmetz Retired
 							###Adalbert von Preußen, Eduard von Jachmann and Hans Kuhn Retired
 	title = prussiagenerals.10.t
 	desc = prussiagenerals.10.d
@@ -2411,15 +2334,15 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.10.a
-		remove_unit_leader = 1959
-		remove_unit_leader = 1962
-		remove_unit_leader = 2000
-		remove_unit_leader = 2001
-		remove_unit_leader = 2002
-		add_command_power = -50
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.11 days = 177 } }
+		retire_character = PRS_eberhard_herwarth_von_bittenfeld
+		retire_character = PRS_adolf_von_bonin
+		retire_character = PRS_karl_friedrich_von_steinmetz
+		PRS_adalbert_von_preußen = {
+			remove_unit_leader_role = yes
 		}
+		retire_character = PRS_eduard_von_jachmann
+		retire_character = PRS_hans_kuhn
+		add_command_power = -50
     }
 }
 
@@ -2434,7 +2357,7 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.11.a
-		remove_unit_leader = 1965
+		retire_character = PRS_gustav_eduard_von_hindersin
 		hidden_effect = {
 			PRS = { country_event = { id = prussiagenerals.12 days = 553 } }
 		}
@@ -2443,7 +2366,7 @@ country_event = {
 
 country_event = {
 	id = prussiagenerals.12 ###Leonhard von Blumenthal, Julius von Bose and Gustav Friedrich von Beyer Promoted to General
-							###Eduard von Peucker, Konstantin Bernhard von Voigts-Rhetz, Gustav von Manstein, Moritz Karl Ernst von Prittwitz and Carl von Preußen Retired
+							###Carl von Preußen, Eduard von Peucker, Konstantin Bernhard von Voigts-Rhetz, Gustav von Manstein, and Moritz Karl Ernst von Prittwitz Retired
 	title = prussiagenerals.12.t
 	desc = prussiagenerals.12.d
 	picture = GFX_event_prussian_generals
@@ -2453,48 +2376,45 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.12.a
-	    create_corps_commander = {
-			name = "Leonhard von Blumenthal"
-			picture = "Portrait_PRS_Leonhard_Graf_von_Blumenthal.dds"
-			traits = { PRS_prussian_general skilled_staffer }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 2
-			id = 1973
-        }
-		create_corps_commander = {
-			name = "Julius von Bose"
-			picture = "Portrait_PRS_Julius_von_Bose.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1974
-        }
-		create_corps_commander = {
-			name = "Gustav Friedrich von Beyer"
-			picture = "Portrait_PRS_Gustav_Friedrich_von_Beyer.dds"
-			traits = { PRS_prussian_general infantry_leader }
-			skill = 2
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 2
-			id = 1975
-        }
-		remove_unit_leader = 1955
-		remove_unit_leader = 1958
-		remove_unit_leader = 1963
-		remove_unit_leader = 1967
-		remove_unit_leader = 1972
-		add_command_power = -50
-		hidden_effect = {
-			PRS = { country_event = { id = prussiagenerals.13 days = 730 } }
+	    PRS_leonhard_von_blumenthal = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general skilled_staffer }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+				legacy_id = 1973
+			}
 		}
+		PRS_julius_von_bose = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1974
+			}
+		}
+		PRS_gustav_friedrich_von_beyer = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general infantry_leader }
+				skill = 2
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				legacy_id = 1975
+			}
+		}
+		retire_character = PRS_carl_von_preußen
+		retire_character = PRS_eduard_von_peucker
+		retire_character = PRS_konstantin_bernhard_von_voigts_rhetz
+		retire_character = PRS_gustav_von_manstein
+		retire_character = PRS_moritz_karl_ernst_von_prittwitz
+		add_command_power = -50
     }
 }
 
@@ -2510,29 +2430,29 @@ country_event = {
 		
     option = {
 	    name = prussiagenerals.13.a
-		create_corps_commander = {
-			name = "Georg von Kameke"
-			picture = "Portrait_PRS_Georg_von_Kameke.dds"
-			traits = { PRS_prussian_general trait_engineer }
-			skill = 3
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 4
-			id = 1976
+		PRS_georg_von_kameke = {
+			add_corps_commander_role = {
+				traits = { PRS_prussian_general trait_engineer }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 4
+				legacy_id = 1976
+			}
 		}
-		create_navy_leader = {
-			name = "Albrecht von Stosch"
-			picture = "Portrait_PRS_Albrecht_von_Stosch.dds"
-			traits = { navy_career_officer }
-			skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				maneuvering_skill = 3
-				coordination_skill = 3
-			id = 2005
+		PRS_albrecht_von_stosch = {
+			add_naval_commander_role = {
+				traits = { navy_career_officer }
+				skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					maneuvering_skill = 3
+					coordination_skill = 3
+				legacy_id = 2005
+			}
 		}
-		remove_unit_leader = 2003
+		retire_character = PRS_eduard_heldt
 		add_command_power = -50
     }
 }
@@ -2817,13 +2737,19 @@ country_event = {
 		add_stability = -0.02
 		set_party_name = { ideology = centrism long_name = PRS_centrism_progressive_party_long name = PRS_centrism_progressive_party }
 		retire_ideology_leader = centrism
-		create_country_leader = {
-			name = "Rudolf Virchow"
-			desc = "POLITICS_GENERIC_EOANB_DESC"
-			picture = "Portrait_PRS_Rudolf_Virchow.dds"
-			expire = "1902.1.1"
-			ideology = social_liberal
-			traits = { }
+		PRS_rudolf_virchow = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1902.1.1"
+					desc = "PRS_RUDOLF_VIRCHOW_LEADER_DESC"
+					ideology = social_liberal
+					traits = {
+						#
+					}
+				}
+			}
+			promote_character = yes
+			promote_character = social_liberal
 		}
 		add_popularity = {
 		    ideology = centrism
@@ -2988,15 +2914,21 @@ country_event = {
 			swap_ideas = { remove_idea = PRS_idea_new_era add_idea = PRS_idea_new_era_1 }
 		}
 		hidden_effect = {
-			retire_ideology_leader = autocracy
-			create_country_leader = {
-				name = "Friedrich III."
-				desc = "PRS_FRIEDRICH_III_LEADER_DESC"
-				picture = "gfx/leaders/PRS/Portrait_PRS_Friedrich_III_young.dds"
-				expire = "1889.1.1"
-				ideology = constit_monarch
-				traits = { }
+			retire_character = PRS_wilhelm_i
+			PRS_friedrich_iii_young = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1889.1.1"
+						ideology = constit_monarch
+						traits = {
+							#
+						}
+					}
+				}
+				promote_character = yes
+				promote_character = constit_monarch
 			}
+			retire_character = PRS_friedrich_wilhelm_von_preußen
 			if = {
 				limit = {
 					PRS = { has_completed_focus = PRS_focus_find_compromise }
@@ -3063,17 +2995,21 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = -50
 		add_stability = -0.03
+		retire_character = PRS_karl_anton_von_hohenzollern
 		decrease_ps_by_one = yes
 		hidden_effect = {
 			PRS = { country_event = { days = 5 id = prussiaconscrisis.23 } }
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "König Wilhelm I"
-				desc = "POLITICS_GENERIC_EOANB_DESC"
-				picture = "gfx/leaders/PRS/Portrait_PRS_Wilhelm_I.dds"
-				expire = "1900.1.1"
-				ideology = conserv
-				traits = { }
+			PRS_wilhelm_i = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1889.1.1"
+						ideology = conserv
+						traits = {
+							#
+						}
+					}
+				}
 			}
 		}
 	}
@@ -3093,16 +3029,21 @@ country_event = {
 		name = prussiaconscrisis.23.a 
 		ai_chance = { base = 100 }
 		activate_mission_tooltip = PRS_mission_rally_support
-		hidden_effect = {
-			retire_country_leader = yes
-		}
-		create_country_leader = {
-			name = "Adolf zu Hohenlohe-Ingelfingen"
-			desc = "PRS_ADOLF_ZU_HOHENLOHE_INGELFINGEN_LEADER_DESC"
-			picture = "gfx/leaders/PRS/Portrait_PRS_Adolf_zu_Hohenlohe_Ingelfingen.dds"
-			expire = "1900.1.1"
+		remove_country_leader_role = {
+			character = PRS_wilhelm_i
 			ideology = conserv
-			traits = { }
+		}
+		PRS_adolf_zu_hohenlohe_ingelfingen = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1900.1.1"
+					ideology = conserv
+					traits = {
+						#
+					}
+				}
+			}
 		}
 		hidden_effect = {
 			activate_mission = PRS_mission_rally_support
@@ -3140,14 +3081,18 @@ country_event = {
 	option = {
 		name = prussiaconscrisis.25.a 
 		ai_chance = { base = 100 }
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "Otto von Bismarck"
-			desc = "PRS_OTTO_VON_BISMARCK_LEADER_DESC"
-			picture = "gfx/leaders/PRS/Portrait_PRS_Otto_von_Bismarck.dds"
-			expire = "1900.1.1"
-			ideology = conserv
-			traits = {
+		retire_character = PRS_adolf_zu_hohenlohe_ingelfingen
+		PRS_otto_von_bismarck = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1900.1.1"
+					desc = "PRS_OTTO_VON_BISMARCK_LEADER_DESC"
+					ideology = conserv
+					traits = {
+						#
+					}
+				}
 			}
 		}
 		unlock_decision_tooltip = PRS_decision_deliver_blut_und_eisen_speech
@@ -3268,13 +3213,18 @@ country_event = {
 		add_stability = 0.02
 		set_party_name = { ideology = centrism long_name = PRS_centrism_national_liberal_party_long name = PRS_centrism_national_liberal_party }
 		retire_ideology_leader = centrism
-		create_country_leader = {
-			name = "Rudolf von Bennigsen"
-			desc = "POLITICS_GENERIC_EOANB_DESC"
-			picture = "Portrait_PRS_Rudolf_von_Bennigsen.dds"
-			expire = "1902.1.1"
-			ideology = conserv_liberal
-			traits = { }
+		PRS_rudolf_von_bennigsen = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1902.1.1"
+					ideology = conserv_liberal
+					traits = {
+						#
+					}
+				}
+			}
+			promote_character = yes
+			promote_character = conserv_liberal
 		}
 		add_popularity = {
 		    ideology = centrism
@@ -4798,7 +4748,6 @@ country_event = {
 			popularity = 0.1
 		}
 		hidden_effect = {
-			PRS = { country_event = { id = prussiaelection.2 days = 1108 } }
 			compute_national_vote = yes
 		}
 	}
@@ -6202,8 +6151,10 @@ country_event = {
 			NOT = { has_idea = PRS_Friedrich_III }
 		}
 		ai_chance = { base = 70 }
-		remove_unit_leader = 1978
 		add_political_power = 100
+		PRS_friedrich_wilhelm_von_preußen = {
+			remove_unit_leader_role = yes
+		}
 	}
 	
 	option = {
@@ -6215,8 +6166,10 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		remove_unit_leader = 1961
 		add_political_power = 75
+		PRS_friedrich_karl_von_preußen = {
+			remove_unit_leader_role = yes
+		}
 	}
 	
 	option = {
@@ -6228,8 +6181,10 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		remove_unit_leader = 1953
 		add_political_power = 25
+		PRS_august_von_württemberg = {
+			remove_unit_leader_role = yes
+		}
 	}
 }
 
@@ -6251,14 +6206,18 @@ country_event = {
 		name = prussiafriedrich.1.a
 		ai_chance = { base = 100 }
 		add_political_power = -50
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "König Friedrich III"
-			desc = "PRS_FRIEDRICH_III_LEADER_DESC"
-			picture = "gfx/leaders/PRS/Portrait_PRS_Friedrich_III_young.dds"
-			expire = "1889.1.1"
-			ideology = conserv
-			traits = { }
+		retire_character = PRS_adolf_zu_hohenlohe_ingelfingen
+		PRS_friedrich_iii_young = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1889.1.1"
+					ideology = conserv
+					traits = {
+						#
+					}
+				}
+			}
 		}
 	}
 }
@@ -6380,14 +6339,18 @@ country_event = {
 		set_party_name = { ideology = centrism long_name = PRS_centrism_party_vincke name = PRS_centrism_party_vincke }
 		hidden_effect = {
 			set_politics = { ruling_party = centrism }
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Georg von Vincke"
-				desc = "PRS_GEORG_VON_VINCKE_LEADER_DESC"
-				picture = "Portrait_PRS_Georg_von_Vincke.dds"
-				expire = "1900.1.1"
-				ideology = moderatism
-				traits = { }
+			PRS_georg_von_vincke = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1900.1.1"
+						desc = "PRS_GEORG_VON_VINCKE_LEADER_DESC"
+						ideology = moderatism
+						traits = {
+							#
+						}
+					}
+				}
 			}
 			PRS = { set_country_flag = PRS_new_prime_minister_flag }
 			compute_national_vote = yes
@@ -6401,14 +6364,18 @@ country_event = {
 		set_party_name = { ideology = centrism long_name = PRS_centrism_party name = PRS_centrism_party }
 		hidden_effect = {
 			set_politics = { ruling_party = centrism }
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Eduard Simson"
-				desc = "PRS_EDUARD_SIMSON_LEADER_DESC"
-				picture = "Portrait_PRS_Eduard_Simson.dds"
-				expire = "1900.1.1"
-				ideology = conserv_liberal
-				traits = { }
+			PRS_eduard_simson = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1900.1.1"
+						desc = "PRS_EDUARD_SIMSON_LEADER_DESC"
+						ideology = conserv_liberal
+						traits = {
+							#
+						}
+					}
+				}
 			}
 			PRS = { set_country_flag = PRS_new_prime_minister_flag }
 		}
@@ -6421,14 +6388,21 @@ country_event = {
 		set_party_name = { ideology = centrism long_name = PRS_centrism_progressive_party_long name = PRS_centrism_progressive_party }
 		hidden_effect = {
 			set_politics = { ruling_party = centrism }
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Rudolf Virchow"
-				desc = "PRS_RUDOLF_VIRCHOW_LEADER_DESC"
-				picture = "Portrait_PRS_Rudolf_Virchow.dds"
-				expire = "1900.1.1"
-				ideology = social_liberal
-				traits = { }
+			PRS_rudolf_virchow = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1902.1.1"
+						desc = "PRS_RUDOLF_VIRCHOW_LEADER_DESC"
+						ideology = social_liberal
+						traits = {
+							#
+						}
+					}
+				}
+				remove_advisor_role = {
+					slot = political_advisor
+				}
 			}
 			PRS = { set_country_flag = PRS_new_prime_minister_flag }
 			remove_ideas = PRS_advisor_rudolf_virchow
@@ -6444,14 +6418,21 @@ country_event = {
 			popularity = 0.1
 		}
 		hidden_effect = {
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "August von der Heydt"
-				desc = "PRS_AUGUST_VON_DER_HEYDT_LEADER_DESC"
-				picture = "Portrait_PRS_August_von_der_Heydt.dds"
-				expire = "1900.1.1"
-				ideology = conserv
-				traits = { }
+			PRS_august_von_der_heydt = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1900.1.1"
+						desc = "PRS_AUGUST_VON_DER_HEYDT_LEADER_DESC"
+						ideology = conserv
+						traits = {
+							#
+						}
+					}
+				}
+				remove_advisor_role = {
+					slot = political_advisor
+				}
 			}
 			PRS = { set_country_flag = PRS_new_prime_minister_flag }
 			remove_ideas = PRS_advisor_august_von_der_heydt
@@ -6742,13 +6723,7 @@ country_event = {
 		name = prussiaadvisors.1.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_ernst_moritz_arndt
-				}
-				remove_ideas = PRS_advisor_ernst_moritz_arndt
-			}
-			set_country_flag = PRS_ernst_moritz_arndt_dead
+			retire_character = PRS_ernst_moritz_arndt
 			PRS = { country_event = { id = prussiaadvisors.2 days = 310 } }
 		}
 	}
@@ -6768,13 +6743,7 @@ country_event = {
 		name = prussiaadvisors.2.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_friedrich_dahlmann
-				}
-				remove_ideas = PRS_advisor_friedrich_dahlmann
-			}
-			set_country_flag = PRS_friedrich_dahlmann_dead
+			retire_character = PRS_friedrich_dahlmann
 			PRS = { country_event = { id = prussiaadvisors.3 days = 248 } }
 		}
 	}
@@ -6794,14 +6763,7 @@ country_event = {
 		name = prussiaadvisors.3.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_friedrich_stahl
-				}
-				remove_ideas = PRS_advisor_friedrich_stahl
-			}
-			set_country_flag = PRS_friedrich_stahl_dead
-			PRS = { country_event = { id = prussiaadvisors.4 days = 1116 } }
+			retire_character = PRS_friedrich_stahl
 		}
 	}
 }
@@ -6821,14 +6783,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_ferdinand_lassalle
-				}
-				remove_ideas = PRS_advisor_ferdinand_lassalle
-			}
-			set_country_flag = PRS_ferdinand_lassalle_dead
-			PRS = { country_event = { id = prussiaadvisors.5 days = 3172 } }
+			retire_character = PRS_ferdinand_lassalle
 		}
 	}
 }
@@ -6847,14 +6802,7 @@ country_event = {
 		name = prussiaadvisors.5.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_finance_carl_von_bodelschwingh
-				}
-				remove_ideas = PRS_advisor_finance_carl_von_bodelschwingh
-			}
-			set_country_flag = PRS_carl_bodelschwingh_dead
-			PRS = { country_event = { id = prussiaadvisors.6 days = 399 } }
+			retire_character = PRS_carl_von_bodelschwingh
 		}
 	}
 }
@@ -6873,14 +6821,7 @@ country_event = {
 		name = prussiaadvisors.6.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_august_von_der_heydt
-				}
-				remove_ideas = PRS_advisor_august_von_der_heydt
-			}
-			set_country_flag = PRS_august_heydt_dead
-			PRS = { country_event = { id = prussiaadvisors.7 days = 980 } }
+			retire_character = PRS_august_von_der_heydt
 		}
 	}
 }
@@ -6899,13 +6840,7 @@ country_event = {
 		name = prussiaadvisors.7.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_ernst_gerlach
-				}
-				remove_ideas = PRS_advisor_ernst_gerlach
-			}
-			set_country_flag = PRS_ernst_gerlach_dead
+			retire_character = PRS_ernst_gerlach
 			PRS = { country_event = { id = prussiaadvisors.8 days = 146 } }
 		}
 	}
@@ -6925,13 +6860,7 @@ country_event = {
 		name = prussiaadvisors.8.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_moritz_bethmann_hollweg
-				}
-				remove_ideas = PRS_advisor_moritz_bethmann_hollweg
-			}
-			set_country_flag = PRS_moritz_bethmann_hollweg_dead
+			retire_character = PRS_moritz_bethmann_hollweg
 			PRS = { country_event = { id = prussiaadvisors.9 days = 110 } }
 		}
 	}
@@ -6951,14 +6880,7 @@ country_event = {
 		name = prussiaadvisors.9.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_general_wrangel
-				}
-				remove_ideas = PRS_advisor_general_wrangel
-			}
-			set_country_flag = PRS_friedrich_wrangel_dead
-			PRS = { country_event = { id = prussiaadvisors.10 days = 160 } }
+			retire_character = PRS_friedrich_von_wrangel
 		}
 	}
 }
@@ -6977,14 +6899,7 @@ country_event = {
 		name = prussiaadvisors.10.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_albert_borsig
-				}
-				remove_ideas = PRS_advisor_albert_borsig
-			}
-			set_country_flag = PRS_albert_borsig_dead
-			PRS = { country_event = { id = prussiaadvisors.11 days = 1148 } }
+			retire_character = PRS_albert_borsig
 		}
 	}
 }
@@ -7003,14 +6918,7 @@ country_event = {
 		name = prussiaadvisors.11.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_friedrich_albrecht_zu_eulenburg
-				}
-				remove_ideas = PRS_advisor_friedrich_albrecht_zu_eulenburg
-			}
-			set_country_flag = PRS_friedrich_eulenburg_dead
-			PRS = { country_event = { id = prussiaadvisors.12 days = 241 } }
+			retire_character = PRS_friedrich_zu_eulenburg
 		}
 	}
 }
@@ -7029,13 +6937,7 @@ country_event = {
 		name = prussiaadvisors.12.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_wilhelm_stieber
-				}
-				remove_ideas = PRS_advisor_wilhelm_stieber
-			}
-			set_country_flag = PRS_wilhelm_stieber_dead
+			retire_character = PRS_wilhelm_stieber
 			PRS = { country_event = { id = prussiaadvisors.13 days = 382 } }
 		}
 	}
@@ -7055,13 +6957,7 @@ country_event = {
 		name = prussiaadvisors.13.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_heinrich_friedrich_von_itzenplitz
-				}
-				remove_ideas = PRS_advisor_heinrich_friedrich_von_itzenplitz
-			}
-			set_country_flag = PRS_heinrich_itzenplitz_dead
+			retire_character = PRS_heinrich_von_itzenplitz
 			PRS = { country_event = { id = prussiaadvisors.14 days = 73 } }
 		}
 	}
@@ -7081,14 +6977,7 @@ country_event = {
 		name = prussiaadvisors.14.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_hermann_schulze_delitzsch
-				}
-				remove_ideas = PRS_advisor_hermann_schulze_delitzsch
-			}
-			set_country_flag = PRS_schulze_delitzsch_dead
-			PRS = { country_event = { id = prussiaadvisors.16 days = 661 } }
+			retire_character = PRS_hermann_schulze_delitzsch
 		}
 	}
 }
@@ -7109,14 +6998,7 @@ country_event = {
 		name = prussiaadvisors.16.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_alexander_von_schleinitz
-				}
-				remove_ideas = PRS_advisor_alexander_von_schleinitz
-			}
-			set_country_flag = PRS_alexander_schleinitz_dead
-			PRS = { country_event = { id = prussiaadvisors.17 days = 517 } }
+			retire_character = PRS_alexander_von_schleinitz
 		}
 	}
 }
@@ -7135,13 +7017,7 @@ country_event = {
 		name = prussiaadvisors.17.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_maximilian_duncker
-				}
-				remove_ideas = PRS_advisor_maximilian_duncker
-			}
-			set_country_flag = PRS_maximilian_duncker_dead
+			retire_character = PRS_maximilian_duncker
 			PRS = { country_event = { id = prussiaadvisors.18 days = 358 } }
 		}
 	}
@@ -7161,14 +7037,7 @@ country_event = {
 		name = prussiaadvisors.18.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_alfred_krupp
-				}
-				remove_ideas = PRS_advisor_alfred_krupp
-			}
-			set_country_flag = PRS_alfred_krupp_dead
-			PRS = { country_event = { id = prussiaadvisors.19 days = 240 } }
+			retire_character = PRS_alfred_krupp
 		}
 	}
 }
@@ -7187,14 +7056,7 @@ country_event = {
 		name = prussiaadvisors.19.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_friedrich_raiffeisen
-				}
-				remove_ideas = PRS_advisor_friedrich_raiffeisen
-			}
-			set_country_flag = PRS_friedrich_raiffeisen_dead
-			PRS = { country_event = { id = prussiaadvisors.20 days = 1536 } }
+			retire_character = PRS_friedrich_raiffeisen
 		}
 	}
 }
@@ -7213,13 +7075,7 @@ country_event = {
 		name = prussiaadvisors.20.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_max_forckenbeck
-				}
-				remove_ideas = PRS_advisor_max_forckenbeck
-			}
-			set_country_flag = PRS_max_forckenbeck_dead
+			retire_character = PRS_maximilian_von_forckenbeck
 			PRS = { country_event = { id = prussiaadvisors.21 days = 194 } }
 		}
 	}
@@ -7239,14 +7095,7 @@ country_event = {
 		name = prussiaadvisors.21.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_werner_von_siemens
-				}
-				remove_ideas = PRS_advisor_werner_von_siemens
-			}
-			set_country_flag = PRS_werner_siemens_dead
-			PRS = { country_event = { id = prussiaadvisors.22 days = 641 } }
+			retire_character = PRS_werner_von_siemens
 		}
 	}
 }
@@ -7265,13 +7114,7 @@ country_event = {
 		name = prussiaadvisors.22.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_hermann_von_helmholtz
-				}
-				remove_ideas = PRS_advisor_hermann_von_helmholtz
-			}
-			set_country_flag = PRS_hermann_helmholtz_dead
+			retire_character = PRS_hermann_von_helmholtz
 			PRS = { country_event = { id = prussiaadvisors.23 days = 234 } }
 		}
 	}
@@ -7291,14 +7134,7 @@ country_event = {
 		name = prussiaadvisors.23.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_gustav_freytag
-				}
-				remove_ideas = PRS_advisor_gustav_freytag
-			}
-			set_country_flag = PRS_gustav_freytag_dead
-			PRS = { country_event = { id = prussiaadvisors.24 days = 601 } }
+			retire_character = PRS_gustav_freytag
 		}
 	}
 }
@@ -7317,14 +7153,7 @@ country_event = {
 		name = prussiaadvisors.24.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_georg_bunsen
-				}
-				remove_ideas = PRS_advisor_georg_bunsen
-			}
-			set_country_flag = PRS_georg_bunsen_dead
-			PRS = { country_event = { id = prussiaadvisors.25 days = 812 } }
+			retire_character = PRS_georg_bunsen
 		}
 	}
 }
@@ -7343,14 +7172,7 @@ country_event = {
 		name = prussiaadvisors.25.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_ludwig_bamberger
-				}
-				remove_ideas = PRS_advisor_ludwig_bamberger
-			}
-			set_country_flag = PRS_ludwig_bamberger_dead
-			PRS = { country_event = { id = prussiaadvisors.26 days = 511 } }
+			retire_character = PRS_ludwig_bamberger
 		}
 	}
 }
@@ -7369,14 +7191,21 @@ country_event = {
 		name = prussiaadvisors.26.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_wilhelm_liebknecht
+			retire_character = PRS_wilhelm_liebknecht
+			PRS_karl_liebknecht = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1920.1.1"
+						desc = "POLITICS_GENERIC_EOANB_DESC"
+						ideology = marxism
+						traits = {
+							#
+						}
+					}
 				}
-				remove_ideas = PRS_advisor_wilhelm_liebknecht
+				promote_character = yes
+				promote_character = marxism
 			}
-			set_country_flag = PRS_wilhelm_liebknecht_dead
-			PRS = { country_event = { id = prussiaadvisors.28 days = 759 } }
 		}
 	}
 }
@@ -7397,13 +7226,7 @@ country_event = {
 		name = prussiaadvisors.28.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_rudolf_virchow
-				}
-				remove_ideas = PRS_advisor_rudolf_virchow
-			}
-			set_country_flag = PRS_rudolf_virchow_dead
+			retire_character = PRS_rudolf_virchow
 			PRS = { country_event = { id = prussiaadvisors.29 days = 3 } }
 		}
 	}
@@ -7423,13 +7246,7 @@ country_event = {
 		name = prussiaadvisors.29.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_james_hobrecht
-				}
-				remove_ideas = PRS_advisor_james_hobrecht
-			}
-			set_country_flag = PRS_james_hobrecht_dead
+			retire_character = PRS_james_hobrecht
 			PRS = { country_event = { id = prussiaadvisors.30 days = 419 } }
 		}
 	}
@@ -7449,14 +7266,7 @@ country_event = {
 		name = prussiaadvisors.30.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_theodor_mommsen
-				}
-				remove_ideas = PRS_advisor_theodor_mommsen
-			}
-			set_country_flag = PRS_theodor_mommsen_dead
-			PRS = { country_event = { id = prussiaadvisors.31 days = 2014 } }
+			retire_character = PRS_theodor_mommsen
 		}
 	}
 }
@@ -7475,14 +7285,7 @@ country_event = {
 		name = prussiaadvisors.31.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_fritz_holstein
-				}
-				remove_ideas = PRS_advisor_fritz_holstein
-			}
-			set_country_flag = PRS_fritz_holstein_dead
-			PRS = { country_event = { id = prussiaadvisors.32 days = 1556 } }
+			retire_character = PRS_friedrich_von_holstein
 		}
 	}
 }
@@ -7500,14 +7303,9 @@ country_event = {
 	option = {
 		name = prussiaadvisors.32.a
 		ai_chance = { base = 100 }
+		retire_character = PRS_august_bebel
 		hidden_effect = {
-			if = {
-				limit = {
-					has_idea = PRS_advisor_august_bebel
-				}
-				remove_ideas = PRS_advisor_august_bebel
-			}
-			set_country_flag = PRS_august_bebel_dead
+			retire_character = PRS_august_bebel
 		}
 	}
 }

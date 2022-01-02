@@ -32,11 +32,11 @@
 	SCO = "countries/Scotland.txt"
 	WLS = "countries/Wales.txt"
 	
-	#france
+	# France
 	ALS = "countries/Alsace.txt"
-	CLN = "countries/CommuneLyon.txt"
-	CMS = "countries/CommuneMarseille.txt"
-	CPR = "countries/CommuneParis.txt"
+	CLN = "countries/Commune Lyon.txt"
+	CMS = "countries/Commune Marseille.txt"
+	CPR = "countries/Commune Paris.txt"
 	FRR = "countries/Royalist France.txt"
 
 	
@@ -414,7 +414,7 @@
 	TYO = "countries/Anziku.txt"
 	ARO = "countries/Aro.txt"
 	ASH = "countries/Ashanti.txt"
-        BUS = "countries/Busoga.txt"
+    BUS = "countries/Busoga.txt"
 	BAG = "countries/Bagirmi.txt"
 	DSS = "countries/Dosso.txt"
 	KDG = "countries/Kenedugu.txt"

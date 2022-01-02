@@ -20,8 +20,7 @@ country_event = {
 		ai_chance = {
 			base = 80
 		}
-		add_political_power = 500
-		debt_level_decrease_by_1 = yes
+		complete_national_focus = DOM_stimulate_the_tobacco_economy
 		hidden_effect = { country_event = { id = DOM_1857_tobacco_coup.2 days = 20 } }
 	}
 	
@@ -34,6 +33,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		complete_national_focus = DOM_baezs_wild_ride
 	}
 }
 
@@ -46,7 +46,7 @@ country_event = {
 
 	option = {
 		name = DOM_1857_tobacco_coup.2.a
-		debt_level_increase_by_5 = yes
+		debt_level_increase_by_15 = yes
 		hidden_effect = { country_event = { id = DOM_1857_tobacco_coup.3 days = 7 } }
 	}
 	
@@ -224,6 +224,7 @@ country_event = {
 			expire = 1903.12.22
 			ideology = military_junta
 		}
+		complete_national_focus = DOM_depose_el_presidente
 		add_war_support = 0.55
 		add_command_power = 150
 		custom_effect_tooltip = DOM_1857_tobacco_coup_cibao_tobacco_planters
@@ -250,6 +251,7 @@ country_event = {
 			DOM = { 
 				add_ideas = limited_constitution
 				delete_unit_template_and_units = { division_template = "Valverde's Militia" disband = no }
+				country_event = { id = DOM_1857_tobacco_coup.8 days = 7 }
 			}
 		}
 	}
@@ -257,6 +259,7 @@ country_event = {
 	option = {
 		name = DOM_1857_tobacco_coup.7.a
 		hidden_effect = { retire_country_leader = yes }
+		complete_national_focus = DOM_the_new_liberal_state
 		swap_ideas = {
 			remove_idea = military_junta
 			add_idea = presidential_republic
@@ -271,22 +274,24 @@ country_event = {
 				ideology = social_liberal
 			}
 		}
-		swap_ideas = {
-			add_idea = constitution_adopted
-			remove_idea = limited_constitution
-		}
-		swap_ideas = {
-			remove_idea = foa_non_socialist
-			add_idea = foa_free_assembly
-		}
-		swap_ideas = {
-			add_idea = pp_open_politics
-			remove_idea = pp_ban_extremist_parties
-		}
 		debt_level_increase_by_2 = yes
 		hidden_effect = { country_event = { id = DOM_1858_santana_coup.1 days = 330 } }
 	}
 	
+}
+
+country_event = {
+	id = DOM_1857_tobacco_coup.8
+	title = DOM_1857_tobacco_coup.8.t
+	desc = DOM_1857_tobacco_coup.8.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOM_1857_tobacco_coup.8.a
+		add_ideas = DOM_santanas_military
+	}
 }
 
 country_event = {
@@ -296,6 +301,8 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	
+	immediate = { hidden_effect = { ROOT = { complete_national_focus = DOM_the_question_of_the_military } } }
 
 	option = {
 		name = DOM_1858_santana_coup.1.a
@@ -307,6 +314,7 @@ country_event = {
 			country_event = { id = DOM_1858_santana_coup.2 days = 15 } 
 			DOM = { set_country_flag = DOM_1858_santana_coup_flag }
 		}
+		complete_national_focus = DOM_reduce_santanas_control
 	}
 	
 	option = {
@@ -319,7 +327,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+		complete_national_focus = DOM_santanas_military_focus
 	}
 }
 
@@ -346,6 +354,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		complete_national_focus = DOM_follow_el_general
 		retire_country_leader = yes
 		set_politics = { ruling_party = traditional_conservatism }
 		set_capital = { state = 1318 }
@@ -364,6 +373,7 @@ country_event = {
 		ai_chance = { 
 			factor = 25 
 		}
+		complete_national_focus = DOM_follow_el_presidente
 		set_capital = { state = 319 }
 		start_civil_war = {
 			ruling_party = centrism
@@ -379,6 +389,7 @@ country_event = {
 			keep_political_leader = yes
 		}
 		hidden_effect = {
+			1318 = { OWNER = { set_variable = { THIS.debt_level = ROOT.debt_level } } }
 			set_global_flag = DOM_1858_santana_coup_flag
 			USA = { country_event = { id = DOM_1858_santana_coup.3 } }
 		}
@@ -420,7 +431,6 @@ country_event = {
 			}
 			1318 = {
 				OWNER = { 
-					set_variable = { THIS.debt_level = ROOT.debt_level }
 					if = {
 						limit = { THIS = { NOT = { has_idea = egy_vic_debt } } }
 						THIS = { add_ideas = egy_vic_debt }
@@ -627,6 +637,7 @@ country_event = {
 	option = {
 		name = DOM_1858_santana_coup.8.a
 		ai_chance = { factor = 100 }
+		complete_national_focus = DOM_our_new_presidente
 		swap_ideas = {
 			add_idea = limited_constitution
 			remove_idea = no_constitution
@@ -634,14 +645,6 @@ country_event = {
 		swap_ideas = {
 			add_idea = semi_presidential_republic
 			remove_idea = military_junta
-		}
-		swap_ideas = {
-			add_idea = one_party_elections
-			remove_idea = limited_elections
-		}
-		swap_ideas = {
-			add_idea = pp_limited_party_freedom
-			remove_idea = pp_open_politics
 		}
 		hidden_effect = { country_event = { id = DOM_1858_santana_coup.9 days = 9 } }
 	}
@@ -755,30 +758,7 @@ country_event = {
 	option = {
 		name = DOM_1858_santana_coup.11.a
 		ai_chance = { factor = 100 }
-		if = {
-			limit = { has_idea = three_percent }
-			swap_ideas = {
-				add_idea = five_percent
-				remove_idea = three_percent
-			}
-			debt_level_increase_by_2 = yes
-		}
-		else_if = {
-			limit = { has_idea = two_percent }
-			swap_ideas = {
-				add_idea = three_percent
-				remove_idea = two_percent
-			}
-			debt_level_increase_by_2 = yes
-		}
-		else_if = {
-			limit = { has_idea = one_percent }
-			swap_ideas = {
-				add_idea = two_percent
-				remove_idea = one_percent
-			}
-			debt_level_increase_by_2 = yes
-		}
+		complete_national_focus = DOM_santanas_military_budget_reforms
 		hidden_effect = { country_event = { id = DOM_1858_santana_coup.12 days = 5 } }
 	}
 }
@@ -793,65 +773,18 @@ country_event = {
 	option = {
 		name = DOM_1858_santana_coup.12.a
 		ai_chance = { factor = 100 }
-		if = {
-			limit = { has_idea = disarmed_nation }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = disarmed_nation
-			}
-			add_political_power = -250
-		}
-		else_if = {
-			limit = { has_idea = volunteer_only }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = volunteer_only
-			}
-			add_political_power = -250
-		}
-		else_if = {
-			limit = { has_idea = limited_conscription }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = limited_conscription
-			}
-			add_political_power = -250
-		}
-		else_if = {
-			limit = { has_idea = extensive_conscription }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = extensive_conscription
-			}
-			add_political_power = -250
-		}
-		else_if = {
-			limit = { has_idea = all_adults_serve }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = all_adults_serve
-			}
-			add_political_power = -250
-		}
-		else_if = {
-			limit = { has_idea = scraping_the_barrel }
-			swap_ideas = {
-				add_idea = service_by_requirement
-				remove_idea = scraping_the_barrel
-			}
-			add_political_power = -250
-		}
+		complete_national_focus = DOM_santanas_recruitment_reforms
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_rifle_1
-			amount = 250
+			amount = 4000
 			producer = DOM
 		}
 		add_equipment_to_stockpile = {
 			type = uniform_equipment_2
-			amount = 250
+			amount = 4000
 			producer = DOM
 		}
-		debt_level_increase_by_1 = yes
+		debt_level_increase_by_3 = yes
 	}
 }
 
@@ -1070,6 +1003,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		hidden_effect = { SPR = { remove_opinion_modifier = { target = DOM modifier = defaulted_on_loan } } }
 		hidden_effect = { FROM = { debt_level_cleared_effect = yes } }
 		#if = {
 		#	limit = { 
@@ -1358,6 +1292,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		hidden_effect = { SPR = { remove_opinion_modifier = { target = DOM modifier = defaulted_on_loan } } }
 		hidden_effect = { FROM = { debt_level_cleared_effect = yes } }
 		if = {
 			limit = { 
@@ -1435,6 +1370,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		remove_opinion_modifier = { target = DOM modifier = defaulted_on_loan }
 		hidden_effect = { SPR = { set_country_flag = SPR_welcome_back_la_hispaniola_flag } }
 		hidden_effect = { FROM = { debt_level_cleared_effect = yes } }
 		if = {
@@ -1516,7 +1452,25 @@ country_event = {
 country_event = {
 	id = SPR_hispaniola.2
 	title = SPR_hispaniola.2.t
-	desc = SPR_hispaniola.2.d
+	desc = {
+		text = SPR_hispaniola.2.d
+		trigger = { 
+			NOT = { 
+				OR = {
+					DOM = { has_country_leader = { name = "Jose Desiderio Valverde" ruling_only = yes } }
+					DOM = { has_country_leader = { name = "Pedro Santana" ruling_only = yes } }
+				}
+			}
+		}
+	}
+	desc = {
+		text = SPR_hispaniola.2.valverde
+		trigger = { DOM = { has_country_leader = { name = "Jose Desiderio Valverde" ruling_only = yes } } }
+	}
+	desc = {
+		text = SPR_hispaniola.2.santana
+		trigger = { DOM = { has_country_leader = { name = "Pedro Santana" ruling_only = yes } } }
+	}
 
 	is_triggered_only = yes
 	
@@ -1620,6 +1574,7 @@ country_event = {
 	
 	option = {
 		name = SPR_hispaniola.2.b
+		trigger = { DOM = { NOT = { has_country_leader = { name = "Pedro Santana" ruling_only = yes } } } }
 		ai_chance = { 
 			base = 25 
 			modifier = {
@@ -2126,7 +2081,122 @@ country_event = {
 	}    
 }
 
+country_event = {
+	id = SPR_hispaniola.5
+	title = SPR_hispaniola.5.t
+	desc = SPR_hispaniola.5.d
 
+	is_triggered_only = yes
 	
 	
+	option = {
+		name = SPR_hispaniola.5.a
+		ai_chance = { base = 100 }
+		
+	}
+}
+
+country_event = {
+	id = SPR_hispaniola.6
+	title = SPR_hispaniola.6.t
+	desc = SPR_hispaniola.6.d
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = SPR_hispaniola.6.a
+		ai_chance = { base = 100 }
+		SPR = {
+			create_production_license = {
+				target = DOM
+				equipment = {
+					type = ship_hull_lineship_0
+				}
+				cost_factor = 0
+			}
+		}
+	}
+}
+
+country_event = { #Recreation of the Caribbean Capitaincy
+	id = SPR_hispaniola.7
+	title = SPR_hispaniola.7.t
+	desc = SPR_hispaniola.7.d
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = SPR_hispaniola.7.a
+		trigger = { NOT = { has_completed_focus = SPR_give_power_to_the_landowners } }
+		ai_chance = { 
+			base = 100 
+		
+		}
+		if = { 
+			limit = { has_completed_focus = SPR_give_power_to_the_landowners }
+			complete_national_focus = SPR_give_power_to_the_landowners
+		}
+		if = { 
+			limit = { has_completed_focus = SPR_recreate_the_capitaincy }
+			complete_national_focus = SPR_recreate_the_capitaincy
+		}
+		hidden_effect = { FROM = { country_event = { id = SPR_hispaniola.8 days = 7 } } }
+	}
+	
+	option = {
+		name = SPR_hispaniola.7.b
+		ai_chance = { 
+			base = 100 
+			modifier = {
+				factor = 0
+				FROM = { has_country_leader = { name = "Jose Desiderio Valverde" ruling_only = yes } }
+			}
+		}
+		hidden_effect = { FROM = { country_event = { id = SPR_hispaniola.9 days = 7 } } }
+	}
+}
+	
+country_event = { #Recreation of the Caribbean Capitaincy Accepted
+	id = SPR_hispaniola.8
+	title = SPR_hispaniola.8.t
+	desc = SPR_hispaniola.8.d
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { TAG = DOM }
+				complete_national_focus = DOM_recreation_of_the_caribbean_captaincy
+			}
+		}
+	}
+	option = {
+		name = SPR_hispaniola.8.a
+		ai_chance = { base = 100 }
+		set_cosmetic_tag = SPC
+	}
+}
+
+country_event = { #Recreation of the Caribbean Capitaincy Declined
+	id = SPR_hispaniola.9
+	title = SPR_hispaniola.9.t
+	desc = SPR_hispaniola.9.d
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = SPR_rejected_as_SPC_flag
+		}
+	}
+	
+	option = {
+		name = SPR_hispaniola.9.a
+		ai_chance = { base = 100 }
+		
+	}
+}
 	

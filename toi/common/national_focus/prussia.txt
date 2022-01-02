@@ -498,7 +498,24 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_prussian_urbanization }
 
 		completion_reward = {
-			custom_effect_tooltip = PRS_focus_execute_hobrecht_plan_effect_tt
+			PRS_james_hobrecht = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = PRS_advisor_james_hobrecht
+						allowed = {
+							original_tag = PRS
+						}
+						traits = {
+							great_urbanizer
+							neutral_party
+						}
+						ai_will_do = {
+							factor = 3
+						}
+					}
+				}
+			}
 			add_tech_bonus = { bonus = 0.25 uses = 1 category = mechanical_engineering_tech }
 			activate_mission_tooltip = PRS_mission_hobrecht_plan
 			hidden_effect = {
@@ -901,19 +918,19 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = PRS_focus_king_army_prs_moltke_effect_tt
-			unlock_decision_tooltip = PRS_decision_roon_war_minister
-			unlock_decision_tooltip = PRS_decision_moltke_army_chief
+			#unlock_decision_tooltip = PRS_decision_roon_war_minister
+			#unlock_decision_tooltip = PRS_decision_moltke_army_chief
 			hidden_effect = {
-				create_corps_commander = {
-					name = "Helmuth von Moltke"
-					picture = "Portrait_PRS_Helmuth_Karl_Bernhard_von_Moltke.dds"
-					traits = { PRS_prussian_general organizer skilled_staffer }
-					skill = 5
-						attack_skill = 4
-						defense_skill = 3
-						planning_skill = 6
-						logistics_skill = 3
-					id = 1977
+				PRS_helmuth_von_moltke = {
+					add_corps_commander_role = {
+						traits = { PRS_prussian_general organizer skilled_staffer }
+						skill = 5
+							attack_skill = 4
+							defense_skill = 3
+							planning_skill = 6
+							logistics_skill = 3
+						legacy_id = 1977
+					}
 				}
 			}
 			add_political_power = 50
@@ -954,17 +971,17 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_parlamentsheer_trigger_tt
-				hidden_trigger = {
-					NOT = {
-						OR = {
-							check_variable = { mhc_sec_value = 12 }
-							check_variable = { mhc_chief_value = 13 }
-						}
-					}
-				}
-			}
+			#custom_trigger_tooltip = {
+			#	tooltip = PRS_focus_parlamentsheer_trigger_tt
+			#	hidden_trigger = {
+			#		NOT = {
+			#			OR = {
+			#				check_variable = { mhc_sec_value = 12 }
+			#				check_variable = { mhc_chief_value = 13 }
+			#			}
+			#		}
+			#	}
+			#}
 			date > 1860.1.1
 			NOT = {
 				OR = {
@@ -1013,13 +1030,13 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_roon_reform_bill_trigger_tt
-				hidden_trigger = {
-					check_variable = { mhc_sec_value = 12 }
-					check_variable = { mhc_chief_value = 13 }
-				}
-			}
+			#custom_trigger_tooltip = {
+			#	tooltip = PRS_focus_roon_reform_bill_trigger_tt
+			#	hidden_trigger = {
+			#		check_variable = { mhc_sec_value = 12 }
+			#		check_variable = { mhc_chief_value = 13 }
+			#	}
+			#}
 			date > 1860.1.1
 		}
 		ai_will_do = { base = 200 }
@@ -1688,6 +1705,26 @@ focus_tree = {
 				add_country_leader_trait = PRS_trait_Bismarck_Iron_Chancellor
 			}
 			country_event = { id = prussiaelection.7 }
+			hidden_effect = {
+				PRS_gustav_freytag = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = PRS_advisor_gustav_freytag
+							allowed = {
+								original_tag = PRS
+							}
+							traits = {
+								PRS_trait_Gustav_Freytag
+								centrism_alignment
+							}
+							ai_will_do = {
+								factor = 0
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -2934,14 +2971,14 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_bismarck_trigger_tt
-				hidden_trigger = {
-					PRS = {
-						check_variable = { mhc_sec_value = 12 }
-					}
-				}
-			}
+			#custom_trigger_tooltip = {
+			#	tooltip = PRS_focus_bismarck_trigger_tt
+			#	hidden_trigger = {
+			#		PRS = {
+			#			check_variable = { mhc_sec_value = 12 }
+			#		}
+			#	}
+			#}
 		}
 		ai_will_do = {
 			base = 500

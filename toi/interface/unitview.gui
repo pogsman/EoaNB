@@ -228,8 +228,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "armies_view"
-		position = {x=0 y=143}
-		size = { width=340 height=100%% }
+		position = { x = 0 y = 143 }
+		size = { width = 340 height = 100%% }
 		Orientation = upper_left
 		clipping = no
 

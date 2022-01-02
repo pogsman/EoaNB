@@ -492,100 +492,106 @@ ideas = {
 				political_power_factor = 0.10
 			}
 		}
-	}
 
-	theorist = {
-		NOR_theorist_hakon_adelsteen_sommerfeldt = {
-			allowed = {
-				original_tag = NOR
-			}
-
-			picture = NOR_Hakon_Adelsteen_Sommerfeldt
-
-			cost = 150
-
-			research_bonus = {
-				naval_equipment = 0.02
-				naval_doctrine = 0.02
-			}
-
-			traits = { naval_theorist }
-			ledger = navy
-		}
-
-		NOR_theorist_fredrik_moltke_sorenssen = {
-			allowed = {
-				original_tag = NOR
-			}
-
-			picture = NOR_Fredrik_Moltke_Sorenssen
-
-			cost = 150
-
-			research_bonus = {
-				land_equipment = 0.02
-				land_doctrine = 0.02
-			}
-
-			traits = { military_theorist }
-			ledger = army
-		}
-	}
-
-	political_advisor = {
-		NOR_advisor_alexander_kielland = {
-			allowed = {
-				original_tag = NOR
-			}
-
-			traits = {
-				influencial_writer
-			}
-
-			picture = NOR_Alexander_Kielland
-		}
-
-		NOR_advisor_bjornstjerne_bjornson = {
-			allowed = {
-				original_tag = NOR
-			}
+		NOR_idea_golden_age_pomor = {
+			allowed = { always = no }
 
 			modifier = {
-				stability_factor = 0.10
-				war_support_factor = 0.10
+				stability_factor = -0.1
+				consumer_goods_factor = 0.05
 			}
-
-			traits = {
-				popular_figurehead
-			}
-
-			picture = NOR_Bjornstjerne_Bjornson
-
-			cost = 150
 		}
 
-		NOR_advisor_henrik_ibsen = {
-			allowed = {
-				original_tag = NOR
-			}
+		NOR_idea_pomor_trade_flows = {
+			allowed = { always = no }
 
-			traits = {
-				influencial_writer
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = 0.03
 			}
-
-			picture = NOR_Henrik_Ibsen
 		}
 
-		NOR_advisor_jonas_lie = {
-			allowed = {
-				original_tag = NOR
-			}
+		NOR_idea_pomor_wealth_russia = {
+			allowed = { always = no }
 
-			traits = {
-				influencial_writer
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.02
+				stability_factor = -0.05
 			}
+		}
 
-			picture = NOR_Jonas_Lie
+		NOR_idea_pomor_trade_regulations = {
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		NOR_idea_pomor_trade_privilege_1500 = {
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.02
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		NOR_idea_banking_crisis = {
+			allowed = { always = no }
+			
+			picture = great_depression
+
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		NOR_idea_banking_crisis1 = {
+			allowed = { always = no }
+
+			name = NOR_idea_banking_crisis
+			picture = great_depression
+
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		NOR_idea_lumber_crisis = {
+			allowed = { always = no }
+
+			picture = lumber_shortage
+
+			modifier = {
+				production_speed_buildings_factor = -0.20
+			}
+		}
+
+		NOR_idea_lumber_crisis1 = {
+			allowed = { always = no }
+			name = NOR_idea_lumber_crisis
+
+			picture = lumber_shortage
+
+			modifier = {
+				production_speed_buildings_factor = -0.10
+			}
+		}
+
+		NOR_idea_opplandske_krisen_aftermath = {
+			allowed = { always = no }
+			name = NOR_idea_lumber_crisis
+
+			modifier = {
+				monthly_population = -0.05
+				global_building_slots_factor = -0.10
+			}
 		}
 	}
 
@@ -615,10 +621,22 @@ ideas = {
 				original_tag = NOR
 			}
 
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = "Obtainable by focus"
+					always = no
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+
 			#picture = NOR_kongsberg
 
 			cost = 150
 			removal_cost = 10
+
+			traits = { NOR_trait_textile_company }
 		}
 
 		NOR_industrial_concern_shipyard = {
@@ -626,10 +644,22 @@ ideas = {
 				original_tag = NOR
 			}
 
-			#picture = NOR_kongsberg
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = "Obtainable by focus"
+					always = no
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+
+			picture = NOR_bmv
 
 			cost = 150
 			removal_cost = 10
+
+			traits = { NOR_trait_bergen_shipyard }
 		}
 
 		NOR_industrial_concern_copper_works = {
@@ -637,10 +667,22 @@ ideas = {
 				original_tag = NOR
 			}
 
-			#picture = NOR_kongsberg
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = "Obtainable by focus"
+					always = no
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+
+			picture = NOR_roros_kobberverk
 
 			cost = 150
 			removal_cost = 10
+
+			traits = { NOR_trait_copper_works }
 		}
 	}
 

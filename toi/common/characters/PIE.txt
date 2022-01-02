@@ -1,4 +1,8 @@
 characters = {
+
+	#### Leaders
+
+
 	PIE_victor_emmanuel_ii = {
 		name = "Victor Emmanuel II"
 		portraits = {
@@ -29,38 +33,15 @@ characters = {
 			legacy_id = 119
 		}
 	}
-	#PIE_vittorio_emanuele_ii_di_savoia = {
-	#	name = "Vittorio Emanuele II di Savoia"
-	#	portraits = {
-	#		army = {
-	#			small = ""
-	#		}
-	#		army = {
-	#			large = "gfx/leaders/PIE/portrait_Victor_Emmanuel_II_Military.dds"
-	#		}
-	#	}
-	#	field_marshal = {
-	#		traits = {
-	#			politically_connected
-	#			offensive_doctrine
-	#		}
-	#		skill = 3
-	#		attack_skill = 2
-	#		defense_skill = 2
-	#		planning_skill = 2
-	#		logistics_skill = 4
-	#		legacy_id = 119
-	#	}
-	#}
 	PIE_camillo_cavour = {
-		name = "Camillo Cavour"
+		name = "Camillo Benso di Cavour"
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Camillo_Cavour.dds"
 			}
 		}
 		country_leader = {
-			desc = "POLITICS_LEOPOLDO_O_DONNELL_Y_JORRIS_DESC"
+			desc = "POLITICS_Camillo_Benso_di_Cavour_DESC"
 			ideology = conserv_liberal
 			expire = "1965.1.1.1"
 			#id=-1
@@ -85,11 +66,14 @@ characters = {
 			#id = -1
 		}
 	}
+
+
+	### Generals
 	PIE_alfonso_ferrero_la_marmora = {
 		name = "Alfonso Ferrero La Marmora"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Alfonso_La_Marmora.dds"
@@ -113,7 +97,7 @@ characters = {
 		name = "Ettore de Sonnaz"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/portrait_PIE_ettore_de_sonnaz.dds"
@@ -138,7 +122,7 @@ characters = {
 		name = "Enrico Cialdini"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Enrico_Cialdini.dds"
@@ -161,7 +145,7 @@ characters = {
 		name = "Giuseppe Maria Garibaldi"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Giuseppe_Garibaldi.dds"
@@ -188,7 +172,7 @@ characters = {
 		name = "Nino Bixio"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Nino_Bixio.dds"
@@ -207,7 +191,7 @@ characters = {
 		name = "Enrico Cosenz"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_NSC_Enrico_Cosenz.dds"
@@ -226,7 +210,7 @@ characters = {
 		name = "Manfredo Fanti"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_ITA_manfredo_fanti.dds"
@@ -251,7 +235,7 @@ characters = {
 		name = "Domenico Cucchiari"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_ITA_domenico_cucchiari.dds"
@@ -273,7 +257,7 @@ characters = {
 		name = "Giovanni Durando"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_ITA_giovanni_durando.dds"
@@ -297,7 +281,7 @@ characters = {
 		name = "Vittorio Asinari di Bernezzo"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/ITA_Vittorio_Asinari_di_Bernezzo.dds"
@@ -312,34 +296,11 @@ characters = {
 			#legacy_id = -1
 		}
 	}
-	PIE_nicola_fabrizi = {
-		name = "Nicola Fabrizi"
-		portraits = {
-			army = {
-				small = ""
-			}
-			army = {
-				large = "gfx/leaders/PIE/ITA_Young_Italy_General_Nicola_Fabrizi.dds"
-			}
-		}
-		corps_commander = {
-			traits = {
-				politically_connected
-				organizer
-			}
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 3
-			legacy_id = 118
-		}
-	}
 	PIE_luigi_federico_menabrea = {
 		name = "Luigi Federico Menabrea"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_ITA_Luigi_Federico_Menabrea.dds"
@@ -363,7 +324,7 @@ characters = {
 		name = "Giuseppe Arimondi"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/PIE_Giuseppe_Arimondi.dds"
@@ -382,7 +343,7 @@ characters = {
 		name = "Luigi Acquaviva"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/PIE_Luigi_Acquaviva.dds"
@@ -401,7 +362,7 @@ characters = {
 		name = "Matteo Albertone"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/PIE_Matteo_Albertone.dds"
@@ -420,7 +381,7 @@ characters = {
 		name = "Carlo Pellion di Persano"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/Portrait_PIE_Carlo_Pellion_di_Persano.dds"
@@ -439,7 +400,7 @@ characters = {
 		name = "Battista Albini"
 		portraits = {
 			army = {
-				small = ""
+				small = "GFX_idea_europe_generic_1"
 			}
 			army = {
 				large = "gfx/leaders/PIE/portrait_Giovan_Battista_Albini.dds"
@@ -452,6 +413,31 @@ characters = {
 			maneuvering_skill = 1
 			coordination_skill = 1
 			#legacy_id = -1
+		}
+	}
+
+	### Advisors
+
+	PIE_Carlo_Bombrini = {
+		name = "Carlo Bombrini"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_ITA_advisor_Carlo_Bombrini"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ITA_advisor_Carlo_Bombrini
+			available = {
+				has_idea = ansaldo
+			}
+			allowed = {
+				original_tag = PIE
+			}
+			traits = {
+				financial_expert
+				centrism_alignment	
+			}
 		}
 	}
 }

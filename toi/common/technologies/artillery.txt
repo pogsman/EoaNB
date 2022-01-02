@@ -14,6 +14,7 @@ technologies = {
 			cannon_artillery
 			cannon_artillery_support
 			cannon_artillery_towed
+			cannon_artillery_towed_support
 		}
 
 		research_cost = 1
@@ -129,6 +130,7 @@ technologies = {
 			howitzer_artillery
 			howitzer_artillery_support
 			howitzer_artillery_towed
+			howitzer_artillery_towed_support
 		}
 
 		research_cost = 1
@@ -140,6 +142,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = rifled_howitzer
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -186,6 +189,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = heavier_design
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -217,6 +221,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_fortification
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -248,6 +253,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = howitzer_1880
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -279,6 +285,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = howitzer_1890
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -309,6 +316,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = lining-plane_sights
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -340,6 +348,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = rbl_field_gun
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -366,10 +375,12 @@ technologies = {
 
 		path = {
 			leads_to_tech = studded_shells
+			research_cost_coeff = 1
 		}
 
 		path = {
 			leads_to_tech = siege_gun
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -397,6 +408,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = improved_artillery
+			research_cost_coeff = 1
 		}
 
 		category_artillery = {
@@ -433,6 +445,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = breech_blocks
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -464,9 +477,11 @@ technologies = {
 
 		path = {
 		 	leads_to_tech = gw_infantry_0
+			research_cost_coeff = 1
 		}
 		path = {
 		 	leads_to_tech = hydraulic_recoil_mechanism
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -497,9 +512,11 @@ technologies = {
 
 		path = {
 		 	leads_to_tech = field_gun_1895
+			research_cost_coeff = 1
 		}
 		path = {
 		 	leads_to_tech = lining-plane_sights
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -530,6 +547,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = combined_artillery_battalions
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -560,6 +578,7 @@ technologies = {
 
 		path = {
 		 	leads_to_tech = combined_artillery_battalions
+			research_cost_coeff = 1
 		}
 		dependencies={
 			hydraulic_recoil_mechanism = 1
@@ -599,6 +618,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_2
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -625,6 +645,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_3
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -651,6 +672,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = predicted_fire_sights
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -677,9 +699,11 @@ technologies = {
 
 		path = {
 		 	leads_to_tech = artillery_4
+			research_cost_coeff = 1
 		}
 		path = {
 		 	leads_to_tech = anti_air_1
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -706,6 +730,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_5
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -732,6 +757,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_6
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -758,6 +784,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_muzzle_breaks
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -783,6 +810,7 @@ technologies = {
 
 		path = {
 		 	leads_to_tech = artillery_7
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -809,6 +837,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = artillery_8
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -872,6 +901,11 @@ technologies = {
 		categories = {
 			artillery
 		}
+		
+		path = {
+			leads_to_tech = railway_gun
+			research_cost_coeff = 1
+		}
 
 		ai_will_do = {
 			factor = 20 
@@ -932,7 +966,7 @@ technologies = {
 
 			modifier = {
 				OR = {
-					TAG = GER
+					TAG = PRS
 					tag = SOV
 				}
 				factor = 1.5
@@ -955,6 +989,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = spin_stabilised_rockets
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -963,7 +998,26 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 20 modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 20
+			modifier = { 
+				factor = 0 
+				afr_is_tribal = yes  
+				date < 1875.1.1 
+			} 
+			modifier = { 
+				factor = 0.5 
+				is_major = yes 
+				has_war = no 
+			} 
+			modifier = { 
+				factor = 0.25 
+				is_major = no 
+				has_war = no 
+			} 
+			modifier = { 
+				factor = 1.5 
+				has_war = yes 
+			}
 		}
 	}
 
@@ -982,6 +1036,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = staged_rockets
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1002,6 +1057,7 @@ technologies = {
 		
 		path = {
 			leads_to_tech = spin_stabilzation
+			research_cost_coeff = 1
 		}
 
 		research_cost = 1
@@ -1060,6 +1116,7 @@ technologies = {
 		
 		path = {
 			leads_to_tech = rocket_artillery
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1670,6 +1727,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_2
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1715,6 +1773,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_3
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1760,6 +1819,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = antiair3
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1857,6 +1917,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_5
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1902,6 +1963,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_6
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1947,6 +2009,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_7
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -1992,6 +2055,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_8
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -2037,6 +2101,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_9
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -2082,6 +2147,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_10
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -2127,6 +2193,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_11
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -2172,6 +2239,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_12
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -2217,6 +2285,7 @@ technologies = {
 
 		path = {
 			leads_to_tech = anti_air_13
+			research_cost_coeff = 1
 		}
 
 		categories = {

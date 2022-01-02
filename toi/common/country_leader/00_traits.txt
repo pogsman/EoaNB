@@ -1262,7 +1262,7 @@ leader_traits = {
 		}
 	}
 	financial_expert = {
-		sprite = 10
+		#sprite = 10
 		random = yes
 		consumer_goods_factor = -0.05
 		
@@ -1459,6 +1459,7 @@ leader_traits = {
 	
 	military_theorist = {
 		experience_gain_army = 0.05
+		land_doctrine_cost_factor = -0.05
 		
 		ai_will_do = {
 			factor = 500
@@ -1471,11 +1472,36 @@ leader_traits = {
 		max_planning = 0.1
 		max_command_power = 50
 		military_leader_cost_factor = -0.1
+		land_doctrine_cost_factor = -0.1
 		
 		ai_will_do = {
-			factor = 1000
+			factor = 10
 		}
 	}
+	
+	PRS_trait_naval_adalbert = {
+		experience_gain_navy = 0.05
+		experience_gain_navy_factor = 0.25
+		navy_max_range_factor = 0.1
+		navy_capital_ship_attack_factor = 0.05
+		navy_capital_ship_defence_factor = 0.05
+		naval_doctrine_cost_factor = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	PRS_trait_air_lilienthal = {
+		experience_gain_air = 0.1
+		experience_gain_air_factor = 0.1
+		air_doctrine_cost_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	red_suffragette = {
 		random = no
 		sprite = 13
@@ -1588,18 +1614,10 @@ leader_traits = {
 	
 	air_warfare_theorist = {
 		experience_gain_air = 0.05
+		air_doctrine_cost_factor = -0.05
 		
 		ai_will_do = {
 			factor = 500
-		}
-	}
-	
-	PRS_trait_air_lilienthal = {
-		experience_gain_air = 0.1
-		experience_gain_air_factor = 0.1
-		
-		ai_will_do = {
-			factor = 1000
 		}
 	}
 	
@@ -1643,21 +1661,10 @@ leader_traits = {
 	
 	naval_theorist = {
 		experience_gain_navy = 0.05
+		naval_doctrine_cost_factor = -0.05
 		
 		ai_will_do = {
 			factor = 100
-		}
-	}
-	
-	PRS_trait_naval_adalbert = {
-		experience_gain_navy = 0.05
-		experience_gain_navy_factor = 0.25
-		navy_max_range_factor = 0.1
-		navy_capital_ship_attack_factor = 0.05
-		navy_capital_ship_defence_factor = 0.05
-		
-		ai_will_do = {
-			factor = 1000
 		}
 	}
 	
@@ -2416,6 +2423,21 @@ leader_traits = {
 		local_resources_factor = 0.05
 		transport_capacity = -0.25
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	### Italian Company Traits
+
+	PIE_trait_ansaldo_company = {
+		random = no
+
+		consumer_goods_factor = -0.025
+		production_speed_buildings_factor = 0.025
+		production_speed_rail_way_factor = 0.05
+
 		ai_will_do = {
 			factor = 1
 		}
