@@ -46,10 +46,47 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = PIE_Work_With_Mazzinni
+		icon = GFX_focus_PIE_mazzini
+		cost = 35
+		relative_position_id = PIE_Risorgimento
+		mutually_exclusive = {
+			focus = PIE_Napoleon3_Help
+		}
+		prerequisite = {
+			focus = PIE_Risorgimento
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			always = no
+		}
+		x = -5
+		y = 1
+		#ai_will_do = {
+		#	base = 1
+		#	modifier = {
+		#		is_historical_focus_on = yes
+		#		factor = 100
+		#	}
+		#}
+		bypass = {
+			#has_country_flag = PIE_Plombieres_Starts_Focus_Clear
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			
+		}
+	}
+	focus = {
 		id = PIE_Napoleon3_Help
 		icon = GFX_goal_focus_ita_carvour
 		cost = 35
 		relative_position_id = PIE_Risorgimento
+		mutually_exclusive = {
+			focus = PIE_Work_With_Mazzinni
+		}
 		prerequisite = {
 			focus = PIE_Risorgimento
 		}
@@ -909,15 +946,15 @@ focus_tree = {
 		}
 	}
 	# Massive icon focus, needs approval
-	focus = {
-		id = PIE_Placeholder_for_GFX
-		icon = GFX_focus_PIE_Big_Baby_Italy
-		available = {
-			always = no
-		}
-		x = 6
-		y = 6
-	}
+	#focus = {
+	#	id = PIE_Placeholder_for_GFX
+	#	icon = GFX_focus_PIE_Big_Baby_Italy
+	#	available = {
+	#		always = no
+	#	}
+	#	x = 6
+	#	y = 6
+	#}
 	focus = {
 		id = PIE_Seek_Help_Major
 		icon = GFX_goal_generic_improve_relations
@@ -929,7 +966,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			base = 1
+			base = 5
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = ITA_decisions_category_PIE_diplomatic_endeavors
@@ -951,7 +988,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			base = 1
+			base = 7
 		}
 		completion_reward = {
 			country_event = {
@@ -977,7 +1014,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			base = 2
+			base = 5
 		}
 		completion_reward = {
 			RUS = {
@@ -1002,7 +1039,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			base = 2
+			base = 5
 		}
 		completion_reward = {
 			country_event = {
@@ -1024,7 +1061,7 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		ai_will_do = {
-			base = 2
+			base = 5
 		}
 		relative_position_id = PIE_Political_Structure_Planning_FT
 		x = 0
@@ -1130,7 +1167,7 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		ai_will_do = {
-			base = 2
+			base = 10
 		}
 		relative_position_id = PIE_Casus_Belli_ft
 		x = 0
@@ -1236,6 +1273,9 @@ focus_tree = {
 			}
 			has_completed_focus = PIE_Military_Code
 			date > 1858.12.1
+		}
+		ai_will_do = {
+			
 		}
 		relative_position_id = PIE_Accept_Confederation
 		x = 0

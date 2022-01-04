@@ -2801,6 +2801,19 @@ spriteTypes = {
 		name = "GFX_news_event_ITA_Garibaldi_decree_romevenice"
 		texturefile = "gfx/event_pictures/italy/news_event_ITA_Garibaldi_decree_romevenice.png"
 	}
+	spriteType = {
+		name = "GFX_event_ITA_Gioivanni_Pantaleo"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Gioivanni_Pantaleo.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_calatafimi_battle"
+		texturefile = "gfx/event_pictures/italy/event_ITA_calatafimi_battle.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Partinico_Massacre"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Partinico_Massacre.png"
+	}
+	
 	# USA UNITED STATES
 		# Generic
 			spriteType = {
@@ -3429,6 +3442,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_NOR_report_event_hans_christian_heg"
 		texturefile = "gfx/event_pictures/norway/report_event_hans_christian_heg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_report_event_vogt"
+		texturefile = "gfx/event_pictures/norway/report_event_vogt.png"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_news_event_kongsvingerbanen"
+		texturefile = "gfx/event_pictures/norway/news_event_kongsvingerbanen.png"
+	}
+
+	spriteType = {
+		name = "GFX_NOR_news_event_elverum_stasjon"
+		texturefile = "gfx/event_pictures/norway/news_event_elverum_stasjon.png"
 	}
 
 	###Italy
