@@ -29,7 +29,7 @@ guiTypes = {
 			position = { x= 264 y = 22 }
 
 			font = "hoi_18mbs"
-			text = "[?ROOT.pol_stability]   "
+			text = "[?ROOT.pol_stability] "
 			format = right
 			maxWidth = 52
 			maxHeight = 24

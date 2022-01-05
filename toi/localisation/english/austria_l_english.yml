@@ -30,6 +30,10 @@
  AUS_focus_token_liberalization_desc:0 ""
  AUS_focus_replace_viceroy_maximilian:0 "Replace Viceroy Maximilian"
  AUS_focus_replace_viceroy_maximilian_desc:0 ""
+ AUS_focus_replace_viceroy_maximilian_trigger_tt:0 "Calming the §YUnrest in Italy§! has failed."
+ AUS_focus_strengthen_viceroy_maximilian:0 "Strengthen Viceroy Maximilian"
+ AUS_focus_strengthen_viceroy_maximilian_desc:0 ""
+ AUS_focus_strengthen_viceroy_maximilian_trigger_tt:0 "The §YUnrest in Italy§! has successfully been calmed."
  AUS_focus_internal_threats:0 "Internal Threats"
  AUS_focus_internal_threats_desc:0 ""
  AUS_focus_the_challenges_of_a_multinational_state:0 "The Challenges of a Multinational State"
@@ -38,10 +42,12 @@
  AUS_focus_aftermath_of_the_revolutions_of_1848_desc:0 ""
  AUS_focus_hungarian_situation:0 "Hungarian Situation"
  AUS_focus_hungarian_situation_desc:0 ""
- AUS_focus_ramifications_of_the_concordat_of_1855:0 "Ramifications of the Concordat of 1855"
- AUS_focus_ramifications_of_the_concordat_of_1855_desc:0 ""
  AUS_focus_croatian_situation:0 "Croatian Situation"
  AUS_focus_croatian_situation_desc:0 ""
+ AUS_focus_ramifications_of_the_concordat_of_1855:0 "Ramifications of the Concordat of 1855"
+ AUS_focus_ramifications_of_the_concordat_of_1855_desc:0 ""
+ AUS_focus_denominational_unrest:0 "Denominational Unrest"
+ AUS_focus_denominational_unrest_desc:0 ""
  AUS_focus_financial_crisis:0 "Financial Crisis"
  AUS_focus_financial_crisis_desc:0 ""
  AUS_focus_cut_army_budget:0 "Cut Army Budget"
@@ -385,6 +391,7 @@
  AUS_migration_to_prague_desc:0 "With our industrialization of Bohemia completed we should promote living in Prag so serfs and peasants go look for opportunnity in Bohemia and so that they may start working in our newly established workshops kickstarting a new age for Bohemia."
  AUS_moravian_manchester:0 "Moravian Manchester"
  AUS_bank_galicyjski:0 "Bank Galicyjski dla Handlu i Przemysłu"
+ AUS_bank_galicyjski_desc:0 "The province of Galicia remain signifcantly seperate economically, due to it's distance from Vienna. The establishment of the Galician Bank for Trade and Industry was established in Kraków as it's headquarters will closen ties and provide an ecomomic boost to the region."
  AUS_galician_oil:0 "Black Galician Gold"
  AUS_galician_railways:0 "Finish the Galician Railways"
  AUS_galician_railways_desc:0 "Galicia is a region that in two centuries switched hands multiple times and the conflicts surrounding it never gave it enough time to build up an up-to standard railway system, and the time is now to change that once and for all."
@@ -397,7 +404,7 @@
  AUS_hungarian_wheat:0 "Hungarian Wheat"
  AUS_hungarian_wheat_desc:0 "The great Hungarian plain was and still is rich in wheat, with the population booming unlike ever before we have to invest in developing and expanding it so that we may keep the population growing and keep it well fed."
  AUS_hungarian_railways:0 "Hungarian Railways"
- AUS_hungarian_railways_desc:0 "With the prospect of the idea of a nationalized railway in our Hungarian half of the Empire, tax money has been poured towards a railway system connecting __ to __, a major boost for movement into the Pannonian Basin as well as crop movement towards the major cities."
+ AUS_hungarian_railways_desc:0 "With the prospect of the idea of a nationalized railway in our Hungarian half of the Empire, tax money has been poured towards a railway system connecting Pest to Debrecen, a major boost for movement into the Pannonian Basin as well as crop movement towards the major cities."
  AUS_ganz_works:0 "Ganz Works"
  AUS_ganz_works_desc:0 "Ábrahám Ganz of Budapest, Hungary, and his nation wide Ganz Factories, producing many necessary steel products, have exploded in popularity and opportunity in the past few years. Ganz has been constructing ship halls, power plants, automobiles, and railroad tracks. In prior years the Austrian half of the Empire had shunned any use of the company due to a scandal in 1848, but many advisors advocate for the continuation of the Ganz business for the whole Empire."
  AUS_viennamaschinenfabrik:0 "Vienna Maschinenfabrik"
@@ -793,8 +800,7 @@
  austriaexternal.13.a:0 "It might be wise to tread carefully."
  austriaexternal.14.t:0 "Our Subjects in Italy Demand Liberalization Promises Kept"
  austriaexternal.14.d:0 ""
- austriaexternal.14.a:0 "."
- austriaexternal.14.b:0 "."
+ austriaexternal.14.a:0 "We should act according to our promises."
 
  ######################
  # Austrian Decisions #
@@ -802,18 +808,18 @@
  
  #Italian Unrest
  AUS_decision_category_italian_unrest:0 "Italian Unrest"
- AUS_decision_category_italian_unrest_desc:0 "§YCurrent Risk for Uproar in Our Italian Holdings§!: [?ITA_UPROAR_RISK|-%1]\n§YMonthly Change in Italian Uproar Risk§!: [?modifier@AUS_Italian_Uproar_Risk_Modifier|=-%1]"
+ AUS_decision_category_italian_unrest_desc:0 "Trouble is brewing in the §Y[LVN.GetName]§!. Italian Nationalists have lately been reinforcing their activities in our Italian holdings. They are trying to §Ydestabilize our rule and stir up unrest in the region§!. Their aim is to overthrow our overlordship over parts of Italy and to unite the Italian people in one nation state. This, however, would be extremely dangerous for our realm and has the potential of creating a knock-on effect that could eventually dismantle our empire. We must take decisive action to counter their efforts!\n\n§YCurrent Risk for Uproar in Our Italian Holdings§!: [?ITA_UPROAR_RISK|-%1]\n§YMonthly Change in Italian Uproar Risk§!: [?modifier@AUS_Italian_Uproar_Risk_Modifier|=-%1]\n\nThere are some actions we can take to counteract and prevent the activities of the insurgents:\n§YStationing at least 20,000 soldiers in every Italian state under the control of the [LVN.GetName]§!: §G-1.0%§!\n"
  AUS_decision_uproar_in_italy_countdown:0 "Uproar in Italy"
  AUS_decision_uproar_in_italy_countdown_desc:0 ""
  AUS_decision_uproar_in_italy_countdown_trigger_tt:0 "The §YUnrest in Italy§! has been calmed."
- AUS_decision_uproar_in_italy_countdown_effect_tt:0 "Depending on the likelihood of uproar in our Italian holdings, there might be trouble in the [LVN.GetName]."
+ AUS_decision_uproar_in_italy_countdown_effect_tt:0 "§RDepending on the likelihood of uproar in our Italian holdings, there might be trouble in the [LVN.GetName].§!\n"
  
  #External Threats
  AUS_decision_category_external_threats:0 "Dealing with External Threats"
  AUS_decision_category_external_threats_desc:0 ""
  AUS_decision_stabilize_the_mediterranean:0 "Cooperate with France and Britain in the Mediterranean"
  AUS_decision_stabilize_the_mediterranean_desc:0 ""
- AUS_decision_stabilize_the_mediterranean_effect_tt:0 "\n§RThe outcome depends on the reactions of the other powers.§!"
+ AUS_decision_stabilize_the_mediterranean_effect_tt:0 "\n§RThe outcome depends on the reactions of the other powers.§!\n"
  AUS_decision_austro_russian_rapprochement:0 "Austro-Russian Rapprochement"
  AUS_decision_austro_russian_rapprochement_desc:0 ""
  AUS_decision_try_to_mend_the_divide:0 "Try to Mend the Divide"
@@ -838,6 +844,20 @@
  AUS_mission_calm_the_unrest_in_italy_trigger_tt:0 "Does not have national spirit §YUnrest in Italy§!"
  AUS_decision_make_promises_of_liberalization_in_italy:0 "Make Promises of Liberalization in Italy"
  AUS_decision_make_promises_of_liberalization_in_italy_desc:0 ""
+ AUS_decision_make_promises_of_liberalization_in_italy_complete_effect_tt:0 ""
+ AUS_decision_make_promises_of_liberalization_in_italy_effect_tt:0 "Our Italian subjects will probably want to see some proper changes towards liberalization in the [LVN.GetName]. They long for §Yhuman rights§! and a §Yfree press§! in particular.\n"
+ AUS_decision_grant_human_rights_in_lvn:0 "Grant Human Rights to the Citizens of the [LVN.GetName]"
+ AUS_decision_grant_human_rights_in_lvn_desc:0 ""
+ AUS_decision_grant_free_press_in_lvn:0 "Grant Freedom of the Press in the [LVN.GetName]"
+ AUS_decision_grant_free_press_in_lvn_desc:0 ""
+ 
+ AUS_unrest_in_italy_minus_one_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §G-1%§!"
+ AUS_unrest_in_italy_minus_two_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §G-2%§!"
+ AUS_unrest_in_italy_minus_five_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §G-5%§!"
+ AUS_unrest_in_italy_minus_ten_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §G-10%§!"
+ AUS_unrest_in_italy_plus_one_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §R+1%§!"
+ AUS_unrest_in_italy_plus_two_effect_tt:0 "§YRisk for Uproar in Our Italian Holdings§!: §R+2%§!"
+ 
  #Internal Threats
  AUS_decision_category_internal_threats:0 "Dealing with Internal Threats"
  AUS_decision_category_internal_threats_desc:0 ""
@@ -912,9 +932,6 @@
  #######################
  #   Austrian Ideas    #
  #######################
- 
- AUS_idea_unrest_in_italy:0 "Unrest in Italy"
- AUS_idea_unrest_in_italy_desc:0 ""
  
  AUS_abolish_landwehr:0 "Abolish The Landwehr"
  AUS_abolish_landwehr_desc:0 "We have abolished the landwehr"
@@ -1050,7 +1067,7 @@
  RICHARD_VON_BELCREDI_DESC:0 "Count Richard von Belcredi was appointed to replace Anton von Schmerling as the Interior Minister. The Count stems from Margraviate of Moravia, though his familly descends from Lombardy, and studied law in Prague and then Vienna. Already a member of the Landtag since 1861, he is a seasoned bureaucrat and an opponent to the so called 'Compromise' with the Hungarians. The Count instead supports that the Empire becomes federalised, though in a conservative way where the local nobles retain essentially all power, in order to combat the various separatist movements. It is ultimately up to the Emperor whether Count von Belcredi will stay for long as Interior Minister, or he will be replaced with a more accomodating politician, as Anton von Schmerling was."
  FRIEDRICH_FERDINAND_VON_BEUST_DESC:0 "Count Friedrich Ferdinand von Beust is an odd choice for Minister-President, he is both a Saxon and a Protestant. Despite this, he is a clear opponent of Prussia, which so gravely offended us, as well as a very competent statesman. It is hope the Count will bring to an end the negotiations with the Magyars and restore faith to the Monarchy. It is time that misfortune ends and a new period of peace and stability is ushered..."
  
- ###Austrian Traits
+ #Advisor Traits
  AUS_trait_Abraham_Ganz:0 "Father of Ganz Works"
  AUS_trait_Josef_Werndl:0 "Austrian Arms Entrepreneur"
  AUS_trait_Georg_Sigl:0 "Austrian Railway Entrepreneur" 
@@ -1061,15 +1078,22 @@
  AUS_trait_Janos_Irinyi:0 "New Match Inventor"
  AUS_trait_Ignaz_Semmelweis:0 "Pioneer of Antiseptic Procedures"
  
- ###Company Traits
+ #Company Traits
  AUS_trait_concern_austrian_andritz:0 "Austrian Heavy Industry Manufacturer"
  AUS_trait_concern_austrian_ganzworks:0 "Hungarian Heavy Industry's Heart"
  AUS_trait_concern_austrian_lokomotivfabrik:0 "Austrian Steam Locomotive Manufacturer"
+ 
+ #Leader Traits
+ AUS_trait_Archduke_Maximilian_Calming_Figure:0 "Calming Figure"
+ AUS_trait_Archduke_Maximilian_Calming_Figure_desc:0 "Against all odds, Archduke Maximilian has successfully managed to soothe public pressure and nationalist agitation within our holdings in Northern Italy. Although the Italian National Society is surely going to continue its activities and will remain a significant threat to our overlordship in the region, the Archduke's calming aura should have a stabilizing effect in the time to come."
  
  ###Misc
  dynmod_AUS_urbanization:0 "Urbanisation of Vienna"
  dynmod_AUS_moravianmanchester:0 "Moravian Manchester"
  dynmod_AUS_italian_unrest:0 "Italian Unrest"
+ AUS_Italian_Unrest_Modifier:0 "Unrest in Italy"
+ AUS_Italian_Unrest_Modifier_loc:0 "Thanks to the §Yever-growing Risorgimento movement§!, trouble is brewing in our §YItalian holdings§!. We have to take §Ydecisive action§! if we want to stabilize our stronghold in Italy.\n\n"
+ AUS_ITA_Unrest_risk_change_tooltip:0 "Monthly Italian Uproar Risk Change: $RIGHT|+=%1$"
  AUS_Italian_Uproar_Risk_Modifier:0 "Monthly Italian Uproar Risk Change"
  AUS_navy_experience_more_than_49:0 "£navy_experience §H50§!"
  AUS_navy_experience_more_than_49_blocked:0 "£navy_experience §R50§!"
