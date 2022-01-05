@@ -12,11 +12,11 @@ tunisia_revolt_category = {
 		days_mission_timeout = 30
 
 		timeout_effect = {
-		if{
+		if = {
 			limit = { has_active_mission =  tunisia_revolt_mission }
 			
 		}
-		else{
+		else = {
 			activate_mission = tunisia_revolt_mission # Copy this line when you make set your your variable
 			if = {
 				limit = { date > 1865.1.1 }
@@ -44,13 +44,13 @@ tunisia_revolt_category = {
 		is_good = no
 		days_mission_timeout = 36
 		timeout_effect = { #what happens if i loose
-		if {
+		if = {
 		limit = {
 			has_country_flag = tunisia_revolt_flag
 		}
 			decrease_ps_by_three = yes
 		}
-		else{
+		else = {
 			activate_mission = tunisia_revolt_mission # Copy this line when you make set your variable
 			
 		}

@@ -1,23 +1,9 @@
 characters={
-	TUN_muhammad_iii_alsadiq={
-		name="Muhammad III al-Sadiq"
-		portraits={
-			civilian={
-				large="Portrait_TUN_Muhammad_III_al_sadiq.png"
-			}
-		}
-		country_leader={
-			desc="POLITICS_MUHAMMAD_III_IBN_AL_HUSAYN"
-			ideology=constit_monarch
-			expire="1882.10.27.1"
-			id=-1
-		}
-	}
 	TUN_muhammad_ii_ibn_alhusayn={
 		name="Muhammad II ibn al-Husayn"
 		portraits={
 			civilian={
-				large="Portrait_TUN_Muhammad_II_ibn_al_Husayn.png"
+				large="GFX_Portrait_TUN_Muhammad_II_ibn_al_Husayn"
 			}
 		}
 		field_marshal={
@@ -30,9 +16,23 @@ characters={
 			legacy_id=2520
 		}
 		country_leader={
-			desc="POLITICS_MUHAMMAD_II_IDN_AL_HUSAYN"
+			desc="POLITICS_MUHAMMAD_II_IBN_AL_HUSAYN"
 			ideology=despotism
 			expire="1859.9.20.1"
+			id=-1
+		}
+	}
+	TUN_muhammad_iii_alsadiq={
+		name="Muhammad III al-Sadiq"
+		portraits={
+			civilian={
+				large="GFX_Portrait_TUN_Muhammad_III_al_sadiq"
+			}
+		}
+		country_leader={
+			desc="POLITICS_MUHAMMAD_III_AL_SADIQ"
+			ideology=constit_monarch
+			expire="1882.10.27.1"
 			id=-1
 		}
 	}

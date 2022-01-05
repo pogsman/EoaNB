@@ -3,16 +3,16 @@
   TUN_the_great_prince_desc:0 " Our bey is taking us to a time of peace and glory  "
 
   TUN_batto_sfez_affair:0 " Batto Sfez Affair "
-  TUN_batto_sfez_affair_desc:0 " That incident is going to destroy our social stability, we must do something "
+  TUN_batto_sfez_affair_desc:0 "Our social stability is being undermined by a carriage accident, we must do something "
 
   TUN_social_reforms:0 " Social Reforms "
   TUN_social_reforms_desc:0 " The will of allah must not be misinterpreted "
 
   TUN_the_fundamental_pact:0 " The Fundamental Pact "
-  TUN_the_fundamental_pact_desc:0 " We need our bill of rights "
+  TUN_the_fundamental_pact_desc:0 " A modern country needs its own bill of rights "
 
   TUN_political_reform:0 " Political Reforms "
-  TUN_political_reform_desc:0 " It's time to improve the old system "
+  TUN_political_reform_desc:0 " It's time to improve the old political system "
 
   TUN_municipality_of_tunis:0 " Municipality of Tunis "
   TUN_municipality_of_tunis_desc:0 " We have to decentralize the power to achieve more stability and autonomy "
@@ -21,7 +21,7 @@
   TUN_political_reform_desc:0 "he power of a king is seen in his palace"
 
   TUN_stabilize_the_nation:0 " Stabilize the Nation "
-  TUN_stabilize_the_nation_desc:0 " There is only one law in a state "
+  TUN_stabilize_the_nation_desc:0 " There must be only one law in a state "
 
   TUN_deal_with_national_debts:0 " Deal with national debts"
   TUN_deal_with_national_debts_desc:0 " Our nation has seen an increase in his deficit also due to the loss of gold and silver coin, we have to stop this "
@@ -103,5 +103,8 @@
   TUN_Manipulate_Inland_Economy:0 " the best way to quell a riot is to find a compromise"
 # tooltips
   TUN_control_the_revolt_tooltip:0 "\n§RWe must control the revolt before its too late§!"
+# leader description
+  POLITICS_MUHAMMAD_II_IBN_AL_HUSAYN:0 "Muhammad II is the Eleventh Bey of the Husainid Dynasty. As Heir Apparent, he had excelled in military affairs and earned the rank of Divisional General within the Ottoman Army in August 1840. He was further promoted to Marshal shortly after he succeeded his cousin Ahmad Bey on the 30th of May, 1855."
+  POLITICS_MUHAMMAD_III_AL_SADIQ:0 "Muhammad III 'the Righteous' is the Twelfth Bey of Tunisia, he was 'Bey al-Mahalla' from the 10th of June, 1855 to the 23rd of September,  1859. The same day he was heir apparent, he was appointed as Divisional General in the Imperial Ottoman Army. After the death of his brother, Muhammad II ibn al Husayn, Muhammad III took over as Bey as his nephew was too young at the time to rule, although he did end up adopting him. There are rumors about the British consul trying to persuade him to set up the first official printing press..."
 
 

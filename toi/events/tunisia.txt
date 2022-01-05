@@ -122,7 +122,10 @@ country_event = {
 	option = {
 	name = tunisia.4.a
     hidden_effect = {
-    #to add
+        swap_ideas = {
+            remove_idea = slavery_all_but_name
+            add_idea = limited_equality
+        }
   }
  }
 }
@@ -141,7 +144,7 @@ country_event = {
 	option = {
 		name = tunisia.5.a
         hidden_effect = {
-            #to add
+        add_idea = TUN_reformism
   }
  }
 }
@@ -167,6 +170,7 @@ country_event = {
      else = {
      activate_mission = tunisia_revolt_mission
    }
+   remove_idea = TUN_reformism
    swap_ideas = {
     remove_idea = human_rights
     add_idea = limited_constitution
@@ -190,17 +194,7 @@ country_event = {
 	option = {
     name = tunisia.7.a
     hidden_effect = {
-    if = {
-    limit = { has_active_mission = tunisia_revolt_mission}
-    add_to_variable = { Mejba_Revolt_var = 20 }
-    } 
-    else = {
-    activate_mission = tunisia_revolt_mission
-    }
-    swap_ideas = {
-    remove_idea = slavery_all_but_name
-    add_idea = limited_equality
-   }
+    #TO ADD, INTERESTING EVENTS FOR ITALY AND FRANCE
   }
  }
 }
@@ -224,7 +218,7 @@ country_event = {
  }
 }
 country_event = {
-    id = tunisia.9 # Khazdanar scandal
+    id = tunisia.11 # Khazdanar scandal
 	title = tunisia.9.t
 	desc = tunisia.9.d
     picture = GFX_tun_Khazdanar_removed
@@ -234,11 +228,8 @@ country_event = {
     tag = TUN
     }
 	option = {
-	name = tunisia.8.a
-    hidden_effect = {
-    add_stability = 0.5
-    add_war_support = 0.02
-  }
+	name = tunisia.11.a
+#TO ADD
  }
 }
 #------------------------------------------------------------

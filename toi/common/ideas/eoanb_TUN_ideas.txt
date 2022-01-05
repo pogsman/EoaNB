@@ -74,13 +74,23 @@ ideas = {
                 picture = placeholder
     
             modifier = {
-                political_power_gain = 0.10
+                political_power_gain = 0.1
                 stability_factor = -0.1
-                research_speed_factor = -0.15
-                army_org_Factor = -0.05
+                research_speed_factor = 0.15
             }
         }
+        TUN_reformism = {
     
+            removal_cost = -1
+            picture = placeholder
+    
+            modifier = {
+                political_power_cost = 0.05
+                stability_factor = -0.05 
+				army_org_Factor = -0.05
+				conscription_factor = -0.10
+                }
+        }
         TUN_integralist_uprising ={
             allowed = {
                 always = yes
@@ -126,8 +136,8 @@ ideas = {
                 eoanb_philanthropist
             }
             
-            modifier = {
-                policies_tech = 0.1
+            research_bonus = {
+                mechanical_engineering = 0.05
             }
             available = {
 				date < 1861.11.5

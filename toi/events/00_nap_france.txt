@@ -4869,7 +4869,7 @@ country_event = { #Batto_sfez_dead
 	is_triggered_only = yes
 	
 	option = {
-		name = nap_fra.4000.a #don't do anything
+		name = nap_france.4000.a #don't do anything
 		ai_chance = { factor = 20 }
 		hidden_effect = {
     add_ideas = { TUN_FRA_ENG_trades_go_down }
@@ -4882,7 +4882,7 @@ country_event = { #Batto_sfez_dead
 		ai_chance = { factor = 80 }
 		hidden_effect = {
     TUN = {country_event = { id = tunisia.9 days = 1 }}
-      news_event = { id = news.25 }
+      news_event = { id = news.32 }
       set_country_flag = FRA_send_the_fleet
 	}
  }
@@ -4920,10 +4920,11 @@ country_event = { #no_fundamental_pact
     if = {
       limit = { has_country_flag = FRA_send_the_fleet }
     TUN = {  country_event = { id = tunisia.10 days = 1 }}
+    news_event = {id = news.33 }
   } 
     else = {
     country_event = { id = tunisia.9 days = 1 }
-    news_event = {id = news.25 }
+    news_event = {id = news.32 }
    }
 	}
  }
