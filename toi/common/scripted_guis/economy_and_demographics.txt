@@ -1053,7 +1053,7 @@ scripted_gui = {
 				reset = yes
 			}
 			extra_button_click = {
-
+				
 			}
 		}
         properties = {

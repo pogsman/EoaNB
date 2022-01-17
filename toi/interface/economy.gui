@@ -5487,18 +5487,21 @@ guiTypes = {
 						position = { x = -27 y = 24 }
 						quadTextureSprite ="GFX_zoom_out"
 						clicksound = click_close
+						pdx_tooltip = govt_military_spending_tt
 					}
 					iconType ={
 						name ="govt_military_spending_icon"
 						spriteType = "GFX_internal_politics_party_colors"
 						position = { x = 0 y = 30 }
 						frame = 5
+						pdx_tooltip = govt_military_spending_tt
 					}
 					buttonType = {
 						name = "govt_increase_military_spending_button"
 						position = { x = 116 y = 24 }
 						quadTextureSprite ="GFX_zoom_in"
 						clicksound = click_close
+						pdx_tooltip = govt_military_spending_tt
 					}
 					instantTextBoxType = {
 						name = "govt_military_spending_percentage_loc"
@@ -5510,6 +5513,7 @@ guiTypes = {
 						maxHeight = 24
 						fixedsize = yes
 						#alwaystransparent = yes
+						pdx_tooltip = govt_military_spending_tt
 					}
 					instantTextBoxType = {
 						name = "govt_military_spending_amount_loc"
@@ -5521,6 +5525,7 @@ guiTypes = {
 						maxHeight = 24
 						fixedsize = yes
 						#alwaystransparent = yes
+						pdx_tooltip = govt_military_spending_tt
 					}
 				}
 				containerWindowType = { #Intelligence Spending
@@ -6027,6 +6032,36 @@ guiTypes = {
 						format = left
 						maxWidth = 100
 						text = "govt_administration_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+
+				containerWindowType = { #Military Payroll
+					name = "govt_military_payroll_spending_container"
+					position = {x = 57 y = 62 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_military_payroll_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_military_payroll_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					instantTextBoxType = {
+						name = "govt_military_payroll_spending_amount_loc"
+						position = { x = 186 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_military_payroll_spending_amount_loc"
 						maxHeight = 24
 						fixedsize = yes
 						#alwaystransparent = yes

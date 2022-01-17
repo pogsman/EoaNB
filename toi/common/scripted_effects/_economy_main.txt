@@ -268,6 +268,59 @@
 				set_variable = { industrial_goods_base_price = 0 }
 				set_variable = { industrial_goods_price = 0 }
 
+				#Bought
+				set_variable = { life_goods_bought_amount = 0 }
+				set_variable = { life_goods_bought_value = 0 }
+
+				set_variable = { everyday_goods_bought_amount = 0 }
+				set_variable = { everyday_goods_bought_value = 0 }
+				
+				set_variable = { luxury_goods_bought_amount = 0 }
+				set_variable = { luxury_goods_bought_value = 0 }
+				
+				set_variable = { services_bought_amount = 0 }
+				set_variable = { services_bought_value = 0 }
+				
+				set_variable = { raw_goods_bought_amount = 0 }
+				set_variable = { raw_goods_bought_value = 0 }
+				
+				set_variable = { industrial_goods_bought_amount = 0 }
+				set_variable = { industrial_goods_bought_value = 0 }
+
+				#Sold
+				set_variable = { life_goods_sold_amount = 0 }
+				set_variable = { life_goods_sold_value = 0 }
+
+				set_variable = { everyday_goods_sold_amount = 0 }
+				set_variable = { everyday_goods_sold_value = 0 }
+				
+				set_variable = { luxury_goods_sold_amount = 0 }
+				set_variable = { luxury_goods_sold_value = 0 }
+				
+				set_variable = { services_sold_amount = 0 }
+				set_variable = { services_sold_value = 0 }
+				
+				set_variable = { raw_goods_sold_amount = 0 }
+				set_variable = { raw_goods_sold_value = 0 }
+				
+				set_variable = { industrial_goods_sold_amount = 0 }
+				set_variable = { industrial_goods_sold_value = 0 }
+
+				#Government
+				set_variable = { life_goods_government_stockpile = 0 }
+				set_variable = { everyday_goods_government_stockpile = 0 }
+				set_variable = { luxury_goods_government_stockpile = 0 }
+				set_variable = { services_government_stockpile = 0 }
+				set_variable = { raw_goods_government_stockpile = 0 }
+				set_variable = { industrial_goods_government_stockpile = 0 }
+				
+				set_variable = { life_goods_government_demand = 0 }
+				set_variable = { everyday_goods_government_demand = 0 }
+				set_variable = { luxury_goods_government_demand = 0 }
+				set_variable = { services_government_demand = 0 }
+				set_variable = { raw_goods_government_demand = 0 }
+				set_variable = { industrial_goods_government_demand = 0 }
+
 				reset_supply = yes
 				reset_demand = yes
 			#
@@ -278,8 +331,16 @@
 			set_variable = { actual_construction_spending = 0 }
 			set_variable = { actual_industrial_spending = 0 }
 			set_variable = { actual_tariff_revenue = 0 }
+			set_variable = { actual_sales_tax_revenue = 0 }
 			set_variable = { actual_trade_subsidy_spending = 0 }
 			set_variable = { actual_administration_spending = 0 }
+			set_variable = { actual_life_goods_spending = 0 }
+			set_variable = { actual_everyday_goods_spending = 0 }
+			set_variable = { actual_luxury_goods_spending = 0 }
+			set_variable = { actual_services_spending = 0 }
+			set_variable = { actual_raw_goods_spending = 0 }
+			set_variable = { actual_industrial_goods_spending = 0 }
+			set_variable = { actual_military_spending = 0 }
 
 			set_variable = { gdp_amount = 0 }
 			set_variable = { gdp_amount_this_year = 0 }
@@ -291,6 +352,9 @@
 			set_variable = { national_bank_interest_gain = 0 }
 
 			calibrate_tech_bonuses = yes
+
+			#Military Demand (Also handles battalion count)
+			calculate_military_demand = yes
 
 			every_controlled_state = {
 				#Pops/Govt get paid
@@ -347,6 +411,37 @@
 					}
 					subtract_from_variable = { PREV.treasury = admin_temp }
 					add_to_variable = { PREV.actual_administration_spending = admin_temp }
+				#
+				#Soldier Payroll
+					set_temp_variable = { payroll_temp = 0 }
+
+					set_temp_variable = { conscripted_amount = PREV.max_available_manpower_k } #Temporary
+					multiply_temp_variable = { conscripted_amount = 10 }
+					divide_temp_variable = { conscripted_amount = PREV.max_manpower_k }
+					multiply_temp_variable = { conscripted_amount = state_population_k }
+					divide_temp_variable = { conscripted_amount = 10 }
+
+					set_temp_variable = { need_temp = global.conscripted_base_life_goods_need }
+					multiply_temp_variable = { need_temp = conscripted_amount }
+					divide_temp_variable = { need_temp = 100 }
+					multiply_temp_variable = { need_temp = life_goods_price }
+					add_to_temp_variable = { payroll_temp = need_temp }
+
+					set_temp_variable = { need_temp = global.conscripted_base_everyday_goods_need }
+					multiply_temp_variable = { need_temp = conscripted_amount }
+					divide_temp_variable = { need_temp = 100 }
+					multiply_temp_variable = { need_temp = everyday_goods_price }
+					add_to_temp_variable = { payroll_temp = need_temp }
+					
+					set_temp_variable = { need_temp = global.conscripted_base_luxury_goods_need }
+					multiply_temp_variable = { need_temp = conscripted_amount }
+					divide_temp_variable = { need_temp = 100 }
+					multiply_temp_variable = { need_temp = luxury_goods_price }
+					add_to_temp_variable = { payroll_temp = need_temp }
+
+					multiply_temp_variable = { payroll_temp = global.conscripted_payroll_multiplier }
+					subtract_from_variable = { PREV.treasury = payroll_temp }
+					add_to_variable = { PREV.actual_military_spending = payroll_temp }
 				#
 				#Reset
 					set_variable = { life_goods_trade_amount = 0 } #Positive: Goods Bought / Negative: Goods Sold - Note, this only applies in this effect. It's always positive elsewhere.
@@ -2116,6 +2211,24 @@
                     }
 
 			#
+			#Government Demand
+				
+				add_to_variable = { life_goods_government_demand = military_life_goods_demand }
+				add_to_variable = { life_goods_government_demand = conscripted_life_goods_demand }
+				
+				add_to_variable = { everyday_goods_government_demand = military_everyday_goods_demand }
+				add_to_variable = { everyday_goods_government_demand = conscripted_everyday_goods_demand }
+				
+				add_to_variable = { luxury_goods_government_demand = military_luxury_goods_demand }
+				add_to_variable = { luxury_goods_government_demand = conscripted_luxury_goods_demand }
+				
+				add_to_variable = { industrial_goods_government_demand = military_industrial_goods_demand }
+				
+				add_to_variable = { life_goods_demand = life_goods_government_demand }
+				add_to_variable = { everyday_goods_demand = everyday_goods_government_demand }
+				add_to_variable = { luxury_goods_demand = luxury_goods_government_demand }				
+				add_to_variable = { industrial_goods_demand = industrial_goods_government_demand }
+			#
 			#Minimum goods supply to be in a country & Some necessary vars for resolving international trade
 
 				#Excess added up from each individual state
@@ -3226,6 +3339,54 @@
 						}
 						set_variable = { trade_amount_left = life_goods_global_trade_amount }
 						set_variable = { cost_amount_left = life_goods_global_trade_value }
+						set_variable = { trade_amount_wog = life_goods_global_trade_amount }
+						set_variable = { cost_amount_wog = life_goods_global_trade_value }
+
+						set_variable = { life_goods_demand_wog = life_goods_demand }
+						subtract_from_variable = { life_goods_demand_wog = life_goods_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { life_goods_government_stockpile < life_goods_government_demand }
+								}
+								set_temp_variable = { amount_temp = life_goods_government_demand }
+								subtract_from_temp_variable = { amount_temp = life_goods_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_variable = { tal = 2 }
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { life_goods_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_life_goods_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { life_goods_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_life_goods_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = life_goods_trade_state_array^num }
@@ -3246,9 +3407,9 @@
 								var:life_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = life_goods_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.life_goods_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.life_goods_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.life_goods_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3268,7 +3429,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.life_goods_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -3371,6 +3532,53 @@
 						}
 						set_variable = { trade_amount_left = everyday_goods_global_trade_amount }
 						set_variable = { cost_amount_left = everyday_goods_global_trade_value }
+						set_variable = { trade_amount_wog = everyday_goods_global_trade_amount }
+						set_variable = { cost_amount_wog = everyday_goods_global_trade_value }
+
+						set_variable = { everyday_goods_demand_wog = everyday_goods_demand }
+						subtract_from_variable = { everyday_goods_demand_wog = everyday_goods_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { everyday_goods_government_stockpile < everyday_goods_government_demand }
+								}
+								set_temp_variable = { amount_temp = everyday_goods_government_demand }
+								subtract_from_temp_variable = { amount_temp = everyday_goods_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { everyday_goods_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_everyday_goods_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { everyday_goods_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_everyday_goods_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = everyday_goods_trade_state_array^num }
@@ -3391,9 +3599,9 @@
 								var:everyday_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = everyday_goods_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.everyday_goods_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.everyday_goods_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.everyday_goods_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3413,7 +3621,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.everyday_goods_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -3516,6 +3724,53 @@
 						}
 						set_variable = { trade_amount_left = luxury_goods_global_trade_amount }
 						set_variable = { cost_amount_left = luxury_goods_global_trade_value }
+						set_variable = { trade_amount_wog = luxury_goods_global_trade_amount }
+						set_variable = { cost_amount_wog = luxury_goods_global_trade_value }
+
+						set_variable = { luxury_goods_demand_wog = luxury_goods_demand }
+						subtract_from_variable = { luxury_goods_demand_wog = luxury_goods_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { luxury_goods_government_stockpile < luxury_goods_government_demand }
+								}
+								set_temp_variable = { amount_temp = luxury_goods_government_demand }
+								subtract_from_temp_variable = { amount_temp = luxury_goods_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { luxury_goods_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_luxury_goods_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { luxury_goods_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_luxury_goods_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = luxury_goods_trade_state_array^num }
@@ -3536,9 +3791,9 @@
 								var:luxury_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = luxury_goods_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.luxury_goods_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.luxury_goods_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.luxury_goods_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3558,7 +3813,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.luxury_goods_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -3661,6 +3916,53 @@
 						}
 						set_variable = { trade_amount_left = services_global_trade_amount }
 						set_variable = { cost_amount_left = services_global_trade_value }
+						set_variable = { trade_amount_wog = services_global_trade_amount }
+						set_variable = { cost_amount_wog = services_global_trade_value }
+
+						set_variable = { services_demand_wog = services_demand }
+						subtract_from_variable = { services_demand_wog = services_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { services_government_stockpile < services_government_demand }
+								}
+								set_temp_variable = { amount_temp = services_government_demand }
+								subtract_from_temp_variable = { amount_temp = services_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { services_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_services_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { services_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_services_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = services_trade_state_array^num }
@@ -3681,9 +3983,9 @@
 								var:services_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = services_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.services_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.services_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.services_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3703,7 +4005,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.services_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -3806,6 +4108,53 @@
 						}
 						set_variable = { trade_amount_left = raw_goods_global_trade_amount }
 						set_variable = { cost_amount_left = raw_goods_global_trade_value }
+						set_variable = { trade_amount_wog = raw_goods_global_trade_amount }
+						set_variable = { cost_amount_wog = raw_goods_global_trade_value }
+
+						set_variable = { raw_goods_demand_wog = raw_goods_demand }
+						subtract_from_variable = { raw_goods_demand_wog = raw_goods_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { raw_goods_government_stockpile < raw_goods_government_demand }
+								}
+								set_temp_variable = { amount_temp = raw_goods_government_demand }
+								subtract_from_temp_variable = { amount_temp = raw_goods_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { raw_goods_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_raw_goods_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { raw_goods_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_raw_goods_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = raw_goods_trade_state_array^num }
@@ -3826,9 +4175,9 @@
 								var:raw_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = raw_goods_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.raw_goods_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.raw_goods_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.raw_goods_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3848,7 +4197,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.raw_goods_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -3951,6 +4300,53 @@
 						}
 						set_variable = { trade_amount_left = industrial_goods_global_trade_amount }
 						set_variable = { cost_amount_left = industrial_goods_global_trade_value }
+						set_variable = { trade_amount_wog = industrial_goods_global_trade_amount }
+						set_variable = { cost_amount_wog = industrial_goods_global_trade_value }
+
+						set_variable = { industrial_goods_demand_wog = industrial_goods_demand }
+						subtract_from_variable = { industrial_goods_demand_wog = industrial_goods_government_demand }
+
+						#Government gets goods first
+							if = {
+								limit = {
+									check_variable = { industrial_goods_government_stockpile < industrial_goods_government_demand }
+								}
+								set_temp_variable = { amount_temp = industrial_goods_government_demand }
+								subtract_from_temp_variable = { amount_temp = industrial_goods_government_stockpile }
+
+								if = {
+									limit = {
+										check_variable = { amount_temp < trade_amount_left }
+									}
+									set_temp_variable = { goods_percent_temp = amount_temp }
+									multiply_temp_variable = { goods_percent_temp = 100 }
+									divide_temp_variable = { goods_percent_temp = trade_amount_left }
+
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									set_temp_variable = { cost_temp = goods_percent_temp }
+									multiply_temp_variable = { cost_temp = cost_amount_left }
+									divide_temp_variable = { cost_temp = 100 }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+									
+									add_to_variable = { industrial_goods_government_stockpile = amount_temp }
+									add_to_variable = { treasury = cost_temp }
+									subtract_from_variable = { actual_industrial_goods_spending = cost_temp }
+									subtract_from_variable = { trade_amount_wog = amount_temp }
+									subtract_from_variable = { cost_amount_wog = cost_temp }
+									subtract_from_variable = { trade_amount_left = amount_temp }
+									subtract_from_variable = { cost_amount_left = cost_temp }
+								}
+								else = {
+									add_to_variable = { industrial_goods_government_stockpile = trade_amount_left }
+									add_to_variable = { treasury = cost_amount_left }
+									subtract_from_variable = { actual_industrial_goods_spending = cost_amount_left }
+									set_variable = { trade_amount_left = 0 }
+									set_variable = { cost_amount_left = 0 }
+									set_variable = { trade_amount_wog = 0 }
+									set_variable = { cost_amount_wog = 0 }
+								}
+							}
+						#
 
 						#Loop thru most expensive states to resolve
 						set_temp_variable = { start_temp = industrial_goods_trade_state_array^num }
@@ -3971,9 +4367,9 @@
 								var:industrial_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = industrial_goods_demand }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									divide_temp_variable = { trade_percentage_temp = PREV.industrial_goods_demand }
+									divide_temp_variable = { trade_percentage_temp = PREV.industrial_goods_demand_wog }
 
-									set_temp_variable = { trade_amount_temp = PREV.industrial_goods_global_trade_amount }
+									set_temp_variable = { trade_amount_temp = PREV.trade_amount_wog }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
@@ -3993,7 +4389,7 @@
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
-										set_temp_variable = { trade_value_temp = PREV.industrial_goods_global_trade_value }
+										set_temp_variable = { trade_value_temp = PREV.cost_amount_wog }
 										multiply_temp_variable = { trade_value_temp = trade_percentage_temp }
 										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
@@ -4110,7 +4506,7 @@
 							}
 							add_to_variable = { life_goods_sold_value = life_goods_trade_value }
 							subtract_from_variable = { life_goods_sold_amount = life_goods_trade_amount }
-							subtract_from_variable = { life_goods_left = life_goods_trade_amount }
+							add_to_variable = { life_goods_left = life_goods_trade_amount }
 						}
 
 					#everyday_goods
@@ -4129,7 +4525,7 @@
 							}
 							add_to_variable = { everyday_goods_sold_value = everyday_goods_trade_value }
 							subtract_from_variable = { everyday_goods_sold_amount = everyday_goods_trade_amount }
-							subtract_from_variable = { everyday_goods_left = everyday_goods_trade_amount }
+							add_to_variable = { everyday_goods_left = everyday_goods_trade_amount }
 
 						}
 					#luxury_goods
@@ -4148,7 +4544,7 @@
 							}
 							add_to_variable = { luxury_goods_sold_value = luxury_goods_trade_value }
 							subtract_from_variable = { luxury_goods_sold_amount = luxury_goods_trade_amount }
-							subtract_from_variable = { luxury_goods_left = luxury_goods_trade_amount }
+							add_to_variable = { luxury_goods_left = luxury_goods_trade_amount }
 
 						}
 					#services
@@ -4167,7 +4563,7 @@
 							}
 							add_to_variable = { services_sold_value = services_trade_value }
 							subtract_from_variable = { services_sold_amount = services_trade_amount }
-							subtract_from_variable = { services_left = services_trade_amount }
+							add_to_variable = { services_left = services_trade_amount }
 
 						}
 					#raw_goods
@@ -4186,7 +4582,7 @@
 							}
 							add_to_variable = { raw_goods_sold_value = raw_goods_trade_value }
 							subtract_from_variable = { raw_goods_sold_amount = raw_goods_trade_amount }
-							subtract_from_variable = { raw_goods_left = raw_goods_trade_amount }
+							add_to_variable = { raw_goods_left = raw_goods_trade_amount }
 
 						}
 					#industrial_goods
@@ -4205,13 +4601,314 @@
 							}
 							add_to_variable = { industrial_goods_sold_value = industrial_goods_trade_value }
 							subtract_from_variable = { industrial_goods_sold_amount = industrial_goods_trade_amount }
-							subtract_from_variable = { industrial_goods_left = industrial_goods_trade_amount }
+							add_to_variable = { industrial_goods_left = industrial_goods_trade_amount }
 
 						}
 				}
 			#
 
+			#Govt Buying Needed Goods
+				
+				#Vars Needed
+				set_variable = { life_goods_government_demand_left = life_goods_government_demand }
+				subtract_from_variable = { life_goods_government_demand_left = life_goods_government_stockpile }
+				set_variable = { life_goods_supply_left = life_goods_supply }
+				
+				set_variable = { everyday_goods_government_demand_left = everyday_goods_government_demand }
+				subtract_from_variable = { everyday_goods_government_demand_left = everyday_goods_government_stockpile }
+				set_variable = { everyday_goods_supply_left = everyday_goods_supply }
+				
+				set_variable = { luxury_goods_government_demand_left = luxury_goods_government_demand }
+				subtract_from_variable = { luxury_goods_government_demand_left = luxury_goods_government_stockpile }
+				set_variable = { luxury_goods_supply_left = luxury_goods_supply }
+				
+				set_variable = { services_government_demand_left = services_government_demand }
+				subtract_from_variable = { services_government_demand_left = services_government_stockpile }
+				set_variable = { services_supply_left = services_supply }
+				
+				set_variable = { raw_goods_government_demand_left = raw_goods_government_demand }
+				subtract_from_variable = { raw_goods_government_demand_left = raw_goods_government_stockpile }
+				set_variable = { raw_goods_supply_left = raw_goods_supply }
+				
+				set_variable = { industrial_goods_government_demand_left = industrial_goods_government_demand }
+				subtract_from_variable = { industrial_goods_government_demand_left = industrial_goods_government_stockpile }
+				set_variable = { industrial_goods_supply_left = industrial_goods_supply }
+
+				for_each_scope_loop = { #life_goods
+					array = life_goods_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = life_goods_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.life_goods_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.life_goods_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = life_goods_bought_amount }
+					add_to_variable = { life_goods_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = life_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.life_goods_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+						
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.life_goods_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_life_goods_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.life_goods_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.life_goods_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.life_goods_supply_left = life_goods_supply }
+						add_to_variable = { life_goods_sold_value = cost_temp }
+						add_to_variable = { life_goods_sold_amount = buy_amount }
+						subtract_from_variable = { life_goods_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.life_goods_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+				for_each_scope_loop = { #everyday_goods
+					array = everyday_goods_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = everyday_goods_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.everyday_goods_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.everyday_goods_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = everyday_goods_bought_amount }
+					add_to_variable = { everyday_goods_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = everyday_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.everyday_goods_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.everyday_goods_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_everyday_goods_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.everyday_goods_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.everyday_goods_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.everyday_goods_supply_left = everyday_goods_supply }
+						add_to_variable = { everyday_goods_sold_value = cost_temp }
+						add_to_variable = { everyday_goods_sold_amount = buy_amount }
+						subtract_from_variable = { everyday_goods_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.everyday_goods_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+				for_each_scope_loop = { #luxury_goods
+					array = luxury_goods_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = luxury_goods_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.luxury_goods_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.luxury_goods_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = luxury_goods_bought_amount }
+					add_to_variable = { luxury_goods_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = luxury_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.luxury_goods_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.luxury_goods_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_luxury_goods_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.luxury_goods_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.luxury_goods_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.luxury_goods_supply_left = luxury_goods_supply }
+						add_to_variable = { luxury_goods_sold_value = cost_temp }
+						add_to_variable = { luxury_goods_sold_amount = buy_amount }
+						subtract_from_variable = { luxury_goods_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.luxury_goods_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+				for_each_scope_loop = { #services
+					array = services_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = services_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.services_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.services_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = services_bought_amount }
+					add_to_variable = { services_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = services_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.services_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.services_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_services_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.services_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.services_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.services_supply_left = services_supply }
+						add_to_variable = { services_sold_value = cost_temp }
+						add_to_variable = { services_sold_amount = buy_amount }
+						subtract_from_variable = { services_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.services_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+				for_each_scope_loop = { #raw_goods
+					array = raw_goods_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = raw_goods_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.raw_goods_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.raw_goods_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = raw_goods_bought_amount }
+					add_to_variable = { raw_goods_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = raw_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.raw_goods_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.raw_goods_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_raw_goods_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.raw_goods_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.raw_goods_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.raw_goods_supply_left = raw_goods_supply }
+						add_to_variable = { raw_goods_sold_value = cost_temp }
+						add_to_variable = { raw_goods_sold_amount = buy_amount }
+						subtract_from_variable = { raw_goods_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.raw_goods_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+				for_each_scope_loop = { #industrial_goods
+					array = industrial_goods_trade_state_array
+					break = cheapest_brk
+
+					set_temp_variable = { buy_amount = industrial_goods_supply }
+					multiply_temp_variable = { buy_amount = 100 }
+					divide_temp_variable = { buy_amount = PREV.industrial_goods_supply_left }
+					multiply_temp_variable = { buy_amount = PREV.industrial_goods_government_demand_left }
+					divide_temp_variable = { buy_amount = 25 }
+					#subtract_from_temp_variable = { buy_amount = industrial_goods_bought_amount }
+					add_to_variable = { industrial_goods_demand = buy_amount }
+
+					clamp_temp_variable = {
+						var = buy_amount
+						max = industrial_goods_left
+					}
+					clamp_temp_variable = {
+						var = buy_amount
+						max = PREV.industrial_goods_government_demand_left
+					}
+					if = {
+						limit = {
+							check_variable = { buy_amount > 0 }
+						}
+						
+						set_temp_variable = { cost_temp = buy_amount }
+						multiply_temp_variable = { cost_temp = PREV.industrial_goods_price }
+
+						#Resolve
+						add_to_variable = { PREV.actual_industrial_goods_spending = cost_temp }
+						subtract_from_variable = { PREV.treasury = cost_temp }
+						add_to_variable = { PREV.industrial_goods_government_stockpile = buy_amount }
+						subtract_from_variable = { PREV.industrial_goods_government_demand_left = buy_amount }
+						subtract_from_variable = { PREV.industrial_goods_supply_left = industrial_goods_supply }
+						add_to_variable = { industrial_goods_sold_value = cost_temp }
+						add_to_variable = { industrial_goods_sold_amount = buy_amount }
+						subtract_from_variable = { industrial_goods_left = buy_amount }
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { PREV.industrial_goods_government_demand_left > 0 } }
+						}
+						set_temp_variable = { cheapest_brk = 1 }
+					}
+				}
+			#
+
 			every_controlled_state = {
+				set_temp_variable = { sales_tax_temp = controller:sales_tax_percentage }
+				add_to_temp_variable = { sales_tax_temp = 100 }
 				#Life Goods Purchases
 					set_temp_variable = { buy_amount = life_goods_demand }
 					subtract_from_temp_variable = { buy_amount = life_goods_bought_amount }
@@ -4360,8 +5057,25 @@
 								}
 							}
 							#Only pops can demand Life Goods
-							subtract_from_variable = { pops_money = life_goods_bought_value }
-							add_to_variable = { pops_goods_spending = life_goods_bought_value }
+							set_temp_variable = { cost_temp = life_goods_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
+							subtract_from_variable = { pops_money = cost_temp }
+							add_to_variable = { pops_goods_spending = cost_temp }
 							set_temp_variable = { needs_fulfilled_temp = life_goods_bought_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_life_goods_need }
 							add_to_variable = { pops_life_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -4394,8 +5108,25 @@
 								}
 							}
 							#Only pops can demand Everyday Goods
-							subtract_from_variable = { pops_money = everyday_goods_bought_value }
-							add_to_variable = { pops_goods_spending = everyday_goods_bought_value }
+							set_temp_variable = { cost_temp = everyday_goods_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
+							subtract_from_variable = { pops_money = cost_temp }
+							add_to_variable = { pops_goods_spending = cost_temp }
 							set_temp_variable = { needs_fulfilled_temp = everyday_goods_bought_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_everyday_goods_need }
 							add_to_variable = { pops_everyday_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -4486,8 +5217,25 @@
 								}
 							}
 							#Only pops can demand Luxury Goods
-							subtract_from_variable = { pops_money = luxury_goods_bought_value }
-							add_to_variable = { pops_goods_spending = luxury_goods_bought_value }
+							set_temp_variable = { cost_temp = luxury_goods_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
+							subtract_from_variable = { pops_money = cost_temp }
+							add_to_variable = { pops_goods_spending = cost_temp }
 							set_temp_variable = { needs_fulfilled_temp = luxury_goods_bought_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
 							add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -4578,8 +5326,25 @@
 								}
 							}
 							#Only pops can demand Services
-							subtract_from_variable = { pops_money = services_bought_value }
-							add_to_variable = { pops_goods_spending = services_bought_value }
+							set_temp_variable = { cost_temp = services_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
+							subtract_from_variable = { pops_money = cost_temp }
+							add_to_variable = { pops_goods_spending = cost_temp }
 							set_temp_variable = { needs_fulfilled_temp = services_bought_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_services_need }
 							add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
@@ -4644,6 +5409,23 @@
 							}
 							#Costs & goods absorbed by factories/artisans
 							#Splitting between Factories and Artisans
+							set_temp_variable = { cost_temp = raw_goods_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
 							set_temp_variable = { artisan_share = pops_artisans_raw_goods_demand }
 							multiply_temp_variable = { artisan_share = 100 }
 							divide_temp_variable = { artisan_share = raw_goods_demand }
@@ -4652,14 +5434,14 @@
 							multiply_temp_variable = { factory_share = 100 }
 							divide_temp_variable = { factory_share = raw_goods_demand }
 
-							set_temp_variable = { artisan_goods_value = raw_goods_bought_value }
+							set_temp_variable = { artisan_goods_value = cost_temp }
 							set_temp_variable = { artisan_goods_amount = raw_goods_bought_amount }
 							multiply_temp_variable = { artisan_goods_value = artisan_share }
 							divide_temp_variable = { artisan_goods_value = 100 }
 							multiply_temp_variable = { artisan_goods_amount = artisan_share }
 							divide_temp_variable = { artisan_goods_amount = 100 }
 
-							set_temp_variable = { factory_goods_value = raw_goods_bought_value }
+							set_temp_variable = { factory_goods_value = cost_temp }
 							set_temp_variable = { factory_goods_amount = raw_goods_bought_amount }
 							multiply_temp_variable = { factory_goods_value = factory_share }
 							divide_temp_variable = { factory_goods_value = 100 }
@@ -4673,9 +5455,9 @@
 
 							if = {
 								limit = {
-									NOT = { check_variable = { total_goods_value = raw_goods_bought_value } }
+									NOT = { check_variable = { total_goods_value = cost_temp } }
 								}
-								subtract_from_temp_variable = { total_goods_value = raw_goods_bought_value }
+								subtract_from_temp_variable = { total_goods_value = cost_temp }
 								subtract_from_temp_variable = { factory_goods_value = total_goods_value }
 							}
 							if = {
@@ -4733,6 +5515,23 @@
 									check_variable = { industrial_goods_bought_amount > 0 }
 								}
 							}
+							set_temp_variable = { cost_temp = industrial_goods_bought_value }
+							set_temp_variable = { prev_cost_temp = cost_temp }
+
+							if = {
+								limit = {
+									check_variable = { sales_tax_temp > 100 }
+								}
+
+								multiply_temp_variable = { cost_temp = sales_tax_temp }
+								divide_temp_variable = { cost_temp = 100 }
+
+								set_temp_variable = { sales_tax_amount_temp = cost_temp }
+								subtract_from_temp_variable = { sales_tax_amount_temp = prev_cost_temp }
+								add_to_variable = { PREV.treasury = sales_tax_amount_temp }
+								add_to_variable = { PREV.actual_sales_tax_revenue = sales_tax_amount_temp }
+							}
+
 							#So many things here...
 							#Costs & goods split between factories, infra, & construction 
 							#Splitting between Factories and Construction
@@ -4806,7 +5605,7 @@
 									value = vv_temp
 									index = ii_temp
 									
-									set_temp_variable = { value_array_temp^ii_temp = industrial_goods_bought_value }
+									set_temp_variable = { value_array_temp^ii_temp = cost_temp }
 									set_temp_variable = { amount_array_temp^ii_temp = industrial_goods_bought_amount }
 
 									multiply_temp_variable = { value_array_temp^ii_temp = share_array_temp^ii_temp }
@@ -4821,9 +5620,9 @@
 
 								if = {
 									limit = {
-										NOT = { check_variable = { total_value_temp = industrial_goods_bought_value } }
+										NOT = { check_variable = { total_value_temp = cost_temp } }
 									}
-									set_temp_variable = { missing_value_temp = industrial_goods_bought_value }
+									set_temp_variable = { missing_value_temp = cost_temp }
 									subtract_from_temp_variable = { missing_value_temp = total_value_temp }
 
 									subtract_from_variable = { pops_money = missing_value_temp } #Pops deal with the missing value. Should be negligible though.
@@ -5534,6 +6333,7 @@
 			#
 
 			set_variable = { private_factory_amount = 0 }
+			set_variable = { pops_goods_spending = 0 }
 			every_controlled_state = {
 				calculate_base_price = yes
 				calculate_price = yes
@@ -6034,8 +6834,49 @@
 						add_to_variable = { PREV.industrial_power = industrial_power }
 					#
 
+					#Goods Spending
+						#Bought
+						add_to_variable = { PREV.life_goods_bought_amount = life_goods_bought_amount }
+						add_to_variable = { PREV.life_goods_bought_value = life_goods_bought_value }
+
+						add_to_variable = { PREV.everyday_goods_bought_amount = everyday_goods_bought_amount }
+						add_to_variable = { PREV.everyday_goods_bought_value = everyday_goods_bought_value }
+						
+						add_to_variable = { PREV.luxury_goods_bought_amount = luxury_goods_bought_amount }
+						add_to_variable = { PREV.luxury_goods_bought_value = luxury_goods_bought_value }
+						
+						add_to_variable = { PREV.services_bought_amount = services_bought_amount }
+						add_to_variable = { PREV.services_bought_value = services_bought_value }
+						
+						add_to_variable = { PREV.raw_goods_bought_amount = raw_goods_bought_amount }
+						add_to_variable = { PREV.raw_goods_bought_value = raw_goods_bought_value }
+						
+						add_to_variable = { PREV.industrial_goods_bought_amount = industrial_goods_bought_amount }
+						add_to_variable = { PREV.industrial_goods_bought_value = industrial_goods_bought_value }
+
+						#Sold
+						add_to_variable = { PREV.life_goods_sold_amount = life_goods_sold_amount }
+						add_to_variable = { PREV.life_goods_sold_value = life_goods_sold_value }
+
+						add_to_variable = { PREV.everyday_goods_sold_amount = everyday_goods_sold_amount }
+						add_to_variable = { PREV.everyday_goods_sold_value = everyday_goods_sold_value }
+						
+						add_to_variable = { PREV.luxury_goods_sold_amount = luxury_goods_sold_amount }
+						add_to_variable = { PREV.luxury_goods_sold_value = luxury_goods_sold_value }
+						
+						add_to_variable = { PREV.services_sold_amount = services_sold_amount }
+						add_to_variable = { PREV.services_sold_value = services_sold_value }
+						
+						add_to_variable = { PREV.raw_goods_sold_amount = raw_goods_sold_amount }
+						add_to_variable = { PREV.raw_goods_sold_value = raw_goods_sold_value }
+						
+						add_to_variable = { PREV.industrial_goods_sold_amount = industrial_goods_sold_amount }
+						add_to_variable = { PREV.industrial_goods_sold_value = industrial_goods_sold_value }
+					#
+
 					#Pop Spending
 					add_to_variable = { pops_spending = pops_goods_spending }
+					add_to_variable = { PREV.pops_goods_spending = pops_goods_spending }
 				#
 			}
 			set_variable = { national_bank_interest_gain = 0 }
@@ -6269,13 +7110,41 @@
 				#Budget
 					set_variable = { actual_revenue = actual_income_tax_revenue }
 					add_to_variable = { actual_revenue = actual_tariff_revenue }
+					add_to_variable = { actual_revenue = actual_sales_tax_revenue }
+
 					set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
 					add_to_variable = { actual_subsidy_expense = actual_trade_subsidy_spending }
 					add_to_variable = { actual_subsidy_expense = actual_industrial_spending }
+
+					set_temp_variable = { mil_spend_temp = military_life_goods_demand }
+					add_to_temp_variable = { mil_spend_temp = conscripted_life_goods_demand }
+					divide_temp_variable = { mil_spend_temp = life_goods_government_demand }
+					multiply_temp_variable = { mil_spend_temp = actual_life_goods_spending }
+					add_to_variable = { actual_military_spending = mil_spend_temp }
+					
+					set_temp_variable = { mil_spend_temp = military_everyday_goods_demand }
+					add_to_temp_variable = { mil_spend_temp = conscripted_everyday_goods_demand }
+					divide_temp_variable = { mil_spend_temp = everyday_goods_government_demand }
+					multiply_temp_variable = { mil_spend_temp = actual_everyday_goods_spending }
+					add_to_variable = { actual_military_spending = mil_spend_temp }
+					
+					set_temp_variable = { mil_spend_temp = military_luxury_goods_demand }
+					add_to_temp_variable = { mil_spend_temp = conscripted_luxury_goods_demand }
+					divide_temp_variable = { mil_spend_temp = luxury_goods_government_demand }
+					multiply_temp_variable = { mil_spend_temp = actual_luxury_goods_spending }
+					add_to_variable = { actual_military_spending = mil_spend_temp }
+					
+					set_temp_variable = { mil_spend_temp = military_industrial_goods_demand }
+					divide_temp_variable = { mil_spend_temp = industrial_goods_government_demand }
+					multiply_temp_variable = { mil_spend_temp = actual_industrial_goods_spending }
+					add_to_variable = { actual_military_spending = mil_spend_temp }
+
 					set_variable = { actual_spending = actual_subsidy_expense }
 					add_to_variable = { actual_spending = actual_construction_spending }
 					add_to_variable = { actual_spending = national_debt_interest }
 					add_to_variable = { actual_spending = actual_administration_spending }
+					add_to_variable = { actual_spending = actual_military_spending }
+
 					set_variable = { net_budget = actual_revenue }
 					subtract_from_variable = { net_budget = actual_spending }
 
@@ -6581,6 +7450,77 @@
 			#State Categories
 			#
 			#Governments
+				#Military
+					#Army
+					set_variable = { global.infantry_base_life_goods_need = 0.2 } #Per Battalion
+					set_variable = { global.infantry_base_everyday_goods_need = 0.08 }
+					set_variable = { global.infantry_base_luxury_goods_need = 0.02 }
+					set_variable = { global.infantry_base_industrial_goods_need = 0 }
+					
+					set_variable = { global.militia_base_life_goods_need = 0.1 }
+					set_variable = { global.militia_base_everyday_goods_need = 0.02 }
+					set_variable = { global.militia_base_luxury_goods_need = 0 }
+					set_variable = { global.militia_base_industrial_goods_need = 0 }
+					
+					set_variable = { global.artillery_base_life_goods_need = 0.12 }
+					set_variable = { global.artillery_base_everyday_goods_need = 0.08 }
+					set_variable = { global.artillery_base_luxury_goods_need = 0.02 }
+					set_variable = { global.artillery_base_industrial_goods_need = 0.04 }
+					
+					set_variable = { global.cavalry_base_life_goods_need = 0.2 }
+					set_variable = { global.cavalry_base_everyday_goods_need = 0.12 }
+					set_variable = { global.cavalry_base_luxury_goods_need = 0.04 }
+					set_variable = { global.cavalry_base_industrial_goods_need = 0 }
+					
+					set_variable = { global.mobile_base_life_goods_need = 0.2 }
+					set_variable = { global.mobile_base_everyday_goods_need = 0.12 }
+					set_variable = { global.mobile_base_luxury_goods_need = 0.04 }
+					set_variable = { global.mobile_base_industrial_goods_need = 0.06 }
+					
+					set_variable = { global.armor_base_life_goods_need = 0.2 }
+					set_variable = { global.armor_base_everyday_goods_need = 0.12 }
+					set_variable = { global.armor_base_luxury_goods_need = 0.04 }
+					set_variable = { global.armor_base_industrial_goods_need = 0.4 }
+					
+					set_variable = { global.robotic_base_life_goods_need = 0.04 }
+					set_variable = { global.robotic_base_everyday_goods_need = 0.16 }
+					set_variable = { global.robotic_base_luxury_goods_need = 0.08 }
+					set_variable = { global.robotic_base_industrial_goods_need = 1.0 }
+					
+					set_variable = { global.support_base_life_goods_need = 0.06 } #Per Support Company
+					set_variable = { global.support_base_everyday_goods_need = 0.03 }
+					set_variable = { global.support_base_luxury_goods_need = 0 }
+					set_variable = { global.support_base_industrial_goods_need = 0 }
+					
+					#Navy
+					set_variable = { global.screen_base_life_goods_need = 0.06 } #Per Ship
+					set_variable = { global.screen_base_everyday_goods_need = 0.015 }
+					set_variable = { global.screen_base_luxury_goods_need = 0.006 }
+					set_variable = { global.screen_base_industrial_goods_need = 0.006 }
+					
+					set_variable = { global.capital_base_life_goods_need = 0.24 }
+					set_variable = { global.capital_base_everyday_goods_need = 0.06 }
+					set_variable = { global.capital_base_luxury_goods_need = 0.015 }
+					set_variable = { global.capital_base_industrial_goods_need = 0.003 }
+					
+					set_variable = { global.submarine_base_life_goods_need = 0.05 }
+					set_variable = { global.submarine_base_everyday_goods_need = 0.015 }
+					set_variable = { global.submarine_base_luxury_goods_need = 0.003 }
+					set_variable = { global.submarine_base_industrial_goods_need = 0.03 }
+					
+					#Airforce
+					set_variable = { global.deployed_planes_base_life_goods_need = 0.005 } #Per Deployed Plane
+					set_variable = { global.deployed_planes_base_everyday_goods_need = 0.005 }
+					set_variable = { global.deployed_planes_base_luxury_goods_need = 0.001 }
+					set_variable = { global.deployed_planes_base_industrial_goods_need = 0.003 }
+
+					#Other
+					set_variable = { global.conscripted_base_life_goods_need = 3 } #Per 100K
+					set_variable = { global.conscripted_base_everyday_goods_need = 1 }
+					set_variable = { global.conscripted_base_luxury_goods_need = 0.1 }
+					set_variable = { global.conscripted_payroll_multiplier = 2 } #The multiple of the above expense that goes directly to pops
+				#
+
 				set_variable = { global.administration_base_expense = 0.5 } #Percentage (from 0.0 to 100.0) of pop earnings that are needed for basic administration
 				set_variable = { global.administration_population_expense = 100 } #Below this population amount (in thousands), administration becomes more expensive. Should not be 0
 				set_variable = { global.administration_population_expense_modifier = 2 } #Maximum modifier of admin costs when population is 0
@@ -6740,9 +7680,12 @@
 			set_variable = { national_bank_interest_rate = global.default_interest_rate }
 			set_variable = { national_bank_interest_income = 0 }
 
-			set_variable = { income_tax_upper_strata_percentage = 1 }
-			set_variable = { income_tax_middle_strata_percentage = 1 }
-			set_variable = { income_tax_lower_strata_percentage = 1 }
+			set_variable = { income_tax_upper_strata_percentage = 0 }
+			set_variable = { income_tax_middle_strata_percentage = 0 }
+			set_variable = { income_tax_lower_strata_percentage = 0 }
+			set_variable = { export_tariff_percentage = 25 }
+			set_variable = { import_tariff_percentage = 25 }
+			set_variable = { sales_tax_percentage = 1 }
 
 			set_variable = { military_spending_percentage = 100 }
 			set_variable = { intelligence_spending_percentage = 100 }
@@ -8924,6 +9867,438 @@
 		}
 	}
 
+	battalion_count_update = {
+		# Land:
+		#	Infantry
+		#	Militia
+		#	Artillery
+		#	Cavalry
+		#	Mobile
+		#	Armor
+		#	Robotic
+		#	Support
+		#	Total
+		#	Excess (For when people add unit types without adding to this list)
+		
+		# Naval:
+		#	Screen
+		#	Capital
+		#	Submarine
+		#	Total
+		#	Excess (For when people add ship types without adding to this list)
+
+		# There is also a weighted_ count, for costing purposes
+
+		#For air, use num_deployed_planes
+
+		set_variable = { infantry_battalions = num_battalions_with_type@infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@cold_war_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@pa_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@bicycle_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@feudal_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@line_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@redcoat_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@guard_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@great_war_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@light_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@tribal_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@state_levy_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@native_mountaineers }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@mounted_infantry }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@early_marine }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@marine }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@kustjagare_battalion }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@mountaineers }
+		add_to_variable = { infantry_battalions = num_battalions_with_type@shock_troops }
+
+		set_variable = { militia_battalions = num_battalions_with_type@spanish_militia_infantry }
+		add_to_variable = { militia_battalions = num_battalions_with_type@state_militia_infantry }
+		add_to_variable = { militia_battalions = num_battalions_with_type@colonial_militia_infantry }
+		add_to_variable = { militia_battalions = num_battalions_with_type@dutch_colonial_militia_infantry }
+		add_to_variable = { militia_battalions = num_battalions_with_type@irregular_infantry }
+		add_to_variable = { militia_battalions = num_battalions_with_type@armed_peasants }
+
+		set_variable = { artillery_battalions = num_battalions_with_type@anti_tank_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@mot_anti_tank_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@anti_air_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@mot_anti_air_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@cannon_artillery }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@cannon_artillery_towed }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@howitzer_artillery }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@howitzer_artillery_towed }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@siege_artillery }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@siege_artillery_towed }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@artillery_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@mot_artillery_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@rocket_artillery_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@mot_rocket_artillery_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@motorized_rocket_brigade }
+		add_to_variable = { artillery_battalions = num_battalions_with_type@railway_gun }
+		
+		set_variable = { cavalry_battalions = num_battalions_with_type@tribal_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@tribal_camel_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@tribal_pistoleer_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@state_levy_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@feudal_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@light_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@heavy_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@uhlans }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@camel_cavalry }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@dragoon }
+		add_to_variable = { cavalry_battalions = num_battalions_with_type@great_war_cavalry }
+
+		set_variable = { mobile_battalions = num_battalions_with_type@motorized }
+		add_to_variable = { mobile_battalions = num_battalions_with_type@mechanized }
+		add_to_variable = { mobile_battalions = num_battalions_with_type@airborne }
+		add_to_variable = { mobile_battalions = num_battalions_with_type@amphibious_mechanized }
+		add_to_variable = { mobile_battalions = num_battalions_with_type@armored_car }
+		add_to_variable = { mobile_battalions = num_battalions_with_type@technicals }
+
+		set_variable = { armor_battalions = num_battalions_with_type@amphibious_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@light_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@medium_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@heavy_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@modern_armor }
+		add_to_variable = { armor_battalions = num_battalions_with_type@light_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@medium_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@modern_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@light_sp_artillery_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@medium_sp_artillery_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@modern_sp_artillery_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@light_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@medium_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions = num_battalions_with_type@modern_tank_destroyer_brigade }
+
+		set_variable = { robotic_battalions = num_battalions_with_type@light_robots }
+		add_to_variable = { robotic_battalions = num_battalions_with_type@medium_robots }
+		add_to_variable = { robotic_battalions = num_battalions_with_type@heavy_robots }
+		add_to_variable = { robotic_battalions = num_battalions_with_type@armor_walker }
+
+		set_variable = { support_battalions = num_battalions_with_type@anti_tank }
+		add_to_variable = { support_battalions = num_battalions_with_type@cannon_artillery_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@cannon_artillery_towed_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@howitzer_artillery_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@howitzer_artillery_towed_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@siege_artillery_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@machine_gun_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@artillery }
+		add_to_variable = { support_battalions = num_battalions_with_type@rocket_artillery }
+		add_to_variable = { support_battalions = num_battalions_with_type@engineer }
+		add_to_variable = { support_battalions = num_battalions_with_type@field_hospital }
+		add_to_variable = { support_battalions = num_battalions_with_type@logistics_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@maintenance_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@military_police }
+		add_to_variable = { support_battalions = num_battalions_with_type@recon }
+		add_to_variable = { support_battalions = num_battalions_with_type@wired_signal_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@signal_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@bicycle_signal_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@motorcycle_signal_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@steam_car_support_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@flamethrower_support_company }
+		add_to_variable = { support_battalions = num_battalions_with_type@sniper_team_support }
+		add_to_variable = { support_battalions = num_battalions_with_type@armor_train_company }
+
+		set_variable = { total_battalions = infantry_battalions }
+		add_to_variable = { total_battalions = artillery_battalions }
+		add_to_variable = { total_battalions = cavalry_battalions }
+		add_to_variable = { total_battalions = mobile_battalions }
+		add_to_variable = { total_battalions = armor_battalions }
+		add_to_variable = { total_battalions = robotic_battalions }
+		add_to_variable = { total_battalions = support_battalions }
+
+		set_variable = { excess_battalions = total_battalions }
+		subtract_from_variable = { excess_battalions = num_battalions }
+
+
+		set_variable = { screen_ships = num_ships_with_type@corvette }
+		add_to_variable = { screen_ships = num_ships_with_type@destroyer }
+		add_to_variable = { screen_ships = num_ships_with_type@light_cruiser }
+		add_to_variable = { screen_ships = num_ships_with_type@monitor }
+		add_to_variable = { screen_ships = num_ships_with_type@primitive_rowboat }
+		add_to_variable = { screen_ships = num_ships_with_type@torpedo_boat }
+		
+		set_variable = { capital_ships = num_ships_with_type@battle_cruiser }
+		add_to_variable = { capital_ships = num_ships_with_type@battleship }
+		add_to_variable = { capital_ships = num_ships_with_type@carrier }
+		add_to_variable = { capital_ships = num_ships_with_type@dreadnought }
+		add_to_variable = { capital_ships = num_ships_with_type@cruiser }
+		add_to_variable = { capital_ships = num_ships_with_type@frigate }
+		add_to_variable = { capital_ships = num_ships_with_type@gunboat }
+		add_to_variable = { capital_ships = num_ships_with_type@heavy_cruiser }
+		add_to_variable = { capital_ships = num_ships_with_type@ironclad }
+		add_to_variable = { capital_ships = num_ships_with_type@lineship }
+		add_to_variable = { capital_ships = num_ships_with_type@primitive_sailing_boat }
+		
+		set_variable = { submarine_ships = num_ships_with_type@coastal_submarine }
+		add_to_variable = { submarine_ships = num_ships_with_type@submarine }
+
+		set_variable = { total_ships = screen_ships }
+		add_to_variable = { total_ships = capital_ships }
+		add_to_variable = { total_ships = submarine_ships }
+
+		set_variable = { excess_ships = num_ships }
+		subtract_from_variable = { excess_ships = total_ships }
+
+		#WEIGHTED
+		set_variable = { infantry_battalions_weighted = num_battalions_with_type@infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@cold_war_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@cold_war_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@pa_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@bicycle_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@bicycle_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@feudal_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@line_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@redcoat_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@redcoat_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@guard_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@guard_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@great_war_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@great_war_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@light_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@tribal_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@state_levy_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@native_mountaineers }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@mounted_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@mounted_infantry }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@early_marine }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@early_marine }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@marine }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@marine }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@marine }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@kustjagare_battalion }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@kustjagare_battalion }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@mountaineers }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@mountaineers }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@mountaineers }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@shock_troops }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@shock_troops }
+		add_to_variable = { infantry_battalions_weighted = num_battalions_with_type@shock_troops }
+
+		set_variable = { militia_battalions_weighted = num_battalions_with_type@spanish_militia_infantry }
+		add_to_variable = { militia_battalions_weighted = num_battalions_with_type@state_militia_infantry }
+		add_to_variable = { militia_battalions_weighted = num_battalions_with_type@colonial_militia_infantry }
+		add_to_variable = { militia_battalions_weighted = num_battalions_with_type@dutch_colonial_militia_infantry }
+		add_to_variable = { militia_battalions_weighted = num_battalions_with_type@irregular_infantry }
+		add_to_variable = { militia_battalions_weighted = num_battalions_with_type@armed_peasants }
+
+		set_variable = { artillery_battalions_weighted = num_battalions_with_type@anti_tank_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@mot_anti_tank_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@anti_air_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@mot_anti_air_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@cannon_artillery }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@cannon_artillery_towed }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@howitzer_artillery }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@howitzer_artillery_towed }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@siege_artillery }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@siege_artillery }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@siege_artillery_towed }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@siege_artillery_towed }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@artillery_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@mot_artillery_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@rocket_artillery_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@mot_rocket_artillery_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@motorized_rocket_brigade }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@railway_gun }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@railway_gun }
+		add_to_variable = { artillery_battalions_weighted = num_battalions_with_type@railway_gun }
+		
+		set_variable = { cavalry_battalions_weighted = num_battalions_with_type@tribal_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@tribal_camel_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@tribal_pistoleer_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@state_levy_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@feudal_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@light_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@light_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@heavy_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@heavy_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@heavy_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@uhlans }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@camel_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@dragoon }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@dragoon }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@great_war_cavalry }
+		add_to_variable = { cavalry_battalions_weighted = num_battalions_with_type@great_war_cavalry }
+
+		set_variable = { mobile_battalions_weighted = num_battalions_with_type@motorized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@motorized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@airborne }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@airborne }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@airborne }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@airborne }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@amphibious_mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@amphibious_mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@amphibious_mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@amphibious_mechanized }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@armored_car }
+		add_to_variable = { mobile_battalions_weighted = num_battalions_with_type@technicals }
+
+		set_variable = { armor_battalions_weighted = num_battalions_with_type@amphibious_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@amphibious_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_armor }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_anti_air_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_sp_artillery_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@light_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@medium_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@super_heavy_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_tank_destroyer_brigade }
+		add_to_variable = { armor_battalions_weighted = num_battalions_with_type@modern_tank_destroyer_brigade }
+
+		set_variable = { robotic_battalions_weighted = num_battalions_with_type@light_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@medium_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@medium_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@heavy_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@heavy_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@heavy_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@heavy_robots }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@armor_walker }
+		add_to_variable = { robotic_battalions_weighted = num_battalions_with_type@armor_walker }
+
+		set_variable = { support_battalions_weighted = num_battalions_with_type@anti_tank }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@cannon_artillery_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@cannon_artillery_towed_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@howitzer_artillery_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@howitzer_artillery_towed_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@siege_artillery_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@siege_artillery_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@machine_gun_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@artillery }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@rocket_artillery }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@engineer }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@field_hospital }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@field_hospital }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@logistics_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@maintenance_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@military_police }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@recon }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@wired_signal_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@signal_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@bicycle_signal_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@motorcycle_signal_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@steam_car_support_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@flamethrower_support_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@sniper_team_support }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@armor_train_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@armor_train_company }
+		add_to_variable = { support_battalions_weighted = num_battalions_with_type@armor_train_company }
+
+
+		set_variable = { screen_ships_weighted = num_ships_with_type@corvette }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@destroyer }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@destroyer }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@light_cruiser }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@light_cruiser }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@light_cruiser }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@monitor }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@monitor }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@primitive_rowboat }
+		add_to_variable = { screen_ships_weighted = num_ships_with_type@torpedo_boat }
+		
+		set_variable = { capital_ships_weighted = num_ships_with_type@battle_cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@battle_cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@battleship }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@battleship }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@battleship }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@carrier }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@carrier }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@carrier }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@dreadnought }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@dreadnought }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@dreadnought }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@dreadnought }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@frigate }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@gunboat }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@heavy_cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@heavy_cruiser }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@ironclad }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@ironclad }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@lineship }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@lineship }
+		add_to_variable = { capital_ships_weighted = num_ships_with_type@primitive_sailing_boat }
+		
+		set_variable = { submarine_ships_weighted = num_ships_with_type@coastal_submarine }
+		add_to_variable = { submarine_ships_weighted = num_ships_with_type@submarine }
+		add_to_variable = { submarine_ships_weighted = num_ships_with_type@submarine }
+
+
+	}
+
 	taxes_update = {
 		#Country Scope
 
@@ -8962,7 +10337,12 @@
 		add_to_variable = { income_tax_revenue = income_tax_lower_strata_revenue }
 
 		#Sales Tax
-			set_variable = { sales_tax_revenue = pops_goods_spending }
+			set_variable = { sales_tax_revenue = life_goods_bought_value }
+			add_to_variable = { sales_tax_revenue = everyday_goods_bought_value }
+			add_to_variable = { sales_tax_revenue = luxury_goods_bought_value }
+			add_to_variable = { sales_tax_revenue = services_bought_value }
+			add_to_variable = { sales_tax_revenue = raw_goods_bought_value }
+			add_to_variable = { sales_tax_revenue = industrial_goods_bought_value }
 			multiply_variable = { sales_tax_revenue = sales_tax_percentage }
 			divide_variable = { sales_tax_revenue = 100 }
 		#
@@ -9107,6 +10487,7 @@
 		set_variable = { infrastructure_subsidy_expense = 0 }
 
 		set_variable = { administration_spending_expense = 0 }
+		set_variable = { military_payroll_spending_expense = 0 }
 		every_controlled_state = {
 			#Administration
 			set_temp_variable = { admin_temp = pops_earnings }
@@ -9143,72 +10524,191 @@
 			divide_temp_variable = { infrastructure_money_temp = 100 }
 			add_to_variable = { PREV.infrastructure_subsidy_expense = infrastructure_money_temp }
 
+			#Military Payroll
+			set_temp_variable = { conscripts = PREV.max_available_manpower_k }
+			multiply_temp_variable = { conscripts = 10 }
+			divide_temp_variable = { conscripts = PREV.max_manpower_k }
+			multiply_temp_variable = { conscripts = pops_amount }
+			divide_temp_variable = { conscripts = 10 }
+
+			set_temp_variable = { need_temp = global.conscripted_base_life_goods_need }
+			multiply_temp_variable = { need_temp = conscripts }
+			divide_temp_variable = { need_temp = 100 }
+			multiply_temp_variable = { need_temp = life_goods_price }
+			add_to_variable = { PREV.military_payroll_spending_expense = need_temp }
+
+			set_temp_variable = { need_temp = global.conscripted_base_everyday_goods_need }
+			multiply_temp_variable = { need_temp = conscripts }
+			divide_temp_variable = { need_temp = 100 }
+			multiply_temp_variable = { need_temp = everyday_goods_price }
+			add_to_variable = { PREV.military_payroll_spending_expense = need_temp }
+			
+			set_temp_variable = { need_temp = global.conscripted_base_luxury_goods_need }
+			multiply_temp_variable = { need_temp = conscripts }
+			divide_temp_variable = { need_temp = 100 }
+			multiply_temp_variable = { need_temp = luxury_goods_price }
+			add_to_variable = { PREV.military_payroll_spending_expense = need_temp }
+
+
 			#Infra & Construction
-			if = {
-				limit = {
-					has_state_flag = infrastructure_construction_government_subsidized
-				}
-				set_temp_variable = { infra_construction_funds_temp = global.infrastructure_construction_base_speed }
-				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
-				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
-				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_construction_investment_money }
 				if = {
 					limit = {
-						check_variable = { infra_construction_funds_temp > 0 }
+						has_state_flag = infrastructure_construction_government_subsidized
 					}
-					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					set_temp_variable = { infra_construction_funds_temp = global.infrastructure_construction_base_speed }
+					multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+					multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+					divide_temp_variable = { infra_construction_funds_temp = 100 }
+					subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_construction_investment_money }
+					if = {
+						limit = {
+							check_variable = { infra_construction_funds_temp > 0 }
+						}
+						add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					}
 				}
-			}
-			if = {
-				limit = {
-					has_state_flag = factory_everyday_goods_construction_government_subsidized
-				}
-				set_temp_variable = { infra_construction_funds_temp = global.factory_everyday_goods_construction_base_speed }
-				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
-				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
-				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				subtract_from_temp_variable = { infra_construction_funds_temp = factory_everyday_goods_construction_investment_money }
 				if = {
 					limit = {
-						check_variable = { infra_construction_funds_temp > 0 }
+						has_state_flag = factory_everyday_goods_construction_government_subsidized
 					}
-					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					set_temp_variable = { infra_construction_funds_temp = global.factory_everyday_goods_construction_base_speed }
+					multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+					multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+					divide_temp_variable = { infra_construction_funds_temp = 100 }
+					subtract_from_temp_variable = { infra_construction_funds_temp = factory_everyday_goods_construction_investment_money }
+					if = {
+						limit = {
+							check_variable = { infra_construction_funds_temp > 0 }
+						}
+						add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					}
 				}
-			}
-			if = {
-				limit = {
-					has_state_flag = factory_luxury_goods_construction_government_subsidized
-				}
-				set_temp_variable = { infra_construction_funds_temp = global.factory_luxury_goods_construction_base_speed }
-				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
-				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
-				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				subtract_from_temp_variable = { infra_construction_funds_temp = factory_luxury_goods_construction_investment_money }
 				if = {
 					limit = {
-						check_variable = { infra_construction_funds_temp > 0 }
+						has_state_flag = factory_luxury_goods_construction_government_subsidized
 					}
-					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					set_temp_variable = { infra_construction_funds_temp = global.factory_luxury_goods_construction_base_speed }
+					multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+					multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+					divide_temp_variable = { infra_construction_funds_temp = 100 }
+					subtract_from_temp_variable = { infra_construction_funds_temp = factory_luxury_goods_construction_investment_money }
+					if = {
+						limit = {
+							check_variable = { infra_construction_funds_temp > 0 }
+						}
+						add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					}
 				}
-			}
-			if = {
-				limit = {
-					has_state_flag = factory_industrial_goods_construction_government_subsidized
-				}
-				set_temp_variable = { infra_construction_funds_temp = global.factory_industrial_goods_construction_base_speed }
-				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
-				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
-				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				subtract_from_temp_variable = { infra_construction_funds_temp = factory_industrial_goods_construction_investment_money }
 				if = {
 					limit = {
-						check_variable = { infra_construction_funds_temp > 0 }
+						has_state_flag = factory_industrial_goods_construction_government_subsidized
 					}
-					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					set_temp_variable = { infra_construction_funds_temp = global.factory_industrial_goods_construction_base_speed }
+					multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+					multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+					divide_temp_variable = { infra_construction_funds_temp = 100 }
+					subtract_from_temp_variable = { infra_construction_funds_temp = factory_industrial_goods_construction_investment_money }
+					if = {
+						limit = {
+							check_variable = { infra_construction_funds_temp > 0 }
+						}
+						add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+					}
 				}
-			}
+			#
 		}
+
+		#Military Payroll
+		multiply_variable = { military_payroll_spending_expense = global.conscripted_payroll_multiplier }
+
+		set_temp_variable = { need_temp = conscripted_life_goods_demand }
+		multiply_temp_variable = { need_temp = life_goods_price }
+		add_to_variable = { military_payroll_spending_expense = need_temp }
+
+		set_temp_variable = { need_temp = conscripted_everyday_goods_demand }
+		multiply_temp_variable = { need_temp = everyday_goods_price }
+		add_to_variable = { military_payroll_spending_expense = need_temp }
+
+		set_temp_variable = { need_temp = conscripted_luxury_goods_demand }
+		multiply_temp_variable = { need_temp = luxury_goods_price }
+		add_to_variable = { military_payroll_spending_expense = need_temp }
+
+		#Military
+			#Army
+			set_variable = { military_life_expense = 0 }
+			set_variable = { military_everday_expense = 0 }
+			set_variable = { military_luxury_expense = 0 }
+			set_variable = { military_industrial_expense = 0 }
+
+			set_variable = { military_army_spending_expense = 0 }
+			set_temp_variable = { cost_temp = military_army_life_goods_demand }
+			multiply_temp_variable = { cost_temp = life_goods_price }
+			add_to_variable = { military_army_spending_expense = cost_temp }
+			add_to_variable = { military_life_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_army_everyday_goods_demand }
+			multiply_temp_variable = { cost_temp = everyday_goods_price }
+			add_to_variable = { military_army_spending_expense = cost_temp }
+			add_to_variable = { military_everday_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_army_luxury_goods_demand }
+			multiply_temp_variable = { cost_temp = luxury_goods_price }
+			add_to_variable = { military_army_spending_expense = cost_temp }
+			add_to_variable = { military_luxury_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_army_industrial_goods_demand }
+			multiply_temp_variable = { cost_temp = industrial_goods_price }
+			add_to_variable = { military_army_spending_expense = cost_temp }
+			add_to_variable = { military_industrial_expense = cost_temp }
+			
+			#Navy
+			set_variable = { military_navy_spending_expense = 0 }
+			set_temp_variable = { cost_temp = military_navy_life_goods_demand }
+			multiply_temp_variable = { cost_temp = life_goods_price }
+			add_to_variable = { military_navy_spending_expense = cost_temp }
+			add_to_variable = { military_life_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_navy_everyday_goods_demand }
+			multiply_temp_variable = { cost_temp = everyday_goods_price }
+			add_to_variable = { military_navy_spending_expense = cost_temp }
+			add_to_variable = { military_everday_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_navy_luxury_goods_demand }
+			multiply_temp_variable = { cost_temp = luxury_goods_price }
+			add_to_variable = { military_navy_spending_expense = cost_temp }
+			add_to_variable = { military_luxury_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_navy_industrial_goods_demand }
+			multiply_temp_variable = { cost_temp = industrial_goods_price }
+			add_to_variable = { military_navy_spending_expense = cost_temp }
+			add_to_variable = { military_industrial_expense = cost_temp }
+			
+			#Airforce
+			set_variable = { military_airforce_spending_expense = 0 }
+			set_temp_variable = { cost_temp = military_airforce_life_goods_demand }
+			multiply_temp_variable = { cost_temp = life_goods_price }
+			add_to_variable = { military_airforce_spending_expense = cost_temp }
+			add_to_variable = { military_life_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_airforce_everyday_goods_demand }
+			multiply_temp_variable = { cost_temp = everyday_goods_price }
+			add_to_variable = { military_airforce_spending_expense = cost_temp }
+			add_to_variable = { military_everday_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_airforce_luxury_goods_demand }
+			multiply_temp_variable = { cost_temp = luxury_goods_price }
+			add_to_variable = { military_airforce_spending_expense = cost_temp }
+			add_to_variable = { military_luxury_expense = cost_temp }
+			
+			set_temp_variable = { cost_temp = military_airforce_industrial_goods_demand }
+			multiply_temp_variable = { cost_temp = industrial_goods_price }
+			add_to_variable = { military_airforce_spending_expense = cost_temp }
+			add_to_variable = { military_industrial_expense = cost_temp }
+
+			set_variable = { military_spending_expense = military_army_spending_expense }
+			add_to_variable = { military_spending_expense = military_navy_spending_expense }
+			add_to_variable = { military_spending_expense = military_airforce_spending_expense }
+		#
 
 		#Trade Subsidies
 			set_variable = { export_subsidy_expense = 0 }
@@ -9341,9 +10841,11 @@
 
 		set_variable = { discretionary_spending = subsidy_expense }
 		add_to_variable = { discretionary_spending = construction_spending_expense }
+		add_to_variable = { discretionary_spending = military_spending_expense }
 
 		set_variable = { mandatory_spending = national_debt_interest }
 		add_to_variable = { mandatory_spending = administration_spending_expense }
+		add_to_variable = { mandatory_spending = military_payroll_spending_expense }
 
 		net_budget_update = yes
 	}
@@ -11006,6 +12508,7 @@
 				set_variable = { military_spending_percentage = 0 }
 			}
 		}
+		calculate_military_demand = yes
 		spending_update = yes
 	}
 	change_intelligence_spending = {
@@ -12674,6 +14177,342 @@
 					set_variable = { factory_industrial_goods_construction_industrial_goods_demand = factory_industrial_goods_construction_industrial_goods_need }
 				}
 
+	}
+	calculate_military_demand = {
+		battalion_count_update = yes
+
+		#Needs
+			#Reset
+				set_variable = { military_life_goods_need = 0 } #Food
+				set_variable = { military_everyday_goods_need = 0 } #Basic Supplies
+				set_variable = { military_luxury_goods_need = 0 } #Officer stuff
+				set_variable = { military_industrial_goods_need = 0 } #Machinery, Heavy Gun Parts, Building Materials, etc.
+			#
+
+			#Army Needs
+				#Infantry
+				set_temp_variable = { need_temp = global.infantry_base_life_goods_need }
+				multiply_temp_variable = { need_temp = infantry_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.infantry_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = infantry_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.infantry_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = infantry_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.infantry_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = infantry_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+
+				#Militia
+				set_temp_variable = { need_temp = global.militia_base_life_goods_need }
+				multiply_temp_variable = { need_temp = militia_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.militia_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = militia_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.militia_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = militia_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.militia_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = militia_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Artillery
+				set_temp_variable = { need_temp = global.artillery_base_life_goods_need }
+				multiply_temp_variable = { need_temp = artillery_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.artillery_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = artillery_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.artillery_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = artillery_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.artillery_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = artillery_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Cavalry
+				set_temp_variable = { need_temp = global.cavalry_base_life_goods_need }
+				multiply_temp_variable = { need_temp = cavalry_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.cavalry_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = cavalry_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.cavalry_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = cavalry_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.cavalry_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = cavalry_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Mobile
+				set_temp_variable = { need_temp = global.mobile_base_life_goods_need }
+				multiply_temp_variable = { need_temp = mobile_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.mobile_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = mobile_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.mobile_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = mobile_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.mobile_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = mobile_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Armor
+				set_temp_variable = { need_temp = global.armor_base_life_goods_need }
+				multiply_temp_variable = { need_temp = armor_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.armor_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = armor_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.armor_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = armor_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.armor_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = armor_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Robotic
+				set_temp_variable = { need_temp = global.robotic_base_life_goods_need }
+				multiply_temp_variable = { need_temp = robotic_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.robotic_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = robotic_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.robotic_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = robotic_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.robotic_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = robotic_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+				
+				#Support
+				set_temp_variable = { need_temp = global.support_base_life_goods_need }
+				multiply_temp_variable = { need_temp = support_battalions_weighted }
+				add_to_variable = { military_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.support_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = support_battalions_weighted }
+				add_to_variable = { military_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.support_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = support_battalions_weighted }
+				add_to_variable = { military_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.support_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = support_battalions_weighted }
+				add_to_variable = { military_industrial_goods_need = need_temp }
+
+				#Total
+				set_variable = { military_army_life_goods_need = military_life_goods_need }
+				set_variable = { military_army_everyday_goods_need = military_everyday_goods_need }
+				set_variable = { military_army_luxury_goods_need = military_luxury_goods_need }
+				set_variable = { military_army_industrial_goods_need = military_industrial_goods_need }
+			#
+
+			#Navy Needs
+				set_variable = { military_navy_life_goods_need = 0 }
+				set_variable = { military_navy_everyday_goods_need = 0 }
+				set_variable = { military_navy_luxury_goods_need = 0 }
+				set_variable = { military_navy_industrial_goods_need = 0 }
+
+				#Screen
+				set_temp_variable = { need_temp = global.screen_base_life_goods_need }
+				multiply_temp_variable = { need_temp = screen_ships_weighted }
+				add_to_variable = { military_navy_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.screen_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = screen_ships_weighted }
+				add_to_variable = { military_navy_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.screen_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = screen_ships_weighted }
+				add_to_variable = { military_navy_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.screen_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = screen_ships_weighted }
+				add_to_variable = { military_navy_industrial_goods_need = need_temp }
+				
+				#Capital
+				set_temp_variable = { need_temp = global.capital_base_life_goods_need }
+				multiply_temp_variable = { need_temp = capital_ships_weighted }
+				add_to_variable = { military_navy_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.capital_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = capital_ships_weighted }
+				add_to_variable = { military_navy_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.capital_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = capital_ships_weighted }
+				add_to_variable = { military_navy_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.capital_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = capital_ships_weighted }
+				add_to_variable = { military_navy_industrial_goods_need = need_temp }
+				
+				#Submarine
+				set_temp_variable = { need_temp = global.submarine_base_life_goods_need }
+				multiply_temp_variable = { need_temp = submarine_ships_weighted }
+				add_to_variable = { military_navy_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.submarine_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = submarine_ships_weighted }
+				add_to_variable = { military_navy_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.submarine_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = submarine_ships_weighted }
+				add_to_variable = { military_navy_luxury_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.submarine_base_industrial_goods_need }
+				multiply_temp_variable = { need_temp = submarine_ships_weighted }
+				add_to_variable = { military_navy_industrial_goods_need = need_temp }
+
+				#Total
+				add_to_variable = { military_life_goods_need = military_navy_life_goods_need }
+				add_to_variable = { military_everyday_goods_need = military_navy_everyday_goods_need }
+				add_to_variable = { military_luxury_goods_need = military_navy_luxury_goods_need }
+				add_to_variable = { military_industrial_goods_need = military_navy_industrial_goods_need }
+			#
+
+			#Airforce Needs
+				set_variable = { military_airforce_life_goods_need = num_deployed_planes }
+				multiply_variable = { military_airforce_life_goods_need = global.deployed_planes_base_life_goods_need }
+				
+				set_variable = { military_airforce_everyday_goods_need = num_deployed_planes }
+				multiply_variable = { military_airforce_everyday_goods_need = global.deployed_planes_base_everyday_goods_need }
+				
+				set_variable = { military_airforce_luxury_goods_need = num_deployed_planes }
+				multiply_variable = { military_airforce_luxury_goods_need = global.deployed_planes_base_luxury_goods_need } #so much steak
+				
+				set_variable = { military_airforce_industrial_goods_need = num_deployed_planes }
+				multiply_variable = { military_airforce_industrial_goods_need = global.deployed_planes_base_industrial_goods_need }
+				
+				add_to_variable = { military_life_goods_demand = military_airforce_life_goods_need }
+				add_to_variable = { military_everyday_goods_demand = military_airforce_everyday_goods_need }
+				add_to_variable = { military_luxury_goods_demand = military_airforce_luxury_goods_need }
+				add_to_variable = { military_industrial_goods_demand = military_airforce_industrial_goods_need }
+			#
+			
+			#Conscripted Needs
+				set_temp_variable = { conscripted_amount = max_available_manpower_k } #Temporary
+
+				set_temp_variable = { need_temp = global.conscripted_base_life_goods_need }
+				multiply_temp_variable = { need_temp = conscripted_amount }
+				divide_temp_variable = { need_temp = 100 }
+				set_variable = { conscripted_life_goods_need = need_temp }
+
+				set_temp_variable = { need_temp = global.conscripted_base_everyday_goods_need }
+				multiply_temp_variable = { need_temp = conscripted_amount }
+				divide_temp_variable = { need_temp = 100 }
+				set_variable = { conscripted_everyday_goods_need = need_temp }
+				
+				set_temp_variable = { need_temp = global.conscripted_base_luxury_goods_need }
+				multiply_temp_variable = { need_temp = conscripted_amount }
+				divide_temp_variable = { need_temp = 100 }
+				set_variable = { conscripted_luxury_goods_need = need_temp }
+
+				# Pops do not have industrial goods needs, usually
+				#set_variable = { conscripted_industrial_goods_need = 0 }
+			#
+		#
+		#Demand
+			#Army
+			set_variable = { military_army_life_goods_demand = military_army_life_goods_need }
+			multiply_variable = { military_army_life_goods_demand = military_spending_percentage }
+			divide_variable = { military_army_life_goods_demand = 100 }
+
+			set_variable = { military_army_everyday_goods_demand = military_army_everyday_goods_need }
+			multiply_variable = { military_army_everyday_goods_demand = military_spending_percentage }
+			divide_variable = { military_army_everyday_goods_demand = 100 }
+
+			set_variable = { military_army_luxury_goods_demand = military_army_luxury_goods_need }
+			multiply_variable = { military_army_luxury_goods_demand = military_spending_percentage }
+			divide_variable = { military_army_luxury_goods_demand = 100 }
+
+			set_variable = { military_army_industrial_goods_demand = military_army_industrial_goods_need }
+			multiply_variable = { military_army_industrial_goods_demand = military_spending_percentage }
+			divide_variable = { military_army_industrial_goods_demand = 100 }
+			
+			#Navy
+			set_variable = { military_navy_life_goods_demand = military_navy_life_goods_need }
+			multiply_variable = { military_navy_life_goods_demand = military_spending_percentage }
+			divide_variable = { military_navy_life_goods_demand = 100 }
+
+			set_variable = { military_navy_everyday_goods_demand = military_navy_everyday_goods_need }
+			multiply_variable = { military_navy_everyday_goods_demand = military_spending_percentage }
+			divide_variable = { military_navy_everyday_goods_demand = 100 }
+
+			set_variable = { military_navy_luxury_goods_demand = military_navy_luxury_goods_need }
+			multiply_variable = { military_navy_luxury_goods_demand = military_spending_percentage }
+			divide_variable = { military_navy_luxury_goods_demand = 100 }
+
+			set_variable = { military_navy_industrial_goods_demand = military_navy_industrial_goods_need }
+			multiply_variable = { military_navy_industrial_goods_demand = military_spending_percentage }
+			divide_variable = { military_navy_industrial_goods_demand = 100 }
+			
+			#Airforce
+			set_variable = { military_airforce_life_goods_demand = military_airforce_life_goods_need }
+			multiply_variable = { military_airforce_life_goods_demand = military_spending_percentage }
+			divide_variable = { military_airforce_life_goods_demand = 100 }
+
+			set_variable = { military_airforce_everyday_goods_demand = military_airforce_everyday_goods_need }
+			multiply_variable = { military_airforce_everyday_goods_demand = military_spending_percentage }
+			divide_variable = { military_airforce_everyday_goods_demand = 100 }
+
+			set_variable = { military_airforce_luxury_goods_demand = military_airforce_luxury_goods_need }
+			multiply_variable = { military_airforce_luxury_goods_demand = military_spending_percentage }
+			divide_variable = { military_airforce_luxury_goods_demand = 100 }
+
+			set_variable = { military_airforce_industrial_goods_demand = military_airforce_industrial_goods_need }
+			multiply_variable = { military_airforce_industrial_goods_demand = military_spending_percentage }
+			divide_variable = { military_airforce_industrial_goods_demand = 100 }
+
+			#Total
+			set_variable = { military_life_goods_demand = military_life_goods_need }
+			multiply_variable = { military_life_goods_demand = military_spending_percentage }
+			divide_variable = { military_life_goods_demand = 100 }
+
+			set_variable = { military_everyday_goods_demand = military_everyday_goods_need }
+			multiply_variable = { military_everyday_goods_demand = military_spending_percentage }
+			divide_variable = { military_everyday_goods_demand = 100 }
+
+			set_variable = { military_luxury_goods_demand = military_luxury_goods_need }
+			multiply_variable = { military_luxury_goods_demand = military_spending_percentage }
+			divide_variable = { military_luxury_goods_demand = 100 }
+
+			set_variable = { military_industrial_goods_demand = military_industrial_goods_need }
+			multiply_variable = { military_industrial_goods_demand = military_spending_percentage }
+			divide_variable = { military_industrial_goods_demand = 100 }
+
+			#Conscripted
+			# This is part of mandatory spending, though the money is directly given to pops instead of buying goods for them
+			set_variable = { conscripted_life_goods_demand = conscripted_life_goods_need }
+			set_variable = { conscripted_everyday_goods_demand = conscripted_everyday_goods_need }
+			set_variable = { conscripted_luxury_goods_demand = conscripted_luxury_goods_need }
+		#
 	}
 
 	calculate_price = {
