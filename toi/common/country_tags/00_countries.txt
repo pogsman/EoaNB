@@ -38,7 +38,7 @@
 	CMS = "countries/Commune Marseille.txt"
 	CPR = "countries/Commune Paris.txt"
 	FRR = "countries/Royalist France.txt"
-	BDY = "countries/Burgundy.txt"# need this for later
+	
 
 	
 
@@ -613,7 +613,7 @@
 	VNM = "countries/Annam.txt"
 	JAI = "countries/Jarai.txt"
 	PAG = "countries/Pagan.txt"
-	#RAK = "countries/Rakhine.txt"
+	# RAK = "countries/Rakhine.txt"
 	# YGY = "countries/Yogyakarta.txt"
 
 # East Asia

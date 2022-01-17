@@ -274,6 +274,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			PAP = {
 				country_event = {
 					id = sardinia.187
+					days = 1
 				}
 			}
 		}
@@ -404,7 +405,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_Expedition_Santa_Anna_Brothers = {
 		ai_will_do = {
-			base = 5
+			base = 15
 		}
 		fire_only_once = yes
 		allowed = {
@@ -448,7 +449,7 @@ ITA_decisions_category_wars_and_conflicts = {
 						}
 					}
 				}
-				115 = {
+				1380 = {
 					create_unit = {
 						division = "name = \"Santa Anna Brothers' Rebels\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
 						owner = CBI
@@ -486,7 +487,6 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 		cost = 25
 	}
-
 	ITA_decision_Expedition_Organize_Partinico_Volunteers = {
 		ai_will_do = {
 			base = 5
@@ -508,7 +508,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			}
 		}
 		complete_effect = {
-			115 = {
+			1380 = {
 				create_unit = {
 					division = "name = \"Partinicesi Volunteers\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
 					owner = CBI
@@ -518,7 +518,6 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 		cost = 25
 	}
-
 	ITA_decision_Expedition_Decree_of_Sicilian_Militia = {
 		ai_will_do = {
 			base = 5
@@ -540,7 +539,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			}
 		}
 		complete_effect = {
-			115 = {
+			1380 = {
 				create_unit = {
 					division = "name = \"Sicilian Militia\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
 					owner = CBI
@@ -560,7 +559,6 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 		cost = 25
 	}
-
 	ITA_decision_Expedition_Decree_of_municipal_property = {
 		ai_will_do = {
 			base = 5
@@ -587,6 +585,280 @@ ITA_decisions_category_wars_and_conflicts = {
 				add_stability = 0.1
 				add_war_support = 0.1
 				add_manpower = 500
+			}
+		}
+		cost = 25
+	}
+	ITA_decision_Expedition_Organize_Artillery_Brigades = {
+		ai_will_do = {
+			base = 5
+		}
+		fire_only_once = yes
+		allowed = {
+			original_tag = PIE
+		}
+		icon = generic_prepare_civil_war
+		visible = {
+			OR = {
+				has_active_mission = ITA_War_Mission_NSC_Expedition
+				CBI = {
+					has_war_with = NSC
+				}
+			}
+			NOT = {
+				has_country_flag = is_literally_italy
+			}
+		}
+		available = {
+			CBI = {
+				controls_province = 10074
+			}
+		}
+		complete_effect = {
+			CBI = {
+				add_equipment_to_stockpile = {
+					type = cannon_equipment_0
+					amount = 500
+					producer = NSC
+				}
+				add_equipment_to_stockpile = {
+					type = uniform_equipment_0
+					amount = 1000
+					producer = NSC
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = NSC
+				}
+				division_template = {
+					name = "Southern Army Artillery"
+					is_locked = yes
+					priority = 0
+					template_counter = 0
+					regiments = {
+						light_infantry = {
+							x = 0
+							y = 0
+						}
+						light_infantry = {
+							x = 0
+							y = 1
+						}
+						light_infantry = {
+							x = 0
+							y = 2
+						}
+						line_infantry = {
+							x = 1
+							y = 0
+						}
+						line_infantry = {
+							x = 1
+							y = 1
+						}
+					}
+					support = {
+						cannon_artillery_support = {
+							x = 0
+							y = 0
+						}
+					}
+				}
+				115 = {
+					create_unit = {
+						division = "name = \"Orsini Artillery\" division_template = \"Southern Army Artillery\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Orsini Artillery\" division_template = \"Southern Army Artillery\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+				}
+			}
+		}
+		cost = 25
+	}
+	ITA_decision_Expedition_Medici_Column = {
+		####Add event maybe
+		ai_will_do = {
+			base = 5
+		}
+		fire_only_once = yes
+		allowed = {
+			original_tag = PIE
+		}
+		icon = generic_prepare_civil_war
+		visible = {
+			OR = {
+				has_active_mission = ITA_War_Mission_NSC_Expedition
+				CBI = {
+					has_war_with = NSC
+				}
+			}
+			NOT = {
+				has_country_flag = is_literally_italy
+			}
+		}
+		available = {
+			CBI = {
+				controls_province = 10074
+			}
+		}
+		complete_effect = {
+			CBI = {
+				add_equipment_to_stockpile = {
+					type = cannon_equipment_0
+					amount = 500
+					producer = PIE
+				}
+				add_equipment_to_stockpile = {
+					type = uniform_equipment_0
+					amount = 1500
+					producer = PIE
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = PIE
+				}
+				115 = {
+					create_unit = {
+						division = "name = \"Medici Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Medici Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Medici Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Medici Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+				}
+			}
+		}
+		cost = 25
+	}
+	ITA_decision_Expedition_Agnetta_Expedition = {
+		####Add event maybe
+		ai_will_do = {
+			base = 5
+		}
+		fire_only_once = yes
+		allowed = {
+			original_tag = PIE
+		}
+		icon = generic_prepare_civil_war
+		visible = {
+			OR = {
+				has_active_mission = ITA_War_Mission_NSC_Expedition
+				CBI = {
+					has_war_with = NSC
+				}
+			}
+			NOT = {
+				has_country_flag = is_literally_italy
+			}
+		}
+		available = {
+			CBI = {
+				controls_province = 10074
+			}
+		}
+		complete_effect = {
+			CBI = {
+				add_equipment_to_stockpile = {
+					type = cannon_equipment_0
+					amount = 200
+					producer = PIE
+				}
+				add_equipment_to_stockpile = {
+					type = uniform_equipment_0
+					amount = 500
+					producer = PIE
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+					producer = PIE
+				}
+				add_manpower = 500
+				115 = {
+					create_unit = {
+						division = "name = \"Agnetta Artillery Column\" division_template = \"Southern Army Artillery\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Agnetta Artillery Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Agnetta 1st Brigade\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+					create_unit = {
+						division = "name = \"Agnetta 2nd Brigade\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+						owner = CBI
+						prioritize_location = 10074
+					}
+				}
+			}
+		}
+		cost = 25
+	}
+	ITA_decision_Expedition_Coppola_Russa = {
+		####Add event maybe
+		ai_will_do = {
+			base = 5
+		}
+		fire_only_once = yes
+		allowed = {
+			original_tag = PIE
+		}
+		icon = generic_prepare_civil_war
+		visible = {
+			OR = {
+				has_active_mission = ITA_War_Mission_NSC_Expedition
+				CBI = {
+					has_war_with = NSC
+				}
+			}
+			NOT = {
+				has_country_flag = is_literally_italy
+			}
+		}
+		available = {
+			CBI = {
+				controls_province = 10074
+			}
+		}
+		complete_effect = {
+			CBI = {
+				add_equipment_to_stockpile = {
+					type = uniform_equipment_0
+					amount = 200
+					producer = PIE
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+					producer = PIE
+				}
+				add_manpower = 5000
 			}
 		}
 		cost = 25
@@ -751,6 +1023,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							has_completed_focus = PIE_Work_With_Mazzinni
 							tag = PIE
 						}
+						clr_country_flag = PIE_2I_war_active
 						country_lock_all_division_template = no
 						PAP = {
 							country_event = {
@@ -803,6 +1076,20 @@ ITA_decisions_category_wars_and_conflicts = {
 								has_country_flag = PIE_RUS_Alliance_2IP
 							}
 						}
+						if = {
+							limit = {
+								PIE = {
+									has_idea = ITA_2IP_War_Leader
+								}
+							}
+							PIE = {
+								remove_ideas = {
+									ITA_2IP_War_Leader
+								}
+							}
+						}
+						remove_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
+						clr_country_flag = PIE_2I_war_active
 						country_lock_all_division_template = no
 						delete_unit_template_and_units = {
 							division_template = "National Guard"
@@ -909,6 +1196,34 @@ ITA_decisions_category_wars_and_conflicts = {
 									white_peace = LVN
 								}
 							}
+							GAB = {
+								if = {
+									limit = {
+										has_war_with = AUS
+									}
+									white_peace = AUS
+								}
+								if = {
+									limit = {
+										has_war_with = LVN
+									}
+									white_peace = LVN
+								}
+							}
+							TAH = {
+								if = {
+									limit = {
+										has_war_with = AUS
+									}
+									white_peace = AUS
+								}
+								if = {
+									limit = {
+										has_war_with = LVN
+									}
+									white_peace = LVN
+								}
+							}
 						}
 					}
 					if = {
@@ -921,6 +1236,7 @@ ITA_decisions_category_wars_and_conflicts = {
 								tag = RUS
 							}
 						}
+						clr_country_flag = PIE_2I_war_active
 						country_lock_all_division_template = no
 						delete_unit_template_and_units = {
 							division_template = "National Guard"
@@ -935,7 +1251,7 @@ ITA_decisions_category_wars_and_conflicts = {
 						remove_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 						PIE = {
 							country_event = {
-								id = sardinia.125
+								id = sardinia.123
 								days = 2
 							}
 						}
@@ -1005,14 +1321,20 @@ ITA_decisions_category_wars_and_conflicts = {
 								transfer_state = 160
 								add_state_core = 160
 								clr_country_flag = PIE_RUS_taking_LVN
+								AUS = {
+									remove_dynamic_modifier = {
+										modifier = AUS_Italian_Unrest_Modifier
+									}
+									clear_variable = AUS_ITA_Unrest_ppf
+									clear_variable = AUS_ITA_Unrest_ddf
+									clear_variable = AUS_ITA_Unrest_sf
+									clear_variable = AUS_ITA_Unrest_risk_change
+									clear_variable = ITA_UPROAR_RISK
+								}
 							}
 							transfer_state = 159
 							add_state_core = 159
-							### Galicia
 							clr_country_flag = PIE_RUS_taking_Lombardy
-							#country_event = {
-							#	id =
-							#}
 						}
 					}
 					##### Central States Events
@@ -1093,7 +1415,9 @@ ITA_decisions_category_wars_and_conflicts = {
 					# Victory Condition for Sardinia
 					tag = PIE
 					TUS = {
-						surrender_progress > 0.5
+						NOT = {
+							has_war_with = PIE
+						}
 					}
 				}
 				custom_trigger_tooltip = {
@@ -1326,7 +1650,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = CBI
 						}
 						NSC = {
-							surrender_progress > 0.8
+							surrender_progress > 0.75
 						}
 					}
 				}
@@ -1390,7 +1714,8 @@ ITA_decisions_category_wars_and_conflicts = {
 			}
 		}
 	}
-	ITA_War_Mission_Garibaldis_Decree_Expedition = {  ###Dictator
+	ITA_War_Mission_Garibaldis_Decree_Expedition = {
+		###Dictator
 		allowed = {
 			always = no
 		}
@@ -1401,8 +1726,8 @@ ITA_decisions_category_wars_and_conflicts = {
 		days_mission_timeout = 250
 		available = {
 			CBI = {
-				has_full_control_of_state = 115
-				controls_province = 9990
+				has_full_control_of_state = 1380
+				controls_province = 10074
 			}
 		}
 		complete_effect = {
@@ -1414,7 +1739,8 @@ ITA_decisions_category_wars_and_conflicts = {
 			activate_mission = ITA_War_Mission_Garibaldis_Decree_Expedition
 		}
 	}
-	ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition = {  ###Announces Plan to go all the way to Rome and Venice
+	ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition = {
+		###Announces Plan to go all the way to Rome and Venice
 		allowed = {
 			always = no
 		}
@@ -1425,10 +1751,7 @@ ITA_decisions_category_wars_and_conflicts = {
 		days_mission_timeout = 250
 		available = {
 			CBI = {
-				AND = {
-					has_full_control_of_state = 115
-					has_full_control_of_state = 156
-				}
+				controls_province = 10027
 			}
 		}
 		complete_effect = {
@@ -1438,6 +1761,54 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 		timeout_effect = {
 			activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
+		}
+	}
+	ITA_War_Mission_Garibaldis_Decree_Capture_of_Sicily = {
+		###Announces Plan to go all the way to Rome and Venice
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 250
+		available = {
+			CBI = {
+				controls_province = 4159
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.201
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
+		}
+	}
+	ITA_War_Mission_Expedition_Palermo_Uprising = {
+		### 
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		available = {
+			CBI = {
+				controls_province = 10074
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.200
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Expedition_Palermo_Uprising
 		}
 	}
 	ITA_2IP_Mobilization_War_Imiment = {
@@ -1463,7 +1834,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			hidden_effect = {
 				country_event = {
 					id = sardinia.180
-					days = 15
+					days = 10
 				}
 			}
 			if = {
@@ -1928,7 +2299,6 @@ ITA_Economic_category_decisions = {
 }
 
 ITA_decisions_category_influence_minor_states = {
-
 }
 
 ITA_decisions_category_papal_influence = {

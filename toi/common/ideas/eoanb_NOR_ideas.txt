@@ -77,6 +77,8 @@ ideas = {
 				original_tag = NOR
 			}
 
+			picture = NOR_embedsmannsstaten
+
 			modifier = {
 				political_power_factor = 0.05
 			}
@@ -115,13 +117,23 @@ ideas = {
 			}
 		}
 
+		NOR_idea_trade_across_atlantic = {
+			allowed = {
+				original_tag = NOR
+			}
+
+			modifier = {
+				trade_opinion_factor = 0.05
+			}
+		}
+
 		# Loyalty system
 		NOR_idea_norwegian_loyalty_0 = {
 			allowed = {
 				original_tag = NOR
 			}
 
-			picture = neutrality_idea
+			picture = NOR_loyalty
 
 			cancel = {
 				NOT = {
@@ -143,7 +155,7 @@ ideas = {
 				original_tag = NOR
 			}
 
-			picture = neutrality_idea
+			picture = NOR_loyalty
 
 			cancel = {
 				NOT = {
@@ -162,7 +174,7 @@ ideas = {
 				original_tag = NOR
 			}
 
-			picture = neutrality_idea
+			picture = NOR_loyalty
 
 			cancel = {
 				NOT = {
@@ -591,6 +603,16 @@ ideas = {
 			modifier = {
 				monthly_population = -0.05
 				global_building_slots_factor = -0.10
+			}
+		}
+
+		NOR_idea_urbanization = {
+			allowed = { always = no }
+			name = NOR_idea_lumber_crisis
+
+			modifier = {
+				monthly_population = 0.05
+				consumer_goods_factor = -0.05
 			}
 		}
 	}

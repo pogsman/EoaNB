@@ -1,5 +1,6 @@
 ﻿add_namespace = sardinia
 add_namespace = sardinia_news
+add_namespace = tuscany
 #### CRIMEAN WAR DIPLOMATIC EVENTS ####
 country_event = {
 	id = sardinia.1
@@ -335,7 +336,7 @@ country_event = {
 					transfer_state = 161
 					transfer_state = 157
 					else = {
-						set_country_flag = PIE_PAP_fortified_states
+						#set_country_flag = PIE_PAP_fortified_states
 					}
 				}
 			}
@@ -660,7 +661,6 @@ country_event = {
 	}
 }
 
-
 country_event = {
 	id = sardinia.45
 	title = sardinia.45.t
@@ -945,7 +945,7 @@ country_event = {
 			#complete_national_focus = PIE_Go_with_Garibaldi
 		}
 		hidden_effect = {
-			set_country_flag = PIE_risorgimento_failed
+			#set_country_flag = PIE_risorgimento_failed
 		}
 	}
 }
@@ -1158,10 +1158,10 @@ country_event = {
 			limit = {
 				TAG = TUS
 			}
-			activate_mission = ITA_War_Mission_TUS_2IP
+			#activate_mission = ITA_War_Mission_TUS_2IP
 		}
 		PIE = {
-			activate_mission = ITA_War_Mission_TUS_2IP
+			#activate_mission = ITA_War_Mission_TUS_2IP
 		}
 		if = {
 			limit = {
@@ -1169,6 +1169,7 @@ country_event = {
 			}
 			country_event = {
 				id = sardinia.119
+				days = 2
 			}
 		}
 		else_if = {
@@ -1177,6 +1178,7 @@ country_event = {
 			}
 			country_event = {
 				id = sardinia.121
+				days = 1
 			}
 			####country event about rebellions
 			#### Pie event about rebellions
@@ -1479,6 +1481,13 @@ country_event = {
 				is_historical_focus_on = no
 			}
 		}
+		trigger = {
+			NOT = {
+				PIE = {
+					has_country_flag = PIE_RUS_Alliance_2IP
+				}
+			}
+		}
 		hidden_effect = {
 			set_country_flag = PIE_Denied_French_Alliance
 		}
@@ -1667,8 +1676,8 @@ country_event = {
 			}
 		}
 		country_event = {
-				id = sardinia.197
-			}
+			id = sardinia.197
+		}
 	}
 }
 
@@ -1875,6 +1884,9 @@ country_event = {
 		hidden_effect = {
 			clr_country_flag = PIE_RUS_Alliance_2IP
 			set_country_flag = PIE_RUS_Assistance_2IP
+			RUS = {
+				clr_country_flag = PIE_RUS_Alliance_2IP
+			}
 		}
 	}
 	option = {
@@ -2672,12 +2684,20 @@ country_event = {
 		}
 		white_peace = PIE
 		white_peace = FRA
-		remove_mission = ITA_War_Mission_TUS_2IP
+		if = {
+			limit = {
+				any_country = {
+					has_war_with = TUS
+				}
+			}
+			white_peace = TUS
+		}
+		#remove_mission = ITA_War_Mission_TUS_2IP
 		news_event = {
 			id = sardinia_news.8
 		}
 		PIE = {
-			remove_mission = ITA_War_Mission_TUS_2IP
+			#remove_mission = ITA_War_Mission_TUS_2IP
 			puppet = TUS
 			country_event = {
 				id = sardinia.120
@@ -2685,7 +2705,7 @@ country_event = {
 		}
 		TUS = {
 			hidden_effect = {
-				set_popularities={
+				set_popularities = {
 					centrism = 90
 					autocracy = 10
 				}
@@ -2736,6 +2756,14 @@ country_event = {
 			tag = PRM
 		}
 		white_peace = PIE
+		if = {
+			limit = {
+				any_country = {
+					has_war_with = PRM
+				}
+			}
+			white_peace = PRM
+		}
 		add_popularity = {
 			ideology = social_egalitarianism
 			popularity = 0.5
@@ -2743,11 +2771,8 @@ country_event = {
 		set_politics = {
 			ruling_party = social_egalitarianism
 		}
-		create_country_leader = {
-			name = "Italian Revolutionaries"
-			#desc =
-			picture = "PRM_Italian_Revolutionaries.png"
-			ideology = republicanism
+		PRM_Italian_Revolutionaries = {
+			promote_character = yes
 		}
 		set_cosmetic_tag = PRM_Rebels
 		annex_country = {
@@ -2793,10 +2818,8 @@ country_event = {
 			set_politics = {
 				ruling_party = radical_democracy
 			}
-			create_country_leader = {
-				name = "Gioacchino Napoleone Pepoli"
-				picture = "Portrait_TIC_Joachim_Napoleon_Pepoli.png"
-				ideology = military_junta
+			TIC_Joachim_Napoleon_Pepoli = {
+				promote_character = yes
 			}
 		}
 	}
@@ -2924,7 +2947,8 @@ country_event = {
 					ideology = conserv_liberal
 					expire = 1965.1.1.1
 					traits = {
-						eoanb_trait_military_leader eoanb_trait_disorganized_councils
+						eoanb_trait_military_leader
+						eoanb_trait_disorganized_councils
 					}
 				}
 			}
@@ -2949,15 +2973,12 @@ country_event = {
 	option = {
 		name = sardinia.129.a
 		add_Stability = -0.1
-		ENG = {
-			country_event = {
-				id = sardinia.130
-				days = 5
-			}
-		}
-		PIE = {
-			complete_national_focus = PIE_Formation_of_the_Central_States
-		}
+		#ENG = {
+		#	country_event = {
+		#		id = sardinia.130
+		#		days = 5
+		#	}
+		#}
 	}
 }
 
@@ -3000,19 +3021,29 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.131.a
+		#if = {
+		#	limit = {
+		#		tag = PIE
+		#	}
+		#	PIE = {
+		#
+		#		add_stability = 0.4
+		#		PIE_camillo_cavour = {
+		#			promote_character = yes
+		#		}
+		#		country_event = {
+		#			id = sardinia.132
+		#			days = 5
+		#		}
+		#	}
+		#}
 		if = {
 			limit = {
 				tag = PIE
 			}
-			PIE = {
-				add_stability = 0.4
-				PIE_camillo_cavour = {
-					promote_character = yes
-				}
-				country_event = {
-					id = sardinia.132
-					days = 5
-				}
+			add_stability = 0.4
+			country_event = {
+				id = sardinia.205
 			}
 		}
 	}
@@ -3406,6 +3437,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.144.a
+		#complete_national_focus = PIE_Formation_of_the_Central_States
 		TUS = {
 			country_event = {
 				id = sardinia.145
@@ -3454,7 +3486,8 @@ country_event = {
 				cost = 50
 				idea_token = PIE_Victor_Emmanuel_Army_HC
 				traits = {
-					army_chief_organizational_2 army_chief_drill_1
+					army_chief_organizational_2
+					army_chief_drill_1
 				}
 				allowed = {
 					original_tag = PIE
@@ -3545,7 +3578,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.151.a
-
 	}
 }
 
@@ -3558,7 +3590,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.152.a
-
 	}
 }
 
@@ -3571,7 +3602,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.153.a
-
 	}
 }
 
@@ -3865,7 +3895,6 @@ country_event = {
 				}
 			}
 		}
-
 	}
 	#option = {
 	#	###Autonomous Galicia
@@ -3927,7 +3956,6 @@ country_event = {
 				id = sardinia.155
 			}
 		}
-
 	}
 }
 
@@ -3945,6 +3973,7 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
 	### The Vote (one state)
 	id = sardinia.157
@@ -4052,7 +4081,6 @@ country_event = {
 		}
 	}
 }
-
 
 country_event = {
 	### Russia Asks West Galicia + Krakow
@@ -4396,7 +4424,8 @@ country_event = {
 		name = sardinia.167.a
 		hidden_effect = {
 			if = {
-				limit = { #Vote Passed
+				limit = {
+					#Vote Passed
 					UCT = {
 						check_variable = {
 							var = var_galicia_conference
@@ -4609,7 +4638,6 @@ country_event = {
 ##################
 ### Expedition ###
 ##################
-
 country_event = {
 	### Expedition Preparation
 	id = sardinia.171
@@ -4619,7 +4647,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.171.a
-
 	}
 }
 
@@ -4694,8 +4721,8 @@ country_event = {
 		name = sardinia.176.a
 		hidden_effect = {
 			CBI = {
-				set_state_owner = 115
-				set_state_controller = 115
+				set_state_owner = 1380
+				set_state_controller = 1380
 				set_cosmetic_tag = CBI_garibaldi
 				load_oob = PIE_Expedition_Reworked
 			}
@@ -4706,6 +4733,8 @@ country_event = {
 		activate_mission = ITA_War_Mission_NSC_Expedition
 		activate_mission = ITA_War_Mission_Garibaldis_Decree_Expedition
 		activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
+		activate_mission = ITA_War_Mission_Expedition_Palermo_Uprising
+		activate_mission = ITA_War_Mission_Garibaldis_Decree_Capture_of_Sicily
 		NSC = {
 			activate_mission = ITA_War_Mission_NSC_Expedition
 		}
@@ -4745,6 +4774,7 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.178
+				days = 20
 			}
 		}
 	}
@@ -4781,7 +4811,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.179.a
-
 	}
 }
 
@@ -4890,8 +4919,8 @@ country_event = {
 		### Remove Urban (suicide event)
 	}
 }
-#################################
 
+#################################
 #### Perugian Massacre Events
 country_event = {
 	### Papal States informed of volunteer regiment and National Committe
@@ -4936,10 +4965,8 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.189.a
-
 	}
 }
-
 
 ###Cavour institutes National Guard
 country_event = {
@@ -4980,7 +5007,6 @@ country_event = {
 						ideology = military_goverment
 						expire = "1950.1.1"
 						traits = {
-
 						}
 					}
 				}
@@ -5035,11 +5061,11 @@ country_event = {
 			add_ideas = {
 				PIE_CBI_Clergy_Support
 			}
-			115 = {
+			1380 = {
 				create_unit = {
 					division = "name = \"Pantaleo's Recruits\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
 					owner = CBI
-					prioritize_location = 3857
+					prioritize_location = 7059
 				}
 			}
 		}
@@ -5070,12 +5096,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.198.a
-
 	}
 }
 
 ###Alexandre Dumas lands in Sicily
-country_event = {   ###Needs added to decision after capture of Palermo
+country_event = {
 	id = sardinia.199
 	title = sardinia.199.t
 	desc = sardinia.199.d
@@ -5083,8 +5108,163 @@ country_event = {   ###Needs added to decision after capture of Palermo
 	is_triggered_only = yes
 	option = {
 		name = sardinia.199.a
-		### add guns
-		add_manpower = 100
+		CBI = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = ENG
+			}
+			add_manpower = 1000
+		}
+	}
+}
+
+###Palermo Insurrection
+country_event = {
+	id = sardinia.200
+	title = sardinia.200.t
+	desc = sardinia.200.d
+	picture = GFX_event_ITA_Palermo_Insurrection
+	is_triggered_only = yes
+	option = {
+		name = sardinia.200.a
+		CBI = {
+			115 = {
+				create_unit = {
+					division = "name = \"Palermo Volunteers\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 10074
+				}
+				create_unit = {
+					division = "name = \"Palermo Volunteers\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 10074
+				}
+			}
+		}
+		country_event = {
+			id = sardinia.199
+		}
+	}
+}
+
+###Capture of Sicily
+country_event = {
+	id = sardinia.201
+	title = sardinia.201.t
+	desc = sardinia.201.d
+	picture = GFX_event_ITA_capture_sicily
+	is_triggered_only = yes
+	option = {
+		name = sardinia.201.a
+		delete_unit_template_and_units = {
+			division_template = "Sicilian Volunteers"
+			disband = yes
+		}
+		country_event = {
+			id = sardinia.202
+		}
+	}
+}
+
+###Landings in Cosenza
+country_event = {
+	id = sardinia.202
+	title = sardinia.202.t
+	desc = sardinia.202.d
+	picture = GFX_event_ITA_Calabria_Landing
+	is_triggered_only = yes
+	option = {
+		name = sardinia.202.a
+		CBI = {
+			set_province_controller = 3901
+			set_province_controller = 12098
+			set_state_controller = 156
+			156 = {
+				create_unit = {
+					division = "name = \"Stucco Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 3901
+				}
+				create_unit = {
+					division = "name = \"Stucco Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 3901
+				}
+				create_unit = {
+					division = "name = \"Pace Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 3901
+				}
+				create_unit = {
+					division = "name = \"Plutino Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 3901
+				}
+				create_unit = {
+					division = "name = \"Mignogna Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 12098
+				}
+				create_unit = {
+					division = "name = \"Mignogna Column\" division_template = \"Red Shirts\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = CBI
+					prioritize_location = 12098
+				}
+			}
+		}
+	}
+}
+
+###Treaty of Zurich
+country_event = {
+	id = sardinia.203
+	title = sardinia.203.t
+	desc = sardinia.203.d
+	picture = GFX_event_ITA_Nap_Victor_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.203.a
+		add_stability = -0.05
+		add_war_support = -0.05
+		complete_national_focus = PIE_Formation_of_the_Central_States
+	}
+}
+
+###Status of Central States
+country_event = {
+	id = sardinia.204
+	title = sardinia.204.t
+	desc = sardinia.204.d
+	picture = GFX_event_ITA_Influence_Central_States
+	is_triggered_only = yes
+	option = {
+		name = sardinia.204.a
+		ENG = {
+			country_event = {
+				id = sardinia.130
+				days = 1
+			}
+		}
+	}
+}
+
+###King Calls on Cavour to Return
+country_event = {
+	id = sardinia.205
+	title = sardinia.205.t
+	desc = sardinia.205.d
+	picture = GFX_event_ITA_Influence_Central_States
+	is_triggered_only = yes
+	option = {
+		name = sardinia.205.a
+		PIE_camillo_cavour = {
+			promote_character = yes
+		}
+		country_event = {
+			id = sardinia.132
+			days = 5
+		}
 	}
 }
 
@@ -5285,7 +5465,7 @@ news_event = {
 		name = sardinia_news.16.a
 		if = {
 			limit = {
-				tag = FRA
+				original_tag = FRA
 			}
 			country_event = {
 				id = sardinia.194
@@ -5293,6 +5473,7 @@ news_event = {
 		}
 	}
 }
+
 ###Flavor Events###
 country_event = {
 	id = sardinia.33

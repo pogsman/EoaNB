@@ -1920,6 +1920,21 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
+		name = "GFX_ENG_focus_army_enlistment_act"
+		texturefile = "gfx/interface/goals/uk/army_enlistment_act.png"
+	}
+	
+	SpriteType = {
+		name = "GFX_ENG_focus_gatling_gun"
+		texturefile = "gfx/interface/goals/uk/the_gatling_gun.png"
+	}
+	
+	SpriteType = {
+		name = "GFX_ENG_focus_overseas_service"
+		texturefile = "gfx/interface/goals/uk/overseas_service.png"
+	}
+	
+	SpriteType = {
 		name = "GFX_focus_IRE_uninited_ireland"
 		texturefile = "gfx/interface/goals/uk/focus_IRE_uninited_ireland.dds"
 	}
@@ -4799,7 +4814,23 @@ spriteTypes = {
 		name = "GFX_focus_NOR_aas_landbruksskole"
 		texturefile = "gfx/interface/goals/nor/aas_landbruksskole.png"
 	}
-	
+	spriteType = {
+		name = "GFX_focus_NOR_social_industry"
+		texturefile = "gfx/interface/goals/nor/social_industry.png"
+	}
+	spriteType = {
+		name = "GFX_focus_NOR_union"
+		texturefile = "gfx/interface/goals/nor/union.png"
+	}
+	spriteType = {
+		name = "GFX_focus_NOR_cadets_sweden"
+		texturefile = "gfx/interface/goals/nor/cadets_sweden.png"
+	}
+	spriteType = {
+		name = "GFX_focus_NOR_cadets_world"
+		texturefile = "gfx/interface/goals/nor/cadets_world.png"
+	}
+
 	##################
 	##### DENMARK ####
 	##################
@@ -6260,6 +6291,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/tunisia/focus_tun_in_the_name_of_allah.dds"
 	}
 	SpriteType = {
+		name = "GFX_focus_tun_slavery_ban"
+		texturefile = "gfx/interface/goals/tunisia/focus_tun_slavery_ban.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_tribal_slavery"
+		texturefile = "gfx/interface/goals/focus_tribal_slavery.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_tun_bad_economy"
+		texturefile = "gfx/interface/goals/tunisia/focus_tun_bad_economy.png"
+	}
+	SpriteType = {
 		name = "GFX_goal_focus_qing_maintain_mandate"
 		texturefile = "gfx/interface/goals/qing/focus_qing_maintain_mandate.dds"
 	}
@@ -7556,6 +7599,12 @@ spriteTypes = {
 		name = "GFX_focus_PIE_mazzini"
 		texturefile = "gfx/interface/goals/italy/focus_PIE_mazzini.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_ITA_unification_of_Italy"
+		texturefile = "gfx/interface/goals/italy/focus_ITA_unification_of_Italy.png"
+	}
+
+	
 	
 	#----------------------------------------------------------------------------------------------
 	# RELIGION
@@ -8369,8 +8418,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/na_n/focus_na_n_you_and_your_neighbours.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_na_n_metropolitan_communites"
-		texturefile = "gfx/interface/goals/na_n/focus_na_n_metropolitan_communties.dds"
+		name = "GFX_focus_na_n_metropolitan_communities"
+		texturefile = "gfx/interface/goals/na_n/focus_na_n_metropolitan_communities.dds"
 	}
 	SpriteType = {
 		name = "GFX_focus_na_n_spirit_of_the_airwaves"
