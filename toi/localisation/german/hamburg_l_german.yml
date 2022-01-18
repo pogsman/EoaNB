@@ -1,0 +1,38 @@
+﻿l_german:
+
+ ###Flags 
+ HAM_woermann_tradeport_gabon:0 "Niederlassung in Gabun"
+ HAM_woermann_trading_company_idea:0 "C.Woermanns Handelsunternehmen"
+ HAM_woermann_tradeport_expansion_tooltip:0 "Das §YHandelsunternehmen Woermann§! hat die Möglichkeit, neue Zweigstellen zu eröffnen!"
+ 
+ HAM_new_woermann_tradeport_tooltip:0 "Das §YHandelsunternehmen Woermann§! wird in der Lage sein, neue §GZweigstellen zu eröffnen§!.\n"
+ 
+ ###Events
+ hamburgcolonialtrade.1.t:0 "Das Handelsunternehmen Woermann" 
+ hamburgcolonialtrade.1.a:0 "Das Handelsunternehmen Woermann eröffnet neue Zweigstellen!"
+ hamburgcolonialtrade.2.t:0 "Woermanns geplante Niederlassung in [539.GetName]"
+ hamburgcolonialtrade.2.a:0 "Hoffentlich enden die Verhandlungen mit [539.GetName] erfolgreich!"
+ hamburgcolonialtrade.3.t:0 "Woermanns geplante Niederlassung in [538.GetName]"
+ hamburgcolonialtrade.3.a:0 "Hoffentlich enden die Verhandlungen mit [538.GetName] erfolgreich!"
+ 
+ HAM_negotiate_with_african_kingdoms_event.1.t:0 "[FROM.GetName] will Verhandlungen zur Aufnahme von Handelsbeziehungen eröffnen"
+ HAM_negotiate_with_african_kingdoms_event.1.d:0 "[FROM.GetName] würde gerne eine Zweigstelle des Handelsunternehmen Woermann in [ROOT.Capital.GetName] eröffnen. Die Verhandlungen haben ergeben, dass [FROM.GetName] dafür als Bezahlung einen Tribut an [ROOT.GetLeader] zahlt, damit sie in unserem Königreich Handel treiben dürfen und ihr Militär Zugang zu unserem Königreich hat. Unsere Bevölkerung würde auf jeden Fall durch die Investitionen in die Industrie und durch den Erhalt moderner Waffen profitieren, jedoch fürchten einige, dass die Kolonialmächte durch ihre Handelsunternehmen versuchen werden sich unser Land einzuverleiben." 
+ HAM_negotiate_with_african_kingdoms_event.1.a:0 "Wir vertrauen darauf, dass die Gegenseite unsere Abmachungen einhält, und akzeptieren deshalb das Angebot."
+ HAM_negotiate_with_african_kingdoms_event.1.b:0 "Wir können diesen Imperialisten nicht vertrauen. Angebot abgelehnt!"
+ HAM_negotiate_with_african_kingdoms_event.1.c:0 "Wir haben schon eine Partnerschaft mit einem anderen Handelsunternehmen."
+ 
+ HAM_negotiate_with_african_kingdoms_event.2.t:0 "[FROM.GetName] hat unser Angebot zur Aufnahme von Handelsbeziehungen akzeptiert!"
+ HAM_negotiate_with_african_kingdoms_event.2.d:0 "[FROM.GetLeader] hat unser Angebot angenommen, jedoch nur zögerlich, da sie befürchten, dass wir unsere Abmachungen hintergehen könnten. Stand jetzt haben wir aber die Erlaubnis, unsere Tätigkeiten in [FROM.GetName] aufzunehmen."
+ HAM_negotiate_with_african_kingdoms_event.2.a:0 "Fantastische Neuigkeit! Wir beginnen sofort mit der Errichtung einer Zweigstelle in [FROM.Capital.GetName]."
+ 
+ HAM_negotiate_with_african_kingdoms_event.3.t:0 "[FROM.GetName] hat unser Angebot zur Aufnahme von Handelsbeziehungen abgelehnt!"
+ HAM_negotiate_with_african_kingdoms_event.3.d:0 "[FROM.GetLeader] hat unser Angebot abgelehnt, mit dem Verweis darauf, dass "der Westen" seine Partner hintergeht und die geschlossenen Verträge bricht. Wir haben also keine Erlaubnis erhalten, eine Zweigstelle in [FROM.GetName] zu eröffnen und von dort aus Handel zu treiben."
+ HAM_negotiate_with_african_kingdoms_event.3.a:0 "Das ist nur ein kleiner Rückschlag für uns."
+ HAM_negotiate_with_african_kingdoms_event.3.b:0 "Wir könnten uns auf die Suche nach besseren Partnern machen."
+ HAM_negotiate_with_african_kingdoms_event.3.c:0 "Unsere Expanisionsmöglichkeiten sind zurzeit erschöpft."
+ 
+ HAM_negotiate_with_african_kingdoms_event.4.t:0 "[FROM.GetName] arbeitet schon mit einem anderen Unternehmen zusammen!"
+ HAM_negotiate_with_african_kingdoms_event.4.d:0 "[FROM.GetLeader] hat schon Beziehungen mit einem Handelsunternehmen einer anderen Kolonialmacht aufgenommen. Darum waren sie gezwungen, unser Angebot zur Aufnahme von Verhandlungen abzulehnen. Aufgrund dessen werden wir nicht in der Lage sein, in [FROM.GetName] eine Zweigstelle unseres Unternehmens zu eröffnen und von dort aus Handel zu treiben."
+ HAM_negotiate_with_african_kingdoms_event.4.a:0 "Da lässt sich leider nichts gegen ausrichten."  
+ HAM_negotiate_with_african_kingdoms_event.4.b:0 "Wir könnten uns auf die Suche nach besseren Partnern machen."
+ HAM_negotiate_with_african_kingdoms_event.4.c:0 "Unsere Expanisionsmöglichkeiten sind zurzeit erschöpft."
