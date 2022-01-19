@@ -45,7 +45,7 @@ ideas = {
 			removal_cost = -1
 			picture = end_atlantic_slave_trade
 			modifier = {
-				stability_factor= -0.05
+				stability_factor =  -0.05
 				MONTHLY_POPULATION = -0.01
 				production_factory_max_efficiency_factor = -0.02
 			}
@@ -149,7 +149,7 @@ ideas = {
 			}
 		}
 		
-		BRA_ACW_volunteers={
+		BRA_ACW_volunteers = {
 			allowed = {
 				tag = BRA
 			}
@@ -190,7 +190,7 @@ ideas = {
 			}
 		}
 		
-		BRA_UCW_volunteers={
+		BRA_UCW_volunteers = {
 			allowed = {
 				tag = BRA
 			}
@@ -247,13 +247,13 @@ ideas = {
 		#Zacarias de Góis e Vasconcelos
 		BRA_zacaria_de_gois = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
-			picture=gois
+			removal_cost = -1
+			picture = gois
 			modifier = {
-				political_power_factor=0.02
-				stability_factor=0.01
+				political_power_factor = 0.02
+				stability_factor = 0.01
 			}
 		}
 
@@ -285,12 +285,12 @@ ideas = {
 		#Eusébio de Queirós Coutinho Matoso da Câmara
 		BRA_eusebio_de_queiros = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			picture=MXE_vic_manuel_larrainzar
-			removal_cost=-1
+			picture = MXE_vic_manuel_larrainzar
+			removal_cost = -1
 			modifier = {
-				stability_factor=0.01
+				stability_factor = 0.01
 			}
 		}
 
@@ -298,12 +298,12 @@ ideas = {
 		#Paulino José Soares de Sousa, Visconde de Uruguai
 		BRA_visconde_de_uruguai = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			picture=Paulino_Jose_Soares_de_Sousa_Advisor.png
-			removal_cost= -1
+			picture = Paulino_Jose_Soares_de_Sousa_Advisor.png
+			removal_cost =  -1
 			modifier = {
-				stability_factor=0.01
+				stability_factor = 0.01
 			}
 		}
 
@@ -311,12 +311,12 @@ ideas = {
 		#Antônio Paulino Limpo de Abreu, Visconde de Abaeté
 		BRA_visconde_de_abaete = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
 			picture = Antonio_Paulino_Limpo_de_Abreu_Viscount_of_Abaete_Advisor.png
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor= -0.01
+				stability_factor =  -0.01
 			}
 		}
 
@@ -324,13 +324,13 @@ ideas = {
 		#Francisco José Furtado
 		BRA_francisco_furtado = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			picture = Advisor_Francisco_Jose_Furtado.dds
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=-0.01
+				stability_factor = 0.01
+				political_power_factor = -0.01
 			}
 		}
 
@@ -339,11 +339,11 @@ ideas = {
 		#Ângelo Moniz da Silva Ferraz
 		BRA_barao_de_uruguaiana = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor=-0.01
+				stability_factor = -0.01
 			}
 			picture = Advisor_Angelo_Moniz_da_Sa_Ferraz.dds
 		}
@@ -353,13 +353,13 @@ ideas = {
 		#Visconde do Rio Branco
 		BRA_visconde_do_rio_branco = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
-			picture=europe_generic_15
+			removal_cost = -1
+			picture = europe_generic_15
 			modifier = {
-				stability_factor= 0.02
-				political_power_factor=0.01
+				stability_factor =  0.02
+				political_power_factor = 0.01
 			}
 		}
 
@@ -367,13 +367,13 @@ ideas = {
 		#João Lustosa da Cunha Paranaguá
 		BRA_marques_de_paranagua = {
 			allowed = {
-				tag =BRA
+				tag  = BRA
 			}
-			removal_cost=-1
-			picture=latin_generic_1
+			removal_cost = -1
+			picture = latin_generic_1
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=-0.01
+				stability_factor = 0.01
+				political_power_factor = -0.01
 			}
 		}
 
@@ -382,13 +382,13 @@ ideas = {
 		#Conselheiro Nabuco de Araújo
 		BRA_nabuco_de_araujo = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			picture = Advisor_Jose_Thomas_Nabuco_de_Araujo.dds
 			modifier = {
-				stability_factor=0.02
-				political_power_factor=0.01
+				stability_factor = 0.02
+				political_power_factor = 0.01
 			}
 		}
 
@@ -397,12 +397,12 @@ ideas = {
 		#Luís Alves de Lima e Silva
 		BRA_duque_de_caxias = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			picture = Advisor_Luis_Alves_de_Lima_e_Silva.dds
 			modifier = {
-				stability_factor=0.01
+				stability_factor = 0.01
 			}
 		}
 
@@ -410,13 +410,13 @@ ideas = {
 		#Joaquim José Rodrigues Torres
 		BRA_visconde_de_itaborai = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			picture=europe_generic_9
-			removal_cost=-1
+			picture = europe_generic_9
+			removal_cost = -1
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=0.02
+				stability_factor = 0.01
+				political_power_factor = 0.02
 			}
 		}
 
@@ -424,13 +424,13 @@ ideas = {
 		#José Antônio Saraiva
 		BRA_conselheiro_saraiva = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
-			picture=latin_generic_5
+			removal_cost = -1
+			picture = latin_generic_5
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=0.01
+				stability_factor = 0.01
+				political_power_factor = 0.01
 			}
 		}
 
@@ -438,87 +438,87 @@ ideas = {
 		#José Antônio Pimenta Bueno
 		BRA_visconde_de_sao_vicente = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			picture=europe_generic_20
-			removal_cost=-1
+			picture = europe_generic_20
+			removal_cost = -1
 			modifier = {
-				stability_factor=-0.01
+				stability_factor = -0.01
 			}
 		}
 
 		BRA_martinho_campos = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor=-0.01
+				stability_factor = -0.01
 			}
 		}
 
 		BRA_conselheiro_lafayette = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=0.01
+				stability_factor = 0.01
+				political_power_factor = 0.01
 			}
 		}
 
 		BRA_sousa_dantas = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
-			picture=europe_generic_3
+			removal_cost = -1
+			picture = europe_generic_3
 			modifier = {
-				stability_factor=0.01
-				political_power_factor=0.01
+				stability_factor = 0.01
+				political_power_factor = 0.01
 			}
 		}
 
 		BRA_barao_de_cotegipe = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			picture=gois
-			removal_cost=-1
+			picture = gois
+			removal_cost = -1
 			modifier = {
-				stability_factor=-0.01
+				stability_factor = -0.01
 			}
 		}
 
 		BRA_joao_alfredo = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
-			picture=europe_generic_1
+			removal_cost = -1
+			picture = europe_generic_1
 			modifier = {
-				stability_factor=0.01
+				stability_factor = 0.01
 			}
 		}
 
 		BRA_visconde_de_ouro_preto = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor=-0.02
+				stability_factor = -0.02
 			}
 		}
 
 		BRA_no_prime_minister = {
 			allowed = {
-				tag=BRA
+				tag = BRA
 			}
-			removal_cost=-1
+			removal_cost = -1
 			modifier = {
-				stability_factor= -0.1
+				stability_factor =  -0.1
 			}
 		}
 
@@ -738,6 +738,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.08
+				local_resources_factor = 0.02
+				trade_opinion_factor = 0.03
 			}
 		}
 		
@@ -749,6 +751,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.11
+				local_resources_factor = 0.04
+				trade_opinion_factor = 0.06
 			}
 		}
 		
@@ -760,6 +764,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.14
+				local_resources_factor = 0.06
+				trade_opinion_factor = 0.09
 			}
 		}
 		
@@ -771,6 +777,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.17
+				local_resources_factor = 0.08
+				trade_opinion_factor = 0.12
 			}
 		}
 		
@@ -782,6 +790,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.20
+				local_resources_factor = 0.10
+				trade_opinion_factor = 0.15
 			}
 		}
 		
@@ -793,6 +803,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.23
+				local_resources_factor = 0.12
+				trade_opinion_factor = 0.18
 			}
 		}
 		
@@ -804,6 +816,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.26
+				local_resources_factor = 0.14
+				trade_opinion_factor = 0.21
 			}
 		}
 		
@@ -815,6 +829,8 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.29
+				local_resources_factor = 0.16
+				trade_opinion_factor = 0.24
 			}
 		}
 		
@@ -826,18 +842,153 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			modifier = {
 				consumer_goods_factor = -0.31
+				local_resources_factor = 0.18
 			}
 		}
 		
-		BRA_embargo = {
+		BRA_maua_bank = {
 			allowed = {
-				original_tag=URG
+				original_tag =  BRA
 			}
-			removal_cost=-1
-			picture=money_bad
+			removal_cost = -1
+			picture = normal_taxes
 			modifier = {
-				stability_factor = -0.055
-				consumer_goods_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		BRA_maua_bank2 = {
+			allowed = {
+				original_tag = BRA
+			}
+			removal_cost = -1
+			picture = high_taxes
+			modifier = {
+				consumer_goods_factor = -0.07
+			}
+		}
+		
+		BRA_maua_bank3 = {
+			allowed = {
+				original_tag = BRA
+			}
+			removal_cost = -1
+			picture = very_high_taxes
+			modifier = {
+				consumer_goods_factor = -0.09
+			}
+		}
+		
+		BRA_modernize = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		BRA_coffee_barons = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.01
+				political_power_factor = 0.01
+				stability_factor = -0.01
+				production_speed_industrial_complex_factor = -0.025
+				production_speed_arms_factory_factor = -0.025
+			}
+		}
+		
+		BRA_coffee_barons2 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.02
+				political_power_factor = 0.02
+				stability_factor = -0.015
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+			}
+		}
+		
+		BRA_coffee_barons3 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.03
+				political_power_factor = 0.03
+				stability_factor = -0.02
+				production_speed_industrial_complex_factor = -0.075
+				production_speed_arms_factory_factor = -0.075
+			}
+		}
+		
+		BRA_coffee_barons4 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.04
+				political_power_factor = 0.04
+				stability_factor = -0.025
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = -0.1
+			}
+		}
+		
+		BRA_coffee_barons5 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.06
+				political_power_factor = 0.06
+				stability_factor = -0.03
+				production_speed_industrial_complex_factor = -0.125
+				production_speed_arms_factory_factor = -0.125
+			}
+		}
+		
+		BRA_coffee_barons6 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.07
+				political_power_factor = 0.07
+				stability_factor = -0.035
+				production_speed_industrial_complex_factor = -0.15
+				production_speed_arms_factory_factor = -0.15
+			}
+		}
+		
+		BRA_coffee_barons7 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.08
+				political_power_factor = 0.08
+				stability_factor = -0.04
+				production_speed_industrial_complex_factor = -0.175
+				production_speed_arms_factory_factor = -0.175
+			}
+		}
+		
+		BRA_coffee_barons8 = {
+			allowed = { original_tag = BRA }
+			removal_cost = -1
+			picture = autocracy_group
+			modifier = { 
+				consumer_goods_factor = 0.09
+				political_power_factor = 0.09
+				stability_factor = -0.045
+				production_speed_industrial_complex_factor = -0.2
+				production_speed_arms_factory_factor = -0.2
 			}
 		}
 	}
@@ -898,12 +1049,22 @@ ideas = {
 				local_resources_factor = 0.08
 			}
 		}
+		
+		BRA_maracana_river = {
+			allowed = {
+				tag = BRA
+			}
+			removal_cost = -1
+			modifier = {
+				MONTHLY_POPULATION = 0.15
+			}
+		}
 	}
 	
 	political_advisor = {
 		BRA_marques_de_olinda_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1870.6.7
@@ -926,29 +1087,29 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost= 0
-			picture=olinda
+			cost = 50
+			removal_cost =  0
+			picture = olinda
 			traits = {
 				efficient_administrator
 			}
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_marques_de_olinda
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_marques_de_olinda
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1864.1.15
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_marques_de_olinda
 					date > 1865.5.12
 					date < 1866.8.3
@@ -978,19 +1139,19 @@ ideas = {
 					}
 				}
 			}
-			picture=sinimbu
+			picture = sinimbu
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_abaete
 					date > 1858.12.12
 					date < 1859.8.10
@@ -1000,7 +1161,7 @@ ideas = {
 		
 		BRA_joao_almeida_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1883.7.2
@@ -1023,16 +1184,16 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_3
+			picture = latin_generic_3
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_barao_de_uruguaiana
 					date > 1859.9.17
 					date < 1861.3.2
@@ -1063,17 +1224,17 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				efficient_administrator
 				influencial_writer
 			}
-			picture=latin_generic_4
-			cost=50
-			removal_cost=0
+			picture = latin_generic_4
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
 					has_idea = BRA_francisco_furtado
 					date > 1864.8.31
@@ -1105,18 +1266,18 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				efficient_administrator
 			}
-			picture=latin_generic_5
-			cost=50
-			removal_cost=0
+			picture = latin_generic_5
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.4.21
 					date < 1861.7.10
@@ -1147,18 +1308,18 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				efficient_administrator
 			}
-			picture=europe_generic_20
-			cost=50
-			removal_cost=0
+			picture = europe_generic_20
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=29
+					add = 29
 					has_idea = BRA_duque_de_caxias
 					date > 1861.3.2
 					date < 1861.4.21
@@ -1168,7 +1329,7 @@ ideas = {
 		
 		BRA_visconde_de_jaguari_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1883.7.23
@@ -1194,13 +1355,13 @@ ideas = {
 			traits = {
 				efficient_administrator
 			}
-			picture=latin_generic_6
-			cost=50
-			removal_cost=0
+			picture = latin_generic_6
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=59
+					add = 59
 					has_idea = BRA_duque_de_caxias
 					date > 1861.7.10
 					date < 1862.5.24
@@ -1231,33 +1392,33 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=gois
+			picture = gois
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1862.6.1
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1868.7.16
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 					date > 1862.5.24
 					date < 1864.1.15
 				}
@@ -1266,7 +1427,7 @@ ideas = {
 
 		BRA_jose_bonifacio_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1886.10.26
@@ -1289,16 +1450,16 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_20
+			picture = europe_generic_20
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.1.15
 					date < 1864.8.31
@@ -1308,7 +1469,7 @@ ideas = {
 
 		BRA_paulino_de_sousa_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1901.11.3
@@ -1335,12 +1496,12 @@ ideas = {
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1868.7.16
 					date < 1870.9.29
@@ -1350,7 +1511,7 @@ ideas = {
 
 		BRA_joao_alfredo_adm = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1919.3.6
@@ -1376,13 +1537,13 @@ ideas = {
 			traits = {
 				efficient_administrator
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_1
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.11.10
 					date < 1871.3.7
@@ -1392,7 +1553,7 @@ ideas = {
 
 		BRA_francisco_pereira_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1863.12.28
@@ -1420,13 +1581,13 @@ ideas = {
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			picture=europe_generic_17
-			cost=50
-			removal_cost= 0
+			picture = europe_generic_17
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1857.05.11
 					date < 1858.11.30
@@ -1458,30 +1619,30 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_effective_judge
 			}
 			picture = Advisor_Jose_Thomas_Nabuco_de_Araujo.dds
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_abaete
 					date > 1858.12.12
 					date < 1858.3.21
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1865.5.12
 					date < 1866.8.3
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_nabuco_de_araujo
 				}
 			}
@@ -1489,7 +1650,7 @@ ideas = {
 		
 		BRA_marques_de_muritiba_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1896.2.88
@@ -1513,22 +1674,22 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_7
-			cost=50
-			removal_cost=0
+			picture = latin_generic_7
+			cost = 50
+			removal_cost = 0
 			traits = {
 				eoanb_trait_effective_judge
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_abaete
 					date > 1859.3.21
 					date < 1859.8.10
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1870.7.9
 					date < 1870.9.29
@@ -1538,7 +1699,7 @@ ideas = {
 		
 		BRA_marques_de_paranagua_judge = {
 			allowed = {
-				original_tag =BRA
+				original_tag  = BRA
 			}
 			visible = {
 				date < 1912.2.9
@@ -1565,25 +1726,25 @@ ideas = {
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_1
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_barao_de_uruguaiana
 					date > 1859.8.10
 					date < 1861.3.2
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1866.10.27
 				}
 				modifier = {
-					add=32
+					add = 32
 					has_idea = BRA_marques_de_paranagua
 				}
 			}
@@ -1591,7 +1752,7 @@ ideas = {
 
 		BRA_martim_de_andrada_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1886.3.2
@@ -1615,16 +1776,16 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_9
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_9
 			traits = {
 				eoanb_trait_effective_judge
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.10.27
 					date < 1868.7.16
@@ -1656,18 +1817,18 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			picture=europe_generic_20
-			cost=50
-			removal_cost=0
+			picture = europe_generic_20
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.3.2
 					date < 1862.5.24
@@ -1700,33 +1861,33 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			picture = Advisor_Francisco_Jose_Furtado.dds
 			traits = {
 				eoanb_trait_effective_judge
 				centrism_alignment
 			}
-			cost=50
-			removal_cost=-1
+			cost = 50
+			removal_cost = -1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1862.5.24
 					date < 1862.5.30
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1862.5.24
 					date < 1864.1.15
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 				}
 				modifier = {
-					add=100
+					add = 100
 					has_idea = BRA_francisco_furtado
 				}
 			}
@@ -1734,7 +1895,7 @@ ideas = {
 
 		BRA_visconde_de_maranguape_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1864.6.21
@@ -1762,13 +1923,13 @@ ideas = {
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			picture=europe_generic_4
-			cost=50
-			removal_cost= 0
+			picture = europe_generic_4
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1862.5.30
 					date < 1863.1.8
@@ -1801,33 +1962,33 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=gois
+			picture = gois
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1862.6.1
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1868.7.16
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 					date > 1862.5.24
 					date < 1864.1.15
 				}
@@ -1836,7 +1997,7 @@ ideas = {
 
 		BRA_visconde_de_sinimbu_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1906.12.27
@@ -1864,13 +2025,13 @@ ideas = {
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			picture=sinimbu
-			cost=50
-			removal_cost=0
+			picture = sinimbu
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1863.1.8
 					date < 1864.1.15
@@ -1880,7 +2041,7 @@ ideas = {
 
 		BRA_jose_de_alencar_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1877.12.12
@@ -1909,13 +2070,13 @@ ideas = {
 				eoanb_trait_effective_judge
 				influencial_writer
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_20
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_20
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1868.7.16
 					date < 1870.1.10
@@ -1924,7 +2085,7 @@ ideas = {
 		}
 		BRA_joaquim_nebias_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1872.7.15
@@ -1953,13 +2114,13 @@ ideas = {
 				eoanb_trait_effective_judge
 				influencial_writer
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_6
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_6
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1870.1.10
 					date < 1870.6.9
@@ -1969,7 +2130,7 @@ ideas = {
 		
 		BRA_visconde_de_jaguari_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1883.7.23
@@ -1997,13 +2158,13 @@ ideas = {
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			picture=latin_generic_6
-			cost=50
-			removal_cost=0
+			picture = latin_generic_6
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=59
+					add = 59
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.9.29
 					date < 1871.3.7
@@ -2013,7 +2174,7 @@ ideas = {
 
 		BRA_visconde_de_maranguape_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1864.6.21
@@ -2044,13 +2205,13 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			picture=europe_generic_4
-			cost=50
-			removal_cost= 0
+			picture = europe_generic_4
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1857.5.11
 					date < 1858.11.30
@@ -2084,37 +2245,37 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_15
+			picture = europe_generic_15
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_abaete
 					date > 1858.12.12
 					date < 1859.8.10
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.3.2
 					date < 1861.4.21
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1868.7.16
 					date < 1869.2.10
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1870.8.30
 					date < 1870.9.30
@@ -2124,7 +2285,7 @@ ideas = {
 
 		BRA_visconde_de_sinimbu_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1906.12.27
@@ -2155,13 +2316,13 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			picture=sinimbu
-			cost=50
-			removal_cost=0
+			picture = sinimbu
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_barao_de_uruguaiana
 					date > 1859.8.10
 					date < 1861.3.2
@@ -2171,7 +2332,7 @@ ideas = {
 
 		BRA_antonio_coelho_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1868.2.22
@@ -2199,22 +2360,22 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_6
+			picture = latin_generic_6
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.4.21
 					date < 1861.7.10
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.10.27
 					date < 1867.12.9
@@ -2224,7 +2385,7 @@ ideas = {
 		
 		BRA_benevenuto_taques_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1881.10.17
@@ -2253,16 +2414,16 @@ ideas = {
 				}
 			}
 			
-			cost=50
-			removal_cost=0
-			picture=europe_generic_3
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_3
 				traits = {
 				eoanb_trait_foreign_secretary
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.7.10
 					date < 1862.5.24
@@ -2272,7 +2433,7 @@ ideas = {
 
 		BRA_francisco_paes_barreto_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1864.3.28
@@ -2300,16 +2461,16 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_12
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_12
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.1.15
 					date < 1864.3.9
@@ -2345,24 +2506,24 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=latin_generic_4
-			cost=50
+			picture = latin_generic_4
+			cost = 50
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			removal_cost=0
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.3.9
 					date < 1864.8.31
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_francisco_furtado
 					date > 1864.10.4
 					date < 1865.5.12
@@ -2372,7 +2533,7 @@ ideas = {
 
 		BRA_visconde_de_caravelas_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1878.4.28
@@ -2400,30 +2561,30 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_5
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_5
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1862.5.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 					date > 1862.5.24
 					date < 1864.1.15
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_francisco_furtado
 					date > 1864.8.31
 					date < 1864.10.4
@@ -2434,7 +2595,7 @@ ideas = {
 
 		BRA_martim_de_andrada_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1886.3.2
@@ -2462,16 +2623,16 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_9
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_9
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1866.10.27
@@ -2481,7 +2642,7 @@ ideas = {
 
 		BRA_marques_de_paranagua_foreign = {
 			allowed = {
-				original_tag =BRA
+				original_tag  = BRA
 			}
 			visible = {
 				date < 1912.2.9
@@ -2511,13 +2672,13 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_1
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1867.12.9
 					date < 1868.4.14
@@ -2527,7 +2688,7 @@ ideas = {
 		
 		BRA_joao_de_sousa_foreign = {
 			allowed = {
-				original_tag =BRA
+				original_tag  = BRA
 			}
 			visible = {
 				date < 1906.12.11
@@ -2556,13 +2717,13 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_10
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_10
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1868.4.14
 					date < 1868.7.16
@@ -2595,19 +2756,19 @@ ideas = {
 					}
 				}
 			}
-			picture=gois
+			picture = gois
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1869.2.10
 					date < 1870.8.30
@@ -2617,7 +2778,7 @@ ideas = {
 
 		BRA_visconde_de_sao_vicente_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1878.2.19
@@ -2643,16 +2804,16 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_20
+			picture = europe_generic_20
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.8.30
 					date < 1871.3.7
@@ -2662,7 +2823,7 @@ ideas = {
 
 		BRA_marques_de_olinda_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1870.6.7
@@ -2690,9 +2851,9 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost= 0
-			picture=olinda
+			cost = 50
+			removal_cost =  0
+			picture = olinda
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
@@ -2700,7 +2861,7 @@ ideas = {
 
 		BRA_visconde_de_sousa_franco_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1875.5.8
@@ -2731,14 +2892,14 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			picture=europe_generic_6
-			cost=50
-			removal_cost= 0
+			picture = europe_generic_6
+			cost = 50
+			removal_cost =  0
 		}
 
 		BRA_visconde_de_sousa_franco_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1875.5.8
@@ -2762,16 +2923,16 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_6
+			picture = europe_generic_6
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost= 0
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					date > 1857.05.11
 					date < 1858.11.30
 				}
@@ -2802,18 +2963,18 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_finance_minister
 			}
 			picture = Advisor_Angelo_Moniz_da_Sa_Ferraz.dds
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_barao_de_uruguaiana
 					date > 1859.8.10
 					date < 1861.3.2
@@ -2845,25 +3006,25 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=africa_generic_12 
+			picture = africa_generic_12 
 			traits = {
 				eoanb_trait_finance_minister
 				eoanb_trait_chancellor_of_exchequer
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_abaete
 					date > 1858.12.12
 					date < 1859.8.10
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.9.29
 					date < 1871.3.7
@@ -2894,24 +3055,24 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=europe_generic_15
+			picture = europe_generic_15
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.3.2
 					date < 1862.5.24
 				}
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_visconde_do_rio_branco
 					date > 1871.3.7
 					date < 1875.7.25
@@ -2921,7 +3082,7 @@ ideas = {
 		
 		BRA_dias_de_carvalho_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1881.7.26
@@ -2944,36 +3105,36 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_4
+			picture = latin_generic_4
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1862.5.30 
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 					date > 1862.5.24
 					date < 1864.1.15
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.1.15
 					date < 1864.8.31
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1865.5.12
 					date < 1866.3.7
@@ -2983,7 +3144,7 @@ ideas = {
 
 		BRA_visconde_de_albuquerque_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1863.4.14
@@ -3006,16 +3167,16 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_2
+			picture = europe_generic_2
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1862.5.30
 					date < 1863.4.8
@@ -3025,7 +3186,7 @@ ideas = {
 
 		BRA_marques_de_abrantes_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1865.9.13
@@ -3049,16 +3210,16 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_8
+			picture = latin_generic_8
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost= 0
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1863.4.8
 					date < 1864.1.15
@@ -3068,7 +3229,7 @@ ideas = {
 
 		BRA_visconde_de_caravelas_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1878.4.28
@@ -3092,16 +3253,16 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_5
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_5
 			traits = {
 				eoanb_trait_finance_minister
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_francisco_furtado
 					date > 1864.8.31
 					date < 1865.5.12
@@ -3111,7 +3272,7 @@ ideas = {
 
 		BRA_joao_carrao_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1888.6.4
@@ -3138,13 +3299,13 @@ ideas = {
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_11
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_11
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1866.3.7
 					date < 1865.8.3
@@ -3154,7 +3315,7 @@ ideas = {
 
 		BRA_zacaria_de_gois_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1877.12.29
@@ -3178,16 +3339,16 @@ ideas = {
 					}
 				}
 			}
-			picture=gois
+			picture = gois
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1868.7.16
@@ -3197,9 +3358,9 @@ ideas = {
 
 		BRA_visconde_de_itaborai_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=montealegre
+			picture = montealegre
 			visible = {
 				date < 1872.1.8
 			}
@@ -3222,26 +3383,26 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_9
+			picture = europe_generic_9
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost= -1
+			cost = 50
+			removal_cost =  -1
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_visconde_de_itaborai
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_eusebio_de_queiros
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_uruguai
 					date > 1857.05.11
 					date < 1858.11.30
@@ -3251,7 +3412,7 @@ ideas = {
 
 		BRA_marques_de_paranagua_finance = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1912.2.9
@@ -3278,13 +3439,13 @@ ideas = {
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			picture=latin_generic_1
-			cost=50
-			removal_cost=0
+			picture = latin_generic_1
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=99
+					add = 99
 					has_idea = BRA_marques_de_paranagua
 				}
 			}
@@ -3318,31 +3479,31 @@ ideas = {
 					}
 				}
 			}
-			picture=MXE_vic_Matthew_Fontaine_Maury
+			picture = MXE_vic_Matthew_Fontaine_Maury
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			cost=50
-			removal_cost= 0
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=100
+					add = 100
 					has_idea = BRA_visconde_de_uruguai
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_eusebio_de_queiros
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1861.3.2
 					date < 1862.5.24
@@ -3352,7 +3513,7 @@ ideas = {
 
 		BRA_eusebio_de_queiros_judge = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1868.5.7
@@ -3378,34 +3539,34 @@ ideas = {
 					}
 				}
 			}
-			picture=MXE_vic_manuel_larrainzar
+			picture = MXE_vic_manuel_larrainzar
 			traits = {
 				eoanb_trait_effective_judge
 			}
-			cost=50
-			removal_cost= 0
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=100
+					add = 100
 					has_idea = BRA_eusebio_de_queiros
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_uruguai
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1861.3.2
 					date < 1862.5.24
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_do_rio_branco
 					date > 1859.8.10
 					date < 1861.3.2
@@ -3436,19 +3597,19 @@ ideas = {
 					}
 				}
 			}
-			picture=MXE_vic_Matthew_Fontaine_Maury
+			picture = MXE_vic_Matthew_Fontaine_Maury
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			traits = {
 				eoanb_trait_finance_minister
 			}
-			cost=50
-			removal_cost= 0
+			cost = 50
+			removal_cost =  0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_do_rio_branco
 					date > 1859.8.10
 					date < 1861.3.2
@@ -3479,30 +3640,30 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=montealegre
-			cost=50
-			removal_cost= 0
+			picture = montealegre
+			cost = 50
+			removal_cost =  0
 			traits = {
 				efficient_administrator
 			}
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_eusebio_de_queiros
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_uruguai
 					date > 1857.05.11
 					date < 1858.11.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_do_rio_branco
 					date > 1859.8.10
 					date < 1860.9.18
@@ -3512,7 +3673,7 @@ ideas = {
 
 		BRA_marques_de_abrantes_foreign = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1865.9.13
@@ -3543,13 +3704,13 @@ ideas = {
 			traits = {
 				eoanb_trait_foreign_secretary
 			}
-			picture=latin_generic_8
-			cost=50
-			removal_cost=0
+			picture = latin_generic_8
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1862.5.30
 					date < 1864.1.15
@@ -3558,7 +3719,7 @@ ideas = {
 		}
 		BRA_visconde_de_inhauma_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1869.3.8
@@ -3584,18 +3745,18 @@ ideas = {
 				}
 				
 			}
-			picture=europe_generic_20
-			cost=50
-			removal_cost=0
+			picture = europe_generic_20
+			cost = 50
+			removal_cost = 0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_duque_de_caxias
 					date > 1861.3.2
 					date < 1861.4.21
@@ -3628,21 +3789,21 @@ ideas = {
 				}
 			}
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
-			picture=europe_generic_17
+			picture = europe_generic_17
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 		}
 		
 		BRA_antonio_coelho_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1906.12.27
@@ -3667,9 +3828,9 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_6
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_6
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
@@ -3678,16 +3839,16 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=yes
+					is_historical_focus_on = yes
 					date > 1862.5.24
 					date < 1863.5.30
 				}
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
-					is_historical_focus_on=no
+					is_historical_focus_on = no
 					date > 1862.5.24
 					date < 1864.1.15
 				}
@@ -3696,7 +3857,7 @@ ideas = {
 		
 		BRA_visconde_de_sinimbu_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1906.12.27
@@ -3721,9 +3882,9 @@ ideas = {
 					}
 				}
 			}
-			picture=sinimbu
-			cost=50
-			removal_cost=0
+			picture = sinimbu
+			cost = 50
+			removal_cost = 0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
@@ -3732,7 +3893,7 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1862.5.30
 					date < 1863.2.9
@@ -3742,7 +3903,7 @@ ideas = {
 		
 		BRA_pedro_bellegarde_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1864.2.12
@@ -3767,9 +3928,9 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_10
-			cost=50
-			removal_cost= 0
+			picture = latin_generic_10
+			cost = 50
+			removal_cost =  0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
@@ -3778,7 +3939,7 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1863.2.9
 					date < 1864.1.15
@@ -3788,7 +3949,7 @@ ideas = {
 
 		BRA_visconde_de_araxa_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1881.7.12
@@ -3813,18 +3974,18 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
-			picture=latin_generic_9
+			cost = 50
+			removal_cost = 0
+			picture = latin_generic_9
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.1.15
 					date < 1864.7.20
@@ -3834,7 +3995,7 @@ ideas = {
 		
 		BRA_dias_de_carvalho_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1881.7.26
@@ -3859,18 +4020,18 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_4
+			picture = latin_generic_4
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1864.7.20
 					date < 1864.8.31
@@ -3880,7 +4041,7 @@ ideas = {
 
 		BRA_jesuino_marcondes_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1903.10.7
@@ -3905,18 +4066,18 @@ ideas = {
 					}
 				}
 			}
-			picture=latin_generic_5
+			picture = latin_generic_5
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			cost=50
-			removal_cost=-1
+			cost = 50
+			removal_cost = -1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_francisco_furtado
 					date > 1864.8.31
 					date < 1865.5.12
@@ -3926,7 +4087,7 @@ ideas = {
 
 		BRA_antonio_de_paula_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			available = {
 				date < 1917.4.13
@@ -3951,18 +4112,18 @@ ideas = {
 			visible = {
 				date < 1917.4.13
 			}
-			picture=latin_generic_9
+			picture = latin_generic_9
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_marques_de_olinda
 					date > 1865.5.12
 					date < 1866.8.3
@@ -3972,7 +4133,7 @@ ideas = {
 		
 		BRA_sousa_dantas_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1894.1.29
@@ -3997,18 +4158,18 @@ ideas = {
 					}
 				}
 			}
-			cost=50
-			removal_cost=0
+			cost = 50
+			removal_cost = 0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			picture=europe_generic_3
+			picture = europe_generic_3
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_zacaria_de_gois
 					date > 1866.8.3
 					date < 1868.7.16
@@ -4018,7 +4179,7 @@ ideas = {
 		
 		BRA_joaquim_antao_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1887.4.12
@@ -4048,13 +4209,13 @@ ideas = {
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			picture=europe_generic_7
-			cost=50
-			removal_cost=0
+			picture = europe_generic_7
+			cost = 50
+			removal_cost = 0
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1868.7.16
 					date < 1870.1.10
@@ -4064,7 +4225,7 @@ ideas = {
 		
 		BRA_visconde_de_cavalcanti_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1894.6.14
@@ -4089,18 +4250,18 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_10
-			cost=50
-			removal_cost=0
+			picture = europe_generic_10
+			cost = 50
+			removal_cost = 0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_itaborai
 					date > 1870.1.10
 					date < 1870.9.29
@@ -4110,7 +4271,7 @@ ideas = {
 		
 		BRA_visconde_do_cruzeiro_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1892.12.26
@@ -4135,18 +4296,18 @@ ideas = {
 					}
 				}
 			}
-			picture=europe_generic_8
-			cost=50
-			removal_cost=0
+			picture = europe_generic_8
+			cost = 50
+			removal_cost = 0
 			traits = {
 				rural_innovator
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.9.29
 					date < 1870.11.20
@@ -4156,7 +4317,7 @@ ideas = {
 		
 		BRA_joao_alfredo_infrastructure = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1919.3.6
@@ -4186,13 +4347,13 @@ ideas = {
 				eoanb_trait_road_expert
 				innovative_engineer
 			}
-			cost=50
-			removal_cost=0
-			picture=europe_generic_1
+			cost = 50
+			removal_cost = 0
+			picture = europe_generic_1
 			ai_will_do = {
-				factor=1
+				factor = 1
 				modifier = {
-					add=49
+					add = 49
 					has_idea = BRA_visconde_de_sao_vicente
 					date > 1870.11.20
 					date < 1871.3.7
@@ -4202,7 +4363,7 @@ ideas = {
 
 		BRA_barao_de_maua_adv = {
 			allowed = {
-				original_tag=BRA
+				original_tag = BRA
 			}
 			visible = {
 				date < 1889.10.21
@@ -4210,9 +4371,9 @@ ideas = {
 			available = {
 				date < 1889.10.21
 			}
-			picture=europe_generic_6
-			cost=100
-			removal_cost=0
+			picture = europe_generic_6
+			cost = 100
+			removal_cost = 0
 			traits = {
 				clever_buisnessman
 				railroad_tycoon

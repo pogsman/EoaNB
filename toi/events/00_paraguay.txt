@@ -2125,6 +2125,7 @@ country_event = { #Bolivia's Response for Brazil
 		title = {
 			text = par_news.2.t
 			trigger = {
+				PAR = { has_war_with = BRA }
 				NOT = {
 					PAR = { is_in_faction_with = ARG }
 				}
@@ -2133,12 +2134,16 @@ country_event = { #Bolivia's Response for Brazil
 		title = {
 			text = par_news.2.t_par
 			trigger = {
-				PAR = { is_in_faction_with = ARG }
+				PAR = {
+					is_in_faction_with = ARG
+					has_war_with = BRA
+				}
 			}
 		}
 		desc = {
 			text = par_news.2.d
 			trigger = {
+				PAR = { has_war_with = BRA }
 				NOT = {
 					PAR = { is_in_faction_with = ARG }
 				}
@@ -2147,7 +2152,10 @@ country_event = { #Bolivia's Response for Brazil
 		desc = {
 			text = par_news.2.d_par
 			trigger = {
-				PAR = { is_in_faction_with = ARG }
+				PAR = { 
+					is_in_faction_with = ARG
+					has_war_with = BRA
+				}
 			}
 		}
 		picture = GFX_par_news_triple_alliance
