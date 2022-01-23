@@ -979,58 +979,35 @@ guiTypes = {
 				}
 			#
 	}
-	# containerWindowType = {
-		# name = "topbar_economy_container"
-		# position = { x = 0 y = 0 }
-		# size = { width=1108 height=720 }	
-		# clipping = no
-		
-		# buttonType = {
-			# name = "country_view_economy_button"
-			# position = { x = 930 y = 6 }
-			# quadTextureSprite ="GFX_state_economy_button"
-			# Orientation = "UPPER_LEFT"
-			# clicksound = click_close
-			# oversound = ui_menu_over
-			
-			# #pdx_tooltip = "ECONOMY_TOOLTIP"
-			# #pdx_tooltip_delayed = "ECONOMY_TOOLTIP_DELAYED"
-		# }
+	containerWindowType = {
+		name = "topbar_economy_container"
+		position = { x = 0 y = 0 }
+		size = { width=1108 height=720 }	
+		clipping = no
 
-		# iconType ={
-			# name ="money_amount_bg"
-			# spriteType = "GFX_generic_box_96"
-			# position = { x = 1050 y = 6 }
-		# }
-		# instantTextBoxType = {
-			# name = "treasury_amount"
-			# position = { x = 1054 y = 10 }
-			# font = "hoi_18mbs"
-			# format = center
-			# maxWidth = 90
-			# text = "treasury_amount_loc"
-			# maxHeight = 24
-			# fixedsize = yes
-			# #alwaystransparent = yes
-		# }
-		# iconType ={
-			# name ="income_amount_bg"
-			# spriteType = "GFX_generic_box_96"
-			# position = { x = 1150 y = 6 }
-		# }
-		# instantTextBoxType = {
-			# name = "income_amount"
-			# position = { x = 1154 y = 10 }
-			# font = "hoi_18mbs"
-			# format = center
-			# maxWidth = 90
-			# text = "income_amount_loc"
-			# maxHeight = 24
-			# fixedsize = yes
-			# #alwaystransparent = yes
-			# pdx_tooltip = income_amount_tt
-		# }
-	# }
+		
+		## military goods
+		
+		iconType = {
+			name ="military_goods_icon"
+			spriteType = "GFX_equipment_icon"
+			position = { x= 504 y = 23 }
+			Orientation = "UPPER_LEFT"
+		}		
+		
+		instantTextBoxType = {
+			name ="military_goods_value"
+			position = { x= 525 y = 21 }
+			font = "hoi_18mbs"
+			text = "military_goods_loc"
+			format = center
+			maxWidth = 48
+			maxHeight = 24
+			fixedsize = yes
+
+			#alwaystransparent = yes
+		}
+	}
 
 
 	containerWindowType = { #State Economy Window

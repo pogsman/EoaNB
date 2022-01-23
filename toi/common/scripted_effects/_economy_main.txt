@@ -7018,6 +7018,57 @@
 				add_to_variable = { total_factory_amount = num_of_naval_factories }
 				add_to_variable = { total_factory_amount = private_factory_amount }
 
+				#Military Goods Fulfillment
+					set_variable = { government_military_goods_percent = 0 }
+
+					set_temp_variable = { gmg = life_goods_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = life_goods_government_demand }
+					multiply_temp_variable = { gmg = military_life_goods_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { gmg = everyday_goods_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = everyday_goods_government_demand }
+					multiply_temp_variable = { gmg = military_everyday_goods_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { gmg = luxury_goods_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = luxury_goods_government_demand }
+					multiply_temp_variable = { gmg = military_luxury_goods_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { gmg = services_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = services_government_demand }
+					multiply_temp_variable = { gmg = military_services_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { gmg = raw_goods_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = raw_goods_government_demand }
+					multiply_temp_variable = { gmg = military_raw_goods_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { gmg = industrial_goods_government_stockpile }
+					multiply_temp_variable = { gmg = 100 }
+					divide_temp_variable = { gmg = industrial_goods_government_demand }
+					multiply_temp_variable = { gmg = military_industrial_goods_demand }
+					add_to_variable = { government_military_goods_percent = gmg }
+
+					set_temp_variable = { tgmgn = military_life_goods_need }
+					add_to_temp_variable = { tgmgn = military_everyday_goods_need }
+					add_to_temp_variable = { tgmgn = military_luxury_goods_need }
+					add_to_temp_variable = { tgmgn = military_services_need }
+					add_to_temp_variable = { tgmgn = military_raw_goods_need }
+					add_to_temp_variable = { tgmgn = military_industrial_goods_need }
+
+					divide_variable = { government_military_goods_percent = tgmgn }
+					round_variable = government_military_goods_percent
+
+				#
+
 				#Industrial Power
 					set_temp_variable = { industrial_power_temp = num_of_civilian_factories }
 					multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
