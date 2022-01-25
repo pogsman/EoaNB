@@ -484,10 +484,10 @@
  BEL_centrism_party:0 "Liberale Partei"
  BEL_radical_democracy_party:0 "Belgisches Parlament"
  BEL_traditional_conservatism_party:0 "Katholisches Parlament"
- BEL_autocracy_party:0 "Haus von Saxe-Coburg-Gotha"
+ BEL_autocracy_party:0 "Haus von Sachsen-Coburg-Gotha"
  BEL_chauvinist_populism_party:0 "Belgische Populisten"
  BEL_anarchism_party:0 "Rex"
- BEL_fundamentalism_party:0 "Archdiozäse von Brüssel"
+ BEL_fundamentalism_party:0 "Erzbistum Brüssel"
  
  SWI_vanguard_communism_party:0 "Kommunistische Partei"
  SWI_collectivist_socialism_party:0 "Arbeiterpartei"
@@ -504,7 +504,7 @@
  ENG_collectivist_socialism_party:0 "Sozialistische Partei Großbritanniens"
  ENG_social_egalitarianism_party:0 "Labour Partei"
  ENG_centrism_party:0 "Liberale"
- ENG_radical_democracy_party:0 "Britisch-Militärische Junta"
+ ENG_radical_democracy_party:0 "Britische Militärregierung"
  ENG_traditional_conservatism_party:0 "Konservativ-Unionistische Partei"
  ENG_autocracy_party:0 "Haus Hannover"
  ENG_chauvinist_populism_party:0 "New-Roundheads"
@@ -590,7 +590,7 @@
  CAN_autocracy_party:0 "Britische Krone"
  CAN_chauvinist_populism_party:0 ""
  CAN_anarchism_party:0 ""
- CAN_fundamentalism_party:0 "Archdiozäse von Ottawa"
+ CAN_fundamentalism_party:0 "Erzbistum Ottawa"
  
  BRK_vanguard_communism_party:0 ""
  BRK_collectivist_socialism_party:0 ""
@@ -601,7 +601,7 @@
  BRK_autocracy_party:0 "Britische Krone"
  BRK_chauvinist_populism_party:0 ""
  BRK_anarchism_party:0 ""
- BRK_fundamentalism_party:0 "Diozäse von Bathurst"
+ BRK_fundamentalism_party:0 "Bistum von Bathurst"
  
  NVS_vanguard_communism_party:0 ""
  NVS_collectivist_socialism_party:0 ""
@@ -612,7 +612,7 @@
  NVS_autocracy_party:0 "Britische Krone"
  NVS_chauvinist_populism_party:0 ""
  NVS_anarchism_party:0 ""
- NVS_fundamentalism_party:0 "Diozäse von Bathurst"
+ NVS_fundamentalism_party:0 "Bistum von Bathurst"
  
  NFL_vanguard_communism_party:0 ""
  NFL_collectivist_socialism_party:0 ""
@@ -626,7 +626,7 @@
  NFL_fundamentalism_party:0 ""
 
  OFS_vanguard_communism_party:0 "Vanguard-Flügel des Volksraads"
- OFS_collectivist_socialism_party:0 "Sozialistsicher Flügel des Volksraads"
+ OFS_collectivist_socialism_party:0 "Sozialistischer Flügel des Volksraads"
  OFS_social_egalitarianism_party:0 ""
  OFS_centrism_party:0 "Liberaler Flügel des Volksraads"
  OFS_radical_democracy_party:0 ""
@@ -791,7 +791,7 @@
  ECU_fundamentalism_party:0 "Reformierte Episcopalkirche Equadors"
 
  HON_social_egalitarianism_party:0 "Liberale Partei"
- HON_centrism_party:0 "Die Demokratie"
+ HON_centrism_party:0 "Demokratische Partei"
  HON_chauvinist_populism_party:0 "Militärregierung"
  HON_anarchism_party:0 "Lateinamerikanische Anarchisten"
  HON_fundamentalism_party:0 "Reformierte Episcopalkirche Honduras"
