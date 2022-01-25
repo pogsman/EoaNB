@@ -5,12 +5,24 @@ spriteTypes = {
 		texturefile = "gfx/interface/state_economy_screen_background.dds"
 	}
 	spriteType = {
+		name = "GFX_budget_screen_background"
+		texturefile = "gfx/interface/budget_screen_background.dds"
+	}
+	spriteType = {
 		name = "GFX_small_frame"
 		texturefile = "gfx/interface/small_frame.dds"
 	}
 	spriteType = {
 		name = "GFX_vertical_gray_line"
 		texturefile = "gfx/interface/vertical_gray_line.dds"
+	}
+	spriteType = {
+		name = "GFX_slider_knob"
+		texturefile = "gfx/interface/slider_knob.dds"
+	}
+	spriteType = {
+		name = "GFX_slider_slide"
+		texturefile = "gfx/interface/slider_slide.dds"
 	}
 
 	#Buttons
@@ -25,6 +37,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_in_building_construction_button"
 		texturefile = "gfx/interface/building_in_construction_button.dds"
+	}
+	spriteType = {
+		name = "GFX_slider_button_left"
+		texturefile = "gfx/interface/slider_button_left.dds"
+	}
+	spriteType = {
+		name = "GFX_slider_button_right"
+		texturefile = "gfx/interface/slider_button_right.dds"
 	}
 	
 	#Currency Icons

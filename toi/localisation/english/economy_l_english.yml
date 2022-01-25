@@ -301,8 +301,8 @@
 
       corporation_name_industrial_goods_generic_zz:0 "[This.GetName] Industries"
     #
-  #Country Economy Screen
-    country_economy_title:0 "[ROOT.GetName] Economy"
+  #Budget Screen
+    budget_title:0 "Budget of [ROOT.GetNameDef]"
 
     #Government Finances Area
       govt_finances_title:0 "Finances"
@@ -329,7 +329,7 @@
           govt_sales_tax_percentage_loc:0 "[?sales_tax_percentage|0]%"
           govt_sales_tax_amount_loc:0 "§G[?sales_tax_revenue]§![GetCurrencyTextIcon]"
         #
-        #Value Added Tax
+        #Corporate Tax
           govt_corporate_tax_title:0 "Corporate Tax"
           govt_corporate_tax_percentage_loc:0 "[?corporate_tax_percentage|0]%"
           govt_corporate_tax_amount_loc:0 "§G[?corporate_tax_revenue]§![GetCurrencyTextIcon]"
@@ -345,6 +345,10 @@
 
           govt_tariffs_total_loc:0 "Tariff Revenue:"
           govt_tariffs_amount_loc:0 "§G[?tariff_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Public Enterprise
+          govt_public_enterprise_revenue_title:0 "Public Enterprise"
+          govt_public_enterprise_revenue_amount_loc:0 "§G[?public_enterprise_revenue]§![GetCurrencyTextIcon]"
         #
         govt_revenue_amount_loc:0 "§G+[?revenue]§![GetCurrencyTextIcon]"
       #
@@ -420,6 +424,22 @@
 
         govt_military_payroll_spending_title:0 "Military Payroll"
         govt_military_payroll_spending_amount_loc:0 "§R-[?military_payroll_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_welfare_spending_title:0 "Welfare"
+        govt_welfare_spending_amount_loc:0 "§R-[?welfare_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_benefits_spending_title:0 "Benefits"
+        govt_benefits_spending_amount_loc:0 "§R-[?benefits_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_law_and_order_spending_title:0 "Law & Order"
+        govt_law_and_order_spending_amount_loc:0 "§R-[?law_and_order_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_healthcare_spending_title:0 "Healthcare"
+        govt_healthcare_spending_amount_loc:0 "§R-[?healthcare_spending_expense]§![GetCurrencyTextIcon]"
+
+        govt_public_enterprise_spending_title:0 "Public Enterprise"
+        govt_public_enterprise_spending_amount_loc:0 "§R-[?public_enterprise_spending_expense]§![GetCurrencyTextIcon]"
+
 
         govt_interest_spending_title:0 "Interest"
         govt_interest_spending_amount_loc:0 "§R-[?national_debt_interest]§![GetCurrencyTextIcon]"
