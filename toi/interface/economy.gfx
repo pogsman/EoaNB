@@ -46,6 +46,14 @@ spriteTypes = {
 		name = "GFX_slider_button_right"
 		texturefile = "gfx/interface/slider_button_right.dds"
 	}
+	spriteType = {
+		name = "GFX_slider_button_up"
+		texturefile = "gfx/interface/slider_button_up.dds"
+	}
+	spriteType = {
+		name = "GFX_slider_button_down"
+		texturefile = "gfx/interface/slider_button_down.dds"
+	}
 	
 	#Currency Icons
 	spriteType = {
@@ -110,6 +118,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_rgo_mechanization_icon"
 		texturefile = "gfx/interface/rgo_mechanization_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_money_lent_icon"
+		texturefile = "gfx/interface/money_lent_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_percent_icon"
+		texturefile = "gfx/interface/percent_icon.dds"
 	}
 
 	spriteType = {

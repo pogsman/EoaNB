@@ -6298,12 +6298,17 @@ guiTypes = {
 				#alwaystransparent = yes
 			}
 
+			iconType ={
+				name ="govt_national_bank_icon"
+				spriteType = "GFX_national_bank_icon"
+				position = { x = 105 y = 41 }
+			}
 			instantTextBoxType = {
 				name = "govt_national_bank_amount_loc"
-				position = { x = 20 y = 40 }
+				position = { x = 20 y = 43 }
 				font = "hoi_18mbs"
-				format = left
-				maxWidth = 300
+				format = center
+				maxWidth = 88
 				text = "govt_national_bank_amount_loc"
 				maxHeight = 24
 				fixedsize = yes
@@ -6311,12 +6316,73 @@ guiTypes = {
 				pdx_tooltip = govt_national_bank_amount_tt
 			}
 			instantTextBoxType = {
-				name = "govt_national_bank_amount_borrowed_loc"
-				position = { x = 20 y = 80 }
+				name = "govt_national_bank_lent_loc"
+				position = { x = 130 y = 43 }
 				font = "hoi_18mbs"
-				format = left
-				maxWidth = 300
+				format = center
+				maxWidth = 88
+				text = "govt_national_bank_lent_loc"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+				pdx_tooltip = govt_national_bank_amount_tt
+			}
+			
+			iconType ={
+				name ="govt_interest_icon"
+				spriteType = "GFX_percent_icon"
+				position = { x = 220 y = 39 }
+			}
+			instantTextBoxType = {
+				name = "govt_national_bank_interest_loc"
+				position = { x = 250 y = 43 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 52
+				text = "govt_national_bank_interest_loc"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+				pdx_tooltip = govt_national_bank_amount_borrowed_tt
+			}
+			buttonType = {
+				name = "govt_national_bank_decrease_interest_button"
+				position = { x = 306 y = 54 }
+				quadTextureSprite ="GFX_slider_button_down"
+				clicksound = click_close
+			}
+			buttonType = {
+				name = "govt_national_bank_increase_interest_button"
+				position = { x = 306 y = 26 }
+				quadTextureSprite ="GFX_slider_button_up"
+				clicksound = click_close
+			}
+
+			iconType ={
+				name ="govt_money_lent_icon"
+				spriteType = "GFX_money_lent_icon"
+				position = { x = 15 y = 93 }
+				pdx_tooltip = govt_national_bank_amount_borrowed_tt
+			}
+			instantTextBoxType = {
+				name = "govt_national_bank_amount_borrowed_loc"
+				position = { x = 46 y = 97 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 88
 				text = "govt_national_bank_amount_borrowed_loc"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+				pdx_tooltip = govt_national_bank_amount_borrowed_tt
+			}
+			instantTextBoxType = {
+				name = "govt_national_bank_borrow_limit_loc"
+				position = { x = 132 y = 97 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 52
+				text = "govt_national_bank_borrow_limit_loc"
 				maxHeight = 24
 				fixedsize = yes
 				#alwaystransparent = yes
@@ -6324,7 +6390,7 @@ guiTypes = {
 			}
 			containerWindowType = { #Debt Repayment Button
 				name = "govt_repay_debt_button_container"
-				position = {x = 142 y = 100 }
+				position = {x = 142 y = 120 }
 				size = { width = 130 height = 40 }
 				Orientation = upper_left
 				
@@ -6349,7 +6415,7 @@ guiTypes = {
 			}
 			containerWindowType = { #Borrow Money Button
 				name = "govt_borrow_money_button_container"
-				position = {x = 12 y = 100 }
+				position = {x = 12 y = 120 }
 				size = { width = 130 height = 40 }
 				Orientation = upper_left
 				
@@ -6371,18 +6437,6 @@ guiTypes = {
 					#alwaystransparent = yes
 					pdx_tooltip = govt_borrow_money_button_tt
 				}
-			}
-			instantTextBoxType = {
-				name = "govt_gdp_loc"
-				position = { x = 20 y = 136 }
-				font = "hoi_18mbs"
-				format = left
-				maxWidth = 300
-				text = "govt_gdp_loc"
-				maxHeight = 24
-				fixedsize = yes
-				#alwaystransparent = yes
-				pdx_tooltip = govt_national_bank_amount_borrowed_tt
 			}
 		}
 		containerWindowType = { #Final Budget
