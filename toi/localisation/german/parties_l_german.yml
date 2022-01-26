@@ -109,7 +109,7 @@
  ASA_fundamentalism_party:0 "Christliche Pazifisten"
  ASA_radical_democracy_party_long:0 "Amerikanische Vereinigungspartei"
  ASA_radical_democracy_party:0 "Militär-Lobbyisten"
- ASA_corporatism_party_long:0 "The Gilded League"
+ ASA_corporatism_party_long:0 "Die Gilded League"
  ASA_corporatism_party:0 "Unternehmer-Lobbyisten"
  ASA_anarchism_party_long:0 "Partei des Individuellen Souveränismus"
  ASA_anarchism_party:0 "Mutualismus"
@@ -130,7 +130,7 @@
  LIB_autocracy_party:0 "Imperialisten"
  LIB_fundamentalism_party_long:0 "Partei der Abstinenzbewegung"
  LIB_fundamentalism_party:0 "Befürworter der Prohibition"
- LIB_radical_democracy_party_long:0 "The Gilded League"
+ LIB_radical_democracy_party_long:0 "Die Gilded League"
  LIB_radical_democracy_party:0 "Unternehmer-Lobbyisten"
  LIB_anarchism_party_long:0 "Partei des Individuellen Souveränismus"
  LIB_anarchism_party:0 "Mutualismus"
@@ -157,7 +157,7 @@
  MHC_centrism_party:0 "Republikaner"
  MHC_traditional_conservatism_party_long:0 "Partei des Freien Markts"
  MHC_traditional_conservatism_party:0 "Unterstützer des Freien Markts"
- MHC_chauvinist_populism_party_long:0 "The Gilded League"
+ MHC_chauvinist_populism_party_long:0 "Die Gilded League"
  MHC_chauvinist_populism_party:0 "Unternehmer-Lobbyisten"
  MHC_autocracy_party_long:0 "Partei des Yorker Imperialimus"
  MHC_autocracy_party:0 "Imperialistische Yorkers"
@@ -480,7 +480,7 @@
  
  BEL_vanguard_communism_party:0 "Syndikalistische Proudhonisten"
  BEL_collectivist_socialism_party:0 "Proudhonisten"
- BEL_social_egalitarianism_party:0 "Parti Ouvrier Belge"
+ BEL_social_egalitarianism_party:0 "Belgische Arbeiterpartei"
  BEL_centrism_party:0 "Liberale Partei"
  BEL_radical_democracy_party:0 "Belgisches Parlament"
  BEL_traditional_conservatism_party:0 "Katholisches Parlament"
@@ -584,7 +584,7 @@
  CAN_vanguard_communism_party:0 "Kommunistische Partei Kanadas"
  CAN_collectivist_socialism_party:0 "Rote Partei"
  CAN_social_egalitarianism_party:0 "Reformistsiche Partei"
- CAN_centrism_party:0 "Clear Grits"
+ CAN_centrism_party:0 "Reformpartei ('Clear Grits')"
  CAN_radical_democracy_party:0 "Anti-Konföderaten"
  CAN_traditional_conservatism_party:0 "Blaue Partei"
  CAN_autocracy_party:0 "Britische Krone"
@@ -737,7 +737,7 @@
  
  CHL_centrism_party:0 "Liberale Partei"
  CHL_radical_democracy_party:0 "Militärregierung"
- CHL_anarchism_party:0 "Anarquistas Chilenos"
+ CHL_anarchism_party:0 "Chilenische Anarchisten"
  CHL_fundamentalism_party:0 "Reformierte Episcopalkirche in Chile"
 
  ARG_social_egalitarianism_party:0 "Egalitäre Partei"
@@ -779,10 +779,10 @@
  HAI_fundamentalism_party:0 "Reformierte Episcopalkirche Haitis"
  
  VEN_social_egalitarianism_party:0 "Egalitäre Partei"
- VEN_centrism_party:0 "Partido Liberal"
- VEN_chauvinist_populism_party:0 "Military"
- VEN_anarchism_party:0 "Anarquistas Venezuelanos"
- VEN_fundamentalism_party:0 "Conferencia Episcopal de Venezuela"
+ VEN_centrism_party:0 "Liberale Partei"
+ VEN_chauvinist_populism_party:0 "Militärregierung"
+ VEN_anarchism_party:0 "Venezualische Anarchisten"
+ VEN_fundamentalism_party:0 "Reformierte Episcopalkirche Venezuelas"
 
  ECU_social_egalitarianism_party:0 "Republikanisch-Unionistische Partei"
  ECU_centrism_party:0 "Liberale Partei"
@@ -802,4 +802,248 @@
  ELS_anarchism_party:0 "Lateinamerikanische Anarchisten"
  ELS_fundamentalism_party:0 "Reformierte Episcopalkirche in El Salvador"
  
+ GUA_social_egalitarianism_party:0 "Egalitäre Partei"
+ GUA_centrism_party:0 "Liberale Partei"
+ GUA_chauvinist_populism_party:0 "Militärregierung"
+ GUA_anarchism_party:0 "Lateinamerikanische Anarchisten"
+ GUA_fundamentalism_party:0 "Reformierte Episcopalkirche in Guatemala"
+
+ PRU_social_egalitarianism_party:0 "Partei der Zivilisten"
+ PRU_centrism_party:0 "Verfassungspartei"
+ PRU_chauvinist_populism_party:0 "Militärregierung"
+ PRU_anarchism_party:0 "Peruanische Anarchisten"
+ PRU_fundamentalism_party:0 "Reformierte Episcopalkirche in Peru"
  
+ HAW_autocracy_party:0 "Haus Kamehameha"
+ HAW_chauvinist_populism_party:0 "Hawaiianische Liga"
+ HAW_anarchism_party:0 "Polynesische Anarchisten"
+
+ OTO_autocracy_party:0 "Haus Osman"
+ OTO_chauvinist_populism_party:0 "Kommitee der Osmanischen Union"
+ OTO_fundamentalism_party:0 "Seriat-Regierung"
+ OTO_centrism_party:0 "Jungtürken"
+ OTO_traditional_conservatism_party:0 "Die Hohe Pforte"
+
+ KOR_autocracy_party:0 "Haus Lee"
+
+#MOL_autocracy_party:0 "Haus Sturdza"
+
+ LUX_autocracy_party:0 "Haus von Nassau-Weilburg"
+ 
+ HOL_autocracy_party:0 "Haus von Oranje-Nassau"
+ HOL_social_egalitarianism_party:0 "Liberale"
+ HOL_centrism_party:0 "Thorbeckianer"
+ HOL_traditional_conservatism_party:0 "Anti-Revolutionäre Partei"
+ HOL_fundamentalism_party:0 "Niederländische Reformierte Kirche"
+ HOL_anarchism_party:0 "Anarchisten"
+ HOL_chauvinist_populism_party:0 "Chauvinisten"
+ HOL_vanguard_communism_party:0 "Vanguard-Kommunisten"
+ HOL_collectivist_socialism_party:0 "Kollektive Sozialisten"
+ HOL_radical_democracy_party:0 "Radikale Demokraten"
+ HOL_traditional_conservatism_party_ARP:0 "ARP"
+ HOL_traditional_conservatism_party_ARP_long:0 "Anti-Revolutionäre Partei"
+ HOL_vanguard_communism_party_SDB_long:0 "Sozialdemokratischer Bund"
+ HOL_vanguard_communism_party_SDB:0 "SDB"
+ HOL_collectivist_socialism_SDV_long:0 "Sozialdemokratische Vereinigung"
+ HOL_collectivist_socialism_SDV:0 "SDV"
+ 
+ PER_autocracy_party:0 "Haus Qajar"
+
+ OMA_autocracy_party:0 "Haus von Al Said"
+
+ ETH_autocracy_party:0 "Haus Solomon"
+
+ AFG_autocracy_party:0 "Haus von Barakzai"
+
+ QNG_autocracy_party:0 "Haus von Qing"
+ 
+ SIA_social_egalitarianism_party:0 "SD"
+ SIA_centrism_party:0 "DA"
+ SIA_traditional_conservatism_party:0 "TC"
+ SIA_autocracy_party:0 "Haus von Chakri"
+
+ MRN_autocracy_party:0 "Haus Hova"
+
+ VIN_autocracy_party:0 "Haus von Nguyen"
+
+ JAI_fundamentalism_party:0 "Elementaristen"
+ JAI_fundamentalism_party_long:0 "Jarai-Herrscher über die Elemente"
+ JAI_water_tribe:0 "Stamm des Wassers"
+ JAI_water_tribe_long:0 "Herrscher über das Wasser"
+ JAI_fire_tribe:0 "Feuernation"
+ JAI_fire_tribe_long:0 "Herrscher des Feuers"
+ JAI_earth_tribe:0 "Erdkönigreiche"
+ JAI_earth_tribe_long:0 "Herrscher der Erde"
+ JAI_wind_tribe:0 "Luftnomaden"
+ JAI_wind_tribe_long:0 "Herrscher des Windes"
+
+ ACE_autocracy_party:0 "Haus von Aceh"
+
+ NEP_autocracy_party:0 "Haus von Shah"
+
+ BHU_autocracy_party:0 "Haus Palden"
+
+ BRM_autocracy_party:0 "Haus Konbaung"
+
+ MOR_autocracy_party:0 "Haus von Alaouite"
+
+ EGY_autocracy_party:0 "Haus von Muhammad Ali"
+
+#ROM_autocracy_party:0 "Haus Cuza"
+
+ LBA_autocracy_party:0 "Haus Osman"
+
+ MNT_autocracy_party:0 "Haus Petrovic-Njegos"
+
+ FIN_autocracy_party:0 "Finnischer Senat"
+
+ KHI_autocracy_party:0 "Haus von Qungrat"
+ 
+ BAD_autocracy_party:0 "Haus von Baden"
+ BAD_centrism_party:0 "Liberale Fraktion"
+ BAD_traditional_conservatism_party:0 "Konservative Fraktion"
+ BAD_fundamentalism_party:0 "Ultramontane Fraktion"
+
+ BAV_social_egalitarianism_party:0 "Arbeiterverein"
+ BAV_traditional_conservatism_party:0 "Bayerische Patriotenpartei"
+ BAV_radical_democracy_party:0 "Kammer der Landsräte"
+ BAV_autocracy_party:0 "Haus Wittelsbach"
+ BAV_fundamentalism_party:0 "Klerikale Fraktion"
+ BAV_centrism_party:0 "Liberale Fraktion"
+ BAV_chauvinist_populism_party:0 "Deutscher Reformverein"
+ BAV_anarchism_party:0 "Arbeiterverein"
+ BAV_collectivist_socialism_party:0 "Arbeiterverein"
+ BAV_vanguard_communism_party:0 "Arbeiterverein"
+
+ WUR_autocracy_party:0 "Haus von Württemberg"
+ WUR_centrism_party:0 "Liberale Fraktion"
+ WUR_fundamentalism_party:0 "Christlich-Konservative Fraktion"
+ WUR_radical_democracy_party:0 "Radikale Fraktion"
+ WUR_traditional_conservatism_party:0 "Konservative Fraktion"
+ WUR_chauvinist_populism_party:0 "Deutscher Reformverein"
+ WUR_anarchism_party:0 "Arbeiterverein"
+ WUR_collectivist_socialism_party:0 "Arbeiterverein"
+ WUR_social_egalitarianism_party:0 "Arbeiterverein"
+ WUR_vanguard_communism_party:0 "Arbeiterverein"
+
+ OLD_autocracy_party:0 "Haus von Oldenburg"
+ OLD_centrism_party:0 "Liberale Fraktion"
+ OLD_traditional_conservatism_party:0 "Konservative Fraktion"
+
+ SCH_autocracy_party:0 "Haus von Oldenburg"
+ SCH_autocracy_party_augustenburg:0 "Haus Augustenburg"
+ SCH_autocracy_party_provisional:0 "Provisional Government"
+ SCH_autocracy_party_prussia:0 "Haus Hohenzollern"
+ SCH_centrism_party:0 "Nationalliberale Bewegung"
+ SCH_traditional_conservatism_party:0 "Konservative Bewegung"
+ 
+ HLS_autocracy_party_austria:0 "Haus Habsburg"
+ HLS_autocracy_party_augustenburg:0 "Haus Augustenburg"
+ 
+ HAN_autocracy_party:0 "Haus Hannover"
+ HAN_centrism_party:0 "Liberale Fraktion"
+ HAN_traditional_conservatism_party:0 "Konservative Fraktion"
+ 
+ HES_autocracy_party:0 "Haus von Hessen-Kassel"
+ HES_centrism_party:0 "Nationalliberale Bewegung"
+ HES_traditional_conservatism_party:0 "Konservative Bewegung"
+ HES_radical_democracy_party:0 "Fraktion der Grundbesitzer"
+
+ HSD_autocracy_party:0 "Haus von Hessen-Darmstadt"
+ HSD_centrism_party:0 "Liberale Fraktion"
+ HSD_traditional_conservatism_party:0 "Konservative Fraktion"
+ HSD_fundamentalism_party:0 "Zentrumsfraktion"
+ 
+ MCK_autocracy_party:0 "Haus von Mecklenburg"
+ MCK_centrism_party:0 "Nationalliberale Bewegung"
+ MCK_traditional_conservatism_party:0 "Konservative Bewegung"
+ MCK_radical_democracy_party:0 "Fraktion der Grundbesitzer"
+ 
+ NAS_autocracy_party:0 "Haus von Nassau"
+ NAS_centrism_party:0 "Liberale Fraktion"
+ NAS_traditional_conservatism_party:0 "Konservative Fraktion"
+ NAS_fundamentalism_party:0 "Katholische Fraktion"
+ 
+ SAX_autocracy_party:0 "Haus Wettin"
+ SAX_centrism_party:0 "Liberale Fraktion"
+ SAX_traditional_conservatism_party:0 "Konservative Fraktion"
+ SAX_social_egalitarianism_party:0 "Arbeiterbewegung"
+ SAX_fundamentalism_party:0 "Evangelische Kirche Sachsens"
+ 
+ THU_autocracy_party:0 "Haus von Sachsen-Weimar-Eisenach"
+ THU_centrism_party:0 "Liberale Fraktion"
+ THU_traditional_conservatism_party:0 "Konservative Fraktion"
+ 
+ BRE_centrism_party:0 "Fraktion der Kaufleute"
+ BRE_traditional_conservatism_party:0 "Fraktion der Gelehrten"
+ 
+ FRK_centrism_party:0 "Liberale Fraktion"
+ FRK_traditional_conservatism_party:0 "Konservative Fraktion"
+ 
+ HAM_centrism_party:0 "Fraktion der Rechten - Kaufleute"
+ HAM_traditional_conservatism_party:0 "Fraktion der Rechten - Notabeln"
+ HAM_social_egalitarianism_party:0 "Fraktion der Linken"
+ 
+ LCK_centrism_party:0 "Fraktion der Kaufleute"
+ LCK_traditional_conservatism_party:0 "Fraktion der Gelehrten"
+ LCK_radical_democracy_party:0 "Fraktion der Grundbesitzer"
+
+ SKT_autocracy_party:0 "Haus von Dan Fodio"
+ 
+ ROM_vanguard_communism_party:0 "Rumänische Kommune"
+ ROM_collectivist_socialism_party:0 "PSR"
+ ROM_social_egalitarianism_party:0 "PSD"
+ ROM_centrism_party:0 "PN"
+ ROM_traditional_conservatism_party:0 "PC"
+ ROM_radical_democracy_party:0 "PLR"
+ ROM_autocracy_party:0 "Statthalter des Sultans"
+ ROM_chauvinist_populism_party:0 "PND"
+ ROM_anarchism_party:0 "Anarchisten"
+ ROM_fundamentalism_party:0 "Partei des Landesrats"
+
+ ROM_vanguard_communism_party_long:0 "Partei der Rumänischen Kommune"
+ ROM_collectivist_socialism_party_long:0 "Sozialistische Partei (Radikal)"
+ ROM_social_egalitarianism_party_long:0 "Sozialdemokratische Partei"
+ ROM_centrism_party_long:0 "Nationale Partei"
+ ROM_traditional_conservatism_party_long:0 "Partei der Konservativen"
+ ROM_radical_democracy_party_long:0 "Nationalliberale Partei"
+ ROM_autocracy_party_long:0 "Statthalter des Sultans"
+ ROM_chauvinist_populism_party_long:0 "National-Demokratische Partei"
+ ROM_anarchism_party_long:0 "Anarchisten"
+ ROM_fundamentalism_party_long:0 "Partei des Landesrats"
+ 
+ MOL_vanguard_communism_party:0 "Rumänische Kommune"
+ MOL_collectivist_socialism_party:0 "PSR"
+ MOL_social_egalitarianism_party:0 "PSD"
+ MOL_centrism_party:0 "PN"
+ MOL_traditional_conservatism_party:0 "PC"
+ MOL_radical_democracy_party:0 "PLR"
+ MOL_autocracy_party:0 "Statthalter des Sultans"
+ MOL_chauvinist_populism_party:0 "PND"
+ MOL_anarchism_party:0 "Anarchisten"
+ MOL_fundamentalism_party:0 "Partei des Landesrats"
+
+ MOL_vanguard_communism_party_long:0 "Partei der Rumänischen Kommune"
+ MOL_collectivist_socialism_party_long:0 "Sozialistische Partei (Radikal)"
+ MOL_social_egalitarianism_party_long:0 "Sozialdemokratische Partei"
+ MOL_centrism_party_long:0 "Nationale Partei"
+ MOL_traditional_conservatism_party_long:0 "Partei der Konservativen"
+ MOL_radical_democracy_party_long:0 "Nationalliberale Partei"
+ MOL_autocracy_party_long:0 "Statthalter des Sultans"
+ MOL_chauvinist_populism_party_long:0 "National-Demokratische Partei"
+ MOL_anarchism_party_long:0 "Anarchisten"
+ MOL_fundamentalism_party_long:0 "Partei des Landesrats"
+ 
+ FTJ_fundamentalism_party:0 "Alfaya"
+ FTJ_autocracy_party:0 "Soriya"
+
+ SRW_autocracy_party:0 "Weiße Rajahs"
+
+ GLM_traditional_conservatism_party:0 "Konservative Volkspartei"
+ GLM_centrism_party:0 "Liberal-Demokratische Partei"
+
+ BTS_BTS_Party:0 "BTS"
+ BTS_BTS_Party_Long:0 "BTS"
+
+ JAI_Fire_Nation_Party:0 "Feuerpartei"
+ JAI_Fire_Nation_Party_Long:0 "Die Feuerpartei"
