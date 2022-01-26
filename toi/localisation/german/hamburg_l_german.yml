@@ -1,5 +1,27 @@
 ﻿l_german:
 
+ ###Focus
+ HAM_focus_germany_policy:0 "Deutschland-Politik"
+ HAM_focus_germany_policy_desc:0 "In diesen zunehmend schwierigen Zeiten sollten wir schauen, wie wir uns in der Frage der Deutschland-Politik positionieren."
+ HAM_focus_berlin_ambassador:0 "Botschafter nach Berlin schicken"
+ HAM_focus_berlin_ambassador_desc:0 "Indem wir einen Botschafter von uns nach Berlin schicken, könnten wir versuchen, bessere Beziehungen zu Preußen aufzubauen."
+ HAM_focus_vienna_ambassador:0 "Botschafter nach Wien schicken"
+ HAM_focus_vienna_ambassador_desc:0 "Indem wir einen Botschafter von uns nach Wien schicken, könnten wir versuchen, bessere Beziehungen zu Österreich aufzubauen."
+ HAM_focus_stay_neutral:0 "Hamburger Neutralität"
+ HAM_focus_stay_neutral_desc:0 "In diesen Zeiten sollten wir uns lieber nicht einmischen und versuchen zu allen gute Beziehungen zu erhalten."
+ HAM_focus_prussian_weapons:0 "Preußische Waffen kaufen"
+ HAM_focus_prussian_weapons_desc:0 "Wir haben ein Angebot von Preußen vorliegen, in welchem sie uns ihre Waffen verkaufen wollen."
+ HAM_focus_arms_trade:0 "Ausbau der Rüstungsindustrie"
+ HAM_focus_arms_trade_desc:0 "Anstatt Waffen von einem der Seiten zu kaufen und unsere Neutralität zu gefährden, sollten wir unsere heimische Industrie ankurbeln."
+ HAM_focus_austrian_weapons:0 "Österreichische Waffen kaufen"
+ HAM_focus_austrian_weapons_desc:0 "Wir haben ein Angebot von Österreich vorliegen, in welchem sie uns ihre Waffen verkaufen wollen."
+ HAM_focus_prussian_access:0 "Durchmarscherlaubnis für Preußen"
+ HAM_focus_prussian_access_desc:0 "Als Teil unserer verbesserten Beziehungen mit Preußen haben sie um unsere Erlaubnis gebeten, ihre Truppen durch Hamburg marschieren lassen zu können."
+ HAM_focus_austrian_access:0 "Durchmarscherlaubnis für Österreich"
+ HAM_focus_austrian_access:0 "Als Teil unserer verbesserten Beziehungen mit Österreich haben sie um unsere Erlaubnis gebeten, ihre Truppen durch Hamburg marschieren lassen zu können."
+ HAM_focus_fortify_city:0 "Stadt befestigen"
+ HAM_focus_fortify_city_desc:0 "Da wir uns weder auf Preußens noch Österreichs Seite gestellt haben, aber trotzdem ein strategisch wichtiger Standort sind, besteht dauernd die Gefahr, dass man uns einnehmen will. Um dem entgegenzuwirken, sollten wir Verteidigungsanlagen um die Stadt herum errichten."
+ 
  ###Flags 
  HAM_woermann_tradeport_gabon:0 "Niederlassung in Gabun"
  HAM_woermann_trading_company_idea:0 "C.Woermanns Handelsunternehmen"
