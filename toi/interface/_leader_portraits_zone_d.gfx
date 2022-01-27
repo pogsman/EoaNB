@@ -1,14 +1,14 @@
 # Japan
 spriteTypes = {
 	# Tokugawa
-	  spriteType = {
-	    name = "GFX_Portrait_TSH_Tokugawa_Crest"
-	    texturefile = "gfx/leaders/TSH/Portrait_TSH_Tokugawa_Crest.png"
-	  }
-	  spriteType = {
-	    name = "GFX_Portrait_TSH_Tokugawa_Crest_Small"
-	    texturefile = "gfx/leaders/TSH/small/Portrait_TSH_Tokugawa_Crest.png"
-	  }
+		spriteType = {
+			name = "GFX_Portrait_TSH_Tokugawa_Crest"
+			texturefile = "gfx/leaders/TSH/Portrait_TSH_Tokugawa_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TSH_Tokugawa_Crest_Small"
+			texturefile = "gfx/leaders/TSH/small/Portrait_TSH_Tokugawa_Crest.png"
+		}
 		spriteType = {
 			name = "GFX_Portrait_TSH_Tokugawa_Iesada"
 			texturefile = "gfx/leaders/TSH/Portrait_TSH_Tokugawa_Iesada.png"
@@ -226,6 +226,10 @@ spriteTypes = {
 			texturefile = "gfx/leaders/JAP/small/Portrait_JAP_Omura_Masujiro.png"
 		}
 		spriteType = {
+			name = "GFX_Portrait_JAP_Arisugawa_Taruhito"
+			texturefile = "gfx/leaders/JAP/Portrait_JAP_Arisugawa_Taruhito.png"
+		}
+		spriteType = {
 			name = "GFX_Portrait_JAP_Arisugawa_Taruhito_Small"
 			texturefile = "gfx/leaders/JAP/small/Portrait_JAP_Arisugawa_Taruhito.png"
 		}
@@ -263,8 +267,8 @@ spriteTypes = {
 			texturefile = "gfx/leaders/CHO/small/Portrait_CHO_Mori_Crest.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_CHO_Surata_Sheifu"
-			texturefile = "gfx/leaders/CHO/Portrait_CHO_Surata_Sheifu.png"
+			name = "GFX_Portrait_CHO_Murata_Sheifu"
+			texturefile = "gfx/leaders/CHO/Portrait_CHO_Murata_Sheifu.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_CHO_Surata_Sheifu_Small"
@@ -314,14 +318,7 @@ spriteTypes = {
 			name = "GFX_Portrait_CHO_Takasugi_Shinsaku_Small"
 			texturefile = "gfx/leaders/CHO/small/Portrait_CHO_Takasugi_Shinsaku.png"
 		}
-		spriteType = {
-			name = "GFX_Portrait_CHO_Masahisa"
-			texturefile = "gfx/leaders/CHO/Portrait_CHO_Masahisa.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_CHO_Kunishi_Shinano"
-			texturefile = "gfx/leaders/CHO/Portrait_CHO_Kunishi_Shinano.png"
-		}
+		
 	# Date
 		spriteType = {
 			name = "GFX_Portrait_DTE_Date_Yoshikuni"
@@ -455,6 +452,14 @@ spriteTypes = {
 			texturefile = "gfx/leaders/SAT/small/Portrait_SAT_Shimazu_Tadashige.png"
 		}
 		spriteType = {
+			name = "GFX_Portrait_SAT_Saigo_Tsugumichi"
+			texturefile = "gfx/leaders/SAT/Portrait_SAT_Saigo_Tsugumichi.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SAT_Saigo_Tsugumichi_Small"
+			texturefile = "gfx/leaders/SAT/small/Portrait_SAT_Saigo_Tsugumichi.png"
+		}
+		spriteType = {
 			name = "GFX_Portrait_SAT_Saigo_Takamori"
 			texturefile = "gfx/leaders/SAT/Portrait_SAT_Saigo_Takamori.png"
 		}
@@ -500,18 +505,10 @@ spriteTypes = {
 			texturefile = "gfx/leaders/SHI/small/Portrait_SHI_Sakai_Tadazumi.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_SHI_Sakai_Tadamichi"
-			texturefile = "gfx/leaders/SHI/Portrait_SHI_Sakai_Tadamichi.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_SHI_Sakai_Tadamichi_Small"
-			texturefile = "gfx/leaders/SHI/small/Portrait_SHI_Sakai_Tadamichi.png"
-		}
-		spriteType = {
 			name = "GFX_Portrait_SHI_Sakai_Tadamaasa_Small"
 			texturefile = "gfx/leaders/SHI/small/Portrait_SHI_Sakai_Tadamaasa.png"
 		}
-	# Tsu
+	# Tosa
 		spriteType = {
 			name = "GFX_Portrait_TOS_Yamauchi_Toyoshige"
 			texturefile = "gfx/leaders/TOS/Portrait_TOS_Yamauchi_Toyoshige.png"
@@ -525,8 +522,8 @@ spriteTypes = {
 			texturefile = "gfx/leaders/TOS/Portrait_TOS_Yamauchi_Toyonori.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_TOS_Yamauchi_Toyokage"
-			texturefile = "gfx/leaders/TOS/Portrait_TOS_Yamauchi_Toyokage.png"
+			name = "GFX_Portrait_TOS_Yamauchi_Crest"
+			texturefile = "gfx/leaders/TOS/Portrait_TOS_Yamauchi_Crest.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_TOS_Itagaki_Taisuke"
@@ -536,53 +533,18 @@ spriteTypes = {
 			name = "GFX_Portrait_TOS_Itagaki_Taisuke_Small"
 			texturefile = "gfx/leaders/TOS/small/Portrait_TOS_Itagaki_Taisuke.png"
 		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Yoshida_Toyo"
-			texturefile = "gfx/leaders/TOS/Portrait_TOS_Yoshida_Toyo.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Yoshida_Toyo_Small"
-			texturefile = "gfx/leaders/TOS/small/Portrait_TOS_Yoshida_Toyo.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Takechi_Hanpeita"
-			texturefile = "gfx/leaders/TOS/Portrait_TOS_Takechi_Hanpeita.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Takechi_Hanpeita_Small"
-			texturefile = "gfx/leaders/TOS/small/Portrait_TOS_Takechi_Hanpeita.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Okada_Izo"
-			texturefile = "gfx/leaders/TOS/Portrait_TOS_Okada_Izo.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Okada_Izo_Small"
-			texturefile = "gfx/leaders/TOS/small/Portrait_TOS_Okada_Izo.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Tanaka_Shinbei"
-			texturefile = "gfx/leaders/TOS/Portrait_TOS_Tanaka_Shinbei.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TOS_Tanaka_Shinbei_Small"
-			texturefile = "gfx/leaders/TOS/small/Portrait_TOS_Tanaka_Shinbei.png"
-		}
+	# Tsu
 		spriteType = {
 			name = "GFX_Portrait_TSU_Todo_Takayuki"
 			texturefile = "gfx/leaders/TSU/Portrait_TSU_Todo_Takayuki.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_TSU_Todo_Takayido"
-			texturefile = "gfx/leaders/TSU/Portrait_TSU_Todo_Takayido.png"
+			name = "GFX_Portrait_TSU_Todo_Crest"
+			texturefile = "gfx/leaders/TSU/Portrait_TSU_Todo_Crest.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_TSU_Todo_Heisuke"
-			texturefile = "gfx/leaders/TSU/Portrait_TSU_Todo_Heisuke.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_TSU_Todo_Heisuke_Small"
-			texturefile = "gfx/leaders/TSU/small/Portrait_TSU_Todo_Heisuke.png"
+			name = "GFX_Portrait_TSU_Todo_Crest_Small"
+			texturefile = "gfx/leaders/TSU/small/Portrait_TSU_Todo_Crest.png"
 		}
 }
 # Ezo
@@ -661,6 +623,21 @@ spriteTypes = {
 			texturefile = "gfx/leaders/EZO/Portrait_EZO_Kawai_Tsugunosuke.png"
 		}
 }
+# Korea
+spriteType = {
+    spriteType = {
+      name = "GFX_Portrait_KOR_Cheoljong"
+      texturefile = "gfx/leaders/KOR/Portrait_KOR_Cheoljong.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_KOR_Shin_Heon"
+      texturefile = "gfx/leaders/KOR/Portrait_KOR_Shin_Heon.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_KOR_Yi_Yong_Ik"
+      texturefile = "gfx/leaders/KOR/Portrait_KOR_Yi_Yong_Ik.png"
+    }
+}
 # Burma
 spriteTypes = {
 	#Kings
@@ -735,6 +712,30 @@ spriteTypes = {
 			texturefile = "gfx/leaders/BRM/Portrait_BRM_Maha_Hkanan.png"
 		}
 }
+# Kengtung
+spriteTypes = {
+  # Saophas
+		spriteType = {
+			name = "GFX_Portrait_SHN_Kengtung_Crest"
+			texturefile = "gfx/leaders/SHN/Portrait_SHN_Kengtung_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SHN_Kawn_Kiao_Intaleng"
+			texturefile = "gfx/leaders/SHN/Portrait_SHN_Kawn_Kiao_Intaleng.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SHN_Kaung_Tai"
+			texturefile = "gfx/leaders/SHN/Portrait_SHN_Kaung_Tai.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SHN_Chao_Sirisuwan_Rajasornpornmul"
+			texturefile = "gfx/leaders/SHN/Portrait_SHN_Chao_Sirisuwan_Rajasornpornmul.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SHN_Chao_Jayluang_Manrai"
+			texturefile = "gfx/leaders/SHN/Portrait_SHN_Chao_Jayluang_Manrai.png"
+		}
+}
 # Vietnam
 spriteTypes = {
 	# Emperors
@@ -743,8 +744,12 @@ spriteTypes = {
 			texturefile = "gfx/leaders/VIN/Portrait_VIN_Nguyen_Tu_Duc.png"
 		}
 		spriteType = {
-			name = "GFX_Portrait_VIN_Nguyen_Duc_Duc"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Nguyen_Duc_Duc.png"
+			name = "GFX_Portrait_VIN_Nguyen_Crest"
+			texturefile = "gfx/leaders/VIN/Portrait_VIN_Nguyen_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_VIN_Nguyen_Crest_Small"
+			texturefile = "gfx/leaders/VIN/small/Portrait_VIN_Nguyen_Crest.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_VIN_Nguyen_Hiep_Hoa"
@@ -791,30 +796,6 @@ spriteTypes = {
 			texturefile = "gfx/leaders/VIN/Portrait_VIN_Nguyen_Bao_Ngoc.png"
 		}
 	# Generals
-		spriteType = {
-			name = "GFX_Portrait_VIN_Nguyen_Tri_Phuang"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Nguyen_Tri_Phuang.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_VIN_Nguyen_Tri_Phuang_Small"
-			texturefile = "gfx/leaders/VIN/small/Portrait_VIN_Nguyen_Tri_Phuang.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_VIN_Minh_Zhou_Phuc"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Minh_Zhou_Phuc.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_VIN_Tam_Dao_Tri_Tham_Pham_Khac"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Tam_Dao_Tri_Tham_Pham_Khac.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_VIN_Hong_Tran"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Hong_Tran.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_VIN_Ly_Le_Dinh"
-			texturefile = "gfx/leaders/VIN/Portrait_VIN_Ly_Le_Dinh.png"
-		}
 }
 # Phuan
 spriteTypes = {
@@ -1070,94 +1051,326 @@ spriteTypes = {
 }
 # Brunei
 spriteTypes = {
-  # Sultans
-    spriteType = {
-      name = "GFX_Portrait_BRU_Abdul_Momin"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Abdul_Momin.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Abdul_Momin_Small"
-      texturefile = "gfx/leaders/BRU/small/Portrait_BRU_Abdul_Momin.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Abdul_Momin"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Abdul_Momin.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin_Small"
-      texturefile = "gfx/leaders/BRU/small/Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Muhammad_Jamalul_Alam_II"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Muhammad_Jamalul_Alam_II.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Ahmad_Tajuddin_Akhazul_Khairi_Waddien"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Ahmad_Tajuddin_Akhazul_Khairi_Waddien.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Omar_Ali_Saifuddien_Sa_Adul_Khairi_Waddien"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Omar_Ali_Saifuddien_Sa_Adul_Khairi_Waddien.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Hassanal_Bolkiah"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Hassanal_Bolkiah.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_BRU_Muhtadee_Billah"
-      texturefile = "gfx/leaders/BRU/Portrait_BRU_Muhtadee_Billah.png"
-    }
+	# Sultans
+		spriteType = {
+			name = "GFX_Portrait_BRU_Abdul_Momin"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Abdul_Momin.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Abdul_Momin_Small"
+			texturefile = "gfx/leaders/BRU/small/Portrait_BRU_Abdul_Momin.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Abdul_Momin"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Abdul_Momin.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin_Small"
+			texturefile = "gfx/leaders/BRU/small/Portrait_BRU_Hashim_Jalilul_Alam_Aqamaddin.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Muhammad_Jamalul_Alam_II"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Muhammad_Jamalul_Alam_II.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Ahmad_Tajuddin_Akhazul_Khairi_Waddien"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Ahmad_Tajuddin_Akhazul_Khairi_Waddien.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Omar_Ali_Saifuddien_Sa_Adul_Khairi_Waddien"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Omar_Ali_Saifuddien_Sa_Adul_Khairi_Waddien.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Hassanal_Bolkiah"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Hassanal_Bolkiah.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_BRU_Muhtadee_Billah"
+			texturefile = "gfx/leaders/BRU/Portrait_BRU_Muhtadee_Billah.png"
+		}
 }
 # Strait Settlements
 spriteTypes = {
-  # Governor
-    spriteType = {
-      name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh"
-      texturefile = "gfx/leaders/SGP/Portrait_SGP_William_Orfeur_Cavenaugh.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh_Small"
-      texturefile = "gfx/leaders/SGP/small/Portrait_SGP_William_Orfeur_Cavenaugh.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_SGP_Harry_Ord"
-      texturefile = "gfx/leaders/SGP/Portrait_SGP_Harry_Ord.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_SGP_Cecil_Clementi_Smith"
-      texturefile = "gfx/leaders/SGP/Portrait_SGP_Cecil_Clementi_Smith.png"
-    }
-    spriteType = {
-      name = "GFX_Portrait_SGP_Cecil_Clementi_Smith_Small"
-      texturefile = "gfx/leaders/SGP/small/Portrait_SGP_Cecil_Clementi_Smith.png"
-    } 
+	# Governor
+		spriteType = {
+			name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh"
+			texturefile = "gfx/leaders/SGP/Portrait_SGP_William_Orfeur_Cavenaugh.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh_Small"
+			texturefile = "gfx/leaders/SGP/small/Portrait_SGP_William_Orfeur_Cavenaugh.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SGP_Harry_Ord"
+			texturefile = "gfx/leaders/SGP/Portrait_SGP_Harry_Ord.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SGP_Cecil_Clementi_Smith"
+			texturefile = "gfx/leaders/SGP/Portrait_SGP_Cecil_Clementi_Smith.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SGP_Cecil_Clementi_Smith_Small"
+			texturefile = "gfx/leaders/SGP/small/Portrait_SGP_Cecil_Clementi_Smith.png"
+		}
 }
 # Johor
 spriteTypes = {
+	# Sultans
+		spriteType = {
+			name = "GFX_Portrait_JOH_Abu_Bakar_Al_Kalil_Temenggong"
+			texturefile = "gfx/leaders/JOH/Portrait_JOH_Abu_Bakar_Al_Kalil_Temenggong.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_JOH_Ibrahim_Iskandar_Al_Masyhur_Temenggong"
+			texturefile = "gfx/leaders/JOH/Portrait_JOH_Ibrahim_Iskandar_Al_Masyhur_Temenggong.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_JOH_Ismail_Al_Khalidi_Temenggong"
+			texturefile = "gfx/leaders/JOH/Portrait_JOH_Ismail_Al_Khalidi_Temenggong.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_JOH_Mahmud_Iskandar_Al_Haj_Temenggong"
+			texturefile = "gfx/leaders/JOH/Portrait_JOH_Mahmud_Iskandar_Al_Haj_Temenggong.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_JOH_Ibrahim_Ismail_Temenggong"
+			texturefile = "gfx/leaders/JOH/Portrait_JOH_Ibrahim_Ismail_Temenggong.png"
+		}
+}
+# Kelantan
+spriteTypes = {
+	# Sultans
+		spriteType = {
+			name = "GFX_Portrait_KTN_Patani_Crest"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Patani_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Patani_Crest_Small"
+			texturefile = "gfx/leaders/KTN/small/Portrait_KTN_Patani_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Muhammad_Temenggong_Patani_IV"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Muhammad_Temenggong_Patani_IV.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Ismail_Temenggong_Patani"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Ismail_Temenggong_Patani.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Ibrahim_Temenggong_Patani"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Ibrahim_Temenggong_Patani.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Yahya_Petra_Temenggong_Patani"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Yahya_Petra_Temenggong_Patani.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Ismail_Petra_Temenggong_Pattani"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Ismail_Petra_Temenggong_Pattani.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Muhammad_Temenggong_Patani_V"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Muhammad_Temenggong_Patani_V.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_KTN_Muhammad_Temenggong_Patani_VI"
+			texturefile = "gfx/leaders/KTN/Portrait_KTN_Muhammad_Temenggong_Patani_VI.png"
+		}
+}
+# Terengganu
+spriteTypes = {
+	# Sultan
+		spriteType = {
+			name = "GFX_Portrait_TGG_Bendahara_Crest"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Bendahara_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Bendahara_Crest_Small"
+			texturefile = "gfx/leaders/TGG/small/Portrait_TGG_Bendahara_Crest.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Haji_Zainal_Abidin_Shah_Bendahara_II"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Haji_Zainal_Abidin_Shah_Bendahara_II.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Muhammad_Shah_Bendahara_II"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Muhammad_Shah_Bendahara_II.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Sulaiman_Badrul_Alam_Shah_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Sulaiman_Badrul_Alam_Shah_Bendahara.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Ali_Shah_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Ali_Shah_Bendahara.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Ismail_Nasiruddin_Shah_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Ismail_Nasiruddin_Shah_Bendahara.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Mahmud_Al_Muktafi_Billah_Shah_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Mahmud_Al_Muktafi_Billah_Shah_Bendahara.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Mizan_Zainal_Abidin_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Mizan_Zainal_Abidin_Bendahara.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_TGG_Muhammad_Ismail_Bendahara"
+			texturefile = "gfx/leaders/TGG/Portrait_TGG_Muhammad_Ismail_Bendahara.png"
+		}
+}
+# Kedah
+spriteTypes = {
   # Sultans
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Mahawanga_Seal"
+  		texturefile = "gfx/leaders/KDH/Portrait_KDH_Mahawanga_Seal.png"
+  	}
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Abdul_Hamid_Halim_Shah_Mahawangsa_II"
+  		texturefile = "gfx/leaders/KDH/Portrait_KDH_Abdul_Hamid_Halim_Shah_Mahawangsa_II.png"
+  	}
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Badlishah_Shah_Mahawangsa_II"
+  		texturefile = "gfx/leaders/KDH/Portrait_KDH_Badlishah_Shah_Mahawangsa_II.png"
+  	}
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Abdul_Halim_Mu_Adzam_Shah_Mahawangsa_II"
+  		texturefile = "gfx/leaders/KDH/Portrait_KDH_Abdul_Halim_Mu_Adzam_Shah_Mahawangsa_II.png"
+  	}
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Sallehuddin_Shah_Mahawangsa"
+  		texturefile = "gfx/leaders/KDH/Portrait_KDH_Sallehuddin_Shah_Mahawangsa.png"
+  	}
+  	spriteType = {
+  		name = "GFX_Portrait_KDH_Sarafuddin_Bandlishah_Shah_Mahawangsa"
+  		texturefile = "gfx/leaders/KDH/GFX_Portrait_KDH_Sarafuddin_Bandlishah_Shah_Mahawangsa.png"
+  	}
+}
+# Pahang
+spriteTypes = {
+  # Sultan
     spriteType = {
-      name = "GFX_Portrait_JOH_Abu_Bakar_Al_Kalil_Temenggong"
-      texturefile = "gfx/leaders/JOH/Portrait_JOH_Abu_Bakar_Al_Kalil_Temenggong.png"
+      name = "GFX_Portrait_PHG_Tun_Mutahir_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Tun_Mutahir_Bendahara.png"
     }
     spriteType = {
-      name = "GFX_Portrait_JOH_Ibrahim_Iskandar_Al_Masyhur_Temenggong"
-      texturefile = "gfx/leaders/JOH/Portrait_JOH_Ibrahim_Iskandar_Al_Masyhur_Temenggong.png"
+      name = "GFX_Portrait_PHG_Tun_Ahmad_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Tun_Ahmad_Bendahara.png"
     }
     spriteType = {
-      name = "GFX_Portrait_JOH_Ismail_Al_Khalidi_Temenggong"
-      texturefile = "gfx/leaders/JOH/Portrait_JOH_Ismail_Al_Khalidi_Temenggong.png"
+      name = "GFX_Portrait_PHG_Tun_Long_Mahmad_Shah_Bendahara_II"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Tun_Long_Mahmad_Shah_Bendahara_II.png"
     }
     spriteType = {
-      name = "GFX_Portrait_JOH_Mahmud_Iskandar_Al_Haj_Temenggong"
-      texturefile = "gfx/leaders/JOH/Portrait_JOH_Mahmud_Iskandar_Al_Haj_Temenggong.png"
+      name = "GFX_Portrait_PHG_Abdullah_Al_Mutassim_Billah_Shah_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Abdullah_Al_Mutassim_Billah_Shah_Bendahara.png"
     }
     spriteType = {
-      name = "GFX_Portrait_JOH_Ibrahim_Ismail_Temenggong"
-      texturefile = "gfx/leaders/JOH/Portrait_JOH_Ibrahim_Ismail_Temenggong.png"
+      name = "GFX_Portrait_PHG_Abu_Bakar_Ri_ayatuddin_Al_Muazzam_Shah_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Abu_Bakar_Ri_ayatuddin_Al_Muazzam_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PHG_Ahmad_Shah_Al_Mustain_Billah_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Ahmad_Shah_Al_Mustain_Billah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PHG_Abdullah_Ri_Ayatuddin_Al_Mustafa_Billah_Shah_Bendahara"
+      texturefile = "gfx/leaders/PHG/Portrait_PHG_Abdullah_Ri_Ayatuddin_Al_Mustafa_Billah_Shah_Bendahara.png"
+    }
+}
+# Perak
+spriteTypes = {
+  # Sultan
+    spriteType = {
+      name = "GFX_Portrait_PRK_Perak_Crest"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Perak_Crest.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Ali_Al_Mukammal_Inayat_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Ali_Al_Mukammal_Inayat_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Ismail_Mu_Abidin_Riayat_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Ismail_Mu_Abidin_Riayat_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Abdullah_Muhammad_Shah_Bendahara_II"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Abdullah_Muhammad_Shah_Bendahara_II.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Yusuf_Sharifuddin_Muzaffar_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Yusuf_Sharifuddin_Muzaffar_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Idris_Murshidul_Azzam_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Idris_Murshidul_Azzam_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Abdul_Jalil_Nasiruddin_Muhtaram_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Abdul_Jalil_Nasiruddin_Muhtaram_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Iskandar_Shah"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Iskandar_Shah.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Abdul_Aziz_Al_Mutasim_Billah_Shah_Iskandariah"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Abdul_Aziz_Al_Mutasim_Billah_Shah_Iskandariah.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Yussuff_Izzuddin_Shah_Iskandariah"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Yussuff_Izzuddin_Shah_Iskandariah.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Idris_Iskandar_Al_Mutawakkil_Alallahi_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Idris_Iskandar_Al_Mutawakkil_Alallahi_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Azlan_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Azlan_Shah_Bendahara.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_PRK_Nazrin_Shah_Bendahara"
+      texturefile = "gfx/leaders/PRK/Portrait_PRK_Nazrin_Shah_Bendahara.png"
+    }
+}
+# Selangor
+spriteTypes = {
+  # Sultan
+    spriteType = {
+      name = "GFX_Portrait_SLG_Abdul_Samad_Shah_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Abdul_Samad_Shah_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Alaeddin_Sulaiman_Shah_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Alaeddin_Sulaiman_Shah_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Hisamuddin_Alam_Shah_Al_Haj_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Hisamuddin_Alam_Shah_Al_Haj_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Musa_Ghiatuddin_Riayat_Shah_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Musa_Ghiatuddin_Riayat_Shah_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Salahuddin_Abdul_Aziz_Shah_Al_Haj_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Salahuddin_Abdul_Aziz_Shah_Al_Haj_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Sarafuddin_Idris_Shah_Al_Haj_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Sarafuddin_Idris_Shah_Al_Haj_Opu_Daeng_Celak.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_SLG_Amir_Shah_Al_Haj_Opu_Daeng_Celak"
+      texturefile = "gfx/leaders/SLG/Portrait_SLG_Amir_Shah_Al_Haj_Opu_Daeng_Celak.png"
     }
 }
 # East India Company
@@ -1165,56 +1378,56 @@ spriteTypes = {
 spriteTypes = {
 	# Bhutan
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Kunga_Palden"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Kunga_Palden.png"
+			name = "GFX_Portrait_BHU_Kunga_Palden"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Kunga_Palden.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Phuntsho_Namgyel"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Phuntsho_Namgyel.png"
+			name = "GFX_Portrait_BHU_Phuntsho_Namgyel"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Phuntsho_Namgyel.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Tshewang_Sithub"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Tshewang_Sithub.png"
+			name = "GFX_Portrait_BHU_Tshewang_Sithub"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Tshewang_Sithub.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Tsulthrim_Yonten"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Tsulthrim_Yonten.png"
+			name = "GFX_Portrait_BHU_Tsulthrim_Yonten"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Tsulthrim_Yonten.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Kagyud_Wangchuk"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Kagyud_Wangchuk.png"
+			name = "GFX_Portrait_BHU_Kagyud_Wangchuk"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Kagyud_Wangchuk.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Tsondul_Pekar"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Tsondul_Pekar.png"
+			name = "GFX_Portrait_BHU_Tsondul_Pekar"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Tsondul_Pekar.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Jigme_Namgyel"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Jigme_Namgyel.png"
+			name = "GFX_Portrait_BHU_Jigme_Namgyel"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Jigme_Namgyel.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Kitshab_Dorji_Namgyel"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Kitshab_Dorji_Namgyel.png"
+			name = "GFX_Portrait_BHU_Kitshab_Dorji_Namgyel"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Kitshab_Dorji_Namgyel.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Chogyel_Zangpo"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Chogyel_Zangpo.png"
+			name = "GFX_Portrait_BHU_Chogyel_Zangpo"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Chogyel_Zangpo.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Lam_Tshewang"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Lam_Tshewang.png"
+			name = "GFX_Portrait_BHU_Lam_Tshewang"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Lam_Tshewang.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Gawa_Zangpo"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Gawa_Zangpo.png"
+			name = "GFX_Portrait_BHU_Gawa_Zangpo"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Gawa_Zangpo.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_BHU_Sangye_Dorji"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Sangye_Dorji.png"
+			name = "GFX_Portrait_BHU_Sangye_Dorji"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Sangye_Dorji.png"
 		}
-	  spriteType = {
-		  name = "GFX_Portrait_BHU_Choley_Yeshe_Ngodub"
-		  texturefile = "gfx/leaders/BHU/Portrait_BHU_Choley_Yeshe_Ngodub.png"
+		spriteType = {
+			name = "GFX_Portrait_BHU_Choley_Yeshe_Ngodub"
+			texturefile = "gfx/leaders/BHU/Portrait_BHU_Choley_Yeshe_Ngodub.png"
 		}
 	# Bikaner
 		spriteType = {
@@ -1222,8 +1435,8 @@ spriteTypes = {
 			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Khande_Rao_Gaekwad.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_GUJ_Malhar_Rao_Gaekwad"
-		  texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Malhar_Rao_Gaekwad.png"
+			name = "GFX_Portrait_GUJ_Malhar_Rao_Gaekwad"
+			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Malhar_Rao_Gaekwad.png"
 		}
 	# Gujarat
 		spriteType = {
@@ -1231,19 +1444,57 @@ spriteTypes = {
 			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Khande_Rao_Gaekwad.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_GUJ_Malhar_Rao_Gaekwad"
-		  texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Malhar_Rao_Gaekwad.png"
+			name = "GFX_Portrait_GUJ_Malhar_Rao_Gaekwad"
+			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Malhar_Rao_Gaekwad.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_GUJ_Sayaji_Rao_Gaekwad_III"
 			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Sayaji_Rao_Gaekwad_III.png"
 		}
 		spriteType = {
-		  name = "GFX_Portrait_GUJ_Pratap_Singh_Rao_Gaekwad"
-		  texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Pratap_Singh_Rao_Gaekwad.png"
+			name = "GFX_Portrait_GUJ_Pratap_Singh_Rao_Gaekwad"
+			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Pratap_Singh_Rao_Gaekwad.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_GUJ_Fatah_Singh_Rao_Gaekwad"
 			texturefile = "gfx/leaders/GUJ/Portrait_GUJ_Fatah_Singh_Rao_Gaekwad.png"
 		}
+}
+# Central Asia
+spriteTypes = {
+  # Bukara
+    spriteType = {
+      name = "GFX_Portrait_BUK_Nasr_Allah_Khan_Manghit"
+      texturefile = "gfx/leaders/BUK/Portrait_BUK_Nasr_Allah_Khan_Manghit.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_BUK_Muzaffar_Manghit"
+      texturefile = "gfx/leaders/BUK/Portrait_BUK_Muzaffar_Manghit.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_BUK_Abd_Al_Ahad_Manghud"
+      texturefile = "gfx/leaders/BUK/Portrait_BUK_Abd_Al_Ahad_Manghud.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_BUK_Sayyid_Mir_Muhammad_Alim_Khan_Manghud"
+      texturefile = "gfx/leaders/BUK/Portrait_BUK_Sayyid_Mir_Muhammad_Alim_Khan_Manghud.png"
+    }
+  # Khiva
+    spriteType = {
+      name = "GFX_Portrait_KHI_Muhammad_Rahim_Bahadur_II"
+      texturefile = "gfx/leaders/KHI/Portrait_KHI_Muhammad_Rahim_Bahadur_II.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_KHI_Isfandiyar_Khan_Bahadur_Qungrat"
+      texturefile = "gfx/leaders/KHI/Portrait_KHI_Isfandiyar_Khan_Bahadur_Qungrat.png"
+    }
+    spriteType = {
+      name = "GFX_Portrait_KHI_Sayid_Abdullah_Qungrat"
+      texturefile = "gfx/leaders/KHI/Portrait_KHI_Sayid_Abdullah_Qungrat.png"
+    }
+  # Kokand
+    spriteType = {
+      name = "GFX_Portrait_KHI_Muhammad_Rahim_Bahadur_II"
+      texturefile = "gfx/leaders/BUK/Portrait_KHI_Muhammad_Rahim_Bahadur_II.png"
+    }
 }

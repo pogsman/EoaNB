@@ -1634,7 +1634,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_military_reforms
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_ENG_military_reforms
 		x = 25
 		y = 1
 		cost = 70
@@ -1653,7 +1653,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_doctrines_adaptation
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_focus_ENG_new_doctrines
 		x = 25
 		y = 2
 		cost = 75
@@ -1714,7 +1714,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_modern_weapons
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_focus_ENG_modernized_army_equipment
 		x = 27
 		y = 2
 		cost = 80
@@ -1752,7 +1752,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_artillery_support
-		icon = GFX_goal_generic_army_artillery2
+		icon = GFX_focus_ENG_artillery_support
 		x = 27
 		y = 4
 		cost = 70
@@ -1771,7 +1771,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_army_plan
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_ENG_new_army_plan
 		x = 30
 		y = 1
 		cost = 50
@@ -3673,8 +3673,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_focus_the_isle_of_man_question
-		icon = GFX_goal_focus_government_glass
+		id = ENG_focus_the_calais_question
+		icon = GFX_goal_focus_colonial_empire_france
 		x = 66
 		y = 1
 		cost = 30
@@ -3683,27 +3683,6 @@ focus_tree = {
 			factor = 40
 		}
 		prerequisite = { focus = ENG_focus_address_political_economic_matters }
-		available = {
-			owns_state = 1152
-		}
-		search_filters = {  FOCUS_FILTER_POLITICAL }
-		
-		completion_reward = {
-			country_event = { id = britainfocus.2 random = 12 }
-		}
-	}
-
-	focus = {
-		id = ENG_focus_the_calais_question
-		icon = GFX_goal_focus_colonial_empire_france
-		x = 66
-		y = 2
-		cost = 30
-		available_if_capitulated = no
-		ai_will_do = {
-			factor = 40
-		}
-		prerequisite = { focus = ENG_focus_the_isle_of_man_question }
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
@@ -3715,7 +3694,7 @@ focus_tree = {
 		id = ENG_focus_imperialist_economic_interests
 		icon = GFX_focus_Colonial_Troops
 		x = 66
-		y = 3
+		y = 2
 		cost = 30
 		available_if_capitulated = no
 		ai_will_do = {
@@ -3733,7 +3712,7 @@ focus_tree = {
 		id = ENG_focus_demand_japanese_trade_port
 		icon = GFX_goal_focus_JAP_science_eng_navy
 		x = 66
-		y = 4
+		y = 3
 		cost = 30
 		available_if_capitulated = no
 		ai_will_do = {
@@ -5714,7 +5693,7 @@ focus_tree = {
 		
 		completion_reward = {
 
-			country_event = britainpolitical.2
+			country_event = britain.69
 
 		}
 	}
@@ -5750,7 +5729,7 @@ focus_tree = {
 		
 		completion_reward = {
 
-			ENG = { country_event = { id = britainpolitical.1 days = 10 } }
+			ENG = { country_event = { id = britain.68 days = 10 } }
 			country_event = britainfocus.12
 		}
 	}
@@ -6150,11 +6129,11 @@ focus_tree = {
 		completion_reward = {
 
 			random_list = {
-				20 = {country_event = { id= britainpoliticalflavour.4 days = 10 } }
+				20 = {country_event = { id= britain.56 days = 10 } }
 				80 = {}
 
 			}
-			country_event = britainpolitical.5
+			country_event = britain.72
 		}
 	}
 
@@ -6358,7 +6337,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainpolitical.6
+			country_event = britain.73
 			country_event = britainfocus.23
 			ENG = { country_event = { id = britainfocus.26 days = 90 } }
 			USA = { country_event = { id = britainfocus.26 days = 90 } }
@@ -6601,7 +6580,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainpolitical.7
+			country_event = britain.74
 		}
 	}
 

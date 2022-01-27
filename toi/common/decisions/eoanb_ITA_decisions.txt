@@ -274,7 +274,6 @@ ITA_decisions_category_wars_and_conflicts = {
 			PAP = {
 				country_event = {
 					id = sardinia.187
-					days = 1
 				}
 			}
 		}
@@ -1606,7 +1605,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			always = no
 		}
 		is_good = yes
-		days_mission_timeout = 250
+		days_mission_timeout = 300
 		available = {
 			OR = {
 				custom_trigger_tooltip = {
@@ -1691,7 +1690,7 @@ ITA_decisions_category_wars_and_conflicts = {
 					}
 					date < 1862.1.1
 				}
-				activate_mission = ITA_War_Mission_PAP
+				activate_mission = ITA_War_Mission_NSC_Expedition
 			}
 			else_if = {
 				limit = {
@@ -1758,6 +1757,11 @@ ITA_decisions_category_wars_and_conflicts = {
 			news_event = {
 				id = sardinia_news.16
 			}
+			FRA = {
+				country_event = {
+					id = sardinia.194
+				}
+			}
 		}
 		timeout_effect = {
 			activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
@@ -1809,6 +1813,60 @@ ITA_decisions_category_wars_and_conflicts = {
 		}
 		timeout_effect = {
 			activate_mission = ITA_War_Mission_Expedition_Palermo_Uprising
+		}
+	}
+	ITA_War_Mission_Expedition_Real_Marina = {
+		### NSC navy defects to PIE
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		available = {
+			CBI = {
+				controls_province = 4159
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.206
+			}
+			NSC = {
+			country_event = sardinia.207
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Expedition_Real_Marina
+		}
+	}
+	ITA_War_Mission_Expedition_Apulia = {
+		### Apulia joins Sardinia
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		available = {
+			CBI = {
+				controls_province = 10027
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.208
+			}
+			NSC = {
+			country_event = sardinia.209
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Expedition_Apulia
 		}
 	}
 	ITA_2IP_Mobilization_War_Imiment = {

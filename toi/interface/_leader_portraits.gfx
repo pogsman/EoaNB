@@ -121,6 +121,15 @@ spriteTypes = {
 		name = "GFX_Portrait_BEL_Victor_Dave"
 		texturefile = "gfx/leaders/BEL/Portrait_BEL_Victor_Dave.png"
 	}
+	##BRA
+	spriteType = {
+		name = "GFX_Portrait_BRA_Pedro_II"
+		texturefile = "gfx/leaders/BRA/Portrait_BRA_Pedro_II.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_BRA_Pedro_IIyoung"
+		texturefile = "gfx/leaders/BRA/Portrait_BRA_Pedro_IIyoung.png"
+	}
 
 	### BRE
 
@@ -966,6 +975,30 @@ spriteTypes = {
 	}
 
 	###CAN
+	spriteType = {
+		name = "GFX_Portrait_CAN_Edmund_Walker_Head"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_Edmund_Walker_Head.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAN_Robert_Baldwin"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_Robert_Baldwin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAN_George_Brown"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_George_Brown.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAN_George_Etienne_Cartier"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_George_Etienne_Cartier.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAN_Joseph_Howe"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_Joseph_Howe.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAN_Joseph_Bruno_Guigues"
+		textureFile = "gfx/leaders/CAN/Portrait_CAN_Joseph_Bruno_Guigues.png"
+	}
 	spriteType = {
 		name = "GFX_CAN_bert_hoffmeister"
 		textureFile = "gfx//leaders//ENG//Portrait_Britain_Generic_land_1.dds"

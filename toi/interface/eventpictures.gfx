@@ -1844,7 +1844,6 @@ spriteTypes = {
 		name = "GFX_event_flavor_usa_pony_express"
 		texturefile = "gfx/event_pictures/flavor/event_flavor_usa_pony_express.png"
 	}
-	
 
 	### KOREAN EVENTS  #####
 
@@ -4172,6 +4171,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_plague_japanese_report"
 		texturefile = "gfx/event_pictures/japan/report_event_plague_japanese_report.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_japan_victorian_railroad"
+		texturefile = "gfx/event_pictures/japan/news_event_japan_victorian_railroad.dds"
 	}
 	
 	## Bolivian Events ##
