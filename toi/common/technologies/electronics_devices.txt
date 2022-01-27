@@ -3146,6 +3146,10 @@ technologies = {
 		enable_equipment_modules = { 
 			ship_radar_1
 		}
+		enable_building = {
+			building = radar_station
+			level = 1
+		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
 		army_bonus_air_superiority_factor = 0.02
@@ -3184,6 +3188,10 @@ technologies = {
 		}
 		enable_equipment_modules = { 
 			ship_radar_2
+		}
+		enable_building = {
+			building = radar_station
+			level = 3
 		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
@@ -3224,6 +3232,10 @@ technologies = {
 		enable_equipment_modules = { 
 			ship_radar_3
 		}
+		enable_building = {
+			building = radar_station
+			level = 4
+		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
 		army_bonus_air_superiority_factor = 0.02
@@ -3263,6 +3275,10 @@ technologies = {
 		enable_equipment_modules = { 
 			ship_radar_4
 		}
+		enable_building = {
+			building = radar_station
+			level = 5
+		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
 		army_bonus_air_superiority_factor = 0.02
@@ -3301,6 +3317,10 @@ technologies = {
 		}
 		enable_equipment_modules = { 
 			ship_radar_5
+		}
+		enable_building = {
+			building = radar_station
+			level = 6
 		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
@@ -3345,6 +3365,10 @@ technologies = {
 		}
 		enable_equipment_modules = { 
 			ship_radar_6
+		}
+		enable_building = {
+			building = radar_station
+			level = 7
 		}
 		amphibious_invasion = 0.02
 		land_reinforce_rate = 0.02
