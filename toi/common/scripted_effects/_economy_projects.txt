@@ -18,7 +18,7 @@
 #   set_temp_variable = { id_temp = ID }
 #   proj_create = yes
 #   
-#   where ID is the ID of the project you are using. This will add the project to your country to complete.
+#   where ID is the ID of the project you are using. This will add the project to your country to complete. If a project with the same ID is already in progress, this effect will do nothing.
 #
 #   For those who love changing scope: Make sure to include both of these TOGETHER in the same scope. Changing scopes and refering to a temporary variable in a previous scope does not work.
 #
@@ -71,20 +71,44 @@ proj_setup = {
     add_to_array = { global.proj_raw_goods_base_build_speed = 0 }
     add_to_array = { global.proj_industrial_goods_base_need = 0 }
     add_to_array = { global.proj_industrial_goods_base_build_speed = 0 }
-    add_to_array = { global.proj_repeatable = 0 } # 0: Defaults to 3 
+    add_to_array = { global.proj_repeatable = 0 } # 0: This project, when finished, can be started again. (Ex. Work Programs) 
                                                   # 1: This project, when finished, can never be started again for ANY country. (Ex. Statue of Liberty)
                                                   # 2: This project, when finished, can never be started again only for THIS country. (Ex. National Library)
-                                                  # 3: This project, when finished, can be started again. (Ex. Construct Highways)
-                                                  # 4: This project, when finished, will repeat until stopped. (Ex. Work Programs)
     add_to_array = { global.proj_relative = 0 } #0: The values for need & speed are absolute
                                                 #1: The values for need & speed are based off of population (every 100K pops)
-                                                #2: the values for need & speed are based off of GDP (every $100)
+                                                #2: the values for need & speed are based off of yearly GDP (every $100)
                                                 #3: the values for need & speed are based off of a temporary variable (relative_temp)
                                                 #   which acts as a modifier (where 100 = 1.0x). Useage is just like id_temp with proj_create:
                                                 #
                                                 #   set_temp_variable = { id_temp = ID }
                                                 #   set_temp_variable = { relative_temp = NUM }
                                                 #   proj_create = yes
+    ################################
+    # Generics: 0.001 <--> 999.999 #
+    ################################
+
+    # ID 1: Work Programs
+    #   A repeatable project fired usually by decision. Work programs are relief programs designed to get people back to work. 
+    #   In-game, upon completion, it grants some stability & consumer confidence.
+    add_to_array = { global.proj_id = 1 }
+    add_to_array = { global.proj_life_goods_base_need = 0.24 }
+    add_to_array = { global.proj_life_goods_base_build_speed = 0.02 }
+    add_to_array = { global.proj_everyday_goods_base_need = 0.24 }
+    add_to_array = { global.proj_everyday_goods_base_build_speed = 0.02 }
+    add_to_array = { global.proj_luxury_goods_base_need = 0.12 }
+    add_to_array = { global.proj_luxury_goods_base_build_speed = 0.01 }
+    add_to_array = { global.proj_services_base_need = 0.12 }
+    add_to_array = { global.proj_services_base_build_speed = 0.01 }
+    add_to_array = { global.proj_raw_goods_base_need = 0 }
+    add_to_array = { global.proj_raw_goods_base_build_speed = 0 }
+    add_to_array = { global.proj_industrial_goods_base_need = 0.6 }
+    add_to_array = { global.proj_industrial_goods_base_build_speed = 0.05 }
+    add_to_array = { global.proj_repeatable = 0 } #Repeatable
+    add_to_array = { global.proj_relative = 2 } #Based on GDP
+
+    ###############################
+    # Country Specific: 1000.000+ #
+    ###############################
 }
 
 proj_done = {
@@ -97,8 +121,94 @@ proj_done = {
             check_variable = { id_temp = 0 }
         }
         #First one is 0 so to exit effect quickly
+    }
+    else_if = { # Work Programs
+        limit = {
+            check_variable = { id_temp = 1 }
+        }
+
+        #Give an event to player to let them know that it's done with effects.
+
+    }
+
+
+    # Remove project from your project list & add to local/global completed projects (if necessary)
+    
+    for_each_loop = {
+        array = proj_id
+        value = p4
+        index = i4
+        break = b4
+
+        if = {
+            limit = {
+                check_variable = { id_temp = p4 }
+            }
+            remove_from_array = { array = proj_id index = i4 }
+            remove_from_array = { array = proj_relative index = i4 }
+            remove_from_array = { array = proj_estimated_total_cost index = i4 }
+            remove_from_array = { array = proj_estimated_monthly_cost index = i4 }
+            remove_from_array = { array = proj_estimated_complete_time index = i4 }
+            remove_from_array = { array = proj_cost index = i4 }
+            remove_from_array = { array = proj_time_elapsed index = i4 }
+            remove_from_array = { array = proj_life_goods_need index = i4 }
+            remove_from_array = { array = proj_life_goods_fulfilled index = i4 }
+            remove_from_array = { array = proj_life_goods_demand index = i4 }
+            remove_from_array = { array = proj_life_goods_build_speed index = i4 }
+            remove_from_array = { array = proj_everyday_goods_need index = i4 }
+            remove_from_array = { array = proj_everyday_goods_fulfilled index = i4 }
+            remove_from_array = { array = proj_everyday_goods_demand index = i4 }
+            remove_from_array = { array = proj_everyday_goods_build_speed index = i4 }
+            remove_from_array = { array = proj_luxury_goods_need index = i4 }
+            remove_from_array = { array = proj_luxury_goods_fulfilled index = i4 }
+            remove_from_array = { array = proj_luxury_goods_demand index = i4 }
+            remove_from_array = { array = proj_luxury_goods_build_speed index = i4 }
+            remove_from_array = { array = proj_services_need index = i4 }
+            remove_from_array = { array = proj_services_fulfilled index = i4 }
+            remove_from_array = { array = proj_services_demand index = i4 }
+            remove_from_array = { array = proj_services_build_speed index = i4 }
+            remove_from_array = { array = proj_raw_goods_need index = i4 }
+            remove_from_array = { array = proj_raw_goods_fulfilled index = i4 }
+            remove_from_array = { array = proj_raw_goods_demand index = i4 }
+            remove_from_array = { array = proj_raw_goods_build_speed index = i4 }
+            remove_from_array = { array = proj_industrial_goods_need index = i4 }
+            remove_from_array = { array = proj_industrial_goods_fulfilled index = i4 }
+            remove_from_array = { array = proj_industrial_goods_demand index = i4 }
+            remove_from_array = { array = proj_industrial_goods_build_speed index = i4 }
+
+            set_temp_variable = { b4 = 1 }
+        }
+    }
+
+    for_each_loop = {
+        array = global.proj_id
+        value = p5
+        index = i5
+        break = b5
 
         
+        if = {
+            limit = {
+                check_variable = { id_temp = p5 }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.proj_repeatable^i5 = 1 }
+                }
+                #Can never be done again by any country
+                add_to_array = { global.proj_completed = id_temp }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { global.proj_repeatable^i5 = 2 }
+                }
+                #Can never be done again by only your country
+                add_to_array = { proj_completed = id_temp }
+            }
+
+            set_temp_variable = { b5 = 1 }
+        }
     }
 }
 
@@ -113,6 +223,12 @@ proj_create = {
     if = {
         limit = {
             check_variable = { id_temp > 0 } # always assume users are idiots. Yes I'm talking about you, random coder.
+
+            NOT = { is_in_array = { proj_id = id_temp } } #Make sure you don't create duplicate projects. 
+                                                            #Technically, it's possible for the code to handle that, but this is just for safekeeping.
+            
+            NOT = { is_in_array = { proj_completed = id_temp } } #Make sure projects that have been completed can't be done again (those set to the right conditions)
+            NOT = { is_in_array = { global.proj_completed = id_temp } }
         }
 
         for_each_loop = {
@@ -171,7 +287,7 @@ proj_create = {
                     limit = {
                         check_variable = { global.proj_relative^i9 = 2 }
                     }
-                    set_variable = { proj_relative^i8 = max_manpower_k }
+                    set_variable = { proj_relative^i8 = annual_gdp_amount }
                     divide_variable = { proj_relative^i8 = 100 }
                 }
                 else_if = {
@@ -211,6 +327,7 @@ proj_create = {
                 set_temp_variable = { b9 = 1 }
             }
         }
+
 
     }
 }
@@ -269,7 +386,7 @@ proj_update = {
 
                     if = {
                         limit = {
-                            check_variable = { proj_life_goods_need^i2 < proj_life_goods_fulfilled^i2 }
+                            check_variable = { proj_life_goods_need^i2 > proj_life_goods_fulfilled^i2 }
                         }
                         set_variable = { proj_life_goods_demand^i2 = proj_life_goods_build_speed^i2 }
                         multiply_variable = { proj_life_goods_demand^i2 = modifier_temp }
@@ -280,7 +397,7 @@ proj_update = {
                     
                     if = {
                         limit = {
-                            check_variable = { proj_everyday_goods_need^i2 < proj_everyday_goods_fulfilled^i2 }
+                            check_variable = { proj_everyday_goods_need^i2 > proj_everyday_goods_fulfilled^i2 }
                         }
                         set_variable = { proj_everyday_goods_demand^i2 = proj_everyday_goods_build_speed^i2 }
                         multiply_variable = { proj_everyday_goods_demand^i2 = modifier_temp }
@@ -291,7 +408,7 @@ proj_update = {
                     
                     if = {
                         limit = {
-                            check_variable = { proj_luxury_goods_need^i2 < proj_luxury_goods_fulfilled^i2 }
+                            check_variable = { proj_luxury_goods_need^i2 > proj_luxury_goods_fulfilled^i2 }
                         }
                         set_variable = { proj_luxury_goods_demand^i2 = proj_luxury_goods_build_speed^i2 }
                         multiply_variable = { proj_luxury_goods_demand^i2 = modifier_temp }
@@ -302,7 +419,7 @@ proj_update = {
                     
                     if = {
                         limit = {
-                            check_variable = { proj_services_need^i2 < proj_services_fulfilled^i2 }
+                            check_variable = { proj_services_need^i2 > proj_services_fulfilled^i2 }
                         }
                         set_variable = { proj_services_demand^i2 = proj_services_build_speed^i2 }
                         multiply_variable = { proj_services_demand^i2 = modifier_temp }
@@ -313,7 +430,7 @@ proj_update = {
                     
                     if = {
                         limit = {
-                            check_variable = { proj_raw_goods_need^i2 < proj_raw_goods_fulfilled^i2 }
+                            check_variable = { proj_raw_goods_need^i2 > proj_raw_goods_fulfilled^i2 }
                         }
                         set_variable = { proj_raw_goods_demand^i2 = proj_raw_goods_build_speed^i2 }
                         multiply_variable = { proj_raw_goods_demand^i2 = modifier_temp }
@@ -324,7 +441,7 @@ proj_update = {
                     
                     if = {
                         limit = {
-                            check_variable = { proj_industrial_goods_need^i2 < proj_industrial_goods_fulfilled^i2 }
+                            check_variable = { proj_industrial_goods_need^i2 > proj_industrial_goods_fulfilled^i2 }
                         }
                         set_variable = { proj_industrial_goods_demand^i2 = proj_industrial_goods_build_speed^i2 }
                         multiply_variable = { proj_industrial_goods_demand^i2 = modifier_temp }

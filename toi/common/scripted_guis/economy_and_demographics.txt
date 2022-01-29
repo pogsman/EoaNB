@@ -1053,7 +1053,8 @@ scripted_gui = {
 				reset = yes
 			}
 			extra_button_click = {
-				
+				set_temp_variable = { id_temp = 1 }
+				proj_done = yes
 			}
 		}
         properties = {
