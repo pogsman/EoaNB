@@ -2213,16 +2213,7 @@
 			#
 			#Government Demand
 				
-				add_to_variable = { life_goods_government_demand = military_life_goods_demand }
-				add_to_variable = { life_goods_government_demand = conscripted_life_goods_demand }
-				
-				add_to_variable = { everyday_goods_government_demand = military_everyday_goods_demand }
-				add_to_variable = { everyday_goods_government_demand = conscripted_everyday_goods_demand }
-				
-				add_to_variable = { luxury_goods_government_demand = military_luxury_goods_demand }
-				add_to_variable = { luxury_goods_government_demand = conscripted_luxury_goods_demand }
-				
-				add_to_variable = { industrial_goods_government_demand = military_industrial_goods_demand }
+				calculate_govt_demand = yes
 				
 				add_to_variable = { life_goods_demand = life_goods_government_demand }
 				add_to_variable = { everyday_goods_demand = everyday_goods_government_demand }
@@ -7018,6 +7009,8 @@
 				add_to_variable = { total_factory_amount = num_of_naval_factories }
 				add_to_variable = { total_factory_amount = private_factory_amount }
 
+				## Goods ##
+
 				#Military Goods Fulfillment
 					set_variable = { government_military_goods_percent = 0 }
 
@@ -7068,6 +7061,90 @@
 					round_variable = government_military_goods_percent
 
 				#
+
+				#Projects
+					for_each_loop = {
+						array = proj_id
+						index = pi
+						value = pv
+						break = pb
+
+						set_temp_variable = { gmg = life_goods_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = life_goods_government_demand }
+						multiply_temp_variable = { gmg = proj_life_goods_demand^pi }
+						add_to_variable = { proj_life_goods_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_life_goods_fulfilled^pi > proj_life_goods_need^pi }
+							}
+							set_variable = { proj_life_goods_fulfilled^pi = proj_life_goods_need^pi }
+						}
+						
+						set_temp_variable = { gmg = everyday_goods_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = everyday_goods_government_demand }
+						multiply_temp_variable = { gmg = proj_everyday_goods_demand^pi }
+						add_to_variable = { proj_everyday_goods_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_everyday_goods_fulfilled^pi > proj_everyday_goods_need^pi }
+							}
+							set_variable = { proj_everyday_goods_fulfilled^pi = proj_everyday_goods_need^pi }
+						}
+						
+						set_temp_variable = { gmg = luxury_goods_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = luxury_goods_government_demand }
+						multiply_temp_variable = { gmg = proj_luxury_goods_demand^pi }
+						add_to_variable = { proj_luxury_goods_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_luxury_goods_fulfilled^pi > proj_luxury_goods_need^pi }
+							}
+							set_variable = { proj_luxury_goods_fulfilled^pi = proj_luxury_goods_need^pi }
+						}
+						
+						set_temp_variable = { gmg = services_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = services_government_demand }
+						multiply_temp_variable = { gmg = proj_services_demand^pi }
+						add_to_variable = { proj_services_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_services_fulfilled^pi > proj_services_need^pi }
+							}
+							set_variable = { proj_services_fulfilled^pi = proj_services_need^pi }
+						}
+						
+						set_temp_variable = { gmg = raw_goods_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = raw_goods_government_demand }
+						multiply_temp_variable = { gmg = proj_raw_goods_demand^pi }
+						add_to_variable = { proj_raw_goods_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_raw_goods_fulfilled^pi > proj_raw_goods_need^pi }
+							}
+							set_variable = { proj_raw_goods_fulfilled^pi = proj_raw_goods_need^pi }
+						}
+						
+						set_temp_variable = { gmg = industrial_goods_government_stockpile }
+						multiply_temp_variable = { gmg = 100 }
+						divide_temp_variable = { gmg = industrial_goods_government_demand }
+						multiply_temp_variable = { gmg = proj_industrial_goods_demand^pi }
+						add_to_variable = { proj_industrial_goods_fulfilled^pi = gmg }
+						if = {
+							limit = {
+								check_variable = { proj_industrial_goods_fulfilled^pi > proj_industrial_goods_need^pi }
+							}
+							set_variable = { proj_industrial_goods_fulfilled^pi = proj_industrial_goods_need^pi }
+						}
+					}
+				#
+
+				calculate_govt_demand = yes
+				## ##
 
 				#Industrial Power
 					set_temp_variable = { industrial_power_temp = num_of_civilian_factories }
@@ -13464,6 +13541,41 @@
 			subtract_from_variable = { services_need = PREV.services_need }
 			subtract_from_variable = { raw_goods_need = PREV.raw_goods_need }
 			subtract_from_variable = { industrial_goods_need = PREV.industrial_goods_need }
+		}
+	}
+	calculate_govt_demand = {
+		set_variable = { life_goods_government_demand = 0 }
+		set_variable = { everyday_goods_government_demand = 0 }
+		set_variable = { luxury_goods_government_demand = 0 }
+		set_variable = { services_government_demand = 0 }
+		set_variable = { raw_goods_government_demand = 0 }
+		set_variable = { industrial_goods_government_demand = 0 }
+		
+		#Military
+		add_to_variable = { life_goods_government_demand = military_life_goods_demand }
+		add_to_variable = { life_goods_government_demand = conscripted_life_goods_demand }
+		
+		add_to_variable = { everyday_goods_government_demand = military_everyday_goods_demand }
+		add_to_variable = { everyday_goods_government_demand = conscripted_everyday_goods_demand }
+		
+		add_to_variable = { luxury_goods_government_demand = military_luxury_goods_demand }
+		add_to_variable = { luxury_goods_government_demand = conscripted_luxury_goods_demand }
+		
+		add_to_variable = { industrial_goods_government_demand = military_industrial_goods_demand }
+
+		#Projects
+		for_each_loop = {
+			array = proj_id
+			index = pi
+			value = pv
+			break = pb
+
+			add_to_variable = { life_goods_government_demand = proj_life_goods_demand^pi }
+			add_to_variable = { everyday_goods_government_demand = proj_everyday_goods_demand^pi }
+			add_to_variable = { luxury_goods_government_demand = proj_luxury_goods_demand^pi }
+			add_to_variable = { services_government_demand = proj_services_demand^pi }
+			add_to_variable = { raw_goods_government_demand = proj_raw_goods_demand^pi }
+			add_to_variable = { industrial_goods_government_demand = proj_industrial_goods_demand^pi }
 		}
 	}
 	
