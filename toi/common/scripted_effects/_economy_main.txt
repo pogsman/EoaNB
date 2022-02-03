@@ -7140,6 +7140,26 @@
 							}
 							set_variable = { proj_industrial_goods_fulfilled^pi = proj_industrial_goods_need^pi }
 						}
+
+					}
+					for_loop_effect = {
+						start = 0
+						end = proj_id^num
+						value = proj_index_temp
+
+						# Check if done
+						if = {
+							limit = {
+								check_variable = { proj_life_goods_fulfilled^pi = proj_life_goods_need^pi }
+								check_variable = { proj_everyday_goods_fulfilled^pi = proj_everyday_goods_need^pi }
+								check_variable = { proj_luxury_goods_fulfilled^pi = proj_luxury_goods_need^pi }
+								check_variable = { proj_services_fulfilled^pi = proj_services_need^pi }
+								check_variable = { proj_raw_goods_fulfilled^pi = proj_raw_goods_need^pi }
+								check_variable = { proj_industrial_goods_fulfilled^pi = proj_industrial_goods_need^pi }
+							}
+							set_temp_variable = { id_temp = pv }
+							proj_done = yes
+						}
 					}
 				#
 

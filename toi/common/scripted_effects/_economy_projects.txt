@@ -133,52 +133,38 @@ proj_done = {
 
 
     # Remove project from your project list & add to local/global completed projects (if necessary)
-    
-    for_each_loop = {
-        array = proj_id
-        value = p4
-        index = i4
-        break = b4
-
-        if = {
-            limit = {
-                check_variable = { id_temp = p4 }
-            }
-            remove_from_array = { array = proj_id index = i4 }
-            remove_from_array = { array = proj_relative index = i4 }
-            remove_from_array = { array = proj_estimated_total_cost index = i4 }
-            remove_from_array = { array = proj_estimated_monthly_cost index = i4 }
-            remove_from_array = { array = proj_estimated_complete_time index = i4 }
-            remove_from_array = { array = proj_cost index = i4 }
-            remove_from_array = { array = proj_time_elapsed index = i4 }
-            remove_from_array = { array = proj_life_goods_need index = i4 }
-            remove_from_array = { array = proj_life_goods_fulfilled index = i4 }
-            remove_from_array = { array = proj_life_goods_demand index = i4 }
-            remove_from_array = { array = proj_life_goods_build_speed index = i4 }
-            remove_from_array = { array = proj_everyday_goods_need index = i4 }
-            remove_from_array = { array = proj_everyday_goods_fulfilled index = i4 }
-            remove_from_array = { array = proj_everyday_goods_demand index = i4 }
-            remove_from_array = { array = proj_everyday_goods_build_speed index = i4 }
-            remove_from_array = { array = proj_luxury_goods_need index = i4 }
-            remove_from_array = { array = proj_luxury_goods_fulfilled index = i4 }
-            remove_from_array = { array = proj_luxury_goods_demand index = i4 }
-            remove_from_array = { array = proj_luxury_goods_build_speed index = i4 }
-            remove_from_array = { array = proj_services_need index = i4 }
-            remove_from_array = { array = proj_services_fulfilled index = i4 }
-            remove_from_array = { array = proj_services_demand index = i4 }
-            remove_from_array = { array = proj_services_build_speed index = i4 }
-            remove_from_array = { array = proj_raw_goods_need index = i4 }
-            remove_from_array = { array = proj_raw_goods_fulfilled index = i4 }
-            remove_from_array = { array = proj_raw_goods_demand index = i4 }
-            remove_from_array = { array = proj_raw_goods_build_speed index = i4 }
-            remove_from_array = { array = proj_industrial_goods_need index = i4 }
-            remove_from_array = { array = proj_industrial_goods_fulfilled index = i4 }
-            remove_from_array = { array = proj_industrial_goods_demand index = i4 }
-            remove_from_array = { array = proj_industrial_goods_build_speed index = i4 }
-
-            set_temp_variable = { b4 = 1 }
-        }
-    }
+    remove_from_array = { array = proj_id index = proj_index_temp }
+    remove_from_array = { array = proj_relative index = proj_index_temp }
+    remove_from_array = { array = proj_estimated_total_cost index = proj_index_temp }
+    remove_from_array = { array = proj_estimated_monthly_cost index = proj_index_temp }
+    remove_from_array = { array = proj_estimated_complete_time index = proj_index_temp }
+    remove_from_array = { array = proj_cost index = proj_index_temp }
+    remove_from_array = { array = proj_time_elapsed index = proj_index_temp }
+    remove_from_array = { array = proj_life_goods_need index = proj_index_temp }
+    remove_from_array = { array = proj_life_goods_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_life_goods_demand index = proj_index_temp }
+    remove_from_array = { array = proj_life_goods_build_speed index = proj_index_temp }
+    remove_from_array = { array = proj_everyday_goods_need index = proj_index_temp }
+    remove_from_array = { array = proj_everyday_goods_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_everyday_goods_demand index = proj_index_temp }
+    remove_from_array = { array = proj_everyday_goods_build_speed index = proj_index_temp }
+    remove_from_array = { array = proj_luxury_goods_need index = proj_index_temp }
+    remove_from_array = { array = proj_luxury_goods_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_luxury_goods_demand index = proj_index_temp }
+    remove_from_array = { array = proj_luxury_goods_build_speed index = proj_index_temp }
+    remove_from_array = { array = proj_services_need index = proj_index_temp }
+    remove_from_array = { array = proj_services_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_services_demand index = proj_index_temp }
+    remove_from_array = { array = proj_services_build_speed index = proj_index_temp }
+    remove_from_array = { array = proj_raw_goods_need index = proj_index_temp }
+    remove_from_array = { array = proj_raw_goods_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_raw_goods_demand index = proj_index_temp }
+    remove_from_array = { array = proj_raw_goods_build_speed index = proj_index_temp }
+    remove_from_array = { array = proj_industrial_goods_need index = proj_index_temp }
+    remove_from_array = { array = proj_industrial_goods_fulfilled index = proj_index_temp }
+    remove_from_array = { array = proj_industrial_goods_demand index = proj_index_temp }
+    remove_from_array = { array = proj_industrial_goods_build_speed index = proj_index_temp }
+    subtract_from_temp_variable = { proj_index_temp = 1 }
 
     for_each_loop = {
         array = global.proj_id
