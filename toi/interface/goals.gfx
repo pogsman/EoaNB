@@ -4863,6 +4863,11 @@ spriteTypes = {
 		name = "GFX_focus_NOR_cadets_world"
 		texturefile = "gfx/interface/goals/nor/cadets_world.png"
 	}
+	spriteType = {
+		name = "GFX_focus_NOR_skorpionen"
+		texturefile = "gfx/interface/goals/nor/skorpionen.png"
+	}
+
 
 	##################
 	##### DENMARK ####
@@ -5814,6 +5819,10 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_generic_welcome_to_rice_fields"
 		texturefile = "gfx/interface/goals/general/focus_generic_welcome_to_rice_fields.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_generic_get_rick_rolled_meme"
+		texturefile = "gfx/interface/goals/general/focus_generic_get_rick_rolled_meme.dds"
 	}
 	SpriteType = {
 		name = "GFX_focus_SPR_tropical_expedition"
@@ -7636,6 +7645,10 @@ spriteTypes = {
 		name = "GFX_focus_ITA_unification_of_Italy"
 		texturefile = "gfx/interface/goals/italy/focus_ITA_unification_of_Italy.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_ITA_Queen_Victoria"
+		texturefile = "gfx/interface/goals/italy/focus_ITA_Queen_Victoria.png"
+	}
 
 	
 	
@@ -7758,7 +7771,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/general/resources/Focus_Resource_Sugar.dds"
 	}
 	SpriteType = {
-		name = "GFX_Focus_Ressource_Sylver"
+		name = "GFX_Focus_Resource_Sylver"
 		texturefile = "gfx/interface/goals/general/resources/Focus_Resource_Sylver.dds"
 	}
 	SpriteType = {

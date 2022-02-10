@@ -1484,7 +1484,7 @@ country_event = {
 		trigger = {
 			NOT = {
 				PIE = {
-					has_country_flag = PIE_RUS_Alliance_2IP
+					has_completed_focus = PIE_The_Russian_Alliance
 				}
 			}
 		}
@@ -1511,7 +1511,7 @@ country_event = {
 		trigger = {
 			NOT = {
 				PIE = {
-					has_country_flag = PIE_RUS_Alliance_2IP
+					has_completed_focus = PIE_The_Russian_Alliance
 				}
 			}
 		}
@@ -1525,7 +1525,7 @@ country_event = {
 		name = sardinia.64.b
 		trigger = {
 			PIE = {
-				has_country_flag = PIE_RUS_Alliance_2IP
+				has_completed_focus = PIE_The_Russian_Alliance
 			}
 		}
 		PIE = {
@@ -1615,7 +1615,7 @@ country_event = {
 				factor = 0
 				NOT = {
 					PIE = {
-						has_country_flag = PIE_RUS_Alliance_2IP
+						has_completed_focus = PIE_The_Russian_Alliance
 					}
 				}
 			}
@@ -1811,7 +1811,6 @@ country_event = {
 				}
 			}
 		}
-		set_country_flag = PIE_RUS_Alliance_2IP
 		PIE = {
 			set_country_flag = PIE_RUS_Alliance_2IP
 			country_event = {
@@ -1868,8 +1867,11 @@ country_event = {
 	option = {
 		name = sardinia.83.a
 		trigger = {
-			has_country_flag = PIE_RUS_Alliance_2IP
+			PIE = {
+				has_country_flag = PIE_RUS_Alliance_2IP
+			}
 		}
+		complete_national_focus = PIE_The_Russian_Alliance
 	}
 	option = {
 		name = sardinia.83.c
@@ -1977,6 +1979,12 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.87.a
+		activate_mission = AUS_decision_russian_troops_galicia
+		RUS = {
+			country_event = {
+				id = sardinia.219
+			}
+		}
 	}
 }
 
@@ -2876,7 +2884,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					has_country_flag = PIE_RUS_Alliance_2IP
+					has_completed_focus = PIE_The_Russian_Alliance
 				}
 			}
 			country_event = {
@@ -4720,16 +4728,27 @@ country_event = {
 				set_state_controller = 1380
 				set_cosmetic_tag = CBI_garibaldi
 				load_oob = PIE_Expedition_Reworked
+				add_ideas = {
+					ITA_CBI_garibaldi_idea
+				}
 			}
 			news_event = {
 				id = sardinia_news.13
 			}
+			NSC = {
+				add_ideas = {
+					NSC_ArmySupportWeak
+				}
+			}
 		}
+		#event for NSC about invasion, move idea to there
 		activate_mission = ITA_War_Mission_NSC_Expedition
 		activate_mission = ITA_War_Mission_Garibaldis_Decree_Expedition
 		activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
 		activate_mission = ITA_War_Mission_Expedition_Palermo_Uprising
 		activate_mission = ITA_War_Mission_Garibaldis_Decree_Capture_of_Sicily
+		activate_mission = ITA_War_Mission_Expedition_Real_Marina
+		activate_mission = ITA_War_Mission_Expedition_Apulia
 		NSC = {
 			activate_mission = ITA_War_Mission_NSC_Expedition
 		}
@@ -4747,7 +4766,6 @@ country_event = {
 		NSC = {
 			news_event = {
 				id = sardinia_news.12
-				days = 10
 			}
 		}
 	}
@@ -5283,7 +5301,7 @@ country_event = {
 	option = {
 		name = sardinia.207.a
 		transfer_navy = {
-    target = PIE
+			target = PIE
 		}
 	}
 }
@@ -5310,6 +5328,187 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.209.a
+	}
+}
+
+# Reinforcement of Alessandria against floods of Tanaro 
+country_event = {
+	id = sardinia.210
+	title = sardinia.210.t
+	desc = sardinia.210.d
+	picture = GFX_event_ITA_tanaro_river
+	is_triggered_only = yes
+	option = {
+		name = sardinia.210.a
+		981 = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+}
+
+# Annecy-Geneva Railroad
+country_event = {
+	id = sardinia.211
+	title = sardinia.211.t
+	desc = sardinia.211.d
+	picture = GFX_event_ITA_ticino
+	is_triggered_only = yes
+	option = {
+		name = sardinia.211.a
+		
+	}
+}
+
+### US Consular Relations Events
+country_event = {
+	id = sardinia.212
+	title = sardinia.212.t
+	desc = sardinia.212.d
+	picture = GFX_event_ITA_american_italian_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.212.a
+		country_event = {
+			id = sardinia.213
+		}
+	}
+}
+
+country_event = {
+	id = sardinia.213
+	title = sardinia.213.t
+	desc = sardinia.213.d
+	picture = GFX_event_ITA_american_italian_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.213.a
+		country_event = {
+			id = sardinia.214
+		}
+	}
+}
+
+country_event = {
+	id = sardinia.214
+	title = sardinia.214.t
+	desc = sardinia.214.d
+	picture = GFX_event_ITA_american_italian_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.214.a
+		add_opinion_modifier = {
+			target = USA
+			modifier = PIE_revoke_naval_access
+		}
+		USA = {
+			add_opinion_modifier = {
+			target = PIE
+			modifier = PIE_revoke_naval_access
+			}
+		}
+	}
+	option = {
+		name = sardinia.214.b
+		add_opinion_modifier = {
+			target = USA
+			modifier = PIE_renew_naval_access
+		}
+		USA = {
+			add_opinion_modifier = {
+			target = PIE
+			modifier = PIE_renew_naval_access
+			}
+		}
+	}
+}
+
+# Swiss Bordering state road investments
+country_event = {
+	id = sardinia.215
+	title = sardinia.215.t
+	desc = sardinia.215.d
+	picture = GFX_event_ITA_ticino
+	is_triggered_only = yes
+	option = {
+		name = sardinia.215.a
+		
+	}
+}
+
+# Treaty of Navigation and Trade with Belgium
+country_event = {
+	id = sardinia.216
+	title = sardinia.216.t
+	desc = sardinia.216.d
+	picture = GFX_event_ITA_Belgian_Diplomacy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.216.a
+		BEL = {
+			country_event = {
+				id = sardinia.217
+			}
+		}
+		add_timed_idea = {
+			idea = ITA_International_Trade_Sardinia
+			days = 300
+		}
+	}
+}
+
+# Treaty of Navigation and Trade with Belgium Belgian event
+country_event = {
+	id = sardinia.217
+	title = sardinia.217.t
+	desc = sardinia.217.d
+	picture = GFX_event_ITA_Belgian_Diplomacy
+	is_triggered_only = yes
+	option = {
+		name = sardinia.217.a
+		add_timed_idea = {
+			idea = ITA_International_Trade_Sardinia
+			days = 300
+		}
+	}
+}
+
+# 25th of October 1857 Closing of the V Legislature
+country_event = {
+	id = sardinia.218
+	title = sardinia.218.t
+	desc = sardinia.218.d
+	picture = GFX_event_ITA_Closing_Legislature
+	is_triggered_only = yes
+	option = {
+		name = sardinia.218.a
+		add_political_power = 100
+		### Activate decision certifying elections
+	}
+}
+
+# Russian event about Galicia Border
+country_event = {
+	id = sardinia.219
+	title = sardinia.219.t
+	desc = sardinia.219.d
+	picture = GFX_event_ITA_Influence_Central_States
+	is_triggered_only = yes
+	option = {
+		name = sardinia.219.a
+		custom_effect_tooltip = RUS_border_galicia_troops_TT
+	}
+}
+
+# Russian event about Capturing Galician state
+country_event = {
+	id = sardinia.220
+	title = sardinia.220.t
+	desc = sardinia.220.d
+	picture = GFX_event_ITA_Influence_Central_States
+	is_triggered_only = yes
+	option = {
+		name = sardinia.220.a
+		
 	}
 }
 
@@ -5508,7 +5707,6 @@ news_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia_news.16.a
-		
 	}
 }
 

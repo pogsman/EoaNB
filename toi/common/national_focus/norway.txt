@@ -777,7 +777,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
-
+			add_tech_bonus = {
+				bonus = 0.10
+				uses = 3
+				category = humanities_tech
+				category = economics_tech
+			}
 			set_temp_variable = { EOANBSYS_humanitive_change = 0.05 }
 			EOANBSYS_institutions_humanitive_change = yes
 		}
@@ -798,6 +803,7 @@ focus_tree = {
 		icon = GFX_focus_NOR_roros_kobberverk
 
 		completion_reward = {
+			unlock_decision_tooltip = NOR_decision_roros_kobberverk
 			add_ideas = NOR_industrial_concern_copper_works
 		}
 	}
@@ -836,6 +842,7 @@ focus_tree = {
 		icon = GFX_focus_NOR_voiens_bomuldsspinderi
 
 		completion_reward = {
+			unlock_decision_tooltip = NOR_decision_voiens_bomuldsspinderi
 			add_ideas = NOR_industrial_concern_textile_company
 		}
 	}
@@ -1929,7 +1936,9 @@ focus_tree = {
 		cost = 70
 		icon = GFX_focus_rom_royal_dictatorship
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_norway.41
+		}
 	}
 
 	focus = {
@@ -2131,7 +2140,9 @@ focus_tree = {
 		cost = 35
 		icon = GFX_Focus_Army_Victorian_Traditional
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_norway.42
+		}
 	}
 
 	focus = {
@@ -2147,7 +2158,10 @@ focus_tree = {
 		cost = 35
 		icon = GFX_goal_SWE_look_dawn
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_norway.43
+
+		}
 	}
 
 	focus = {
@@ -2161,7 +2175,16 @@ focus_tree = {
 		cost = 35
 		#icon = GFX_focus_generic_the_giant_wakes
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.10
+				uses = 3
+				category = artillery
+				category = infantry_weapons
+				category = tech_category_uniforms
+				category = support_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2191,7 +2214,9 @@ focus_tree = {
 		cost = 35
 		#icon = GFX_focus_generic_the_giant_wakes
 
-		completion_reward = { }
+		completion_reward = { 
+			activate_mission = NOR_mission_kongsberg_factory
+		}
 	}
 
 	focus = {
@@ -2273,9 +2298,10 @@ focus_tree = {
 				bonus = 0.25
 				uses = 1
 				category = naval_equipment
-				technology = tech_naval_prototype_monitor
-				technology = tech_naval_early_monitor
+				category = naval_mtg_monitor_tech
+				category = naval_mtg_monitor_hulls_tech
 			}
+			navy_experience = 20
 		}
 	}
 
@@ -2308,6 +2334,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = naval_equipment
+				category = naval_mtg_monitor_tech
+				category = naval_mtg_monitor_hulls_tech
+				technology = tech_naval_prototype_monitor
+			}
 		}
 	}
 
@@ -2336,7 +2370,21 @@ focus_tree = {
 			}
 		}
 
-		completion_reward = { }
+		completion_reward = { 
+			create_equipment_variant = {
+				name = "American Monitor"
+				type = ship_hull_monitor_0
+				name_group = NAME_THEME_HISTORICAL_FRIGATES_1
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = ship_engine_steam_screw_monitor
+					fixed_ship_fire_control_system_slot = fire_control_system_0
+					fixed_ship_battery_slot = ship_turret_light_0
+					fixed_ship_armor_slot = ship_armor_screen_hardwood_0
+				}
+				#obsolete = no
+			}
+		}
 	}
 
 	focus = {
@@ -2354,6 +2402,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = naval_equipment
+				category = naval_mtg_monitor_tech
+				category = naval_mtg_monitor_hulls_tech
+				technology = tech_naval_prototype_monitor
+			}
 		}
 	}
 
@@ -2380,7 +2436,7 @@ focus_tree = {
 		y = 1
 
 		cost = 35
-		icon = GFX_goal_focus_commision_monitors
+		icon = GFX_focus_NOR_skorpionen
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2416,21 +2472,7 @@ focus_tree = {
 		icon = GFX_focus_NOR_kong_sverre
 
 		completion_reward = {
-			if = {
-				limit = { has_dlc = "Man the Guns" }
-				create_ship = {
-					type = ship_hull_frigate_1
-					equipment_variant = "Fregatt Klasse"
-					name = "HNoMS Kong Sverre"
-				}
-			}
-			else = {
-				create_ship = {
-					type = ship_frigate_1
-					equipment_variant = "Fregatt Klasse"
-					name = "HNoMS Kong Sverre"
-				}
-			}
+			unlock_decision_tooltip = NOR_decision_kong_sverre
 		}
 	}
 
@@ -2447,7 +2489,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			unlock_decision_tooltip = NOR_decision_expand_karljohansvern
+			activate_mission = NOR_mission_expand_karljohansvern
 		}
 	}
 
@@ -2723,7 +2765,9 @@ focus_tree = {
 		cost = 70
 		icon = GFX_goal_generic_occupy_states_coastal
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = NOR_decision_protect_norwegian_coast
+		}
 	}
 
 	focus = {

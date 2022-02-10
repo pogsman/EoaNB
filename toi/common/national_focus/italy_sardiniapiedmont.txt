@@ -1045,11 +1045,12 @@ focus_tree = {
 			country_event = {
 				id = sardinia.1
 			}
+			add_political_power = 100
 		}
 	}
 	focus = {
 		id = PIE_Casus_Belli_ft
-		icon = GFX_goal_focus_ally_RUS
+		icon = GFX_goal_focus_RUS_multi_ethnical_empire
 		cost = 35
 		prerequisite = {
 			focus = PIE_Plombieres_Meeting
@@ -1078,7 +1079,7 @@ focus_tree = {
 	}
 	focus = {
 		id = PIE_Political_Structure_Planning_FT
-		icon = GFX_goal_focus_ally_ENG
+		icon = GFX_focus_ITA_Queen_Victoria
 		cost = 35
 		prerequisite = {
 			focus = PIE_Plombieres_Meeting
@@ -1134,7 +1135,7 @@ focus_tree = {
 	}
 	focus = {
 		id = PIE_Military_Plan_FT
-		icon = GFX_goal_focus_ally_FRA
+		icon = GFX_goal_focus_fra_plombiere_meeting
 		cost = 70
 		prerequisite = {
 			focus = PIE_Plombieres_Meeting
@@ -1162,7 +1163,7 @@ focus_tree = {
 	}
 	focus = {
 		id = PIE_Maintain_Control
-		icon = GFX_goal_focus_fra_plombiere_meeting
+		icon = GFX_goal_focus_ally_FRA
 		cost = 50
 		prerequisite = {
 			focus = PIE_Military_Plan_FT
@@ -1343,6 +1344,7 @@ focus_tree = {
 				clr_country_flag = PIE_FRA_Plombieres_Happening
 				country_lock_all_division_template = yes
 			}
+			add_ideas = ITA_2IP_Idea
 			if = {
 				limit = {
 					has_country_flag = PIE_Plombieres_War_Leader
@@ -1368,14 +1370,16 @@ focus_tree = {
 				if = {
 					limit = {
 						PIE = {
-							OR = {
-								has_country_flag = PIE_RUS_Assistance_2IP
-								has_country_flag = PIE_RUS_Alliance_2IP
+							has_country_flag = PIE_RUS_Assistance_2IP
+							NOT = {
+								has_completed_focus = PIE_The_Russian_Alliance
 							}
 						}
 					}
-					country_event = {
-						id = sardinia.87
+					AUS = {
+						country_event = {
+							id = sardinia.87
+						}
 					}
 				}
 			}
@@ -1516,7 +1520,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Invest_Cogne_Mines
 		icon = GFX_goal_focus_coal_mines
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Industrial_Financing
 		}
@@ -1528,8 +1532,8 @@ focus_tree = {
 		y = 2
 		completion_reward = {
 			add_resource = {
-				type = iron
-				amount = 12
+				type = coal
+				amount = 3
 				state = 981
 			}
 		}
@@ -1537,7 +1541,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Clear_Space_Industry
 		icon = GFX_goal_focus_urbanization
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Industrial_Financing
 		}
@@ -1560,7 +1564,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Invest_Industrial_Development
 		icon = GFX_goal_focus_generic_peoples_pact
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Clear_Space_Industry
 		}
@@ -1599,7 +1603,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Authorize_Culoz_Modane_Railway
 		icon = GFX_goal_focus_railroad_development
-		cost = 10
+		cost = 35
 		prerequisite = {
 			focus = PIE_Infrastructural_Developments
 		}
@@ -1616,7 +1620,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Commence_Construction_Frejus_Rail_Tunnel
 		icon = GFX_goal_HOL_movement_of_grain
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Authorize_Culoz_Modane_Railway
 		}
@@ -1633,7 +1637,7 @@ focus_tree = {
 	focus = {
 		id = PIE_Gaslit_Street_Lighting
 		icon = GFX_focus_gas_lighting_streets
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = PIE_Infrastructural_Developments
 		}
@@ -1966,11 +1970,34 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = PIE_The_Russian_Alliance
+		icon = GFX_goal_focus_ally_RUS
+		cost = 70
+		prerequisite = {
+			focus = PIE_Casus_Belli_ft
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no
+			}
+		}
+		relative_position_id = PIE_Casus_Belli_ft
+		x = -2
+		y = 1
+		completion_reward = {
+			### News Event about alliance???
+		}
+	}
+	focus = {
 		id = PIE_transfer_Galicia_to_Russia
 		icon = GFX_focus_ITA_Galicia_Conference
 		cost = 70
 		prerequisite = {
-			focus = PIE_Casus_Belli_ft
+			focus = PIE_The_Russian_Alliance
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -1987,8 +2014,8 @@ focus_tree = {
 		ai_will_do = {
 			base = 10
 		}
-		relative_position_id = PIE_Casus_Belli_ft
-		x = -2
+		relative_position_id = PIE_The_Russian_Alliance
+		x = 0
 		y = 1
 		completion_reward = {
 			country_event = {
@@ -2095,8 +2122,8 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_resource = {
-				type = coal
-				amount = 3
+				type = iron
+				amount = 12
 				state = 114
 			}
 		}

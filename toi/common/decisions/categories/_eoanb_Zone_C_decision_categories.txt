@@ -732,8 +732,9 @@ ITA_decisions_category_PIE_influence_minor_states = {
 	}
 	priority = 100
 }
-ITA_decisions_category_PIE_diplomatic_endeavors = {
+ITA_decisions_category_PIE_legislative_actions = {
 	icon = generic_political_actions
+	picture = GFX_decision_cat_ita_legislative_actions
 	allowed = {
 		tag = PIE
 	}
@@ -742,7 +743,25 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 			has_country_flag = is_literally_italy
 		}
 	}
-	priority = 100
+	priority = 25
+}
+ITA_decisions_category_PIE_diplomatic_endeavors = {
+	icon = generic_political_actions
+	allowed = {
+		OR = {
+			original_tag = PIE
+			original_tag = TUS
+			original_tag = PAP
+			original_tag = NSC
+		}
+	}
+	visible = {
+		OR = {
+			has_completed_focus = PIE_Seek_Help_Major
+			has_country_flag = is_literally_italy
+		}
+	}
+	priority = 20
 }
 
 #### Russia Decision Categories ####
@@ -1041,6 +1060,16 @@ GRE_decision_category_industry = {
 	}
 }
 
+GRE_decision_category_army = {
+	icon = generic_arms_trade
+	
+	allowed = { tag = GRE }
+	
+	visible = {
+		has_completed_focus = GRE_hellenic_army
+	}
+}
+
 GRE_decision_category_obtain_foreign_equipment = {
 	icon = generic_arms_trade
 	
@@ -1052,6 +1081,21 @@ GRE_decision_category_obtain_foreign_equipment = {
 	
 	visible = {
 		has_completed_focus = GRE_standardize_the_equipment
+	}
+}
+
+GRE_decision_category_navy = {
+	icon = navy
+
+	allowed = {
+        tag = GRE
+    }
+	
+	visible = {
+		OR = {
+			has_completed_focus = GRE_expansion_of_aegan_squadron
+			has_completed_focus = GRE_expansion_of_west_squadron
+		}
 	}
 }
 

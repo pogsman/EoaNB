@@ -1,9 +1,9 @@
 ﻿l_english:
- eoanb_decision_regular_excerises_1:0 "Excerises in Canada"
- eoanb_decision_regular_excerises_2:0 "Excerises in South Africa"
- eoanb_decision_regular_excerises_3:0 "Excerises in Australia"
- eoanb_decision_regular_excerises_4:0 "Excerises in India"
- eoanb_decision_regular_excerises_5:0 "Excerises in New Zealand"
+ eoanb_decision_regular_exercises_1:0 "Exercises in Canada"
+ eoanb_decision_regular_exercises_2:0 "Exercises in South Africa"
+ eoanb_decision_regular_exercises_3:0 "Exercises in Australia"
+ eoanb_decision_regular_exercises_4:0 "Exercises in India"
+ eoanb_decision_regular_exercises_5:0 "Exercises in New Zealand"
  eoanb_decision_Inniskilling_Fusiliers:0 "Royal Inniskilling Fusiliers"
  eoanb_decision_irish_rifles:0 "Royal Irish Rifles"
  eoanb_decision_irish_Fusiliers:0 "Royal Irish Fusiliers"
@@ -33,6 +33,8 @@
  eoanb_decision_IRE_b_ncr:0 "Belfast and Northern Counties Railway"
  eoanb_decision_IRE_clifden_dublin:0 "Expand the Midlands Route Clifden to Dublin"
  eoanb_decision_improve_rosslare:0 "Improve the Rosslare Ferry"
+ eoanb_decision_irb_generals:0 "Recruit IRB Generals"
+ eoanb_decision_british_generals:0 "Recruit Irish Generals in the British Army"
  
  ireland.1.t:0 "Crisis Looms Large"
  ireland.1.d:0 "Our new Republic has been faced with problems and strife before, but the Unionist Tensions have flared up. Several armed groups have demanded that our government recognise their struggle and their politcal movement as a legitmate.\n\nWe are faced with a tought decision; some hot-headed Republicans believe this is enough motive to round up all the Unionists once and for all, while some are surprisingly in favour of giving them full recognition and even autonomy!\n\nWe can either give them everything they want, and benefit from their wealth, or destroy them, ravaging our country in war once again. Or maybe we can take the long route, and come to a common agreement between us all?\n"
