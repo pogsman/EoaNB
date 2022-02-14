@@ -1063,6 +1063,21 @@ leader_traits = {
 		
 		ai_will_do = { factor = 1 }
 	}
+
+	### Greece Traits ###
+	GRE_trait_neorion_founder = {
+		random = no
+		
+		production_speed_dockyard_factor = 0.05
+		equipment_bonus = {
+			convoy = {
+				build_cost_ic = -0.05
+				instant = yes	
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
 	
 	### ROM Advisor Traits ###
 	
@@ -1536,6 +1551,33 @@ leader_traits = {
 		mobilization_speed = 0.03
 		
 		ai_will_do = { factor = 10 }
+	}
+	
+	
+	### Finnish Advisor Traits ###
+	
+	FIN_trait_Adolf_Torngren = {
+		random = no
+		political_power_gain = 0.02
+		production_speed_steel_mill_factor = 0.02
+		production_speed_dockyard_factor = 0.05
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	FIN_trait_Carl_Magnus_Dahlstrom = {
+		random = no
+		consumer_goods_factor = -0.02
+		trade_opinion_factor = 0.02
+		trade_laws_cost_factor = -0.05
+		ai_will_do = { factor = 5 }
+	}
+	
+	FIN_trait_Axel_Dalstrom = {
+		random = no
+		production_speed_infrastructure_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
+		ai_will_do = { factor = 5 }
 	}
 	
 	### Danish Advisor Traits ###

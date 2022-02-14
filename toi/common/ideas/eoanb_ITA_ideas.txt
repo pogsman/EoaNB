@@ -511,7 +511,10 @@ ideas = {
 				army_morale_factor = 0.05
 				army_org_regain = 0.05
 				breakthrough_factor = 0.1
-				ai_focus_aggressive_factor = 0.70
+				supply_node_range = 0.2
+				supply_consumption_factor = -0.4
+				out_of_supply_factor = 0.3
+				#ai_focus_aggressive_factor = 0.70
 			}
 		}
 		ITA_CBI_garibaldi_idea = {

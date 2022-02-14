@@ -83,7 +83,7 @@ country_event = {
 	}
 	option = {
 		name = sardinia.4.b
-		PIE = {
+		PIE = { ## Remove with two sicilies content
 			set_country_flag = PIE_British_Diplomacy_yes
 			country_event = {
 				id = sardinia.24
@@ -2628,6 +2628,9 @@ country_event = {
 				}
 				create_faction = FRA_PIE_alliance_faction
 				add_to_faction = PIE
+				add_ideas = {
+					ITA_2IP_Idea
+				}
 			}
 		}
 		PIE = {
@@ -2652,6 +2655,21 @@ country_event = {
 			}
 			complete_national_focus = PIE_The_War_Starts
 			activate_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
+		}
+		if = {
+			limit = {
+				PIE = {
+					has_country_flag = PIE_RUS_Assistance_2IP
+					NOT = {
+						has_completed_focus = PIE_The_Russian_Alliance
+					}
+				}
+			}
+			AUS = {
+				country_event = {
+					id = sardinia.87
+				}
+			}
 		}
 	}
 }
@@ -2762,6 +2780,13 @@ country_event = {
 		name = sardinia.121.a
 		trigger = {
 			tag = PRM
+		}
+		PIE = {
+			diplomatic_relation = {
+				country = PRM
+				relation = military_access
+				active = yes
+			}
 		}
 		white_peace = PIE
 		every_enemy_country = {
@@ -4781,8 +4806,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.177.a
-		TUS_eugene_emmanuel_de_savoiecarignan = {
-			promote_character = yes
+		TUS = {
+			TUS_eugene_emmanuel_de_savoiecarignan = {
+				promote_character = yes
+			}
 		}
 		PIE = {
 			country_event = {

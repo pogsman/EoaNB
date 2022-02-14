@@ -4315,6 +4315,34 @@ spriteTypes = {
 		name = "GFX_goal_GRE_Hellenic_Navy"
 		texturefile = "gfx/interface/goals/greece/focus_GRE_Hellenic_Navy.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_GRE_the_hellenic_navy"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_the_hellenic_navy.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_combat_piracy"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_combat_piracy.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_send_abroad_cadets"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_send_abroad_cadets.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_new_naval_tactics"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_new_naval_tactics.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_crete_revolt"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_crete_revolt.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_destruction_of_piracy"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_destruction_of_piracy.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_GRE_naval_school"
+		texturefile = "gfx/interface/goals/greece/focus_GRE_naval_school.png"
+	}
 	#Qing
 	SpriteType = {
 		name = "GFX_goal_russian_department"
@@ -7649,7 +7677,39 @@ spriteTypes = {
 		name = "GFX_focus_ITA_Queen_Victoria"
 		texturefile = "gfx/interface/goals/italy/focus_ITA_Queen_Victoria.png"
 	}
-
+	SpriteType = {
+		name = "GFX_focus_TUS_Tuscan_COA"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_Tuscan_COA.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_Revolutions_1848"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_Revolutions_1848.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_cater_to_aristocracy"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_cater_to_aristocracy.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_cater_to_land_owners"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_cater_to_land_owners.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_cater_to_workers"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_cater_to_workers.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_a_watchful_eye"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_a_watchful_eye.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_cater_to_Austria"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_cater_to_Austria.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_TUS_minor_reforms"
+		texturefile = "gfx/interface/goals/italy/focus_TUS_minor_reforms.png"
+	}
+	
 	
 	
 	#----------------------------------------------------------------------------------------------
@@ -8527,5 +8587,9 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_ARG_federales_government"
 		texturefile = "gfx/interface/goals/argentinia/ARG_federales_government.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_army_soldier_swiss"
+		texturefile = "gfx/interface/goals/swi/Focus_Army_Soldier_Swiss.png"
 	}
 }

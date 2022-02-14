@@ -2220,7 +2220,7 @@
 
 	shared_focus = {
 		id = GRE_hellenic_navy
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_the_hellenic_navy
 		x = 34
 		y = 9
 		cost = 70
@@ -2241,7 +2241,7 @@
 	
 	shared_focus = {
 		id = GRE_combat_piracy
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_combat_piracy
 		x = -3
 		y = 1
 		cost = 70
@@ -2394,7 +2394,7 @@
 	
 	shared_focus = {
 		id = GRE_destruction_of_piracy
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_destruction_of_piracy
 		x = -5
 		y = 4
 		cost = 70
@@ -2429,7 +2429,7 @@
 	
 	shared_focus = {
 		id = GRE_school_ship_athens
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_naval_school
 		x = -1
 		y = 2
 		cost = 70
@@ -2455,12 +2455,18 @@
 				uses = 2
 				category = naval_doctrine
 			}
+			hidden_effect = {
+				country_event = {
+					id = GRE_Navy.4
+					random_days = 30
+				}
+			}
 		}
 	}
 	
 	shared_focus = {
 		id = GRE_school_ship_loudovikos
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_naval_school
 		x = 1
 		y = 2
 		cost = 70
@@ -2486,12 +2492,18 @@
 				uses = 2
 				category = naval_equipment
 			}
+			hidden_effect = {
+				country_event = {
+					id = GRE_Navy.5
+					random_days = 30
+				}
+			}
 		}
 	}
 	
 	shared_focus = {
 		id = GRE_send_abroad_cadets
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_send_abroad_cadets
 		x = 0
 		y = 3
 		cost = 70
@@ -2500,8 +2512,6 @@
 		
 		prerequisite = {
 			focus = GRE_school_ship_loudovikos
-		}
-		prerequisite = {
 			focus = GRE_school_ship_athens
 		}
 		
@@ -2519,7 +2529,7 @@
 	
 	shared_focus = {
 		id = GRE_new_naval_tactics
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_new_naval_tactics
 		x = 0
 		y = 4
 		cost = 70
@@ -2540,16 +2550,17 @@
 		
 		completion_reward = {
 			GRE = {
+				activate_mission = GRE_mission_study_modern_warships
 				add_ideas = {
 					idea = GRE_idea_new_naval_tactics
-				}
+				}			
 			}
 		}
 	}
 	
 	shared_focus = {
 		id = GRE_cretan_revolution_experience
-		icon = GFX_goal_GRE_Hellenic_Navy
+		icon = GFX_goal_GRE_crete_revolt
 		x = -3
 		y = 5
 		cost = 70
@@ -2558,9 +2569,13 @@
 		
 		prerequisite = {
 			focus = GRE_destruction_of_piracy
-		}
-		prerequisite = {
 			focus = GRE_new_naval_tactics
+		}
+
+		available = {
+			CET = {
+				has_country_flag = CET_cretan_revolt
+			}	
 		}
 		
 		ai_will_do = {
@@ -2568,12 +2583,42 @@
 		}
 		
 		completion_reward = {
-			
+			navy_experience = 15
+			add_command_power = 15
+			hidden_effect = {
+				GRE = {
+					if = {
+						limit = {
+							has_country_flag = GRE_Crete_Support_Yes
+						}   
+						country_event = {
+							id = GREdiplo.17
+							days = 1
+						}
+					}
+					else_if = {
+						limit = {
+							has_country_flag = GRE_Crete_Support_No
+						}
+						country_event = {
+							id = GREdiplo.18
+							days = 1
+						}
+					}
+					else = {
+						country_event = {
+							id = GREdiplo.19
+							days = 1
+						}
+					}
+				}
+
+			}
 		}
 	}
 	
 	shared_focus = {
-		id = GRE_vasiliefs_georgios
+		id = GRE_vasilefs_georgios
 		icon = GFX_goal_GRE_Hellenic_Navy
 		x = -4
 		y = 6
@@ -2590,12 +2635,12 @@
 		}
 		
 		completion_reward = {
-			
+			unlock_decision_tooltip = GRE_decision_greek_king_frigate
 		}
 	}
 	
 	shared_focus = {
-		id = GRE_vasillissa_olga
+		id = GRE_vasilissa_olga
 		icon = GFX_goal_GRE_Hellenic_Navy
 		x = -2
 		y = 6
@@ -2612,7 +2657,7 @@
 		}
 		
 		completion_reward = {
-			
+			unlock_decision_tooltip = GRE_decision_greek_queen_frigate
 		}
 	}
 
@@ -2626,10 +2671,10 @@
 		relative_position_id = GRE_hellenic_navy
 		
 		prerequisite = {
-			focus = GRE_vasiliefs_georgios
+			focus = GRE_vasilefs_georgios
 		}
 		prerequisite = {
-			focus = GRE_vasillissa_olga
+			focus = GRE_vasilissa_olga
 		}
 		
 		mutually_exclusive = {
@@ -2656,10 +2701,10 @@
 		relative_position_id = GRE_hellenic_navy
 		
 		prerequisite = {
-			focus = GRE_vasiliefs_georgios
+			focus = GRE_vasilefs_georgios
 		}
 		prerequisite = {
-			focus = GRE_vasillissa_olga
+			focus = GRE_vasilissa_olga
 		}
 		
 		mutually_exclusive = {
@@ -2686,10 +2731,10 @@
 		relative_position_id = GRE_hellenic_navy
 		
 		prerequisite = {
-			focus = GRE_vasiliefs_georgios
+			focus = GRE_vasilefs_georgios
 		}
 		prerequisite = {
-			focus = GRE_vasillissa_olga
+			focus = GRE_vasilissa_olga
 		}
 		
 		mutually_exclusive = {
