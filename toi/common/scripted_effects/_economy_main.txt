@@ -7300,33 +7300,63 @@
 					#Projects
 						set_temp_variable = { project_spend_temp = projects_life_goods_demand }
 						divide_temp_variable = { project_spend_temp = life_goods_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_life_goods_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_life_goods_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 						
 						set_temp_variable = { project_spend_temp = projects_everyday_goods_demand }
 						divide_temp_variable = { project_spend_temp = everyday_goods_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_everyday_goods_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_everyday_goods_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 						
-						set_temp_variable = { project_spend_temp =a projects_luxury_goods_demand }
+						set_temp_variable = { project_spend_temp = projects_luxury_goods_demand }
 						divide_temp_variable = { project_spend_temp = luxury_goods_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_luxury_goods_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_luxury_goods_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 						
 						set_temp_variable = { project_spend_temp = projects_services_demand }
 						divide_temp_variable = { project_spend_temp = services_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_services_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_services_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 						
 						set_temp_variable = { project_spend_temp = projects_raw_goods_demand }
 						divide_temp_variable = { project_spend_temp = raw_goods_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_raw_goods_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_raw_goods_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 						
 						set_temp_variable = { project_spend_temp = projects_industrial_goods_demand }
 						divide_temp_variable = { project_spend_temp = industrial_goods_government_demand }
-						multiply_temp_variable = { project_spend_temp = actual_industrial_goods_spending }
-						add_to_variable = { actual_project_spending = project_spend_temp }
+						if = {
+							limit = {
+								check_variable = { project_spend_temp > 0 }
+							}
+							multiply_temp_variable = { project_spend_temp = actual_industrial_goods_spending }
+							add_to_variable = { actual_project_spending = project_spend_temp }
+						}
 
 						add_to_variable = { actual_construction_spending = actual_project_spending }
 					#
@@ -10725,6 +10755,8 @@
 		net_budget_update = yes
 	}
 	spending_update = {
+		proj_update = yes
+		
 		set_variable = { construction_spending_expense = 0 }
 		set_variable = { project_spending_expense = 0 }
 		set_variable = { industrial_subsidy_expense = 0 }
@@ -13692,7 +13724,7 @@
 		
 		add_to_variable = { industrial_goods_government_demand = military_industrial_goods_demand }
 
-		set_variable = { projects_life_goods_demand = 0 }
+		set_variable` = { projects_life_goods_demand = 0 }
 		set_variable = { projects_everyday_goods_demand = 0 }
 		set_variable = { projects_luxury_goods_demand = 0 }
 		set_variable = { projects_services_demand = 0 }

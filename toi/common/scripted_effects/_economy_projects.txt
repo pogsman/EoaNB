@@ -439,69 +439,27 @@ proj_update = {
 
                     set_variable = { proj_estimated_monthly_cost^i2 = 0 }
 
-                    set_temp_variable = { cost_temp = proj_life_goods_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_life_goods_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_life_goods_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_life_goods_demand^i2 }
                     multiply_temp_variable = { cost_temp = life_goods_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
 
-                    set_temp_variable = { cost_temp = proj_everyday_goods_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_everyday_goods_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_everyday_goods_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_everyday_goods_demand^i2 }
                     multiply_temp_variable = { cost_temp = everyday_goods_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
 
-                    set_temp_variable = { cost_temp = proj_luxury_goods_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_luxury_goods_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_luxury_goods_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_luxury_goods_demand^i2 }
                     multiply_temp_variable = { cost_temp = luxury_goods_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
 
-                    set_temp_variable = { cost_temp = proj_services_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_services_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_services_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_services_demand^i2 }
                     multiply_temp_variable = { cost_temp = services_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
 
-                    set_temp_variable = { cost_temp = proj_raw_goods_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_raw_goods_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_raw_goods_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_raw_goods_demand^i2 }
                     multiply_temp_variable = { cost_temp = raw_goods_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
 
-                    set_temp_variable = { cost_temp = proj_industrial_goods_need^i2 }
-                    subtract_from_temp_variable = { cost_temp = proj_industrial_goods_fulfilled^i2 }
-                    if = {
-                        limit = {
-                            check_variable = { cost_temp > 0 }
-                        }
-                        set_temp_variable = { cost_temp = proj_industrial_goods_build_speed^i2 }
-                    }
+                    set_temp_variable = { cost_temp = proj_industrial_goods_demand^i2 }
                     multiply_temp_variable = { cost_temp = industrial_goods_price }
                     add_to_variable = { proj_estimated_monthly_cost^i2 = cost_temp }
                 #
