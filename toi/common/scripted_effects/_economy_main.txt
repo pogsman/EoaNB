@@ -341,6 +341,7 @@
 			set_variable = { actual_raw_goods_spending = 0 }
 			set_variable = { actual_industrial_goods_spending = 0 }
 			set_variable = { actual_military_spending = 0 }
+			set_variable = { actual_project_spending = 0 }
 
 			set_variable = { gdp_amount = 0 }
 			set_variable = { gdp_amount_this_year = 0 }
@@ -7001,9 +7002,6 @@
 			#
 
 			#Country Level Stats
-				taxes_update = yes
-				spending_update = yes
-
 				set_variable = { total_factory_amount = num_of_civilian_factories }
 				add_to_variable = { total_factory_amount = num_of_military_factories }
 				add_to_variable = { total_factory_amount = num_of_naval_factories }
@@ -7063,6 +7061,7 @@
 				#
 
 				#Projects
+					proj_update = yes
 					for_each_loop = {
 						array = proj_id
 						index = pi
@@ -7073,6 +7072,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = life_goods_government_demand }
 						multiply_temp_variable = { gmg = proj_life_goods_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_life_goods_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7085,6 +7085,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = everyday_goods_government_demand }
 						multiply_temp_variable = { gmg = proj_everyday_goods_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_everyday_goods_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7097,6 +7098,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = luxury_goods_government_demand }
 						multiply_temp_variable = { gmg = proj_luxury_goods_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_luxury_goods_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7109,6 +7111,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = services_government_demand }
 						multiply_temp_variable = { gmg = proj_services_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_services_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7121,6 +7124,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = raw_goods_government_demand }
 						multiply_temp_variable = { gmg = proj_raw_goods_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_raw_goods_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7133,6 +7137,7 @@
 						multiply_temp_variable = { gmg = 100 }
 						divide_temp_variable = { gmg = industrial_goods_government_demand }
 						multiply_temp_variable = { gmg = proj_industrial_goods_demand^pi }
+						divide_temp_variable = { gmg = 100 }
 						add_to_variable = { proj_industrial_goods_fulfilled^pi = gmg }
 						if = {
 							limit = {
@@ -7141,6 +7146,7 @@
 							set_variable = { proj_industrial_goods_fulfilled^pi = proj_industrial_goods_need^pi }
 						}
 
+						add_to_variable = { proj_time_elapsed^pi = 1 }
 					}
 					for_loop_effect = {
 						start = 0
@@ -7164,6 +7170,8 @@
 				#
 
 				calculate_govt_demand = yes
+				taxes_update = yes
+				spending_update = yes
 				## ##
 
 				#Industrial Power
@@ -7264,28 +7272,64 @@
 					add_to_variable = { actual_subsidy_expense = actual_trade_subsidy_spending }
 					add_to_variable = { actual_subsidy_expense = actual_industrial_spending }
 
-					set_temp_variable = { mil_spend_temp = military_life_goods_demand }
-					add_to_temp_variable = { mil_spend_temp = conscripted_life_goods_demand }
-					divide_temp_variable = { mil_spend_temp = life_goods_government_demand }
-					multiply_temp_variable = { mil_spend_temp = actual_life_goods_spending }
-					add_to_variable = { actual_military_spending = mil_spend_temp }
-					
-					set_temp_variable = { mil_spend_temp = military_everyday_goods_demand }
-					add_to_temp_variable = { mil_spend_temp = conscripted_everyday_goods_demand }
-					divide_temp_variable = { mil_spend_temp = everyday_goods_government_demand }
-					multiply_temp_variable = { mil_spend_temp = actual_everyday_goods_spending }
-					add_to_variable = { actual_military_spending = mil_spend_temp }
-					
-					set_temp_variable = { mil_spend_temp = military_luxury_goods_demand }
-					add_to_temp_variable = { mil_spend_temp = conscripted_luxury_goods_demand }
-					divide_temp_variable = { mil_spend_temp = luxury_goods_government_demand }
-					multiply_temp_variable = { mil_spend_temp = actual_luxury_goods_spending }
-					add_to_variable = { actual_military_spending = mil_spend_temp }
-					
-					set_temp_variable = { mil_spend_temp = military_industrial_goods_demand }
-					divide_temp_variable = { mil_spend_temp = industrial_goods_government_demand }
-					multiply_temp_variable = { mil_spend_temp = actual_industrial_goods_spending }
-					add_to_variable = { actual_military_spending = mil_spend_temp }
+					#Military
+						set_temp_variable = { mil_spend_temp = military_life_goods_demand }
+						add_to_temp_variable = { mil_spend_temp = conscripted_life_goods_demand }
+						divide_temp_variable = { mil_spend_temp = life_goods_government_demand }
+						multiply_temp_variable = { mil_spend_temp = actual_life_goods_spending }
+						add_to_variable = { actual_military_spending = mil_spend_temp }
+						
+						set_temp_variable = { mil_spend_temp = military_everyday_goods_demand }
+						add_to_temp_variable = { mil_spend_temp = conscripted_everyday_goods_demand }
+						divide_temp_variable = { mil_spend_temp = everyday_goods_government_demand }
+						multiply_temp_variable = { mil_spend_temp = actual_everyday_goods_spending }
+						add_to_variable = { actual_military_spending = mil_spend_temp }
+						
+						set_temp_variable = { mil_spend_temp = military_luxury_goods_demand }
+						add_to_temp_variable = { mil_spend_temp = conscripted_luxury_goods_demand }
+						divide_temp_variable = { mil_spend_temp = luxury_goods_government_demand }
+						multiply_temp_variable = { mil_spend_temp = actual_luxury_goods_spending }
+						add_to_variable = { actual_military_spending = mil_spend_temp }
+						
+						set_temp_variable = { mil_spend_temp = military_industrial_goods_demand }
+						divide_temp_variable = { mil_spend_temp = industrial_goods_government_demand }
+						multiply_temp_variable = { mil_spend_temp = actual_industrial_goods_spending }
+						add_to_variable = { actual_military_spending = mil_spend_temp }
+					#
+
+					#Projects
+						set_temp_variable = { project_spend_temp = projects_life_goods_demand }
+						divide_temp_variable = { project_spend_temp = life_goods_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_life_goods_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+						
+						set_temp_variable = { project_spend_temp = projects_everyday_goods_demand }
+						divide_temp_variable = { project_spend_temp = everyday_goods_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_everyday_goods_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+						
+						set_temp_variable = { project_spend_temp =a projects_luxury_goods_demand }
+						divide_temp_variable = { project_spend_temp = luxury_goods_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_luxury_goods_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+						
+						set_temp_variable = { project_spend_temp = projects_services_demand }
+						divide_temp_variable = { project_spend_temp = services_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_services_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+						
+						set_temp_variable = { project_spend_temp = projects_raw_goods_demand }
+						divide_temp_variable = { project_spend_temp = raw_goods_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_raw_goods_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+						
+						set_temp_variable = { project_spend_temp = projects_industrial_goods_demand }
+						divide_temp_variable = { project_spend_temp = industrial_goods_government_demand }
+						multiply_temp_variable = { project_spend_temp = actual_industrial_goods_spending }
+						add_to_variable = { actual_project_spending = project_spend_temp }
+
+						add_to_variable = { actual_construction_spending = actual_project_spending }
+					#
 
 					set_variable = { actual_spending = actual_subsidy_expense }
 					add_to_variable = { actual_spending = actual_construction_spending }
@@ -7668,6 +7712,38 @@
 					set_variable = { global.conscripted_base_luxury_goods_need = 0.1 }
 					set_variable = { global.conscripted_payroll_multiplier = 2 } #The multiple of the above expense that goes directly to pops
 				#
+				#Projects
+					clear_array = proj_id
+					clear_array = proj_relative
+					clear_array = proj_estimated_cost
+					clear_array = proj_estimated_monthly_cost
+					clear_array = proj_estimated_complete_time
+					clear_array = proj_time_elapsed
+					clear_array = proj_life_goods_need
+					clear_array = proj_life_goods_fulfilled
+					clear_array = proj_life_goods_demand
+					clear_array = proj_life_goods_build_speed
+					clear_array = proj_everyday_goods_need
+					clear_array = proj_everyday_goods_fulfilled
+					clear_array = proj_everyday_goods_demand
+					clear_array = proj_everyday_goods_build_speed
+					clear_array = proj_luxury_goods_need
+					clear_array = proj_luxury_goods_fulfilled
+					clear_array = proj_luxury_goods_demand
+					clear_array = proj_luxury_goods_build_speed
+					clear_array = proj_services_need
+					clear_array = proj_services_fulfilled
+					clear_array = proj_services_demand
+					clear_array = proj_services_build_speed
+					clear_array = proj_raw_goods_need
+					clear_array = proj_raw_goods_fulfilled
+					clear_array = proj_raw_goods_demand
+					clear_array = proj_raw_goods_build_speed
+					clear_array = proj_industrial_goods_need
+					clear_array = proj_industrial_goods_fulfilled
+					clear_array = proj_industrial_goods_demand
+					clear_array = proj_industrial_goods_build_speed
+				#
 
 				set_variable = { global.administration_base_expense = 0.5 } #Percentage (from 0.0 to 100.0) of pop earnings that are needed for basic administration
 				set_variable = { global.administration_population_expense = 100 } #Below this population amount (in thousands), administration becomes more expensive. Should not be 0
@@ -7701,6 +7777,25 @@
 					set_variable = { global.credit_rating_SD_base_interest_rate = 10.0 }
 				#
 			#
+		#
+
+		#Setup Projects
+			clear_array = global.proj_id
+			clear_array = global.proj_life_goods_base_need
+			clear_array = global.proj_life_goods_base_build_speed
+			clear_array = global.proj_everyday_goods_base_need
+			clear_array = global.proj_everyday_goods_base_build_speed
+			clear_array = global.proj_luxury_goods_base_need
+			clear_array = global.proj_luxury_goods_base_build_speed
+			clear_array = global.proj_services_base_need
+			clear_array = global.proj_services_base_build_speed
+			clear_array = global.proj_raw_goods_base_need
+			clear_array = global.proj_raw_goods_base_build_speed
+			clear_array = global.proj_industrial_goods_base_need
+			clear_array = global.proj_industrial_goods_base_build_speed
+			clear_array = global.proj_repeatable
+			clear_array = global.proj_relative
+			proj_setup = yes
 		#
 
 		clear_array = global.econ_order_array
@@ -10631,6 +10726,7 @@
 	}
 	spending_update = {
 		set_variable = { construction_spending_expense = 0 }
+		set_variable = { project_spending_expense = 0 }
 		set_variable = { industrial_subsidy_expense = 0 }
 		set_variable = { infrastructure_subsidy_expense = 0 }
 
@@ -10856,6 +10952,19 @@
 			set_variable = { military_spending_expense = military_army_spending_expense }
 			add_to_variable = { military_spending_expense = military_navy_spending_expense }
 			add_to_variable = { military_spending_expense = military_airforce_spending_expense }
+		#
+	
+		#Projects
+			
+			for_each_loop = {
+				array = proj_id
+				index = pi
+				value = pv
+				break = pb
+
+				add_to_variable = { project_spending_expense = proj_estimated_monthly_cost^pi }
+			}
+			add_to_variable = { construction_spending_expense = project_spending_expense }
 		#
 
 		#Trade Subsidies
@@ -13583,6 +13692,12 @@
 		
 		add_to_variable = { industrial_goods_government_demand = military_industrial_goods_demand }
 
+		set_variable = { projects_life_goods_demand = 0 }
+		set_variable = { projects_everyday_goods_demand = 0 }
+		set_variable = { projects_luxury_goods_demand = 0 }
+		set_variable = { projects_services_demand = 0 }
+		set_variable = { projects_raw_goods_demand = 0 }
+		set_variable = { projects_industrial_goods_demand = 0 }
 		#Projects
 		for_each_loop = {
 			array = proj_id
@@ -13590,13 +13705,19 @@
 			value = pv
 			break = pb
 
-			add_to_variable = { life_goods_government_demand = proj_life_goods_demand^pi }
-			add_to_variable = { everyday_goods_government_demand = proj_everyday_goods_demand^pi }
-			add_to_variable = { luxury_goods_government_demand = proj_luxury_goods_demand^pi }
-			add_to_variable = { services_government_demand = proj_services_demand^pi }
-			add_to_variable = { raw_goods_government_demand = proj_raw_goods_demand^pi }
-			add_to_variable = { industrial_goods_government_demand = proj_industrial_goods_demand^pi }
+			add_to_variable = { projects_life_goods_demand = proj_life_goods_demand^pi }
+			add_to_variable = { projects_everyday_goods_demand = proj_everyday_goods_demand^pi }
+			add_to_variable = { projects_luxury_goods_demand = proj_luxury_goods_demand^pi }
+			add_to_variable = { projects_services_demand = proj_services_demand^pi }
+			add_to_variable = { projects_raw_goods_demand = proj_raw_goods_demand^pi }
+			add_to_variable = { projects_industrial_goods_demand = proj_industrial_goods_demand^pi }
 		}
+		add_to_variable = { life_goods_government_demand = projects_life_goods_demand }
+		add_to_variable = { everyday_goods_government_demand = projects_everyday_goods_demand }
+		add_to_variable = { luxury_goods_government_demand = projects_luxury_goods_demand }
+		add_to_variable = { services_government_demand = projects_services_demand }
+		add_to_variable = { raw_goods_government_demand = projects_raw_goods_demand }
+		add_to_variable = { industrial_goods_government_demand = projects_industrial_goods_demand }
 	}
 	
 	calculate_pop_demand = {

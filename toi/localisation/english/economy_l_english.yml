@@ -6,6 +6,43 @@
 
   military_goods_loc:0 "[?government_military_goods_percent|0]%"
 
+  #Modifiers
+    rgo_max_size_modifier:0 "RGO Max Size"
+    rgo_output_modifier:0 "RGO Output"
+    life_goods_rgo_output_modifier:0 "Life Goods RGO Output"
+    raw_goods_rgo_output_modifier:0 "Raw Goods RGO Output"
+    valuable_goods_rgo_output_modifier:0 "Valuable Goods RGO Output"
+    rgo_max_mechanization_modifier:0 "RGO Max Mechanization"
+    life_goods_rgo_max_mechanization_modifier:0 "Life Goods RGO Max Mechanization"
+    raw_goods_rgo_max_mechanization_modifier:0 "Raw Goods RGO Max Mechanization"
+    valuable_goods_rgo_max_mechanization_modifier:0 "Valuable Goods RGO Max Mechanization"
+
+    build_cost_modifier:0 "Build Cost"
+    build_speed_modifier:0 "Build Speed"
+    factory_size_modifier:0 "§YFactory§! Size"
+    factory_build_cost_modifier:0 "§YFactory§! Build Cost"
+    factory_build_speed_modifier:0 "§YFactory§! Build Speed"
+    factory_maintenance_modifier:0 "§YFactory§! Maintenance Cost"
+    factory_input_modifier:0 "§YFactory§! Input"
+    factory_throughput_modifier:0 "§YFactory§! Throughput"
+    factory_output_modifier:0 "§YFactory§! Output"
+    everyday_goods_factory_input_modifier:0 "§YEveryday Goods Factory§! Input"
+    everyday_goods_factory_throughput_modifier:0 "§YEveryday Goods Factory§! Throughput"
+    everyday_goods_factory_output_modifier:0 "§YEveryday Goods Factory§! Output"
+    luxury_goods_factory_input_modifier:0 "§YLuxury Goods Factory§! Input"
+    luxury_goods_factory_throughput_modifier:0 "§YLuxury Goods Factory§! Throughput"
+    luxury_goods_factory_output_modifier:0 "§YLuxury Goods Factory§! Output"
+    industrial_goods_factory_input_modifier:0 "§YIndustrial Goods Factory§! Input"
+    industrial_goods_factory_throughput_modifier:0 "§YIndustrial Goods Factory§! Throughput"
+    industrial_goods_factory_output_modifier:0 "§YIndustrial Goods Factory§! Output"
+    infrastructure_build_cost_modifier:0 "§YInfrastructure§! Build Cost"
+    infrastructure_build_speed_modifier:0 "§YInfrastructure§! Build Speed"
+    infrastructure_maintenance_modifier:0 "§YInfrastructure§! Maintenance Cost"
+    infrastructure_efficiency_modifier:0 "§YInfrastructure§! Efficiency"
+
+    transport_cost_modifier:0 "Transport Cost"
+  #
+
   #State Economy Screen
     state_economy_button_tt:0 "State Economy Screen"
     state_economy_button_tt_d:0 "A menu providing detailed information about the economy in this state."
@@ -505,6 +542,9 @@
 
     country_repay_debt_button_loc:0 "Repay Debt"
     country_repay_debt_button_tt:0 "You currently have §Y[?national_debt]§![GetCurrencyTextIcon] debt oustanding.\n\n§YLeft Click§! to repay §Y[?debt_repayment_amount|0]§![GetCurrencyTextIcon] of debt.\n§YShift + Left Click§! also closes the §YDebt Repayment§! window."
+  #
+  #Population & Economy Screen
+    pops_eco_title:0 "Population & Economy"
   #
 
   #Currency

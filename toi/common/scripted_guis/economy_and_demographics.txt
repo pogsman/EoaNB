@@ -1054,7 +1054,7 @@ scripted_gui = {
 			}
 			extra_button_click = {
 				set_temp_variable = { id_temp = 1 }
-				proj_done = yes
+				proj_create = yes
 			}
 		}
         properties = {
@@ -1568,5 +1568,31 @@ scripted_gui = {
 				change_scope = yes
 			}
 		}
+	}
+
+	population_economy_window = {
+		window_name = "population_economy_window_container"
+		context_type = player_context
+		
+		visible = {
+			ROOT = {
+				has_country_flag = population_economy_view_open
+			}
+		}
+
+		effects = {
+			close_button_click = {
+				clr_country_flag = population_economy_view_open
+			}
+		}
+
+		dynamic_lists = {
+			project_entries = {
+				array = proj_id
+				entry_container = project_entry
+				change_scope = no
+			}
+		}
+
 	}
 }

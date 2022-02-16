@@ -3,10 +3,8 @@ technologies = {
 	mechanized_mining = {
 		
 		local_resources_factor = 0.10
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_20
-			custom_effect_tooltip = increase_valuable_goods_output_20
-		}
+		raw_goods_rgo_output_modifier = 0.2
+		valuable_goods_rgo_output_modifier = 0.2
 
 		enable_building = {
 			building = coal_mine
@@ -75,10 +73,8 @@ technologies = {
 	mining_rig_2 = {
 		
 		local_resources_factor = 0.10
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_10
-			custom_effect_tooltip = increase_valuable_goods_output_10
-		}
+		raw_goods_rgo_output_modifier = 0.1
+		valuable_goods_rgo_output_modifier = 0.1
 		
 		enable_building = {
 			building = coal_mine
@@ -116,10 +112,8 @@ technologies = {
 	mining_rig_3 = {
 		
 		local_resources_factor = 0.10
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_10
-			custom_effect_tooltip = increase_valuable_goods_output_10
-		}
+		raw_goods_rgo_output_modifier = 0.1
+		valuable_goods_rgo_output_modifier = 0.1
 		
 		enable_building = {
 			building = coal_mine
@@ -161,6 +155,8 @@ technologies = {
 	mining_rig_4 = {
 		
 		local_resources_factor = 0.10
+		raw_goods_rgo_output_modifier = 0.1
+		valuable_goods_rgo_output_modifier = 0.1
 		
 		enable_building = {
 			building = coal_mine
@@ -713,10 +709,8 @@ technologies = {
 	refining = {
 		
 		local_resources_factor = 0.05
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_10
-			custom_effect_tooltip = increase_valuable_goods_output_10
-		}
+		raw_goods_rgo_output_modifier = 0.1
+		valuable_goods_rgo_output_modifier = 0.1
 
 		enable_building = {
 			building = coal_mine
@@ -788,9 +782,7 @@ technologies = {
 	early_oil_refining = {
 		
 		production_oil_factor = 0.05
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_2_5
-		}
+		raw_goods_rgo_output_modifier = 0.025
 		
 		research_cost = 1.5
 		start_year = 1860
@@ -833,9 +825,7 @@ technologies = {
 	oil_refinery_1 = {
 		
 		production_oil_factor = 0.1
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_2_5
-		}
+		raw_goods_rgo_output_modifier = 0.025
 
 		research_cost = 1
 		start_year = 1860
@@ -868,9 +858,7 @@ technologies = {
 	oil_refinery_2 = {
 		
 		production_oil_factor = 0.1
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_2_5
-		}
+		raw_goods_rgo_output_modifier = 0.025
 
 		research_cost = 1
 		start_year = 1870
@@ -903,9 +891,7 @@ technologies = {
 	oil_refinery_3 = {
 		
 		production_oil_factor = 0.1
-		on_research_complete = {
-			custom_effect_tooltip = increase_raw_goods_output_2_5
-		}
+		raw_goods_rgo_output_modifier = 0.025
 
 		path = {
 			leads_to_tech = oil_extraction
@@ -2109,9 +2095,7 @@ technologies = {
 	hot_blast_furnaces = {
 		
 		production_factory_max_efficiency_factor = 0.05
-		on_research_complete = {
-			custom_effect_tooltip = decrease_factory_raw_goods_input_4
-		}
+		factory_input_modifier = -0.04
 		
 		research_cost = 1.5
 		start_year = 1850
@@ -2182,10 +2166,8 @@ technologies = {
 	industrial_blast_furnace = {
 		
 		production_factory_max_efficiency_factor = 0.10
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_throughput_4
-			custom_effect_tooltip = decrease_factory_raw_goods_input_4
-		}
+		factory_throughput_modifier = 0.04
+		factory_input_modifier = -0.04
 		enable_building = {
 			building = steel_mill
 			level = 1
@@ -2236,9 +2218,7 @@ technologies = {
 	cast_iron_industrialization = {
 		
 		line_change_production_efficiency_factor = 0.05		
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_throughput_8
-		}
+		industrial_goods_factory_throughput_modifier = 0.08
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -2283,9 +2263,7 @@ technologies = {
 	
 	industrial_finery_forge = {
 				
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_output_4
-		}
+		industrial_goods_factory_output_modifier = 0.04
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -2353,9 +2331,7 @@ technologies = {
 	
 	wrought_iron_industrialization = {
 		
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_output_4
-		}
+		industrial_goods_factory_output_modifier = 0.04
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -2472,9 +2448,7 @@ technologies = {
 	dry_puddling_process = {
 	
 
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_output_4
-		}
+		industrial_goods_factory_output_modifier = 0.04
 		research_cost = 2
 		start_year = 1855
 		folder = {
@@ -2545,9 +2519,8 @@ technologies = {
 	
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1		
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_throughput_16
-		}
+		industrial_goods_factory_throughput_modifier = 0.16
+
 		enable_building = {
 			building = steel_mill
 			level = 3
@@ -2584,9 +2557,8 @@ technologies = {
 	
 		industrial_capacity_factory = 0.05
 		industrial_capacity_dockyard = 0.05
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_throughput_8
-		}
+		industrial_goods_factory_throughput_modifier = 0.08
+
 		research_cost = 2
 		start_year = 1865
 		folder = {
@@ -2630,9 +2602,8 @@ technologies = {
 	
 	regenerative_furnace = {
 	
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_throughput_16
-		}
+		industrial_goods_factory_throughput_modifier = 0.16
+
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -2704,9 +2675,8 @@ technologies = {
 	
 	siemens_martin_process = {
 	
-		on_research_complete = {
-			custom_effect_tooltip = increase_factory_industrial_goods_output_4
-		}
+		industrial_goods_factory_output_modifier = 0.04
+
 		research_cost = 1.5
 		start_year = 1865
 		folder = {
@@ -2807,9 +2777,8 @@ technologies = {
 	stainless_steel = {
 	
 		production_speed_buildings_factor = 0.05	
-		on_research_complete = {
-			custom_effect_tooltip = decrease_build_cost_5
-		}
+		build_cost_modifier = -0.05
+		
 		research_cost = 1.5
 		start_year = 1870
 		folder = {

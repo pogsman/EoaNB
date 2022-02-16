@@ -1,4 +1,10 @@
 spriteTypes = {	
+	#Event Pictures
+	spriteType = {
+		name = "GFX_report_event_generic_work_programs"
+		texturefile = "gfx/event_pictures/generic/report_event_generic_work_programs.png"
+	}
+
 	#GUI
 	spriteType = {
 		name = "GFX_state_economy_screen_background"

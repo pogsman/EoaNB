@@ -1,0 +1,16 @@
+﻿add_namespace = economy
+
+
+country_event = {
+	id = economy.1
+	title = economy.1.t
+	desc = economy.1.d
+	picture = GFX_report_event_generic_rally2
+
+	is_triggered_only = yes
+
+	option = {
+		name = economy.1.a
+		
+	}
+}

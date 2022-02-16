@@ -36,7 +36,7 @@
 #
 # 4. Add the project & its base costs to the list in the proj_setup in THIS file, along with comments detailing what the project is.
 #
-# 2. Add the localization for the project to the projects_localization_l_english.yml & _projects_scripted_localization.txt files 
+# 2. Add the localization for the project to the projects_l_english.yml & _projects_scripted_loc.txt files 
 #    in /localisation/english & /common/scripted_localisation respectively, following the guidlines in those files
 #
 # 4. Add the finishing effect in THIS file in the proj_done scripted effect using an else_if statement with the trigger
@@ -128,17 +128,16 @@ proj_done = {
         }
 
         #Give an event to player to let them know that it's done with effects.
-
+        country_event = projects.1
     }
 
 
     # Remove project from your project list & add to local/global completed projects (if necessary)
     remove_from_array = { array = proj_id index = proj_index_temp }
     remove_from_array = { array = proj_relative index = proj_index_temp }
-    remove_from_array = { array = proj_estimated_total_cost index = proj_index_temp }
+    remove_from_array = { array = proj_estimated_cost index = proj_index_temp }
     remove_from_array = { array = proj_estimated_monthly_cost index = proj_index_temp }
     remove_from_array = { array = proj_estimated_complete_time index = proj_index_temp }
-    remove_from_array = { array = proj_cost index = proj_index_temp }
     remove_from_array = { array = proj_time_elapsed index = proj_index_temp }
     remove_from_array = { array = proj_life_goods_need index = proj_index_temp }
     remove_from_array = { array = proj_life_goods_fulfilled index = proj_index_temp }
@@ -231,10 +230,9 @@ proj_create = {
 
                 add_to_array = { proj_id = id_temp }
                 add_to_array = { proj_relative = 1 }
-                add_to_array = { proj_estimated_total_cost = 0 }
+                add_to_array = { proj_estimated_cost = 0 }
                 add_to_array = { proj_estimated_monthly_cost = 0 }
                 add_to_array = { proj_estimated_complete_time = 0 }
-                add_to_array = { proj_cost = 0 }
                 add_to_array = { proj_time_elapsed = 0 }
                 add_to_array = { proj_life_goods_need = 0 }
                 add_to_array = { proj_life_goods_fulfilled = 0 }
@@ -439,7 +437,7 @@ proj_update = {
 
                 #Estimated Monthly Cost
 
-                    set_variable = { proj_estimated_monthly_cost^i2 = proj_cost^i2 }
+                    set_variable = { proj_estimated_monthly_cost^i2 = 0 }
 
                     set_temp_variable = { cost_temp = proj_life_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_life_goods_fulfilled^i2 }
@@ -509,37 +507,37 @@ proj_update = {
                 #
 
                 #Estimated Total Cost
-                    set_variable = { proj_estimated_total_cost^i2 = proj_cost^i2 }
+                    set_variable = { proj_estimated_cost^i2 = 0 }
 
                     set_temp_variable = { cost_temp = proj_life_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_life_goods_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = life_goods_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
 
                     set_temp_variable = { cost_temp = proj_everyday_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_everyday_goods_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = everyday_goods_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
 
                     set_temp_variable = { cost_temp = proj_luxury_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_luxury_goods_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = luxury_goods_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
 
                     set_temp_variable = { cost_temp = proj_services_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_services_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = services_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
 
                     set_temp_variable = { cost_temp = proj_raw_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_raw_goods_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = raw_goods_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
 
                     set_temp_variable = { cost_temp = proj_industrial_goods_need^i2 }
                     subtract_from_temp_variable = { cost_temp = proj_industrial_goods_fulfilled^i2 }
                     multiply_temp_variable = { cost_temp = industrial_goods_price }
-                    add_to_variable = { proj_estimated_total_cost^i2 = cost_temp }
+                    add_to_variable = { proj_estimated_cost^i2 = cost_temp }
                 #
 
                 #Estimated Completion Time
@@ -641,7 +639,6 @@ proj_update = {
                         }
                     }
 
-                    add_to_variable = { proj_estimated_complete_time^i2 = 0.499 }
                     round_variable = proj_estimated_complete_time^i2
                 #
 
