@@ -14,21 +14,22 @@ focus_tree = {
 
 	focus = {
 		id = TUS_the_tuscan_economy
-		icon = GFX_goal_focus_handelsgesetz_law
+		icon = GFX_Focus_banks
 		cost = 70
 
 		available = {
 
 		}
-
 		x = 9
 		y = 0
 
 		ai_will_do = {
 			factor = 10
 		}
-		
 		completion_reward = {
+			country_event = {
+				id = tuscany.2
+			}
 		}
 	}
 	
@@ -51,6 +52,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			country_event = {
+				id = tuscany.3
+			}
 		}
 	}
 	
@@ -73,12 +77,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#decision about textiles
 		}
 	}
 	
 	focus = {
 		id = TUS_the_artisans
-		icon = GFX_goal_SWE_economic_reform
+		icon = GFX_Focus_Economy_Reforms
 		relative_position_id = TUS_the_tuscan_economy
 		cost = 70
 
@@ -95,12 +100,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#production efficiency, consumer goods cost
 		}
 	}
 
 	focus = {
 		id = TUS_ridolfis_experiment
-		icon = GFX_goal_generic_tax_raise
+		icon = GFX_Focus_Economy_Tax
 		relative_position_id = TUS_the_sharecropping_debates
 		cost = 70
 
@@ -117,6 +123,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			country_event = {
+				id = tuscany.4
+			}
 		}
 	}
 	
@@ -141,12 +150,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_stability = -0.01
 		}
 	}
 	
 	focus = {
 		id = TUS_land_reclamation
-		icon = GFX_goal_focus_urbanization
+		icon = GFX_Focus_Urbanization
 		relative_position_id = TUS_reform_elsewhere
 		cost = 70
 
@@ -163,6 +173,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			162 = {
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 	
@@ -185,12 +198,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#building bonus at cost of consumer goods
 		}
 	}
 	
 	focus = {
 		id = TUS_introduce_wage_labour
-		icon = GFX_goal_focus_working_hours
+		icon = GFX_Focus_Working_Hours
 		relative_position_id = TUS_ridolfis_experiment
 		cost = 70
 
@@ -209,12 +223,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			### Maybe swap ideas
+			add_stability = 0.01
 		}
 	}
 	
 	focus = {
 		id = TUS_curtail_innovation
-		icon = GFX_goal_focus_economic_crisis
+		icon = GFX_Focus_economic_crisis
 		relative_position_id = TUS_introduce_wage_labour
 		cost = 70
 
@@ -231,6 +247,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#negative research speed but more stability + production bonus
 		}
 	}
 	
@@ -253,12 +270,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#production bonuses
 		}
 	}
 	
 	focus = {
 		id = TUS_continue_with_free_trade
-		icon = GFX_goal_focus_international_investments
+		icon = GFX_Focus_Trade_International
 		relative_position_id = TUS_textile_industry
 		cost = 70
 
@@ -278,12 +296,24 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = limited_exports
+				}
+				swap_ideas = { remove_idea = limited_exports add_idea = free_trade }
+			}
+			else_if = {
+				limit = {
+					has_idea = export_focus
+				}
+				swap_ideas = { remove_idea = export_focus add_idea = free_trade }
+			}
 		}
 	}
 	
 	focus = {
 		id = TUS_protect_tuscan_production
-		icon = GFX_focus_increase_civillian_budget
+		icon = GFX_Focus_Economy_Growth
 		relative_position_id = TUS_textile_industry
 		cost = 70
 
@@ -303,12 +333,24 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = free_trade
+				}
+				swap_ideas = { remove_idea = free_trade add_idea = limited_exports  }
+			}
+			else_if = {
+				limit = {
+					has_idea = export_focus
+				}
+				swap_ideas = { remove_idea = export_focus add_idea = limited_exports }
+			}
 		}
 	}
 	
 	focus = {
 		id = TUS_consumers_exist_not_in_the_countryside
-		icon = GFX_Focus_Trade_Investment_2
+		icon = GFX_Foreign_investments_focus_2
 		relative_position_id = TUS_continue_with_free_trade
 		cost = 70
 
@@ -325,6 +367,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#trade idea, resources
 		}
 	}
 	
@@ -347,6 +390,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#trade idea, resources
 		}
 	}
 	
@@ -369,12 +413,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#trade idea, resources, consumer goods
 		}
 	}
 	
 	focus = {
 		id = TUS_the_iron_industry
-		icon = GFX_goal_raw_iron_production_focus
+		icon = GFX_Focus_Production_Raw_Iron
 		relative_position_id = TUS_the_artisans
 		cost = 70
 
@@ -391,12 +436,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#Adds iron in tuscany through decision
 		}
 	}
 	
 	focus = {
 		id = TUS_learn_from_leghorn
-		icon = GFX_focus_mediterranean_trade
+		icon = GFX_Focus_mediterranean_trade
 		relative_position_id = TUS_the_iron_industry
 		cost = 70
 
@@ -413,6 +459,8 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#consumer goods benefit
+			#unlock decision to upgrade port/naval base
 		}
 	}
 	
@@ -435,6 +483,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#Modernized equipment idea, research bonus
 		}
 	}
 	
@@ -457,12 +506,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#bonus to research increased, building speed decreased
 		}
 	}
 	
 	focus = {
 		id = TUS_social_concerns
-		icon = GFX_goal_school_opening_focus
+		icon = GFX_Focus_school_opening
 		relative_position_id = TUS_the_iron_industry
 		cost = 70
 
@@ -479,12 +529,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#temporary idea giving research bonus, maybe event
+			#decisions to improve laws
+			add_political_power = 100
 		}
 	}
 	
 	focus = {
 		id = TUS_stability_for_workers
-		icon = GFX_goal_focus_the_workers
+		icon = GFX_Focus_Worker
 		relative_position_id = TUS_social_concerns
 		cost = 70
 
@@ -501,12 +554,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			#remove_ideas = {
+#
+			#}
 		}
 	}
 	
 	focus = {
 		id = TUS_and_for_land_owners
-		icon = GFX_goal_focus_the_elite
+		icon = GFX_Focus_Elite
 		relative_position_id = TUS_stability_for_workers
 		cost = 70
 
@@ -523,13 +579,16 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			remove_ideas = {
+				TUS_Incompetent_Ruling_Class
+			}
 		}
 	}
 	
 
 	focus = {
 		id = TUS_the_political_scene
-		icon = GFX_
+		icon = GFX_focus_TUS_Tuscan_COA
 		cost = 70
 
 		available = {
@@ -544,12 +603,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			country_event = {
+				id = tuscany.5
+			}
 		}
 	}
 	
 	focus = {
 		id = TUS_memories_of_the_past
-		icon = GFX_
+		icon = GFX_Focus_Revolutions_1848
 		relative_position_id = TUS_the_political_scene
 		cost = 70
 
@@ -566,12 +628,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			country_event = {
+				id = tuscany.6
+			}
 		}
 	}
 	
 	focus = {
 		id = TUS_de_moderate_liberalism
-		icon = GFX_
+		icon = GFX_Focus_Government_Struggle
 		relative_position_id = TUS_memories_of_the_past
 		cost = 70
 
@@ -594,7 +659,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_into_radicalism
-		icon = GFX_
+		icon = GFX_focus_PIE_mazzini
 		relative_position_id = TUS_de_moderate_liberalism
 		cost = 70
 
@@ -617,7 +682,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_into_republicanism
-		icon = GFX_
+		icon = GFX_Focus_Ideology_Liberty
 		relative_position_id = TUS_de_moderate_liberalism
 		cost = 70
 
@@ -657,6 +722,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			# add national society idea
 		}
 	}
 	
@@ -949,7 +1015,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_avoid_agitation
-		icon = GFX_
+		icon = GFX_Focus_Government
 		relative_position_id = TUS_memories_of_the_past
 		cost = 70
 
@@ -972,7 +1038,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_cater_to_the_workers
-		icon = GFX_
+		icon = GFX_Focus_Electorate_cater_to_workers
 		relative_position_id = TUS_avoid_agitation
 		cost = 70
 
@@ -994,7 +1060,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_cater_to_the_landowners
-		icon = GFX_
+		icon = GFX_Focus_Electorate_cater_to_land_owners
 		relative_position_id = TUS_avoid_agitation
 		cost = 70
 
@@ -1017,7 +1083,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_cater_to_the_aristocracy
-		icon = GFX_
+		icon = GFX_Focus_Electorate_cater_to_aristocracy
 		relative_position_id = TUS_avoid_agitation
 		cost = 70
 
@@ -1039,7 +1105,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_pass_minor_reforms
-		icon = GFX_
+		icon = GFX_focus_TUS_minor_reforms
 		relative_position_id = TUS_cater_to_the_workers
 		cost = 70
 
@@ -1057,12 +1123,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
 		}
 	}
 	
 	focus = {
 		id = TUS_cater_to_the_austrians
-		icon = GFX_
+		icon = GFX_focus_TUS_cater_to_Austria
 		relative_position_id = TUS_cater_to_the_landowners
 		cost = 70
 
@@ -1085,7 +1153,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_a_watchful_eye
-		icon = GFX_
+		icon = GFX_Focus_Espionage_a_watchful_eye
 		relative_position_id = TUS_pass_minor_reforms
 		cost = 70
 
@@ -1108,7 +1176,7 @@ focus_tree = {
 	
 	focus = {
 		id = TUS_confirm_absolutism
-		icon = GFX_
+		icon = GFX_Focus_Monarchy_Usurp_Throne
 		relative_position_id = TUS_a_watchful_eye
 		cost = 70
 
@@ -1125,6 +1193,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+
 		}
 	}
 
@@ -1603,7 +1672,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		cost = 0
-
+		mutually_exclusive = {
+			focus = TUS_hostility_break_out
+		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
@@ -1626,7 +1697,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		cost = 0
-
+		mutually_exclusive = {
+			focus = TUS_costly_agreement
+		}
 		ai_will_do = {
 			factor = 0
 			modifier = {

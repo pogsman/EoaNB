@@ -77,7 +77,7 @@ eoanb_category_choshu_politics = {
 
 eoanb_category_second_opium_war = {
 	icon = generic_propaganda
-	
+	picture = GFX_decision_cat_opium_war
 	allowed = { always = yes }
 }
 
@@ -357,5 +357,33 @@ TSH_category_ansei_purge = {
 
 	allowed = {
 		tag = TSH
+	}
+}
+
+JAP_industrialization_category = {
+	icon = generic_construction
+
+	priority = 80
+
+	allowed = {
+		tag = JAP
+	}
+}
+
+JAP_ministry_category = {
+	icon = generic_construction
+
+	priority = 60
+
+	allowed = {
+		tag = JAP
+	}
+}
+
+JAP_raid_decisions = {
+	icon = generic_construction
+
+	allowed = {
+		tag = JAP
 	}
 }

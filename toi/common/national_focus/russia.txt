@@ -40,6 +40,14 @@ focus_tree = {
 			add_stability = 0.03
 			add_tech_bonus = { bonus = 0.35 uses = 1 category = humanities_tech }
 			add_political_power = -100
+			260 = {
+				add_building_construction = {
+					type = supply_node
+					province = 413
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -308,7 +316,7 @@ focus_tree = {
 		}
 
 		prerequisite = { focus = RUS_vic_Support_Volga_German_Farming }
-		prerequisite = { focus = RUS_vic_Utilise_Abandoned_Land }
+		prerequisite = { focus = RUS_vic_Agricultural_Improvements }
 
 		x = 2
 		y = 8
@@ -329,32 +337,38 @@ focus_tree = {
 		cost = 40
 
 		available = {
-		    RUS = {
-		        OR = { has_completed_focus = RUS_vic_Rapid_Industrialization has_completed_focus = RUS_vic_Steady_Industrialization }
-		    }
-		    209 = { is_owned_and_controlled_by = RUS }
-			96 = { is_owned_and_controlled_by = RUS }
-			97 = { is_owned_and_controlled_by = RUS }
-			1135 = { is_owned_and_controlled_by = RUS }
+		    owns_state = 1134
+			owns_state = 11
+			owns_state = 1135
+			owns_state = 10
 		}
 		bypass = {
             OR = {
-                209 = { NOT = { is_owned_by = RUS } }
-                96 = { NOT = { is_owned_by = RUS } }
-                97 = { NOT = { is_owned_by = RUS } }
-				1135 = { NOT = { is_owned_by = RUS } }
+				NOT = { owns_state = 1134 }
+				NOT = { owns_state = 11 }
+				NOT = { owns_state = 1135 }
+				NOT = { owns_state = 10 }
             }
 		}
-		prerequisite = { focus = RUS_vic_Radical_Economic_Reforms focus = RUS_vic_Stable_Development }
+		prerequisite = { focus = RUS_vic_Rapid_Industrialization focus = RUS_vic_Steady_Industrialization }
 
 		x = 5
-		y = 1
+		y = 2
 
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Petersburg_Warsaw_Railway
+			activate_mission = RUS_mission_vic_Petersburg_Warsaw_Railway
 			custom_effect_tooltip = RUS_tt_vic_Petersburg_Warsaw_Railway
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 300
+            	}
+			}
 		}
 	}
 
@@ -364,34 +378,26 @@ focus_tree = {
 		cost = 40
 
 		available = {
-		    if = {
-                limit = {
-                    209 = { is_owned_by = RUS }
-		        	96 = { is_owned_by = RUS }
-		        	97 = { is_owned_by = RUS }
-					1135 = { is_owned_by = RUS }
-                }
-                209 = { infrastructure > 3 }
-                96 = { infrastructure > 3 }
-                97 = { infrastructure > 3 }
-				1135 = { infrastructure > 3 }
-                else = {
-                    custom_trigger_tooltip = {
-		                tooltip = "RUS_vic_W_P_Railway_Foc_Trigger_Tooltip"
-                        RUS = { NOT = { has_active_mission = RUS_mission_vic_Petersburg_Warsaw_Railway } }
-		            }
-                }
+            custom_trigger_tooltip = {
+		        tooltip = "RUS_vic_W_P_Railway_Foc_Trigger_Tooltip"
+                NOT = { has_active_mission = RUS_mission_vic_Petersburg_Warsaw_Railway }
             }
-            265 = { is_owned_and_controlled_by = RUS }
-			257 = { is_owned_and_controlled_by = RUS }
-			254 = { is_owned_and_controlled_by = RUS }
+            owns_state = 217
+			owns_state = 265
+			owns_state = 260
+			owns_state = 223
+			owns_state = 219
+			owns_state = 953
         }
         bypass = {
             OR = {
-                265 = { NOT = { is_owned_by = RUS } }
-                257 = { NOT = { is_owned_by = RUS } }
-                254 = { NOT = { is_owned_by = RUS } }
-            }
+				NOT = { owns_state = 217 }
+				NOT = { owns_state = 265 }
+				NOT = { owns_state = 260 }
+				NOT = { owns_state = 223 }
+				NOT = { owns_state = 219 }
+				NOT = { owns_state = 953 }
+			}
 		}
 		prerequisite = { focus = RUS_vic_Petersburg_Warsaw_Railway }
 
@@ -401,8 +407,17 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Moscow_Tsaritsyn_Railway
+			activate_mission = RUS_mission_vic_Moscow_Tsaritsyn_Railway
 			custom_effect_tooltip = RUS_tt_vic_Moscow_Tsaritsyn_Railway
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 400
+            	}
+			}
 		}
 	}
 
@@ -474,38 +489,29 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Railways_In_Tbilisi
-		icon = GFX_goal_focus_tblisi_railroad
+		id = RUS_vic_West_Russia_Railways
+		icon = GFX_goal_HOL_movement_of_grain
 		cost = 40
 
 		available = {
-            if = {
-                limit = {
-                    265 = { is_owned_by = RUS }
-		        	257 = { is_owned_by = RUS }
-			        254 = { is_owned_by = RUS }
-                }
-                265 = { infrastructure > 3 }
-                257 = { infrastructure > 2 }
-                254 = { infrastructure > 3 }
-                else = {
-                    custom_trigger_tooltip = {
-		                tooltip = "RUS_vic_T_Railway_Foc_Trigger_Tooltip"
-                        RUS = { NOT = { has_active_mission = RUS_mission_vic_Moscow_Tsaritsyn_Railway } }
-		            }
-                }
-            }
-            1120 = { is_owned_and_controlled_by = RUS }
-            OR = {
-                date > 1860.01.01
-                AND = {
-                    CIR = { exists = no }
-                    CAU = { exists = no }
-                }
-            }
+            custom_trigger_tooltip = {
+		        tooltip = "RUS_vic_T_Railway_Foc_Trigger_Tooltip"
+                NOT = { has_active_mission = RUS_mission_vic_Moscow_Tsaritsyn_Railway }
+		    }
+		    owns_state = 1134
+			owns_state = 207
+			owns_state = 242
+			owns_state = 224
+			owns_state = 222
 		}
 		bypass = {
-            1120 = { NOT = { is_owned_by = RUS } }
+			OR = {
+				NOT = { owns_state = 1134 }
+				NOT = { owns_state = 207 }
+				NOT = { owns_state = 242 }
+				NOT = { owns_state = 224 }
+				NOT = { owns_state = 222 }
+			}
 		}
 		prerequisite = { focus = RUS_vic_Moscow_Tsaritsyn_Railway }
 
@@ -515,8 +521,17 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Railways_In_Tbilisi
-			custom_effect_tooltip = RUS_tt_vic_Railways_In_Tbilisi
+			activate_mission = RUS_mission_vic_daugavplis_oryol_railway
+			custom_effect_tooltip = RUS_tt_vic_daugavplis_oryol_railway
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 400
+            	}
+			}
 		}
 	}
 
@@ -531,7 +546,7 @@ focus_tree = {
 		bypass = {
             229 = { NOT = { is_owned_by = RUS } }
 		}
-		prerequisite = { focus = RUS_vic_Railways_In_Tbilisi }
+		prerequisite = { focus = RUS_vic_West_Russia_Railways }
 
 		x = 5
 		y = 7
@@ -545,52 +560,77 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Railways_In_The_Volga_Region
-		icon = GFX_goal_generic_construct_infrastructure
+		id = RUS_vic_Moscow_Railways
+		icon = GFX_focus_KNS_rail_company_subsidies
 		cost = 40
 
 		available = {
-		    if = {
-                limit = {
-			        1120 = { is_owned_by = RUS }
-                }
-                1120 = { infrastructure > 2 }
-                else = {
-                    custom_trigger_tooltip = {
-		                tooltip = "RUS_vic_V_R_Railway_Foc_Trigger_Tooltip"
-                        RUS = { NOT = { has_active_mission = RUS_mission_vic_Railways_In_Tbilisi } }
-		            }
-                }
-            }
-		    236 = { is_owned_and_controlled_by = RUS }
-		    238 = { is_owned_and_controlled_by = RUS }
+            NOT = { has_active_mission = RUS_mission_vic_daugavplis_oryol_railway }
+		    owns_state = 953
+			owns_state = 219
+			owns_state = 223
+			owns_state = 222
+			owns_state = 220
+			owns_state = 193
+			owns_state = 202
+			owns_state = 242
+			owns_state = 207
+			owns_state = 206
+			owns_state = 95
+			owns_state = 94
 		}
 		bypass = {
             OR = {
-                236 = { NOT = { is_owned_by = RUS } }
-                238 = { NOT = { is_owned_by = RUS } }
+            	NOT = { owns_state = 953 }
+				NOT = { owns_state = 219 }
+				NOT = { owns_state = 223 }
+				NOT = { owns_state = 222 }
+				NOT = { owns_state = 220 }
+				NOT = { owns_state = 193 }
+				NOT = { owns_state = 202 }
+				NOT = { owns_state = 242 }
+				NOT = { owns_state = 207 }
+				NOT = { owns_state = 206 }
+				NOT = { owns_state = 95 }
+				NOT = { owns_state = 94 }
             }
-		}
-		prerequisite = { focus = RUS_vic_Railways_In_Tbilisi }
+        }
+		prerequisite = { focus = RUS_vic_West_Russia_Railways }
 
 		x = 3
 		y = 6
 
-		ai_will_do = { factor = 10 }
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 14
+				NOT = { has_active_mission = RUS_mission_vic_ryazan_saratov_railway }
+			}
+		}
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Railways_In_Volga
-			custom_effect_tooltip = RUS_tt_vic_Railways_In_The_Volga_Region
+			activate_mission = RUS_mission_vic_moscow_kiev_railway
+			activate_mission = RUS_mission_vic_moscow_brzesc_railway
+			custom_effect_tooltip = RUS_tt_vic_Moscow_Railways
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 700
+            	}
+			}
 		}
 	}
 
 	focus = {
-		id = RUS_vic_Utilise_Abandoned_Land
-		icon = GFX_goal_generic_construction2
+		id = RUS_vic_Agricultural_Improvements
+		icon = GFX_goal_SWE_famine_relief
 		cost = 70
 
 		available = {}
-		prerequisite = { focus = RUS_vic_Railways_In_The_Volga_Region }
+		prerequisite = { focus = RUS_vic_Moscow_Railways }
 
 		x = 3
 		y = 7
@@ -598,60 +638,80 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			add_political_power = 45
-            custom_effect_tooltip = "RUS_vic_Utilise_Abandoned_Land_tooltip"
+			add_stability = 0.05
+			add_tech_bonus = { bonus = 1 uses = 3 category = biochemistry_tech }
+			1314 = { add_extra_state_shared_building_slots = 1 }
+			202 = { add_extra_state_shared_building_slots = 1 }
+			195 = { add_extra_state_shared_building_slots = 1 }
+			953 = { add_extra_state_shared_building_slots = 1 }
+			239 = { add_extra_state_shared_building_slots = 1 }
+			242 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 
 	focus = {
-		id = RUS_vic_Railways_In_The_Urals
-		icon = GFX_goal_generic_construct_infrastructure
+		id = RUS_vic_Smaller_Railways
+		icon = GFX_goal_focus_tblisi_railroad
 		cost = 40
 
 		available = {
-		    if = {
-                limit = {
-			        1120 = { is_owned_by = RUS }
-                }
-                1120 = { infrastructure > 2 }
-                else = {
-                    custom_trigger_tooltip = {
-		                tooltip = "RUS_vic_V_R_Railway_Foc_Trigger_Tooltip"
-                        RUS = { NOT = { has_active_mission = RUS_mission_vic_Railways_In_Tbilisi } }
-		            }
-                }
-            }
-		    653 = { is_owned_and_controlled_by = RUS }
-		    651 = { is_owned_and_controlled_by = RUS }
-		    652 = { is_owned_and_controlled_by = RUS }
+            NOT = { has_active_mission = RUS_mission_vic_daugavplis_oryol_railway }
+			custom_trigger_tooltip = {
+				tooltip = RUS_tt_vic_Smaller_Railways_trigger
+				hidden_trigger = {
+					has_railway_connection = {
+						start_province = 6380
+						target_province = 11314
+					}
+				}
+			}
+		    owns_state = 254
+			owns_state = 257
+			owns_state = 239
 		}
 		bypass = {
             OR = {
-                653 = { NOT = { is_owned_by = RUS } }
-                651 = { NOT = { is_owned_by = RUS } }
-                652 = { NOT = { is_owned_by = RUS } }
+                NOT = { owns_state = 254 }
+				NOT = { owns_state = 257 }
+				NOT = { owns_state = 239 }
             }
 		}
-		prerequisite = { focus = RUS_vic_Railways_In_Tbilisi }
+		prerequisite = { focus = RUS_vic_West_Russia_Railways }
 
 		x = 7
 		y = 6
 
-		ai_will_do = { factor = 10 }
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 14
+				NOT = { has_active_mission = RUS_mission_vic_moscow_kiev_railway }
+				NOT = { has_active_mission = RUS_mission_vic_moscow_brzesc_railway }
+			}
+		}
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Railways_In_The_Urals
-			custom_effect_tooltip = RUS_tt_vic_Railways_In_The_Urals
+			activate_mission = RUS_mission_vic_ryazan_saratov_railway
+			custom_effect_tooltip = RUS_tt_vic_Smaller_Railways
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 400
+            	}
+			}
 		}
 	}
 
 	focus = {
 		id = RUS_vic_Improve_Mining_Techniques
-		icon = GFX_goal_generic_production
+		icon = GFX_goal_raw_iron_production_focus
 		cost = 70
 
 		available = {}
-		prerequisite = { focus = RUS_vic_Railways_In_The_Urals }
+		prerequisite = { focus = RUS_vic_Smaller_Railways }
 
 		x = 7
 		y = 7
@@ -673,7 +733,7 @@ focus_tree = {
 
 		available = {
 		}
-		prerequisite = { focus = RUS_vic_Utilise_Abandoned_Land }
+		prerequisite = { focus = RUS_vic_Agricultural_Improvements }
 		prerequisite = { focus = RUS_vic_Oil_Extraction_In_Baku }
 		prerequisite = { focus = RUS_vic_Improve_Mining_Techniques }
 		prerequisite = { focus = RUS_vic_Yuzovka_Mining_Operation focus = RUS_vic_Support_Volga_German_Farming }
@@ -685,6 +745,7 @@ focus_tree = {
 
 		completion_reward = {
 		    add_political_power = 50
+		    unlock_decision_tooltip = RUS_decision_vic_ural_mining_railway
 			add_tech_bonus = { bonus = 1.5 uses = 2 category = transport_tech }
 		}
 	}
@@ -692,7 +753,7 @@ focus_tree = {
 	focus = {
 		id = RUS_vic_Support_The_Coal_Mining_Industry
 		icon = GFX_goal_focus_coal_mines
-		cost = 40
+		cost = 50
 
 		available = {}
 		prerequisite = { focus = RUS_vic_Facilitate_Resource_Transfer }
@@ -704,15 +765,41 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 50
+			add_tech_bonus = { bonus = 1 uses = 2 category = process_engineering_tech }
+			add_tech_bonus = { bonus = 1 uses = 1 category = explosives_tech }
 			unlock_decision_tooltip = RUS_mission_vic_Coal_Mining_Industry_1
 			unlock_decision_tooltip = RUS_mission_vic_Coal_Mining_Industry_2
+			573 = {
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+			219 = {
+				add_resource = {
+					type = coal
+					amount = 6
+				}
+			}
+			227 = {
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+			}
+			221 = {
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+			}
 		}
 	}
 
 	focus = {
-		id = RUS_vic_Invest_In_The_Logging_Industry
-		icon = GFX_goal_generic_construct_civilian
-		cost = 40
+		id = RUS_vic_Industrial_Innovations
+		icon = GFX_Focus_Production_Machine_Parts
+		cost = 50
 
 		available = {}
 		prerequisite = { focus = RUS_vic_Facilitate_Resource_Transfer }
@@ -723,10 +810,11 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			add_political_power = 50
-			unlock_decision_tooltip = RUS_mission_vic_Logging_Industry_1
-			unlock_decision_tooltip = RUS_mission_vic_Logging_Industry_2
-			unlock_decision_tooltip = RUS_mission_vic_Logging_Industry_3
+			add_tech_bonus = { bonus = 1.5 uses = 2 category = mechanical_engineering_tech }
+			add_tech_bonus = { bonus = 1.5 uses = 2 category = electronics_devices_tech }
+			195 = { add_extra_state_shared_building_slots = 1 }
+			953 = { add_extra_state_shared_building_slots = 1 }
+			1314 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 
@@ -744,7 +832,7 @@ focus_tree = {
             }
 		}
 		prerequisite = { focus = RUS_vic_Support_The_Coal_Mining_Industry }
-		prerequisite = { focus = RUS_vic_Invest_In_The_Logging_Industry }
+		prerequisite = { focus = RUS_vic_Industrial_Innovations }
 
 		x = 5
 		y = 10
@@ -754,28 +842,32 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_tech_bonus = { bonus = 0.75 uses = 2 category = humanities_tech }
-			add_tech_bonus = { bonus = 0.55 uses = 1 category = mechanical_engineering_tech }
-			add_tech_bonus = { bonus = 0.55 uses = 1 category = process_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = mechanical_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = process_engineering_tech }
 		}
 	}
 
 	focus = {
-		id = RUS_vic_Trans_Siberian_Railway
+		id = RUS_vic_Vistulan_Railway
 		icon = GFX_goal_focus_railroad_development
-		cost = 70
+		cost = 40
 
 		available = {
-		    953 = { is_owned_and_controlled_by = RUS }
-			252 = { is_owned_and_controlled_by = RUS }
-			398 = { is_owned_and_controlled_by = RUS }
-			571 = { is_owned_and_controlled_by = RUS }
+		    owns_state = 98
+			owns_state = 1314
+			owns_state = 10
+			owns_state = 1313
+			owns_state = 92
+			owns_state = 93
 		}
 		bypass = {
             OR = {
-                953 = { NOT = { is_owned_by = RUS } }
-                252 = { NOT = { is_owned_by = RUS } }
-                398 = { NOT = { is_owned_by = RUS } }
-                571 = { NOT = { is_owned_by = RUS } }
+                NOT = { owns_state = 98 }
+				NOT = { owns_state = 1314 }
+				NOT = { owns_state = 10 }
+				NOT = { owns_state = 1313 }
+				NOT = { owns_state = 92 }
+				NOT = { owns_state = 93 }
             }
 		}
 		prerequisite = { focus = RUS_vic_Industrialise_The_Empire }
@@ -783,11 +875,28 @@ focus_tree = {
 		x = 5
 		y = 11
 
-		ai_will_do = { factor = 10 }
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 14
+				NOT = { has_active_mission = RUS_mission_vic_moscow_kiev_railway }
+				NOT = { has_active_mission = RUS_mission_vic_moscow_brzesc_railway }
+				NOT = { has_active_mission = RUS_mission_vic_ryazan_saratov_railway }
+			}
+		}
 
 		completion_reward = {
-			activate_mission_tooltip = RUS_mission_vic_Trans_Siberian_Railway
-			custom_effect_tooltip = RUS_tt_vic_Trans_Siberian_Railway
+			activate_mission = RUS_mission_vic_vistulan_railway
+			custom_effect_tooltip = RUS_tt_vic_Vistulan_Railway
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = {
+                	idea = RUS_idea_railway_constructing_AI
+                	days = 300
+            	}
+			}
 		}
 
 	}
@@ -1001,7 +1110,7 @@ focus_tree = {
 
 	focus = {
 		id = RUS_vic_Yuzovka_Mining_Operation
-		icon = GFX_goal_generic_production2
+		icon = GFX_goal_focus_coal_mines
 		cost = 40
 
 		available = {
@@ -1050,7 +1159,7 @@ focus_tree = {
 
 	focus = {
 		id = RUS_vic_Factories_In_Warsaw
-		icon = GFX_goal_generic_construction
+		icon = GFX_Focus_Industrial_Complex
 		cost = 40
 
 		available = {
@@ -2198,6 +2307,7 @@ focus_tree = {
 		cost = 70
 
 		available = {
+			has_completed_focus = RUS_vic_Radical_Economic_Reforms
 		    custom_trigger_tooltip = {
                 tooltip = RUS_vic_owns_poland
                 90 = { is_owned_and_controlled_by = RUS }

@@ -730,7 +730,7 @@ USA_mormon_war_decisions = {
 
 	available = {
 		AND = {
-			has_completed_focus = USA_utah_war
+			#has_completed_focus = USA_utah_war
 			NOT = {
 				OR = {
 					has_completed_focus = USA_utah_peace
@@ -947,6 +947,11 @@ USA_reconstruction_radicalization = {
 BRA_decision_category_coffee_economy = {
 	icon = generic_economy
 	
+	allowed = { original_tag = BRA }
+}
+
+BRA_decision_category_modernize_the_empire = {
+	icon = generic_construction
 	allowed = { original_tag = BRA }
 }
 

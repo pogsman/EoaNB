@@ -5,6 +5,9 @@ characters = {
 			civilian = {
 				large = "GFX_Portrait_IRE_J_Kelly"
 			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
 		}
 		country_leader = {
 			traits = {}
@@ -12,50 +15,108 @@ characters = {
 			expire = "1900.1.1"
 			ideology = revolutionary
 		}
-		corps_commander = {
-			traits = { trickster career_officer media_personality }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = 167984
-		}
 	}
 
 	IRE_Michael_Corcoran = {
 		name = "Michael Corcoran"
 		portraits = {
-			civilian = {
+			army = {
 				large = "GFX_Portrait_IRE_Corcoran"
 			}
-		}
-		corps_commander = {
-			traits = { trait_engineer organizer media_personality trait_reckless politically_connected war_hero }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 3
-			legacy_id = 167983
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
 		}
 	}
 
 	IRE_Thomas_Francis_Meagher = {
 		name = "Thomas Francis Meagher"
 		portraits = {
-			civilian = {
+			army = {
 				large = "GFX_Portrait_IRE_Meagher"
 			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
 		}
-		corps_commander = {
-			traits = { career_officer war_hero infantry_expert harsh_leader}
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 3
-			legacy_id = 167982
+	}
+	
+	IRE_Hugh_Gough = {
+		name = "Hugh Gough"
+		portraits = {
+			army = {
+				large = "gfx/leaders/ENG/Portrait_ENG_Hugh_Gough.png"
+			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
 		}
+	}
+	
+	ENG_Luke_O_Connor = {
+		name = "Luke O’Connor"
+		portraits = {
+			army = {
+				large = "gfx/leaders/ENG/Portrait_ENG_Luke_O_Connor.png"
+			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
+	IRE_Richard_Kelly = {
+		name = "Richard Kelly"
+		portraits = {
+			army = {
+				large = "gfx/leaders/ENG/Portrait_ENG_Richard_Kelly.png"
+			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
+	IRE_Lyster = {
+		name = "Harry Lyster"
+		portraits = {
+			army = {
+				large = "gfx/leaders/ENG/Portrait_ENG_Lyster.png"
+			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	IRE_Ardagh = {
+		name = "John Charles Ardagh"
+		portraits = {
+			army = {
+				large = "gfx/leaders/ENG/Portrait_ENG_Ardagh.png"
+			}
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+
+	IRE_political_advisor_Oscar_Wilde = {
+		name = "Oscar Wilde"
+        portraits = {
+            civilian = {
+                small = "GFX_idea_europe_generic_4"
+            }
+        }
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_political_advisor_Oscar_Wilde
+			allowed = {
+				tag = IRE
+			}
+			available = {
+				has_completed_focus = IRE_focus_wilde_shaw
+			}
+			traits = { ingenious_scientist }
+        }
 	}
 }

@@ -47,7 +47,7 @@ focus_tree = {
 
 	focus = { 
 		id = AUS_focus_external_threats
-		icon = GFX_Goal_Generic_Political_Pressure_Blue
+		icon = GFX_focus_Generic_Political_Pressure_Blue
 		relative_position_id = AUS_focus_an_empire_in_demise
 		x = -5
 		y = 1
@@ -688,7 +688,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_financial_crisis
-		icon = GFX_Focus_Economy_Crisis
+		icon = GFX_Focus_economic_crisis
 		relative_position_id = AUS_focus_an_empire_in_demise
 		x = 8
 		y = 2
@@ -742,7 +742,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_newspaper_tax
-		icon = GFX_Focus_Freedom_Press_3
+		icon = GFX_Focus_freedom_democracy_Press_3
 		relative_position_id = AUS_focus_an_empire_in_demise
 		x = 7
 		y = 4
@@ -804,7 +804,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_cooperate_with_the_kreditanstalt
-		icon = GFX_Focus_Economy
+		icon = GFX_Focus_banks
 		relative_position_id = AUS_focus_an_empire_in_demise
 		x = 9
 		y = 4
@@ -920,7 +920,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_tackle_the_debt_situation
-		icon = GFX_Focus_Economy_Chain
+		icon = GFX_Focus_banks2
 		relative_position_id = AUS_focus_triumph_in_italy
 		x = -1
 		y = 2
@@ -1313,7 +1313,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_create_a_state_debt_commission
-		icon = GFX_Focus_Economy_Chain
+		icon = GFX_Focus_banks2
 		relative_position_id = AUS_focus_disaster_in_italy
 		x = -1
 		y = 2
@@ -1441,7 +1441,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_focus_landtag_elections
-		icon = GFX_Focus_Election
+		icon = GFX_Focus_Vote_Election
 		relative_position_id = AUS_focus_disaster_in_italy
 		x = 0
 		y = 5
@@ -1647,6 +1647,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			unlock_decision_category_tooltip = AUS_decision_category_habsburg_army
 		    army_experience = 5
 			add_political_power = 40
             add_war_support = 0.03			 
@@ -1736,12 +1737,31 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_degenfelds_army_reform
         }
 		
 		completion_reward = {
-		    			 
+		     if = {
+				limit = { NOT = { has_tech = electrical_telegraph } }
+					add_tech_bonus = {
+					bonus = 0.2
+					uses = 1
+					technology = electrical_telegraph
+				}
+			}
+			else_if = {
+				limit = { has_tech = electrical_telegraph }
+					add_tech_bonus = {
+					bonus = 0.2
+					uses = 1
+					technology = tech_wired_signal_company
+				}
+			}			 
 		}
 	}
 	
@@ -1766,7 +1786,12 @@ focus_tree = {
         }
 		
 		completion_reward = {
-		    			 
+		    add_tech_bonus = {
+				bonus = 0.2
+				uses = 1
+				technology = tech_engineers
+				technology = tech_maintenance_company
+			}			 
 		}
 	}
 	
@@ -1784,6 +1809,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -1811,6 +1840,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_degenfelds_army_reform
         }
@@ -1834,6 +1867,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -1861,6 +1898,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_raise_new_taxes
         }
@@ -1884,6 +1925,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -1911,6 +1956,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_an_austrian_general_staff
         }
@@ -1936,12 +1985,17 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_degenfelds_army_reform
         }
 		
 		completion_reward = {
-		    			 
+		    army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }			 
 		}
 	}
 	
@@ -1959,6 +2013,11 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		    has_idea = AUS_vic_steyr_mannlicher_AG
 		}
 		
 		prerequisite = {
@@ -1984,6 +2043,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2012,12 +2075,16 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_cavalry_reorganization
         }
 		
 		completion_reward = {
-		    			 
+		    unlock_decision_tooltip =  AUS_decision_edelsheim_gyulais_proposal			 
 		}
 	}
 	
@@ -2037,13 +2104,17 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_degenfelds_army_reform
 			focus = AUS_focus_benedeks_army_reform
         }
 		
 		completion_reward = {
-		    			 
+		    add_tech_bonus = { bonus = 1.75 uses = 1 category = artillery }			 
 		}
 	}
 	
@@ -2063,12 +2134,16 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_artillery_modernization
         }
 		
 		completion_reward = {
-		    			 
+		    unlock_decision_tooltip = AUS_decision_muzzle_loading_cannons			 
 		}
 	}
 	
@@ -2088,12 +2163,17 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_benedeks_army_reform
         }
 		
 		completion_reward = {
-		    			 
+			army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
 		}
 	}
 	
@@ -2111,6 +2191,11 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
+			has_idea = AUS_vienna_arsenal
 		}
 		
 		prerequisite = {
@@ -2136,6 +2221,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2173,6 +2262,10 @@ focus_tree = {
 		prerequisite = {
             focus = AUS_focus_benedeks_army_reform
         }
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
 
 		completion_reward = {
 		    			 
@@ -2193,6 +2286,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2220,6 +2317,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_take_the_necessary_measures
         }
@@ -2243,6 +2344,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2270,6 +2375,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_keep_the_adjutantenkorps
         }
@@ -2293,6 +2402,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2320,6 +2433,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_abolish_the_landwehr
         }
@@ -2345,6 +2462,10 @@ focus_tree = {
 			factor = 50
 		}
 		
+		available = {
+			debt_not_bankrupt_trigger = yes
+		}
+		
 		prerequisite = {
             focus = AUS_focus_ban_non_german_military_magazines
         }
@@ -2368,6 +2489,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2406,6 +2531,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 50
+		}
+		
+		available = {
+			debt_not_bankrupt_trigger = yes
 		}
 		
 		prerequisite = {
@@ -2457,7 +2586,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Reform_Triest_Navy
-		icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_Focus_Production_Mass
 		relative_position_id = AUS_Kaiser_Navy
 		x = 0
 		y = 1
@@ -2476,8 +2605,8 @@ focus_tree = {
         }
     
         completion_reward = {
-            add_tech_bonus = {
-                bonus = 0.75
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.75
                 uses = 3
                 category = naval_doctrine 
             }
@@ -2520,7 +2649,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_ministry_of_marine
-		icon = GFX_focus_anything_will_do
+		icon = GFX_Focus_anything_will_do
 		relative_position_id = AUS_Kaiser_Navy
 		x = -4
 		y = 3
@@ -2570,7 +2699,7 @@ focus_tree = {
         completion_reward = {
 		   navy_experience = 35
 		   add_tech_bonus = { bonus = 1 uses = 2 category = naval_equipment }
-		   add_tech_bonus = { bonus = 1 uses = 2 category = naval_doctrine }
+		   add_doctrine_cost_reduction = { cost_reduction = 1 uses = 2 category = naval_doctrine }
 		}
 	}
 	
@@ -2781,7 +2910,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Fabbrica_Macchine_Andrea
-		icon = GFX_Focus_Industry_Revolution
+		icon = GFX_Focus_industrial_revolution
 		relative_position_id = AUS_Kaiser_Navy
 		x = 0
 		y = 2
@@ -2827,8 +2956,8 @@ focus_tree = {
     
         completion_reward = {
             navy_experience = 5
-            add_tech_bonus = {
-                bonus = 0.5
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.5
                 uses = 1
                 category = naval_doctrine 
             }
@@ -2844,9 +2973,9 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = AUS_Salvacoste
-		icon = GFX_Focus_Naval_Armamament
+		icon = GFX_Focus_anything_will_do
 		relative_position_id = AUS_Kaiser_Navy
 		x = -1
 		y = 4
@@ -2893,14 +3022,14 @@ focus_tree = {
         }
     
         completion_reward = {
-			add_tech_bonus = { bonus = 0.25 uses = 4 category = naval_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 4 category = naval_doctrine }
 			AUS_consume_funding_from_pool = yes			
 		}
 	}
 	
 	focus = { 
 		id = AUS_new_ships_designs
-		icon = GFX_Focus_Losange_Gunboat
+		icon = GFX_Goal_gunboat_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 5
 		y = 2
@@ -2944,7 +3073,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Screw_Frigates
-		icon = GFX_Focus_Losange_Frigate
+		icon = GFX_Goal_frigate_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 4
 		y = 3
@@ -2993,7 +3122,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Screw_Corvettes
-		icon = GFX_Focus_Losange_Corvette
+		icon = GFX_Goal_corvette_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 6
 		y = 3
@@ -3042,7 +3171,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_drache_ironclad
-		icon = GFX_Focus_Losange_Ironclad
+		icon = GFX_Goal_ironclad_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 3
 		y = 4
@@ -3071,7 +3200,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_kaiser_max_ironclad
-		icon = GFX_Focus_Losange_Ironclad
+		icon = GFX_Goal_ironclad_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 5
 		y = 4
@@ -3100,7 +3229,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Erzherzog_Ferdinand_Max_ironclad
-		icon = GFX_Focus_Losange_Ironclad
+		icon = GFX_Goal_ironclad_focus
 		relative_position_id = AUS_Kaiser_Navy
 		x = 7
 		y = 4
@@ -3136,7 +3265,7 @@ focus_tree = {
 #####################################
 	focus = { 
 		id = AUS_Bureaucratic_Administration 
-		icon = GFX_goal_focus_working_hours
+		icon = GFX_Focus_Working_Hours
 		x = 36              
 		y = 7
 		search_filters = { 
@@ -3157,7 +3286,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_Privatize_Railways  
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = AUS_Bureaucratic_Administration
 		x = -5
 		y = 1
@@ -3270,7 +3399,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_moravian_manchester
-		icon = GFX_Focus_Industry_Revolution
+		icon = GFX_Focus_industrial_revolution
 		relative_position_id = AUS_Bureaucratic_Administration
 		x = -10
 		y = 4
@@ -3353,7 +3482,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_tyrolean_lumber
-		icon = GFX_focus_back_to_basics
+		icon = GFX_Focus_invest_in_logging
 		relative_position_id = AUS_Bureaucratic_Administration
 		x = -5
 		y = 3
@@ -3383,7 +3512,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_erzgberbahn
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = AUS_Bureaucratic_Administration
 		x = -6
 		y = 4
@@ -3725,7 +3854,7 @@ focus_tree = {
 	
 	focus = { 
 		id = AUS_galician_oil
-		icon = GFX_focus_AUS_galician_oil
+		icon = GFX_Focus_refinery_galician_oil
 		relative_position_id = AUS_Bureaucratic_Administration
 		x = 2
 		y = 4

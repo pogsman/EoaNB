@@ -18,6 +18,47 @@ ideas = {
 			    army_org_Factor = -0.1 
 			}
 		}
+
+		GRE_idea_promise_fullfilled = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = placeholder
+
+			modifier = { 
+			    stability_weekly = 0.03
+				war_support_weekly = 0.03
+				political_power_factor = -0.1
+			}
+		}
+
+		GRE_idea_failed_promise = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = placeholder
+
+			modifier = { 
+			    stability_weekly = -0.03  
+				war_support_weekly = -0.03 
+			}
+		}
 	   
 	    GRE_idea_uncertain_succession = {
 	
@@ -165,8 +206,8 @@ ideas = {
 	        picture = placeholder
 	
 	        modifier = { 
-				production_factory_efficiency_gain_factor = 0.5
-				production_speed_arms_factory_factor = 0.5
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 
@@ -188,6 +229,111 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.5
 				production_speed_arms_factory_factor = 0.5
 			}
+		}
+
+		GRE_idea_Piracy = {
+
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = GRE_Piracy
+
+			modifier = {
+				trade_opinion_factor = -0.25
+				political_power_gain = -0.2
+				stability_factor = -0.15
+			}
+		}
+
+		GRE_idea_Piracy_2 = {
+
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = GRE_Piracy
+
+			modifier = {
+				trade_opinion_factor = -0.15
+				political_power_gain = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		GRE_idea_Navy_focus_large = {
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = placeholder
+
+			modifier = {
+				navy_capital_ship_attack_factor = 0.1
+				navy_carrier_air_agility_factor = 0.1
+				naval_speed_factor = 0.1
+			}
+		}
+
+		GRE_idea_Navy_focus_small = {
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = placeholder
+
+			modifier = {
+				navy_screen_attack_factor = 0.15
+				screening_efficiency = 0.2
+				naval_speed_factor = 0.1
+			}
+		}
+
+		GRE_idea_new_naval_tactics = {
+			
+			allowed = { 
+			    always = no 
+			}
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+
+			picture = placeholder
+
+			modifier = {
+				navy_refit_speed = 0.5
+				experience_gain_navy = 0.1
+				navy_visibility = 0.15
+				spotting_chance = 0.1
+			}
+
 		}
 
 	    GRE_idea_certain_succession = {
@@ -905,34 +1051,17 @@ ideas = {
 
 			cost = 150
 			removal_cost = 10
+			
+			traits = {
+				GRE_trait_Pyrkal
+			}
 
 			research_bonus = {
 				infantry_weapons = 0.10
 			}
 
 		}
-	}
-	
-	industrial_concern = {
-
-		GRE_hellenic_steel_industry = {
-
-			picture = generic_industrial_concern_2
-
-			allowed = {
-				tag = GRE
-			}
-
-			cost = 150
-			removal_cost = 10
-
-			research_bonus = {
-				process_engineering_tech = 0.05
-			}
-
-			#traits = { ENG_trait_concern_bic }
-		}
-
+		
 		GRE_hellenic_material_authority = {
 			picture = generic_industrial_concern_2
 
@@ -955,138 +1084,25 @@ ideas = {
 			}
 		}
 	}
-
 	
-#	army_chief = {
-#	
-#		GRE_Panagiotis_Koronaios = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#				date < 1899.01.01
-#			}
-#			
-#			picture = GRE_theorist_Panos_Koronaios
-#
-#			traits = { army_chief_defensive_1 }
-#		}
-#	}
-#	
-#	high_command = {
-#	
-#	GRE_Antonios_Mavromichalis = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#			}
-#			
-#			picture = GRE_Mavromichalis
-#			
-#			visible = {
-#		        date < 1873.7.1
-#	        }
-#		
-#		    available = {
-#		        date < 1873.7.1
-#		    }
-#
-#			traits = { army_chief_morale_1 }
-#		}        
-#	
-#	GRE_Amadeus_Emmanuel_Han = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#			}
-#			
-#			picture = GRE_Amadeus_Emmanuel_Han
-#			
-#			visible = {
-#		        date < 1867.6.22
-#	        }
-#		
-#		    available = {
-#		        date < 1867.6.22
-#		    }
-#
-#			traits = { army_chief_planning_1 }
-#		}        
-#	
-#	GRE_Leonidas_Smolents = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#			}
-#			
-#			visible = {
-#		        date < 1882.4.21
-#	        }
-#		
-#		    available = {
-#		        date < 1882.4.21
-#		    }
-#
-#			traits = { army_chief_reform_1 }
-#		}        
-#	
-#	GRE_Efstratios_Pissas = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#			}
-#			
-#			picture = GRE_efstratios_pissas
-#			
-#			visible = {
-#		        date < 1885.1.1
-#	        }
-#		
-#		    available = {
-#		        date < 1885.1.1
-#		    }
-#
-#			traits = { army_entrenchment_1 }
-#		}        
-#	
-#	GRE_Leonidas_Palaskas = {
-#
-#			allowed = {
-#				original_tag = GRE 
-#			}
-#			
-#			picture = GRE_Palaskas
-#			
-#			visible = {
-#		        date < 1880.1.14
-#	        }
-#		
-#		    available = {
-#		        date < 1880.1.14
-#		    }
-#
-#			traits = { navy_chief_reform_1 }
-#		}        
-#    }
-#	
-#	navy_chief = {
-#		GRE_Antonios_Kriezis  = {
-#		
-#			allowed = {
-#				original_tag = GRE
-#			}
-#			
-#			picture = GRE_Kriezis
-#			
-#			visible = {
-#		        date < 1865.4.1
-#	        }
-#		
-#		    available = {
-#		        date < 1865.4.1
-#		    }
-#			
-#			traits = { navy_chief_decisive_battle_1 }
-#			
-#		}
-#	}
+	industrial_concern = {
+
+		GRE_hellenic_steel_industry = {
+
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				tag = GRE
+			}
+
+			cost = 150
+			removal_cost = 10
+
+			research_bonus = {
+				process_engineering_tech = 0.05
+			}
+
+
+		}
+	}
 }

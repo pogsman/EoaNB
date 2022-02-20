@@ -5351,7 +5351,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/train_equipment_1.dds"
 	}
 	SpriteType = {
-		name = "GFX_1855_train_medium"
+		name = "GFX_train_1855_medium"
 		texturefile = "gfx/interface/technologies/train_equipment_2.dds"
 	}	
 	SpriteType = {
@@ -10359,6 +10359,16 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_technicals_3_medium"
 		texturefile = "gfx/interface/technologies/armor/Generic_technical_V.dds"
+	}
+	
+	
+	SpriteType = {
+		name = "GFX_armor_tech_armored_car_medium"
+		texturefile = "gfx/interface/technologies/armor/armored_car_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_armor_tech_armored_car_2_medium"
+		texturefile = "gfx/interface/technologies/armor/armored_car_interwar.dds"
 	}
 	
 	SpriteType = {

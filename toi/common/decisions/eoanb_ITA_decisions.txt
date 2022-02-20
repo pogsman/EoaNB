@@ -151,7 +151,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	### Regular Decisions, not Missions
 	ITA_decision_2IP_Hunters_Alps = {
 		ai_will_do = {
-			base = 5
+			base = 10
 		}
 		fire_only_once = yes
 		allowed = {
@@ -224,7 +224,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_Organize_Perugian_Volunteers = {
 		ai_will_do = {
-			base = 5
+			base = 10
 		}
 		fire_only_once = yes
 		allowed = {
@@ -274,7 +274,6 @@ ITA_decisions_category_wars_and_conflicts = {
 			PAP = {
 				country_event = {
 					id = sardinia.187
-					days = 1
 				}
 			}
 		}
@@ -282,7 +281,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_call_on_the_national_guard = {
 		ai_will_do = {
-			base = 5
+			base = 10
 		}
 		fire_only_once = yes
 		allowed = {
@@ -347,7 +346,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_2IP_Sardinian_Banks = {
 		ai_will_do = {
-			base = 5
+			base = 10
 		}
 		fire_only_once = yes
 		allowed = {
@@ -376,7 +375,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_2IP_Troop_Training = {
 		ai_will_do = {
-			base = 5
+			base = 10
 		}
 		fire_only_once = yes
 		allowed = {
@@ -898,7 +897,7 @@ ITA_decisions_category_wars_and_conflicts = {
 				else_if = {
 					limit = {
 						NOT = {
-							has_country_flag = PIE_RUS_Alliance_2IP
+							has_completed_focus = PIE_The_Russian_Alliance
 						}
 					}
 					custom_trigger_tooltip = {
@@ -968,7 +967,7 @@ ITA_decisions_category_wars_and_conflicts = {
 						else_if = {
 							limit = {
 								NOT = {
-									has_country_flag = PIE_RUS_Alliance_2IP
+									has_completed_focus = PIE_The_Russian_Alliance
 								}
 							}
 							custom_trigger_tooltip = {
@@ -1036,33 +1035,33 @@ ITA_decisions_category_wars_and_conflicts = {
 						}
 						custom_effect_tooltip = PIE_2I_Peace
 						hidden_effect = {
-							white_peace = LVN
-							white_peace = AUS
-							news_event = sardinia_news.1
-							clr_global_flag = FRA_PIE_OneCall
-							set_global_flag = PIE_2IW_Victory
-							CBI = {
-								white_peace = LVN
-								white_peace = AUS
-								white_peace = TUS
-								white_peace = MOD
-								white_peace = PRM
-								country_event = {
-									id = sardinia.72
-								}
-							}
-							AUS = {
-								add_to_variable = {
-									var = HUN_REVOLT_RISK
-									value = 2
-								}
-								add_to_variable = {
-									var = SLA_REVOLT_RISK
-									value = 1
-								}
-								white_peace = CBI
-								white_peace = TUS
-							}
+							#white_peace = LVN
+							#white_peace = AUS
+							#news_event = sardinia_news.1
+							#clr_global_flag = FRA_PIE_OneCall
+							#set_global_flag = PIE_2IW_Victory
+							#CBI = {
+							#	white_peace = LVN
+							#	white_peace = AUS
+							#	white_peace = TUS
+							#	white_peace = MOD
+							#	white_peace = PRM
+							#	country_event = {
+							#		id = sardinia.72
+							#	}
+							#}
+							#AUS = {
+							#	add_to_variable = {
+							#		var = HUN_REVOLT_RISK
+							#		value = 2
+							#	}
+							#	add_to_variable = {
+							#		var = SLA_REVOLT_RISK
+							#		value = 1
+							#	}
+							#	white_peace = CBI
+							#	white_peace = TUS
+							#}
 						}
 					}
 					if = {
@@ -1073,7 +1072,9 @@ ITA_decisions_category_wars_and_conflicts = {
 							}
 							NOT = {
 								#has_completed_focus = PIE_Path_of_the_Carbonari
-								has_country_flag = PIE_RUS_Alliance_2IP
+								PIE = {
+									has_completed_focus = PIE_The_Russian_Alliance
+								}
 							}
 						}
 						if = {
@@ -1105,6 +1106,9 @@ ITA_decisions_category_wars_and_conflicts = {
 								id = sardinia.125
 								days = 2
 							}
+							remove_ideas = {
+								ITA_2IP_Idea
+							}
 						}
 						PAP = {
 							country_event = {
@@ -1116,11 +1120,9 @@ ITA_decisions_category_wars_and_conflicts = {
 						}
 						custom_effect_tooltip = PIE_2I_Peace
 						hidden_effect = {
-							white_peace = LVN
-							white_peace = AUS
-							white_peace = TUS
-							white_peace = MOD
-							white_peace = PRM
+							every_enemy_country = {
+								white_peace = PIE
+							}
 							news_event = sardinia_news.1
 							clr_global_flag = FRA_PIE_OneCall
 							set_global_flag = PIE_2IW_Victory
@@ -1135,23 +1137,11 @@ ITA_decisions_category_wars_and_conflicts = {
 								}
 							}
 							TUS = {
-								white_peace = AUS
+								every_enemy_country = {
+									white_peace = TUS
+								}
 							}
-							TUS = {
-								white_peace = LVN
-							}
-							MOD = {
-								white_peace = AUS
-							}
-							MOD = {
-								white_peace = LVN
-							}
-							PRM = {
-								white_peace = AUS
-							}
-							PRM = {
-								white_peace = LVN
-							}
+							
 							# France and puppets peace
 							FRA = {
 								if = {
@@ -1167,6 +1157,9 @@ ITA_decisions_category_wars_and_conflicts = {
 									white_peace = LVN
 								}
 								dismantle_faction = yes
+								remove_ideas = {
+									ITA_2IP_Idea
+								}
 							}
 							EPD = {
 								if = {
@@ -1229,7 +1222,7 @@ ITA_decisions_category_wars_and_conflicts = {
 					if = {
 						limit = {
 							PIE = {
-								has_country_flag = PIE_RUS_Alliance_2IP
+								has_completed_focus = PIE_The_Russian_Alliance
 							}
 							OR = {
 								tag = PIE
@@ -1253,6 +1246,9 @@ ITA_decisions_category_wars_and_conflicts = {
 							country_event = {
 								id = sardinia.123
 								days = 2
+							}
+							remove_ideas = {
+								ITA_2IP_Idea
 							}
 						}
 						RUS = {
@@ -1356,6 +1352,9 @@ ITA_decisions_category_wars_and_conflicts = {
 					#}
 					annex_country = {
 						target = PIE
+					}
+					annex_country = {
+						tag = PRM
 					}
 					#set_country_flag = ITA_AUS_Divide_Italy_Yes
 					#set_country_flag = ITA_AUS_won_2I_Divide_Italy
@@ -1606,7 +1605,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			always = no
 		}
 		is_good = yes
-		days_mission_timeout = 250
+		days_mission_timeout = 300
 		available = {
 			OR = {
 				custom_trigger_tooltip = {
@@ -1691,7 +1690,7 @@ ITA_decisions_category_wars_and_conflicts = {
 					}
 					date < 1862.1.1
 				}
-				activate_mission = ITA_War_Mission_PAP
+				activate_mission = ITA_War_Mission_NSC_Expedition
 			}
 			else_if = {
 				limit = {
@@ -1758,6 +1757,11 @@ ITA_decisions_category_wars_and_conflicts = {
 			news_event = {
 				id = sardinia_news.16
 			}
+			FRA = {
+				country_event = {
+					id = sardinia.194
+				}
+			}
 		}
 		timeout_effect = {
 			activate_mission = ITA_War_Mission_Garibaldis_Decree_RomeVenice_Expedition
@@ -1811,6 +1815,60 @@ ITA_decisions_category_wars_and_conflicts = {
 			activate_mission = ITA_War_Mission_Expedition_Palermo_Uprising
 		}
 	}
+	ITA_War_Mission_Expedition_Real_Marina = {
+		### NSC navy defects to PIE
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		available = {
+			CBI = {
+				controls_province = 4159
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.206
+			}
+			NSC = {
+				country_event = sardinia.207
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Expedition_Real_Marina
+		}
+	}
+	ITA_War_Mission_Expedition_Apulia = {
+		### Apulia joins Sardinia
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		available = {
+			CBI = {
+				controls_province = 10027
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = sardinia.208
+			}
+			NSC = {
+				country_event = sardinia.209
+			}
+		}
+		timeout_effect = {
+			activate_mission = ITA_War_Mission_Expedition_Apulia
+		}
+	}
 	ITA_2IP_Mobilization_War_Imiment = {
 		allowed = {
 			tag = PIE
@@ -1828,7 +1886,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			has_completed_focus = PIE_War_Preperations_Second_War
 		}
 		is_good = yes
-		days_mission_timeout = 150
+		days_mission_timeout = 100
 		timeout_effect = {
 			remove_mission = ITA_2IP_Mobilization_War_Imiment
 			hidden_effect = {
@@ -1847,7 +1905,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = PIE_RUS_Alliance_2IP
+					has_completed_focus = PIE_The_Russian_Alliance
 				}
 				country_event = {
 					id = sardinia.85
@@ -2019,6 +2077,7 @@ eoanb_category_economic = {
 		visible = {
 			has_completed_focus = PIE_Authorize_Culoz_Modane_Railway
 		}
+		icon = railway
 		fire_only_once = yes
 		cost = 80
 		modifier = {
@@ -2042,6 +2101,7 @@ eoanb_category_economic = {
 		visible = {
 			has_completed_focus = PIE_Commence_Construction_Frejus_Rail_Tunnel
 		}
+		icon = railway
 		fire_only_once = yes
 		cost = 80
 		modifier = {
@@ -2059,104 +2119,437 @@ eoanb_category_economic = {
 			}
 		}
 	}
+	ITA_annecy_geneva_railway = {
+		allowed = {
+			OR = {
+				tag = SWI
+				tag = PIE
+			}
+		}
+		visible = {
+			always = no
+		}
+		icon = railway
+		fire_only_once = yes
+		cost = 50
+		modifier = {
+			consumer_goods_factor = 0.07
+		}
+		days_remove = 200
+		remove_effect = {
+			effect_tooltip = {
+				build_railway = {
+					level = 1
+					path = {
+						778
+						9603
+						6666
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = PIE
+					}
+					build_railway = {
+						level = 1
+						path = {
+							778
+							9603
+							6666
+						}
+					}
+				}
+			}
+		}
+	}
+	ITA_National_Roads_Switzerland = {
+		allowed = {
+			OR = {
+				tag = SWI
+				tag = PIE
+			}
+		}
+		visible = {
+			always = no
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 50
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = 200
+		remove_effect = {
+			effect_tooltip = {
+				3 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				981 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = SWI
+					}
+					3 = {
+						add_building_construction = {
+							type = infrastructure`
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = PIE
+					}
+					981 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+ITA_decisions_category_PIE_legislative_actions = {
+	ITA_PIE_legislative_alessandria_barracks = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+		
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 20
+		complete_effect = {
+			army_experience = 10
+		}
+	}
+	ITA_PIE_legislative_turin_hospital = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 20
+		complete_effect = {
+			army_experience = 10
+		}
+	}
+	ITA_PIE_legislative_military_draft_law = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 20
+		complete_effect = {
+			army_experience = 5
+			add_manpower = 1000
+		}
+	}
+	ITA_PIE_legislative_military_academy = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 30
+		days_remove = 100
+		complete_effect = {
+			army_experience = 5
+		}
+		modifier = {
+			war_support_weekly = 0.01
+			command_power_gain = 0.25
+		}
+	}
+	ITA_PIE_legislative_establish_military_sons = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 30
+		complete_effect = {
+			add_manpower = 2500
+		}
+	}
+	ITA_PIE_legislative_railway_concessions = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 30
+		days_remove = 400
+		modifier = {
+			production_speed_rail_way_factor = 0.25
+			consumer_goods_Factor = 0.1
+		}
+	}
+	ITA_PIE_legislative_ademprivi_sardinia = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 30
+		complete_effect = {
+			## Event about Ademprivi
+		}
+	}
+	ITA_PIE_legislative_teacher_schools = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 30
+		days_remove = 400
+		modifier = {
+			research_speed_factor = 0.05
+			consumer_goods_Factor = 0.02
+		}
+	}
+	ITA_PIE_legislative_alessandria_college = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 30
+		days_remove = 250
+		modifier = {
+			research_speed_factor = 0.03
+			consumer_goods_Factor = 0.03
+		}
+	}
+}
+ITA_decisions_category_PIE_diplomatic_endeavors = {
+	ITA_SWI_Diplomacy_Begin = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = PIE_Seek_Help_Major
+		}
+		icon = SWI
+		fire_only_once = yes
+		cost = 50
+		days_remove = 500
+		complete_effect = {
+			SWI = {
+				add_opinion_modifier = {
+					target = PIE
+					modifier = ITA_Active_Consulate
+				}
+			}
+			PIE = {
+				add_opinion_modifier = {
+					target = SWI
+					modifier = ITA_Active_Consulate
+				}
+			}
+		}
+	}
+	ITA_SWI_Annecy_Geneva_Railroad = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = PIE_Seek_Help_Major
+		}
+		icon = SWI
+		fire_only_once = yes
+		cost = 25
+		available = {
+			has_decision = ITA_SWI_Diplomacy_Begin
+		}
+		complete_effect = {
+			SWI = {
+				country_event = {
+					id = sardinia.211
+				}
+				activate_decision = ITA_annecy_geneva_railway
+			}
+			PIE = {
+				country_event = {
+					id = sardinia.211
+				}
+				activate_decision = ITA_annecy_geneva_railway
+			}
+		}
+	}
+	ITA_SWI_Infastructure_Investements = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = PIE_Seek_Help_Major
+		}
+		icon = SWI
+		fire_only_once = yes
+		cost = 45
+		available = {
+			has_decision = ITA_SWI_Diplomacy_Begin
+		}
+		complete_effect = {
+			activate_decision = ITA_National_Roads_Switzerland
+			country_event = {
+				id = sardinia.215
+			}
+			SWI = {
+				country_event = {
+					id = sardinia.215
+				}
+				activate_decision = ITA_National_Roads_Switzerland
+			}
+		}
+	}
+	ITA_BEL_Diplomacy_Begin = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = PIE_Seek_Help_Major
+		}
+		icon = BEL
+		fire_only_once = yes
+		cost = 50
+		days_remove = 500
+		complete_effect = {
+			BEL = {
+				add_opinion_modifier = {
+					target = PIE
+					modifier = ITA_Active_Consulate
+				}
+			}
+			PIE = {
+				add_opinion_modifier = {
+					target = BEL
+					modifier = ITA_Active_Consulate
+				}
+			}
+		}
+	}
+	ITA_BEL_Treaty_of_Navigation_Trade = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = PIE_Seek_Help_Major
+		}
+		available = {
+			has_decision = ITA_BEL_Diplomacy_Begin
+		}
+		icon = BEL
+		fire_only_once = yes
+		cost = 50
+		days_remove = 500
+		complete_effect = {
+			country_event = {
+				id = sardinia.216
+			}
+		}
+	}
+	ITA_USA_Relations_Report = {
+		allowed = {
+			original_tag = PIE
+		}
+		visible = {
+			OR = {
+				has_completed_focus = PIE_Seek_Help_Major
+				has_country_flag = is_literally_italy
+			}
+		}
+		icon = USA
+		fire_only_once = yes
+		cost = 50
+		days_remove = 500
+		complete_effect = {
+			PIE = {
+				country_event = {
+					id = sardinia.212
+				}
+			}
+		}
+	}
+	ITA_USA_Reaction_to_Civil_War = {
+		allowed = {
+			OR = {
+				original_tag = PIE
+				original_tag = TUS
+				original_tag = PAP
+				original_tag = NSC
+			}
+		}
+		visible = {
+			has_country_flag = is_literally_italy
+		}
+		available = {
+			OR = {
+				USA = {
+					has_offensive_war_with = CSA
+				}
+				CSA = {
+					has_offensive_war_with = USA
+				}
+			}
+		}
+		icon = USA
+		fire_only_once = yes
+		cost = 50
+		days_remove = 500
+		complete_effect = {
+			country_event = {
+				id = ita.50
+			}
+		}
+	}
 }
 
-#ITA_decisions_category_PIE_diplomatic_endeavors = {
-#	ITA_negotiate_britain = {
-#		allowed = { tag = PIE }
-#		
-#		visible = { has_completed_focus = PIE_Seek_Help_Major }
-#		
-#		fire_only_once = yes
-#		
-#		cost = 50
-#		
-#		complete_effect = {
-#			random_list = {
-#				80 = {
-#					country_event = {
-#						id = ita.54
-#						days = 1
-#					}
-#				}
-#				20 = {
-#					country_event = {
-#						id = ita.55
-#						days = 1
-#					}
-#				}
-#			}	
-#		}
-#	}
-#	ITA_negotiate_france = {
-#		allowed = { tag = PIE }
-#		
-#		visible = { has_completed_focus = PIE_Seek_Help_Major }
-#		
-#		fire_only_once = yes
-#		
-#		cost = 50
-#		
-#		complete_effect = {
-#			random_list = {
-#				80 = {
-#					country_event = {
-#						id = ita.56
-#						days = 1
-#					}
-#				}
-#				20 = {
-#					country_event = {
-#						id = ita.57
-#						days = 1
-#					}
-#				}
-#			}	
-#		}
-#	}
-#	ITA_negotiate_belgium = {
-#		allowed = { tag = PIE }
-#		
-#		visible = { has_completed_focus = PIE_Seek_Help_Major }
-#		
-#		fire_only_once = yes
-#		
-#		cost = 50
-#		
-#		complete_effect = {
-#			random_list = {
-#				75 = {
-#					country_event = {
-#						id = ita.58
-#						days = 1
-#					}
-#				}
-#				25 = {
-#					country_event = {
-#						id = ita.59
-#						days = 1
-#					}
-#				}
-#			}	
-#		}
-#	}
-#	ITA_us_relations_report = {
-#		allowed = { tag = PIE }
-#		
-#		visible = { has_completed_focus = PIE_Seek_Help_Major }
-#		
-#		fire_only_once = yes
-#		
-#		cost = 50
-#		
-#		complete_effect = {
-#			country_event = {
-#				id = ita.60
-#				days = 1
-#			}
-#		}
-#	}
-#}
 ITA_Economic_category_decisions = {
 	ITA_appoint_regional_administrator_1 = {
 		ai_will_do = {

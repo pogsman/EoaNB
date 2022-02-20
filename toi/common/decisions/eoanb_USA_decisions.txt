@@ -221,10 +221,23 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 	utahWar0 = {#ongoing mission to complete
 
-		priority = 10
+		#priority = 10
 
 		available = {
-			check_variable = { USA_mormon_unrest > 18 }
+			
+			# if = {
+			# 	limit = {
+			# 		check_variable = { 
+			# 			var = USA_mormon_unrest 
+			# 			value = 18 
+			# 			compare = greater_than
+			# 		}
+			# 	}
+			# }
+			custom_trigger_tooltip = {
+				tooltip = mormon_unrest_18
+				check_variable = { USA_mormon_unrest > 18 }
+			}
 		}
 
 		allowed = {
@@ -284,6 +297,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar2 = {#Revoke Posse Comitatus
 
@@ -298,15 +315,15 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 				# 		has_completed_focus = USA_real_utah_war
 				# 	}
 				# }
-				NOT = {
-					has_country_flag = USA_mormon_sME
-				}
-				NOT = {
-					has_country_flag = USA_mormon_mME
-				}
-				NOT = {
-					has_country_flag = USA_mormon_LME
-				}
+				# NOT = {
+				# 	has_country_flag = USA_mormon_sME
+				# }
+				# NOT = {
+				# 	has_country_flag = USA_mormon_mME
+				# }
+				# NOT = {
+				# 	has_country_flag = USA_mormon_LME
+				# }
 				NOT = {
 					has_country_flag = USA_mormon_NME
 				}
@@ -341,6 +358,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar3 = {#Send small military escort
@@ -400,6 +421,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar4 = {#Send medium military escort
 
@@ -458,8 +483,11 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
-	}
 
+		ai_will_do = {
+			base = 10
+		}
+	}
 	utahWar5 = {#Send large military escort
 
 		#visible
@@ -517,6 +545,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar6 = {#Equating Dissenters with Traitors
 
@@ -563,6 +595,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar7 = {#Pardon Dissenters
 
@@ -596,6 +632,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar8 = {#Send a special delegate to ease tensions#Captain Van Vliet
@@ -634,6 +674,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar9 = {#Send a special delegate who is a complete fool#whoever
 
@@ -667,6 +711,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar10 = {#Send a second special delegate who is competent#Thomas L Kane
@@ -702,6 +750,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar11 = {#Re-route CO expedition#lieutenant Ives
 
@@ -735,6 +787,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar12 = {#Offer Alaska as a Mormon Refuge
@@ -802,6 +858,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar14 = {#Demand a closure of all ecclesiastic courts in the territory
@@ -871,6 +931,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar16 = {#Demand the Nauvoo Legions and other militias be dissolved
 
@@ -905,6 +969,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar17 = {#Pressure Natives against Mormons
 
@@ -938,6 +1006,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar18 = {#March on defended pass
@@ -983,6 +1055,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar19 = {#March on Undefended Pass
 
@@ -1027,8 +1103,11 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
-	}
 
+		ai_will_do = {
+			base = 10
+		}
+	}
 	utahWar20 = {#Reinforce military escort by one step
 
 		#visible
@@ -1064,6 +1143,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar21 = {#Reinforce military escort by 2 steps
@@ -1105,6 +1188,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
+
+		ai_will_do = {
+			base = 10
+		}
 	}
 	utahWar22 = {#Decrease military escort by one step
 
@@ -1141,6 +1228,10 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
+		}
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 	utahWar23 = {#Decrease military escort by 2 steps
@@ -1182,8 +1273,11 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
-	}
 
+		ai_will_do = {
+			base = 10
+		}
+	}
 	utahWar24 = {#Promise to exepdite statehood
 
 		#visible
@@ -1217,8 +1311,11 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		remove_effect = {
 			clr_country_flag = USA_utah_war_flag
 		}
-	}
 
+		ai_will_do = {
+			base = 10
+		}
+	}
 	utahWar90 = {#potential war mission
 
 		visible = {
@@ -1226,9 +1323,9 @@ USA_mormon_war_decisions = { #decisions to either encourage the mormons to rebel
 		}
 
 		available = {
-			NOT = {
+			#NOT = {
 				380 = { is_controlled_by = USA }
-			}
+			#}
 		}
 
 		allowed = {
@@ -2843,7 +2940,7 @@ USA_clayton_bulwar_treaty_decision = {
         cost = 25
 
         complete_effect = {
-            ENG = { country_event = { id = ENG_clayton_bulwar_treaty.1 } }
+            ENG = { country_event = { id = britain.35 } }
         }
         ai_will_do = {
             base = 4000

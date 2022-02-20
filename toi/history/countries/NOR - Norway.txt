@@ -30,14 +30,14 @@ capital = 110
 
 		civilian_economy
 		export_focus
-		three_percent
+		two_percent
 		normal_taxes
 		cl_legal
 		twelve_hour_work_day
 
 		stagnation_growth
 		border_control
-		NOR_laws_herorden
+		disarmed_nation
 		limited_equality
 		property_owners_suffrage
 
@@ -59,12 +59,14 @@ capital = 110
 		#NATIONAL SPIRITS
 
 		NOR_idea_swedish_norwegian_union
-		NOR_idea_memories_sami_uprising
-		NOR_idea_norwegian_loyalty_2
-		NOR_idea_pm_in_stockholm
-		NOR_idea_storting
+		NOR_idea_samis
 		NOR_idea_embedsmannstaten
+		NOR_idea_storting
+		NOR_idea_pm_in_stockholm
+		NOR_idea_norwegian_loyalty_2
 		NOR_idea_emigration
+		NOR_idea_scandinavian_wolves
+		NA_B_small_scale_railways
 	}
 
 	SWE = {

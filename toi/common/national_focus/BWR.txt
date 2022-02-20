@@ -44,7 +44,7 @@ focus_tree = {
 		available_if_capitulated = no  
 		
 		completion_reward = {
-		    country_event = { id = bwrrevolution.1 days = 4 }
+		    country_event = { id = bwr.12 days = 4 }
 		}
 	}
 	
@@ -59,7 +59,7 @@ focus_tree = {
 		available_if_capitulated = no  
 		
 		completion_reward = {
-		    country_event = { id = bwrrevolution.2 days = 4 }
+		    country_event = { id = bwr.13 days = 4 }
 		}
 	}
 	
@@ -74,7 +74,7 @@ focus_tree = {
 		available_if_capitulated = no  
 		
 		completion_reward = {
-		    country_event = { id = bwrrevolution.3 days = 4 }
+		    country_event = { id = bwr.14 days = 4 }
 			if = {
 			    random_owned_state = {
 				create_unit = {
@@ -138,7 +138,7 @@ focus_tree = {
 	focus = {
 		id = BWR_rally_overseas_support
 		ai_will_do = { factor = 100 }
-		icon = GFX_goal_focus_foreign_diplomacy
+		icon = GFX_Focus_Diplomatic_foreign
 		x = 2
 		y = 4
 		prerequisite = { focus = BWR_raid_army_barracks }
@@ -146,7 +146,7 @@ focus_tree = {
 		available_if_capitulated = no  
 		
 		completion_reward = {
-		    country_event = { id = bwrrevolution.4 days = 4 }
+		    country_event = { id = bwr.15 days = 4 }
 		}
 	}
 	
@@ -162,7 +162,7 @@ focus_tree = {
 		available_if_capitulated = no  
 		
 		completion_reward = {
-		    country_event = { id = bwrrevolution.5 days = 4 }
+		    country_event = { id = bwr.16 days = 4 }
 		}
 	}
 	
@@ -205,7 +205,7 @@ focus_tree = {
 	focus = {
 		id = BWR_promise_free_fair_britain
 		ai_will_do = { factor = 100 }
-		icon = GFX_goal_focus_support_conservatism
+		icon = GFX_Focus_Ideology_Support_Liberty
 		x = 4
 		y = 6
 		prerequisite = { focus = BWR_offensive }
@@ -283,7 +283,7 @@ focus_tree = {
 		completion_reward = {
 		    add_political_power = 20
 			add_stability = 0.1
-			country_event = {id=bwrrebuild.1}
+			country_event = {id=bwr.1}
 		}
 	}
 		###Industry###
@@ -330,7 +330,7 @@ focus_tree = {
 	focus = {
 		id = BWR_replacing_factories
 		ai_will_do = { factor = 100 }
-		icon = GFX_Focus_Industry_Revolution
+		icon = GFX_Focus_industrial_revolution
 		x = 15
 		y = 2
 		cost = 35

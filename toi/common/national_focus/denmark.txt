@@ -324,7 +324,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_population_boom
-		icon = GFX_Focus_Refugee_Management
+		icon = GFX_Focus_refugee_management
 		relative_position_id = DEN_focus_danish_economy
 		x = -1
 		y = 6
@@ -1170,7 +1170,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_focus_on_west_indies
-		icon = GFX_focus_ITA_Wheat
+		icon = GFX_Focus_Wheat
 		relative_position_id = DEN_focus_danish_imperialism
 		x = 3
 		y = 3
@@ -1214,7 +1214,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_develop_ny_danmark
-		icon = GFX_focus_ITA_Wheat
+		icon = GFX_Focus_Wheat
 		relative_position_id = DEN_focus_danish_imperialism
 		x = 5
 		y = 3
@@ -1812,7 +1812,7 @@ focus_tree = {
 
 		completion_reward = {
         	army_experience = 10
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
 			unlock_decision_tooltip = DEN_decision_military_uniform_exchange
 		}
@@ -2029,7 +2029,7 @@ focus_tree = {
 			else = {
 				add_political_power = 25
 				army_experience = 25
-				add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+				add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
 			}
 		}
 	}
@@ -2049,7 +2049,7 @@ focus_tree = {
 
 		completion_reward = {
 		    navy_experience = 10
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = naval_doctrine }
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_equipment }
 			unlock_decision_tooltip = DEN_decision_move_navy_base_to_holmen
 		}
@@ -2057,7 +2057,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_study_modern_warships
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Victorian_Gunboat
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 3
@@ -2099,7 +2099,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_armored_schooners
-		icon = GFX_Focus_Losange_Gunboat
+		icon = GFX_Goal_gunboat_focus
 		relative_position_id = DEN_focus_danish_military
 		x = 2
 		y = 5
@@ -2160,7 +2160,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_rolf_krake
-		icon = GFX_Focus_Losange_Ironclad
+		icon = GFX_Goal_ironclad_focus
 		relative_position_id = DEN_focus_danish_military
 		x = 4
 		y = 5
@@ -2199,7 +2199,7 @@ focus_tree = {
 	
 	focus = {
 		id = DEN_focus_screw_frigates
-		icon = GFX_Focus_Losange_Frigate
+		icon = GFX_Goal_frigate_focus
 		relative_position_id = DEN_focus_danish_military
 		x = 6
 		y = 5
@@ -2251,7 +2251,7 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 10
-			add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 2 category = naval_doctrine }
 		}
 	}
 	
@@ -2283,7 +2283,7 @@ focus_tree = {
 			else = {
 				add_political_power = 25
 				navy_experience = 25
-				add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+				add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = naval_doctrine }
 			}
 		}
 	}
@@ -2303,8 +2303,8 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_increase_navy_budget }
 
 		completion_reward = {
-        	add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+        	add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = naval_doctrine }
 		}
 	}
 
@@ -2396,7 +2396,7 @@ focus_tree = {
 			   	remove_idea = DEN_idea_lost_second_schleswig_war_3
 			   	add_idea = DEN_idea_lost_second_schleswig_war_4
 			}
-			add_tech_bonus = { bonus = 0.75 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.75 uses = 1 category = land_doctrine }
 		}
 	}
 	
@@ -2549,8 +2549,8 @@ focus_tree = {
         	army_experience = 5
 			navy_experience = 25
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = naval_doctrine }
 		}
 	}
 

@@ -37,7 +37,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_defend_jewel
-		icon = GFX_focus_continent_india
+		icon = GFX_Focus_Continent_India
 		x = 5
 		y = 1
 		cost = 25
@@ -55,7 +55,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_cause_of_sepoy
-		icon = GFX_goal_focus_popularize
+		icon = GFX_Focus_Partisans_Popularize
 		x = 3
 		y = 2
 		cost = 30
@@ -167,7 +167,7 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 20
-			add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.2 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -223,7 +223,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_restore_peace_india
-		icon = GFX_goal_focus_ally_ENG
+		icon = GFX_Focus_Diplomatic_Ally_ENG
 		x = 6
 		y = 5
 		cost = 50
@@ -254,7 +254,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_preliminary_suppression
-		icon = GFX_goal_focus_controlled_press
+		icon = GFX_Focus_Freedom_Press_controlled
 		x = 8
 		y = 3
 		cost = 70
@@ -294,7 +294,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_humiliation_by_sepoy
-		icon = GFX_goal_focus_stop_fund_partisans
+		icon = GFX_Focus_Partisans_Stop_Fund
 		x = 8
 		y = 5
 		cost = 50
@@ -328,7 +328,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_repeal_gse_act
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 11
 		y = 1
 		cost = 50
@@ -375,7 +375,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_repeal_regulatory_act
-		icon = GFX_goal_focus_support_liberalism
+		icon = GFX_Focus_Ideology_Support_Liberalism
 		x = 11
 		y = 2
 		cost = 50
@@ -423,7 +423,7 @@ focus_tree = {
 		cost = 75
 		available_if_capitulated = no
 		ai_will_do = {
-			factor = 100
+			factor = 20
 		}
 		prerequisite = { focus = ENG_focus_repeal_regulatory_act }
 		mutually_exclusive = { focus = ENG_focus_continue_annex_policy }
@@ -548,11 +548,7 @@ focus_tree = {
 		cost = 50
 		available_if_capitulated = no
 		ai_will_do = {
-			factor = 100
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
+			factor = 80
 		}
 		prerequisite = { focus = ENG_focus_continue_annex_policy focus = ENG_focus_stop_lapse_doctrine }
 		mutually_exclusive = { focus = ENG_focus_the_RAJ_compromise focus = ENG_focus_grant_RAJ_autonomy }
@@ -638,6 +634,10 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 		prerequisite = { focus = ENG_focus_continue_annex_policy focus = ENG_focus_stop_lapse_doctrine }
 		mutually_exclusive = { focus = ENG_focus_direct_RAJ_control focus = ENG_focus_grant_RAJ_autonomy }
@@ -682,10 +682,6 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 100
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
 		}
 		prerequisite = { focus = ENG_focus_continue_annex_policy focus = ENG_focus_stop_lapse_doctrine }
 		mutually_exclusive = { focus = ENG_focus_direct_RAJ_control focus = ENG_focus_the_RAJ_compromise }
@@ -1076,7 +1072,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_india_regional_recruitment
-		icon = GFX_goal_focus_fund_partisans
+		icon = GFX_Focus_Partisans_Fund
 		x = 15
 		y = 2
 		cost = 70
@@ -1147,7 +1143,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_india_nation_law
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 15
 		y = 4
 		cost = 60
@@ -1239,7 +1235,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_india_european_recruitment
-		icon = GFX_goal_focus_colonial_empire_uk
+		icon = GFX_Focus_colonial_empire_ENG
 		x = 17
 		y = 2
 		cost = 70
@@ -1356,7 +1352,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_oriental_uniforms_india
-		icon = GFX_focus_Colonial_Troops
+		icon = GFX_Focus_Colonial_Troops
 		x = 16
 		y = 6
 		cost = 75
@@ -1398,7 +1394,7 @@ focus_tree = {
 		
 		completion_reward = {
 			army_experience = 10
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -1430,7 +1426,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_strategic_fortifications
-		icon = GFX_goal_focus_napoleonic_tactics
+		icon = GFX_Focus_Army_Napoleonic
 		x = 19
 		y = 2
 		cost = 30
@@ -1555,7 +1551,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_volunteer_regulations
-		icon = GFX_goal_focus_military_reforms
+		icon = GFX_Focus_Army_Reforms
 		x = 23
 		y = 3
 		cost = 60
@@ -1568,13 +1564,13 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.4 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.4 uses = 1 category = land_doctrine }
 		}
 	}
 
 	focus = {
 		id = ENG_focus_consolidate_vrc
-		icon = GFX_goal_focus_support_conservatism
+		icon = GFX_Focus_Ideology_Support_Liberty
 		x = 23
 		y = 4
 		cost = 75
@@ -1634,7 +1630,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_military_reforms
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_ENG_military_reforms
 		x = 25
 		y = 1
 		cost = 70
@@ -1653,7 +1649,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_doctrines_adaptation
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_Focus_adapt_new_doctrines
 		x = 25
 		y = 2
 		cost = 75
@@ -1666,7 +1662,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -1714,7 +1710,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_modern_weapons
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_Goal_modernized_army_equipment
 		x = 27
 		y = 2
 		cost = 80
@@ -1733,7 +1729,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_the_gatling_gun
-		icon = GFX_ENG_focus_gatling_gun
+		icon = GFX_Goal_the_gatling_gun
 		x = 27
 		y = 3
 		cost = 60
@@ -1752,7 +1748,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_artillery_support
-		icon = GFX_goal_generic_army_artillery2
+		icon = GFX_Focus_artillery_support
 		x = 27
 		y = 4
 		cost = 70
@@ -1771,7 +1767,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_new_army_plan
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_Goal_the_new_army_plan
 		x = 30
 		y = 1
 		cost = 50
@@ -1875,7 +1871,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_army_of_citizens
-		icon = GFX_goal_focus_popularize
+		icon = GFX_Focus_Partisans_Popularize
 		x = 31
 		y = 3
 		cost = 70
@@ -1900,7 +1896,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_regiment_training_exercises
-		icon = GFX_goal_focus_napoleonic_tactics
+		icon = GFX_Focus_Army_Napoleonic
 		x = 30
 		y = 4
 		cost = 70
@@ -1919,8 +1915,30 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ENG_focus_regular_exercises
+		icon = GFX_Focus_Tactics_Artillery
+		x = 30
+		y = 5
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = ENG_focus_regiment_training_exercises }
+		search_filters = { FOCUS_FILTER_MILITARY }
+
+		available = {
+			has_completed_focus = ENG_focus_overseas_service
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = eoanb_tt_focus_ENG_colonial_train
+		}
+	}
+
+	focus = {
 		id = ENG_focus_initial_military_reforms
-		icon = GFX_goal_focus_military_reforms
+		icon = GFX_Focus_Army_Reforms
 		x = 35
 		y = 1
 		cost = 70
@@ -2099,7 +2117,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_army_enlistment_act
-		icon = GFX_ENG_focus_army_enlistment_act
+		icon = GFX_Focus_army_enlistment_act
 		x = 35
 		y = 4
 		cost = 70
@@ -2179,7 +2197,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.1 uses = 1 category = infantry_weapons }
 			add_tech_bonus = { bonus = 0.1 uses = 1 category = support_tech }
-			add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.1 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -2219,7 +2237,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.3 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.3 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -2229,7 +2247,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_industrial_revolution
-		icon = GFX_goal_focus_industrial_revolution
+		icon = GFX_Focus_industrial_revolution
 		x = 46
 		y = 0
 		cost = 35
@@ -2338,7 +2356,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_invest_into_biological_sciences
-		icon = GFX_goal_focus_opium_war
+		icon = GFX_Focus_War_Opium
 		x = 40
 		y = 3
 		cost = 70
@@ -2417,7 +2435,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_the_military_budget_question
-		icon = GFX_goal_focus_military_reforms
+		icon = GFX_Focus_Army_Reforms
 		x = 44
 		y = 1
 		cost = 30
@@ -2430,7 +2448,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_MILITARY }
 		
 		completion_reward = {
-			country_event = { id = britainfocus.1 random = 12 }
+			country_event = { id = britain.72 random = 12 }
 		}
 	}
 
@@ -2571,7 +2589,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_invest_in_shipbuilding_industry
-		icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_Focus_Production_Mass
 		x = 46
 		y = 5
 		cost = 70
@@ -2608,7 +2626,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_develop_urban_centers
-		icon = GFX_goal_focus_banks
+		icon = GFX_Focus_banks
 		x = 48
 		y = 4
 		cost = 70
@@ -2826,7 +2844,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_feed_the_population
-		icon = GFX_goal_focus_support_conservatism
+		icon = GFX_Focus_Ideology_Support_Liberty
 		x = 49
 		y = 3
 		cost = 35
@@ -2918,7 +2936,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_forestry_investments
-		icon = GFX_focus_back_to_basics
+		icon = GFX_Focus_invest_in_logging
 		x = 52
 		y = 2
 		cost = 35
@@ -2936,7 +2954,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_the_cotton_issue
-		icon = GFX_goal_focus_cotton
+		icon = GFX_Focus_Resource_Cotton
 		x = 51
 		y = 3
 		cost = 30
@@ -2955,7 +2973,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_keep_reliance_on_usa
-		icon = GFX_goal_focus_american_civil_war
+		icon = GFX_Focus_War_American_Civil_War
 		x = 50
 		y = 5
 		cost = 15
@@ -3012,7 +3030,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_coal_in_northern_england
-		icon = GFX_goal_focus_coal_mines
+		icon = GFX_Focus_coal_mines
 		x = 53
 		y = 4
 		cost = 60
@@ -3030,7 +3048,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_coal_in_the_midlands
-		icon = GFX_goal_focus_coal_mines
+		icon = GFX_Focus_coal_mines
 		x = 55
 		y = 4
 		cost = 60
@@ -3122,7 +3140,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_british_railways
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		x = 56
 		y = 1
 		cost = 50
@@ -3206,7 +3224,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_sea_cables
-		icon = GFX_goal_focus_international_investments
+		icon = GFX_Focus_Trade_International
 		x = 58
 		y = 2
 		cost = 50
@@ -3224,7 +3242,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_embassies_in_london
-		icon = GFX_goal_focus_foreign_diplomacy_central
+		icon = GFX_Focus_Diplomatic_foreign_central
 		x = 58
 		y = 3
 		cost = 50
@@ -3244,7 +3262,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_public_works_projects
-		icon = GFX_goal_focus_government_icon
+		icon = GFX_Focus_Government
 		x = 60
 		y = 1
 		cost = 50
@@ -3267,7 +3285,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_build_more_hospitals
-		icon = GFX_goal_focus_decentralisation_power
+		icon = GFX_Focus_Government_Decentralized
 		x = 60
 		y = 2
 		cost = 50
@@ -3288,7 +3306,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_invest_in_schools
-		icon = GFX_goal_focus_popularize
+		icon = GFX_Focus_Partisans_Popularize
 		x = 60
 		y = 3
 		cost = 50
@@ -3310,7 +3328,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_global_trade
-		icon = GFX_goal_focus_support_liberalism
+		icon = GFX_Focus_Ideology_Support_Liberalism
 		x = 57
 		y = 4
 		cost = 30
@@ -3348,7 +3366,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_strengthen_trade_in_the_empire
-		icon = GFX_goal_focus_merchants_british
+		icon = GFX_Focus_Diplomacy_UK
 		x = 56
 		y = 5
 		cost = 50
@@ -3431,7 +3449,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_diplomatic_treaties
-		icon = GFX_goal_focus_foreign_diplomacy
+		icon = GFX_Focus_Diplomatic_foreign
 		x = 59
 		y = 5
 		cost = 60
@@ -3449,7 +3467,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_trade_treaty_france
-		icon = GFX_goal_focus_ally_FRA
+		icon = GFX_Focus_Diplomatic_Ally_FRA
 		x = 58
 		y = 6
 		cost = 30
@@ -3472,7 +3490,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_trade_treaty_prussia
-		icon = GFX_goal_focus_ally_PRS
+		icon = GFX_Focus_Diplomatic_Ally_PRS
 		x = 60
 		y = 6
 		cost = 30
@@ -3518,7 +3536,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_trade_treaty_csa
-		icon = GFX_goal_focus_confederate_collaboration
+		icon = GFX_Focus_Diplomatic_Ally_CSA_2
 		x = 60
 		y = 7
 		cost = 30
@@ -3541,7 +3559,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_trade_treaty_russia
-		icon = GFX_goal_focus_negotiate_russia
+		icon = GFX_Focus_Diplomatic_Ally_RUS_2
 		x = 58
 		y = 8
 		cost = 30
@@ -3631,7 +3649,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_trade_with_iberia
-		icon = GFX_goal_focus_merchants_portugese
+		icon = GFX_Focus_Diplomacy_POR
 		x = 62
 		y = 8
 		cost = 60
@@ -3657,7 +3675,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_address_political_economic_matters
-		icon = GFX_goal_focus_freedom_press
+		icon = GFX_Focus_Freedom_Press
 		x = 70
 		y = 0
 		cost = 30
@@ -3673,8 +3691,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_focus_the_isle_of_man_question
-		icon = GFX_goal_focus_government_glass
+		id = ENG_focus_the_calais_question
+		icon = GFX_Focus_colonial_empire_FRA
 		x = 66
 		y = 1
 		cost = 30
@@ -3683,39 +3701,18 @@ focus_tree = {
 			factor = 40
 		}
 		prerequisite = { focus = ENG_focus_address_political_economic_matters }
-		available = {
-			owns_state = 1152
-		}
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = { id = britainfocus.2 random = 12 }
-		}
-	}
-
-	focus = {
-		id = ENG_focus_the_calais_question
-		icon = GFX_goal_focus_colonial_empire_france
-		x = 66
-		y = 2
-		cost = 30
-		available_if_capitulated = no
-		ai_will_do = {
-			factor = 40
-		}
-		prerequisite = { focus = ENG_focus_the_isle_of_man_question }
-		search_filters = {  FOCUS_FILTER_POLITICAL }
-		
-		completion_reward = {
-			country_event = { id = britainfocus.3 random = 12 }
+			country_event = { id = britain.73 random = 12 }
 		}
 	}
 
 	focus = {
 		id = ENG_focus_imperialist_economic_interests
-		icon = GFX_focus_Colonial_Troops
+		icon = GFX_Focus_Colonial_Troops
 		x = 66
-		y = 3
+		y = 2
 		cost = 30
 		available_if_capitulated = no
 		ai_will_do = {
@@ -3733,7 +3730,7 @@ focus_tree = {
 		id = ENG_focus_demand_japanese_trade_port
 		icon = GFX_goal_focus_JAP_science_eng_navy
 		x = 66
-		y = 4
+		y = 3
 		cost = 30
 		available_if_capitulated = no
 		ai_will_do = {
@@ -3747,13 +3744,13 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = eoanb_tt_focus_ENG_demand_japanese_port
-			#TSH = { country_event = { id = britainfocus.4 random = 12 } }
+			#TSH = { country_event = { id = britain.# random = 12 } }
 		}
 	}
 
 	focus = {
 		id = ENG_focus_the_economic_debate
-		icon = GFX_goal_focus_broken_democracy
+		icon = GFX_Focus_Freedom_broken
 		x = 70
 		y = 1
 		cost = 60
@@ -3785,7 +3782,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_centralize_economy
-		icon = GFX_goal_focus_government_control
+		icon = GFX_Focus_Government_Centralized
 		x = 68
 		y = 2
 		cost = 50
@@ -3828,7 +3825,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_business_regulation
-		icon = GFX_goal_focus_banks2
+		icon = GFX_Focus_banks2
 		x = 68
 		y = 4
 		cost = 50
@@ -3868,7 +3865,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_decentralize_economy
-		icon = GFX_goal_focus_decentralisation_power
+		icon = GFX_Focus_Government_Decentralized
 		x = 72
 		y = 2
 		cost = 50
@@ -3891,7 +3888,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_cottage_industry
-		icon = GFX_goal_focus_cotton
+		icon = GFX_Focus_Resource_Cotton
 		x = 73
 		y = 3
 		cost = 35
@@ -3909,7 +3906,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_liberalize_the_economy
-		icon = GFX_goal_focus_freedom_economy
+		icon = GFX_Focus_freedom_economy
 		x = 72
 		y = 4
 		cost = 50
@@ -3991,7 +3988,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_address_workforce_issues
-		icon = GFX_goal_focus_reform_government
+		icon = GFX_Focus_Government_Reform
 		x = 70
 		y = 6
 		cost = 60
@@ -4028,7 +4025,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_mines_regulation_act
-		icon = GFX_goal_focus_coal_mines
+		icon = GFX_Focus_coal_mines
 		x = 65
 		y = 8
 		cost = 60
@@ -4052,7 +4049,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_further_regulations
-		icon = GFX_goal_focus_government_control
+		icon = GFX_Focus_Government_Centralized
 		x = 65
 		y = 9
 		cost = 60
@@ -4104,7 +4101,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_establish_trade_union_congress
-		icon = GFX_goal_focus_the_workers
+		icon = GFX_Focus_Worker
 		x = 67
 		y = 8
 		cost = 60
@@ -4125,7 +4122,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_trade_unions_act
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 67
 		y = 9
 		cost = 60
@@ -4182,7 +4179,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_sanitary_act
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 69
 		y = 8
 		cost = 60
@@ -4208,7 +4205,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_reform_act
-		icon = GFX_goal_focus_elections
+		icon = GFX_Focus_Vote_Election
 		x = 69
 		y = 9
 		cost = 60
@@ -4240,7 +4237,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_master_servant_act
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 69
 		y = 10
 		cost = 60
@@ -4266,7 +4263,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_factories_workshop_act
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 67
 		y = 11
 		cost = 60
@@ -4294,7 +4291,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_guarantee_fair_wages
-		icon = GFX_goal_focus_increase_wages
+		icon = GFX_Focus_Economy_Increase_Wages
 		x = 67
 		y = 12
 		cost = 60
@@ -4397,14 +4394,14 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			hidden_effect = {
-				country_event = { id = britainfocus.20 random = 12 }
+				country_event = { id = britain.87 random = 12 }
 			}
 		}
 	}
 	
 	focus = {
 		id = ENG_focus_legislation_on_pensions
-		icon = GFX_goal_focus_reform_government
+		icon = GFX_Focus_Government_Reform
 		x = 69
 		y = 12
 		cost = 60
@@ -4422,14 +4419,14 @@ focus_tree = {
 				add_idea = ENG_idea_working_class_exploitation_4
 			}
 			hidden_effect = {
-				country_event = { id = britainfocus.7 random = 12 }
+				country_event = { id = britain.75 random = 12 }
 			}
 		}
 	}
 	
 	focus = {
 		id = ENG_focus_the_age_of_retirement
-		icon = GFX_goal_focus_reform_government
+		icon = GFX_Focus_Government_Reform
 		x = 71
 		y = 12
 		cost = 60
@@ -4441,7 +4438,7 @@ focus_tree = {
 		mutually_exclusive = { } 
 
 		completion_reward = {
-		    country_event = { id = britainfocus.8 random = 12 }
+		    country_event = { id = britain.77 random = 12 }
 		}
 	}
 	
@@ -4517,7 +4514,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_ignore_the_accidents 
-		icon = GFX_goal_focus_controlled_press
+		icon = GFX_Focus_Freedom_Press_controlled
 		x = 71
 		y = 9
 		cost = 30
@@ -4544,7 +4541,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_mines_regulation_act_1
-		icon = GFX_goal_focus_coal_mines
+		icon = GFX_Focus_coal_mines
 		x = 71
 		y = 10
 		cost = 60
@@ -4566,7 +4563,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_weaken_trade_unions
-		icon = GFX_goal_focus_stop_fund_partisans
+		icon = GFX_Focus_Partisans_Stop_Fund
 		x = 73
 		y = 8
 		cost = 60
@@ -4589,7 +4586,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_trade_unions_act_1
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 73
 		y = 9
 		cost = 60
@@ -4622,7 +4619,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_lower_taxes_on_buisnesses
-		icon = GFX_goal_focus_banks
+		icon = GFX_Focus_banks
 		x = 73
 		y = 10
 		cost = 60
@@ -4708,7 +4705,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_producivity_first
-		icon = GFX_goal_focus_industrial_revolution
+		icon = GFX_Focus_industrial_revolution
 		x = 75
 		y = 8
 		cost = 60
@@ -4757,7 +4754,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_master_servant_act_1
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 75
 		y = 10
 		cost = 60
@@ -4843,7 +4840,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_no_more_prudction_delays
-		icon = GFX_goal_focus_the_elite
+		icon = GFX_Focus_Elite
 		x = 73
 		y = 13
 		cost = 60
@@ -4878,7 +4875,7 @@ focus_tree = {
 		
 		completion_reward = {
 		    navy_experience = 20
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = naval_doctrine }
 		}
 	}
 	
@@ -5043,7 +5040,7 @@ focus_tree = {
 	
     focus = {
 		id = ENG_focus_lesson_acw
-		icon = GFX_goal_focus_american_civil_war
+		icon = GFX_Focus_War_American_Civil_War
 		x = 83
 		y = 6
 		cost = 50
@@ -5059,7 +5056,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		completion_reward = {
-		    add_tech_bonus = { bonus = 0.25 uses = 3 category = naval_doctrine }
+		    add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 3 category = naval_doctrine }
 		}
 	}
 
@@ -5109,7 +5106,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_commision_monitors
-		icon = GFX_goal_focus_commision_monitors
+		icon = GFX_Focus_commision_monitors
 		x = 80
 		y = 6
 		cost = 50
@@ -5364,7 +5361,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_robinson_hulls
-		icon = GFX_goal_focus_generic_navy_ironclad
+		icon = GFX_Goal_ironclad_focus
 		x = 88
 		y = 9
 		cost = 50
@@ -5385,7 +5382,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_player_choice_1
-		icon = GFX_goal_focus_commision_monitors
+		icon = GFX_Focus_commision_monitors
 		x = 78
 		y = 10
 		cost = 50
@@ -5405,7 +5402,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_player_choice_2
-		icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_Focus_Production_Mass
 		x = 82
 		y = 10
 		cost = 50
@@ -5425,7 +5422,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_player_choice_3
-		icon = GFX_focus_battleship_production
+		icon = GFX_Focus_Production_Battleship_Old
 		x = 84
 		y = 10
 		cost = 50
@@ -5445,7 +5442,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_player_choice_4
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_Focus_Victorian_Gunboat
 		x = 88
 		y = 10
 		cost = 50
@@ -5685,7 +5682,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_conspiracy_to_murder_bill
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 0
 		y = 3
 		cost = 7
@@ -5714,7 +5711,7 @@ focus_tree = {
 		
 		completion_reward = {
 
-			country_event = britainpolitical.2
+			country_event = britain.69
 
 		}
 	}
@@ -5750,8 +5747,8 @@ focus_tree = {
 		
 		completion_reward = {
 
-			ENG = { country_event = { id = britainpolitical.1 days = 10 } }
-			country_event = britainfocus.12
+			ENG = { country_event = { id = britain.68 days = 10 } }
+			country_event = britain.81
 		}
 	}
 
@@ -5783,8 +5780,8 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainfocus.11
-			country_event = britainfocus.13
+			country_event = britain.80
+			country_event = britain.82
 
 		}
 	}
@@ -5816,7 +5813,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-		   	country_event = britainfocus.39
+		   	country_event = britain.103
 		}
 	}
 
@@ -6150,11 +6147,11 @@ focus_tree = {
 		completion_reward = {
 
 			random_list = {
-				20 = {country_event = { id= britainpoliticalflavour.4 days = 10 } }
+				20 = {country_event = { id= britain.56 days = 10 } }
 				80 = {}
 
 			}
-			country_event = britainpolitical.5
+			country_event = britain.72
 		}
 	}
 
@@ -6185,8 +6182,8 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainfocus.40
-			country_event = britainfocus.17
+			country_event = britain.104
+			country_event = britain.84
 
 		}
 	}
@@ -6217,8 +6214,8 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainfocus.41
-			country_event = britainfocus.19
+			country_event = britain.105
+			country_event = britain.86
 
 		}
 	}
@@ -6303,7 +6300,7 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = { id = britainfocus.21 }
+			country_event = { id = britain.88 }
 
 		}
 	}
@@ -6358,17 +6355,17 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainpolitical.6
-			country_event = britainfocus.23
-			ENG = { country_event = { id = britainfocus.26 days = 90 } }
-			USA = { country_event = { id = britainfocus.26 days = 90 } }
+			country_event = britain.73
+			country_event = britain.89
+			ENG = { country_event = { id = britain.92 days = 90 } }
+			USA = { country_event = { id = britain.92 days = 90 } }
 		}
 	}
 
 
 	focus = {
 		id = ENG_focus_Gladstone_wins
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = -2
 		y = 1
 		cost = 7
@@ -6393,14 +6390,14 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainfocus.24
-			country_event = britainfocus.42
+			country_event = britain.90
+			country_event = britain.106
 		}
 	}
 
 	focus = {
 		id = ENG_focus_Disraeli_wins
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 2
 		y = 1
 		cost = 7
@@ -6425,8 +6422,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALTHISTORY }
 		
 		completion_reward = {
-			ENG = { country_event = { id = britainfocus.25 days = 90 } }
-			ENG = { country_event = { id = britainfocus.43 days = 5 } }
+			ENG = { country_event = { id = britain.91 days = 90 } }
+			ENG = { country_event = { id = britain.107 days = 5 } }
 		}
 	}
 
@@ -6585,7 +6582,7 @@ focus_tree = {
 	focus = {
 		id = ENG_focus_1874_general_elections
 		icon = GFX_idea_ENG_focus_enact_law_uk
-		x = 45
+		x = 44
 		y = 9
 		cost = 7
 		available_if_capitulated = no
@@ -6601,14 +6598,14 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainpolitical.7
+			country_event = britain.74
 		}
 	}
 
 
 	focus = {
 		id = ENG_focus_Gladstone_wins2
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = -2
 		y = 1
 		cost = 7
@@ -6633,13 +6630,13 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			country_event = britainfocus.42
+			country_event = britain.106
 		}
 	}
 
 	focus = {
 		id = ENG_focus_Disraeli_wins2
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 2
 		y = 1
 		cost = 7
@@ -6664,7 +6661,150 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		
 		completion_reward = {
-			ENG = { country_event = { id = britainfocus.43 days = 5 } }
+			ENG = { country_event = { id = britain.107 days = 5 } }
+		}
+	}
+
+	focus = {
+		id = ENG_focus_public_health_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = -2
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Disraeli_wins2
+			focus = ENG_focus_Gladstone_wins2
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_focus_customs_consolidation_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 2
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Disraeli_wins2
+			focus = ENG_focus_Gladstone_wins2
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_focus_commons_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 0
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Disraeli_wins2
+			focus = ENG_focus_Gladstone_wins2
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_focus_cruelty_animals_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = -1
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Disraeli_wins2
+			focus = ENG_focus_Gladstone_wins2
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_focus_chelsea_hospital_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 1
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Disraeli_wins2
+			focus = ENG_focus_Gladstone_wins2
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_focus_suez_canal_shares_act
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1874_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_commons_act
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
 		}
 	}
 }

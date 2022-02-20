@@ -15,7 +15,7 @@ focus_tree = {
 	#Saxony's Place in Germany
     focus = {
 		id = SAX_focus_our_place_in_germany
-		icon = GFX_goal_focus_sway_sachsen
+		icon = GFX_Focus_Diplomatic_Sway_sachsen
 		x = 6
 		y = 0
 		cost = 60
@@ -60,7 +60,7 @@ focus_tree = {
 	#Deepen the Rift
 	focus = {
 		id = SAX_focus_deepen_rift
-		icon = GFX_focus_divide_africa
+		icon = GFX_Focus_divide_africa
 		relative_position_id = SAX_focus_prusso_saxon_relationship
 		x = -1
 		y = 3
@@ -87,7 +87,7 @@ focus_tree = {
 	#Claim Former Saxon Lands
 	focus = {
 		id = SAX_focus_claim_former_saxon_lands
-		icon = GFX_goal_generic_political_pressure_green
+		icon = GFX_focus_Generic_Political_Pressure_Green
 		relative_position_id = SAX_focus_prusso_saxon_relationship
 		x = -1
 		y = 7
@@ -374,7 +374,7 @@ focus_tree = {
 	#A Common Goal
 	focus = {
 		id = SAX_focus_common_goal
-		icon = GFX_goal_SWE_unity
+		icon = GFX_Focus_Electorate_unity
 		relative_position_id = SAX_focus_attempt_to_reform_confederation
 		x = -1
 		y = 7
@@ -884,7 +884,7 @@ focus_tree = {
 	#Liberalize Saxony
 	focus = {
 		id = SAX_focus_liberalize_saxony
-		icon = GFX_Focus_Freedom
+		icon = GFX_Focus_freedom_democracy
 		relative_position_id = SAX_focus_political_realities
 		x = -2
 		y = 1
@@ -1003,7 +1003,7 @@ focus_tree = {
 	#Universal Male Franchise
 	focus = {
 		id = SAX_focus_universal_male_franchise
-		icon = GFX_Focus_Election
+		icon = GFX_Focus_Vote_Election
 		relative_position_id = SAX_focus_thorough_reforms
 		x = 0
 		y = 1
@@ -1043,7 +1043,7 @@ focus_tree = {
 	#Full Equality for the Sorbs
 	focus = {
 		id = SAX_focus_full_equality_for_sorbs
-		icon = GFX_Focus_Freedom_Public_Liberties
+		icon = GFX_Focus_freedom_democracy_Public_Liberties
 		relative_position_id = SAX_focus_thorough_reforms
 		x = 0
 		y = 2
@@ -1145,7 +1145,7 @@ focus_tree = {
 	#Adapt the Suffrage Law
 	focus = {
 		id = SAX_focus_adapt_sufferage_law
-		icon = GFX_Focus_Election
+		icon = GFX_Focus_Vote_Election
 		relative_position_id = SAX_focus_moderate_reforms
 		x = 0
 		y = 1
@@ -1182,7 +1182,7 @@ focus_tree = {
 	#End Press and Association Censorship
 	focus = {
 		id = SAX_focus_end_press_censorship
-		icon = GFX_Focus_Freedom_Press_1
+		icon = GFX_Focus_freedom_democracy_Press_1
 		relative_position_id = SAX_focus_liberalize_saxony
 		x = 0
 		y = 4
@@ -1222,7 +1222,7 @@ focus_tree = {
 	#Amnesty for Insurgents of 1848/49
 	focus = { 
 		id = SAX_focus_amnesty_for_insurgents_of_48_49
-		icon = GFX_focus_na_n_peaceful_co_existance
+		icon = GFX_Focus_Diplomatic_Deal
 		relative_position_id = SAX_focus_liberalize_saxony
 		x = 0
 		y = 5
@@ -1260,7 +1260,7 @@ focus_tree = {
 	#Conserve the Status Quo
 	focus = {
 		id = SAX_focus_conserve_the_status_quo
-		icon = GFX_focus_na_n_maintain_the_status_quo
+		icon = GFX_Focus_maintain_the_status_quo
 		relative_position_id = SAX_focus_political_realities
 		x = 2
 		y = 1
@@ -1410,7 +1410,7 @@ focus_tree = {
 	#Revoke Last Concessions of 1849
 	focus = {
 		id = SAX_focus_revoke_1849_consessions
-		icon = GFX_goal_SWE_arrest_suffragetes
+		icon = GFX_Focus_Vote_arrest_suffragetes
 		relative_position_id = SAX_focus_create_elitist_preponderance
 		x = 0
 		y = 1
@@ -1429,7 +1429,7 @@ focus_tree = {
 	#The Sorbian Question
 	focus = {
 		id = SAX_focus_the_sorbian_question
-		icon = GFX_goal_SWE_we_need_a_leader
+		icon = GFX_focus_we_need_a_leader
 		relative_position_id = SAX_focus_create_elitist_preponderance
 		x = 0
 		y = 2
@@ -1446,7 +1446,7 @@ focus_tree = {
 	#A Noble Autocracy
 	focus = {
 		id = SAX_focus_noble_autocracy
-		icon = GFX_focus_na_n_consolidate_power
+		icon = GFX_Focus_consolidate_power
 		relative_position_id = SAX_focus_conserve_the_status_quo
 		x = 1
 		y = 1
@@ -1520,7 +1520,7 @@ focus_tree = {
 	#Revoke 1831 Constitution
 	focus = {
 		id = SAX_focus_revoke_1831_constitution
-		icon = GFX_goal_SWE_arrest_suffragetes
+		icon = GFX_Focus_Vote_arrest_suffragetes
 		relative_position_id = SAX_focus_noble_autocracy
 		x = 0
 		y = 1
@@ -1624,7 +1624,7 @@ focus_tree = {
 	#Toughen Press and Association Censorship
 	focus = {
 		id = SAX_focus_toughen_press_censorship
-		icon = GFX_Focus_Controlled_Press
+		icon = GFX_Focus_Freedom_Press_controlled
 		relative_position_id = SAX_focus_conserve_the_status_quo
 		x = 0
 		y = 4
@@ -1769,7 +1769,7 @@ focus_tree = {
 	#Obtain Foreign Military Equipment
 	focus = {
 		id = SAX_focus_obtain_foreign_military_equipment
-		icon = GFX_goal_SWE_buy_guns
+		icon = GFX_Focus_Trade_Gun
 		relative_position_id = SAX_focus_reinforce_conscription_laws
 		x = -1
 		y = 1
@@ -1787,7 +1787,7 @@ focus_tree = {
 	#Buy Rifles from Liège Factories
 	focus = {
 		id = SAX_focus_buy_rifles_from_liege_factories
-		icon = GFX_focus_BEL_arms_sale
+		icon = GFX_Focus_gun_sales_BEL
 		relative_position_id = SAX_focus_obtain_foreign_military_equipment
 		x = -2
 		y = 1
@@ -2174,7 +2174,7 @@ focus_tree = {
 	#Railway Connection to Bavaria
 	focus = {
 		id = SAX_focus_railway_bavaria
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = SAX_focus_saxon_state_railway
 		x = 0
 		y = 1
@@ -2197,7 +2197,7 @@ focus_tree = {
 	#Railways in the Ore Mountains
 	focus = {
 		id = SAX_focus_railway_ore_mountains
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = SAX_focus_saxon_state_railway
 		x = 0
 		y = 2
@@ -2224,7 +2224,7 @@ focus_tree = {
 	#Railway Connection to Prussia
 	focus = {
 		id = SAX_focus_railway_prussia
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = SAX_focus_saxon_state_railway
 		x = 0
 		y = 3
@@ -2248,7 +2248,7 @@ focus_tree = {
 	#Close the Gaps in the Network
 	focus = {
 		id = SAX_focus_railway_gaps
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = SAX_focus_saxon_state_railway
 		x = 0
 		y = 4
@@ -2269,7 +2269,7 @@ focus_tree = {
 	#Mining and Metallurgy
 	focus = {
 		id = SAX_focus_mining_and_metallurgy
-		icon = GFX_Focus_Industry_Coal_Mine
+		icon = GFX_Focus_coal_mines
 		relative_position_id = SAX_focus_saxonys_economy
 		x = -1
 		y = 1
@@ -2345,7 +2345,7 @@ focus_tree = {
 	#Expand Mining Districts
 	focus = {
 		id = SAX_focus_expand_mining_districts
-		icon = GFX_Focus_Industry_Coal_Mine
+		icon = GFX_Focus_coal_mines
 		relative_position_id = SAX_focus_mining_and_metallurgy
 		x = 0
 		y = 3
@@ -2440,7 +2440,7 @@ focus_tree = {
 	#The Need for Free Enterprise
 	focus = {
 		id = SAX_focus_free_enterprise
-		icon = GFX_Focus_Freedom_Economy
+		icon = GFX_Focus_freedom_economy
 		relative_position_id = SAX_focus_factory_industry
 		x = 0
 		y = 2
@@ -2559,7 +2559,7 @@ focus_tree = {
 	#Allgemeine Deutsche Credit-Anstalt
 	focus = {
 		id = SAX_focus_allgemeine_creditanstalt
-		icon = GFX_Focus_Economy
+		icon = GFX_Focus_banks
 		relative_position_id = SAX_focus_trade_and_commerce
 		x = 0
 		y = 1
@@ -2686,7 +2686,7 @@ focus_tree = {
 	#Industrializing Model Country
 	focus = {
 		id = SAX_focus_model_country
-		icon = GFX_Focus_Industry_Revolution
+		icon = GFX_Focus_industrial_revolution
 		relative_position_id = SAX_focus_saxonys_economy
 		x = 0
 		y = 6

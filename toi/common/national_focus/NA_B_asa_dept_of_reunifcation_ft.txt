@@ -1924,8 +1924,8 @@ shared_focus = {
     cost = 35
     prerequisite = { focus = ASA_GA_MAC_Phase_Out_Napoleonic_Tactics }
     completion_reward = {
-        add_tech_bonus = {
-            bonus = 0.5
+        add_doctrine_cost_reduction = {
+            cost_reduction = 0.5
             uses = 1
             category = land_doctrine
         }
@@ -2637,8 +2637,8 @@ shared_focus = {
         add_political_power = 100
         add_stability = 0.05
         add_war_support = 0.05
-        add_tech_bonus = {
-            bonus = 1
+        add_doctrine_cost_reduction = {
+            cost_reduction = 1
             uses = 1
             category = land_doctrine
         }

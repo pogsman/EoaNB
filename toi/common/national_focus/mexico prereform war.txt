@@ -14,7 +14,7 @@ focus_tree = {
 	default = no
 	focus = {
 		id = MEX_memories_of_the_mexican_american_war
-		icon = GFX_goal_focus_mexican_intervention
+		icon = GFX_Focus_mexican_intervention
 		x = 1
 		y = 0
 		cost = 15
@@ -123,7 +123,7 @@ focus_tree = {
 	#Mexican Constitution Fiasco
 	focus = {
 		id = MEX_pursue_new_constitution
-		icon = GFX_goal_focus_victory_mexico
+		icon = GFX_Focus_victory_mexico
 		x = 10
 		y = 0
 		cost = 15
@@ -138,7 +138,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MEX_ocampo_law
-		icon = GFX_goal_SWE_new_government
+		icon = GFX_Focus_Government_Reform_2_blue
 		x = 0
 		y = 1
 		relative_position_id = MEX_pursue_new_constitution
@@ -157,7 +157,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MEX_new_constitution
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		x = 0
 		y = 2
 		relative_position_id = MEX_pursue_new_constitution
@@ -180,7 +180,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MEX_church_law
-		icon = GFX_goal_focus_banks2
+		icon = GFX_Focus_banks2
 		x = 0
 		y = 3
 		relative_position_id = MEX_pursue_new_constitution
@@ -199,7 +199,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MEX_prepare_plural_goverment
-		icon = GFX_goal_focus_freedom_association
+		icon = GFX_Focus_freedom_association
 		x = 0
 		y = 4
 		relative_position_id = MEX_pursue_new_constitution
@@ -219,7 +219,7 @@ focus_tree = {
 	#Conservative Side Civil War
 	focus = {
 		id = MEX_support_tacubaya_plan
-		icon = GFX_goal_focus_ally_pope
+		icon = GFX_Focus_Diplomatic_Ally_Pope
 		x = 1
 		y = 5
 		relative_position_id = MEX_pursue_new_constitution
@@ -262,7 +262,7 @@ focus_tree = {
 		completion_reward = {
 			
 		}
-		allow_branch = { TAG = MEC }
+		#allow_branch = { TAG = MEC }
 	}
 	focus = {
 		id = MEX_enact_the_five_laws
@@ -281,11 +281,11 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = mexico_civil_war.5 days = 1 }
 		}
-		allow_branch = { TAG = MEC }
+		#allow_branch = { TAG = MEC }
 	}
 	focus = {
 		id = MEX_ask_spain_for_help
-		icon = GFX_Focus_Globe_Colonial_SPA
+		icon = GFX_Focus_colonial_power_SPA
 		x = 0
 		y = 3
 		relative_position_id = MEX_support_tacubaya_plan
@@ -300,7 +300,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = mexico_civil_war.10 days = 1 }
 		}
-		allow_branch = { TAG = MEC }
+		#allow_branch = { TAG = MEC }
 	}
 	focus = {
 		id = MEX_meet_french_monarch
@@ -318,9 +318,9 @@ focus_tree = {
 			focus = MEX_ask_spain_for_help
 		}
 		completion_reward = {
-			
+			FRA = { country_event = { id = mexico_civil_war.25 days = 1 } }
 		}
-		allow_branch = { TAG = MEC }
+		#allow_branch = { TAG = MEC }
 	}
 	focus = {
 		id = MEX_accept_hispanic_monarch
@@ -340,7 +340,7 @@ focus_tree = {
 		completion_reward = {
 			
 		}
-		allow_branch = { TAG = MEC }
+		#allow_branch = { TAG = MEC }
 	}
 	#Liberal Side Civil War
 	focus = {
@@ -388,11 +388,11 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = mexico_politics.5 days = 1 }
 		}
-		allow_branch = { TAG = MEX }
+		#allow_branch = { TAG = MEX }
 	}
 	focus = {
 		id = MEX_make_an_itinerant_government
-		icon = GFX_focus_na_n_localized_tax_reforms
+		icon = GFX_Focus_Economy_Liberalism
 		x = 0
 		y = 2
 		relative_position_id = MEX_defend_the_constitution
@@ -408,7 +408,7 @@ focus_tree = {
 			country_event = { id = mexico_civil_war.6 days = 1 }
 			add_ideas = MEX_reform_war_itinerant_government
 		}
-		allow_branch = { TAG = MEX }
+		#allow_branch = { TAG = MEX }
 	}
 	focus = {
 		id = MEX_ask_usa_for_help
@@ -427,7 +427,7 @@ focus_tree = {
 		completion_reward = {
 			USA = { country_event = { id = mexico_civil_war.8 days = 1 } }
 		}
-		allow_branch = { TAG = MEX }
+		#allow_branch = { TAG = MEX }
 	}
 	focus = {
 		id = MEX_secularize_the_country
@@ -446,11 +446,11 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = mexico_civil_war.7 days = 1 }
 		}
-		allow_branch = { TAG = MEX }
+		#allow_branch = { TAG = MEX }
 	}
 	#focus = {
 	#	id = MEX_the_constitution_of_1857
-	#	icon = GFX_goal_focus_enact_law
+	#	icon = GFX_Focus_Law_Vote_1
 	#	x = 11
 	#	y = 0
 	#	cost = 15
@@ -525,7 +525,7 @@ focus_tree = {
 	#}
 	#focus = {
 	#	id = MEX_dividing_powers
-	#	icon = GFX_goal_focus_reform_administration
+	#	icon = GFX_Focus_Government_Reform_Administration
 	#	x = 11
 	#	y = 3
 	#	cost = 7
@@ -555,7 +555,7 @@ focus_tree = {
 	#}
 	#focus = {
 	#	id = MEX_the_definition_of_being_a_mexican
-	#	icon = GFX_goal_focus_victory_mexico
+	#	icon = GFX_Focus_victory_mexico
 	#	x = 11
 	#	y = 4
 	#	cost = 7
@@ -745,7 +745,7 @@ focus_tree = {
 	#}
 	#focus = {
 	#	id = MEX_prevent_groups_from_buying_land
-	#	icon = GFX_goal_focus_the_workers
+	#	icon = GFX_Focus_Worker
 	#	x = 8
 	#	y = 2
 	#	cost = 7
@@ -826,7 +826,7 @@ focus_tree = {
 	#}
 	#focus = {
 	#	id = MEX_limit_the_purchase_of_land_from_groups
-	#	icon = GFX_goal_focus_the_elite
+	#	icon = GFX_Focus_Elite
 	#	x = 14
 	#	y = 2
 	#	cost = 7
@@ -958,7 +958,7 @@ focus_tree = {
 	#}
 	#focus = {
 	#	id = MEX_sell_church_land_with_compensation
-	#	icon = GFX_goal_focus_increase_wages
+	#	icon = GFX_Focus_Economy_Increase_Wages
 	#	x = 18
 	#	y = 2
 	#	cost = 7
